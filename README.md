@@ -62,6 +62,8 @@ templates/
 Do not add placeholder files just to match the planned structure. Create files when they contain
 durable content that is ready for review.
 
+Start with the broad software-change guide at `guides/software-change-preferences.md`.
+
 ## Delivery Approach
 
 Build this repo in small, reviewable chunks. Each chunk should have one clear purpose and be
