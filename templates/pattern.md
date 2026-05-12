@@ -36,8 +36,15 @@ the scope limit, and the evidence or validation the agent should report.
 
 List durable sources only when they help frame, validate, or contrast the guidance.
 
-For each source, record:
+Use an aligned table for source notes. Tables may exceed the normal 100-column prose limit when
+alignment improves readability.
 
-- Link: `[source URL or repo-relative path]`
-- Use: `[supports | adapts | differs]`
-- Note: `[short explanation of the relevant idea]`
+| Source         | Use         | Note                                    |
+| -------------- | ----------- | --------------------------------------- |
+| `[link label]` | `[purpose]` | `[relevant idea, contrast, or context]` |
+
+`Use` means:
+
+- `supports`: the source reinforces a preference already held here.
+- `adapts`: the source is useful, but this repo reshapes it for local practice.
+- `differs`: this repo intentionally chooses a different rule or tradeoff.
