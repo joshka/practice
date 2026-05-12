@@ -66,6 +66,19 @@ durable content that is ready for review.
 Build this repo in small, reviewable chunks. Each chunk should have one clear purpose and be
 validated locally before handoff.
 
+Use a local review loop that optimizes for maintainer attention:
+
+1. After each validated chunk, offer a numbered list of concrete next chunks.
+1. Put the recommended next chunk first and explain the tradeoff for each option.
+1. Treat a numbered choice as approval to move forward with that chunk.
+1. Wait for confirmation before implementing a chunk when the next choice is preference-sensitive.
+1. If review feedback arrives instead of a next-choice number, address that feedback before moving
+   on.
+1. Implement only the confirmed chunk.
+1. Validate locally and summarize the actual checks that ran.
+1. Ask whether to push the reviewed chunk before publishing it.
+1. Move to the next chunk only after the current chunk is accepted or redirected.
+
 Expected sequence:
 
 1. Establish the repo charter and guidance architecture.

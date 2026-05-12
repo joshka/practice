@@ -46,6 +46,22 @@ Use jujutsu (`jj`) for local version-control workflow.
 Current publication policy: validate locally and ask before pushing. This policy may change as the
 repo workflow matures.
 
+## Local Review Loop
+
+Optimize for small chunks and easy maintainer confirmation.
+
+- After each validated chunk, offer a numbered list of concrete next chunks.
+- Put the recommended next chunk first and explain the tradeoff behind each option.
+- Treat a numbered choice as approval to move forward with that chunk.
+- Explain the tradeoff behind each option, especially when the choice affects structure, naming, or
+  future guidance shape.
+- If the maintainer responds with review feedback instead of a next-choice number, address that
+  feedback before moving on.
+- Implement only the confirmed chunk.
+- Keep each change small enough to review locally before moving on.
+- After validation, ask whether to push before publishing remote state.
+- If the maintainer redirects the sequence, update the next chunk instead of defending the old plan.
+
 ## Validation
 
 Before handing off documentation changes, run:
