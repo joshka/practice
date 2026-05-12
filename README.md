@@ -29,6 +29,7 @@ A guidance unit should usually include:
 
 Guides should assemble and contextualize these units instead of duplicating them. If a guide needs a
 rule that is useful across topics, promote that rule into a named guidance file and link to it.
+Start new reusable guidance units from `templates/pattern.md`.
 
 ## Planned Structure
 
