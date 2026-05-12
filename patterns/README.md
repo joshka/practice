@@ -9,6 +9,7 @@ Use `templates/pattern.md` for new entries.
 
 | ID                                  | Name                              | Status |
 | ----------------------------------- | --------------------------------- | ------ |
+| `commit-messages-for-history`       | Commit Messages For History       | draft  |
 | `follow-local-conventions`          | Follow Local Conventions          | draft  |
 | `preserve-unowned-work`             | Preserve Unowned Work             | draft  |
 | `report-verification-honestly`      | Report Verification Honestly      | draft  |

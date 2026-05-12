@@ -42,6 +42,11 @@ Use jujutsu (`jj`) for local version-control workflow.
 - Use `--no-pager` for jj commands that produce output.
 - Do not run destructive commands.
 - Do not rewrite unrelated work.
+- Write jj descriptions and published commit messages in the Chris Beams and Tim Pope style: short
+  imperative subject, blank line before any body, body wrapped at 72 columns, and body text focused
+  on why and what changed rather than restating the diff.
+- Use Conventional Commits only when the repository already follows that spec; otherwise use the
+  canonical unprefixed Chris Beams and Tim Pope style.
 
 Current publication policy: validate locally and ask before pushing. This policy may change as the
 repo workflow matures.
