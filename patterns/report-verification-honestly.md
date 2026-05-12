@@ -4,7 +4,7 @@
 
 - Name: `Report Verification Honestly`
 - ID: `report-verification-honestly`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, workflow, agents`
 - Related: `smallest-trustworthy-verification`
@@ -28,9 +28,3 @@ the failure detail needed for the next person to act.
 
 State exactly what verification ran. Mark skipped checks as not run and name the remaining risk
 instead of implying unearned confidence.
-
-## References
-
-- Link: `AGENTS.md`
-- Use: `supports`
-- Note: The repo handoff requires reporting validation honestly, including unavailable tools.

@@ -4,7 +4,7 @@
 
 - Name: `Commit Messages For History`
 - ID: `commit-messages-for-history`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `both`
 - Topics: `version-control, jj, review`
 - Related: `small-reviewable-chunks, report-verification-honestly`

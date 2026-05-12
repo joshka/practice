@@ -4,7 +4,7 @@
 
 - Name: `Follow Local Conventions`
 - ID: `follow-local-conventions`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `both`
 - Topics: `workflow, review, agents`
 - Related: `preserve-unowned-work, small-reviewable-chunks`
@@ -31,9 +31,3 @@ instead of silently rewriting the project style.
 
 Follow repository instructions and nearby conventions first. If they conflict with your general
 defaults, name the conflict and use the local rule unless it is unsafe or impossible.
-
-## References
-
-- Link: `AGENTS.md`
-- Use: `supports`
-- Note: Local repo instructions are the first authority for this repository.

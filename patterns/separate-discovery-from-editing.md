@@ -4,7 +4,7 @@
 
 - Name: `Separate Discovery From Editing`
 - ID: `separate-discovery-from-editing`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `agents`
 - Topics: `workflow, agents, review`
 - Related: `follow-local-conventions, preserve-unowned-work`
@@ -29,9 +29,3 @@ but do enough reading to avoid inventing structure from one isolated example.
 
 Do a targeted read-only pass before editing. Summarize what context controls the change, then patch
 only the confirmed scope.
-
-## References
-
-- Link: `AGENTS.md`
-- Use: `supports`
-- Note: Local repo workflow expects focused changes, local validation, and no unrelated rewrites.

@@ -32,6 +32,12 @@ Each reusable guidance unit should usually state:
 Guides should link to named guidance units instead of duplicating large sections. Add new files only
 when they contain real durable content; avoid empty placeholders.
 
+When adding or revising patterns, check durable external sources for links that support, adapt, or
+contrast the guidance. Prefer primary or stable sources such as Rust API Guidelines, Microsoft
+Pragmatic Rust Guidelines, epage Rust Style, official language/framework docs, and durable design
+or documentation sources. Do not use "Local" or similar "because I said so" entries as references;
+omit references when no durable source is useful.
+
 ## Version Control
 
 Use jujutsu (`jj`) for local version-control workflow.

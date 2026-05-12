@@ -4,7 +4,7 @@
 
 - Name: `Small Reviewable Chunks`
 - ID: `small-reviewable-chunks`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `both`
 - Topics: `workflow, review, version-control`
 - Related: `report-verification-honestly, smallest-trustworthy-verification`
@@ -32,6 +32,8 @@ few concrete options with the recommended one first and explain the tradeoff.
 
 ## References
 
-- Link: `README.md`
-- Use: `supports`
-- Note: The repo delivery approach is built around local review loops and incremental chunks.
+| Source             | Use      | Note                                                        |
+| ------------------ | -------- | ----------------------------------------------------------- |
+| [Tidy First][tidy] | `adapts` | Small structural tidying gives reviewable units of change.  |
+
+[tidy]: https://books.google.com/books/about/Tidy_First.html?id=-WndEAAAQBAJ

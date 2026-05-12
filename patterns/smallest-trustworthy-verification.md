@@ -4,7 +4,7 @@
 
 - Name: `Smallest Trustworthy Verification`
 - ID: `smallest-trustworthy-verification`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, workflow, review`
 - Related: `report-verification-honestly`
@@ -29,9 +29,3 @@ when the change crosses modules, public behavior, generated artifacts, or user-v
 
 Before calling work complete, run the smallest check that can catch the likely failure. Report what
 ran and do not imply broader verification than you performed.
-
-## References
-
-- Link: `patterns/report-verification-honestly.md`
-- Use: `supports`
-- Note: Verification choice and verification reporting are separate but linked obligations.

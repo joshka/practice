@@ -4,7 +4,7 @@
 
 - Name: `Preserve Unowned Work`
 - ID: `preserve-unowned-work`
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `agents`
 - Topics: `workflow, version-control, agents`
 - Related: `follow-local-conventions, small-reviewable-chunks`
@@ -28,9 +28,3 @@ the task, stop and ask for direction instead of guessing which work should win.
 
 Do not overwrite, revert, or absorb changes you did not make. If unowned work blocks the requested
 change, report the conflict and ask how to proceed.
-
-## References
-
-- Link: `AGENTS.md`
-- Use: `supports`
-- Note: The repo workflow requires small jj changes and forbids rewriting unrelated work.
