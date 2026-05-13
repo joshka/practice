@@ -63,6 +63,7 @@ Do not add placeholder files just to match the planned structure. Create files w
 durable content that is ready for review.
 
 Start with the broad software-change guide at `guides/software-change-preferences.md`.
+Rust-specific guidance begins at `guides/rust-maintainability.md`.
 
 ## Delivery Approach
 
