@@ -28,3 +28,17 @@ the failure detail needed for the next person to act.
 
 State exactly what verification ran. Mark skipped checks as not run and name the remaining risk
 instead of implying unearned confidence.
+
+## Examples
+
+Bad: the handoff implies broader confidence than the checks earned.
+
+```text
+Tests pass.
+```
+
+Good: the handoff names the check and the untested surface.
+
+```text
+Ran markdownlint-cli2 "**/*.md"; passed. Did not run rendered-doc checks.
+```

@@ -48,6 +48,34 @@ prefix while preserving the same subject/body discipline. Otherwise use the cano
 style. Explain why the change exists and what it changes; do not use the body as a file-by-file diff
 summary.
 
+## Examples
+
+Bad: the subject repeats the files and the body adds no context.
+
+```text
+Update docs
+
+Changed README.md and AGENTS.md.
+```
+
+Good: the subject states the change and the body carries the context future readers need. Wrap the
+body at 72 columns.
+
+```text
+Document pattern review status
+
+Patterns now start as drafts because reviewed needs to mean
+maintainer-accepted, not merely written. The distinction matters as the
+catalog grows and agents add new entries in small batches.
+
+This keeps later readers from treating generated text as settled
+guidance before it has been checked against the repo voice and source
+policy.
+
+The change also updates the template so new patterns carry the safer
+default without requiring each future task to remember the rule.
+```
+
 ## References
 
 | Source                         | Use      | Note                                                                 |

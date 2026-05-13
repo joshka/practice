@@ -33,6 +33,32 @@ Before adding a custom conversion method, check whether a standard Rust conversi
 semantics. Use the standard trait when it is honest; use a named method when the conversion has
 domain-specific behavior or surprising costs.
 
+## Examples
+
+Bad: a project-specific constructor names a standard parsing relationship.
+
+```rust
+impl PatternId {
+    pub fn from_string(input: &str) -> Result<Self, PatternIdError> {
+        todo!()
+    }
+}
+```
+
+Good: parsing from text implements the standard `FromStr` trait.
+
+```rust
+impl FromStr for PatternId {
+    type Err = PatternIdError;
+
+    fn from_str(input: &str) -> Result<Self, Self::Err> {
+        todo!()
+    }
+}
+
+let id: PatternId = input.parse()?;
+```
+
 ## References
 
 | Source                 | Use        | Note                                                   |

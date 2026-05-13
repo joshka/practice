@@ -31,6 +31,32 @@ downstream reasoning; it should not add ceremony around a value that stays local
 When the same validation protects the same invariant in multiple places, consider a precise type or
 construction boundary. Avoid wrapper types that do not reduce downstream checks.
 
+## Examples
+
+Bad: the API accepts raw strings, so every caller must remember that blank names are invalid.
+
+```rust
+pub fn publish_pattern(name: String) {
+    todo!()
+}
+```
+
+Good: uncertain input becomes a trusted value before it reaches the publishing API.
+
+```rust
+pub struct PatternName(String);
+
+impl PatternName {
+    pub fn parse(input: &str) -> Result<Self, PatternNameError> {
+        todo!()
+    }
+}
+
+pub fn publish_pattern(name: PatternName) {
+    todo!()
+}
+```
+
 ## References
 
 | Source                 | Use        | Note                                                     |

@@ -40,6 +40,22 @@ message for someone to make progress.
 When changing an error message, include what happened, what can be done next, and any correlation
 information needed for support. Do not replace a useful diagnostic with friendly but dead-end prose.
 
+## Examples
+
+Bad: the message says the operation failed but gives the user no next step or diagnostic handle.
+
+```text
+Something went wrong.
+```
+
+Good: the message names the failed action, gives a next step, and includes a support correlation
+identifier.
+
+```text
+We could not import contacts.csv because the email column is missing. Add an email column and try
+again. If this keeps failing, contact support with request ID req_123.
+```
+
 ## References
 
 | Source        | Use      | Note                                                         |

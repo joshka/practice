@@ -32,6 +32,22 @@ counter-signal that should make someone choose a different move.
 Write the compact operational instruction for a coding agent. It should name the expected action,
 the scope limit, and the evidence or validation the agent should report.
 
+## Examples
+
+Include examples when they make the pattern easier to recognize or apply. Prefer one compact bad
+example and one compact good example over a large catalog.
+
+Bad examples should show the failure mode. Good examples should show the preferred move. Keep both
+small enough that the reader can see the difference without reconstructing a project.
+Omit examples when the problem cannot be made obvious from the snippet itself.
+
+When a pattern is about API or implementation shape, prefer examples that show the definition being
+introduced or changed, not only the call site. Include call sites only when the caller experience is
+the point of the pattern.
+
+Use the code fence language that makes the distinction clearest. Prefer `diff` blocks when the
+pattern is about reviewing a change between versions, such as separating structure from behavior.
+
 ## References
 
 List durable sources only when they help frame, validate, or contrast the guidance.

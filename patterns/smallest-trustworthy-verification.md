@@ -29,3 +29,17 @@ when the change crosses modules, public behavior, generated artifacts, or user-v
 
 Before calling work complete, run the smallest check that can catch the likely failure. Report what
 ran and do not imply broader verification than you performed.
+
+## Examples
+
+Bad: the check is broad-sounding but not tied to the changed surface.
+
+```text
+Looks good.
+```
+
+Good: the check can fail for the changed Markdown rules.
+
+```text
+Ran markdownlint-cli2 "**/*.md"; passed.
+```

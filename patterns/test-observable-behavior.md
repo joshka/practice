@@ -32,6 +32,20 @@ helper shape.
 Prefer behavior-level tests for changed paths. Do not add tests that freeze private implementation
 shape unless that private rule is the real risk being protected.
 
+## Examples
+
+Bad: the test freezes the helper chosen by the current implementation.
+
+```rust
+assert_eq!(parse_rows_called(), 1);
+```
+
+Good: the test protects the output callers depend on.
+
+```rust
+assert_eq!(parse_report(input)?.rows.len(), 3);
+```
+
 ## References
 
 | Source                | Use      | Note                                                          |

@@ -31,6 +31,26 @@ the abstraction and preserve compatibility carefully.
 Before exposing a dependency type publicly, decide whether downstream users should depend on that
 crate as part of the API. If not, keep the dependency behind a local type or conversion boundary.
 
+## Examples
+
+Bad: a library exposes `anyhow` in its public API, so downstream users lose a stable crate-owned
+error contract.
+
+```rust
+pub fn parse(input: &str) -> anyhow::Result<Pattern> {
+    todo!()
+}
+```
+
+Good: the public API exposes a crate-owned error type. The library can still use `anyhow`
+internally if that does not leak across the public boundary.
+
+```rust
+pub fn parse(input: &str) -> Result<Pattern, ParseError> {
+    todo!()
+}
+```
+
 ## References
 
 | Source                      | Use      | Note                                                        |

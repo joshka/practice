@@ -36,6 +36,27 @@ instead. Do not hide the only useful fact in logs when the caller needs that fac
 When mapping or wrapping errors, preserve the stable kind and actionable context. Do not replace a
 specific failure with a generic string unless callers truly cannot act on the detail.
 
+## Examples
+
+Bad: the error shape cannot carry the field or source error.
+
+```rust
+pub enum ApiError {
+    BadRequest(String),
+}
+```
+
+Good: the error shape preserves the stable kind and the field the caller can fix.
+
+```rust
+pub enum ApiError {
+    MissingField {
+        field: &'static str,
+        source: ParseError,
+    },
+}
+```
+
 ## References
 
 | Source                | Use        | Note                                                 |

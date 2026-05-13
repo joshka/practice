@@ -31,6 +31,25 @@ responsibilities fused together.
 Before extracting or moving code, check whether the new location reduces reader context. Keep weak
 helpers near their caller and prefer local clarity over generic organization.
 
+## Examples
+
+Bad: the threshold and score helper are distant weak facts, so the reviewer must leave the workflow
+to understand one branch.
+
+```rust
+if score(user) > APPROVAL_THRESHOLD {
+    approve(user);
+}
+```
+
+Good: the helper names the local decision and keeps the weak facts near the workflow.
+
+```rust
+if is_eligible_for_approval(user) {
+    approve(user);
+}
+```
+
 ## References
 
 | Source          | Use        | Note                                              |

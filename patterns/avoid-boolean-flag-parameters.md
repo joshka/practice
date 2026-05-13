@@ -31,6 +31,54 @@ API concept.
 When a boolean parameter makes the call site ambiguous, replace it with a named operation or explicit
 choice type. Keep a boolean only when nearby call sites remain self-explanatory.
 
+## Examples
+
+Bad: the API publishes an unnamed boolean choice.
+
+```rust
+pub fn render_report(input: ReportInput, include_drafts: bool) -> Report {
+    todo!()
+}
+```
+
+Good: an enum names the mode when one operation has several legitimate modes.
+
+```rust
+pub enum RenderMode {
+    Preview,
+    Final,
+}
+
+pub fn render_report(input: ReportInput, mode: RenderMode) -> Report {
+    todo!()
+}
+```
+
+Good: split operations when the boolean was really selecting two different commands.
+
+```rust
+pub fn render_preview(input: ReportInput) -> Report {
+    todo!()
+}
+
+pub fn render_final(input: ReportInput) -> Report {
+    todo!()
+}
+```
+
+Good: an options type or builder names several independent choices.
+
+```rust
+pub struct RenderOptions {
+    pub include_drafts: bool,
+    pub format: RenderFormat,
+}
+
+pub fn render_report(input: ReportInput, options: RenderOptions) -> Report {
+    todo!()
+}
+```
+
 ## References
 
 | Source                | Use      | Note                                                   |

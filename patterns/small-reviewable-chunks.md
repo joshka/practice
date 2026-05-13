@@ -30,6 +30,20 @@ obviously inseparable from the same review decision.
 Work one reviewable chunk at a time. Before choosing the next preference-sensitive chunk, offer a
 few concrete options with the recommended one first and explain the tradeoff.
 
+## Examples
+
+Bad: one change mixes guide structure, pattern content, lint config, and publication workflow.
+
+```text
+Add guides, rewrite patterns, change lint rules, and push all updates.
+```
+
+Good: the next chunk has one reviewable purpose.
+
+```text
+Add the Rust maintainability guide and link it to existing reviewed patterns.
+```
+
 ## References
 
 | Source             | Use      | Note                                                        |

@@ -30,6 +30,34 @@ cleanup is inseparable from the same lines. Do not tidy unrelated areas just bec
 If a behavior change needs tidying, separate the behavior-preserving structure change unless the
 cleanup is tiny and local. Verify each review unit independently.
 
+## Examples
+
+Bad: this single diff renames `active_patterns` to `visible_patterns` and also changes the rule
+from "not archived" to "stable." Reviewers have to separate naming movement from behavior.
+
+```diff
+-let active_patterns = patterns.iter().filter(|pattern| !pattern.archived);
++let visible_patterns = patterns
++    .iter()
++    .filter(|pattern| pattern.status == Status::Stable);
+```
+
+Good: one review unit performs the behavior-preserving rename while keeping the old predicate.
+
+```diff
+-let active_patterns = patterns.iter().filter(|pattern| !pattern.archived);
++let visible_patterns = patterns.iter().filter(|pattern| !pattern.archived);
+```
+
+Then a separate review unit changes the behavior.
+
+```diff
+-let visible_patterns = patterns.iter().filter(|pattern| !pattern.archived);
++let visible_patterns = patterns
++    .iter()
++    .filter(|pattern| pattern.status == Status::Stable);
+```
+
 ## References
 
 | Source                | Use        | Note                                                      |

@@ -29,3 +29,17 @@ but do enough reading to avoid inventing structure from one isolated example.
 
 Do a targeted read-only pass before editing. Summarize what context controls the change, then patch
 only the confirmed scope.
+
+## Examples
+
+Bad: the first plausible file shape becomes the implementation.
+
+```text
+Created a new helpers module before reading the existing module layout.
+```
+
+Good: exploration identifies the local owner before editing.
+
+```text
+Read AGENTS.md, nearby modules, and tests; patched the existing workspace path helper.
+```
