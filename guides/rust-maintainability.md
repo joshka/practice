@@ -107,20 +107,24 @@ behavior, MSRV, feature behavior, or public API semantics.
 
 ## References
 
-| Source                     | Use      | Note                                                        |
-| -------------------------- | -------- | ----------------------------------------------------------- |
-| [Rust API Guidelines][api] | `adapts` | API checklist for naming, conversions, errors, and traits.  |
-| [Microsoft Rust][ms]       | `adapts` | Pragmatic API, error, documentation, and maintenance notes. |
-| [epage Rust Style][epage]  | `adapts` | Reader-locality and Rust code-shape guidance.               |
+| Source                      | Use      | Note                                                        |
+| --------------------------- | -------- | ----------------------------------------------------------- |
+| [C-VALIDATE][validate]      | `adapts` | Prefer argument types that rule out bad inputs.             |
+| [C-CONV-TRAITS][conv]       | `adapts` | Standard conversion traits keep APIs interoperable.         |
+| [C-GOOD-ERR][errors]        | `adapts` | Error types should be meaningful and well-behaved.          |
+| [M-SIMPLE-ABSTRACTIONS][ms] | `adapts` | Public APIs should avoid exposing nested generic machinery. |
+| [epage Rust Style][epage]   | `adapts` | Reader-locality and Rust code-shape guidance.               |
 
 [actionable-errors]: ../patterns/write-actionable-error-messages.md
-[api]: https://rust-lang.github.io/api-guidelines/
+[conv]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-conv-traits
 [commit-history]: ../patterns/commit-messages-for-history.md
 [epage]: https://epage.github.io/dev/rust-style/
+[errors]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-good-err
 [error-context]: ../patterns/preserve-error-context.md
 [honest-verification]: ../patterns/report-verification-honestly.md
-[ms]: https://microsoft.github.io/rust-guidelines/
+[ms]: https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS
 [reader-locality]: ../patterns/reader-locality.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md
 [test-behavior]: ../patterns/test-observable-behavior.md
+[validate]: https://rust-lang.github.io/api-guidelines/dependability.html#c-validate

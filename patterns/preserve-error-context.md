@@ -44,4 +44,4 @@ specific failure with a generic string unless callers truly cannot act on the de
 | [Microsoft][ms]       | `adapts`   | Error structs can carry upstream causes and context. |
 
 [rust-api]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-good-err
-[ms]: https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/
+[ms]: https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-ERRORS-CANONICAL-STRUCTS
