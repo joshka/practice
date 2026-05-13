@@ -7,7 +7,7 @@ an entry.
 
 - Name: `[Human-readable name]`
 - ID: `[stable-kebab-case-id]`
-- Status: `[draft | reviewed]`
+- Status: `draft`
 - Audience: `[humans | agents | both]`
 - Topics: `[comma-separated topics]`
 - Related: `[related stable IDs, if any]`
@@ -36,13 +36,17 @@ the scope limit, and the evidence or validation the agent should report.
 
 List durable sources only when they help frame, validate, or contrast the guidance.
 
-Before publishing or marking a pattern reviewed, check relevant source catalogs for support or
-contrast. Common starting points include Rust API Guidelines, Microsoft Pragmatic Rust Guidelines,
-epage Rust Style, official language/framework docs, and durable design or documentation sources.
+Before publishing a pattern, check relevant source catalogs for support or contrast. Common starting
+points include Rust API Guidelines, Microsoft Pragmatic Rust Guidelines, epage Rust Style, official
+language/framework docs, and durable design or documentation sources.
 Do not use "Local" or similar "because I said so" entries as references. Omit the reference table
 when no durable source is useful.
 Use repo-relative links in prose or `Related` metadata for navigation, not as justification rows in
 `References`.
+Write the pattern in this repo's own voice. Do not copy or closely paraphrase upstream wording; use
+source links to support, adapt, or contrast the guidance.
+
+Change `Status` to `reviewed` only after maintainer review.
 
 Use an aligned table for source notes. Tables may exceed the normal 100-column prose limit when
 alignment improves readability.

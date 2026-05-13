@@ -38,6 +38,11 @@ Pragmatic Rust Guidelines, epage Rust Style, official language/framework docs, a
 or documentation sources. Do not use "Local" or similar "because I said so" entries as references;
 omit references when no durable source is useful.
 
+New patterns start as `draft`. Mark a pattern `reviewed` only after the maintainer has explicitly
+reviewed and accepted that pattern. Source links justify, frame, or contrast the pattern; they do
+not supply copy. Write patterns in this repo's own voice and do not copy or closely paraphrase
+upstream text.
+
 ## Version Control
 
 Use jujutsu (`jj`) for local version-control workflow.
