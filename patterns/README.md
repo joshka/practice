@@ -32,6 +32,8 @@ Use `templates/pattern.md` for new entries.
 | `give-agents-objectives-with-boundaries`       | Give Agents Objectives With Boundaries       | reviewed |
 | `grant-scoped-agent-capabilities`              | Grant Scoped Agent Capabilities              | reviewed |
 | `isolate-agent-workspaces`                     | Isolate Agent Workspaces                     | reviewed |
+| `inject-time-and-randomness`                   | Inject Time And Randomness                   | reviewed |
+| `keep-async-boundaries-explicit`               | Keep Async Boundaries Explicit               | reviewed |
 | `keep-automations-repo-owned`                  | Keep Automations Repo Owned                  | reviewed |
 | `keep-docs-near-their-subject`                 | Keep Docs Near Their Subject                 | reviewed |
 | `keep-name-current`                            | Keep Name Current                            | reviewed |
@@ -41,15 +43,19 @@ Use `templates/pattern.md` for new entries.
 | `limit-live-context`                           | Limit Live Context                           | reviewed |
 | `make-bad-output-mechanically-hard`            | Make Bad Output Mechanically Hard            | reviewed |
 | `make-invalid-states-hard-to-express`          | Make Invalid States Hard To Express          | reviewed |
+| `make-parameters-explicit`                     | Make Parameters Explicit                     | reviewed |
 | `make-plans-versioned-artifacts`               | Make Plans Versioned Artifacts               | reviewed |
 | `make-runtime-state-agent-legible`             | Make Runtime State Agent Legible             | reviewed |
 | `make-side-effects-visible`                    | Make Side Effects Visible                    | reviewed |
+| `make-state-transitions-explicit`              | Make State Transitions Explicit              | reviewed |
 | `make-the-change-easy-first`                   | Make The Change Easy First                   | reviewed |
+| `make-validation-policy-explicit`              | Make Validation Policy Explicit              | reviewed |
 | `manage-agent-work-not-sessions`               | Manage Agent Work Not Sessions               | reviewed |
 | `move-declaration-and-initialization-together` | Move Declaration And Initialization Together | reviewed |
 | `name-coupling`                                | Name Coupling                                | reviewed |
 | `optimize-for-long-term-coherence`             | Optimize For Long Term Coherence             | reviewed |
 | `optimize-for-agent-legibility`                | Optimize For Agent Legibility                | reviewed |
+| `parse-dont-validate`                          | Parse Dont Validate                          | reviewed |
 | `practice-agent-workouts`                      | Practice Agent Workouts                      | reviewed |
 | `prefer-durable-summaries`                     | Prefer Durable Summaries                     | reviewed |
 | `prefer-in-distribution-tools`                 | Prefer In Distribution Tools                 | reviewed |
