@@ -67,6 +67,10 @@ Use [Remediate Doc Drift][doc-drift] when behavior, examples, command output, pu
 instructions no longer match reality. Use [Keep Docs Near Their Subject][doc-locality] when drift
 keeps recurring because the doc is too far from the thing it describes.
 
+## Agent Snippet
+
+For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
+
 ## Review Questions
 
 - What documentation job is this change doing?
@@ -85,6 +89,7 @@ keeps recurring because the doc is too far from the thing it describes.
 [doc-drift]: ../patterns/remediate-doc-drift.md
 [doc-locality]: ../patterns/keep-docs-near-their-subject.md
 [doc-type]: ../patterns/choose-doc-type.md
+[docs-snippet]: ../snippets/agents/markdown-docs.md
 [evidence]: ../patterns/label-doc-claims-by-evidence.md
 [intent]: ../patterns/preserve-intent-over-literalism.md
 [markdown-docs]: markdown-documentation.md

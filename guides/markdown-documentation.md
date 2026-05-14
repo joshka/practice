@@ -104,6 +104,10 @@ this repo's voice and avoid copying or closely paraphrasing upstream text.
 Use direct links to the relevant upstream section instead of broad root links. Omit the references
 section when no durable source is useful.
 
+## Agent Snippet
+
+For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
+
 ## Review Questions
 
 - Does the document have one primary job?
@@ -124,6 +128,7 @@ section when no durable source is useful.
 
 [actionable-errors]: ../patterns/write-actionable-error-messages.md
 [diataxis]: https://diataxis.fr/
+[docs-snippet]: ../snippets/agents/markdown-docs.md
 [doc-locality]: ../patterns/keep-docs-near-their-subject.md
 [durable-summaries]: ../patterns/prefer-durable-summaries.md
 [error-context]: ../patterns/preserve-error-context.md

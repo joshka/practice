@@ -97,6 +97,10 @@ and downstream integration shape. Use lockfile updates for newer compatible rele
 Keep maintenance-only dependency updates separate from changes that may alter parsing, trait
 behavior, MSRV, feature behavior, or public API semantics.
 
+## Agent Snippet
+
+For copyable `AGENTS.md` guidance, use [Rust Agent Instructions][rust-snippet].
+
 ## Review Questions
 
 - Does this name a real Rust concept or just move code?
@@ -128,6 +132,7 @@ behavior, MSRV, feature behavior, or public API semantics.
 [honest-verification]: ../patterns/report-verification-honestly.md
 [ms]: https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS
 [reader-locality]: ../patterns/reader-locality.md
+[rust-snippet]: ../snippets/agents/rust.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md
 [test-behavior]: ../patterns/test-observable-behavior.md

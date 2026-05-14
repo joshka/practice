@@ -241,6 +241,10 @@ wrong.
 Use [Preserve Unowned Work][preserve-work] before undoing, abandoning, restoring, or squashing
 anything that might contain someone else's edits.
 
+## Agent Snippet
+
+For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
+
 ## Review Questions
 
 - Is this a separate review unit that deserves `jj new`?
@@ -270,5 +274,6 @@ anything that might contain someone else's edits.
 [gh-fork]: https://cli.github.com/manual/gh_repo_fork
 [github]: https://docs.jj-vcs.dev/latest/github/
 [jj-pager]: https://github.com/jj-vcs/jj/pull/9395
+[jj-snippet]: ../snippets/agents/jj.md
 [preserve-work]: ../patterns/preserve-unowned-work.md
 [working]: https://docs.jj-vcs.dev/latest/working-copy/

@@ -109,7 +109,7 @@ Snippets should be compact reusable excerpts for `AGENTS.md` files. They should 
 apply the Rust-first rules, not create a separate agent-only philosophy. Snippets should link back
 to guides instead of duplicating long guidance.
 
-Planned snippets:
+Accepted snippets:
 
 - `snippets/agents/core.md`
 - `snippets/agents/rust.md`

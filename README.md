@@ -71,6 +71,7 @@ Markdown and documentation guidance begins at `guides/markdown-documentation.md`
 Documentation workflow guidance begins at `guides/documentation-workflow.md`.
 Coding-agent workflow guidance begins at `guides/coding-agents.md`.
 Jujutsu workflow guidance begins at `guides/jj-workflow.md`.
+Reusable agent snippets begin at `snippets/agents/`.
 
 ## Delivery Approach
 

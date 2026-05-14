@@ -119,6 +119,11 @@ Use [Ask What Were You Trying To Achieve][achieve] when surprising legacy code m
 old intent. Use [Choose Good Enough Tools][good-enough-tools] and
 [Prefer In Distribution Tools][in-distribution] when selecting tooling for agent-friendly work.
 
+## Agent Snippet
+
+For copyable `AGENTS.md` guidance, use [Coding Agent Workflow Instructions][agent-snippet]. For a
+broader repo baseline, use [Core Agent Instructions][core-snippet].
+
 ## Review Questions
 
 - Is the objective clear without overfitting the implementation path?
@@ -132,11 +137,13 @@ old intent. Use [Choose Good Enough Tools][good-enough-tools] and
 [achieve]: ../patterns/ask-what-were-you-trying-to-achieve.md
 [agent-legibility]: ../patterns/optimize-for-agent-legibility.md
 [agents-map]: ../patterns/use-agents-md-as-map.md
+[agent-snippet]: ../snippets/agents/coding-agents.md
 [blessed-artifacts]: ../patterns/distill-from-blessed-artifacts.md
 [canaries]: ../patterns/verify-with-canaries-before-cutover.md
 [close-loop]: ../patterns/close-the-agent-loop.md
 [code-memory]: ../patterns/code-is-memory-of-process.md
 [context-coherence]: ../patterns/preserve-agent-context-coherence.md
+[core-snippet]: ../snippets/agents/core.md
 [define-good]: ../patterns/define-good-before-delegating.md
 [disk-context]: ../patterns/use-disk-as-context-sink.md
 [drift]: ../patterns/garbage-collect-agent-drift.md
