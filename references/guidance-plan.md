@@ -18,7 +18,7 @@ review moves. Snippets later provide compact agent-facing excerpts.
 | --------------------------------------- | ------------------------------------------------------------ | -------- |
 | `guides/rust-maintainability.md`        | Rust reader-locality, API, errors, tests, performance.       | reviewed |
 | `guides/software-change-preferences.md` | Broad defaults for change shape, review, verification.       | reviewed |
-| `guides/code-shape.md`                  | Small source moves that reduce reader burden.                | planned  |
+| `guides/code-shape.md`                  | Small source moves that reduce reader burden.                | reviewed |
 | `guides/boundary-correctness.md`        | Trust boundaries, validation, state, side effects, async.    | planned  |
 | `guides/observability-and-failure.md`   | Failure visibility, logs, metrics, tracing, privacy.         | planned  |
 | `guides/markdown-documentation.md`      | Markdown style, docs as contracts, Rustdoc, examples.        | reviewed |

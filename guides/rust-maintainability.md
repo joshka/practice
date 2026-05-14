@@ -3,8 +3,8 @@
 This guide applies the repo's software-change preferences to Rust code. Prefer Rust that is easy to
 read locally, hard to misuse, and honest about behavior, performance, and error boundaries.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md), not instead of
-it.
+Use this guide with [Software Change Preferences](software-change-preferences.md) and
+[Code Shape](code-shape.md), not instead of them.
 
 ## Core Preference
 
@@ -14,6 +14,9 @@ invariants a maintainer must hold at once.
 
 Use [Reader Locality][reader-locality] when extraction, module movement, or helper placement affects
 how much context a reader must reconstruct.
+Use [Code Shape][code-shape] when the change is primarily about live context, extraction,
+structure/behavior separation, reversible structure, cohesion, coupling, naming, or local
+expression shape.
 
 ## Concepts And Types
 
@@ -118,6 +121,7 @@ behavior, MSRV, feature behavior, or public API semantics.
 [actionable-errors]: ../patterns/write-actionable-error-messages.md
 [conv]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-conv-traits
 [commit-history]: ../patterns/commit-messages-for-history.md
+[code-shape]: code-shape.md
 [epage]: https://epage.github.io/dev/rust-style/
 [errors]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-good-err
 [error-context]: ../patterns/preserve-error-context.md

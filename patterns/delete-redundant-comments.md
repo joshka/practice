@@ -19,6 +19,8 @@ real intent.
 
 Delete comments that only repeat the code. Keep or add comments when they explain purpose,
 constraints, invariants, edge cases, side effects, or non-obvious tradeoffs.
+After cleanup makes intent obvious in code, remove comments that were only compensating for the old
+shape.
 
 ## Tradeoff
 
@@ -51,6 +53,8 @@ retry_count += 1;
 
 | Source                                 | Use      | Note                                                               |
 | -------------------------------------- | -------- | ------------------------------------------------------------------ |
+| [Tidy First, Ch. 15][tidy-ch15]        | `adapts` | Delete comments that no longer add information beyond the code.    |
 | [Rust API examples][rust-api-examples] | `adapts` | Documentation should explain purpose rather than restating syntax. |
 
+[tidy-ch15]: https://www.oreilly.com/library/view/tidy-first/9781098151232/ch15.html
 [rust-api-examples]: https://rust-lang.github.io/api-guidelines/documentation.html#c-example

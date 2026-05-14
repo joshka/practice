@@ -19,11 +19,15 @@ through that friction can produce a larger, riskier diff than first improving th
 When the change is blocked by friction, first make the change easier: add a test harness, improve a
 tool, clarify a boundary, extract a helper, write a runbook, or simplify the workflow. Then make the
 now-easy behavior change as a separate reviewable unit when practical.
+Prepare first when the benefit is immediate: the code becomes easier to understand or the next
+behavior change becomes cheaper to make and review.
 
 ## Tradeoff
 
 Do not spend unbounded time building infrastructure for a one-off task. Make the path easier when the
 friction is repeated, risk-reducing, or necessary to validate the real change.
+If the preparatory work is large and the payoff is not immediate, record it for later instead of
+letting the current change become an infrastructure project.
 
 ## Agent Instruction
 
@@ -48,10 +52,10 @@ against that test.
 
 ## References
 
-| Source                    | Use        | Note                                                        |
-| ------------------------- | ---------- | ----------------------------------------------------------- |
-| [Opening Mail][mail]      | `adapts`   | Tools can make unpleasant work easier and more reliable.    |
-| [Tidy First][tidy]        | `supports` | Structural preparation can make behavior changes safer.     |
+| Source                          | Use        | Note                                                     |
+| ------------------------------- | ---------- | -------------------------------------------------------- |
+| [Opening Mail][mail]            | `adapts`   | Tools can make unpleasant work easier and more reliable. |
+| [Tidy First, Ch. 21][tidy-ch21] | `supports` | Prepare first when the current change benefits directly. |
 
 [mail]: https://frantic.im/opening-mail/
-[tidy]: https://books.google.com/books/about/Tidy_First.html?id=-WndEAAAQBAJ
+[tidy-ch21]: https://www.oreilly.com/library/view/tidy-first/9781098151232/ch21.html

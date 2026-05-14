@@ -1,8 +1,8 @@
 # Software Change Preferences
 
 This guide collects broad preferences for shaping software changes. Use it when choosing the size,
-structure, tests, and handoff for a change. More specific Rust, documentation, and jj guidance can
-add detail later without duplicating these defaults.
+structure, tests, and handoff for a change. More specific Rust, code-shape, documentation, and jj
+guidance can add detail later without duplicating these defaults.
 
 ## Core Preference
 
@@ -27,6 +27,8 @@ should not mix unrelated decisions.
 Use [Small Reviewable Chunks][small-chunks] when a change could grow into multiple review concerns.
 When structure and behavior can be separated cleanly, land the structure change first and verify it
 before changing behavior.
+Use [Code Shape][code-shape] when the main decision is how to reduce live context, limit change
+radius, preserve reversibility, or clarify cohesion and coupling.
 
 ## Local Context
 
@@ -76,6 +78,7 @@ the repo has already adopted that spec.
 - Does the handoff say what actually ran?
 
 [commit-history]: ../patterns/commit-messages-for-history.md
+[code-shape]: code-shape.md
 [discovery-editing]: ../patterns/separate-discovery-from-editing.md
 [honest-verification]: ../patterns/report-verification-honestly.md
 [local-conventions]: ../patterns/follow-local-conventions.md

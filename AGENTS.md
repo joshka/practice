@@ -46,6 +46,10 @@ upstream text.
 Coding-agent workflow guidance lives in `guides/coding-agents.md`. Use that guide as the canonical
 map for agent delegation, context, tooling, workspace, review, and feedback-loop preferences.
 
+Code-shape guidance lives in `guides/code-shape.md`. Use that guide as the canonical map for
+reader-locality, live context, structure/behavior separation, reversible structure, cohesion,
+coupling, and local expression-shape preferences.
+
 Jujutsu workflow guidance lives in `guides/jj-workflow.md`. Use that guide as the canonical source
 for local jj change shape, descriptions, bookmarks, publication, and recovery.
 
