@@ -64,6 +64,7 @@ durable content that is ready for review.
 
 Start with the broad software-change guide at `guides/software-change-preferences.md`.
 Rust-specific guidance begins at `guides/rust-maintainability.md`.
+Markdown and documentation guidance begins at `guides/markdown-documentation.md`.
 
 ## Delivery Approach
 
