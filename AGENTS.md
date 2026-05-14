@@ -43,6 +43,9 @@ reviewed and accepted that pattern. Source links justify, frame, or contrast the
 not supply copy. Write patterns in this repo's own voice and do not copy or closely paraphrase
 upstream text.
 
+Coding-agent workflow guidance lives in `guides/coding-agents.md`. Use that guide as the canonical
+map for agent delegation, context, tooling, workspace, review, and feedback-loop preferences.
+
 ## Version Control
 
 Use jujutsu (`jj`) for local version-control workflow.
