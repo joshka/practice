@@ -58,6 +58,10 @@ Observability and failure guidance lives in `guides/observability-and-failure.md
 as the canonical map for structured errors, failure visibility, logging ownership, diagnostic
 context, and privacy-safe telemetry.
 
+Documentation workflow guidance lives in `guides/documentation-workflow.md`. Use that guide as the
+canonical map for documentation pass depth, evidence, voice, PR narrative, repo doc maps, and drift
+remediation.
+
 Jujutsu workflow guidance lives in `guides/jj-workflow.md`. Use that guide as the canonical source
 for local jj change shape, descriptions, bookmarks, publication, and recovery.
 

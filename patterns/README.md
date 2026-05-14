@@ -12,8 +12,10 @@ Use `templates/pattern.md` for new entries.
 | `avoid-boolean-flag-parameters`                | Avoid Boolean Flag Parameters                | reviewed |
 | `avoid-secret-or-private-log-context`          | Avoid Secret Or Private Log Context          | reviewed |
 | `ask-what-were-you-trying-to-achieve`          | Ask What Were You Trying To Achieve          | reviewed |
+| `bootstrap-repo-docs`                          | Bootstrap Repo Docs                          | reviewed |
 | `budget-tokens-for-feedback-loops`             | Budget Tokens For Feedback Loops             | reviewed |
 | `cap-change-radius`                            | Cap Change Radius                            | reviewed |
+| `choose-doc-pass-depth`                        | Choose Doc Pass Depth                        | reviewed |
 | `choose-doc-type`                              | Choose Doc Type                              | reviewed |
 | `choose-good-enough-tools`                     | Choose Good Enough Tools                     | reviewed |
 | `close-the-agent-loop`                         | Close The Agent Loop                         | reviewed |
@@ -42,6 +44,7 @@ Use `templates/pattern.md` for new entries.
 | `keep-public-dependencies-intentional`         | Keep Public Dependencies Intentional         | reviewed |
 | `keep-secrets-out-of-context`                  | Keep Secrets Out Of Context                  | reviewed |
 | `keep-structure-reversible`                    | Keep Structure Reversible                    | reviewed |
+| `label-doc-claims-by-evidence`                 | Label Doc Claims By Evidence                 | reviewed |
 | `limit-live-context`                           | Limit Live Context                           | reviewed |
 | `log-at-owned-boundaries`                      | Log At Owned Boundaries                      | reviewed |
 | `make-bad-output-mechanically-hard`            | Make Bad Output Mechanically Hard            | reviewed |
@@ -68,12 +71,14 @@ Use `templates/pattern.md` for new entries.
 | `preserve-agent-context-coherence`             | Preserve Agent Context Coherence             | reviewed |
 | `preserve-error-context`                       | Preserve Error Context                       | reviewed |
 | `preserve-intent-over-literalism`              | Preserve Intent Over Literalism              | reviewed |
+| `preserve-local-doc-voice`                     | Preserve Local Doc Voice                     | reviewed |
 | `preserve-unowned-work`                        | Preserve Unowned Work                        | reviewed |
 | `produce-review-packets`                       | Produce Review Packets                       | reviewed |
 | `prove-security-impact`                        | Prove Security Impact                        | reviewed |
 | `reader-locality`                              | Reader Locality                              | reviewed |
 | `record-agent-operating-lessons`               | Record Agent Operating Lessons               | reviewed |
 | `report-verification-honestly`                 | Report Verification Honestly                 | reviewed |
+| `remediate-doc-drift`                          | Remediate Doc Drift                          | reviewed |
 | `return-structured-errors`                     | Return Structured Errors                     | reviewed |
 | `review-proof-not-just-code`                   | Review Proof Not Just Code                   | reviewed |
 | `separate-discovery-from-editing`              | Separate Discovery From Editing              | reviewed |
@@ -95,3 +100,4 @@ Use `templates/pattern.md` for new entries.
 | `verify-with-canaries-before-cutover`          | Verify With Canaries Before Cutover          | reviewed |
 | `write-actionable-error-messages`              | Write Actionable Error Messages              | reviewed |
 | `write-docs-as-contracts`                      | Write Docs As Contracts                      | reviewed |
+| `write-pr-narrative`                           | Write PR Narrative                           | reviewed |

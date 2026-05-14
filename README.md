@@ -68,6 +68,7 @@ Code-shape guidance begins at `guides/code-shape.md`.
 Boundary-correctness guidance begins at `guides/boundary-correctness.md`.
 Observability and failure guidance begins at `guides/observability-and-failure.md`.
 Markdown and documentation guidance begins at `guides/markdown-documentation.md`.
+Documentation workflow guidance begins at `guides/documentation-workflow.md`.
 Coding-agent workflow guidance begins at `guides/coding-agents.md`.
 Jujutsu workflow guidance begins at `guides/jj-workflow.md`.
 

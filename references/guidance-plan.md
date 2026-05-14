@@ -22,7 +22,7 @@ review moves. Snippets later provide compact agent-facing excerpts.
 | `guides/boundary-correctness.md`        | Trust boundaries, validation, state, side effects, async.    | reviewed |
 | `guides/observability-and-failure.md`   | Failure visibility, logs, metrics, tracing, privacy.         | reviewed |
 | `guides/markdown-documentation.md`      | Markdown style, docs as contracts, Rustdoc, examples.        | reviewed |
-| `guides/documentation-workflow.md`      | Choosing depth, evidence, voice, PR docs, drift remediation. | planned  |
+| `guides/documentation-workflow.md`      | Choosing depth, evidence, voice, PR docs, drift remediation. | reviewed |
 | `guides/coding-agents.md`               | Agent objectives, context, tooling, workspaces, review.      | reviewed |
 | `guides/jj-workflow.md`                 | jj changes, descriptions, bookmarks, remotes, recovery.      | reviewed |
 
