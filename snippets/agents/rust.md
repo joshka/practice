@@ -30,6 +30,9 @@ traits and heavily used items whose meaning remains obvious.
 
 When changing public or reusable APIs, update nearby Rustdoc and examples in the same review unit.
 Document errors, panics, safety, side effects, and compatibility when callers need that contract.
+Prefer additive APIs, deprecations, and migration paths over public renames or replacements unless
+the downstream break is justified and validated. Before landing a breaking public API change, look
+for external users and report likely migration impact.
 Document lifecycle, ownership, feature flags, platform assumptions, and cleanup behavior for APIs
 that touch runtime, terminal, filesystem, network, global, background-task, or UI state.
 Public errors should implement `Debug`, `Display`, and `std::error::Error` when they cross a public
@@ -46,6 +49,8 @@ Keep backend-specific adapters at the edge. Prefer backend-agnostic core types w
 adapters when event backends, terminals, networks, or runtimes vary.
 Avoid global mutable state. Make filesystem, network, time, randomness, process, and other host
 interactions injectable when tests or alternate environments need control.
+If global mutable state is unavoidable, make the owner, lifecycle, reset policy, and concurrency
+model explicit.
 Model integrations as the real upstream surface they expose. Do not fake broad support. Reject
 unsupported shapes early with clear errors, and document integration or protocol limits near the
 adapter, tests, and public docs.
@@ -63,6 +68,10 @@ external, or user-visible side effects should be gated by policy, configuration,
 For UI, parser, protocol, formatter, template, or state-machine changes, choose validation evidence
 that matches the claim: doctests, snapshots, byte-level assertions, generated reference projects,
 manual demos, screenshots, or focused integration tests.
+Prefer tests that fail with useful diagnostic output. Compare actual values, structs, variants, or
+snapshots instead of opaque booleans when there are multiple possible failure causes.
+Do not optimize for performance until the changed code is shown to matter in the relevant workload.
+Performance changes need a goal, baseline measurement, changed result, and tradeoff report.
 
 For terminal UI, use stable dimensions and saturating arithmetic. Handle empty content and very
 small viewports.
@@ -85,4 +94,9 @@ Canonical guides:
 - `guides/code-shape.md`
 - `guides/boundary-correctness.md`
 - `guides/observability-and-failure.md`
+- `principles/public-api-changes-have-downstream-cost.md`
+- `principles/avoid-global-mutable-state.md`
+- `principles/tests-should-explain-failures.md`
+- `principles/measure-before-optimizing.md`
+- `mechanisms/rust-tooling-profile.md`
 ```

@@ -25,6 +25,8 @@ low-signal, merge sections, cut repetition, restore prose continuity, and add co
 
 When changing behavior, search nearby docs, examples, Rustdoc, and agent instructions for drift.
 Update them in the same review unit or report explicit follow-up.
+Treat English descriptions near code as contracts that code, tests, examples, and agents implement
+against. If docs and code disagree, identify which side is intended behavior and repair the other.
 
 Use Markdown that passes `markdownlint-cli2`: prose around 100 columns, blank lines around headings,
 lists, and code blocks, fenced code blocks with languages, `1.` numbered lists, and aligned tables.
@@ -33,4 +35,5 @@ Canonical guides:
 
 - `guides/markdown-documentation.md`
 - `guides/documentation-workflow.md`
+- `principles/docs-are-contracts.md`
 ```

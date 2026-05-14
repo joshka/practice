@@ -26,6 +26,10 @@ again.
 
 For GitHub handoff, inspect jj bookmark and remote state first, publish only the intended bookmark,
 then pass explicit `gh --repo`, `--head`, and `--base` values when inference is risky.
+Before publishing or repairing remote state, identify whether the repo is owned, maintainer-access,
+or fork-based contributor work. Align fetch remote, push remote, tracked bookmark, PR base/head, and
+`trunk()` with that role. Ask before changing repo or user jj aliases unless the user explicitly
+requested the repair and the target is unambiguous.
 
 Do not run destructive commands, rewrite unrelated work, or publish without explicit approval.
 Recover through `jj undo`, `jj op log`, `jj op restore`, or `jj evolog` instead of Git reset or
@@ -34,4 +38,5 @@ stash habits.
 Canonical guide:
 
 - `guides/jj-workflow.md`
+- `principles/jj-topology-is-repo-role-dependent.md`
 ```

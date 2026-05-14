@@ -9,8 +9,9 @@ apply these rules at scale; it should serve the development principles rather th
 the organizing idea.
 
 The repo is becoming a practical pattern language that can be referenced in review, agent
-instructions, and conversations with collaborators. Guides explain the map. Patterns carry reusable
-review moves. Snippets provide compact agent-facing excerpts.
+instructions, and conversations with collaborators. Guides explain the map. Rules provide compact
+instructions. Principles justify durable beliefs. Patterns carry reusable review moves. Mechanisms
+capture tooling support. Snippets provide compact agent-facing excerpts.
 
 ## Guide Set
 
@@ -25,6 +26,33 @@ review moves. Snippets provide compact agent-facing excerpts.
 | `guides/documentation-workflow.md`      | Choosing depth, evidence, voice, PR docs, drift remediation. | reviewed |
 | `guides/coding-agents.md`               | Agent objectives, context, tooling, workspaces, review.      | reviewed |
 | `guides/jj-workflow.md`                 | jj changes, descriptions, bookmarks, remotes, recovery.      | reviewed |
+
+## Rule Set
+
+Rules are grouped by the principle or judgment area that best explains why the rule exists. Public
+rule IDs use uppercase, dash-separated names such as `DOCS-TREAT-DOCS-AS-CONTRACTS`. Legacy `R-*`
+IDs are retained only as migration aliases in `rules/README.md`.
+
+Expected owner: `rules/README.md`.
+
+## Principle Set
+
+Principles are deeper reasoning notes for accepted rules that need durable justification. They are
+not all patterns. A principle can explain why a rule is worth having, what tradeoff it accepts, and
+where the rule stops applying.
+
+Reviewed principles:
+
+- `avoid-global-mutable-state`
+- `docs-are-contracts`
+- `explicit-boundaries-preserve-correctness`
+- `jj-topology-is-repo-role-dependent`
+- `measure-before-optimizing`
+- `private-context-is-not-shared-context`
+- `public-api-changes-have-downstream-cost`
+- `tests-should-explain-failures`
+
+Expected owner: `principles/README.md`.
 
 ## Pattern Families
 
@@ -117,11 +145,23 @@ Accepted snippets:
 - `snippets/agents/coding-agents.md`
 - `snippets/agents/jj.md`
 
+## Mechanism Set
+
+Mechanisms are lints, formatter settings, cargo commands, CI checks, jj defaults, local agent
+configuration, templates, and generated artifacts that make preferred behavior easier.
+
+Reviewed mechanisms:
+
+- `mechanisms/rust-tooling-profile.md`
+
 ## Remaining Work
 
 The first reviewed guide, pattern, and snippet set is in place. Useful next work includes:
 
 - Add an external references ledger if source tracking becomes too scattered across pattern files.
+- Distill reviewed principles into shorter agent and maintainer profiles.
+- Split additional tooling profiles out of the Rust tooling profile when repeated use proves a
+  narrower profile is useful.
 - Extract more examples from real review comments when a pattern needs sharper recognition.
 - Add project-specific snippet variants only after copy/paste use exposes repeated adaptation work.
 
@@ -136,6 +176,8 @@ The first reviewed guide, pattern, and snippet set is in place. Useful next work
 1. Add the Documentation And Explanation pattern batch.
 1. Add `guides/documentation-workflow.md`.
 1. Add compact agent snippets.
+1. Add the first principle expansion layer.
+1. Add the first mechanism profile.
 
 ## Acceptance Bar
 
@@ -149,6 +191,22 @@ Each new pattern should have:
 - compact agent instruction;
 - example only when the problem is obvious from the snippet;
 - durable references where they help support, adapt, or contrast the guidance.
+
+Each new principle should:
+
+- state the claim directly;
+- explain why the belief exists;
+- name good uses, bad smells, mechanisms, and limits where relevant;
+- link the rules it supports;
+- include agent consequences;
+- use references only where they help support or contrast the principle.
+
+Each new mechanism should:
+
+- name the rules or principles it supports;
+- include concrete command or configuration shapes where stable;
+- explain what the mechanism catches and what it cannot catch;
+- avoid heavy checks in the normal edit loop unless their cost is justified.
 
 Each new guide should:
 

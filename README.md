@@ -29,7 +29,20 @@ A guidance unit should usually include:
 
 Guides should assemble and contextualize these units instead of duplicating them. If a guide needs a
 rule that is useful across topics, promote that rule into a named guidance file and link to it.
-Start new reusable guidance units from `templates/pattern.md`.
+
+Use these durable layers:
+
+- [Rules](rules/README.md): compact instructions grouped by the principle or judgment area that
+  explains them.
+- [Principles](principles/README.md): reasoning notes for broad beliefs that justify several rules.
+- [Patterns](patterns/README.md): repeatable situation-and-move guidance.
+- [Mechanisms](mechanisms/README.md): lints, checks, commands, and configuration that support
+  rules mechanically.
+- [Agent snippets](snippets/agents/README.md): compact profile-style guidance for `AGENTS.md`
+  files.
+
+Start new repeatable moves from `templates/pattern.md`. Use the existing principle and mechanism
+files as models for deeper reasoning notes and tooling profiles.
 
 ## How To Use This Repo
 
@@ -53,10 +66,13 @@ Start with the guide that matches the decision you are making:
 - [Jj Workflow](guides/jj-workflow.md): local jujutsu change shape, descriptions, bookmarks,
   remotes, and recovery.
 
-Use [patterns](patterns/README.md) when you need a stable review term or a compact rule to cite.
-Use [agent snippets](snippets/agents/README.md) when you need copyable `AGENTS.md` sections for
-another repo. Use [the guidance plan](references/guidance-plan.md) to see how the current guide set
-is organized and where future work belongs.
+Use [rules](rules/README.md) when you need the compact instruction. Use
+[principles](principles/README.md) when you need the reasoning behind a rule. Use
+[patterns](patterns/README.md) when you need a stable review term or a compact rule to cite. Use
+[mechanisms](mechanisms/README.md) when you need the lint, command, CI, or configuration support
+behind a rule. Use [agent snippets](snippets/agents/README.md) when you need copyable
+`AGENTS.md` sections for another repo. Use [the guidance plan](references/guidance-plan.md) to see
+how the current guide set is organized and where future work belongs.
 
 ## Repository Shape
 
@@ -75,9 +91,17 @@ guides/
   documentation-workflow.md
   jj-workflow.md
   coding-agents.md
+rules/
+  README.md
+principles/
+  README.md
+  <stable-principle-id>.md
 patterns/
   README.md
   <stable-guidance-id>.md
+mechanisms/
+  README.md
+  <stable-mechanism-id>.md
 snippets/
   agents/
     <copyable-agent-section>.md

@@ -1,0 +1,707 @@
+# Rules
+
+Rules are the compact, agent-usable instructions supported by the guides, principles,
+patterns, and mechanisms in this repo. They are grouped by the principle or judgment area
+that best explains why the rule exists.
+
+Each rule has a stable named ID. The `legacy-id` points back to the reviewed intake rule that
+seeded it. Prefer the named ID in durable docs and use the legacy ID only when auditing older
+review notes or migration artifacts.
+
+## Naming
+
+Use uppercase, dash-separated IDs:
+
+```text
+DOCS-TREAT-DOCS-AS-CONTRACTS
+RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL
+VCS-JJ-USE-JJ-AS-SOURCE-OF-TRUTH
+TEST-OPTIMIZE-TESTS-FOR-USEFUL-FAILURE-OUTPUT
+OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS
+```
+
+Do not abbreviate broad family names in public rule IDs. Use `OBSERVABILITY`, not `OBS`.
+
+## Rule Groups
+
+### Change Shape
+
+- `CHANGE-USE-ONE-PURPOSE-PER-CHANGE`
+  - legacy-id: `R-0001`
+  - title: Use one purpose per change.
+- `CHANGE-KEEP-STRUCTURE-CHANGES-SEPARATE-FROM-BEHAVIOR-CHANGES-WHEN-THE-COMBINED-DIFF-OBSCURES-REVIEW`
+  - legacy-id: `R-0002`
+  - title: Keep structure changes separate from behavior changes when the combined diff obscures review.
+- `CHANGE-PREFER-SMALL-FOLLOW-UP-CHANGES-OVER-OVERLOADED-CHANGES`
+  - legacy-id: `R-0003`
+  - title: Prefer small follow-up changes over overloaded changes.
+- `CHANGE-DO-NOT-INCLUDE-DEPENDENCY-CHURN-UNLESS-IT-IS-NECESSARY-FOR-THE-TASK`
+  - legacy-id: `R-0004`
+  - title: Do not include dependency churn unless it is necessary for the task.
+- `CHANGE-KEEP-GENERATED-ARTIFACTS-IN-SYNC-WHEN-THEY-ARE-PART-OF-THE-REVIEW-SURFACE`
+  - legacy-id: `R-0005`
+  - title: Keep generated artifacts in sync when they are part of the review surface.
+- `CHANGE-IDENTIFY-THE-OWNING-MODULE-BEFORE-EDITING`
+  - legacy-id: `R-0006`
+  - title: Identify the owning module before editing.
+- `CHANGE-PRESERVE-UNOWNED-WORK`
+  - legacy-id: `R-0007`
+  - title: Preserve unowned work.
+- `CHANGE-KEEP-EACH-CHANGE-MINIMAL-BUT-COMPLETE`
+  - legacy-id: `R-0008`
+  - title: Keep each change minimal but complete.
+- `CHANGE-TREAT-AND-IN-A-CHANGE-DESCRIPTION-AS-A-SCOPE-WARNING`
+  - legacy-id: `R-0009`
+  - title: Treat `and` in a change description as a scope warning.
+- `CHANGE-USE-EARLY-TEST-CHANGES-TO-PIN-EXISTING-BEHAVIOR-WHEN-THAT-MAKES-BEHAVIOR-CHANGES-EASIER-TO`
+  - legacy-id: `R-0010`
+  - title: Use early test changes to pin existing behavior when that makes behavior changes easier to.
+- `CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`
+  - legacy-id: `R-0011`
+  - title: Isolate controversial changes.
+
+### Local Reasoning And Refactoring
+
+- `REFACTORING-PREFER-LOCAL-REASONING-OVER-DISTANT-RECONSTRUCTION`
+  - legacy-id: `R-0100`
+  - title: Prefer local reasoning over distant reconstruction.
+- `REFACTORING-EXTRACT-HELPERS-ONLY-WHEN-THEY-REVEAL-A-REAL-CONCEPT-BOUNDARY`
+  - legacy-id: `R-0101`
+  - title: Extract helpers only when they reveal a real concept boundary.
+- `REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`
+  - legacy-id: `R-0102`
+  - title: Keep weak abstractions close to their use.
+- `REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION-NOT-HYPOTHETICAL-VARIATION`
+  - legacy-id: `R-0103`
+  - title: Align seams with real variation, not hypothetical variation.
+- `REFACTORING-DO-NOT-OVER-APPLY-DRY`
+  - legacy-id: `R-0104`
+  - title: Do not over-apply DRY.
+- `REFACTORING-USE-WHITESPACE-AS-FUNCTION-PARAGRAPHS`
+  - legacy-id: `R-0105`
+  - title: Use whitespace as function paragraphs.
+- `REFACTORING-PREFER-LOOPS-OVER-COMBINATORS-FOR-BUSINESS-LOGIC-SIDE-EFFECTS`
+  - legacy-id: `R-0106`
+  - title: Prefer loops over combinators for business-logic side effects.
+- `REFACTORING-KEEP-THE-WHOLE-STORY-VISIBLE-WHEN-WORK-IS-LINEAR`
+  - legacy-id: `R-0107`
+  - title: Keep the whole story visible when work is linear.
+
+### Rust API And Crate Shape
+
+- `RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
+  - legacy-id: `R-0200`
+  - title: Keep public API shape intentional.
+- `RUST-AVOID-LEAKING-DEPENDENCY-TYPES-IN-PUBLIC-APIS-UNLESS-INTEGRATION-IS-THE-POINT`
+  - legacy-id: `R-0201`
+  - title: Avoid leaking dependency types in public APIs unless integration is the point.
+- `RUST-PUBLIC-ERRORS-SHOULD-IMPLEMENT-DEBUG-DISPLAY-AND-STD-ERROR-ERROR-WHEN-REUSABLE`
+  - legacy-id: `R-0202`
+  - title: Public errors should implement `Debug`, `Display`, and `std::error::Error` when reusable.
+- `RUST-PUBLIC-PANICS-SHOULD-BE-CONTRACT-VIOLATIONS-WITH-DOCUMENTED-PRECONDITIONS`
+  - legacy-id: `R-0203`
+  - title: Public panics should be contract violations with documented preconditions.
+- `RUST-PREFER-STANDARD-LIBRARY-TYPES-THAT-CARRY-MEANING`
+  - legacy-id: `R-0204`
+  - title: Prefer standard library types that carry meaning.
+- `RUST-USE-BUILDERS-FOR-MANY-OPTIONAL-FIELDS-OR-CROSS-FIELD-VALIDATION`
+  - legacy-id: `R-0205`
+  - title: Use builders for many optional fields or cross-field validation.
+- `RUST-AVOID-WRAPPER-TYPES-THAT-ADD-NO-INVARIANT-BEHAVIOR-OR-OWNERSHIP-CLARITY`
+  - legacy-id: `R-0206`
+  - title: Avoid wrapper types that add no invariant, behavior, or ownership clarity.
+- `RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`
+  - legacy-id: `R-0207`
+  - title: Prefer concept-owned modules and named files.
+- `RUST-USE-RE-EXPORTS-FOR-DISCOVERY-NOT-OWNERSHIP-HIDING`
+  - legacy-id: `R-0208`
+  - title: Use re-exports for discovery, not ownership hiding.
+- `RUST-KEEP-UNSAFE-SMALL-WRAPPED-DOCUMENTED-AND-TESTED-THROUGH-THE-SAFE-API`
+  - legacy-id: `R-0209`
+  - title: Keep unsafe small, wrapped, documented, and tested through the safe API.
+- `RUST-PREFER-EXPECT-OVER-ALLOW-WHEN-SUPPRESSION-SHOULD-BE-REVISITED`
+  - legacy-id: `R-0210`
+  - title: Prefer `#[expect]` over `#[allow]` when suppression should be revisited.
+- `RUST-WORKING-RUST-CODE-IS-NOT-ENOUGH`
+  - legacy-id: `R-0211`
+  - title: Working Rust code is not enough.
+- `RUST-PREFER-BORING-DIRECT-RUST-OVER-CLEVER-FRAMEWORK-SHAPED-CODE`
+  - legacy-id: `R-0212`
+  - title: Prefer boring direct Rust over clever framework-shaped code.
+- `RUST-PREFER-SMALL-FUNCTIONS-NARROW-STRUCTS-AND-SIMPLE-ENUMS`
+  - legacy-id: `R-0213`
+  - title: Prefer small functions, narrow structs, and simple enums.
+- `RUST-USE-NAMED-LOCALS-WHEN-PARSING-RENDERING-OR-SIDE-EFFECTS-NEED-AUDITABILITY`
+  - legacy-id: `R-0214`
+  - title: Use named locals when parsing, rendering, or side effects need auditability.
+- `RUST-AVOID-BROAD-CONTEXT-OBJECTS-AND-CALLBACK-HEAVY-CONTROL-FLOW`
+  - legacy-id: `R-0215`
+  - title: Avoid broad context objects and callback-heavy control flow.
+- `RUST-USE-NON-EXHAUSTIVE-FOR-PUBLIC-ERROR-ENUMS-UNLESS-EXHAUSTIVE-MATCHING-IS-INTENTIONAL`
+  - legacy-id: `R-0216`
+  - title: Use `#[non_exhaustive]` for public error enums unless exhaustive matching is intentional.
+- `RUST-PUBLIC-TYPES-SHOULD-IMPLEMENT-DEBUG-UNLESS-THAT-IS-UNSAFE-OR-MISLEADING`
+  - legacy-id: `R-0217`
+  - title: Public types should implement `Debug` unless that is unsafe or misleading.
+- `RUST-ERROR-DISPLAY-SHOULD-BE-HUMAN-ORIENTED-AND-ACTIONABLE`
+  - legacy-id: `R-0218`
+  - title: Error `Display` should be human-oriented and actionable.
+- `RUST-PREFER-INHERENT-CONSTRUCTORS-OR-TRAIT-IMPLEMENTATIONS-FOR-CONSTRUCTION`
+  - legacy-id: `R-0219`
+  - title: Prefer inherent constructors or trait implementations for construction.
+- `RUST-PREFER-REGULAR-FUNCTIONS-OVER-ASSOCIATED-FUNCTIONS-WHEN-THE-TYPE-NAME-IS-INCIDENTAL`
+  - legacy-id: `R-0220`
+  - title: Prefer regular functions over associated functions when the type name is incidental.
+- `RUST-THE-CRATE-ROOT-SHOULD-TEACH-THE-CRATE`
+  - legacy-id: `R-0221`
+  - title: The crate root should teach the crate.
+- `RUST-AVOID-GIANT-CRATE-ROOTS`
+  - legacy-id: `R-0222`
+  - title: Avoid giant crate roots.
+- `RUST-DIRECTORY-ROOT-MODULES-SHOULD-USUALLY-ACT-AS-TABLES-OF-CONTENTS`
+  - legacy-id: `R-0223`
+  - title: Directory-root modules should usually act as tables of contents.
+- `RUST-AVOID-INLINE-MODULES-EXCEPT-FOR-TESTS-PRELUDES-AND-GENERATED-CODE`
+  - legacy-id: `R-0224`
+  - title: Avoid inline modules except for tests, preludes, and generated code.
+- `RUST-DO-NOT-DEFAULT-TO-PUB-CRATE`
+  - legacy-id: `R-0225`
+  - title: Do not default to `pub(crate)`.
+- `RUST-PUT-THE-CENTRAL-ITEM-FIRST-AND-KEEP-INHERENT-IMPLS-NEAR-THE-TYPE`
+  - legacy-id: `R-0226`
+  - title: Put the central item first and keep inherent impls near the type.
+- `RUST-PREFER-GROUPED-MODULE-IMPORTS-OVER-ONE-IMPORT-PER-LINE-STYLE`
+  - legacy-id: `R-0227`
+  - title: Prefer grouped module imports over one-import-per-line style.
+- `RUST-GROUP-PRIVATE-IMPORTS-BEFORE-PUBLIC-RE-EXPORTS`
+  - legacy-id: `R-0228`
+  - title: Group private imports before public re-exports.
+- `RUST-PREFER-SEND-STATIC-ERRORS-FUTURES-AND-SERVICE-HANDLES-ACROSS-TASKS-OR-THREADS`
+  - legacy-id: `R-0229`
+  - title: Prefer `Send + 'static` errors, futures, and service handles across tasks or threads.
+- `RUST-USE-GENERICS-STORED-GENERIC-PARAMETERS-AND-TRAIT-OBJECTS-DELIBERATELY`
+  - legacy-id: `R-0230`
+  - title: Use generics, stored generic parameters, and trait objects deliberately.
+- `RUST-KEEP-TEST-ONLY-HELPERS-OUT-OF-THE-NORMAL-PUBLIC-API`
+  - legacy-id: `R-0231`
+  - title: Keep test-only helpers out of the normal public API.
+- `RUST-MAKE-FEATURE-FLAGS-ADDITIVE-WHERE-POSSIBLE`
+  - legacy-id: `R-0232`
+  - title: Make feature flags additive where possible.
+- `RUST-KEEP-OPTIONAL-DEPENDENCIES-TIED-TO-CLEARLY-NAMED-FEATURES`
+  - legacy-id: `R-0233`
+  - title: Keep optional dependencies tied to clearly named features.
+- `RUST-USE-LINT-CONFIGURATION-ONLY-FOR-DURABLE-PROJECT-RULES`
+  - legacy-id: `R-0234`
+  - title: Use lint configuration only for durable project rules.
+- `RUST-DENY-ACCIDENTAL-UNSAFE-CODE-WHEN-THE-CRATE-DOES-NOT-NEED-UNSAFE`
+  - legacy-id: `R-0235`
+  - title: Deny accidental unsafe code when the crate does not need unsafe.
+- `RUST-CONFIGURE-DOCS-RS-METADATA-INTENTIONALLY`
+  - legacy-id: `R-0236`
+  - title: Configure docs.rs metadata intentionally.
+- `RUST-VALIDATE-PACKAGE-CONTENTS-BEFORE-RELEASE`
+  - legacy-id: `R-0237`
+  - title: Validate package contents before release.
+- `RUST-KEEP-VERSION-CHANGELOG-METADATA-DOCS-AND-SUPPORT-CLAIMS-ALIGNED`
+  - legacy-id: `R-0238`
+  - title: Keep version, changelog, metadata, docs, and support claims aligned.
+- `RUST-DOCUMENT-BLOCKING-BEHAVIOR-ALLOCATION-EXPECTATIONS-AND-PERFORMANCE-CONSTRAINTS`
+  - legacy-id: `R-0239`
+  - title: Document blocking behavior, allocation expectations, and performance constraints.
+- `RUST-ASYNC-CODE-THAT-CAN-RUN-FOR-A-LONG-TIME-SHOULD-MAKE-SCHEDULING-EXPECTATIONS-CLEAR`
+  - legacy-id: `R-0240`
+  - title: Async code that can run for a long time should make scheduling expectations clear.
+- `RUST-CONSIDER-DOWNSTREAM-IMPACT-BEFORE-CHANGING-PUBLIC-API`
+  - legacy-id: `R-0241`
+  - title: Consider downstream impact before changing public API.
+- `RUST-VALIDATE-SEMVER-BREAKING-CHANGES-AGAINST-REAL-EXTERNAL-USE`
+  - legacy-id: `R-0242`
+  - title: Validate semver-breaking changes against real external use.
+- `RUST-USE-THE-LOWEST-HONEST-COMPATIBLE-DEPENDENCY-REQUIREMENT`
+  - legacy-id: `R-0243`
+  - title: Use the lowest honest compatible dependency requirement.
+- `RUST-DO-NOT-PIN-PATCH-VERSIONS-IN-CARGO-TOML-UNLESS-THE-PATCH-IS-REQUIRED`
+  - legacy-id: `R-0244`
+  - title: Do not pin patch versions in `Cargo.toml` unless the patch is required.
+- `RUST-KEEP-COMPATIBLE-DEPENDENCY-UPDATES-IN-THE-LOCKFILE-NOT-THE-MANIFEST`
+  - legacy-id: `R-0245`
+  - title: Keep compatible dependency updates in the lockfile, not the manifest.
+
+### Explicit Boundaries Preserve Correctness
+
+- `BOUNDARY-PUSH-UNCERTAINTY-TO-THE-BOUNDARY-THEN-PASS-TRUSTED-VALUES-INWARD`
+  - legacy-id: `R-0300`
+  - title: Push uncertainty to the boundary, then pass trusted values inward.
+- `BOUNDARY-MODEL-EACH-INTEGRATION-AS-THE-REAL-UPSTREAM-SURFACE-IT-EXPOSES`
+  - legacy-id: `R-0301`
+  - title: Model each integration as the real upstream surface it exposes.
+- `BOUNDARY-REJECT-UNSUPPORTED-SHAPES-EARLY-WITH-CLEAR-ERRORS`
+  - legacy-id: `R-0302`
+  - title: Reject unsupported shapes early with clear errors.
+- `BOUNDARY-KEEP-UNKNOWN-UNSUPPORTED-DENIED-AND-PRESERVED-INPUTS-DISTINCT`
+  - legacy-id: `R-0303`
+  - title: Keep unknown, unsupported, denied, and preserved inputs distinct.
+- `BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`
+  - legacy-id: `R-0304`
+  - title: Make ambient inputs explicit.
+- `BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`
+  - legacy-id: `R-0305`
+  - title: Avoid global mutable state.
+- `BOUNDARY-TREAT-LIFECYCLE-TRANSITIONS-AS-NAMED-OPERATIONS`
+  - legacy-id: `R-0306`
+  - title: Treat lifecycle transitions as named operations.
+- `BOUNDARY-IDENTIFY-ANEMIC-STATE-MACHINES`
+  - legacy-id: `R-0307`
+  - title: Identify anemic state machines.
+- `BOUNDARY-KEEP-UI-STATE-SEPARATE-FROM-APPLICATION-OWNED-STATE`
+  - legacy-id: `R-0308`
+  - title: Keep UI state separate from application-owned state.
+- `BOUNDARY-STAGE-GENERATED-OR-RELOADABLE-BEHAVIOR-BEFORE-PROMOTION`
+  - legacy-id: `R-0309`
+  - title: Stage generated or reloadable behavior before promotion.
+- `BOUNDARY-TOOL-BOUNDARIES-NEED-TYPED-IDENTITY-POLICY-CANCELLATION-AND-OUTPUT-LIMITS`
+  - legacy-id: `R-0310`
+  - title: Tool boundaries need typed identity, policy, cancellation, and output limits.
+- `BOUNDARY-EXEC-LIKE-TOOLS-SHOULD-BE-NONINTERACTIVE-BY-DEFAULT`
+  - legacy-id: `R-0311`
+  - title: Exec-like tools should be noninteractive by default.
+- `BOUNDARY-CHOOSE-THE-RESOURCE-IDENTITY-MODEL-UP-FRONT`
+  - legacy-id: `R-0312`
+  - title: Choose the resource identity model up front.
+- `BOUNDARY-RECONCILE-EXTERNAL-STATE-BY-READING-NORMALIZING-COMPARING-AND-THEN-MUTATING`
+  - legacy-id: `R-0313`
+  - title: Reconcile external state by reading, normalizing, comparing, and then mutating.
+- `BOUNDARY-GROUND-INTEGRATION-BEHAVIOR-IN-PRIMARY-SOURCE-DOCUMENTATION`
+  - legacy-id: `R-0314`
+  - title: Ground integration behavior in primary source documentation.
+- `BOUNDARY-KEEP-BACKEND-ADAPTERS-AT-THE-EDGE`
+  - legacy-id: `R-0315`
+  - title: Keep backend adapters at the edge.
+- `BOUNDARY-SEPARATE-PURE-COMPUTATION-FROM-RENDERING-I-O-OR-MUTATION-WHEN-THAT-GIVES-TESTS-A-STABLE`
+  - legacy-id: `R-0316`
+  - title: Separate pure computation from rendering, I/O, or mutation when that gives tests a stable.
+- `BOUNDARY-REGISTRATIONS-FROM-EXTENSIONS-GUESTS-OR-GENERATED-CODE-NEED-PROVENANCE`
+  - legacy-id: `R-0317`
+  - title: Registrations from extensions, guests, or generated code need provenance.
+- `BOUNDARY-DYNAMIC-REGISTRATION-CONFLICTS-SHOULD-BE-DETERMINISTIC-AND-EXPLICIT`
+  - legacy-id: `R-0318`
+  - title: Dynamic registration conflicts should be deterministic and explicit.
+- `BOUNDARY-HOOKS-SHOULD-HAVE-FAILURE-POLICY`
+  - legacy-id: `R-0319`
+  - title: Hooks should have failure policy.
+- `BOUNDARY-RESOURCE-PROVIDERS-SHOULD-REPORT-FRESHNESS-PERMISSIONS-BUDGET-AND-LOAD-DIAGNOSTICS`
+  - legacy-id: `R-0320`
+  - title: Resource providers should report freshness, permissions, budget, and load diagnostics.
+- `BOUNDARY-PROVIDER-STREAMS-SHOULD-EXPOSE-PARTIAL-OUTPUT-WITHOUT-MAKING-IT-AUTHORITATIVE-TOO-EARLY`
+  - legacy-id: `R-0321`
+  - title: Provider streams should expose partial output without making it authoritative too early.
+- `BOUNDARY-COMPACTION-NEEDS-EXPLICIT-BUDGET-AND-CUT-POINT-INVARIANTS`
+  - legacy-id: `R-0322`
+  - title: Compaction needs explicit budget and cut-point invariants.
+- `BOUNDARY-TERMINAL-UI-IS-A-PRODUCT-SURFACE-WITH-PLATFORM-SPECIFIC-CONTRACTS`
+  - legacy-id: `R-0323`
+  - title: Terminal UI is a product surface with platform-specific contracts.
+- `BOUNDARY-USE-CONSERVATIVE-TERMINAL-DEFAULTS`
+  - legacy-id: `R-0324`
+  - title: Use conservative terminal defaults.
+
+### Tests Should Explain Failures
+
+- `TEST-OPTIMIZE-TESTS-FOR-USEFUL-FAILURE-OUTPUT`
+  - legacy-id: `R-0425`
+  - title: Optimize tests for useful failure output.
+- `TEST-AVOID-BOOLEAN-ASSERTIONS-FOR-VALUES-WITH-MULTIPLE-FAILURE-CAUSES`
+  - legacy-id: `R-0426`
+  - title: Avoid boolean assertions for values with multiple failure causes.
+- `TEST-KEEP-UNRELATED-ASSERTIONS-SEPARATE-WHEN-FAILURE-DIAGNOSIS-MATTERS`
+  - legacy-id: `R-0427`
+  - title: Keep unrelated assertions separate when failure diagnosis matters.
+
+### Measure Before Optimizing
+
+- `PERF-RUN-CORRECTNESS-BEFORE-PERFORMANCE-TIMING`
+  - legacy-id: `R-0402`
+  - title: Run correctness before performance timing.
+- `PERF-DO-NOT-DECIDE-PERFORMANCE-FROM-ONE-SHORT-BENCHMARK-RUN`
+  - legacy-id: `R-0403`
+  - title: Do not decide performance from one short benchmark run.
+- `PERF-RECORD-BENCHMARK-PROVENANCE`
+  - legacy-id: `R-0404`
+  - title: Record benchmark provenance.
+- `PERF-NEVER-RUN-TIMING-BENCHMARKS-IN-PARALLEL-WHEN-TIMING-DATA-MATTERS`
+  - legacy-id: `R-0405`
+  - title: Never run timing benchmarks in parallel when timing data matters.
+- `PERF-OPTIMIZE-MEASURED-HOTSPOTS-NOT-INTERESTING-CODE`
+  - legacy-id: `R-0428`
+  - title: Optimize measured hotspots, not interesting code.
+- `PERF-PERFORMANCE-CHANGES-NEED-GOAL-MEASUREMENT-CHANGE-AND-COMPARISON`
+  - legacy-id: `R-0429`
+  - title: Performance changes need goal, measurement, change, and comparison.
+- `PERF-PERFORMANCE-WINS-MUST-JUSTIFY-COMPLEXITY-CHURN-AND-DEPENDENCY-COST`
+  - legacy-id: `R-0430`
+  - title: Performance wins must justify complexity, churn, and dependency cost.
+
+### Testing And Verification
+
+- `TEST-TESTS-SHOULD-PROVE-CONTRACTS-NOT-IMPLEMENTATION-TRIVIA`
+  - legacy-id: `R-0400`
+  - title: Tests should prove contracts, not implementation trivia.
+- `TEST-CHOOSE-VALIDATION-BY-RISK`
+  - legacy-id: `R-0401`
+  - title: Choose validation by risk.
+- `TEST-MATCH-VALIDATION-EVIDENCE-TO-THE-CHANGED-SURFACE`
+  - legacy-id: `R-0406`
+  - title: Match validation evidence to the changed surface.
+- `TEST-UNIT-TESTS-SHOULD-COVER-LOCAL-LOGIC`
+  - legacy-id: `R-0407`
+  - title: Unit tests should cover local logic.
+- `TEST-INTEGRATION-TESTS-SHOULD-COVER-PUBLIC-BEHAVIOR-ACROSS-MODULE-BOUNDARIES`
+  - legacy-id: `R-0408`
+  - title: Integration tests should cover public behavior across module boundaries.
+- `TEST-DOCTESTS-SHOULD-COVER-PUBLIC-EXAMPLES-THAT-CAN-COMPILE-WITHOUT-FRAGILE-ASSUMPTIONS`
+  - legacy-id: `R-0409`
+  - title: Doctests should cover public examples that can compile without fragile assumptions.
+- `TEST-BUG-FIXES-SHOULD-INCLUDE-REGRESSION-TESTS-UNLESS-IMPRACTICAL`
+  - legacy-id: `R-0410`
+  - title: Bug fixes should include regression tests unless impractical.
+- `TEST-PREFER-DETERMINISTIC-TESTS-OVER-TIMING-OR-EXTERNAL-STATE-TESTS`
+  - legacy-id: `R-0411`
+  - title: Prefer deterministic tests over timing or external-state tests.
+- `TEST-PARSER-TESTS-SHOULD-USE-REALISTIC-SAMPLES-AND-SAFE-DEGRADATION-CASES`
+  - legacy-id: `R-0412`
+  - title: Parser tests should use realistic samples and safe degradation cases.
+- `TEST-NAVIGATION-AND-SCROLL-TESTS-SHOULD-COVER-BOUNDARIES`
+  - legacy-id: `R-0413`
+  - title: Navigation and scroll tests should cover boundaries.
+- `TEST-COMMAND-CONSTRUCTION-TESTS-SHOULD-PROVE-CONSTRUCTION-AND-DISPLAY-BEHAVIOR`
+  - legacy-id: `R-0414`
+  - title: Command construction tests should prove construction and display behavior.
+- `TEST-POLICY-TESTS-SHOULD-COVER-ALLOWED-DENIED-REDACTED-AND-FALLBACK-BEHAVIOR`
+  - legacy-id: `R-0415`
+  - title: Policy tests should cover allowed, denied, redacted, and fallback behavior.
+- `TEST-ASYNC-ROUTING-TESTS-SHOULD-COVER-UNRELATED-INPUT-LATE-REPLIES-TIMEOUTS-AND-UNMATCHED`
+  - legacy-id: `R-0416`
+  - title: Async routing tests should cover unrelated input, late replies, timeouts, and unmatched.
+- `TEST-DRIFT-TESTS-SHOULD-KEEP-SUPPORT-CLAIMS-FIXTURES-DOCS-EXAMPLES-AND-API-PATHS-ALIGNED`
+  - legacy-id: `R-0417`
+  - title: Drift tests should keep support claims, fixtures, docs, examples, and API paths aligned.
+- `TEST-USE-FUZZING-OR-PROPERTY-TESTS-FOR-PARSERS-FORMATTERS-DECODERS-STATE-MACHINES-AND`
+  - legacy-id: `R-0418`
+  - title: Use fuzzing or property tests for parsers, formatters, decoders, state machines, and.
+- `TEST-CI-SHOULD-CHECK-THE-SAME-COMMANDS-MAINTAINERS-ARE-EXPECTED-TO-RUN-LOCALLY`
+  - legacy-id: `R-0419`
+  - title: CI should check the same commands maintainers are expected to run locally.
+- `TEST-RUN-FORMATTING-AND-CLIPPY-EARLY-BECAUSE-THEY-FAIL-FAST`
+  - legacy-id: `R-0420`
+  - title: Run formatting and clippy early because they fail fast.
+- `TEST-RUN-DOCS-AS-A-FIRST-CLASS-VALIDATION-JOB`
+  - legacy-id: `R-0421`
+  - title: Run docs as a first-class validation job.
+- `TEST-TEST-ALL-FEATURES-AND-IMPORTANT-FEATURE-COMBINATIONS`
+  - legacy-id: `R-0422`
+  - title: Test all features and important feature combinations.
+- `TEST-RUN-MSRV-AND-PLATFORM-CHECKS-WHEN-THE-CRATE-DECLARES-THEM`
+  - legacy-id: `R-0423`
+  - title: Run MSRV and platform checks when the crate declares them.
+- `TEST-KEEP-SLOW-FUZZING-LONG-BENCHMARKS-AND-EXHAUSTIVE-COMPATIBILITY-CHECKS-OUT-OF-REQUIRED-PR-CI`
+  - legacy-id: `R-0424`
+  - title: Keep slow fuzzing, long benchmarks, and exhaustive compatibility checks out of
+    required PR CI.
+- `TEST-VALIDATE-DECLARED-MINIMUM-DEPENDENCY-VERSIONS`
+  - legacy-id: `R-0431`
+  - title: Validate declared minimum dependency versions.
+
+### Docs Are Contracts
+
+- `DOCS-TREAT-DOCS-AS-CONTRACTS`
+  - legacy-id: `R-0500`
+  - title: Treat docs as contracts.
+- `DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`
+  - legacy-id: `R-0501`
+  - title: State current behavior, not aspiration.
+- `DOCS-WRITE-TECHNICAL-DOCS-NOT-MARKETING-COACHING-OR-CHAT`
+  - legacy-id: `R-0502`
+  - title: Write technical docs, not marketing, coaching, or chat.
+- `DOCS-CHOOSE-THE-DOCUMENT-TYPE-BEFORE-EDITING`
+  - legacy-id: `R-0503`
+  - title: Choose the document type before editing.
+- `DOCS-KEEP-README-FILES-AS-ENTRY-POINTS`
+  - legacy-id: `R-0504`
+  - title: Keep README files as entry points.
+- `DOCS-EXAMPLES-SHOULD-PROVE-REAL-USE`
+  - legacy-id: `R-0505`
+  - title: Examples should prove real use.
+- `DOCS-PATTERN-STYLE-GUIDANCE-SHOULD-EXPOSE-SYMPTOM-MOVE-RISK-EXAMPLE-AND-AGENT-INSTRUCTION`
+  - legacy-id: `R-0506`
+  - title: Pattern-style guidance should expose symptom, move, risk, example, and agent instruction.
+- `DOCS-SOURCE-LINKS-SUPPORT-GUIDANCE-THEY-DO-NOT-SUPPLY-WORDING`
+  - legacy-id: `R-0507`
+  - title: Source links support guidance; they do not supply wording.
+- `DOCS-PICK-ONE-DOMINANT-DOCUMENTATION-MODE-PER-PAGE`
+  - legacy-id: `R-0508`
+  - title: Pick one dominant documentation mode per page.
+- `DOCS-USE-PROSE-FOR-RELATIONSHIPS-AND-LISTS-FOR-ENUMERATION`
+  - legacy-id: `R-0509`
+  - title: Use prose for relationships and lists for enumeration.
+- `DOCS-FRONT-LOAD-THE-USEFUL-POINT`
+  - legacy-id: `R-0510`
+  - title: Front-load the useful point.
+- `DOCS-USE-CONCRETE-NOUNS-AND-REAL-PATHS-DEFAULTS-COMMANDS-AND-EXAMPLES`
+  - legacy-id: `R-0511`
+  - title: Use concrete nouns and real paths, defaults, commands, and examples.
+- `DOCS-AVOID-UNEARNED-RANKING-AND-VAGUE-PRAISE`
+  - legacy-id: `R-0512`
+  - title: Avoid unearned ranking and vague praise.
+- `DOCS-AVOID-GENERATED-PROSE-TELLS`
+  - legacy-id: `R-0513`
+  - title: Avoid generated-prose tells.
+- `DOCS-WRITE-DOCS-FOR-NON-LINEAR-READERS`
+  - legacy-id: `R-0514`
+  - title: Write docs for non-linear readers.
+- `DOCS-COMPARE-NEARBY-LIBRARIES-ACCURATELY-AND-CHARITABLY`
+  - legacy-id: `R-0515`
+  - title: Compare nearby libraries accurately and charitably.
+- `DOCS-PUT-UNCERTAINTY-IN-ISSUES-ADRS-OR-ROADMAPS-RATHER-THAN-BURYING-IT-IN-USER-DOCS`
+  - legacy-id: `R-0516`
+  - title: Put uncertainty in issues, ADRs, or roadmaps rather than burying it in user docs.
+- `DOCS-KEEP-CRATE-README-AND-CRATE-LEVEL-RUSTDOC-ALIGNED`
+  - legacy-id: `R-0517`
+  - title: Keep crate README and crate-level Rustdoc aligned.
+- `DOCS-DOCUMENT-LIFECYCLE-OWNERSHIP-SIDE-EFFECTS-FEATURE-FLAGS-PLATFORM-ASSUMPTIONS-AND`
+  - legacy-id: `R-0518`
+  - title: Document lifecycle, ownership, side effects, feature flags, platform assumptions, and.
+- `DOCS-PREFER-EXAMPLES-THAT-COMPILE-AND-USE-NO-RUN-OR-IGNORE-HONESTLY`
+  - legacy-id: `R-0519`
+  - title: Prefer examples that compile, and use `no_run` or `ignore` honestly.
+- `DOCS-LIVE-RESOURCE-EXAMPLES-SHOULD-SHOW-SIDE-EFFECTS-AND-CLEANUP`
+  - legacy-id: `R-0520`
+  - title: Live-resource examples should show side effects and cleanup.
+- `DOCS-VERIFY-EXAMPLE-COMMANDS-FILE-PATHS-AND-LINKED-REFERENCES`
+  - legacy-id: `R-0521`
+  - title: Verify example commands, file paths, and linked references.
+- `DOCS-KEEP-MARKDOWN-LINTABLE`
+  - legacy-id: `R-0522`
+  - title: Keep Markdown lintable.
+- `DOCS-BUILD-RUST-DOCS-THE-WAY-USERS-WILL-READ-THEM`
+  - legacy-id: `R-0523`
+  - title: Build Rust docs the way users will read them.
+- `DOCS-MAKE-DOCUMENTATION-REVIEW-EASY-TO-INSPECT`
+  - legacy-id: `R-0524`
+  - title: Make documentation review easy to inspect.
+
+### Observability And Failure
+
+- `OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`
+  - legacy-id: `R-0600`
+  - title: Preserve operation context in errors.
+- `OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`
+  - legacy-id: `R-0601`
+  - title: Log at owned boundaries.
+- `OBSERVABILITY-KEEP-DIAGNOSTICS-SAFE-FOR-THEIR-RETENTION-BOUNDARY`
+  - legacy-id: `R-0602`
+  - title: Keep diagnostics safe for their retention boundary.
+- `OBSERVABILITY-DISTINGUISH-PARTIAL-ABORTED-TIMED-OUT-DENIED-FAILED-AND-COMPLETED-STATES`
+  - legacy-id: `R-0603`
+  - title: Distinguish partial, aborted, timed-out, denied, failed, and completed states.
+- `OBSERVABILITY-DO-NOT-HIDE-DURABLE-FAILURES-ONLY-IN-UI-LOGS`
+  - legacy-id: `R-0604`
+  - title: Do not hide durable failures only in UI logs.
+
+### Jj Topology And Source Control
+
+- `VCS-USE-JJ-AS-THE-SOURCE-OF-TRUTH-IN-JJ-REPOSITORIES`
+  - legacy-id: `R-0700`
+  - title: Use `jj` as the source of truth in `.jj` repositories.
+- `VCS-USE-JJ-NEW-FOR-SEPARATE-REVIEW-LANES`
+  - legacy-id: `R-0701`
+  - title: Use `jj new` for separate review lanes.
+- `VCS-USE-JJ-WORKSPACE-ADD-ONLY-WHEN-A-SECOND-FILESYSTEM-CHECKOUT-IS-NEEDED`
+  - legacy-id: `R-0702`
+  - title: Use `jj workspace add` only when a second filesystem checkout is needed.
+- `VCS-DO-NOT-RUN-JJ-MUTATIONS-IN-PARALLEL`
+  - legacy-id: `R-0703`
+  - title: Do not run jj mutations in parallel.
+- `VCS-PREFER-GIT-FORMATTED-DIFFS-WHEN-AGENTS-NEED-TO-INTERPRET-PATCH-TEXT`
+  - legacy-id: `R-0704`
+  - title: Prefer Git-formatted diffs when agents need to interpret patch text.
+- `VCS-QUOTE-REVSETS-AND-SHELL-SENSITIVE-SYNTAX`
+  - legacy-id: `R-0705`
+  - title: Quote revsets and shell-sensitive syntax.
+- `VCS-AVOID-INTERACTIVE-BY-DEFAULT-JJ-COMMANDS-IN-UNATTENDED-AGENT-WORK`
+  - legacy-id: `R-0706`
+  - title: Avoid interactive-by-default jj commands in unattended agent work.
+- `VCS-NAME-EXACT-TARGETS-FOR-MUTATING-JJ-COMMANDS`
+  - legacy-id: `R-0707`
+  - title: Name exact targets for mutating jj commands.
+- `VCS-USE-OPERATION-LOG-RECOVERY-INSTEAD-OF-DESTRUCTIVE-CLEANUP`
+  - legacy-id: `R-0708`
+  - title: Use operation-log recovery instead of destructive cleanup.
+- `VCS-KEEP-GITHUB-HANDOFF-EXPLICIT-AFTER-JJ-STATE-IS-COHERENT`
+  - legacy-id: `R-0709`
+  - title: Keep GitHub handoff explicit after jj state is coherent.
+- `VCS-SCOPE-JJ-FILE-TRACK-AND-UNTRACK-COMMANDS-TO-INTENDED-PATHS`
+  - legacy-id: `R-0710`
+  - title: Scope jj file track and untrack commands to intended paths.
+- `VCS-CONFIGURE-JJ-PAGER-FOR-AGENT-TOOLING-WHEN-AVAILABLE`
+  - legacy-id: `R-0711`
+  - title: Configure `JJ_PAGER` for agent tooling when available.
+- `VCS-INSPECT-WORKING-COPY-AND-STACK-STATE-BEFORE-MUTATING`
+  - legacy-id: `R-0712`
+  - title: Inspect working-copy and stack state before mutating.
+- `VCS-USE-HARMLESS-JJ-INSPECTION-TO-CREATE-AN-OPERATION-LOG-POINT-BEFORE-RISKY-RESHAPING`
+  - legacy-id: `R-0713`
+  - title: Use harmless jj inspection to create an operation-log point before risky reshaping.
+- `VCS-USE-JJ-DUPLICATE-FOR-SAFE-ALTERNATIVE-CANDIDATES`
+  - legacy-id: `R-0714`
+  - title: Use `jj duplicate` for safe alternative candidates.
+- `VCS-USE-JJ-EVOLOG-FOR-ONE-CHANGE-S-EVOLUTION-AND-JJ-OP-LOG-FOR-REPOSITORY-OPERATIONS`
+  - legacy-id: `R-0715`
+  - title: Use `jj evolog` for one change's evolution and `jj op log` for repository operations.
+- `VCS-TREAT-BROAD-JJ-OPERATIONS-AS-CONFIRMATION-WORTHY`
+  - legacy-id: `R-0716`
+  - title: Treat broad jj operations as confirmation-worthy.
+- `VCS-USE-DRY-RUN-FOR-SURPRISING-OR-AMBIGUOUS-REMOTE-PUBLICATION-NOT-ROUTINE-LATENCY`
+  - legacy-id: `R-0717`
+  - title: Use dry-run for surprising or ambiguous remote publication, not routine latency.
+- `VCS-TRACK-REMOTES-EXPLICITLY-WHEN-BOOKMARK-NAMES-EXIST-ON-MULTIPLE-REMOTES`
+  - legacy-id: `R-0718`
+  - title: Track remotes explicitly when bookmark names exist on multiple remotes.
+- `VCS-TREAT-BOOKMARK-REMOTE-COMMAND-SYNTAX-AS-VERSION-SENSITIVE`
+  - legacy-id: `R-0719`
+  - title: Treat `bookmark@remote` command syntax as version-sensitive.
+- `VCS-CONFIRM-GITHUB-ORIGIN-AND-UPSTREAM-TOPOLOGY-BEFORE-PUBLICATION`
+  - legacy-id: `R-0720`
+  - title: Confirm GitHub `origin` and `upstream` topology before publication.
+- `VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`
+  - legacy-id: `R-0721`
+  - title: Repair remote topology coherently.
+- `VCS-USE-IGNORE-WORKING-COPY-ONLY-FOR-LOCK-SAFE-INSPECTION-OR-INTENDED-METADATA-UPDATES`
+  - legacy-id: `R-0722`
+  - title: Use `--ignore-working-copy` only for lock-safe inspection or intended metadata updates.
+- `VCS-DO-NOT-SWITCH-TO-GIT-BECAUSE-A-JJ-COMMAND-HITS-A-TRANSIENT-LOCK-OR-SANDBOX-ISSUE`
+  - legacy-id: `R-0723`
+  - title: Do not switch to Git because a jj command hits a transient lock or sandbox issue.
+- `VCS-INSPECT-SPARSE-STATE-BEFORE-TREATING-A-MISSING-PATH-AS-MISSING-HISTORY`
+  - legacy-id: `R-0724`
+  - title: Inspect sparse state before treating a missing path as missing history.
+- `VCS-STOP-REPEATED-JJ-RETRIES-AND-LOCALIZE-STATE`
+  - legacy-id: `R-0725`
+  - title: Stop repeated jj retries and localize state.
+- `VCS-MATCH-JJ-REMOTE-TOPOLOGY-TO-THE-REPOSITORY-ROLE`
+  - legacy-id: `R-0726`
+  - title: Match jj remote topology to the repository role.
+- `VCS-ASK-THE-USER-TO-REPAIR-JJ-ALIASES-WHEN-TOPOLOGY-AND-ALIASES-DISAGREE`
+  - legacy-id: `R-0727`
+  - title: Ask the user to repair jj aliases when topology and aliases disagree.
+
+### Agent Workflow
+
+- `AGENT-GIVE-AGENTS-OBJECTIVES-WITH-BOUNDARIES-NOT-BRITTLE-STEP-LISTS`
+  - legacy-id: `R-0800`
+  - title: Give agents objectives with boundaries, not brittle step lists.
+- `AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`
+  - legacy-id: `R-0801`
+  - title: Keep durable context on disk.
+- `AGENT-PREFER-TOOLS-AND-CHECKS-OVER-REPEATED-PROMPTING`
+  - legacy-id: `R-0802`
+  - title: Prefer tools and checks over repeated prompting.
+- `AGENT-PRESERVE-UNRELATED-HUMAN-WORK`
+  - legacy-id: `R-0803`
+  - title: Preserve unrelated human work.
+- `AGENT-AGENT-HANDOFF-SHOULD-REPORT-PROOF-NOT-CONFIDENCE`
+  - legacy-id: `R-0804`
+  - title: Agent handoff should report proof, not confidence.
+- `AGENT-TURN-REPEATED-FEEDBACK-INTO-DURABLE-GUIDANCE`
+  - legacy-id: `R-0805`
+  - title: Turn repeated feedback into durable guidance.
+- `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS-AFTER-VALIDATED-CHUNKS`
+  - legacy-id: `R-0806`
+  - title: Present concrete next options after validated chunks.
+- `AGENT-SEPARATE-NOTE-CAPTURE-FROM-CORRECTION-DURING-FAST-REVIEW`
+  - legacy-id: `R-0807`
+  - title: Separate note capture from correction during fast review.
+- `AGENT-DEFINE-GOOD-BEFORE-DELEGATING`
+  - legacy-id: `R-0808`
+  - title: Define good before delegating.
+- `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
+  - legacy-id: `R-0809`
+  - title: Spend human attention on ambiguity.
+- `AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`
+  - legacy-id: `R-0810`
+  - title: Distill from blessed artifacts.
+- `AGENT-USE-AGENTS-MD-AS-A-MAP-NOT-THE-WHOLE-MANUAL`
+  - legacy-id: `R-0811`
+  - title: Use `AGENTS.md` as a map, not the whole manual.
+- `AGENT-MAKE-BAD-OUTPUT-MECHANICALLY-HARD`
+  - legacy-id: `R-0812`
+  - title: Make bad output mechanically hard.
+- `AGENT-GRANT-SCOPED-AGENT-CAPABILITIES`
+  - legacy-id: `R-0813`
+  - title: Grant scoped agent capabilities.
+- `AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`
+  - legacy-id: `R-0814`
+  - title: Keep secrets out of context.
+- `AGENT-ISOLATE-AGENT-WORKSPACES-BY-TASK`
+  - legacy-id: `R-0815`
+  - title: Isolate agent workspaces by task.
+- `AGENT-PRODUCE-REVIEW-PACKETS-FOR-AGENT-OUTPUT`
+  - legacy-id: `R-0816`
+  - title: Produce review packets for agent output.
+- `AGENT-VERIFY-RISKY-CHANGES-WITH-CANARIES-BEFORE-CUTOVER`
+  - legacy-id: `R-0817`
+  - title: Verify risky changes with canaries before cutover.
+- `AGENT-PROVE-SECURITY-IMPACT-SEPARATELY-FROM-HYPOTHESES`
+  - legacy-id: `R-0818`
+  - title: Prove security impact separately from hypotheses.
+- `AGENT-PRESERVE-INTENT-OVER-LITERALISM`
+  - legacy-id: `R-0819`
+  - title: Preserve intent over literalism.
+- `AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`
+  - legacy-id: `R-0820`
+  - title: Encode nonfunctional requirements.
+- `AGENT-PREFER-IN-DISTRIBUTION-TOOLS-FOR-AGENT-FACING-WORK`
+  - legacy-id: `R-0821`
+  - title: Prefer in-distribution tools for agent-facing work.
+- `AGENT-BUDGET-TOKENS-AND-TIME-FOR-FEEDBACK-LOOPS`
+  - legacy-id: `R-0822`
+  - title: Budget tokens and time for feedback loops.
+- `AGENT-PREFER-BUILD-PRESERVING-EDITS-WHEN-THE-ROUTE-STAYS-NATURAL`
+  - legacy-id: `R-0823`
+  - title: Prefer build-preserving edits when the route stays natural.
+- `AGENT-SUGGEST-IGNORED-AGENT-OVERRIDE-FILES-FOR-LOCAL-ONLY-REPO-CONTEXT`
+  - legacy-id: `R-0824`
+  - title: Suggest ignored agent override files for local-only repo context.
+
+### Private Context And Review Artifacts
+
+- `REVIEW-ISSUES-SHOULD-DEFINE-REVIEW-SIZED-SLICES`
+  - legacy-id: `R-0900`
+  - title: Issues should define review-sized slices.
+- `REVIEW-PR-DESCRIPTIONS-SHOULD-EXPLAIN-PROBLEM-MENTAL-MODEL-TRADEOFFS-VALIDATION-AND-DOCS-IMPACT`
+  - legacy-id: `R-0901`
+  - title: PR descriptions should explain problem, mental model, tradeoffs, validation, and docs impact.
+- `REVIEW-LABEL-SPECULATION-AS-INFERRED-OR-UNKNOWN`
+  - legacy-id: `R-0902`
+  - title: Label speculation as inferred or unknown.
+- `REVIEW-LEAVE-REVIEW-THREADS-UNRESOLVED-FOR-THE-REVIEWER-UNLESS-RESOLUTION-IS-UNAMBIGUOUS`
+  - legacy-id: `R-0903`
+  - title: Leave review threads unresolved for the reviewer unless resolution is unambiguous.
+- `REVIEW-USE-ADRS-FOR-DURABLE-BOUNDARY-AND-OWNERSHIP-DECISIONS`
+  - legacy-id: `R-0904`
+  - title: Use ADRs for durable boundary and ownership decisions.
+- `REVIEW-REESTABLISH-PRIVATE-SESSION-CONTEXT-FOR-DOWNSTREAM-READERS`
+  - legacy-id: `R-0905`
+  - title: Reestablish private session context for downstream readers.
+
+### Source And Context Hygiene
+
+- `SOURCE-PREFER-PRIMARY-OR-STABLE-SOURCES-FOR-DURABLE-GUIDANCE`
+  - legacy-id: `R-1000`
+  - title: Prefer primary or stable sources for durable guidance.
+- `SOURCE-REESTABLISH-PRIVATE-CONTEXT-IN-SHARED-ARTIFACTS`
+  - legacy-id: `R-1001`
+  - title: Reestablish private context in shared artifacts.
+- `SOURCE-GENERALIZE-PROJECT-SPECIFIC-RULES-BEFORE-PROMOTION`
+  - legacy-id: `R-1002`
+  - title: Generalize project-specific rules before promotion.
