@@ -66,6 +66,7 @@ Start with the broad software-change guide at `guides/software-change-preference
 Rust-specific guidance begins at `guides/rust-maintainability.md`.
 Code-shape guidance begins at `guides/code-shape.md`.
 Boundary-correctness guidance begins at `guides/boundary-correctness.md`.
+Observability and failure guidance begins at `guides/observability-and-failure.md`.
 Markdown and documentation guidance begins at `guides/markdown-documentation.md`.
 Coding-agent workflow guidance begins at `guides/coding-agents.md`.
 Jujutsu workflow guidance begins at `guides/jj-workflow.md`.

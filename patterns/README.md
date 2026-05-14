@@ -10,6 +10,7 @@ Use `templates/pattern.md` for new entries.
 | ID                                             | Name                                         | Status   |
 | ---------------------------------------------- | -------------------------------------------- | -------- |
 | `avoid-boolean-flag-parameters`                | Avoid Boolean Flag Parameters                | reviewed |
+| `avoid-secret-or-private-log-context`          | Avoid Secret Or Private Log Context          | reviewed |
 | `ask-what-were-you-trying-to-achieve`          | Ask What Were You Trying To Achieve          | reviewed |
 | `budget-tokens-for-feedback-loops`             | Budget Tokens For Feedback Loops             | reviewed |
 | `cap-change-radius`                            | Cap Change Radius                            | reviewed |
@@ -19,6 +20,7 @@ Use `templates/pattern.md` for new entries.
 | `chunk-statements`                             | Chunk Statements                             | reviewed |
 | `code-is-memory-of-process`                    | Code Is Memory Of Process                    | reviewed |
 | `commit-messages-for-history`                  | Commit Messages For History                  | reviewed |
+| `contain-observability-policy`                 | Contain Observability Policy                 | reviewed |
 | `define-good-before-delegating`                | Define Good Before Delegating                | reviewed |
 | `delete-redundant-comments`                    | Delete Redundant Comments                    | reviewed |
 | `deliver-context-just-in-time`                 | Deliver Context Just In Time                 | reviewed |
@@ -41,7 +43,9 @@ Use `templates/pattern.md` for new entries.
 | `keep-secrets-out-of-context`                  | Keep Secrets Out Of Context                  | reviewed |
 | `keep-structure-reversible`                    | Keep Structure Reversible                    | reviewed |
 | `limit-live-context`                           | Limit Live Context                           | reviewed |
+| `log-at-owned-boundaries`                      | Log At Owned Boundaries                      | reviewed |
 | `make-bad-output-mechanically-hard`            | Make Bad Output Mechanically Hard            | reviewed |
+| `make-failures-observable`                     | Make Failures Observable                     | reviewed |
 | `make-invalid-states-hard-to-express`          | Make Invalid States Hard To Express          | reviewed |
 | `make-parameters-explicit`                     | Make Parameters Explicit                     | reviewed |
 | `make-plans-versioned-artifacts`               | Make Plans Versioned Artifacts               | reviewed |
@@ -70,6 +74,7 @@ Use `templates/pattern.md` for new entries.
 | `reader-locality`                              | Reader Locality                              | reviewed |
 | `record-agent-operating-lessons`               | Record Agent Operating Lessons               | reviewed |
 | `report-verification-honestly`                 | Report Verification Honestly                 | reviewed |
+| `return-structured-errors`                     | Return Structured Errors                     | reviewed |
 | `review-proof-not-just-code`                   | Review Proof Not Just Code                   | reviewed |
 | `separate-discovery-from-editing`              | Separate Discovery From Editing              | reviewed |
 | `separate-structure-from-behavior`             | Separate Structure From Behavior             | reviewed |

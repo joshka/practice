@@ -54,6 +54,10 @@ Boundary-correctness guidance lives in `guides/boundary-correctness.md`. Use tha
 canonical map for parsing, validation policy, state transitions, explicit inputs, injected
 nondeterminism, side effects, and async-boundary preferences.
 
+Observability and failure guidance lives in `guides/observability-and-failure.md`. Use that guide
+as the canonical map for structured errors, failure visibility, logging ownership, diagnostic
+context, and privacy-safe telemetry.
+
 Jujutsu workflow guidance lives in `guides/jj-workflow.md`. Use that guide as the canonical source
 for local jj change shape, descriptions, bookmarks, publication, and recovery.
 
