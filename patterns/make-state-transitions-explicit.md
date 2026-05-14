@@ -15,11 +15,23 @@ Lifecycle state becomes fragile when callers mutate fields directly or coordinat
 hand. The transition rule is spread across status fields, timestamps, events, persistence, and
 validation checks that must move together.
 
+A cluster of functions can also be an anemic state machine: the code has states, events, guards, and
+transitions, but no type or module owns the machine. Each caller has to reconstruct which transitions
+are allowed and which side effects belong to them.
+
 ## Preferred Move
 
 Represent state transitions as named operations. Put the precondition, state update, emitted event,
 and returned error in the method or function that owns the transition. Use enums or transition
 types when the domain has a closed set of states.
+
+When scattered functions form a state machine, name the machine and give it a small owner. The owner
+does not need to be large, but it should make the states, legal transitions, and transition effects
+visible in one place.
+
+Common places to look are auth flows, UI state, workflow runners, import pipelines, retry loops, and
+payment or publishing lifecycles. These often start as "just a few helpers" and become a state
+machine once cases, retries, failure modes, and recovery paths accumulate.
 
 ## Tradeoff
 
@@ -31,7 +43,8 @@ to express.
 
 When a change mutates lifecycle fields, look for the state transition being performed. Introduce or
 use a named transition operation when multiple facts must change together or invalid transitions are
-possible.
+possible. If several functions collectively encode states and events, call out the state machine and
+consider giving it an owner.
 
 ## Examples
 
