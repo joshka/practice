@@ -12,6 +12,17 @@ contract, or review handoff.
 Keep user docs task-first. Put maintainer context, reference detail, and decision records behind the
 first reading path. Do not create placeholder docs without durable content.
 
+Write technical docs, not marketing, coaching, or chat. Pick the page mode first and keep one
+dominant mode per page. Front-load the point, name the actor, prefer active voice, and use present
+tense unless accuracy requires otherwise.
+
+Use prose for relationships, causality, and tradeoffs. Use lists for steps, fields, options, and
+enumerations. Do not atomize explanation into one-sentence fragments by default.
+
+Cut page narration, teaching-order commentary, throat-clearing, unearned ranking words, vague
+praise, AI contrast templates, repeated summaries, and link-hub prose. If a draft is smooth but
+low-signal, merge sections, cut repetition, restore prose continuity, and add concrete detail.
+
 When changing behavior, search nearby docs, examples, Rustdoc, and agent instructions for drift.
 Update them in the same review unit or report explicit follow-up.
 

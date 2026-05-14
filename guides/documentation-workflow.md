@@ -34,6 +34,18 @@ Documentation should preserve the useful local voice of a project: its directnes
 heading density, and level of formality. Generated prose often becomes smooth while losing the
 project's actual way of explaining tradeoffs.
 
+Read a draft once for structure, then once for sentence-level tells.
+Cut teaching-order commentary.
+Cut page narration.
+Cut self-justifying page text.
+Cut low-evidence recommendation language.
+Cut ranking language when the tradeoff is not stated.
+Cut router prose when an inline link would do.
+Cut abstract labels that hide a simpler term.
+Cut repeated helpful framing around the same point.
+Replace soft recommendation language with a direct statement of the tradeoff.
+Replace abstract wording with the concrete host, file, command, resource, type, or behavior.
+
 Use [Preserve Local Doc Voice][voice] when revising existing prose. Use
 [Preserve Intent Over Literalism][intent] when a requested rewrite would keep words but lose the
 decision the original text was carrying.
@@ -54,9 +66,31 @@ Describing the change is part of the work. PRs, review packets, and jj descripti
 reviewer understand purpose, user-facing surface, decisions, validation, deferred work, and the best
 path through the diff.
 
+Prepare the reviewer before asking for review.
+Explain the problem the change addresses.
+Explain the mental model a reviewer should use when reading the diff.
+Explain where the change diverges from earlier discussion.
+Explain non-goals so follow-up ideas do not masquerade as review blockers.
+Explain what was deferred and why.
+Explain decisions made during implementation.
+Explain architecture impact when modules, APIs, boundaries, or flows changed.
+Explain observability impact when logs, metrics, traces, diagnostics, or debugging paths changed.
+Explain what lacks automated testing and what manual testing covered.
+Explain documentation deltas: what changed, what stayed accurate, and what still needs a follow-up.
+Use inline comments when a decision is best understood next to the relevant code.
+Use inline comments to acknowledge controversial choices before reviewers have to discover them.
+Remember future readers of reviews: users reading changelogs, contributors tracing motivation, and
+maintainers root-causing behavior.
+
 Use [Write PR Narrative][pr-narrative] when a change needs a review guide. Use
 [Produce Review Packets][review-packets] when the handoff should bundle summary, proof, artifacts,
 and known risks.
+
+When a change touches support status, keep docs, examples, tests, fixtures, and user-facing claims
+aligned. A support matrix or coverage table is only useful when it stays tied to evidence.
+
+When reviewing docs, lead with correctness, contract ambiguity, risk, drift, and operability. Use
+severity labels when they help the author separate merge-blocking misunderstandings from polish.
 
 ## Drift Remediation
 

@@ -76,6 +76,15 @@ jj new --insert-before <revision>
 jj new --insert-after <revision>
 ```
 
+Use `jj workspace add` only when the task needs a second filesystem checkout: long-running
+validation, a clean comparison tree, a separate sparse view, or parallel local work that cannot
+share one working directory. Use `jj new` when the task only needs another review lane in the same
+checkout.
+
+For safe alternatives to an existing change, consider `jj duplicate` instead of rewriting the
+original or rebuilding the context manually. Keep sibling candidates separately described until the
+choice is clear.
+
 ## Describe The Change
 
 Set a description early for real edits, and keep it aligned with the final scope. Use
@@ -139,6 +148,14 @@ Common choices:
 Avoid editor-driven or interactive jj flows unless the task needs them and the workflow is
 deterministic enough to report cleanly.
 
+Do not rely on default revision selection for mutating commands when the target matters. Spell out
+the intended revision, destination, fileset, bookmark, or remote instead of assuming `@`, the
+nearest parent, or the closest bookmark is the right target.
+
+If repeated `status`, `show`, or near-identical failed commands are not adding information, stop and
+localize the state with the graph, operation log, help output, or the relevant workspace/bookmark
+inspection command before mutating again.
+
 Commands that can prompt or open an editor by default need special care in agent tooling:
 
 | Command       | Interactive risk                                   | Non-interactive shape                           |
@@ -150,6 +167,13 @@ Commands that can prompt or open an editor by default need special care in agent
 
 Read `--help` before using a reshaping command in a script or agent run. Prefer explicit revsets,
 filesets, and messages over prompts that require a human editor.
+
+Treat `jj next` and `jj prev` as mutating navigation unless you have confirmed the installed
+non-mutating form you intend to use.
+
+For file state, scope commands to the intended paths. Do not run broad `jj file track` to pick up
+all untracked files. Add ignore rules before `jj file untrack`, keep the file on disk when that is
+the intended outcome, and verify final tracked state instead of trusting one warning line.
 
 ## Publish With Bookmarks
 
@@ -169,6 +193,10 @@ jj git push --remote origin --bookmark main
 Use `--dry-run` when the remote move is surprising, broad, or not already approved. For a routine
 reviewed-stack push, avoid the extra dry-run round trip once local state and publication intent are
 clear. Ask before publishing unless the repo policy explicitly allows the push.
+
+For GitHub CLI handoff, keep jj as the source of truth first. Inspect bookmarks and remotes, publish
+only the intended bookmark, then pass explicit `gh` parameters such as `--repo`, `--head`, and
+`--base` when topology is non-trivial.
 
 ## Track Remotes Explicitly
 
@@ -209,6 +237,10 @@ renames an existing `origin` to `upstream`. In that layout, `origin` is usually 
 and `upstream` is usually the canonical source repository. Confirm with `jj git remote list` instead
 of assuming the names.
 
+Repair remotes, fetch configuration, push configuration, `trunk()`, and tracked bookmarks together
+when a host tool has changed repo topology. Do not let a forge command infer targets from stale jj
+topology.
+
 ## Use Git Only For Transport
 
 In a jj repo, do not use Git for normal local workflow. Use Git only when the remaining operation is
@@ -241,6 +273,18 @@ wrong.
 Use [Preserve Unowned Work][preserve-work] before undoing, abandoning, restoring, or squashing
 anything that might contain someone else's edits.
 
+Use `jj evolog` when the question is about the evolution of one rewritten change. Use `jj op log`
+when the question is about repository operations or recovering from a mistaken operation. Do not
+restore the whole repository operation when a narrow change-evolution repair is enough.
+
+Use broad operation restore only after inspecting the operation and confirming that later intended
+work will not be discarded. Ask for confirmation when a recovery could rewrite or discard unrelated
+work.
+
+If a workspace is stale because another workspace rewrote its working-copy commit, inspect workspace
+state and use the jj workspace recovery path instead of cloning, resetting, or mutating the stale
+checkout blindly.
+
 ## Agent Snippet
 
 For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
@@ -248,11 +292,14 @@ For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
 ## Review Questions
 
 - Is this a separate review unit that deserves `jj new`?
+- Does this task need another filesystem checkout, or only another change lane?
 - Does the working-copy change have one coherent purpose?
 - Is the description useful as future history?
 - Did source-control mutations run sequentially?
+- Did mutating commands name the exact revision, destination, bookmark, remote, or fileset?
 - Are unowned edits preserved?
 - Does a bookmark need to move, or is this still local-only work?
+- Are forge commands receiving explicit repo/head/base values when inference is risky?
 - Was publication intent explicit, and was any high-risk remote move dry-run first?
 
 ## References

@@ -12,6 +12,11 @@ Before editing, identify the relevant guide or local convention. During handoff,
 changed, why it changed, and what validation ran. Report skipped checks and remaining risk
 honestly.
 
+After a validated chunk, offer concrete next options. When continuing is the normal path, make the
+first option `I've reviewed, do the next thing`, name that next thing, and handle the workflow work
+behind it: mark reviewed material, update the jj description, create a fresh jj change when needed,
+and begin the named next chunk.
+
 Prefer the project guides as the source of truth:
 
 - Software change shape: `guides/software-change-preferences.md`

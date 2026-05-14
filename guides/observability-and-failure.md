@@ -51,6 +51,17 @@ human-readable, but make the stable contract the type and fields. For HTTP-style
 machine-readable problem details can carry the external contract while internal errors preserve
 source context.
 
+For event-driven or agentic systems, diagnostics are part of the durable state model. Tool failures,
+provider stream failures, policy denials, reload failures, replay rejection, compaction failures,
+resource load failures, and startup repair should emit structured diagnostics that include safe
+provenance and enough operation context to reproduce or explain the failure.
+
+Partial, aborted, timed-out, denied, failed, and completed are different states. Model them
+explicitly when downstream code, replay, support, or UI rendering must distinguish them.
+
+Do not hide failures only in UI logs. If a UI, worker, or extension observes a failure that changes
+durable system state, the core event or diagnostic stream should carry that fact.
+
 ## Review Questions
 
 - Who needs to act on this failure: caller, operator, support person, maintainer, or user?
@@ -60,6 +71,8 @@ source context.
 - Are logs, metrics, traces, and error reports safe for their retention and access rules?
 - Could a caller recover, retry, branch, or show a useful message without parsing prose?
 - Does documentation name important failure, panic, safety, or recovery contracts?
+- Are partial, aborted, timed-out, denied, failed, and completed states distinguishable?
+- Are diagnostics durable enough for replay, support, or future debugging without exposing secrets?
 
 [boundary]: boundary-correctness.md
 [change]: software-change-preferences.md

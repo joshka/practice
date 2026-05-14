@@ -11,11 +11,25 @@ workflow. Use Git only for transport-level operations that the current jj workfl
 Start separable work in a fresh change with `jj --no-pager new`, then set a clear description early
 with `jj --no-pager desc --message "..."`. Keep changes small, atomic, and self-contained.
 
+Use `jj new` when the task only needs another review lane in the same checkout. Use
+`jj workspace add` only when the task needs another filesystem checkout, such as long-running
+validation, a clean comparison tree, or a separate sparse view.
+
 Use `--no-pager` on jj commands. Prefer `jj --no-pager diff --git` when an agent or reviewer needs
 to interpret a diff. Avoid interactive-by-default commands unless you know how to supply the needed
 message, paths, or tool choice non-interactively.
 
+Do not rely on default revision selection for mutating commands when the target matters. Spell out
+the intended revision, destination, fileset, bookmark, or remote. If repeated commands are not adding
+information, stop and inspect graph, operation, workspace, bookmark, or help output before mutating
+again.
+
+For GitHub handoff, inspect jj bookmark and remote state first, publish only the intended bookmark,
+then pass explicit `gh --repo`, `--head`, and `--base` values when inference is risky.
+
 Do not run destructive commands, rewrite unrelated work, or publish without explicit approval.
+Recover through `jj undo`, `jj op log`, `jj op restore`, or `jj evolog` instead of Git reset or
+stash habits.
 
 Canonical guide:
 

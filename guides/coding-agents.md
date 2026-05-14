@@ -65,6 +65,10 @@ lacks a harness, test, boundary, or workflow that would make the behavior change
 Use [Code Is Memory Of Process][code-memory] and [Keep Automations Repo Owned][repo-automation] when
 stable process knowledge should become a checked artifact.
 
+For systems that agents can reload, extend, or self-modify, prefer staged changes with validation
+and rollback over direct mutation of the live runtime. Generated or guest code should be inspectable
+after failure without replacing the last known good behavior.
+
 ## Workspaces And Capabilities
 
 Keep agent work isolated by task. Each independent edit should have a clear workspace, source-control
@@ -85,6 +89,21 @@ Agent output should arrive with proof. The right proof depends on the task: fail
 tests, logs, screenshots, traces, benchmark output, specialist reviews, canaries, or deployment
 notes.
 
+Review agent output from the perspective of a future maintainer who did not write the code.
+Prioritize correctness, edge cases, API clarity, documentation truthfulness, rendering behavior,
+terminal-state behavior, and focused tests for the contract.
+
+When code is hard to read, identify the cause precisely: concept mixing, poor ordering, hidden
+state, vague names, too much abstraction, or missing tests.
+
+Before editing, identify the owning module, local dependencies, existing tests, and narrowest useful
+validation command. While editing, preserve current user behavior unless the task intentionally
+changes it. Before handoff, report focused checks, broad checks, skipped checks, residual risk, and
+follow-up.
+
+Handoff notes should say what changed, where the important files are, what validation ran, what did
+not run, and what risk remains. Avoid long implementation diaries.
+
 Use [Review Proof Not Just Code][review-proof], [Produce Review Packets][review-packets], and
 [Report Verification Honestly][honest-verification] when handing work to a maintainer.
 
@@ -104,6 +123,22 @@ a repeated failure mode.
 Budget time and tokens for loops that reduce human attention and improve outcomes. Use
 [Budget Tokens For Feedback Loops][token-budget] when evaluating review agents, cleanup loops,
 security scans, docs checks, or harness evals.
+
+## Maintainer Review Loop
+
+After a validated chunk, present concrete next chunks instead of vague continuation prompts. Put
+`I've reviewed, do the next thing` first when the expected path is for the maintainer to accept the
+current chunk and continue. Name the actual next thing in that option, and do the appropriate
+workflow work behind it: mark reviewed material, update the jj description, start a fresh jj change
+when the next unit is separate, and then begin that named next chunk.
+
+Explain why each offered path is worth choosing. Include the tradeoff that matters for review:
+scope, risk, latency, validation depth, naming, structure, or follow-up cost. If the maintainer gives
+feedback instead of choosing the next chunk, address that feedback before continuing.
+
+For fast manual review sessions, separate note capture from correction. Capture reviewer notes in a
+durable queue without applying corrections unless asked, then apply corrections later in scoped
+batches such as one content type, one page, or one ownership area.
 
 ## Long-Term Coherence
 
@@ -132,6 +167,8 @@ broader repo baseline, use [Core Agent Instructions][core-snippet].
 - Can the agent validate the work with tools it can access?
 - Does the handoff include proof instead of confidence language?
 - Did feedback become a reusable improvement where appropriate?
+- Does the next-option list include a reviewed-and-continue path when that is the normal flow?
+- Does each option explain why that path would be chosen?
 - Does this change preserve the repo's long-term concepts and reviewability?
 
 [achieve]: ../patterns/ask-what-were-you-trying-to-achieve.md
