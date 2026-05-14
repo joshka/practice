@@ -46,6 +46,9 @@ upstream text.
 Coding-agent workflow guidance lives in `guides/coding-agents.md`. Use that guide as the canonical
 map for agent delegation, context, tooling, workspace, review, and feedback-loop preferences.
 
+Jujutsu workflow guidance lives in `guides/jj-workflow.md`. Use that guide as the canonical source
+for local jj change shape, descriptions, bookmarks, publication, and recovery.
+
 ## Version Control
 
 Use jujutsu (`jj`) for local version-control workflow.
