@@ -31,9 +31,36 @@ Guides should assemble and contextualize these units instead of duplicating them
 rule that is useful across topics, promote that rule into a named guidance file and link to it.
 Start new reusable guidance units from `templates/pattern.md`.
 
-## Planned Structure
+## How To Use This Repo
 
-The first version should grow incrementally toward this shape:
+Start with the guide that matches the decision you are making:
+
+- [Software Change Preferences](guides/software-change-preferences.md): broad defaults for change
+  shape, review, and verification.
+- [Rust Maintainability](guides/rust-maintainability.md): Rust reader-locality, APIs, errors,
+  tests, dependencies, and performance.
+- [Code Shape](guides/code-shape.md): source-level moves that reduce reader burden.
+- [Boundary Correctness](guides/boundary-correctness.md): parsing, validation policy, state,
+  explicit inputs, side effects, and async boundaries.
+- [Observability And Failure](guides/observability-and-failure.md): structured errors, logging
+  ownership, telemetry, and privacy-safe diagnostics.
+- [Markdown And Documentation](guides/markdown-documentation.md): Markdown style, Rustdoc,
+  examples, docs-as-contracts, and source-link policy.
+- [Documentation Workflow](guides/documentation-workflow.md): documentation pass depth, evidence,
+  local voice, PR narrative, repo maps, and drift remediation.
+- [Coding Agents](guides/coding-agents.md): objectives, context, tools, workspaces, review, and
+  feedback loops for agent work.
+- [Jj Workflow](guides/jj-workflow.md): local jujutsu change shape, descriptions, bookmarks,
+  remotes, and recovery.
+
+Use [patterns](patterns/README.md) when you need a stable review term or a compact rule to cite.
+Use [agent snippets](snippets/agents/README.md) when you need copyable `AGENTS.md` sections for
+another repo. Use [the guidance plan](references/guidance-plan.md) to see how the current guide set
+is organized and where future work belongs.
+
+## Repository Shape
+
+The first reviewed version uses this shape:
 
 ```text
 README.md
@@ -41,7 +68,11 @@ AGENTS.md
 guides/
   software-change-preferences.md
   rust-maintainability.md
+  code-shape.md
+  boundary-correctness.md
+  observability-and-failure.md
   markdown-documentation.md
+  documentation-workflow.md
   jj-workflow.md
   coding-agents.md
 patterns/
@@ -51,27 +82,13 @@ snippets/
   agents/
     <copyable-agent-section>.md
 references/
-  README.md
-  external-sources.md
+  guidance-plan.md
 templates/
   pattern.md
-  guide.md
-  agents-section.md
 ```
 
 Do not add placeholder files just to match the planned structure. Create files when they contain
 durable content that is ready for review.
-
-Start with the broad software-change guide at `guides/software-change-preferences.md`.
-Rust-specific guidance begins at `guides/rust-maintainability.md`.
-Code-shape guidance begins at `guides/code-shape.md`.
-Boundary-correctness guidance begins at `guides/boundary-correctness.md`.
-Observability and failure guidance begins at `guides/observability-and-failure.md`.
-Markdown and documentation guidance begins at `guides/markdown-documentation.md`.
-Documentation workflow guidance begins at `guides/documentation-workflow.md`.
-Coding-agent workflow guidance begins at `guides/coding-agents.md`.
-Jujutsu workflow guidance begins at `guides/jj-workflow.md`.
-Reusable agent snippets begin at `snippets/agents/`.
 
 ## Delivery Approach
 
@@ -91,7 +108,7 @@ Use a local review loop that optimizes for maintainer attention:
 1. Ask whether to push the reviewed chunk before publishing it.
 1. Move to the next chunk only after the current chunk is accepted or redirected.
 
-Expected sequence:
+Completed first-version sequence:
 
 1. Establish the repo charter and guidance architecture.
 1. Add the first pattern/principle template and a small seed batch of named guidance units.
@@ -99,7 +116,12 @@ Expected sequence:
 1. Add Rust maintainability guidance and Rust-specific units.
 1. Add Markdown, documentation, and coding-agent guides.
 1. Add jj workflow guidance and copy/paste agent snippets.
-1. Add an external references ledger once the guide and pattern shape shows what is useful.
+
+Possible later work:
+
+- Add an external references ledger if source tracking becomes too scattered across pattern files.
+- Extract sharper examples from real review comments.
+- Add project-specific snippet variants after reuse exposes repeated adaptation work.
 
 A later discovery milestone should review private and local agent-instruction material for reusable
 guidance, contradictions, and missing named units. Durable public-facing docs in this repo should

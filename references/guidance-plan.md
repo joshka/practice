@@ -8,9 +8,9 @@ APIs, clear docs, testable behavior, and reviewable change. Agentic workflow mat
 apply these rules at scale; it should serve the development principles rather than replace them as
 the organizing idea.
 
-The repo should become a practical pattern language that can be referenced in review, agent
+The repo is becoming a practical pattern language that can be referenced in review, agent
 instructions, and conversations with collaborators. Guides explain the map. Patterns carry reusable
-review moves. Snippets later provide compact agent-facing excerpts.
+review moves. Snippets provide compact agent-facing excerpts.
 
 ## Guide Set
 
@@ -34,7 +34,7 @@ Use this family for source-level moves that make Rust and Rust-adjacent code eas
 review, and change without inventing broad architecture. These patterns should be useful in other
 languages, but Rust should be the reference point for examples, API tradeoffs, and naming.
 
-Planned patterns:
+Reviewed patterns:
 
 - `cap-change-radius`
 - `keep-structure-reversible`
@@ -58,7 +58,7 @@ ownership boundaries.
 Rust examples should prefer precise types, enums, constructors, `FromStr`, `TryFrom`, owned error
 types, and explicit side-effect boundaries where those concepts apply.
 
-Planned patterns:
+Reviewed patterns:
 
 - `parse-dont-validate`
 - `make-validation-policy-explicit`
@@ -77,7 +77,7 @@ observe when something fails or crosses a production boundary.
 Rust examples should distinguish library error types from application error aggregation, and should
 avoid exposing broad application errors such as `anyhow::Error` from reusable library APIs.
 
-Planned patterns:
+Reviewed patterns:
 
 - `make-failures-observable`
 - `contain-observability-policy`
@@ -92,7 +92,7 @@ Expected guide owner: `guides/observability-and-failure.md`.
 Use this family for Rustdoc, Markdown, design notes, PR narrative, and choosing how much
 documentation work to do for a change.
 
-Planned patterns:
+Reviewed patterns:
 
 - `label-doc-claims-by-evidence`
 - `choose-doc-pass-depth`
@@ -117,7 +117,15 @@ Accepted snippets:
 - `snippets/agents/coding-agents.md`
 - `snippets/agents/jj.md`
 
-## Delivery Order
+## Remaining Work
+
+The first reviewed guide, pattern, and snippet set is in place. Useful next work includes:
+
+- Add an external references ledger if source tracking becomes too scattered across pattern files.
+- Extract more examples from real review comments when a pattern needs sharper recognition.
+- Add project-specific snippet variants only after copy/paste use exposes repeated adaptation work.
+
+## Completed Delivery Order
 
 1. Add the Rust Maintainability And Code Shape pattern batch.
 1. Add `guides/code-shape.md`.
