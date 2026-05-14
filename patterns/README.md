@@ -10,6 +10,7 @@ Use `templates/pattern.md` for new entries.
 | ID                                     | Name                                 | Status   |
 | -------------------------------------- | ------------------------------------ | -------- |
 | `avoid-boolean-flag-parameters`        | Avoid Boolean Flag Parameters        | reviewed |
+| `budget-tokens-for-feedback-loops`     | Budget Tokens For Feedback Loops     | reviewed |
 | `choose-doc-type`                      | Choose Doc Type                      | reviewed |
 | `close-the-agent-loop`                 | Close The Agent Loop                 | reviewed |
 | `code-is-memory-of-process`            | Code Is Memory Of Process            | reviewed |
@@ -35,6 +36,7 @@ Use `templates/pattern.md` for new entries.
 | `make-runtime-state-agent-legible`     | Make Runtime State Agent Legible     | reviewed |
 | `make-side-effects-visible`            | Make Side Effects Visible            | reviewed |
 | `optimize-for-long-term-coherence`     | Optimize For Long Term Coherence     | reviewed |
+| `optimize-for-agent-legibility`        | Optimize For Agent Legibility        | reviewed |
 | `practice-agent-workouts`              | Practice Agent Workouts              | reviewed |
 | `prefer-durable-summaries`             | Prefer Durable Summaries             | reviewed |
 | `prefer-in-distribution-tools`         | Prefer In Distribution Tools         | reviewed |
@@ -56,6 +58,7 @@ Use `templates/pattern.md` for new entries.
 | `smallest-trustworthy-verification`    | Smallest Trustworthy Verification    | reviewed |
 | `spend-human-attention-on-ambiguity`   | Spend Human Attention On Ambiguity   | reviewed |
 | `test-observable-behavior`             | Test Observable Behavior             | reviewed |
+| `teach-agents-through-tools`           | Teach Agents Through Tools           | reviewed |
 | `turn-feedback-into-guidance`          | Turn Feedback Into Guidance          | reviewed |
 | `use-agents-md-as-map`                 | Use AGENTS.md As Map                 | reviewed |
 | `use-disk-as-context-sink`             | Use Disk As Context Sink             | reviewed |
