@@ -35,6 +35,22 @@ do not leave drift for the next reader.
 Good docs explain purpose, constraints, invariants, edge cases, side effects, and recovery paths.
 Weak docs repeat names, signatures, or ordinary control flow.
 
+Prefer documentation that helps a human form the right mental model without reading every method in
+the system. Code can be locally obvious and still hide behavior that matters at a larger scale:
+ordering, ownership, lifecycle, persistence, retry behavior, external effects, compatibility rules,
+and caller obligations. Capture that information near the API or workflow boundary where readers
+look for it.
+
+Good documentation also amortizes discovery. Humans and agents both spend time reconstructing
+context from code when rationale is missing. Capture stable rationale, constraints, and system
+behavior once during production so future work can start from a durable summary instead of
+repeating the same scan.
+
+Use [Document System Mental Models][system-models], [Document Intentional Non Goals][non-goals],
+[Make Side Effects Visible][side-effects], [Keep Docs Near Their Subject][doc-locality], and
+[Prefer Durable Summaries][durable-summaries] when code needs durable context beyond a single API
+contract.
+
 Use [Preserve Error Context][error-context] and [Write Actionable Error Messages][actionable-errors]
 when documenting failures that cross user, caller, operator, or support boundaries.
 
@@ -108,7 +124,12 @@ section when no durable source is useful.
 
 [actionable-errors]: ../patterns/write-actionable-error-messages.md
 [diataxis]: https://diataxis.fr/
+[doc-locality]: ../patterns/keep-docs-near-their-subject.md
+[durable-summaries]: ../patterns/prefer-durable-summaries.md
 [error-context]: ../patterns/preserve-error-context.md
 [mdlint]: https://github.com/DavidAnson/markdownlint
+[non-goals]: ../patterns/document-intentional-non-goals.md
 [rustdoc]: https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html
+[side-effects]: ../patterns/make-side-effects-visible.md
+[system-models]: ../patterns/document-system-mental-models.md
 [test-behavior]: ../patterns/test-observable-behavior.md

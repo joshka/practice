@@ -11,9 +11,17 @@ Use `templates/pattern.md` for new entries.
 | -------------------------------------- | ------------------------------------- | -------- |
 | `avoid-boolean-flag-parameters`        | Avoid Boolean Flag Parameters         | reviewed |
 | `commit-messages-for-history`          | Commit Messages For History           | reviewed |
+| `choose-doc-type`                      | Choose Doc Type                       | reviewed |
+| `delete-redundant-comments`            | Delete Redundant Comments             | reviewed |
+| `document-errors-panics-safety`        | Document Errors Panics Safety         | reviewed |
+| `document-intentional-non-goals`       | Document Intentional Non Goals        | reviewed |
+| `document-system-mental-models`        | Document System Mental Models         | reviewed |
 | `follow-local-conventions`             | Follow Local Conventions              | reviewed |
+| `keep-docs-near-their-subject`         | Keep Docs Near Their Subject          | reviewed |
 | `keep-public-dependencies-intentional` | Keep Public Dependencies Intentional  | reviewed |
+| `make-side-effects-visible`            | Make Side Effects Visible             | reviewed |
 | `make-invalid-states-hard-to-express`  | Make Invalid States Hard To Express   | reviewed |
+| `prefer-durable-summaries`             | Prefer Durable Summaries              | reviewed |
 | `preserve-error-context`               | Preserve Error Context                | reviewed |
 | `preserve-unowned-work`                | Preserve Unowned Work                 | reviewed |
 | `prefer-standard-conversions`          | Prefer Standard Conversions           | reviewed |
@@ -25,3 +33,4 @@ Use `templates/pattern.md` for new entries.
 | `smallest-trustworthy-verification`    | Smallest Trustworthy Verification     | reviewed |
 | `test-observable-behavior`             | Test Observable Behavior              | reviewed |
 | `write-actionable-error-messages`      | Write Actionable Error Messages       | reviewed |
+| `write-docs-as-contracts`              | Write Docs As Contracts               | reviewed |
