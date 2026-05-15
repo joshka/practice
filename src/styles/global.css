@@ -117,7 +117,7 @@
   }
 
   .primary-nav {
-    @apply grid grid-cols-4 justify-items-end gap-x-5 gap-y-2;
+    @apply hidden grid-cols-4 justify-items-end gap-x-5 gap-y-2;
   }
 
   .nav-link {
@@ -493,7 +493,99 @@
   }
 
   .page {
-    @apply mt-8;
+    @apply mt-8 max-w-5xl;
+  }
+
+  .detail-hero {
+    @apply mb-10 max-w-4xl;
+  }
+
+  .detail-hero__meta {
+    @apply mb-5 flex flex-wrap items-center gap-2;
+  }
+
+  .detail-hero__kind,
+  .detail-chip {
+    @apply inline-flex rounded border border-outline-variant bg-surface-container px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary;
+  }
+
+  .detail-hero__kind {
+    @apply bg-surface-container-high text-on-surface-variant;
+  }
+
+  .detail-hero h1 {
+    @apply m-0 max-w-4xl text-5xl font-bold leading-tight tracking-normal text-on-background md:text-6xl;
+  }
+
+  .detail-hero p {
+    @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
+  }
+
+  .detail-intro {
+    @apply mb-10;
+  }
+
+  .detail-sections {
+    @apply grid gap-8;
+  }
+
+  .detail-section {
+    @apply border-t border-outline-variant pt-7;
+  }
+
+  .detail-section h2 {
+    @apply mt-0 mb-5 text-2xl font-bold leading-tight text-on-background md:text-3xl;
+  }
+
+  .detail-section__body {
+    @apply pt-0;
+  }
+
+  .page--rule .detail-sections {
+    @apply gap-5;
+  }
+
+  .page--rule .detail-section {
+    @apply rounded-lg border border-outline-variant bg-surface-container-lowest p-5;
+  }
+
+  .page--rule .detail-section h2 {
+    @apply mb-4 text-sm font-bold uppercase tracking-[0.08em] text-primary;
+  }
+
+  .page--rule .detail-section--rule,
+  .page--rule .detail-section--agent-instruction {
+    @apply border-primary bg-surface-container-low;
+  }
+
+  .page--rule .detail-section--rule .detail-section__body p,
+  .page--rule .detail-section--agent-instruction .detail-section__body p {
+    @apply text-lg text-on-background;
+  }
+
+  .page--pattern .detail-section--problem,
+  .page--pattern .detail-section--preferred-move,
+  .page--pattern .detail-section--tradeoff {
+    @apply max-w-4xl;
+  }
+
+  .page--mechanism .detail-section--checks li,
+  .page--mechanism .detail-section--use li {
+    @apply max-w-none;
+  }
+
+  .page--mechanism .detail-section--checks pre,
+  .page--mechanism .detail-section--use pre,
+  .page--agent-snippet pre {
+    @apply border-primary/70 bg-surface-container-lowest;
+  }
+
+  .page--reference .detail-section ul {
+    @apply max-w-4xl gap-3;
+  }
+
+  .page--reference .detail-section li {
+    @apply max-w-[88ch];
   }
 
   .section-hero {
@@ -513,7 +605,7 @@
   }
 
   .prose {
-    @apply pt-6;
+    @apply pt-6 text-base leading-relaxed text-on-surface;
   }
 
   .prose > :first-child {
@@ -530,6 +622,14 @@
 
   .prose h2 {
     @apply mt-10 mb-5 border-t border-outline-variant pt-6 text-2xl font-bold leading-tight text-on-background md:text-3xl;
+  }
+
+  .detail-section__body h2 {
+    @apply border-0 pt-0;
+  }
+
+  .detail-section__body.prose {
+    @apply pt-0;
   }
 
   .prose h3 {
@@ -603,6 +703,12 @@
 @media (min-width: 1120px) {
   .primary-nav {
     grid-template-columns: repeat(7, max-content);
+  }
+}
+
+@media (min-width: 900px) {
+  .primary-nav {
+    display: grid;
   }
 }
 

@@ -57,7 +57,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Change Shape](change-shape/README.md). 11 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 26 rules. Documentation rules cover
+- [Docs Are Contracts](documentation/README.md). 27 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
 - [Observability And Failure](observability/README.md). 5 rules. Observability rules cover owned
@@ -396,6 +396,12 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Prefer examples that compile, and mark noncompiling examples honestly. Rust examples are often
   copied directly into user projects or enforced as doctests. Helps: Keeps examples trustworthy and
   lets doctests protect public API usage where possible.
+- [`DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`](documentation/docs-match-page-shape-to-reader-task.md).
+  Match each rendered documentation page shape to the reader task it serves. A documentation site
+  can use Markdown as its source without making every page feel like raw Markdown. Helps: Keeps
+  navigation pages from turning into README dumps. - Makes links, tags, cards, rows, code blocks,
+  and source metadata behave consistently. - Gives first-time readers a clear answer to where they
+  are, what the page is for, and what to click next.
 - [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](documentation/docs-one-dominant-mode-per-page.md). Pick one
   dominant documentation mode per page. A page with competing modes forces readers to switch mental
   models. Helps: Keeps each page useful for its main reader and moves secondary detail to

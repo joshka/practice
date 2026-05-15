@@ -6,10 +6,17 @@ export type MarkdownPage = {
   title: string;
   description: string;
   html: string;
+  introHtml: string;
+  sections: MarkdownSection[];
   route: string;
   repoPath: string;
   sourceUrl: string;
   metadata: Record<string, string>;
+};
+
+export type MarkdownSection = {
+  title: string;
+  html: string;
 };
 
 export type Section = {
@@ -110,11 +117,14 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
   const parsed = parseFrontmatter(rawMarkdown);
   const markdown = stripLegacyMetadata(parsed.body);
   const html = rewriteLinks(marked.parse(markdown) as string, repoPath);
+  const sections = markdownSections(markdown, repoPath);
   const route = routeForRepoPath(repoPath);
   return {
     title: pageTitleFromMarkdown(markdown, titleFromSlug(path.basename(repoPath, '.md'))),
     description: descriptionFromMarkdown(markdown),
     html,
+    introHtml: markdownIntro(markdown, repoPath),
+    sections,
     route,
     repoPath,
     sourceUrl: sourceUrl(repoPath),
@@ -146,6 +156,8 @@ export function sectionIndex(section: Section): MarkdownPage {
     title: section.title,
     description: section.description,
     html: `<p>${escapeHtml(section.description)}</p>`,
+    introHtml: `<p>${escapeHtml(section.description)}</p>`,
+    sections: [],
     route: section.route,
     repoPath: section.sourceDir,
     sourceUrl: sourceUrl(section.sourceDir),
@@ -268,6 +280,59 @@ function metadataFromMarkdown(markdown: string): Record<string, string> {
     metadata[item[1].trim().toLowerCase()] = item[2].replaceAll('`', '').trim();
   }
   return metadata;
+}
+
+function markdownIntro(markdown: string, repoPath: string): string {
+  const parsed = splitMarkdownSections(markdown);
+  const intro = parsed.intro.trim();
+  return rewriteLinks(marked.parse(intro) as string, repoPath);
+}
+
+function markdownSections(markdown: string, repoPath: string): MarkdownSection[] {
+  return splitMarkdownSections(markdown).sections
+    .filter((section) => section.title.toLowerCase() !== 'metadata')
+    .map((section) => ({
+      title: section.title,
+      html: rewriteLinks(marked.parse(section.markdown.trim()) as string, repoPath),
+    }));
+}
+
+function splitMarkdownSections(markdown: string): {
+  intro: string;
+  sections: { title: string; markdown: string }[];
+} {
+  const withoutTitle = markdown.replace(/^#\s+.+\n?/, '').trimStart();
+  const intro: string[] = [];
+  const sections: { title: string; markdown: string[] }[] = [];
+  let current: { title: string; markdown: string[] } | undefined;
+  let inFence = false;
+
+  for (const line of withoutTitle.split('\n')) {
+    if (line.startsWith('```')) {
+      inFence = !inFence;
+    }
+
+    const heading = !inFence ? line.match(/^##\s+(.+)$/) : undefined;
+    if (heading) {
+      current = { title: heading[1].trim(), markdown: [] };
+      sections.push(current);
+      continue;
+    }
+
+    if (current) {
+      current.markdown.push(line);
+    } else {
+      intro.push(line);
+    }
+  }
+
+  return {
+    intro: intro.join('\n').trim(),
+    sections: sections.map((section) => ({
+      title: section.title,
+      markdown: section.markdown.join('\n').trim(),
+    })),
+  };
 }
 
 function parseFrontmatter(markdown: string): { body: string; metadata: Record<string, string> } {

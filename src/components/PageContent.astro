@@ -6,8 +6,60 @@ type Props = {
 };
 
 const { page } = Astro.props;
+const kind = pageKind(page.repoPath);
+const chips = metadataChips(page);
+const showHeaderDescription = kind !== 'rule' && kind !== 'agent-snippet';
+const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
+
+function pageKind(repoPath: string): string {
+  if (repoPath.startsWith('rules/') && !repoPath.endsWith('/README.md')) return 'rule';
+  if (repoPath.startsWith('patterns/')) return 'pattern';
+  if (repoPath.startsWith('principles/')) return 'principle';
+  if (repoPath.startsWith('mechanisms/')) return 'mechanism';
+  if (repoPath.startsWith('references/')) return 'reference';
+  if (repoPath.startsWith('snippets/agents/')) return 'agent-snippet';
+  if (repoPath.startsWith('guides/')) return 'guide';
+  return 'default';
+}
+
+function metadataChips(page: MarkdownPage): string[] {
+  const chips: string[] = [];
+  if (page.metadata.id) chips.push(page.metadata.id);
+  if (page.metadata.domain) chips.push(page.metadata.domain.toUpperCase());
+  if (page.metadata.depth) chips.push(page.metadata.depth);
+  if (page.metadata.audience && page.metadata.audience !== 'both') chips.push(page.metadata.audience);
+  if (page.metadata.topics) {
+    for (const topic of page.metadata.topics.split(',').map((value) => value.trim()).filter(Boolean)) {
+      if (chips.length >= 5) break;
+      chips.push(topic.toUpperCase());
+    }
+  }
+  return [...new Set(chips)];
+}
+
+function sectionClass(title: string): string {
+  return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
 ---
 
-<article class="page">
-  <div class="prose" set:html={page.html} />
+<article class={`page page--${kind}`}>
+  <header class="detail-hero">
+    <div class="detail-hero__meta">
+      <span class="detail-hero__kind">{kind.replace('-', ' ')}</span>
+      {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
+    </div>
+    <h1>{page.title}</h1>
+    {showHeaderDescription && page.description && <p>{page.description}</p>}
+  </header>
+
+  {showIntro && page.introHtml && <div class="prose detail-intro" set:html={page.introHtml} />}
+
+  <div class="detail-sections">
+    {page.sections.map((section) => (
+      <section class={`detail-section detail-section--${sectionClass(section.title)}`}>
+        <h2>{section.title}</h2>
+        <div class="prose detail-section__body" set:html={section.html} />
+      </section>
+    ))}
+  </div>
 </article>

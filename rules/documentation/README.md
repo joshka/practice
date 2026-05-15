@@ -56,6 +56,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   examples that compile, and mark noncompiling examples honestly. Rust examples are often copied
   directly into user projects or enforced as doctests. Helps: Keeps examples trustworthy and lets
   doctests protect public API usage where possible.
+- [`DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`](docs-match-page-shape-to-reader-task.md). Match each
+  rendered documentation page shape to the reader task it serves. A documentation site can use
+  Markdown as its source without making every page feel like raw Markdown. Helps: Keeps navigation
+  pages from turning into README dumps. - Makes links, tags, cards, rows, code blocks, and source
+  metadata behave consistently. - Gives first-time readers a clear answer to where they are, what
+  the page is for, and what to click next.
 - [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](docs-one-dominant-mode-per-page.md). Pick one dominant
   documentation mode per page. A page with competing modes forces readers to switch mental models.
   Helps: Keeps each page useful for its main reader and moves secondary detail to better-linked

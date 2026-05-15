@@ -376,8 +376,10 @@ function mechanismGroupFor(item: MarkdownPage): GroupConfig {
 }
 
 function agentGroupFor(item: MarkdownPage): GroupConfig {
-  if (['Core', 'Rules'].includes(item.title)) return agentGroups.baseline;
-  if (item.title === 'Coding Agents') return agentGroups.workflow;
+  if (['snippets/agents/core.md', 'snippets/agents/rules.md'].includes(item.repoPath)) {
+    return agentGroups.baseline;
+  }
+  if (item.repoPath === 'snippets/agents/coding-agents.md') return agentGroups.workflow;
   return agentGroups.domain;
 }
 
