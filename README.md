@@ -1,8 +1,14 @@
 # Development Preferences
 
-This repository is the standalone home for practical software-development preferences. It captures
-how I prefer code, documentation, tests, version-control workflows, and coding-agent handoffs to be
-shaped.
+This repository is the standalone home for my durable software-development preferences. It captures
+how I prefer code, documentation, tests, version-control workflows, review artifacts, and
+coding-agent handoffs to be shaped.
+
+Use it in two ways:
+
+- As a human-readable explanation of the development beliefs I want to apply consistently.
+- As a canonical source of compact rules that can be copied into other repositories for agents to
+  follow.
 
 The repo should support two audiences:
 
@@ -11,6 +17,20 @@ The repo should support two audiences:
 
 The goal is not to freeze taste. The guidance should evolve from real development practice, review
 feedback, and durable external sources while remaining compact enough to use.
+
+## Why This Exists
+
+The same development preferences come up repeatedly: keep code locally understandable, make public
+APIs intentional, prove behavior with useful tests, write docs as contracts, preserve reviewability,
+and give agents enough context to do solid work without turning every prompt into a manual.
+
+This repo turns those repeated preferences into named, reviewable artifacts. Humans get the
+reasoning, tradeoffs, and review language. Agents get compressed instructions that are specific
+enough to shape behavior and small enough to use in real implementation sessions.
+
+The repo is also meant to avoid rediscovery. If a rule is durable enough to matter across projects,
+it should live here once, then be copied or generated into downstream repos from this canonical
+source.
 
 ## Guidance Model
 
@@ -44,7 +64,18 @@ Use these durable layers:
 Start new repeatable moves from `templates/pattern.md`. Use the existing principle and mechanism
 files as models for deeper reasoning notes and tooling profiles.
 
-## How To Use This Repo
+## What Is Here
+
+The repo has two related surfaces:
+
+- A detailed reasoning surface for humans: guides, principles, patterns, mechanisms, and references.
+- A compact execution surface for agents: reviewed rule files and generated agent snippets.
+
+The detailed surface explains why rules exist and where they stop applying. The compact surface is
+what another repo can copy into `AGENTS.md`-style guidance so agents can apply the preferences during
+implementation.
+
+## Read This Repo Directly
 
 Start with the guide that matches the decision you are making:
 
@@ -107,6 +138,17 @@ the target repo.
 This keeps all reviewed rules represented downstream, including domains that are easy to forget such
 as performance, source hygiene, and review artifacts, while still letting agents load only the rule
 domain relevant to a task.
+
+The intended downstream shape is:
+
+- `AGENTS.md`: the short repo-local map, local validation commands, and local constraints.
+- `docs/development/README.md`: the local development guidance entry point.
+- `docs/development/rules/README.md`: the generated index of copied rule domains.
+- `docs/development/rules/<domain>.md`: generated compact rules for each domain.
+
+This squares summary and detail: `AGENTS.md` stays readable, while every reviewed rule remains
+available in the target repo without making agents or maintainers pull information manually from
+this repo.
 
 ## Repository Shape
 
