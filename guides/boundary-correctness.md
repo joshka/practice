@@ -147,7 +147,7 @@ Use [Make Side Effects Visible][side-effects] when a public or internal API read
 persists, emits, spawns, or calls outside memory. Use [Keep Async Boundaries Explicit][async] when
 locks, borrows, owned data, retries, or side effects cross `await` points.
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Boundary Rules][boundary-rules] for compact instructions about parsing, validation, explicit
 inputs, state transitions, side effects, async boundaries, and provider diagnostics. Use

@@ -50,7 +50,7 @@ Use [Preserve Local Doc Voice][voice] when revising existing prose. Use
 [Preserve Intent Over Literalism][intent] when a requested rewrite would keep words but lose the
 decision the original text was carrying.
 
-## Repo Maps And Layers
+## Repo Maps and Layers
 
 Repository docs need a small reliable map before they need a large tree. Separate user entry points,
 maintainer details, reference material, and durable decisions so readers meet depth when they need
@@ -105,7 +105,7 @@ keeps recurring because the doc is too far from the thing it describes.
 
 For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Documentation Rules][doc-rules] for compact instructions about docs-as-contracts, examples,
 review narratives, source links, and drift. Use [Docs Are Contracts][docs-contracts] for the deeper

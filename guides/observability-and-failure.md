@@ -62,7 +62,7 @@ explicitly when downstream code, replay, support, or UI rendering must distingui
 Do not hide failures only in UI logs. If a UI, worker, or extension observes a failure that changes
 durable system state, the core event or diagnostic stream should carry that fact.
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Observability Rules][observability-rules] for compact failure, logging, diagnostic context, and
 retention instructions. Use [Boundary Rules][boundary-rules] when failure state crosses parsing,

@@ -1,6 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { withBase } from '../lib/site';
+import { practiceTasks, withBase } from '../lib/site';
 
 const homeCards = [
   {
@@ -43,19 +43,19 @@ const homeCards = [
 
 const useCases = [
   {
-    title: 'For reviews',
+    title: 'Review comments',
     route: '/patterns/write-pr-narrative/',
     description:
       'Link a named rule or pattern instead of re-explaining the same preference in every PR.',
   },
   {
-    title: 'For project setup',
+    title: 'Project setup',
     route: '/agents/core/',
     description:
       'Copy the downstream `AGENTS.md` template and reviewed rule pack, then adapt local checks and constraints.',
   },
   {
-    title: 'For agent work',
+    title: 'Agent instructions',
     route: '/agents/',
     description:
       'Use the agent snippets when a coding tool needs compact instructions with enough intent to make good tradeoffs.',
@@ -71,21 +71,21 @@ const useCases = [
     <div class="home-content">
       <section class="home-hero">
         <div class="home-version">Public reference</div>
-        <h1>How I prefer software work to be shaped.</h1>
+        <h1>Development Preferences</h1>
         <p>
-          A public reference for readable code, trustworthy docs, useful tests, careful review, and
-          coding-agent instructions that preserve context.
+          A reference site for the rules, patterns, mechanisms, and agent instructions I use to
+          shape software work.
         </p>
         <div class="hero-rule" aria-hidden="true"></div>
       </section>
 
       <section class="intent-grid" aria-label="Site intent">
         <div class="intent-panel">
-          <p class="eyebrow">System Intent</p>
+          <p class="eyebrow">Site purpose</p>
           <p>
-            This site gives names to preferences that otherwise get repeated in review comments,
-            repo setup, and agent steering: small changes, reader-local code, docs as contracts,
-            clear failure output, jj-first workflow, and handoffs that report proof.
+            Practice turns repeated software-review judgment into reusable guidance for humans,
+            coding agents, and downstream repositories. It gives names to preferences that would
+            otherwise be repeated in review comments, repo setup, and agent steering.
           </p>
         </div>
         <div class="status-panel">
@@ -100,22 +100,51 @@ const useCases = [
         </div>
       </section>
 
-      <section class="home-card-grid" aria-label="Primary sections">
-        {homeCards.map((card) => (
-          <a class={`home-card ${card.badge === 'AI' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
-            <div class="home-card__meta">
-              <span class="home-card__icon">{card.badge}</span>
-            </div>
-            <h2>{card.title}</h2>
-            <p>{card.description}</p>
-          </a>
-        ))}
+      <section class="home-tasks" aria-labelledby="home-tasks-title">
+        <div class="home-section-heading">
+          <p class="eyebrow">Guide entry points</p>
+          <h2 id="home-tasks-title">Common work areas</h2>
+          <p>
+            Each card maps a recurring work area to the guide most likely to answer the first
+            decision.
+          </p>
+        </div>
+        <div class="task-grid">
+          {practiceTasks.map((task) => (
+            <a class="task-card" href={withBase(task.route)}>
+              <strong>{task.title}</strong>
+              <span>{task.description}</span>
+            </a>
+          ))}
+        </div>
+      </section>
+
+      <section class="home-library" aria-labelledby="home-library-title">
+        <div class="home-section-heading">
+          <p class="eyebrow">Site map</p>
+          <h2 id="home-library-title">Reference sections</h2>
+          <p>
+            The cards provide the full map: explanations for humans, compact rules for agents,
+            named review moves, reasoning notes, and mechanical support.
+          </p>
+        </div>
+        <div class="home-card-grid" aria-label="Primary sections">
+          {homeCards.map((card) => (
+            <a class={`home-card ${card.badge === 'AI' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
+              <div class="home-card__meta">
+                <span class="home-card__icon">{card.badge}</span>
+              </div>
+              <h2>{card.title}</h2>
+              <p>{card.description}</p>
+            </a>
+          ))}
+        </div>
       </section>
 
       <section class="home-use" aria-labelledby="how-to-use">
         <div class="home-use__intro">
-          <p class="eyebrow">Navigation</p>
-          <h2 id="how-to-use">Sections match common work.</h2>
+          <p class="eyebrow">Use cases</p>
+          <h2 id="how-to-use">Review comments, setup, and agent instructions</h2>
           <p>
             <a href={withBase('/guides/')}>Guides</a> explain connected decisions,
             <a href={withBase('/rules/')}>rules</a> provide compact instructions,

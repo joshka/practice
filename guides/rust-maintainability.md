@@ -612,7 +612,7 @@ behavior, MSRV, feature behavior, or public API semantics.
 
 For copyable `AGENTS.md` guidance, use [Rust Agent Instructions][rust-snippet].
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. Use
 [Public API Changes Have Downstream Cost][api-cost] for API compatibility reasoning and

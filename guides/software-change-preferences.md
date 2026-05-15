@@ -178,7 +178,7 @@ Use [Commit Messages For History][commit-history] when setting jj descriptions o
 published commits. Follow the repository's commit convention; use Conventional Commits only where
 the repo has already adopted that spec.
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Change Shape Rules][change-rules] for compact instructions about change size, generated
 artifacts, dependency churn, ownership, and structure-versus-behavior boundaries. Use

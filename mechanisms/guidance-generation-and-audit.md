@@ -74,7 +74,7 @@ The audit cannot prove that a rule is correct, broadly useful, or written at the
 keeps mechanical quality from stealing review attention. Maintainer review still decides whether a
 rule belongs in the durable catalog and whether the explanation is concrete enough.
 
-## Use
+## Use Cases
 
 Use this mechanism whenever changing rule files, rule templates, rule indexes, or compressed agent
 snippets. Use the downstream template when another repo should carry every reviewed rule without

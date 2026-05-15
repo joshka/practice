@@ -56,7 +56,7 @@ Jujutsu's default diff format is useful, but Git-formatted diffs are more in-dis
 agents, review tools, and patch-oriented reasoning. Use the default format when a human specifically
 wants jj's native presentation.
 
-## Start Reviewable Work
+## Reviewable Work
 
 Use a fresh change for a separate review unit:
 
@@ -130,7 +130,7 @@ EOF
 jj log -r @ -T 'description'
 ```
 
-## Keep Changes Small
+## Small Changes
 
 Keep one coherent purpose per change. Use child changes for follow-up chunks and reshape later only
 when the relationship is clear.
@@ -241,7 +241,7 @@ Repair remotes, fetch configuration, push configuration, `trunk()`, and tracked 
 when a host tool has changed repo topology. Do not let a forge command infer targets from stale jj
 topology.
 
-## Use Git Only For Transport
+## Git Transport Boundary
 
 In a jj repo, do not use Git for normal local workflow. Use Git only when the remaining operation is
 transport-level behavior that jj does not cover in the current workflow, and keep jj as the source
@@ -289,7 +289,7 @@ checkout blindly.
 
 For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [JJ Topology And Source Control Rules][vcs-rules] for compact jj and publication instructions.
 Use [JJ Topology Is Repo Role Dependent][jj-topology] for the reasoning behind owned, maintainer,

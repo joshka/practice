@@ -99,7 +99,7 @@ Use [Delete Redundant Comments][delete-comments] when a comment repeats the curr
 comments that explain constraints, compatibility, safety, performance, side effects, or non-obvious
 ordering.
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Local Reasoning And Refactoring Rules][refactoring-rules] for compact source-shape
 instructions. Use [Reader Locality Reduces Change Cost][reader-locality-principle] for the deeper

@@ -4,6 +4,18 @@ This repository is the standalone home for my durable software-development prefe
 how I prefer code, documentation, tests, version-control workflows, review artifacts, and
 coding-agent handoffs to be shaped.
 
+## What This Is For
+
+This repo turns repeated software-review judgment into reusable guidance for humans, coding agents,
+and downstream repositories.
+
+Use it to:
+
+- Decide how a change should be shaped.
+- Cite a preference in review.
+- Give coding agents compact operating rules.
+- Copy generated guidance into another project.
+
 Use it in two ways:
 
 - As a human-readable explanation of the development beliefs I want to apply consistently.
@@ -77,7 +89,18 @@ implementation.
 
 ## Read This Repo Directly
 
-Start with the guide that matches the decision you are making:
+Task entry points:
+
+| Work area         | Start here                                                            |
+| ----------------- | --------------------------------------------------------------------- |
+| Change shape      | [Software Change Preferences](guides/software-change-preferences.md)  |
+| Rust review       | [Rust Maintainability](guides/rust-maintainability.md)                |
+| Code shape        | [Code Shape](guides/code-shape.md)                                    |
+| Documentation     | [Markdown And Documentation](guides/markdown-documentation.md)        |
+| Coding-agent work | [Coding Agents](guides/coding-agents.md)                              |
+| JJ workflow       | [JJ Workflow](guides/jj-workflow.md)                                  |
+
+Guide entry points by decision area:
 
 - [Software Change Preferences](guides/software-change-preferences.md): broad defaults for change
   shape, review, and verification.

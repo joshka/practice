@@ -27,7 +27,46 @@ export type Section = {
   route: string;
 };
 
+export type PracticeTask = {
+  title: string;
+  route: string;
+  description: string;
+};
+
 export const repoUrl = 'https://github.com/joshka/practice';
+
+export const practiceTasks: PracticeTask[] = [
+  {
+    title: 'Change shape',
+    route: '/guides/software-change-preferences/',
+    description: 'Review-unit, validation-depth, and handoff decisions before a change grows.',
+  },
+  {
+    title: 'Rust review',
+    route: '/guides/rust-maintainability/',
+    description: 'API shape, module ownership, docs, tests, dependencies, and release risk.',
+  },
+  {
+    title: 'Code shape',
+    route: '/guides/code-shape/',
+    description: 'Live context, cohesion, and behavior-preserving source moves.',
+  },
+  {
+    title: 'Documentation',
+    route: '/guides/markdown-documentation/',
+    description: 'Task-first, lintable docs that stay close to the behavior they describe.',
+  },
+  {
+    title: 'Coding-agent work',
+    route: '/guides/coding-agents/',
+    description: 'Objectives, boundaries, context, tools, proof, and reusable feedback loops.',
+  },
+  {
+    title: 'JJ workflow',
+    route: '/guides/jj-workflow/',
+    description: 'Reviewable, recoverable local changes aligned with jj source control.',
+  },
+];
 
 export const sections: Section[] = [
   {
@@ -94,7 +133,7 @@ export function sourceUrl(repoPath: string): string {
 
 export function pageTitleFromMarkdown(markdown: string, fallback: string): string {
   const match = markdown.match(/^#\s+(.+)$/m);
-  return match?.[1]?.trim() ?? fallback;
+  return formatDisplayTitle(match?.[1]?.trim() ?? fallback);
 }
 
 export function descriptionFromMarkdown(markdown: string): string {
@@ -120,7 +159,10 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
   const sections = markdownSections(markdown, repoPath);
   const route = routeForRepoPath(repoPath);
   return {
-    title: pageTitleFromMarkdown(markdown, titleFromSlug(path.basename(repoPath, '.md'))),
+    title: displayTitleForRepoPath(
+      repoPath,
+      pageTitleFromMarkdown(markdown, titleFromSlug(path.basename(repoPath, '.md'))),
+    ),
     description: descriptionFromMarkdown(markdown),
     html,
     introHtml: markdownIntro(markdown, repoPath),
@@ -270,6 +312,95 @@ function titleFromSlug(slug: string): string {
     .join(' ');
 }
 
+function displayTitleForRepoPath(repoPath: string, title: string): string {
+  const parts = repoPath.split('/');
+  if (parts[0] !== 'rules' || !parts[2] || parts[2] === 'README.md') {
+    return title;
+  }
+
+  const rulePrefixes: Record<string, string[]> = {
+    'agent-workflow': ['Agent'],
+    boundary: ['Boundary'],
+    'change-shape': ['Change'],
+    documentation: ['Docs'],
+    observability: ['Observability'],
+    performance: ['Perf'],
+    refactoring: ['Refactoring'],
+    review: ['Review'],
+    rust: ['Rust'],
+    source: ['Source'],
+    'test-failures': ['Test'],
+    testing: ['Test'],
+    vcs: ['VCS'],
+  };
+
+  let displayTitle = title;
+  for (const prefix of rulePrefixes[parts[1]] ?? []) {
+    displayTitle = displayTitle.replace(new RegExp(`^${escapeRegExp(prefix)}\\s+`, 'i'), '');
+  }
+  return displayTitle;
+}
+
+function formatDisplayTitle(title: string): string {
+  title = title
+    .replace(/\bAgents Md\b/g, 'AGENTS.md')
+    .replace(/\bDocs Rs\b/g, 'docs.rs')
+    .replace(/\bMod Rs\b/g, 'mod.rs')
+    .replace(/\bPre Release\b/g, 'Pre-release');
+
+  const smallWords = new Set([
+    'a',
+    'an',
+    'and',
+    'as',
+    'at',
+    'by',
+    'for',
+    'from',
+    'in',
+    'into',
+    'of',
+    'on',
+    'only',
+    'or',
+    'out',
+    'over',
+    'the',
+    'to',
+    'with',
+  ]);
+  const acronyms: Record<string, string> = {
+    adr: 'ADR',
+    adrs: 'ADRs',
+    api: 'API',
+    ci: 'CI',
+    cli: 'CLI',
+    dry: 'DRY',
+    jj: 'JJ',
+    md: 'MD',
+    msrv: 'MSRV',
+    pr: 'PR',
+    prs: 'PRs',
+    readme: 'README',
+    ui: 'UI',
+    vcs: 'VCS',
+  };
+
+  const words = title.split(/\s+/);
+  return words
+    .map((word, index) => {
+      const normalized = word.toLowerCase().replace(/[^a-z0-9]/g, '');
+      const trailing = word.match(/[.,:;!?)]$/)?.[0] ?? '';
+      const core = trailing ? word.slice(0, -trailing.length) : word;
+
+      if (core === 'AGENTS.md') return `${core}${trailing}`;
+      if (acronyms[normalized]) return `${acronyms[normalized]}${trailing}`;
+      if (index > 0 && smallWords.has(normalized)) return `${normalized}${trailing}`;
+      return `${core}${trailing}`;
+    })
+    .join(' ');
+}
+
 function metadataFromMarkdown(markdown: string): Record<string, string> {
   const match = markdown.match(/^##\s+Metadata\s*\n([\s\S]*?)(?=^##\s+)/m);
   if (!match) return {};
@@ -329,7 +460,7 @@ function splitMarkdownSections(markdown: string): {
   return {
     intro: intro.join('\n').trim(),
     sections: sections.map((section) => ({
-      title: section.title,
+      title: formatDisplayTitle(section.title),
       markdown: section.markdown.join('\n').trim(),
     })),
   };
@@ -375,6 +506,10 @@ function truncateWords(value: string, maxLength: number): string {
   const truncated = value.slice(0, maxLength);
   const lastSpace = truncated.lastIndexOf(' ');
   return `${truncated.slice(0, lastSpace > 80 ? lastSpace : maxLength).trimEnd()}...`;
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
 function escapeHtml(value: string): string {

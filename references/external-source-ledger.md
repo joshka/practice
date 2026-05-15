@@ -36,7 +36,7 @@ material.
 - [OpenAI docs](https://platform.openai.com/docs/). Agent and model behavior where product-specific.
   Use only for current OpenAI-specific claims.
 
-## Use Rules
+## Source Use Policy
 
 - Prefer direct links from each rule or principle to the narrowest relevant source.
 - Use this ledger when adding a new source family or explaining why a source appears repeatedly.

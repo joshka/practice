@@ -161,7 +161,8 @@
   }
 
   .home-hero h1 {
-    @apply m-0 max-w-4xl text-5xl font-bold leading-[0.98] tracking-normal text-on-background md:text-7xl;
+    @apply m-0 max-w-4xl text-4xl font-bold leading-tight tracking-normal text-on-background md:text-7xl md:leading-[0.98];
+    overflow-wrap: break-word;
   }
 
   .home-hero p {
@@ -177,7 +178,8 @@
   }
 
   .intent-panel {
-    @apply rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-soft md:col-span-8;
+    @apply min-w-0 rounded-lg border border-outline-variant bg-surface-container-lowest p-6 shadow-soft md:col-span-8;
+    overflow-wrap: break-word;
   }
 
   .intent-panel p:last-child {
@@ -185,7 +187,8 @@
   }
 
   .status-panel {
-    @apply flex flex-col justify-end rounded-lg border border-outline-variant bg-surface-container p-5 text-sm text-on-surface-variant md:col-span-4;
+    @apply flex min-w-0 flex-col justify-end rounded-lg border border-outline-variant bg-surface-container p-5 text-sm text-on-surface-variant md:col-span-4;
+    overflow-wrap: break-word;
   }
 
   .status-panel strong {
@@ -197,12 +200,56 @@
     box-shadow: 0 0 0 0.35rem color-mix(in srgb, var(--color-secondary) 18%, transparent);
   }
 
+  .home-section-heading {
+    @apply mb-6 max-w-3xl;
+  }
+
+  .home-section-heading h2 {
+    @apply mt-0 mb-3 text-3xl font-bold leading-tight text-on-background md:text-4xl;
+  }
+
+  .home-section-heading p:not(.eyebrow) {
+    @apply m-0 max-w-[68ch] text-base leading-relaxed text-on-surface-variant;
+  }
+
+  .home-tasks,
+  .home-library {
+    @apply mb-20;
+  }
+
+  .task-grid {
+    @apply grid grid-cols-1 gap-3 md:grid-cols-2;
+  }
+
+  .task-grid--compact {
+    @apply md:grid-cols-3;
+  }
+
+  .task-card {
+    @apply block min-w-0 rounded-lg border border-outline-variant bg-surface-container-lowest p-4 text-on-surface no-underline transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-on-surface hover:shadow-soft;
+    overflow-wrap: break-word;
+  }
+
+  .task-card strong,
+  .task-card span {
+    @apply block;
+  }
+
+  .task-card strong {
+    @apply text-base font-bold leading-tight text-on-background;
+  }
+
+  .task-card span {
+    @apply mt-2 text-sm leading-relaxed text-on-surface-variant;
+  }
+
   .home-card-grid {
-    @apply mb-20 grid grid-cols-1 gap-4 md:grid-cols-3;
+    @apply grid grid-cols-1 gap-4 md:grid-cols-3;
   }
 
   .home-card {
-    @apply block min-h-48 rounded-lg border border-outline-variant bg-surface-container-low p-6 text-on-surface no-underline transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-on-surface hover:shadow-soft;
+    @apply block min-h-48 min-w-0 rounded-lg border border-outline-variant bg-surface-container-low p-6 text-on-surface no-underline transition-all duration-200 hover:-translate-y-0.5 hover:border-primary hover:text-on-surface hover:shadow-soft;
+    overflow-wrap: break-word;
   }
 
   .home-card--agent {
@@ -598,6 +645,22 @@
 
   .section-hero p:not(.eyebrow) {
     @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
+  }
+
+  .section-task-panel {
+    @apply mb-14 border-y border-outline-variant py-8;
+  }
+
+  .section-task-panel__intro {
+    @apply mb-6 max-w-3xl;
+  }
+
+  .section-task-panel__intro h2 {
+    @apply mt-0 mb-3 text-3xl font-bold leading-tight text-on-background;
+  }
+
+  .section-task-panel__intro p:not(.eyebrow) {
+    @apply m-0 max-w-[68ch] text-base leading-relaxed text-on-surface-variant;
   }
 
   .rule-domain-hero__use {

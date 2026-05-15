@@ -25,7 +25,7 @@ The problem is not global names by themselves. Immutable constants and lookup ta
 clearer. The problem is ambient mutation that quietly changes behavior across calls, tests, tasks,
 or threads.
 
-## Prefer
+## Preferred Direction
 
 - Pass state through explicit owners.
 - Put process-wide services behind handles.

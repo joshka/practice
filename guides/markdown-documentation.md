@@ -67,7 +67,7 @@ contract.
 Use [Preserve Error Context][error-context] and [Write Actionable Error Messages][actionable-errors]
 when documenting failures that cross user, caller, operator, or support boundaries.
 
-## Choose The Doc Type
+## Document Types
 
 Separate documentation jobs instead of mixing every reader need into one page.
 
@@ -94,6 +94,9 @@ job obvious.
 - Prefer present tense unless accuracy requires another tense.
 - Use fewer, denser sections.
 - Use headings for real topic clusters, not micro-points.
+- Use descriptive headings on reference pages, indexes, and landing pages.
+- Reserve imperative headings for procedures, checklists, and tutorials where the heading names a
+  real step.
 - Use prose for relationships, causality, and tradeoffs.
 - Use lists for steps, fields, options, and enumerations.
 - Do not use lists as the default explanation format.
@@ -271,7 +274,7 @@ section when no durable source is useful.
 
 For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Documentation Rules][doc-rules] for compact docs guidance and [Docs Are Contracts][docs-contracts]
 for the reasoning behind treating docs as behavior-bearing artifacts. Use

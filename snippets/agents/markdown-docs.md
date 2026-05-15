@@ -16,6 +16,9 @@ Write technical docs, not marketing, coaching, or chat. Pick the page mode first
 dominant mode per page. Front-load the point, name the actor, prefer active voice, and use present
 tense unless accuracy requires otherwise.
 
+Use descriptive headings on reference pages, indexes, and landing pages. Reserve imperative headings
+for procedures, checklists, and tutorials where the heading names a real step.
+
 Use prose for relationships, causality, and tradeoffs. Use lists for steps, fields, options, and
 enumerations. Do not atomize explanation into one-sentence fragments by default.
 

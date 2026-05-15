@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import {
   type MarkdownPage,
   getSection,
+  practiceTasks,
   sectionIndex,
   sectionPages,
   sections,
@@ -39,6 +40,7 @@ const sectionTitle = section.title;
 const sectionDescription = section.description;
 const page = sectionIndex(section);
 const pages = sectionPages(section);
+const showGuideTasks = sectionKey === 'guides';
 
 const sectionConfig: Record<string, SectionConfig> = {
   guides: {
@@ -254,8 +256,8 @@ const guideTags: Record<string, string[]> = {
   'Coding Agents': ['AGENTS', 'WORKFLOW'],
   'Documentation Workflow': ['DOCS', 'REVIEW'],
   'JJ Workflow': ['VCS', 'JJ'],
-  'Markdown And Documentation': ['MARKDOWN', 'DOCS'],
-  'Observability And Failure': ['FAILURE', 'DIAGNOSTICS'],
+  'Markdown and Documentation': ['MARKDOWN', 'DOCS'],
+  'Observability and Failure': ['FAILURE', 'DIAGNOSTICS'],
   'Rust Maintainability': ['RUST', 'API'],
   'Software Change Preferences': ['CHANGE', 'REVIEW'],
 };
@@ -328,7 +330,7 @@ function guideGroupFor(item: MarkdownPage): GroupConfig {
   if (['Software Change Preferences', 'Code Shape', 'Rust Maintainability'].includes(item.title)) {
     return guideGroups.core;
   }
-  if (['Boundary Correctness', 'Observability And Failure'].includes(item.title)) {
+  if (['Boundary Correctness', 'Observability and Failure'].includes(item.title)) {
     return guideGroups.boundaries;
   }
   return guideGroups.collaboration;
@@ -436,6 +438,27 @@ function normalizeForCompare(value: string): string {
     <h1 id="section-title">{section.title}</h1>
     <p>{config.intro}</p>
   </section>
+
+  {showGuideTasks && (
+    <section class="section-task-panel" aria-labelledby="guide-task-title">
+      <div class="section-task-panel__intro">
+        <p class="eyebrow">Guide entry points</p>
+        <h2 id="guide-task-title">Common work areas</h2>
+        <p>
+          Each card maps a recurring work area to the guide most likely to answer the first
+          decision.
+        </p>
+      </div>
+      <div class="task-grid task-grid--compact">
+        {practiceTasks.map((task) => (
+          <a class="task-card" href={withBase(task.route)}>
+            <strong>{task.title}</strong>
+            <span>{task.description}</span>
+          </a>
+        ))}
+      </div>
+    </section>
+  )}
 
   <section class="listing">
     <div class="listing__header">

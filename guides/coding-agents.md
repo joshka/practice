@@ -163,7 +163,7 @@ For copyable `AGENTS.md` guidance, use [Coding Agent Workflow Instructions][agen
 broader repo baseline, use [Core Agent Instructions][core-snippet]. For a compressed execution pack
 generated from reviewed rules, use [Reviewed Rule Agent Pack][rule-pack].
 
-## Related Guidance Layers
+## Related Guidance
 
 Use [Agent Workflow Rules][agent-rules] for compact reviewed instructions. Use
 [Agent Instructions Are Operational Controls][agent-controls] when deciding how much context belongs
