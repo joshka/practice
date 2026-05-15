@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, planning, documentation`
-- Related: `define-good-before-delegating, preserve-agent-context-coherence`
+- Related: `define-good-before-judgment-heavy-work, preserve-agent-context-coherence`
 
 ## Problem
 

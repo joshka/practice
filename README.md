@@ -24,7 +24,8 @@ A guidance unit should usually include:
 - Problem: the pressure or failure mode that makes the guidance relevant.
 - Preferred move: the action to take.
 - Tradeoff: when the move is limited, risky, or not worth the ceremony.
-- Agent instruction: a compact operational form for coding agents.
+- Agent instruction: a compact operational form for coding agents that includes enough trigger,
+  failure-mode, or constraint context to apply the rule without blindly repeating the human title.
 - References: optional durable sources that support, frame, or contrast the guidance.
 
 Guides should assemble and contextualize these units instead of duplicating them. If a guide needs a
@@ -32,14 +33,13 @@ rule that is useful across topics, promote that rule into a named guidance file 
 
 Use these durable layers:
 
-- [Rules](rules/README.md): compact instructions grouped by the principle or judgment area that
-  explains them.
+- [Rules](rules/README.md): one-file-per-rule compact instructions grouped by domain.
 - [Principles](principles/README.md): reasoning notes for broad beliefs that justify several rules.
 - [Patterns](patterns/README.md): repeatable situation-and-move guidance.
 - [Mechanisms](mechanisms/README.md): lints, checks, commands, and configuration that support
   rules mechanically.
-- [Agent snippets](snippets/agents/README.md): compact profile-style guidance for `AGENTS.md`
-  files.
+- [Agent snippets](snippets/agents/README.md): compressed execution packs and profile-style
+  guidance for `AGENTS.md` files.
 
 Start new repeatable moves from `templates/pattern.md`. Use the existing principle and mechanism
 files as models for deeper reasoning notes and tooling profiles.
@@ -66,13 +66,14 @@ Start with the guide that matches the decision you are making:
 - [Jj Workflow](guides/jj-workflow.md): local jujutsu change shape, descriptions, bookmarks,
   remotes, and recovery.
 
-Use [rules](rules/README.md) when you need the compact instruction. Use
+Use [rules](rules/README.md) when you need a compact instruction with its own reviewable home. Use
 [principles](principles/README.md) when you need the reasoning behind a rule. Use
 [patterns](patterns/README.md) when you need a stable review term or a compact rule to cite. Use
 [mechanisms](mechanisms/README.md) when you need the lint, command, CI, or configuration support
-behind a rule. Use [agent snippets](snippets/agents/README.md) when you need copyable
-`AGENTS.md` sections for another repo. Use [the guidance plan](references/guidance-plan.md) to see
-how the current guide set is organized and where future work belongs.
+behind a rule. Use [agent snippets](snippets/agents/README.md) when you need copyable `AGENTS.md`
+sections or a compressed reviewed-rule pack for another repo. Use
+[the guidance plan](references/guidance-plan.md) to see how the current guide set is organized and
+where future work belongs.
 
 ## Repository Shape
 
@@ -93,6 +94,9 @@ guides/
   coding-agents.md
 rules/
   README.md
+  <domain>/
+    README.md
+    <rule-id>.md
 principles/
   README.md
   <stable-principle-id>.md
@@ -105,9 +109,11 @@ mechanisms/
 snippets/
   agents/
     <copyable-agent-section>.md
+    rules.md
 references/
   guidance-plan.md
 templates/
+  rule.md
   pattern.md
 ```
 
@@ -118,6 +124,24 @@ durable content that is ready for review.
 
 Build this repo in small, reviewable chunks. Each chunk should have one clear purpose and be
 validated locally before handoff.
+
+## Validation
+
+Run both checks before handing off broad guidance changes:
+
+```bash
+python3 scripts/audit_guidance.py
+markdownlint-cli2 "**/*.md"
+```
+
+The audit checks the guidance architecture directly: rule metadata and references, domain indexes,
+generated agent-pack coverage, stale rule IDs, private local context leaks, placeholder text, and
+internal Markdown links. Regenerate `snippets/agents/rules.md` with
+`python3 scripts/generate_agent_rules.py` after changing reviewed rule instructions.
+
+Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode
+flags rules whose rationale still starts by repeating the rule text, which is a sign that the rule
+may need concrete examples, narrower tradeoffs, or stronger explanation before it feels durable.
 
 Use a local review loop that optimizes for maintainer attention:
 

@@ -8,13 +8,14 @@ copy every snippet by default; choose the sections that match the repo's work.
 
 ## Snippets
 
-| Snippet                                  | Use When                                                   |
-| ---------------------------------------- | ---------------------------------------------------------- |
-| [core.md](core.md)                       | A repo needs the broad development-preference baseline.    |
-| [rust.md](rust.md)                       | Rust code, APIs, Rustdoc, or dependency shape matters.     |
-| [markdown-docs.md](markdown-docs.md)     | Agents edit Markdown, Rustdoc, READMEs, or review notes.   |
-| [coding-agents.md](coding-agents.md)     | The repo delegates work to coding agents.                  |
-| [jj.md](jj.md)                           | The repo uses jujutsu for local version-control workflow.  |
+| Snippet                              | Use When                                                       |
+| ------------------------------------ | -------------------------------------------------------------- |
+| [core.md](core.md)                   | A repo needs the broad development-preference baseline.        |
+| [rust.md](rust.md)                   | Rust code, APIs, Rustdoc, or dependency shape matters.         |
+| [markdown-docs.md](markdown-docs.md) | Agents edit Markdown, Rustdoc, READMEs, or review notes.       |
+| [coding-agents.md](coding-agents.md) | The repo delegates work to coding agents.                      |
+| [jj.md](jj.md)                       | The repo uses jujutsu for local version-control workflow.      |
+| [rules.md](rules.md)                 | Reviewed compact rule instructions with per-rule traceability. |
 
 ## Adaptation Checklist
 

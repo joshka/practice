@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, delegation, workflow`
-- Related: `define-good-before-delegating, grant-scoped-agent-capabilities`
+- Related: `define-good-before-judgment-heavy-work, grant-scoped-agent-capabilities`
 
 ## Problem
 

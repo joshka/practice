@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, skills, reliability`
-- Related: `close-the-agent-loop, define-good-before-delegating`
+- Related: `close-the-agent-loop, define-good-before-judgment-heavy-work`
 
 ## Problem
 

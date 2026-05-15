@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, observability, validation`
-- Related: `define-good-before-delegating, close-the-agent-loop`
+- Related: `define-good-before-judgment-heavy-work, close-the-agent-loop`
 
 ## Problem
 

@@ -23,13 +23,16 @@ Optimize for:
 
 ## Objectives And Acceptance
 
-Define the work before delegating it. Name the objective, boundaries, success criteria, available
-tools, and the proof expected at handoff. Avoid over-specifying the route when the agent can choose
-a better path inside safe boundaries.
+Define the work before delegating it or starting judgment-heavy execution. Name the objective,
+boundaries, success criteria, available tools, and the proof expected at handoff. For naming,
+grouping, review-shape, public API, or other taste-heavy work, establish the quality bar before
+changing the artifact. Avoid over-specifying the route when the agent can choose a better path
+inside safe boundaries.
 
 Use [Give Agents Objectives With Boundaries][objectives] when a task should preserve the user's
-goal without freezing the implementation route. Use [Define Good Before Delegating][define-good]
-when the acceptance criteria, evidence, or remaining human judgment need to be explicit.
+goal without freezing the implementation route. Use
+[Define Good Before Judgment-Heavy Work][define-good] when the acceptance criteria, evidence, or
+remaining human judgment need to be explicit.
 
 For ambiguous work, spend human attention at the ambiguity boundary. Use
 [Spend Human Attention On Ambiguity][human-attention] before asking an agent to bury product,
@@ -181,7 +184,7 @@ broader repo baseline, use [Core Agent Instructions][core-snippet].
 [code-memory]: ../patterns/code-is-memory-of-process.md
 [context-coherence]: ../patterns/preserve-agent-context-coherence.md
 [core-snippet]: ../snippets/agents/core.md
-[define-good]: ../patterns/define-good-before-delegating.md
+[define-good]: ../patterns/define-good-before-judgment-heavy-work.md
 [disk-context]: ../patterns/use-disk-as-context-sink.md
 [drift]: ../patterns/garbage-collect-agent-drift.md
 [easy-first]: ../patterns/make-the-change-easy-first.md

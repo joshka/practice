@@ -18,7 +18,7 @@ Explain which repeated failure the mechanism is meant to prevent or make cheaper
 
 ## Supported Principles
 
-- `[Principle name](../principles/example.md)`
+- `[Principle name]`
 
 ## Supported Rules
 

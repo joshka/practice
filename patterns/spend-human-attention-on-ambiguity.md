@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, prioritization, review`
-- Related: `small-reviewable-chunks, define-good-before-delegating`
+- Related: `small-reviewable-chunks, define-good-before-judgment-heavy-work`
 
 ## Problem
 

@@ -23,7 +23,7 @@ Use `templates/pattern.md` for new entries.
 | `code-is-memory-of-process`                    | Code Is Memory Of Process                    | reviewed |
 | `commit-messages-for-history`                  | Commit Messages For History                  | reviewed |
 | `contain-observability-policy`                 | Contain Observability Policy                 | reviewed |
-| `define-good-before-delegating`                | Define Good Before Delegating                | reviewed |
+| `define-good-before-judgment-heavy-work`       | Define Good Before Judgment-Heavy Work       | reviewed |
 | `delete-redundant-comments`                    | Delete Redundant Comments                    | reviewed |
 | `deliver-context-just-in-time`                 | Deliver Context Just In Time                 | reviewed |
 | `distill-from-blessed-artifacts`               | Distill From Blessed Artifacts               | reviewed |

@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, judgment, safety`
-- Related: `define-good-before-delegating, spend-human-attention-on-ambiguity`
+- Related: `define-good-before-judgment-heavy-work, spend-human-attention-on-ambiguity`
 
 ## Problem
 

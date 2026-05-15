@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, review, verification`
-- Related: `define-good-before-delegating, report-verification-honestly`
+- Related: `define-good-before-judgment-heavy-work, report-verification-honestly`
 
 ## Problem
 

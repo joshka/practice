@@ -7,7 +7,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, verification, feedback`
-- Related: `turn-feedback-into-guidance, define-good-before-delegating`
+- Related: `turn-feedback-into-guidance, define-good-before-judgment-heavy-work`
 
 ## Problem
 
