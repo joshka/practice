@@ -150,69 +150,12 @@ This squares summary and detail: `AGENTS.md` stays readable, while every reviewe
 available in the target repo without making agents or maintainers pull information manually from
 this repo.
 
-## Repository Shape
+## Maintaining This Repo
 
-The first reviewed version uses this shape:
+Keep changes small, reviewable, and tied to one clear purpose. Add new files only when they contain
+durable content that is ready for review; do not create placeholders to satisfy a planned tree.
 
-```text
-README.md
-AGENTS.md
-guides/
-  software-change-preferences.md
-  rust-maintainability.md
-  code-shape.md
-  boundary-correctness.md
-  observability-and-failure.md
-  markdown-documentation.md
-  documentation-workflow.md
-  jj-workflow.md
-  coding-agents.md
-rules/
-  README.md
-  <domain>/
-    README.md
-    <rule-id>.md
-principles/
-  README.md
-  <stable-principle-id>.md
-patterns/
-  README.md
-  <stable-guidance-id>.md
-mechanisms/
-  README.md
-  <stable-mechanism-id>.md
-snippets/
-  agents/
-    <copyable-agent-section>.md
-    rules.md
-references/
-  guidance-plan.md
-  external-source-ledger.md
-templates/
-  rule.md
-  pattern.md
-  principle.md
-  mechanism.md
-  downstream/
-    AGENTS.md
-    docs/development/
-      README.md
-      rules/
-        README.md
-        <domain>.md
-```
-
-Do not add placeholder files just to match the planned structure. Create files when they contain
-durable content that is ready for review.
-
-## Delivery Approach
-
-Build this repo in small, reviewable chunks. Each chunk should have one clear purpose and be
-validated locally before handoff.
-
-## Validation
-
-Run both checks before handing off broad guidance changes:
+Before handing off broad guidance changes, run:
 
 ```bash
 python3 scripts/audit_guidance.py
@@ -233,41 +176,6 @@ changing reviewed rule instructions or downstream adoption shape.
 Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode
 flags rules whose rationale still starts by repeating the rule text, which is a sign that the rule
 may need concrete examples, narrower tradeoffs, or stronger explanation before it feels durable.
-
-Use a local review loop that optimizes for maintainer attention:
-
-1. After each validated chunk, offer a numbered list of concrete next chunks.
-1. Put the recommended next chunk first and explain the tradeoff for each option.
-1. Treat a numbered choice as approval to move forward with that chunk.
-1. Wait for confirmation before implementing a chunk when the next choice is preference-sensitive.
-1. If review feedback arrives instead of a next-choice number, address that feedback before moving
-   on.
-1. Implement only the confirmed chunk.
-1. Validate locally and summarize the actual checks that ran.
-1. Ask whether to push the reviewed chunk before publishing it.
-1. Move to the next chunk only after the current chunk is accepted or redirected.
-
-Completed first-version sequence:
-
-1. Establish the repo charter and guidance architecture.
-1. Add the first pattern/principle template and a small seed batch of named guidance units.
-1. Add a broad software-change guide that links to the seed units.
-1. Add Rust maintainability guidance and Rust-specific units.
-1. Add Markdown, documentation, and coding-agent guides.
-1. Add jj workflow guidance and copy/paste agent snippets.
-
-Possible later work:
-
-- Extract sharper examples from real review comments.
-- Add project-specific snippet variants after reuse exposes repeated adaptation work.
-- Add narrower mechanism profiles when repeated rule clusters expose a command, lint, CI job, or
-  generated artifact that should be named directly.
-
-A later discovery milestone should review private and local agent-instruction material for reusable
-guidance, contradictions, and missing named units. Durable public-facing docs in this repo should
-not depend on those local source names.
-
-## Source And Reference Policy
 
 This repo is principles-first. External sources can support, frame, or challenge the guidance, but
 they do not replace the preferences captured here.
