@@ -1,0 +1,47 @@
+# Agent Spend Human Attention On Ambiguity
+
+## Metadata
+
+- ID: `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
+- Legacy ID: `R-0809`
+- Status: `reviewed`
+- Domain: `agent-workflow`
+- Depth: `compact`
+
+## Rule
+
+Spend human attention on ambiguity.
+
+## Why
+
+Agents can spend a lot of effort executing through an unresolved decision. Product behavior, public
+API compatibility, security posture, naming taste, and repo structure often need human judgment
+before implementation, not after a large speculative diff.
+
+## Helps
+
+- Uses human attention where it changes direction and lets agents handle the well-bounded work after
+  that.
+
+## Limits
+
+Do not ask humans to decide details the repo already answers. Research and summarize enough context
+that the ambiguity is real and the choice is meaningful.
+
+## Agent Instruction
+
+Spend human attention on ambiguity because agents can spend a lot of effort executing through an
+unresolved decision.
+
+## Mechanisms
+
+Supported by focused decision prompts, option tradeoffs, prototypes, small spike branches, and
+review notes that identify the exact ambiguity boundary.
+
+## References
+
+- [Principle: Private Context Is Not Shared
+  Context](../../principles/private-context-is-not-shared-context.md)
+- [OpenAI Harness Engineering: agent legibility is the
+  goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
+- [OpenAI Symphony README](https://github.com/openai/symphony#readme)
