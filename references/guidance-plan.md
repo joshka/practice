@@ -43,13 +43,17 @@ where the rule stops applying.
 
 Reviewed principles:
 
+- `agent-instructions-are-operational-controls`
 - `avoid-global-mutable-state`
+- `change-shape-controls-review-cost`
 - `docs-are-contracts`
 - `explicit-boundaries-preserve-correctness`
 - `jj-topology-is-repo-role-dependent`
 - `measure-before-optimizing`
+- `mechanize-repeated-feedback`
 - `private-context-is-not-shared-context`
 - `public-api-changes-have-downstream-cost`
+- `reader-locality-reduces-change-cost`
 - `tests-should-explain-failures`
 
 Expected owner: `principles/README.md`.
@@ -152,16 +156,31 @@ configuration, templates, and generated artifacts that make preferred behavior e
 
 Reviewed mechanisms:
 
+- `mechanisms/guidance-generation-and-audit.md`
+- `mechanisms/jj-agent-workflow.md`
+- `mechanisms/rust-api-and-release-checks.md`
+- `mechanisms/rust-docs-validation.md`
+- `mechanisms/rust-lints-and-formatting.md`
 - `mechanisms/rust-tooling-profile.md`
+- `mechanisms/testing-and-benchmarking.md`
+
+## Reference Set
+
+References are durable source families that repeatedly support, contrast, or frame guidance. They
+are not a substitute for direct links in rules and principles, but they keep the repo understandable
+when many rules point at the same outside body of work.
+
+Reviewed references:
+
+- `references/external-source-ledger.md`
 
 ## Remaining Work
 
 The first reviewed guide, pattern, and snippet set is in place. Useful next work includes:
 
-- Add an external references ledger if source tracking becomes too scattered across pattern files.
 - Distill reviewed principles into shorter agent and maintainer profiles.
-- Split additional tooling profiles out of the Rust tooling profile when repeated use proves a
-  narrower profile is useful.
+- Add more narrow mechanisms when repeated rule clusters expose a command, lint, CI job, or
+  generated artifact that should be named directly.
 - Extract more examples from real review comments when a pattern needs sharper recognition.
 - Add project-specific snippet variants only after copy/paste use exposes repeated adaptation work.
 
