@@ -19,12 +19,18 @@ tense unless accuracy requires otherwise.
 Use descriptive headings on reference pages, indexes, and landing pages. Reserve imperative headings
 for procedures, checklists, and tutorials where the heading names a real step.
 
+On navigation surfaces, name the destination, decision, artifact, or work area. Avoid directing the
+reader with phrases like "start here," "use this when," or "open this guide." Hide catalog mechanics
+such as rule prefixes, generated indexes, card behavior, and source layout unless citation,
+automation, or contribution workflow depends on them.
+
 Use prose for relationships, causality, and tradeoffs. Use lists for steps, fields, options, and
 enumerations. Do not atomize explanation into one-sentence fragments by default.
 
-Cut page narration, teaching-order commentary, throat-clearing, unearned ranking words, vague
-praise, AI contrast templates, repeated summaries, and link-hub prose. If a draft is smooth but
-low-signal, merge sections, cut repetition, restore prose continuity, and add concrete detail.
+Cut page narration, interface narration, teaching-order commentary, throat-clearing, unearned
+ranking words, vague praise, AI contrast templates, repeated summaries, and link-hub prose. If a
+draft is smooth but low-signal, merge sections, cut repetition, restore prose continuity, and add
+concrete detail.
 
 When changing behavior, search nearby docs, examples, Rustdoc, and agent instructions for drift.
 Update them in the same review unit or report explicit follow-up.

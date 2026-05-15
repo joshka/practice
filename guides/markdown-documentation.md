@@ -97,6 +97,10 @@ job obvious.
 - Use descriptive headings on reference pages, indexes, and landing pages.
 - Reserve imperative headings for procedures, checklists, and tutorials where the heading names a
   real step.
+- Name destinations, decisions, artifacts, and work areas instead of directing the reader with
+  phrases like `start here` or `use this when`.
+- Hide catalog mechanics such as rule prefixes, generated indexes, card behavior, and source layout
+  unless citation, automation, or contribution workflow depends on them.
 - Use prose for relationships, causality, and tradeoffs.
 - Use lists for steps, fields, options, and enumerations.
 - Do not use lists as the default explanation format.
@@ -115,6 +119,7 @@ job obvious.
 - Avoid idioms when plain language is available.
 - Cut filler and signposting.
 - Do not narrate the page.
+- Do not narrate the interface.
 - Explain the system instead of explaining what the page will do.
 - Avoid unearned ranking words.
 - Use words like `simplest`, `easiest`, `best`, `fastest`, `safest`, and `usually` only when the

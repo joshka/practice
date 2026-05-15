@@ -57,7 +57,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Change Shape](change-shape/README.md). 11 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 27 rules. Documentation rules cover
+- [Docs Are Contracts](documentation/README.md). 29 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
 - [Observability And Failure](observability/README.md). 5 rules. Observability rules cover owned
@@ -384,6 +384,11 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`DOCS-FRONT-LOAD-USEFUL-POINT`](documentation/docs-front-load-useful-point.md). Front-load the
   useful point. Readers scan docs for the decision, command, invariant, or warning that matters.
   Helps: Improves scanning and makes important commands, contracts, and caveats harder to miss.
+- [`DOCS-HIDE-CATALOG-MECHANICS`](documentation/docs-hide-catalog-mechanics.md). Hide catalog
+  mechanics unless citation, automation, or contribution workflow depends on them. Rule IDs,
+  prefixes, domains, generated indexes, source layout, and UI containers are useful maintenance
+  machinery, but they are usually not the reader's task. Helps: Keeps site copy oriented around work
+  areas and artifacts instead of implementation taxonomy.
 - [`DOCS-KEEP-MARKDOWN-LINTABLE`](documentation/docs-keep-markdown-lintable.md). Keep Markdown
   lintable. Formatting drift adds review noise and makes generated or agent-edited docs harder to
   maintain. Helps: Keeps documentation diffs clean and makes style expectations enforceable by
@@ -402,6 +407,10 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   navigation pages from turning into README dumps. - Makes links, tags, cards, rows, code blocks,
   and source metadata behave consistently. - Gives first-time readers a clear answer to where they
   are, what the page is for, and what to click next.
+- [`DOCS-NAME-DESTINATION-NOT-DIRECTION`](documentation/docs-name-destination-not-direction.md).
+  Name the destination, decision, artifact, or work area instead of directing the reader. Reference
+  pages, indexes, cards, and navigation labels should help readers choose by recognition. Helps:
+  Keeps navigation copy scannable, reference-like, and grounded in the reader's task.
 - [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](documentation/docs-one-dominant-mode-per-page.md). Pick one
   dominant documentation mode per page. A page with competing modes forces readers to switch mental
   models. Helps: Keeps each page useful for its main reader and moves secondary detail to
@@ -437,8 +446,8 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   real paths, defaults, commands, and examples. Abstract nouns make readers infer the actual object.
   Helps: Makes guidance easier to apply, review, and encode for agents.
 - [`DOCS-USE-DESCRIPTIVE-HEADINGS`](documentation/docs-use-descriptive-headings.md). Use headings
-  that describe the section content instead of slogan-like instructions. Headings are navigation.
-  Helps: Makes pages easier to skim, search, link, and navigate non-linearly.
+  that describe the section content instead of slogan-like instructions or directions. Headings are
+  navigation. Helps: Makes pages easier to skim, search, link, and navigate non-linearly.
 - [`DOCS-USE-SOURCE-LINKS-AS-SUPPORT`](documentation/docs-use-source-links-as-support.md). Use
   source links as support, not as wording supply. External sources should help a reader verify a
   claim or compare judgment, not supply phrasing. Helps: Keeps guidance original, source-backed

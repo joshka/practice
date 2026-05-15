@@ -10,14 +10,15 @@
 
 ## Rule
 
-Use headings that describe the section content instead of slogan-like instructions.
+Use headings that describe the section content instead of slogan-like instructions or directions.
 
 ## Why
 
 Headings are navigation. A heading like "Choose the narrowest rule family first" sounds forceful but
-does not name the kind of information below it. Readers and agents need to infer whether the section
-is about rule domains, usage flow, review policy, or setup. A descriptive heading such as "Find rules
-by work area" gives the page a clearer scan path.
+does not name the kind of information below it. A heading like "Start here" directs the reader
+without naming the destination. Readers and agents need to infer whether the section is about rule
+domains, usage flow, review policy, or setup. A descriptive heading such as "Rule domains" or
+"Review policy" gives the page a clearer scan path.
 
 ## Helps
 
@@ -27,12 +28,12 @@ by work area" gives the page a clearer scan path.
 
 Imperative headings can work in procedures, checklists, and tutorials where the section is literally
 one step in a task. Prefer descriptive headings on reference pages, indexes, landing pages, and
-review guidance where the reader is choosing where to go next.
+review guidance where the reader is choosing from named destinations or decision areas.
 
 ## Agent Instruction
 
-Use descriptive headings for reference and landing pages so the heading names the content or decision
-area, not a slogan-like instruction.
+Use descriptive headings for reference and landing pages so the heading names the destination,
+content, or decision area, not a slogan-like instruction or next-step direction.
 
 ## Mechanisms
 
@@ -42,4 +43,5 @@ asks what a reader can learn from the heading alone.
 ## References
 
 - [Diataxis: reference](https://diataxis.fr/reference/)
+- [Docs Name Destination Not Direction](docs-name-destination-not-direction.md)
 - [Rustdoc: how to write documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

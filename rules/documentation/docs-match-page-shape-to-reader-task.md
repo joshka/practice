@@ -41,9 +41,9 @@ where a catalog would be easier to scan.
 
 ## Agent Instruction
 
-When a documentation site renders Markdown, choose a page shape for the reader task before exposing
-the content. Use catalogs for choosing, prose pages for explanation, rule layouts for instructions,
-mechanism layouts for runnable checks, and reference layouts for source catalogs.
+For documentation sites that render Markdown, choose a page shape for the reader task before
+exposing the content. Use catalogs for choosing, prose pages for explanation, rule layouts for
+instructions, mechanism layouts for runnable checks, and reference layouts for source catalogs.
 
 ## Mechanisms
 

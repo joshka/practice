@@ -15,9 +15,13 @@ Avoid generated-prose tells.
 ## Why
 
 Generated prose often sounds polished while hiding that it did not learn the project voice. Phrases
-such as "seamless," "robust," repeated summary sentences, teaching-order narration, and generic
-contrast language make technical docs feel less trustworthy because they avoid naming the concrete
-behavior.
+such as "seamless," "robust," repeated summary sentences, teaching-order narration, generic
+contrast language, and component-centered navigation copy make technical docs feel less trustworthy
+because they avoid naming the concrete behavior.
+
+On documentation sites, generated tells often appear as "cards map," "pages carry," "domains
+expose," "the full map," or "how X should be reasoned about." These phrases narrate the catalog or
+the UI instead of naming the reader's destination, decision, artifact, or work area.
 
 ## Helps
 
@@ -26,12 +30,13 @@ behavior.
 ## Limits
 
 Do not remove useful friendliness or explanation just because a sentence is smooth. Cut the
-generated tell when it replaces concrete behavior, evidence, or tradeoff language.
+generated tell when it replaces concrete behavior, evidence, tradeoff language, or a direct
+navigation label.
 
 ## Agent Instruction
 
-Avoid generated-prose tells because generated prose often sounds polished while hiding that it did not
-learn the project voice.
+Avoid generated-prose tells, including component-centered navigation copy, that replace concrete
+behavior, evidence, tradeoffs, or direct labels.
 
 ## Mechanisms
 
@@ -41,6 +46,7 @@ checklists that call out vague or templated wording.
 ## References
 
 - [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Docs Hide Catalog Mechanics](docs-hide-catalog-mechanics.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

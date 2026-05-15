@@ -14,9 +14,9 @@ Write technical docs, not marketing, coaching, or chat.
 
 ## Why
 
-Technical docs should help readers make correct decisions. Marketing copy, coaching language, and
-chatty narration add tone without carrying contracts, commands, tradeoffs, or evidence. That makes
-the page harder to scan and easier for agents to imitate badly.
+Technical docs should help readers make correct decisions. Marketing copy, coaching language,
+chatty narration, and interface narration add tone without carrying contracts, commands, tradeoffs,
+or evidence. That makes the page harder to scan and easier for agents to imitate badly.
 
 ## Helps
 
@@ -25,7 +25,7 @@ the page harder to scan and easier for agents to imitate badly.
 ## Limits
 
 Plain language and a human voice are good. Cut the prose when it stops explaining the system and
-starts selling, apologizing, or narrating the writing process.
+starts selling, apologizing, narrating the writing process, or narrating the page structure.
 
 ## Agent Instruction
 
@@ -39,6 +39,7 @@ actor, action, contract, evidence, or tradeoff.
 ## References
 
 - [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Docs Hide Catalog Mechanics](docs-hide-catalog-mechanics.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

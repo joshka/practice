@@ -12,7 +12,7 @@ boundaries such as Rust API changes, tests, docs, performance, and source contro
 - [Agent Workflow](agent-workflow.md): 25 rules.
 - [Explicit Boundaries Preserve Correctness](boundary.md): 25 rules.
 - [Change Shape](change-shape.md): 11 rules.
-- [Docs Are Contracts](documentation.md): 26 rules.
+- [Docs Are Contracts](documentation.md): 28 rules.
 - [Observability And Failure](observability.md): 5 rules.
 - [Measure Before Optimizing](performance.md): 7 rules.
 - [Local Reasoning And Refactoring](refactoring.md): 8 rules.
