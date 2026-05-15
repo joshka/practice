@@ -131,12 +131,15 @@ Run both checks before handing off broad guidance changes:
 
 ```bash
 python3 scripts/audit_guidance.py
+python3 scripts/generate_rule_indexes.py --check
+python3 scripts/generate_agent_rules.py --check
 markdownlint-cli2 "**/*.md"
 ```
 
 The audit checks the guidance architecture directly: rule metadata and references, domain indexes,
 generated agent-pack coverage, stale rule IDs, private local context leaks, placeholder text, and
-internal Markdown links. Regenerate `snippets/agents/rules.md` with
+internal Markdown links. Regenerate rule indexes with `python3 scripts/generate_rule_indexes.py`
+after changing rule titles, rationale, or summaries. Regenerate `snippets/agents/rules.md` with
 `python3 scripts/generate_agent_rules.py` after changing reviewed rule instructions.
 
 Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode

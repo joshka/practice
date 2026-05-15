@@ -31,9 +31,10 @@ where a narrower rule would be more useful.
 
 ## Agent Instruction
 
-Write the highly compressed instruction that can be included in agent execution packs. Do not repeat
-the rule text. Include the trigger, failure mode, or useful constraint that tells an agent when the
-rule matters and when blindly applying the short rule would waste effort or produce the wrong shape.
+Write the highly compressed instruction that can be included in agent execution packs. Start with
+the action the agent should take. Do not repeat the rule text. Add a short `when`, `because`, or
+`so` clause only when the trigger, failure mode, or constraint helps the agent avoid doing the
+literal-but-wrong thing.
 
 ## Mechanisms
 
