@@ -186,7 +186,7 @@
   }
 
   .home-hero {
-    @apply mt-3 mb-16 max-w-4xl;
+    @apply mt-3 mb-14 max-w-4xl;
   }
 
   .home-version {
@@ -210,7 +210,7 @@
   }
 
   .intent-grid {
-    @apply mb-20 grid grid-cols-1 gap-3 md:grid-cols-12;
+    @apply mb-16 grid grid-cols-1 gap-3 md:grid-cols-12;
   }
 
   .intent-panel {
@@ -219,7 +219,7 @@
   }
 
   .intent-panel p:last-child {
-    @apply m-0 max-w-[68ch] text-base leading-relaxed text-on-surface;
+    @apply m-0 text-base leading-relaxed text-on-surface;
   }
 
   .status-panel {
@@ -241,7 +241,7 @@
   }
 
   .home-section-heading h2 {
-    @apply mt-0 mb-3 text-3xl font-bold leading-tight text-on-background md:text-4xl;
+    @apply mt-0 mb-3 text-3xl font-bold leading-tight text-on-background;
   }
 
   .home-section-heading p:not(.eyebrow) {
@@ -250,7 +250,7 @@
 
   .home-tasks,
   .home-library {
-    @apply mb-20;
+    @apply mb-16;
   }
 
   .task-grid {
@@ -321,7 +321,7 @@
   }
 
   .home-use {
-    @apply mb-20 grid gap-6 rounded-lg p-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:p-8;
+    @apply mb-16 grid gap-5 rounded-lg p-6 md:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] md:p-8;
   }
 
   .home-use__intro h2 {
@@ -329,7 +329,7 @@
   }
 
   .home-use__intro p:not(.eyebrow) {
-    @apply m-0 max-w-[62ch] text-base leading-relaxed text-on-surface-variant;
+    @apply m-0 text-base leading-relaxed text-on-surface-variant;
   }
 
   .home-use__cases {
@@ -377,7 +377,7 @@
   }
 
   .rules-use {
-    @apply mb-14 grid gap-6 rounded-lg p-6 md:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] md:p-7;
+    @apply mb-12 grid gap-5 rounded-lg p-6 md:grid-cols-[minmax(0,0.75fr)_minmax(0,1.25fr)] md:p-7;
   }
 
   .rules-use h2 {
@@ -385,11 +385,11 @@
   }
 
   .rules-use__steps {
-    @apply grid gap-4;
+    @apply grid gap-3;
   }
 
   .rules-use__steps p {
-    @apply m-0 max-w-[72ch] text-base leading-relaxed text-on-surface-variant;
+    @apply m-0 text-base leading-relaxed text-on-surface-variant;
   }
 
   .rules-use__steps strong {
@@ -442,7 +442,7 @@
   }
 
   .rules-domain-card > span:not(.rules-domain-card__meta) {
-    @apply mt-3 max-w-[62ch] text-sm leading-relaxed text-on-surface-variant;
+    @apply mt-3 text-sm leading-relaxed text-on-surface-variant;
   }
 
   .card,
@@ -481,7 +481,7 @@
   }
 
   .listing__header h2 {
-    @apply m-0 text-2xl font-bold;
+    @apply m-0 text-3xl font-bold leading-tight text-on-background;
   }
 
   .group-nav {
@@ -503,15 +503,15 @@
   }
 
   .grouped-index {
-    @apply grid gap-12;
+    @apply grid gap-10;
   }
 
   .grouped-index--compact {
-    @apply gap-10;
+    @apply gap-8;
   }
 
   .grouped-index--dense {
-    @apply gap-14;
+    @apply gap-12;
   }
 
   .index-group {
@@ -523,7 +523,7 @@
   }
 
   .index-group__header h3 {
-    @apply mt-0 mb-2 text-2xl font-bold leading-tight text-on-background;
+    @apply mt-0 mb-2 text-sm font-bold uppercase tracking-[0.08em] text-primary;
   }
 
   .index-group__header p {
@@ -567,7 +567,7 @@
   }
 
   .index-entry__description {
-    @apply mt-2 max-w-[80ch] text-sm leading-relaxed text-on-surface-variant;
+    @apply mt-2 text-sm leading-relaxed text-on-surface-variant;
   }
 
   .row {
@@ -620,7 +620,7 @@
   }
 
   .detail-sections {
-    @apply grid min-w-0 gap-3;
+    @apply grid min-w-0 max-w-4xl gap-3;
   }
 
   .detail-section {
@@ -630,40 +630,20 @@
   }
 
   .detail-section h2 {
-    @apply mt-0 mb-5 text-2xl font-bold leading-tight text-on-background md:text-3xl;
+    @apply mt-0 mb-5 text-xl font-bold uppercase leading-tight tracking-[0.08em] text-primary;
   }
 
   .detail-section__body {
     @apply min-w-0 pt-0;
   }
 
-  .page--rule .detail-sections {
-    @apply gap-5;
-  }
-
-  .page--rule .detail-section {
-    @apply rounded-lg p-5;
-  }
-
-  .page--rule .detail-section h2 {
-    @apply mb-4 text-sm font-bold uppercase tracking-[0.08em] text-primary;
-  }
-
-  .page--rule .detail-section--rule,
-  .page--rule .detail-section--agent-instruction {
+  .detail-section--rule,
+  .detail-section--claim,
+  .detail-section--purpose,
+  .detail-section--preferred-move,
+  .detail-section--agent-instruction {
     background: var(--panel-gradient-high);
     box-shadow: var(--panel-raised), var(--primary-glow);
-  }
-
-  .page--rule .detail-section--rule .detail-section__body p,
-  .page--rule .detail-section--agent-instruction .detail-section__body p {
-    @apply text-lg text-on-background;
-  }
-
-  .page--pattern .detail-section--problem,
-  .page--pattern .detail-section--preferred-move,
-  .page--pattern .detail-section--tradeoff {
-    @apply max-w-4xl;
   }
 
   .page--mechanism .detail-section--checks li,
@@ -678,11 +658,11 @@
   }
 
   .page--reference .detail-section ul {
-    @apply max-w-4xl gap-3;
+    @apply gap-3;
   }
 
   .page--reference .detail-section li {
-    @apply max-w-[88ch];
+    @apply max-w-none;
   }
 
   .section-hero {
@@ -698,7 +678,7 @@
   }
 
   .section-task-panel {
-    @apply mb-14 rounded-lg p-6 md:p-8;
+    @apply mb-12 rounded-lg p-6 md:p-8;
     background: var(--panel-gradient);
     box-shadow: var(--panel-raised-soft);
   }
@@ -712,7 +692,7 @@
   }
 
   .section-task-panel__intro p:not(.eyebrow) {
-    @apply m-0 max-w-[68ch] text-base leading-relaxed text-on-surface-variant;
+    @apply m-0 text-base leading-relaxed text-on-surface-variant;
   }
 
   .rule-domain-hero__use {
@@ -748,12 +728,29 @@
   }
 
   .prose h3 {
-    @apply mt-7 mb-3 text-xl font-bold text-on-background;
+    @apply mt-8 mb-2.5 text-xl font-bold text-on-background;
+  }
+
+  .detail-section__body h3 {
+    @apply mt-6 mb-1 text-sm font-bold uppercase tracking-[0.08em] text-on-surface-variant;
+  }
+
+  .detail-section__body h4 {
+    @apply mt-5 mb-1 text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant;
+  }
+
+  .detail-section__body h3 + p,
+  .detail-section__body h3 + ul,
+  .detail-section__body h3 + ol,
+  .detail-section__body h4 + p,
+  .detail-section__body h4 + ul,
+  .detail-section__body h4 + ol {
+    @apply mt-1.5;
   }
 
   .prose p,
   .prose li {
-    @apply max-w-[74ch] leading-relaxed;
+    @apply leading-relaxed;
   }
 
   .prose p {
@@ -762,7 +759,7 @@
 
   .prose ul,
   .prose ol {
-    @apply my-4 grid gap-2 pl-6;
+    @apply my-3 grid gap-0.5 pl-6;
   }
 
   .prose ul {
@@ -771,10 +768,6 @@
 
   .prose ol {
     @apply list-decimal;
-  }
-
-  .prose li + li {
-    @apply mt-1;
   }
 
   .prose pre {
@@ -807,7 +800,7 @@
   }
 
   .listing h2 {
-    @apply mt-0 mb-6 text-2xl font-bold;
+    @apply mt-0 mb-6 text-3xl font-bold leading-tight text-on-background;
   }
 
   .listing__header h2 {
