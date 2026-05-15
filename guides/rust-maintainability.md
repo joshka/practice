@@ -414,6 +414,14 @@ behavior, MSRV, feature behavior, or public API semantics.
 
 For copyable `AGENTS.md` guidance, use [Rust Agent Instructions][rust-snippet].
 
+## Related Guidance Layers
+
+Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. Use
+[Public API Changes Have Downstream Cost][api-cost] for API compatibility reasoning and
+[Reader Locality Reduces Change Cost][reader-locality-principle] for source-shape reasoning. Use
+[Rust API And Release Checks][api-release], [Rust Docs Validation][docs-validation], and
+[Rust Lints And Formatting][rust-lints] when the guidance should be backed by tooling.
+
 ## Review Questions
 
 - Does this name a real Rust concept or just move code?
@@ -439,15 +447,21 @@ For copyable `AGENTS.md` guidance, use [Rust Agent Instructions][rust-snippet].
 | [epage Rust Style][epage]   | `adapts` | Reader-locality and Rust code-shape guidance.               |
 
 [actionable-errors]: ../patterns/write-actionable-error-messages.md
+[api-cost]: ../principles/public-api-changes-have-downstream-cost.md
+[api-release]: ../mechanisms/rust-api-and-release-checks.md
 [conv]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-conv-traits
 [commit-history]: ../patterns/commit-messages-for-history.md
 [code-shape]: code-shape.md
 [epage]: https://epage.github.io/dev/rust-style/
 [errors]: https://rust-lang.github.io/api-guidelines/interoperability.html#c-good-err
 [error-context]: ../patterns/preserve-error-context.md
+[docs-validation]: ../mechanisms/rust-docs-validation.md
 [honest-verification]: ../patterns/report-verification-honestly.md
 [ms]: https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS
 [reader-locality]: ../patterns/reader-locality.md
+[reader-locality-principle]: ../principles/reader-locality-reduces-change-cost.md
+[rust-lints]: ../mechanisms/rust-lints-and-formatting.md
+[rust-rules]: ../rules/rust/README.md
 [rust-snippet]: ../snippets/agents/rust.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md

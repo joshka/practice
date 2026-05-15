@@ -176,6 +176,15 @@ Use [Commit Messages For History][commit-history] when setting jj descriptions o
 published commits. Follow the repository's commit convention; use Conventional Commits only where
 the repo has already adopted that spec.
 
+## Related Guidance Layers
+
+Use [Change Shape Rules][change-rules] for compact instructions about change size, generated
+artifacts, dependency churn, ownership, and structure-versus-behavior boundaries. Use
+[Change Shape Controls Review Cost][review-cost] for the reasoning behind small coherent changes.
+Use [Testing And Verification Rules][testing-rules] and [Tests Should Explain Failures][test-proof]
+when choosing proof for behavior changes. Use [Mechanisms][mechanisms] when the change needs
+tooling, CI, lint, jj, or release support.
+
 ## Review Questions
 
 - Does this change have one coherent purpose?
@@ -195,9 +204,14 @@ the repo has already adopted that spec.
 
 [commit-history]: ../patterns/commit-messages-for-history.md
 [code-shape]: code-shape.md
+[change-rules]: ../rules/change-shape/README.md
 [discovery-editing]: ../patterns/separate-discovery-from-editing.md
 [honest-verification]: ../patterns/report-verification-honestly.md
 [local-conventions]: ../patterns/follow-local-conventions.md
+[mechanisms]: ../mechanisms/README.md
 [preserve-work]: ../patterns/preserve-unowned-work.md
+[review-cost]: ../principles/change-shape-controls-review-cost.md
 [small-chunks]: ../patterns/small-reviewable-chunks.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md
+[test-proof]: ../principles/tests-should-explain-failures.md
+[testing-rules]: ../rules/testing/README.md

@@ -289,6 +289,13 @@ checkout blindly.
 
 For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
 
+## Related Guidance Layers
+
+Use [Jj Topology And Source Control Rules][vcs-rules] for compact jj and publication instructions.
+Use [Jj Topology Is Repo Role Dependent][jj-topology] for the reasoning behind owned, maintainer,
+and forked remote layouts. Use [Jj Agent Workflow][jj-agent-workflow] for noninteractive jj
+configuration and agent-safe command shapes.
+
 ## Review Questions
 
 - Is this a separate review unit that deserves `jj new`?
@@ -320,7 +327,10 @@ For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
 [commit-history]: ../patterns/commit-messages-for-history.md
 [gh-fork]: https://cli.github.com/manual/gh_repo_fork
 [github]: https://docs.jj-vcs.dev/latest/github/
+[jj-agent-workflow]: ../mechanisms/jj-agent-workflow.md
 [jj-pager]: https://github.com/jj-vcs/jj/pull/9395
 [jj-snippet]: ../snippets/agents/jj.md
+[jj-topology]: ../principles/jj-topology-is-repo-role-dependent.md
 [preserve-work]: ../patterns/preserve-unowned-work.md
+[vcs-rules]: ../rules/vcs/README.md
 [working]: https://docs.jj-vcs.dev/latest/working-copy/

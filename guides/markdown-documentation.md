@@ -271,6 +271,13 @@ section when no durable source is useful.
 
 For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
 
+## Related Guidance Layers
+
+Use [Documentation Rules][doc-rules] for compact docs guidance and [Docs Are Contracts][docs-contracts]
+for the reasoning behind treating docs as behavior-bearing artifacts. Use
+[Rust Docs Validation][docs-validation] for Rustdoc, doctest, and docs.rs proof. Use
+[External Source Ledger][source-ledger] when adding or evaluating recurring source families.
+
 ## Review Questions
 
 - Does the document have one primary job?
@@ -292,7 +299,10 @@ For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][do
 
 [actionable-errors]: ../patterns/write-actionable-error-messages.md
 [diataxis]: https://diataxis.fr/
+[doc-rules]: ../rules/documentation/README.md
+[docs-contracts]: ../principles/docs-are-contracts.md
 [docs-snippet]: ../snippets/agents/markdown-docs.md
+[docs-validation]: ../mechanisms/rust-docs-validation.md
 [doc-locality]: ../patterns/keep-docs-near-their-subject.md
 [durable-summaries]: ../patterns/prefer-durable-summaries.md
 [error-context]: ../patterns/preserve-error-context.md
@@ -300,5 +310,6 @@ For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][do
 [non-goals]: ../patterns/document-intentional-non-goals.md
 [rustdoc]: https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html
 [side-effects]: ../patterns/make-side-effects-visible.md
+[source-ledger]: ../references/external-source-ledger.md
 [system-models]: ../patterns/document-system-mental-models.md
 [test-behavior]: ../patterns/test-observable-behavior.md

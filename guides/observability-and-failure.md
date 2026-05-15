@@ -62,6 +62,13 @@ explicitly when downstream code, replay, support, or UI rendering must distingui
 Do not hide failures only in UI logs. If a UI, worker, or extension observes a failure that changes
 durable system state, the core event or diagnostic stream should carry that fact.
 
+## Related Guidance Layers
+
+Use [Observability Rules][observability-rules] for compact failure, logging, diagnostic context, and
+retention instructions. Use [Boundary Rules][boundary-rules] when failure state crosses parsing,
+provider, async, tool, or state-transition boundaries. Use [Testing And Benchmarking][test-mechanism]
+when diagnostics need proof from integration tests, fixtures, or replay cases.
+
 ## Review Questions
 
 - Who needs to act on this failure: caller, operator, support person, maintainer, or user?
@@ -75,10 +82,13 @@ durable system state, the core event or diagnostic stream should carry that fact
 - Are diagnostics durable enough for replay, support, or future debugging without exposing secrets?
 
 [boundary]: boundary-correctness.md
+[boundary-rules]: ../rules/boundary/README.md
 [change]: software-change-preferences.md
 [docs]: markdown-documentation.md
 [observable-failures]: ../patterns/make-failures-observable.md
+[observability-rules]: ../rules/observability/README.md
 [observability-policy]: ../patterns/contain-observability-policy.md
 [owned-logs]: ../patterns/log-at-owned-boundaries.md
 [private-log-context]: ../patterns/avoid-secret-or-private-log-context.md
 [structured-errors]: ../patterns/return-structured-errors.md
+[test-mechanism]: ../mechanisms/testing-and-benchmarking.md

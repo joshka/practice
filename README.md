@@ -112,9 +112,12 @@ snippets/
     rules.md
 references/
   guidance-plan.md
+  external-source-ledger.md
 templates/
   rule.md
   pattern.md
+  principle.md
+  mechanism.md
 ```
 
 Do not add placeholder files just to match the planned structure. Create files when they contain
@@ -170,9 +173,10 @@ Completed first-version sequence:
 
 Possible later work:
 
-- Add an external references ledger if source tracking becomes too scattered across pattern files.
 - Extract sharper examples from real review comments.
 - Add project-specific snippet variants after reuse exposes repeated adaptation work.
+- Add narrower mechanism profiles when repeated rule clusters expose a command, lint, CI job, or
+  generated artifact that should be named directly.
 
 A later discovery milestone should review private and local agent-instruction material for reusable
 guidance, contradictions, and missing named units. Durable public-facing docs in this repo should

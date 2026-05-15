@@ -121,6 +121,14 @@ Use [Delete Redundant Comments][delete-comments] when a comment repeats the curr
 comments that explain constraints, compatibility, safety, performance, side effects, or non-obvious
 ordering.
 
+## Related Guidance Layers
+
+Use [Local Reasoning And Refactoring Rules][refactoring-rules] for compact source-shape
+instructions. Use [Reader Locality Reduces Change Cost][reader-locality-principle] for the deeper
+reasoning behind live context, helper extraction, and local reasoning. Use
+[Change Shape Rules][change-rules] when a source move affects review boundaries or should be split
+from behavior.
+
 ## Review Questions
 
 - Does this move reduce the live context a reader must hold?
@@ -139,6 +147,7 @@ ordering.
 
 [change-radius]: ../patterns/cap-change-radius.md
 [chunk-statements]: ../patterns/chunk-statements.md
+[change-rules]: ../rules/change-shape/README.md
 [cohesion]: ../patterns/strengthen-cohesion.md
 [coupling]: ../patterns/name-coupling.md
 [declaration-init]: ../patterns/move-declaration-and-initialization-together.md
@@ -148,6 +157,8 @@ ordering.
 [live-context]: ../patterns/limit-live-context.md
 [name-current]: ../patterns/keep-name-current.md
 [reader-locality]: ../patterns/reader-locality.md
+[reader-locality-principle]: ../principles/reader-locality-reduces-change-cost.md
+[refactoring-rules]: ../rules/refactoring/README.md
 [reversible]: ../patterns/keep-structure-reversible.md
 [rust]: rust-maintainability.md
 [small-chunks]: ../patterns/small-reviewable-chunks.md

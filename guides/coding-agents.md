@@ -160,7 +160,17 @@ old intent. Use [Choose Good Enough Tools][good-enough-tools] and
 ## Agent Snippet
 
 For copyable `AGENTS.md` guidance, use [Coding Agent Workflow Instructions][agent-snippet]. For a
-broader repo baseline, use [Core Agent Instructions][core-snippet].
+broader repo baseline, use [Core Agent Instructions][core-snippet]. For a compressed execution pack
+generated from reviewed rules, use [Reviewed Rule Agent Pack][rule-pack].
+
+## Related Guidance Layers
+
+Use [Agent Workflow Rules][agent-rules] for compact reviewed instructions. Use
+[Agent Instructions Are Operational Controls][agent-controls] when deciding how much context belongs
+in compressed agent wording. Use [Mechanize Repeated Feedback][mechanize-feedback] when a repeated
+agent correction should become a script, lint, template, or generator. Use
+[Guidance Generation And Audit][guidance-audit] for the checks that keep generated agent guidance
+current.
 
 ## Review Questions
 
@@ -175,7 +185,9 @@ broader repo baseline, use [Core Agent Instructions][core-snippet].
 - Does this change preserve the repo's long-term concepts and reviewability?
 
 [achieve]: ../patterns/ask-what-were-you-trying-to-achieve.md
+[agent-controls]: ../principles/agent-instructions-are-operational-controls.md
 [agent-legibility]: ../patterns/optimize-for-agent-legibility.md
+[agent-rules]: ../rules/agent-workflow/README.md
 [agents-map]: ../patterns/use-agents-md-as-map.md
 [agent-snippet]: ../snippets/agents/coding-agents.md
 [blessed-artifacts]: ../patterns/distill-from-blessed-artifacts.md
@@ -190,6 +202,7 @@ broader repo baseline, use [Core Agent Instructions][core-snippet].
 [easy-first]: ../patterns/make-the-change-easy-first.md
 [feedback-guidance]: ../patterns/turn-feedback-into-guidance.md
 [good-enough-tools]: ../patterns/choose-good-enough-tools.md
+[guidance-audit]: ../mechanisms/guidance-generation-and-audit.md
 [honest-verification]: ../patterns/report-verification-honestly.md
 [human-attention]: ../patterns/spend-human-attention-on-ambiguity.md
 [in-distribution]: ../patterns/prefer-in-distribution-tools.md
@@ -198,12 +211,14 @@ broader repo baseline, use [Core Agent Instructions][core-snippet].
 [lessons]: ../patterns/record-agent-operating-lessons.md
 [long-term]: ../patterns/optimize-for-long-term-coherence.md
 [manage-work]: ../patterns/manage-agent-work-not-sessions.md
+[mechanize-feedback]: ../principles/mechanize-repeated-feedback.md
 [mechanical]: ../patterns/make-bad-output-mechanically-hard.md
 [nonfunctional]: ../patterns/encode-nonfunctional-requirements.md
 [objectives]: ../patterns/give-agents-objectives-with-boundaries.md
 [repo-automation]: ../patterns/keep-automations-repo-owned.md
 [review-packets]: ../patterns/produce-review-packets.md
 [review-proof]: ../patterns/review-proof-not-just-code.md
+[rule-pack]: ../snippets/agents/rules.md
 [scoped-capabilities]: ../patterns/grant-scoped-agent-capabilities.md
 [secrets]: ../patterns/keep-secrets-out-of-context.md
 [security-impact]: ../patterns/prove-security-impact.md

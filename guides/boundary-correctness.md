@@ -147,6 +147,14 @@ Use [Make Side Effects Visible][side-effects] when a public or internal API read
 persists, emits, spawns, or calls outside memory. Use [Keep Async Boundaries Explicit][async] when
 locks, borrows, owned data, retries, or side effects cross `await` points.
 
+## Related Guidance Layers
+
+Use [Boundary Rules][boundary-rules] for compact instructions about parsing, validation, explicit
+inputs, state transitions, side effects, async boundaries, and provider diagnostics. Use
+[Explicit Boundaries Preserve Correctness][boundary-principle] for the deeper design reason. Use
+[Rust API And Release Checks][api-release] when boundary changes affect public Rust APIs or release
+surfaces.
+
 ## Review Questions
 
 - Where does raw input become trusted data?
@@ -174,6 +182,9 @@ locks, borrows, owned data, retries, or side effects cross `await` points.
 - Can replay or rollback prove that invalid generated behavior fails before promotion?
 
 [async]: ../patterns/keep-async-boundaries-explicit.md
+[api-release]: ../mechanisms/rust-api-and-release-checks.md
+[boundary-principle]: ../principles/explicit-boundaries-preserve-correctness.md
+[boundary-rules]: ../rules/boundary/README.md
 [change]: software-change-preferences.md
 [code-shape]: code-shape.md
 [cohesion]: ../patterns/strengthen-cohesion.md

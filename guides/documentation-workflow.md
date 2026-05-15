@@ -105,6 +105,14 @@ keeps recurring because the doc is too far from the thing it describes.
 
 For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
 
+## Related Guidance Layers
+
+Use [Documentation Rules][doc-rules] for compact instructions about docs-as-contracts, examples,
+review narratives, source links, and drift. Use [Docs Are Contracts][docs-contracts] for the deeper
+principle behind writing behavior in English near the code or API. Use
+[Rust Docs Validation][docs-validation] when Rustdoc, doctests, docs.rs rendering, or generated docs
+need mechanical proof.
+
 ## Review Questions
 
 - What documentation job is this change doing?
@@ -122,8 +130,11 @@ For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][do
 [change]: software-change-preferences.md
 [doc-drift]: ../patterns/remediate-doc-drift.md
 [doc-locality]: ../patterns/keep-docs-near-their-subject.md
+[doc-rules]: ../rules/documentation/README.md
 [doc-type]: ../patterns/choose-doc-type.md
+[docs-contracts]: ../principles/docs-are-contracts.md
 [docs-snippet]: ../snippets/agents/markdown-docs.md
+[docs-validation]: ../mechanisms/rust-docs-validation.md
 [evidence]: ../patterns/label-doc-claims-by-evidence.md
 [intent]: ../patterns/preserve-intent-over-literalism.md
 [markdown-docs]: markdown-documentation.md
