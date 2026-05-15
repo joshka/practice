@@ -75,6 +75,39 @@ sections or a compressed reviewed-rule pack for another repo. Use
 [the guidance plan](references/guidance-plan.md) to see how the current guide set is organized and
 where future work belongs.
 
+## Use In Another Project
+
+Use this repo as the canonical source for shared development rules. Downstream repos should copy the
+generated adoption template, keep `AGENTS.md` short, and keep the full reviewed rule set in generated
+domain files under `docs/development/rules/`.
+
+From this repo, generate or refresh the downstream files into a target repo:
+
+```bash
+python3 scripts/generate_downstream_template.py --output /path/to/target-repo
+```
+
+This writes:
+
+```text
+/path/to/target-repo/
+  AGENTS.md
+  docs/development/
+    README.md
+    rules/
+      README.md
+      <domain>.md
+```
+
+After copying, edit only the repo-local parts: validation commands, source-control notes, local
+paths, and project-specific constraints. Do not hand-edit copied rule text. If a shared rule is
+wrong, change it in this repo, regenerate the downstream template, and copy the refreshed files into
+the target repo.
+
+This keeps all reviewed rules represented downstream, including domains that are easy to forget such
+as performance, source hygiene, and review artifacts, while still letting agents load only the rule
+domain relevant to a task.
+
 ## Repository Shape
 
 The first reviewed version uses this shape:
@@ -118,6 +151,13 @@ templates/
   pattern.md
   principle.md
   mechanism.md
+  downstream/
+    AGENTS.md
+    docs/development/
+      README.md
+      rules/
+        README.md
+        <domain>.md
 ```
 
 Do not add placeholder files just to match the planned structure. Create files when they contain
@@ -136,6 +176,7 @@ Run both checks before handing off broad guidance changes:
 python3 scripts/audit_guidance.py
 python3 scripts/generate_rule_indexes.py --check
 python3 scripts/generate_agent_rules.py --check
+python3 scripts/generate_downstream_template.py --check
 markdownlint-cli2 "**/*.md"
 ```
 
@@ -144,6 +185,8 @@ generated agent-pack coverage, stale rule IDs, private local context leaks, plac
 internal Markdown links. Regenerate rule indexes with `python3 scripts/generate_rule_indexes.py`
 after changing rule titles, rationale, or summaries. Regenerate `snippets/agents/rules.md` with
 `python3 scripts/generate_agent_rules.py` after changing reviewed rule instructions.
+Regenerate `templates/downstream/` with `python3 scripts/generate_downstream_template.py` after
+changing reviewed rule instructions or downstream adoption shape.
 
 Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode
 flags rules whose rationale still starts by repeating the rule text, which is a sign that the rule

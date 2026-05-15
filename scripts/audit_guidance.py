@@ -25,6 +25,9 @@ REQUIRED_ROOTS = [
     "references/guidance-plan.md",
     "templates/rule.md",
     "scripts/generate_rule_indexes.py",
+    "scripts/generate_downstream_template.py",
+    "templates/downstream/AGENTS.md",
+    "templates/downstream/docs/development/rules/README.md",
 ]
 
 RULE_SECTIONS = [

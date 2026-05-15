@@ -46,6 +46,12 @@ python3 scripts/generate_rule_indexes.py --check
 python3 scripts/generate_agent_rules.py --check
 ```
 
+- Check that the downstream adoption template is current.
+
+```bash
+python3 scripts/generate_downstream_template.py --check
+```
+
 - Lint Markdown after generated surfaces are updated.
 
 ```bash
@@ -59,6 +65,7 @@ markdownlint-cli2 "**/*.md"
 - Compressed agent rules that link back to detailed files.
 - Agent instructions that merely repeat the rule title.
 - Generated indexes or snippets that are stale.
+- Downstream adoption templates that no longer contain every reviewed rule.
 - Markdown formatting drift that makes review noisier.
 
 ## What It Cannot Catch
@@ -70,5 +77,12 @@ rule belongs in the durable catalog and whether the explanation is concrete enou
 ## Use
 
 Use this mechanism whenever changing rule files, rule templates, rule indexes, or compressed agent
-snippets. If the same review comment appears repeatedly, prefer adding a check, template field, or
-generator rule over repeating the comment in future sessions.
+snippets. Use the downstream template when another repo should carry every reviewed rule without
+hand-copying from this repo:
+
+```bash
+python3 scripts/generate_downstream_template.py --output /path/to/target-repo
+```
+
+If the same review comment appears repeatedly, prefer adding a check, template field, or generator
+rule over repeating the comment in future sessions.
