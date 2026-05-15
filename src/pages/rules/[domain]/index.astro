@@ -3,7 +3,6 @@ import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../../lib/site';
 
 type DomainConfig = {
-  label: string;
   use: string;
   titlePrefix: string;
 };
@@ -19,73 +18,59 @@ const page = renderMarkdown(`rules/${domain}/README.md`);
 const rules = rulesForDomain(domain);
 const domainConfigs: Record<string, DomainConfig> = {
   'agent-workflow': {
-    label: 'Agent workflow',
     use: 'Objectives, scoped tools, durable context, and handoff evidence.',
     titlePrefix: 'Agent',
   },
   boundary: {
-    label: 'Boundary rules',
     use: 'Raw input, state transitions, validation policy, and side-effect boundaries.',
     titlePrefix: 'Boundary',
   },
   'change-shape': {
-    label: 'Change shape',
     use: 'Change scope, review shape, generated artifacts, and follow-up boundaries.',
     titlePrefix: 'Change',
   },
   documentation: {
-    label: 'Documentation',
     use: 'Behavior contracts, examples, rendered docs, and review-facing evidence.',
     titlePrefix: 'Docs',
   },
   observability: {
-    label: 'Failure visibility',
     use: 'Failures, logs, diagnostics, telemetry, and repair context.',
     titlePrefix: 'Observability',
   },
   performance: {
-    label: 'Performance',
     use: 'Speed, memory, allocation, throughput, and benchmark evidence.',
     titlePrefix: 'Perf',
   },
   refactoring: {
-    label: 'Refactoring',
     use: 'Local reasoning, reader burden, concept helpers, and abstraction pressure.',
     titlePrefix: 'Refactoring',
   },
   review: {
-    label: 'Review artifacts',
     use: 'Issues, PR narratives, ADRs, review packets, and shared context.',
     titlePrefix: 'Review',
   },
   rust: {
-    label: 'Rust APIs',
     use: 'Public API, crate layout, features, docs.rs, and release behavior.',
     titlePrefix: 'Rust',
   },
   source: {
-    label: 'Source hygiene',
     use: 'Shared-history boundaries, source material, and reusable public guidance.',
     titlePrefix: 'Source',
   },
   'test-failures': {
-    label: 'Failure output',
     use: 'Assertions and test failures that guide repair.',
     titlePrefix: 'Test',
   },
   testing: {
-    label: 'Verification',
     use: 'Checks, examples, doctests, feature matrices, and regressions.',
     titlePrefix: 'Test',
   },
   vcs: {
-    label: 'JJ and VCS',
     use: 'JJ state, review lanes, publication, remote topology, and recovery.',
     titlePrefix: 'VCS',
   },
 };
 const config = domainConfigs[domain] ?? {
-  label: 'Rule domain',
   use: 'Rules in this domain share the same work area and review surface.',
   titlePrefix: '',
 };
@@ -110,11 +95,10 @@ function escapeRegExp(value: string): string {
   sourceUrl={page.sourceUrl}
   breadcrumbs={[
     { label: 'Rules', href: '/rules/' },
-    { label: page.title },
   ]}
 >
   <section class="section-hero rule-domain-hero" aria-labelledby="domain-title">
-    <p class="eyebrow">{config.label}</p>
+    <p class="eyebrow">Rule area</p>
     <h1 id="domain-title">{page.title}</h1>
     {page.description && <p>{page.description}</p>}
     <p class="rule-domain-hero__use">{config.use}</p>

@@ -24,17 +24,20 @@ function pageKind(repoPath: string): string {
 
 function metadataChips(page: MarkdownPage): string[] {
   const chips: string[] = [];
-  if (page.metadata.id) chips.push(page.metadata.id);
-  if (page.metadata.domain) chips.push(page.metadata.domain.toUpperCase());
-  if (page.metadata.depth) chips.push(page.metadata.depth);
+  if (page.metadata.domain) chips.push(formatChip(page.metadata.domain));
+  if (page.metadata.depth) chips.push(formatChip(page.metadata.depth));
   if (page.metadata.audience && page.metadata.audience !== 'both') chips.push(page.metadata.audience);
   if (page.metadata.topics) {
     for (const topic of page.metadata.topics.split(',').map((value) => value.trim()).filter(Boolean)) {
       if (chips.length >= 5) break;
-      chips.push(topic.toUpperCase());
+      chips.push(formatChip(topic));
     }
   }
   return [...new Set(chips)];
+}
+
+function formatChip(value: string): string {
+  return value.replace(/[-_]+/g, ' ').toUpperCase();
 }
 
 function sectionClass(title: string): string {
@@ -51,12 +54,14 @@ function kindLabel(value: string): string {
 
 <article class={`page page--${kind}`}>
   <header class="detail-hero">
-    <div class="detail-hero__meta">
-      <span class="detail-hero__kind">{kindLabel(kind)}</span>
-      {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
-    </div>
+    <p class="eyebrow">{kindLabel(kind)}</p>
     <h1>{page.title}</h1>
     {showHeaderDescription && page.description && <p>{page.description}</p>}
+    {chips.length > 0 && (
+      <div class="detail-hero__meta" aria-label="Page topics">
+        {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
+      </div>
+    )}
   </header>
 
   {showIntro && page.introHtml && <div class="prose detail-intro" set:html={page.introHtml} />}

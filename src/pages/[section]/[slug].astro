@@ -26,7 +26,6 @@ if (!section) throw new Error(`Unknown section: ${Astro.params.section}`);
   sourceUrl={page.sourceUrl}
   breadcrumbs={[
     { label: section.title, href: section.route },
-    { label: page.title },
   ]}
 >
   <PageContent page={page} />

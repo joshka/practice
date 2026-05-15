@@ -117,7 +117,7 @@
   }
 
   .primary-nav {
-    @apply hidden grid-cols-4 justify-items-end gap-x-5 gap-y-2;
+    @apply hidden max-w-[21rem] flex-wrap justify-end gap-x-5 gap-y-2;
   }
 
   .nav-link {
@@ -129,11 +129,11 @@
   }
 
   .breadcrumbs {
-    @apply mb-8 flex flex-wrap items-center gap-2 text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant;
+    @apply mb-8 flex flex-wrap items-center gap-2 text-xs font-semibold uppercase tracking-[0.1em] text-on-surface-variant;
   }
 
   .breadcrumbs a {
-    @apply text-on-surface-variant no-underline hover:text-primary;
+    @apply text-on-surface-variant underline-offset-4 hover:text-primary;
   }
 
   .breadcrumbs span[aria-hidden="true"] {
@@ -141,7 +141,7 @@
   }
 
   .breadcrumbs span[aria-current="page"] {
-    @apply text-primary;
+    @apply text-on-surface-variant;
   }
 
   .home-shell {
@@ -540,7 +540,7 @@
   }
 
   .page {
-    @apply mt-8 max-w-5xl;
+    @apply mt-8 max-w-5xl min-w-0;
   }
 
   .detail-hero {
@@ -548,23 +548,18 @@
   }
 
   .detail-hero__meta {
-    @apply mb-5 flex flex-wrap items-center gap-2;
+    @apply mt-5 flex flex-wrap items-center gap-2;
   }
 
-  .detail-hero__kind,
   .detail-chip {
     @apply inline-flex rounded border border-outline-variant bg-surface-container px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary;
-  }
-
-  .detail-hero__kind {
-    @apply bg-surface-container-high text-on-surface-variant;
   }
 
   .detail-hero h1 {
     @apply m-0 max-w-4xl text-5xl font-bold leading-tight tracking-normal text-on-background md:text-6xl;
   }
 
-  .detail-hero p {
+  .detail-hero p:not(.eyebrow) {
     @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
   }
 
@@ -573,11 +568,11 @@
   }
 
   .detail-sections {
-    @apply grid gap-8;
+    @apply grid min-w-0 gap-8;
   }
 
   .detail-section {
-    @apply border-t border-outline-variant pt-7;
+    @apply min-w-0 border-t border-outline-variant pt-7;
   }
 
   .detail-section h2 {
@@ -585,7 +580,7 @@
   }
 
   .detail-section__body {
-    @apply pt-0;
+    @apply min-w-0 pt-0;
   }
 
   .page--rule .detail-sections {
@@ -668,7 +663,7 @@
   }
 
   .prose {
-    @apply pt-6 text-base leading-relaxed text-on-surface;
+    @apply min-w-0 pt-6 text-base leading-relaxed text-on-surface;
   }
 
   .prose > :first-child {
@@ -765,13 +760,14 @@
 
 @media (min-width: 1120px) {
   .primary-nav {
-    grid-template-columns: repeat(7, max-content);
+    max-width: none;
+    flex-wrap: nowrap;
   }
 }
 
 @media (min-width: 900px) {
   .primary-nav {
-    display: grid;
+    display: flex;
   }
 }
 
