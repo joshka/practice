@@ -23,10 +23,16 @@ const {
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap"
+      rel="stylesheet"
+    />
     <title>{title === 'Practice' ? title : `${title} | Practice`}</title>
   </head>
   <body class="min-h-screen bg-background text-on-background font-sans text-base antialiased">
-    <header class="sticky top-0 z-50 border-b border-outline-variant bg-surface-container-low/95">
+    <header class="site-header sticky top-0 z-50">
       <div class="site-header__inner">
         <a class="flex min-w-max items-center gap-3 text-on-background no-underline" href={withBase('/')}>
           <img
@@ -55,7 +61,7 @@ const {
         </nav>
       </div>
     </header>
-    <main class="mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12">
+    <main class="main-shell mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12">
       {breadcrumbs.length > 0 && (
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href={withBase('/')}>Home</a>
@@ -73,7 +79,7 @@ const {
       )}
       <slot />
     </main>
-    <footer class="mx-auto flex w-full max-w-container flex-col gap-4 border-t border-outline-variant px-page py-8 text-sm text-on-surface-variant md:flex-row md:items-center md:justify-between md:px-page-lg">
+    <footer class="site-footer mx-auto flex w-full max-w-container flex-col gap-4 px-page py-8 text-sm text-on-surface-variant md:flex-row md:items-center md:justify-between md:px-page-lg">
       <p class="m-0">Durable software practices for code, documentation, tests, review, and coding agents.</p>
       {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
     </footer>
