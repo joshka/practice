@@ -106,7 +106,8 @@ Before handing off documentation changes, run:
 
 ```bash
 markdownlint-cli2 "**/*.md"
+pnpm build
 ```
 
-If the command is unavailable, report that it was not run. Also report the relevant `jj` status and
+If a command is unavailable, report that it was not run. Also report the relevant `jj` status and
 diff summary.

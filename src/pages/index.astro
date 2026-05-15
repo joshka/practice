@@ -1,0 +1,33 @@
+---
+import PageContent from '../components/PageContent.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { renderMarkdown, sections, withBase } from '../lib/site';
+
+const page = renderMarkdown('README.md');
+---
+
+<BaseLayout title="Practice" description={page.description}>
+  <section class="hero">
+    <p class="eyebrow">Josh's Software Development Practice</p>
+    <h1>Durable preferences for code, docs, tests, review, and coding agents.</h1>
+    <p>
+      This site publishes the human-readable reasoning and compact agent instructions from the
+      canonical practice repository.
+    </p>
+  </section>
+
+  <section class="grid">
+    {sections.map((section) => (
+      <a class="card" href={withBase(section.route)}>
+        <h2>{section.title}</h2>
+        <p>{section.description}</p>
+      </a>
+    ))}
+    <a class="card" href={withBase('/rules/')}>
+      <h2>Rules</h2>
+      <p>Reviewed instructions grouped by domain with detail pages for each rule.</p>
+    </a>
+  </section>
+
+  <PageContent page={page} />
+</BaseLayout>

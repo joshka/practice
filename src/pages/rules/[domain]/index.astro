@@ -1,0 +1,31 @@
+---
+import PageContent from '../../../components/PageContent.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../../lib/site';
+
+export function getStaticPaths() {
+  return ruleDomains().map((page) => ({
+    params: { domain: page.repoPath.split('/')[1] },
+  }));
+}
+
+const domain = Astro.params.domain ?? '';
+const page = renderMarkdown(`rules/${domain}/README.md`);
+const rules = rulesForDomain(domain);
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <PageContent page={page} />
+
+  <section class="listing">
+    <h2>Rules</h2>
+    <div class="list">
+      {rules.map((rule) => (
+        <a class="row" href={withBase(rule.route)}>
+          <strong>{rule.title}</strong>
+          {rule.description && <span>{rule.description}</span>}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

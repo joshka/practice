@@ -1,0 +1,30 @@
+---
+import PageContent from '../../components/PageContent.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getSection, sectionIndex, sectionPages, sections, withBase } from '../../lib/site';
+
+export function getStaticPaths() {
+  return sections.map((section) => ({ params: { section: section.key } }));
+}
+
+const section = getSection(Astro.params.section ?? '');
+if (!section) throw new Error(`Unknown section: ${Astro.params.section}`);
+const page = sectionIndex(section);
+const pages = sectionPages(section);
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <PageContent page={page} />
+
+  <section class="listing">
+    <h2>{section.title} Pages</h2>
+    <div class="list">
+      {pages.map((item) => (
+        <a class="row" href={withBase(item.route)}>
+          <strong>{item.title}</strong>
+          {item.description && <span>{item.description}</span>}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

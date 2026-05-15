@@ -1,0 +1,36 @@
+---
+import { withBase } from '../lib/site';
+
+type Props = {
+  title: string;
+  description?: string;
+};
+
+const { title, description = 'Durable software-development preferences.' } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="description" content={description} />
+    <title>{title === 'Practice' ? title : `${title} | Practice`}</title>
+    <link rel="stylesheet" href={withBase('/styles.css')} />
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href={withBase('/')}>Practice</a>
+      <nav aria-label="Primary">
+        <a href={withBase('/guides/')}>Guides</a>
+        <a href={withBase('/rules/')}>Rules</a>
+        <a href={withBase('/patterns/')}>Patterns</a>
+        <a href={withBase('/why/')}>Why</a>
+        <a href={withBase('/agents/')}>Agents</a>
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+  </body>
+</html>

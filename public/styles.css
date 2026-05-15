@@ -1,0 +1,207 @@
+:root {
+  color-scheme: light dark;
+  --bg: #fbfaf7;
+  --surface: #ffffff;
+  --text: #20201d;
+  --muted: #65635c;
+  --border: #ddd8cc;
+  --accent: #245f73;
+  --accent-strong: #174656;
+  --code-bg: #f0ece3;
+  font-family:
+    Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #151513;
+    --surface: #20201d;
+    --text: #f2efe7;
+    --muted: #b5afa2;
+    --border: #3b3831;
+    --accent: #8cc7d7;
+    --accent-strong: #b8dfea;
+    --code-bg: #2b2924;
+  }
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  line-height: 1.6;
+}
+
+a {
+  color: var(--accent);
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.18em;
+}
+
+a:hover {
+  color: var(--accent-strong);
+}
+
+.site-header {
+  align-items: center;
+  border-bottom: 1px solid var(--border);
+  display: flex;
+  gap: 2rem;
+  justify-content: space-between;
+  padding: 1rem clamp(1rem, 4vw, 3rem);
+}
+
+.brand {
+  color: var(--text);
+  font-size: 1.05rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem 1rem;
+  justify-content: flex-end;
+}
+
+nav a {
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-decoration: none;
+}
+
+main {
+  margin: 0 auto;
+  max-width: 1120px;
+  padding: 2rem clamp(1rem, 4vw, 3rem) 5rem;
+}
+
+.hero {
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 2rem;
+  padding: 2rem 0 2.5rem;
+}
+
+.hero h1 {
+  font-size: clamp(2rem, 5vw, 4.5rem);
+  line-height: 1.04;
+  margin: 0;
+  max-width: 900px;
+}
+
+.hero p:not(.eyebrow) {
+  color: var(--muted);
+  font-size: 1.15rem;
+  max-width: 720px;
+}
+
+.eyebrow {
+  color: var(--accent);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.grid {
+  display: grid;
+  gap: 1rem;
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+  margin: 2rem 0;
+}
+
+.card,
+.row {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  color: var(--text);
+  display: block;
+  text-decoration: none;
+}
+
+.card {
+  padding: 1rem;
+}
+
+.card h2,
+.card h3 {
+  margin: 0 0 0.45rem;
+}
+
+.card p,
+.row span {
+  color: var(--muted);
+}
+
+.list {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.row {
+  padding: 0.85rem 1rem;
+}
+
+.row strong,
+.row span {
+  display: block;
+}
+
+.page {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 8px;
+  padding: clamp(1rem, 3vw, 2rem);
+}
+
+.page-source {
+  display: flex;
+  font-size: 0.9rem;
+  justify-content: flex-end;
+  margin-bottom: 1rem;
+}
+
+.page h1 {
+  font-size: clamp(2rem, 4vw, 3rem);
+  line-height: 1.1;
+  margin-top: 0;
+}
+
+.page h2 {
+  border-top: 1px solid var(--border);
+  margin-top: 2rem;
+  padding-top: 1.25rem;
+}
+
+.page li + li {
+  margin-top: 0.25rem;
+}
+
+code {
+  background: var(--code-bg);
+  border-radius: 4px;
+  font-size: 0.92em;
+  padding: 0.1em 0.3em;
+}
+
+pre {
+  background: var(--code-bg);
+  border-radius: 8px;
+  overflow-x: auto;
+  padding: 1rem;
+}
+
+pre code {
+  background: transparent;
+  padding: 0;
+}
+
+.listing {
+  margin-top: 2rem;
+}

@@ -1,0 +1,25 @@
+---
+import PageContent from '../../components/PageContent.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { getSection, sectionPages, sections } from '../../lib/site';
+
+export function getStaticPaths() {
+  return sections.flatMap((section) =>
+    sectionPages(section).map((page) => ({
+      params: {
+        section: section.key,
+        slug: page.repoPath.slice(section.sourceDir.length + 1, -3),
+      },
+      props: { page },
+    })),
+  );
+}
+
+const page = Astro.props.page;
+const section = getSection(Astro.params.section ?? '');
+if (!section) throw new Error(`Unknown section: ${Astro.params.section}`);
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <PageContent page={page} />
+</BaseLayout>

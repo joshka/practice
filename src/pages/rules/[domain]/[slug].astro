@@ -1,0 +1,21 @@
+---
+import PageContent from '../../../components/PageContent.astro';
+import BaseLayout from '../../../layouts/BaseLayout.astro';
+import { ruleDomains, rulesForDomain } from '../../../lib/site';
+
+export function getStaticPaths() {
+  return ruleDomains().flatMap((domainPage) => {
+    const domain = domainPage.repoPath.split('/')[1];
+    return rulesForDomain(domain).map((page) => ({
+      params: { domain, slug: page.repoPath.split('/').at(-1)?.replace(/\.md$/, '') },
+      props: { page },
+    }));
+  });
+}
+
+const page = Astro.props.page;
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <PageContent page={page} />
+</BaseLayout>

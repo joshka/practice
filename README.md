@@ -163,6 +163,7 @@ python3 scripts/generate_rule_indexes.py --check
 python3 scripts/generate_agent_rules.py --check
 python3 scripts/generate_downstream_template.py --check
 markdownlint-cli2 "**/*.md"
+pnpm build
 ```
 
 The audit checks the guidance architecture directly: rule metadata and references, domain indexes,

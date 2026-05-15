@@ -1,0 +1,24 @@
+---
+import PageContent from '../../components/PageContent.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { renderMarkdown, ruleDomains, withBase } from '../../lib/site';
+
+const page = renderMarkdown('rules/README.md');
+const domains = ruleDomains();
+---
+
+<BaseLayout title={page.title} description={page.description}>
+  <PageContent page={page} />
+
+  <section class="listing">
+    <h2>Rule Domains</h2>
+    <div class="grid">
+      {domains.map((domain) => (
+        <a class="card" href={withBase(domain.route)}>
+          <h3>{domain.title}</h3>
+          {domain.description && <p>{domain.description}</p>}
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

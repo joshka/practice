@@ -1,0 +1,16 @@
+---
+import type { MarkdownPage } from '../lib/site';
+
+type Props = {
+  page: MarkdownPage;
+};
+
+const { page } = Astro.props;
+---
+
+<article class="page">
+  <div class="page-source">
+    <a href={page.sourceUrl}>Edit source</a>
+  </div>
+  <div set:html={page.html} />
+</article>
