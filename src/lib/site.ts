@@ -9,6 +9,7 @@ export type MarkdownPage = {
   route: string;
   repoPath: string;
   sourceUrl: string;
+  metadata: Record<string, string>;
 };
 
 export type Section = {
@@ -25,7 +26,8 @@ export const sections: Section[] = [
   {
     key: 'guides',
     title: 'Guides',
-    description: 'Narrative guidance for software changes, Rust maintenance, docs, agents, and jj.',
+    description:
+      'Decision maps for recurring engineering work: how changes should be shaped, reviewed, documented, verified, and handed to coding agents.',
     sourceDir: 'guides',
     route: '/guides/',
   },
@@ -79,7 +81,8 @@ export function withBase(route: string): string {
 }
 
 export function sourceUrl(repoPath: string): string {
-  return `${repoUrl}/blob/main/${repoPath}`;
+  const view = repoPath.endsWith('.md') ? 'blob' : 'tree';
+  return `${repoUrl}/${view}/main/${repoPath}`;
 }
 
 export function pageTitleFromMarkdown(markdown: string, fallback: string): string {
@@ -88,14 +91,24 @@ export function pageTitleFromMarkdown(markdown: string, fallback: string): strin
 }
 
 export function descriptionFromMarkdown(markdown: string): string {
-  const withoutTitle = markdown.replace(/^#\s+.+$/m, '').trim();
-  const paragraph = withoutTitle.split(/\n\s*\n/).find((block) => block.trim() && !block.startsWith('```'));
+  const withoutTitle = stripLegacyMetadata(markdown).replace(/^#\s+.+$/m, '').trim();
+  const paragraph = withoutTitle.split(/\n\s*\n/).find((block) => {
+    const trimmed = block.trim();
+    return (
+      trimmed &&
+      !trimmed.startsWith('#') &&
+      !trimmed.startsWith('```') &&
+      !/^Status:\s*`?[\w-]+`?$/i.test(trimmed)
+    );
+  });
   return truncateWords(paragraph?.replace(/\s+/g, ' ') ?? '', 180);
 }
 
 export function renderMarkdown(repoPath: string): MarkdownPage {
   const absolute = path.join(root, repoPath);
-  const markdown = readFileSync(absolute, 'utf8');
+  const rawMarkdown = readFileSync(absolute, 'utf8');
+  const parsed = parseFrontmatter(rawMarkdown);
+  const markdown = stripLegacyMetadata(parsed.body);
   const html = rewriteLinks(marked.parse(markdown) as string, repoPath);
   const route = routeForRepoPath(repoPath);
   return {
@@ -105,6 +118,10 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
     route,
     repoPath,
     sourceUrl: sourceUrl(repoPath),
+    metadata: {
+      ...metadataFromMarkdown(parsed.body),
+      ...parsed.metadata,
+    },
   };
 }
 
@@ -132,6 +149,7 @@ export function sectionIndex(section: Section): MarkdownPage {
     route: section.route,
     repoPath: section.sourceDir,
     sourceUrl: sourceUrl(section.sourceDir),
+    metadata: {},
   };
 }
 
@@ -236,8 +254,55 @@ function toRepoPath(file: string): string {
 function titleFromSlug(slug: string): string {
   return slug
     .split('-')
-    .map((word) => word.charAt(0).toUpperCase() + word.slice(1))
+    .map((word) => (word === 'jj' ? 'JJ' : word.charAt(0).toUpperCase() + word.slice(1)))
     .join(' ');
+}
+
+function metadataFromMarkdown(markdown: string): Record<string, string> {
+  const match = markdown.match(/^##\s+Metadata\s*\n([\s\S]*?)(?=^##\s+)/m);
+  if (!match) return {};
+  const metadata: Record<string, string> = {};
+  for (const line of match[1].split('\n')) {
+    const item = line.match(/^-\s+([^:]+):\s+(.+)$/);
+    if (!item) continue;
+    metadata[item[1].trim().toLowerCase()] = item[2].replaceAll('`', '').trim();
+  }
+  return metadata;
+}
+
+function parseFrontmatter(markdown: string): { body: string; metadata: Record<string, string> } {
+  if (!markdown.startsWith('---\n')) return { body: markdown, metadata: {} };
+  const end = markdown.indexOf('\n---', 4);
+  if (end === -1) return { body: markdown, metadata: {} };
+
+  const metadata: Record<string, string> = {};
+  const frontmatter = markdown.slice(4, end);
+  for (const line of frontmatter.split('\n')) {
+    const item = line.match(/^([A-Za-z][A-Za-z0-9_-]*):\s*(.*)$/);
+    if (!item) continue;
+    metadata[item[1].trim().toLowerCase()] = cleanMetadataValue(item[2]);
+  }
+
+  const bodyStart = markdown.indexOf('\n', end + 4);
+  return {
+    body: bodyStart === -1 ? '' : markdown.slice(bodyStart + 1),
+    metadata,
+  };
+}
+
+function stripLegacyMetadata(markdown: string): string {
+  return markdown.replace(/^##\s+Metadata\s*\n[\s\S]*?(?=^##\s+)/m, '').trim();
+}
+
+function cleanMetadataValue(value: string): string {
+  return value
+    .trim()
+    .replace(/^['"`]|['"`]$/g, '')
+    .replace(/^\[(.*)\]$/, '$1')
+    .replaceAll('"', '')
+    .replaceAll("'", '')
+    .replaceAll('`', '')
+    .trim();
 }
 
 function truncateWords(value: string, maxLength: number): string {

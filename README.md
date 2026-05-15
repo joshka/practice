@@ -94,7 +94,7 @@ Start with the guide that matches the decision you are making:
   local voice, PR narrative, repo maps, and drift remediation.
 - [Coding Agents](guides/coding-agents.md): objectives, context, tools, workspaces, review, and
   feedback loops for agent work.
-- [Jj Workflow](guides/jj-workflow.md): local jujutsu change shape, descriptions, bookmarks,
+- [JJ Workflow](guides/jj-workflow.md): local jujutsu change shape, descriptions, bookmarks,
   remotes, and recovery.
 
 Use [rules](rules/README.md) when you need a compact instruction with its own reviewable home. Use

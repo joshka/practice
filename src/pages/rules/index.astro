@@ -1,24 +1,86 @@
 ---
-import PageContent from '../../components/PageContent.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { renderMarkdown, ruleDomains, withBase } from '../../lib/site';
+import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../lib/site';
 
 const page = renderMarkdown('rules/README.md');
-const domains = ruleDomains();
+const domainTags: Record<string, string> = {
+  'agent-workflow': 'AGENT',
+  boundary: 'BOUNDARY',
+  'change-shape': 'CHANGE',
+  documentation: 'DOCS',
+  observability: 'OBSERVE',
+  performance: 'PERF',
+  refactoring: 'REFACTOR',
+  review: 'REVIEW',
+  rust: 'RUST',
+  source: 'SOURCE',
+  'test-failures': 'FAILURE',
+  testing: 'TEST',
+  vcs: 'VCS',
+};
+const domains = ruleDomains().map((domain) => {
+  const key = domain.repoPath.split('/')[1] ?? '';
+  return {
+    ...domain,
+    count: rulesForDomain(key).length,
+    tag: domainTags[key] ?? 'RULE',
+  };
+});
+const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
 ---
 
-<BaseLayout title={page.title} description={page.description}>
-  <PageContent page={page} />
+<BaseLayout title={page.title} description={page.description} sourceUrl={page.sourceUrl}>
+  <div class="rules-shell">
+    <section class="rules-hero" aria-labelledby="rules-title">
+      <p class="eyebrow">Rule catalog</p>
+      <h1 id="rules-title">Rules</h1>
+      <p>
+        Compact instructions for recurring engineering decisions. Each domain groups rules by the
+        prefix used in rule IDs, so you can scan by the kind of work being shaped before opening
+        the detailed rule pages.
+      </p>
+      <div class="rules-stats" aria-label="Rule catalog summary">
+        <span><strong>{ruleCount}</strong> reviewed rules</span>
+        <span><strong>{domains.length}</strong> domains</span>
+        <span><strong>1</strong> compressed agent pack</span>
+      </div>
+    </section>
 
-  <section class="listing">
-    <h2>Rule Domains</h2>
-    <div class="grid">
-      {domains.map((domain) => (
-        <a class="card" href={withBase(domain.route)}>
-          <h3>{domain.title}</h3>
-          {domain.description && <p>{domain.description}</p>}
-        </a>
-      ))}
-    </div>
-  </section>
+    <section class="rules-use" aria-labelledby="rules-use-title">
+      <div>
+        <p class="eyebrow">Rule navigation</p>
+        <h2 id="rules-use-title">Rule work areas</h2>
+      </div>
+      <div class="rules-use__steps">
+        <p>
+          Domain tags expose the work area: <strong>DOCS</strong> for documentation,
+          <strong>VCS</strong> for JJ and source-control workflow, <strong>RUST</strong> for crate
+          shape, and <strong>AGENT</strong> for coding-agent execution.
+        </p>
+        <p>
+          Rule pages carry rationale, limits, mechanisms, and source links. Downstream repositories
+          can use the compact reviewed instructions without carrying the full human explanation.
+        </p>
+        <p><a class="inline-action" href={withBase('/agents/rules/')}>Open the agent pack</a></p>
+      </div>
+    </section>
+
+    <section class="rules-domains" aria-labelledby="rule-domains-title">
+      <h2 id="rule-domains-title">Rule domains</h2>
+      <div class="rules-domain-grid">
+        {domains.map((domain) => (
+          <a class="rules-domain-card" href={withBase(domain.route)}>
+            <span class="rules-domain-card__meta">
+              <span class="rules-domain-card__tag">{domain.tag}</span>
+              <span class="rules-domain-card__count">
+                {domain.count} {domain.count === 1 ? 'rule' : 'rules'}
+              </span>
+            </span>
+            <strong>{domain.title}</strong>
+            {domain.description && <span>{domain.description}</span>}
+          </a>
+        ))}
+      </div>
+    </section>
+  </div>
 </BaseLayout>

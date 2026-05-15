@@ -42,35 +42,21 @@ behavior change needed, but leaves a tangled diff behind.
 Move code toward the concept that explains why it changes. Do not split or merge code only because a
 file is long, a module is small, or an abstraction looks tidy.
 
-Group code by responsibility, not incidental reuse.
-
-Keep related behavior together so features are understandable without excessive file-hopping.
-
-Use one level of abstraction per function when practical.
-
-Prefer local reasoning over indirection.
-
-Extract helpers only when they reveal a real concept boundary.
-
-Keep boundaries narrow and explicit.
-
-Start with concrete code and let abstractions emerge from real pressure.
-
-Make data flow and state changes visible.
-
-Separate responsibilities only when doing so improves clarity.
-
-Let change patterns guide structure.
-
-Avoid abstractions thinner than the code they hide.
-
-Align seams with real variation, not hypothetical variation.
-
-Do not over-apply DRY.
-
-Preserve the reader's mental stack.
-
-Keep the whole story visible when work is linear.
+- Group code by responsibility, not incidental reuse.
+- Keep related behavior together so features are understandable without excessive file-hopping.
+- Use one level of abstraction per function when practical.
+- Prefer local reasoning over indirection.
+- Extract helpers only when they reveal a real concept boundary.
+- Keep boundaries narrow and explicit.
+- Start with concrete code and let abstractions emerge from real pressure.
+- Make data flow and state changes visible.
+- Separate responsibilities only when doing so improves clarity.
+- Let change patterns guide structure.
+- Avoid abstractions thinner than the code they hide.
+- Align seams with real variation, not hypothetical variation.
+- Do not over-apply DRY.
+- Preserve the reader's mental stack.
+- Keep the whole story visible when work is linear.
 
 Use [Name Coupling][coupling] before adding a boundary: name the future edit that would force pieces
 to move together. Use [Strengthen Cohesion][cohesion] when facts and behavior repeatedly change for
@@ -81,27 +67,19 @@ the same reason and need a clear owner.
 Small local moves should reduce what the reader must remember right now. They should not become a
 tour of every possible cleanup in the area.
 
-Use whitespace to group related logic. Those groups are the paragraphs of a function.
-
-Open a group that incrementally builds state with the state being built.
-
-Prefer early returns for non-business bookkeeping.
-
-Prefer `if`, `else`, and `match` when mutually exclusive business paths are the domain rule a
-reader should see.
-
-Do not mix side-effect statements and pure expressions in the same logical step.
-
-Prefer loops over combinators when the body performs business-logic side effects.
-
-Put calculation-heavy policy into a small pure layer when rendering, I/O, or mutation would
-otherwise hide the rule being tested.
-
-Keep rendering as a translation of already-computed state when that makes the behavior easier to
-verify.
-
-Make edge-case behavior explicit for zero-sized, empty, overflow, underflow, and already-complete
-states.
+- Use whitespace to group related logic. Those groups are the paragraphs of a function.
+- Open a group that incrementally builds state with the state being built.
+- Prefer early returns for non-business bookkeeping.
+- Prefer `if`, `else`, and `match` when mutually exclusive business paths are the domain rule a
+  reader should see.
+- Do not mix side-effect statements and pure expressions in the same logical step.
+- Prefer loops over combinators when the body performs business-logic side effects.
+- Put calculation-heavy policy into a small pure layer when rendering, I/O, or mutation would
+  otherwise hide the rule being tested.
+- Keep rendering as a translation of already-computed state when that makes the behavior easier to
+  verify.
+- Make edge-case behavior explicit for zero-sized, empty, overflow, underflow, and already-complete
+  states.
 
 Use [Use Guard Clause][guard] when a precondition encloses the main path. Use
 [Use Explaining Variable][explaining-variable] when a local name exposes a domain fact hidden inside

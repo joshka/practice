@@ -21,7 +21,7 @@ that lints and checks replace design judgment.
 - [Measure Before Optimizing](../principles/measure-before-optimizing.md)
 - [Public API Changes Have Downstream Cost](../principles/public-api-changes-have-downstream-cost.md)
 - [Tests Should Explain Failures](../principles/tests-should-explain-failures.md)
-- [Jj Topology Is Repo Role Dependent](../principles/jj-topology-is-repo-role-dependent.md)
+- [JJ Topology Is Repo Role Dependent](../principles/jj-topology-is-repo-role-dependent.md)
 
 ## Rust Lints
 

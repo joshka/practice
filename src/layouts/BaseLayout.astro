@@ -1,12 +1,20 @@
 ---
+import '../styles/global.css';
 import { withBase } from '../lib/site';
 
 type Props = {
   title: string;
   description?: string;
+  sourceUrl?: string;
+  breadcrumbs?: { label: string; href?: string }[];
 };
 
-const { title, description = 'Durable software-development preferences.' } = Astro.props;
+const {
+  title,
+  description = 'Durable software-development preferences.',
+  sourceUrl,
+  breadcrumbs = [],
+} = Astro.props;
 ---
 
 <!doctype html>
@@ -16,21 +24,58 @@ const { title, description = 'Durable software-development preferences.' } = Ast
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta name="description" content={description} />
     <title>{title === 'Practice' ? title : `${title} | Practice`}</title>
-    <link rel="stylesheet" href={withBase('/styles.css')} />
   </head>
-  <body>
-    <header class="site-header">
-      <a class="brand" href={withBase('/')}>Practice</a>
-      <nav aria-label="Primary">
-        <a href={withBase('/guides/')}>Guides</a>
-        <a href={withBase('/rules/')}>Rules</a>
-        <a href={withBase('/patterns/')}>Patterns</a>
-        <a href={withBase('/why/')}>Why</a>
-        <a href={withBase('/agents/')}>Agents</a>
-      </nav>
+  <body class="min-h-screen bg-background text-on-background font-sans text-base antialiased">
+    <header class="sticky top-0 z-50 border-b border-outline-variant bg-surface-container-low/95">
+      <div class="site-header__inner">
+        <a class="flex min-w-max items-center gap-3 text-on-background no-underline" href={withBase('/')}>
+          <img
+            class="size-8 rounded-lg"
+            src="https://github.com/joshka.png?size=64"
+            alt="Joshka"
+            width="32"
+            height="32"
+            decoding="async"
+          />
+          <span class="min-w-0">
+            <span class="block text-base font-bold leading-tight">Software Practices</span>
+            <span class="block text-xs leading-tight text-on-surface-variant">
+              Code, docs, tests, review, and agents
+            </span>
+          </span>
+        </a>
+        <nav class="primary-nav" aria-label="Primary">
+          <a class="nav-link" href={withBase('/guides/')}>Guides</a>
+          <a class="nav-link" href={withBase('/rules/')}>Rules</a>
+          <a class="nav-link" href={withBase('/patterns/')}>Patterns</a>
+          <a class="nav-link" href={withBase('/why/')}>Why</a>
+          <a class="nav-link" href={withBase('/mechanisms/')}>Mechanisms</a>
+          <a class="nav-link" href={withBase('/agents/')}>Agents</a>
+          <a class="nav-link" href={withBase('/references/')}>References</a>
+        </nav>
+      </div>
     </header>
-    <main>
+    <main class="mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12">
+      {breadcrumbs.length > 0 && (
+        <nav class="breadcrumbs" aria-label="Breadcrumb">
+          <a href={withBase('/')}>Home</a>
+          {breadcrumbs.map((crumb) => (
+            <>
+              <span aria-hidden="true">/</span>
+              {crumb.href ? (
+                <a href={withBase(crumb.href)}>{crumb.label}</a>
+              ) : (
+                <span aria-current="page">{crumb.label}</span>
+              )}
+            </>
+          ))}
+        </nav>
+      )}
       <slot />
     </main>
+    <footer class="mx-auto flex w-full max-w-container flex-col gap-4 border-t border-outline-variant px-page py-8 text-sm text-on-surface-variant md:flex-row md:items-center md:justify-between md:px-page-lg">
+      <p class="m-0">Durable guidance for code, documentation, tests, review, and coding agents.</p>
+      {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
+    </footer>
   </body>
 </html>

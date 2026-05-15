@@ -1,8 +1,8 @@
-# Jj Agent Workflow
+# JJ Agent Workflow
 
 ## Metadata
 
-- Name: `Jj Agent Workflow`
+- Name: `JJ Agent Workflow`
 - ID: `jj-agent-workflow`
 - Status: `reviewed`
 - Audience: `agent`
@@ -22,7 +22,7 @@ private session context.
 
 ## Supported Principles
 
-- [Jj Topology Is Repo Role Dependent](../principles/jj-topology-is-repo-role-dependent.md)
+- [JJ Topology Is Repo Role Dependent](../principles/jj-topology-is-repo-role-dependent.md)
 - [Private Context Is Not Shared Context](../principles/private-context-is-not-shared-context.md)
 - [Change Shape Controls Review Cost](../principles/change-shape-controls-review-cost.md)
 

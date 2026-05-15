@@ -7,33 +7,33 @@ material.
 
 ## Source Families
 
-- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/): Rust API shape, traits,
+- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/). Rust API shape, traits,
   errors, features, and docs. Adopt where aligned and adapt to maintainer use.
-- [Microsoft Pragmatic Rust Guidelines][ms-rust-guidelines]: Agent-facing Rust defaults and safety
+- [Microsoft Pragmatic Rust Guidelines][ms-rust-guidelines]. Agent-facing Rust defaults and safety
   guidance. Adapt while keeping this repo's voice and local priorities.
-- [epage Rust Style](https://epage.github.io/dev/rust-style/): Rust module layout, imports,
+- [epage Rust Style](https://epage.github.io/dev/rust-style/). Rust module layout, imports,
   naming, and style. Mostly adopt, with local module preferences.
-- [epage PR Style](https://epage.github.io/dev/pr-style/): PR narrative and reviewer-oriented
+- [epage PR Style](https://epage.github.io/dev/pr-style/). PR narrative and reviewer-oriented
   communication. Adapt into review artifact guidance.
-- [The Rust Book](https://doc.rust-lang.org/book/) and official Rust docs: language behavior,
+- [The Rust Book](https://doc.rust-lang.org/book/) and official Rust docs. Language behavior,
   ownership, traits, and cargo. Use as primary technical reference.
-- [Cargo Book](https://doc.rust-lang.org/cargo/): Cargo metadata, features, packaging, and
+- [Cargo Book](https://doc.rust-lang.org/cargo/). Cargo metadata, features, packaging, and
   dependency behavior. Use as primary tooling reference.
-- [rustdoc docs](https://doc.rust-lang.org/rustdoc/): Rustdoc, doctests, and docs.rs-style builds.
+- [rustdoc docs](https://doc.rust-lang.org/rustdoc/). Rustdoc, doctests, and docs.rs-style builds.
   Use as primary documentation tooling reference.
-- [Jujutsu docs](https://docs.jj-vcs.dev/): jj commands, revsets, bookmarks, remotes, and recovery.
+- [Jujutsu docs](https://docs.jj-vcs.dev/). jj commands, revsets, bookmarks, remotes, and recovery.
   Use as primary VCS reference.
-- [Diataxis](https://diataxis.fr/): documentation type distinctions. Adapt for repo docs and
+- [Diataxis](https://diataxis.fr/). Documentation type distinctions. Adapt for repo docs and
   guides.
-- [OpenTelemetry](https://opentelemetry.io/docs/): logs, traces, metrics, and observability
+- [OpenTelemetry](https://opentelemetry.io/docs/). Logs, traces, metrics, and observability
   concepts. Use for observability vocabulary.
-- [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/): secret handling, logging safety, and
+- [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/). Secret handling, logging safety, and
   security review. Use for security-sensitive limits.
-- [Martin Fowler](https://martinfowler.com/) and [Refactoring](https://refactoring.com/):
-  refactoring, change shape, and design vocabulary. Adapt without copying prose.
-- [Parse, don't validate][parse-dont-validate]: boundary correctness and typed validation. Adapt as
+- [Martin Fowler](https://martinfowler.com/) and [Refactoring](https://refactoring.com/).
+  Refactoring, change shape, and design vocabulary. Adapt without copying prose.
+- [Parse, don't validate][parse-dont-validate]. Boundary correctness and typed validation. Adapt as
   a core boundary principle.
-- [OpenAI docs](https://platform.openai.com/docs/): agent and model behavior where product-specific.
+- [OpenAI docs](https://platform.openai.com/docs/). Agent and model behavior where product-specific.
   Use only for current OpenAI-specific claims.
 
 ## Use Rules

@@ -14,7 +14,7 @@ Run jj mutations sequentially.
 
 ## Why
 
-Jj mutating commands update working-copy and operation state. Running them in parallel risks locks,
+JJ mutating commands update working-copy and operation state. Running them in parallel risks locks,
 stale reads, and confusing operation order, especially when agents issue tool calls concurrently.
 
 ## Helps
@@ -37,7 +37,7 @@ inspection, and `jj op log` after unexpected state.
 
 ## References
 
-- [Principle: Jj Topology Is Repo Role
+- [Principle: JJ Topology Is Repo Role
   Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

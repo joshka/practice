@@ -1,4 +1,4 @@
-# Jj Topology And Source Control
+# JJ Topology And Source Control
 
 VCS rules cover jj-first source-control work, remote topology, operation-log recovery, workspaces,
 publication safety, and file-tracking decisions.
@@ -28,7 +28,7 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   mean the user fork while `upstream` means the canonical repo, or vice versa in owned repos. Helps:
   Keeps push remote, PR head, PR base, and tracked bookmarks aligned.
 - [`VCS-CREATE-OPERATION-LOG-POINT-BEFORE-RESHAPING`](vcs-create-operation-log-point-before-reshaping.md).
-  Use harmless jj inspection to create an operation-log point before risky reshaping. Jj can recover
+  Use harmless jj inspection to create an operation-log point before risky reshaping. JJ can recover
   through the operation log, but recovery is easier when there is a recent known point before a
   risky stack reshape. Helps: Makes recovery from a bad reshape faster and easier to explain.
 - [`VCS-DO-NOT-FALL-BACK-TO-GIT-FOR-JJ-ISSUES`](vcs-do-not-fall-back-to-git-for-jj-issues.md). Do
@@ -59,7 +59,7 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   lanes. A new task needs a separate review lane before unrelated edits accumulate. Helps: Keeps
   review units atomic and prevents unrelated work from piling into one change.
 - [`VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`](vcs-make-github-handoff-explicit.md). Make GitHub handoff
-  explicit after jj state is coherent. Jj state and GitHub state are related but not identical.
+  explicit after jj state is coherent. JJ state and GitHub state are related but not identical.
   Helps: Makes PR publication reproducible and avoids confusing branch or fork inference.
 - [`VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`](vcs-match-jj-topology-to-repo-role.md). Match jj remote
   topology to the repository role. Owned repos, maintainer-access repos, and fork-only contributor
@@ -74,7 +74,7 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   `&`, `~`, parentheses, or spaces that shells can interpret. Helps: Prevents shell parsing bugs in
   jj examples, scripts, and agent commands.
 - [`VCS-RECOVER-WITH-OPERATION-LOG`](vcs-recover-with-operation-log.md). Use operation-log recovery
-  instead of destructive cleanup. Jj records repository operations so many mistakes are recoverable
+  instead of destructive cleanup. JJ records repository operations so many mistakes are recoverable
   without destructive Git reset or stash habits. Helps: Makes recovery safer and avoids destroying
   unrelated local work.
 - [`VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`](vcs-repair-remote-topology-coherently.md). Repair remote
@@ -82,7 +82,7 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   tracked bookmark, trunk alias, PR base, and PR head. Helps: Keeps jj, GitHub, and local aliases
   consistent after topology drift.
 - [`VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`](vcs-run-jj-mutations-sequentially.md). Run jj mutations
-  sequentially. Jj mutating commands update working-copy and operation state. Helps: Keeps
+  sequentially. JJ mutating commands update working-copy and operation state. Helps: Keeps
   source-control state coherent and avoids avoidable lock contention.
 - [`VCS-SCOPE-JJ-FILE-TRACKING`](vcs-scope-jj-file-tracking.md). Scope jj file track and untrack
   commands to intended paths. `jj file track` and `jj file untrack` can affect more files than
@@ -97,7 +97,7 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   implicit tracking can choose the wrong source or make publication ambiguous. Helps: Prevents
   fetch, rebase, and publication confusion in fork and upstream workflows.
 - [`VCS-TREAT-BOOKMARK-REMOTE-SYNTAX-AS-VERSION-SENSITIVE`](vcs-treat-bookmark-remote-syntax-as-version-sensitive.md).
-  Treat `bookmark@remote` command syntax as version-sensitive. Jj command syntax around
+  Treat `bookmark@remote` command syntax as version-sensitive. JJ command syntax around
   `bookmark@remote` and remote bookmark handling can vary by version and command. Helps: Keeps jj
   guidance accurate across version differences and reduces command-shape failures.
 - [`VCS-USE-EVOLOG-AND-OPERATION-LOG`](vcs-use-evolog-and-operation-log.md). Use `jj evolog` for one

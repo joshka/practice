@@ -1,4 +1,4 @@
-# Jj Topology And Source Control
+# JJ Topology And Source Control
 
 Generated from the canonical `development-preferences` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.

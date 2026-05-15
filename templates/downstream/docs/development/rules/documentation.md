@@ -53,6 +53,8 @@ text by hand; update the source repo and recopy this file.
   infer supported behavior.
 - `DOCS-USE-CONCRETE-DETAILS`: Use concrete nouns, real paths, defaults, commands, and examples so
   readers do not infer the actual object.
+- `DOCS-USE-DESCRIPTIVE-HEADINGS`: Use descriptive headings for reference and landing pages so the
+  heading names the content or decision area, not a slogan-like instruction.
 - `DOCS-USE-SOURCE-LINKS-AS-SUPPORT`: Use source links as support, not wording supply, so references
   help readers verify or compare judgment.
 - `DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`: Verify example commands, file paths, and linked references

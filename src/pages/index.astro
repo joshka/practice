@@ -1,33 +1,138 @@
 ---
-import PageContent from '../components/PageContent.astro';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { renderMarkdown, sections, withBase } from '../lib/site';
+import { withBase } from '../lib/site';
 
-const page = renderMarkdown('README.md');
+const homeCards = [
+  {
+    title: 'Guides',
+    badge: 'MAP',
+    route: '/guides/',
+    description: 'Decision maps for software changes, Rust maintenance, documentation, agents, and jj.',
+  },
+  {
+    title: 'Rules',
+    badge: 'RULE',
+    route: '/rules/',
+    description: 'Compact instructions grouped by domain with detail pages for every reviewed rule.',
+  },
+  {
+    title: 'Patterns',
+    badge: 'MOVE',
+    route: '/patterns/',
+    description: 'Repeatable situations and moves that can be cited in review.',
+  },
+  {
+    title: 'Principles',
+    badge: 'WHY',
+    route: '/why/',
+    description: 'Reasoning notes that explain why several rules and patterns exist.',
+  },
+  {
+    title: 'Mechanisms',
+    badge: 'TOOL',
+    route: '/mechanisms/',
+    description: 'Commands, checks, lints, and workflows that make repeated guidance mechanical.',
+  },
+  {
+    title: 'Agents',
+    badge: 'AI',
+    route: '/agents/',
+    description: 'Copyable execution guidance and compressed rule packs for coding agents.',
+  },
+];
+
+const useCases = [
+  {
+    title: 'For reviews',
+    route: '/patterns/write-pr-narrative/',
+    description:
+      'Link a named rule or pattern instead of re-explaining the same preference in every PR.',
+  },
+  {
+    title: 'For project setup',
+    route: '/agents/core/',
+    description:
+      'Copy the downstream `AGENTS.md` template and reviewed rule pack, then adapt local checks and constraints.',
+  },
+  {
+    title: 'For agent work',
+    route: '/agents/',
+    description:
+      'Use the agent snippets when a coding tool needs compact instructions with enough intent to make good tradeoffs.',
+  },
+];
 ---
 
-<BaseLayout title="Practice" description={page.description}>
-  <section class="hero">
-    <p class="eyebrow">Josh's Software Development Practice</p>
-    <h1>Durable preferences for code, docs, tests, review, and coding agents.</h1>
-    <p>
-      This site publishes the human-readable reasoning and compact agent instructions from the
-      canonical practice repository.
-    </p>
-  </section>
+<BaseLayout
+  title="Software Practices"
+  description="Durable software-development preferences for code, docs, tests, review, and coding agents."
+>
+  <div class="home-shell">
+    <div class="home-content">
+      <section class="home-hero">
+        <div class="home-version">Public reference</div>
+        <h1>How I prefer software work to be shaped.</h1>
+        <p>
+          A public reference for readable code, trustworthy docs, useful tests, careful review, and
+          coding-agent instructions that preserve context.
+        </p>
+        <div class="hero-rule" aria-hidden="true"></div>
+      </section>
 
-  <section class="grid">
-    {sections.map((section) => (
-      <a class="card" href={withBase(section.route)}>
-        <h2>{section.title}</h2>
-        <p>{section.description}</p>
-      </a>
-    ))}
-    <a class="card" href={withBase('/rules/')}>
-      <h2>Rules</h2>
-      <p>Reviewed instructions grouped by domain with detail pages for each rule.</p>
-    </a>
-  </section>
+      <section class="intent-grid" aria-label="Site intent">
+        <div class="intent-panel">
+          <p class="eyebrow">System Intent</p>
+          <p>
+            This site gives names to preferences that otherwise get repeated in review comments,
+            repo setup, and agent steering: small changes, reader-local code, docs as contracts,
+            clear failure output, jj-first workflow, and handoffs that report proof.
+          </p>
+        </div>
+        <div class="status-panel">
+          <span class="status-dot" aria-hidden="true"></span>
+          <strong>Canonical source</strong>
+          <span>
+            The repo keeps <a href={withBase('/guides/')}>human explanations</a>,
+            <a href={withBase('/agents/rules/')}>compact agent rules</a>,
+            <a href={withBase('/agents/core/')}>templates</a>, and
+            <a href={withBase('/mechanisms/')}>generated indexes</a> together.
+          </span>
+        </div>
+      </section>
 
-  <PageContent page={page} />
+      <section class="home-card-grid" aria-label="Primary sections">
+        {homeCards.map((card) => (
+          <a class={`home-card ${card.badge === 'AI' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
+            <div class="home-card__meta">
+              <span class="home-card__icon">{card.badge}</span>
+            </div>
+            <h2>{card.title}</h2>
+            <p>{card.description}</p>
+          </a>
+        ))}
+      </section>
+
+      <section class="home-use" aria-labelledby="how-to-use">
+        <div class="home-use__intro">
+          <p class="eyebrow">Navigation</p>
+          <h2 id="how-to-use">Sections match common work.</h2>
+          <p>
+            <a href={withBase('/guides/')}>Guides</a> explain connected decisions,
+            <a href={withBase('/rules/')}>rules</a> provide compact instructions,
+            <a href={withBase('/patterns/')}>patterns</a> name repeatable review moves, and
+            <a href={withBase('/mechanisms/')}>mechanisms</a> collect commands, lints,
+            generators, and checks.
+          </p>
+        </div>
+        <div class="home-use__cases">
+          {useCases.map((item) => (
+            <a class="use-case" href={withBase(item.route)}>
+              <h3>{item.title}</h3>
+              <p>{item.description}</p>
+            </a>
+          ))}
+        </div>
+      </section>
+    </div>
+  </div>
 </BaseLayout>

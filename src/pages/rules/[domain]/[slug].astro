@@ -1,7 +1,7 @@
 ---
 import PageContent from '../../../components/PageContent.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
-import { ruleDomains, rulesForDomain } from '../../../lib/site';
+import { renderMarkdown, ruleDomains, rulesForDomain } from '../../../lib/site';
 
 export function getStaticPaths() {
   return ruleDomains().flatMap((domainPage) => {
@@ -14,8 +14,19 @@ export function getStaticPaths() {
 }
 
 const page = Astro.props.page;
+const domain = Astro.params.domain ?? '';
+const domainPage = renderMarkdown(`rules/${domain}/README.md`);
 ---
 
-<BaseLayout title={page.title} description={page.description}>
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  sourceUrl={page.sourceUrl}
+  breadcrumbs={[
+    { label: 'Rules', href: '/rules/' },
+    { label: domainPage.title, href: domainPage.route },
+    { label: page.title },
+  ]}
+>
   <PageContent page={page} />
 </BaseLayout>

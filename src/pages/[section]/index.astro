@@ -1,7 +1,32 @@
 ---
-import PageContent from '../../components/PageContent.astro';
 import BaseLayout from '../../layouts/BaseLayout.astro';
-import { getSection, sectionIndex, sectionPages, sections, withBase } from '../../lib/site';
+import {
+  type MarkdownPage,
+  getSection,
+  sectionIndex,
+  sectionPages,
+  sections,
+  withBase,
+} from '../../lib/site';
+
+type SectionConfig = {
+  eyebrow: string;
+  intro: string;
+  listingTitle: string;
+  density: 'compact' | 'standard' | 'dense';
+};
+
+type GroupConfig = {
+  key: string;
+  title: string;
+  description: string;
+  hideTags?: string[];
+};
+
+type GroupedEntry = {
+  item: MarkdownPage;
+  tags: string[];
+};
 
 export function getStaticPaths() {
   return sections.map((section) => ({ params: { section: section.key } }));
@@ -9,21 +34,446 @@ export function getStaticPaths() {
 
 const section = getSection(Astro.params.section ?? '');
 if (!section) throw new Error(`Unknown section: ${Astro.params.section}`);
+const sectionKey = section.key;
+const sectionTitle = section.title;
+const sectionDescription = section.description;
 const page = sectionIndex(section);
 const pages = sectionPages(section);
+
+const sectionConfig: Record<string, SectionConfig> = {
+  guides: {
+    eyebrow: 'Decision maps',
+    intro:
+      'Guides connect related rules, principles, patterns, and mechanisms into readable paths for recurring engineering decisions.',
+    listingTitle: 'Available guides',
+    density: 'standard',
+  },
+  patterns: {
+    eyebrow: 'Pattern library',
+    intro:
+      'Patterns name repeatable development situations and the preferred moves that fit them. They work as review terms, guide links, and compact agent instructions.',
+    listingTitle: 'Pattern groups',
+    density: 'dense',
+  },
+  why: {
+    eyebrow: 'Principles',
+    intro:
+      'Principles explain the beliefs, tradeoffs, and limits behind related rules and patterns.',
+    listingTitle: 'Principle groups',
+    density: 'dense',
+  },
+  mechanisms: {
+    eyebrow: 'Mechanical support',
+    intro:
+      'Mechanisms name checks, commands, lints, generators, and workflows that make repeated preferences cheaper to follow and harder to forget.',
+    listingTitle: 'Mechanism groups',
+    density: 'compact',
+  },
+  agents: {
+    eyebrow: 'Agent snippets',
+    intro:
+      'Agent snippets are copyable instruction packs for downstream repositories, organized by the project surface they steer.',
+    listingTitle: 'Snippet groups',
+    density: 'compact',
+  },
+  references: {
+    eyebrow: 'Source material',
+    intro:
+      'References collect durable source families and planning notes used to support, contrast, or frame the guidance.',
+    listingTitle: 'Reference groups',
+    density: 'compact',
+  },
+};
+
+const config = sectionConfig[sectionKey] ?? {
+  eyebrow: section.title,
+  intro: section.description,
+  listingTitle: section.title,
+  density: 'standard',
+};
+
+const guideGroups: Record<string, GroupConfig> = {
+  core: {
+    key: 'core',
+    title: 'Core change model',
+    description: 'How changes, source shape, and Rust maintainability should be reasoned about.',
+    hideTags: ['change', 'code', 'rust'],
+  },
+  boundaries: {
+    key: 'boundaries',
+    title: 'Boundaries and feedback',
+    description: 'How input, state, failure, and diagnostics become reviewable.',
+    hideTags: ['api', 'failure'],
+  },
+  collaboration: {
+    key: 'collaboration',
+    title: 'Documentation, agents, and source control',
+    description: 'How work is explained, handed off, published, and kept understandable.',
+    hideTags: ['docs', 'agents', 'vcs'],
+  },
+};
+
+const patternGroups: Record<string, GroupConfig> = {
+  agents: {
+    key: 'agents',
+    title: 'Agent work',
+    description: 'Patterns for steering, constraining, reviewing, and improving coding-agent work.',
+    hideTags: ['agents'],
+  },
+  docs: {
+    key: 'docs',
+    title: 'Documentation and shared context',
+    description: 'Patterns for docs as contracts, source prose, examples, summaries, and review context.',
+    hideTags: ['documentation', 'docs', 'markdown'],
+  },
+  code: {
+    key: 'code',
+    title: 'Code shape and APIs',
+    description: 'Patterns for reader-local code, Rust APIs, naming, state shape, and refactoring.',
+    hideTags: ['rust', 'readability', 'api-design'],
+  },
+  correctness: {
+    key: 'correctness',
+    title: 'Boundaries, failure, and verification',
+    description: 'Patterns for parsing, validation, errors, observability, tests, and runtime proof.',
+    hideTags: ['testing', 'errors', 'observability', 'validation'],
+  },
+  workflow: {
+    key: 'workflow',
+    title: 'Change and review workflow',
+    description: 'Patterns for review size, source control, sequencing, and collaboration.',
+    hideTags: ['workflow', 'review', 'version-control'],
+  },
+  tooling: {
+    key: 'tooling',
+    title: 'Tooling and automation',
+    description: 'Patterns for making repeated feedback mechanical without hiding judgment.',
+    hideTags: ['tooling', 'automation'],
+  },
+};
+
+const principleGroups: Record<string, GroupConfig> = {
+  agents: {
+    key: 'agents',
+    title: 'Agents and shared context',
+    description: 'Principles for compact agent instructions, public rationale, and repeated feedback.',
+    hideTags: ['agents'],
+  },
+  change: {
+    key: 'change',
+    title: 'Change, review, and locality',
+    description: 'Principles for change shape, reader-locality, and review cost.',
+    hideTags: ['change-shape', 'review'],
+  },
+  boundaries: {
+    key: 'boundaries',
+    title: 'Boundaries, APIs, and state',
+    description: 'Principles for explicit boundaries, public API cost, and mutable state.',
+    hideTags: ['boundaries', 'api', 'state'],
+  },
+  verification: {
+    key: 'verification',
+    title: 'Testing and performance',
+    description: 'Principles for useful test failures and evidence-backed optimization.',
+    hideTags: ['testing', 'performance'],
+  },
+  vcs: {
+    key: 'vcs',
+    title: 'Version-control topology',
+    description: 'Principles for JJ, remotes, bookmarks, and publication shape.',
+    hideTags: ['jj', 'vcs'],
+  },
+};
+
+const mechanismGroups: Record<string, GroupConfig> = {
+  guidance: {
+    key: 'guidance',
+    title: 'Guidance system',
+    description: 'Mechanisms that keep rules, generated snippets, templates, and indexes synchronized.',
+    hideTags: ['guidance', 'rules'],
+  },
+  vcs: {
+    key: 'vcs',
+    title: 'JJ workflow',
+    description: 'Mechanisms that make source-control state explicit and noninteractive for agents.',
+    hideTags: ['jj', 'git', 'vcs'],
+  },
+  rust: {
+    key: 'rust',
+    title: 'Rust checks',
+    description: 'Mechanisms for Rust APIs, releases, docs, lints, formatting, and tool profiles.',
+    hideTags: ['rust', 'cargo'],
+  },
+  testing: {
+    key: 'testing',
+    title: 'Testing and benchmarking',
+    description: 'Mechanisms that choose validation cost by risk and expected feedback value.',
+    hideTags: ['tests', 'testing', 'benchmarks'],
+  },
+};
+
+const agentGroups: Record<string, GroupConfig> = {
+  baseline: {
+    key: 'baseline',
+    title: 'Baseline packs',
+    description: 'Core instructions and compressed rule packs that can seed a downstream project.',
+    hideTags: ['baseline'],
+  },
+  domain: {
+    key: 'domain',
+    title: 'Domain profiles',
+    description: 'Focused snippets for common project surfaces such as Rust, docs, and source control.',
+    hideTags: ['rust', 'docs', 'vcs'],
+  },
+  workflow: {
+    key: 'workflow',
+    title: 'Workflow profiles',
+    description: 'Snippets for shaping agent task setup, review, and handoff behavior.',
+    hideTags: ['workflow'],
+  },
+};
+
+const referenceGroups: Record<string, GroupConfig> = {
+  sources: {
+    key: 'sources',
+    title: 'External sources',
+    description: 'Durable references used to support, adapt, or contrast guidance in this repo.',
+    hideTags: ['sources'],
+  },
+  planning: {
+    key: 'planning',
+    title: 'Planning records',
+    description: 'Working maps for how the guidance system was shaped and what may evolve next.',
+    hideTags: ['plan'],
+  },
+};
+
+const guideTags: Record<string, string[]> = {
+  'Boundary Correctness': ['API', 'STATE', 'INPUT'],
+  'Code Shape': ['CODE', 'READING'],
+  'Coding Agents': ['AGENTS', 'WORKFLOW'],
+  'Documentation Workflow': ['DOCS', 'REVIEW'],
+  'JJ Workflow': ['VCS', 'JJ'],
+  'Markdown And Documentation': ['MARKDOWN', 'DOCS'],
+  'Observability And Failure': ['FAILURE', 'DIAGNOSTICS'],
+  'Rust Maintainability': ['RUST', 'API'],
+  'Software Change Preferences': ['CHANGE', 'REVIEW'],
+};
+
+const snippetTags: Record<string, string[]> = {
+  'Coding Agents': ['WORKFLOW'],
+  Core: ['BASELINE'],
+  JJ: ['VCS'],
+  'Markdown Docs': ['DOCS'],
+  Rules: ['RULE PACK'],
+  Rust: ['RUST'],
+};
+
+const referenceTags: Record<string, string[]> = {
+  'External Source Ledger': ['SOURCES'],
+  'Guidance Plan': ['PLAN'],
+};
+
+const groupedEntries = groupEntries(pages);
+const showGroupNav = groupedEntries.length > 1;
+
+function groupEntries(items: MarkdownPage[]) {
+  const groups = groupConfigsForSection();
+  const entries = new Map<string, GroupedEntry[]>();
+  for (const group of Object.values(groups)) {
+    entries.set(group.key, []);
+  }
+
+  for (const item of items) {
+    const group = groupFor(item);
+    const rawTags = tagsFor(item);
+    entries.get(group.key)?.push({
+      item,
+      tags: visibleTags(rawTags, item.title, group),
+    });
+  }
+
+  return Object.values(groups)
+    .map((group) => ({ group, entries: entries.get(group.key) ?? [] }))
+    .filter(({ entries }) => entries.length > 0);
+}
+
+function groupConfigsForSection(): Record<string, GroupConfig> {
+  if (sectionKey === 'guides') return guideGroups;
+  if (sectionKey === 'patterns') return patternGroups;
+  if (sectionKey === 'why') return principleGroups;
+  if (sectionKey === 'mechanisms') return mechanismGroups;
+  if (sectionKey === 'agents') return agentGroups;
+  if (sectionKey === 'references') return referenceGroups;
+  return {
+    default: {
+      key: 'default',
+      title: sectionTitle,
+      description: sectionDescription,
+    },
+  };
+}
+
+function groupFor(item: MarkdownPage): GroupConfig {
+  if (sectionKey === 'guides') return guideGroupFor(item);
+  if (sectionKey === 'patterns') return patternGroupFor(item);
+  if (sectionKey === 'why') return principleGroupFor(item);
+  if (sectionKey === 'mechanisms') return mechanismGroupFor(item);
+  if (sectionKey === 'agents') return agentGroupFor(item);
+  if (sectionKey === 'references') return item.title === 'Guidance Plan' ? referenceGroups.planning : referenceGroups.sources;
+  return groupConfigsForSection().default;
+}
+
+function guideGroupFor(item: MarkdownPage): GroupConfig {
+  if (['Software Change Preferences', 'Code Shape', 'Rust Maintainability'].includes(item.title)) {
+    return guideGroups.core;
+  }
+  if (['Boundary Correctness', 'Observability And Failure'].includes(item.title)) {
+    return guideGroups.boundaries;
+  }
+  return guideGroups.collaboration;
+}
+
+function patternGroupFor(item: MarkdownPage): GroupConfig {
+  const topics = topicsFor(item);
+  if (hasAny(topics, ['agents'])) return patternGroups.agents;
+  if (hasAny(topics, ['documentation', 'docs', 'markdown', 'rustdoc', 'summaries'])) {
+    return patternGroups.docs;
+  }
+  if (hasAny(topics, ['api-design', 'rust', 'readability', 'refactoring', 'code-shape', 'naming'])) {
+    return patternGroups.code;
+  }
+  if (hasAny(topics, ['testing', 'correctness', 'errors', 'observability', 'validation', 'logging', 'privacy'])) {
+    return patternGroups.correctness;
+  }
+  if (hasAny(topics, ['workflow', 'review', 'version-control', 'jj', 'collaboration'])) {
+    return patternGroups.workflow;
+  }
+  return patternGroups.tooling;
+}
+
+function principleGroupFor(item: MarkdownPage): GroupConfig {
+  const topics = topicsFor(item);
+  if (hasAny(topics, ['agents', 'rules', 'automation', 'communication', 'provenance'])) {
+    return principleGroups.agents;
+  }
+  if (hasAny(topics, ['change-shape', 'review', 'commits', 'refactoring', 'code-shape', 'cognition'])) {
+    return principleGroups.change;
+  }
+  if (hasAny(topics, ['boundaries', 'api', 'state', 'rust', 'semver', 'libraries'])) {
+    return principleGroups.boundaries;
+  }
+  if (hasAny(topics, ['testing', 'performance', 'diagnostics'])) return principleGroups.verification;
+  return principleGroups.vcs;
+}
+
+function mechanismGroupFor(item: MarkdownPage): GroupConfig {
+  const topics = topicsFor(item);
+  if (hasAny(topics, ['guidance', 'generated-artifacts', 'markdown'])) return mechanismGroups.guidance;
+  if (hasAny(topics, ['jj', 'git', 'workspaces', 'vcs'])) return mechanismGroups.vcs;
+  if (hasAny(topics, ['rust', 'cargo', 'rustdoc', 'docs.rs', 'clippy', 'rustfmt'])) return mechanismGroups.rust;
+  return mechanismGroups.testing;
+}
+
+function agentGroupFor(item: MarkdownPage): GroupConfig {
+  if (['Core', 'Rules'].includes(item.title)) return agentGroups.baseline;
+  if (item.title === 'Coding Agents') return agentGroups.workflow;
+  return agentGroups.domain;
+}
+
+function tagsFor(item: MarkdownPage): string[] {
+  if (sectionKey === 'guides') return guideTags[item.title] ?? [];
+  if (sectionKey === 'agents') return snippetTags[item.title] ?? [];
+  if (sectionKey === 'references') return referenceTags[item.title] ?? [];
+  return topicTags(item.metadata.topics);
+}
+
+function topicTags(topics: string | undefined): string[] {
+  return normalizeTopics(topics).map((topic) => topic.toUpperCase()).slice(0, 3);
+}
+
+function topicsFor(item: MarkdownPage): string[] {
+  return normalizeTopics(item.metadata.topics);
+}
+
+function normalizeTopics(topics: string | undefined): string[] {
+  if (!topics) return [];
+  return topics
+    .split(',')
+    .map((topic) => topic.trim().toLowerCase())
+    .filter(Boolean);
+}
+
+function hasAny(topics: string[], values: string[]): boolean {
+  return values.some((value) => topics.includes(value));
+}
+
+function visibleTags(tags: string[], title: string, group: GroupConfig): string[] {
+  const hidden = new Set((group.hideTags ?? []).map((tag) => tag.toLowerCase()));
+  const normalizedTitle = normalizeForCompare(title);
+  const visible = tags.filter((tag) => {
+    const normalized = normalizeForCompare(tag);
+    return normalized && !hidden.has(tag.toLowerCase()) && !normalizedTitle.includes(normalized);
+  });
+  return [...new Set(visible)].slice(0, 3);
+}
+
+function normalizeForCompare(value: string): string {
+  return value.toLowerCase().replace(/[^a-z0-9]+/g, '');
+}
 ---
 
-<BaseLayout title={page.title} description={page.description}>
-  <PageContent page={page} />
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  sourceUrl={page.sourceUrl}
+  breadcrumbs={[{ label: section.title }]}
+>
+  <section class="section-hero" aria-labelledby="section-title">
+    <p class="eyebrow">{config.eyebrow}</p>
+    <h1 id="section-title">{section.title}</h1>
+    <p>{config.intro}</p>
+  </section>
 
   <section class="listing">
-    <h2>{section.title} Pages</h2>
-    <div class="list">
-      {pages.map((item) => (
-        <a class="row" href={withBase(item.route)}>
-          <strong>{item.title}</strong>
-          {item.description && <span>{item.description}</span>}
-        </a>
+    <div class="listing__header">
+      <h2>{config.listingTitle}</h2>
+      {showGroupNav && (
+        <nav class="group-nav" aria-label={`${section.title} groups`}>
+          {groupedEntries.map(({ group, entries }) => (
+            <a href={`#group-${group.key}`}>
+              <span>{group.title}</span>
+              <small>{entries.length}</small>
+            </a>
+          ))}
+        </nav>
+      )}
+    </div>
+    <div class={`grouped-index grouped-index--${config.density}`}>
+      {groupedEntries.map(({ group, entries }) => (
+        <section class="index-group" aria-labelledby={`group-${group.key}`}>
+          <div class="index-group__header">
+            <h3 id={`group-${group.key}`}>{group.title}</h3>
+            <p>{group.description}</p>
+          </div>
+          <div class="index-list index-list--cards">
+            {entries.map(({ item, tags }) => (
+              <a class="index-entry" href={withBase(item.route)}>
+                <span class="index-entry__body">
+                  {tags.length > 0 && (
+                    <span class="index-entry__tags">
+                      {tags.map((tag) => (
+                        <span class="index-entry__tag">{tag}</span>
+                      ))}
+                    </span>
+                  )}
+                  <strong>{item.title}</strong>
+                  {item.description && <span class="index-entry__description">{item.description}</span>}
+                </span>
+              </a>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   </section>

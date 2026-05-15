@@ -1,7 +1,12 @@
 ---
-import PageContent from '../../../components/PageContent.astro';
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../../lib/site';
+
+type DomainConfig = {
+  label: string;
+  use: string;
+  titlePrefix: string;
+};
 
 export function getStaticPaths() {
   return ruleDomains().map((page) => ({
@@ -12,18 +17,120 @@ export function getStaticPaths() {
 const domain = Astro.params.domain ?? '';
 const page = renderMarkdown(`rules/${domain}/README.md`);
 const rules = rulesForDomain(domain);
+const domainConfigs: Record<string, DomainConfig> = {
+  'agent-workflow': {
+    label: 'Agent workflow',
+    use: 'Objectives, scoped tools, durable context, and agent handoff.',
+    titlePrefix: 'Agent',
+  },
+  boundary: {
+    label: 'Boundary rules',
+    use: 'Raw input, state transitions, validation policy, and side-effect boundaries.',
+    titlePrefix: 'Boundary',
+  },
+  'change-shape': {
+    label: 'Change shape',
+    use: 'Change scope, review shape, generated artifacts, and follow-up boundaries.',
+    titlePrefix: 'Change',
+  },
+  documentation: {
+    label: 'Documentation',
+    use: 'Behavior contracts, examples, rendered docs, and review-facing evidence.',
+    titlePrefix: 'Docs',
+  },
+  observability: {
+    label: 'Failure visibility',
+    use: 'Failures, logs, diagnostics, telemetry, and repair context.',
+    titlePrefix: 'Observability',
+  },
+  performance: {
+    label: 'Performance',
+    use: 'Speed, memory, allocation, throughput, and benchmark evidence.',
+    titlePrefix: 'Perf',
+  },
+  refactoring: {
+    label: 'Refactoring',
+    use: 'Local source shape, reader burden, concept helpers, and abstraction pressure.',
+    titlePrefix: 'Refactoring',
+  },
+  review: {
+    label: 'Review artifacts',
+    use: 'Issues, PR narratives, ADRs, review packets, and shared context.',
+    titlePrefix: 'Review',
+  },
+  rust: {
+    label: 'Rust APIs',
+    use: 'Public API, crate layout, features, docs.rs, and release behavior.',
+    titlePrefix: 'Rust',
+  },
+  source: {
+    label: 'Source hygiene',
+    use: 'Shared-history boundaries, source material, and generalized guidance.',
+    titlePrefix: 'Source',
+  },
+  'test-failures': {
+    label: 'Failure output',
+    use: 'Assertions and test failures that guide repair.',
+    titlePrefix: 'Test',
+  },
+  testing: {
+    label: 'Verification',
+    use: 'Checks, examples, doctests, feature matrices, and regressions.',
+    titlePrefix: 'Test',
+  },
+  vcs: {
+    label: 'JJ and VCS',
+    use: 'JJ state, review lanes, publication, remote topology, and recovery.',
+    titlePrefix: 'VCS',
+  },
+};
+const config = domainConfigs[domain] ?? {
+  label: 'Rule domain',
+  use: 'Rules in this domain share the same work area and review surface.',
+  titlePrefix: '',
+};
+
+function descriptionFor(rule: (typeof rules)[number]): string {
+  return rule.description.replace(/^Status:\s*`?[\w-]+`?\s*/i, '');
+}
+
+function displayTitle(rule: (typeof rules)[number]): string {
+  if (!config.titlePrefix) return rule.title;
+  return rule.title.replace(new RegExp(`^${escapeRegExp(config.titlePrefix)}\\s+`, 'i'), '');
+}
+
+function escapeRegExp(value: string): string {
+  return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
+}
 ---
 
-<BaseLayout title={page.title} description={page.description}>
-  <PageContent page={page} />
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  sourceUrl={page.sourceUrl}
+  breadcrumbs={[
+    { label: 'Rules', href: '/rules/' },
+    { label: page.title },
+  ]}
+>
+  <section class="section-hero rule-domain-hero" aria-labelledby="domain-title">
+    <p class="eyebrow">{config.label}</p>
+    <h1 id="domain-title">{page.title}</h1>
+    {page.description && <p>{page.description}</p>}
+    <p class="rule-domain-hero__use">{config.use}</p>
+  </section>
 
   <section class="listing">
-    <h2>Rules</h2>
-    <div class="list">
+    <h2>{rules.length} {rules.length === 1 ? 'rule' : 'rules'}</h2>
+    <div class="index-list">
       {rules.map((rule) => (
-        <a class="row" href={withBase(rule.route)}>
-          <strong>{rule.title}</strong>
-          {rule.description && <span>{rule.description}</span>}
+        <a class="index-entry" href={withBase(rule.route)}>
+          <span class="index-entry__body">
+            <strong>{displayTitle(rule)}</strong>
+            {descriptionFor(rule) && (
+              <span class="index-entry__description">{descriptionFor(rule)}</span>
+            )}
+          </span>
         </a>
       ))}
     </div>

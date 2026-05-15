@@ -14,7 +14,7 @@ Treat `bookmark@remote` command syntax as version-sensitive.
 
 ## Why
 
-Jj command syntax around `bookmark@remote` and remote bookmark handling can vary by version and
+JJ command syntax around `bookmark@remote` and remote bookmark handling can vary by version and
 command. Assuming one spelling everywhere makes docs and agent commands fragile across installed jj
 versions.
 
@@ -39,7 +39,7 @@ unverified shorthand.
 
 ## References
 
-- [Principle: Jj Topology Is Repo Role
+- [Principle: JJ Topology Is Repo Role
   Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

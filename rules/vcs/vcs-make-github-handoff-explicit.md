@@ -1,4 +1,4 @@
-# VCS Make Github Handoff Explicit
+# VCS Make GitHub Handoff Explicit
 
 ## Metadata
 
@@ -14,7 +14,7 @@ Make GitHub handoff explicit after jj state is coherent.
 
 ## Why
 
-Jj state and GitHub state are related but not identical. Before opening or updating a PR, the
+JJ state and GitHub state are related but not identical. Before opening or updating a PR, the
 handoff should name the bookmark, remote, base branch, head branch, and repository so host tooling
 does not infer the wrong target.
 
@@ -39,7 +39,7 @@ notes that name local and remote refs.
 
 ## References
 
-- [Principle: Jj Topology Is Repo Role
+- [Principle: JJ Topology Is Repo Role
   Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

@@ -57,7 +57,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Change Shape](change-shape/README.md). 11 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 25 rules. Documentation rules cover
+- [Docs Are Contracts](documentation/README.md). 26 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
 - [Observability And Failure](observability/README.md). 5 rules. Observability rules cover owned
@@ -83,7 +83,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Testing And Verification](testing/README.md). 22 rules. Testing rules cover risk-based
   validation, doctests, feature matrices, deterministic tests, parser samples, command construction,
   dependency floors, and regressions.
-- [Jj Topology And Source Control](vcs/README.md). 28 rules. VCS rules cover jj-first source-control
+- [JJ Topology And Source Control](vcs/README.md). 28 rules. VCS rules cover jj-first source-control
   work, remote topology, operation-log recovery, workspaces, publication safety, and file-tracking
   decisions.
 
@@ -430,6 +430,9 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`DOCS-USE-CONCRETE-DETAILS`](documentation/docs-use-concrete-details.md). Use concrete nouns and
   real paths, defaults, commands, and examples. Abstract nouns make readers infer the actual object.
   Helps: Makes guidance easier to apply, review, and encode for agents.
+- [`DOCS-USE-DESCRIPTIVE-HEADINGS`](documentation/docs-use-descriptive-headings.md). Use headings
+  that describe the section content instead of slogan-like instructions. Headings are navigation.
+  Helps: Makes pages easier to skim, search, link, and navigate non-linearly.
 - [`DOCS-USE-SOURCE-LINKS-AS-SUPPORT`](documentation/docs-use-source-links-as-support.md). Use
   source links as support, not as wording supply. External sources should help a reader verify a
   claim or compare judgment, not supply phrasing. Helps: Keeps guidance original, source-backed
@@ -901,7 +904,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   user-reported behavior. Helps: Preserves user-reported fixes and gives future maintainers a
   precise failure when the bug returns.
 
-### Jj Topology And Source Control
+### JJ Topology And Source Control
 
 - [`VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`](vcs/vcs-ask-before-repairing-jj-aliases.md). Ask the user
   to repair jj aliases when topology and aliases disagree. Aliases such as `trunk()` or publish
@@ -923,7 +926,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   mean the user fork while `upstream` means the canonical repo, or vice versa in owned repos. Helps:
   Keeps push remote, PR head, PR base, and tracked bookmarks aligned.
 - [`VCS-CREATE-OPERATION-LOG-POINT-BEFORE-RESHAPING`](vcs/vcs-create-operation-log-point-before-reshaping.md).
-  Use harmless jj inspection to create an operation-log point before risky reshaping. Jj can recover
+  Use harmless jj inspection to create an operation-log point before risky reshaping. JJ can recover
   through the operation log, but recovery is easier when there is a recent known point before a
   risky stack reshape. Helps: Makes recovery from a bad reshape faster and easier to explain.
 - [`VCS-DO-NOT-FALL-BACK-TO-GIT-FOR-JJ-ISSUES`](vcs/vcs-do-not-fall-back-to-git-for-jj-issues.md).
@@ -955,7 +958,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   review lanes. A new task needs a separate review lane before unrelated edits accumulate. Helps:
   Keeps review units atomic and prevents unrelated work from piling into one change.
 - [`VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`](vcs/vcs-make-github-handoff-explicit.md). Make GitHub handoff
-  explicit after jj state is coherent. Jj state and GitHub state are related but not identical.
+  explicit after jj state is coherent. JJ state and GitHub state are related but not identical.
   Helps: Makes PR publication reproducible and avoids confusing branch or fork inference.
 - [`VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`](vcs/vcs-match-jj-topology-to-repo-role.md). Match jj remote
   topology to the repository role. Owned repos, maintainer-access repos, and fork-only contributor
@@ -970,7 +973,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   `&`, `~`, parentheses, or spaces that shells can interpret. Helps: Prevents shell parsing bugs in
   jj examples, scripts, and agent commands.
 - [`VCS-RECOVER-WITH-OPERATION-LOG`](vcs/vcs-recover-with-operation-log.md). Use operation-log
-  recovery instead of destructive cleanup. Jj records repository operations so many mistakes are
+  recovery instead of destructive cleanup. JJ records repository operations so many mistakes are
   recoverable without destructive Git reset or stash habits. Helps: Makes recovery safer and avoids
   destroying unrelated local work.
 - [`VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`](vcs/vcs-repair-remote-topology-coherently.md). Repair
@@ -978,7 +981,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   tracked bookmark, trunk alias, PR base, and PR head. Helps: Keeps jj, GitHub, and local aliases
   consistent after topology drift.
 - [`VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`](vcs/vcs-run-jj-mutations-sequentially.md). Run jj mutations
-  sequentially. Jj mutating commands update working-copy and operation state. Helps: Keeps
+  sequentially. JJ mutating commands update working-copy and operation state. Helps: Keeps
   source-control state coherent and avoids avoidable lock contention.
 - [`VCS-SCOPE-JJ-FILE-TRACKING`](vcs/vcs-scope-jj-file-tracking.md). Scope jj file track and untrack
   commands to intended paths. `jj file track` and `jj file untrack` can affect more files than
@@ -993,7 +996,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   remotes, implicit tracking can choose the wrong source or make publication ambiguous. Helps:
   Prevents fetch, rebase, and publication confusion in fork and upstream workflows.
 - [`VCS-TREAT-BOOKMARK-REMOTE-SYNTAX-AS-VERSION-SENSITIVE`](vcs/vcs-treat-bookmark-remote-syntax-as-version-sensitive.md).
-  Treat `bookmark@remote` command syntax as version-sensitive. Jj command syntax around
+  Treat `bookmark@remote` command syntax as version-sensitive. JJ command syntax around
   `bookmark@remote` and remote bookmark handling can vary by version and command. Helps: Keeps jj
   guidance accurate across version differences and reduces command-shape failures.
 - [`VCS-USE-EVOLOG-AND-OPERATION-LOG`](vcs/vcs-use-evolog-and-operation-log.md). Use `jj evolog` for

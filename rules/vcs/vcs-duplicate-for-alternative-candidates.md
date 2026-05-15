@@ -38,7 +38,7 @@ abandon or squash of the losing candidate.
 
 ## References
 
-- [Principle: Jj Topology Is Repo Role
+- [Principle: JJ Topology Is Repo Role
   Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

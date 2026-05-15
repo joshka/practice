@@ -9,8 +9,5 @@ const { page } = Astro.props;
 ---
 
 <article class="page">
-  <div class="page-source">
-    <a href={page.sourceUrl}>Edit source</a>
-  </div>
-  <div set:html={page.html} />
+  <div class="prose" set:html={page.html} />
 </article>

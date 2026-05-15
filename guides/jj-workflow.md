@@ -1,4 +1,4 @@
-# Jj Workflow
+# JJ Workflow
 
 This guide captures the repo's jujutsu workflow preferences. Use it when inspecting source-control
 state, creating reviewable changes, shaping commit descriptions, or publishing reviewed work.
@@ -291,9 +291,9 @@ For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
 
 ## Related Guidance Layers
 
-Use [Jj Topology And Source Control Rules][vcs-rules] for compact jj and publication instructions.
-Use [Jj Topology Is Repo Role Dependent][jj-topology] for the reasoning behind owned, maintainer,
-and forked remote layouts. Use [Jj Agent Workflow][jj-agent-workflow] for noninteractive jj
+Use [JJ Topology And Source Control Rules][vcs-rules] for compact jj and publication instructions.
+Use [JJ Topology Is Repo Role Dependent][jj-topology] for the reasoning behind owned, maintainer,
+and forked remote layouts. Use [JJ Agent Workflow][jj-agent-workflow] for noninteractive jj
 configuration and agent-safe command shapes.
 
 ## Review Questions

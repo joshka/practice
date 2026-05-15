@@ -14,7 +14,7 @@ Use harmless jj inspection to create an operation-log point before risky reshapi
 
 ## Why
 
-Jj can recover through the operation log, but recovery is easier when there is a recent known point
+JJ can recover through the operation log, but recovery is easier when there is a recent known point
 before a risky stack reshape. A harmless inspection or description update creates a visible
 operation boundary before rebases, splits, squashes, or publication repair.
 
@@ -39,7 +39,7 @@ the operation before reshaping.
 
 ## References
 
-- [Principle: Jj Topology Is Repo Role
+- [Principle: JJ Topology Is Repo Role
   Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

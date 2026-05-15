@@ -90,6 +90,9 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`DOCS-USE-CONCRETE-DETAILS`](docs-use-concrete-details.md). Use concrete nouns and real paths,
   defaults, commands, and examples. Abstract nouns make readers infer the actual object. Helps:
   Makes guidance easier to apply, review, and encode for agents.
+- [`DOCS-USE-DESCRIPTIVE-HEADINGS`](docs-use-descriptive-headings.md). Use headings that describe
+  the section content instead of slogan-like instructions. Headings are navigation. Helps: Makes
+  pages easier to skim, search, link, and navigate non-linearly.
 - [`DOCS-USE-SOURCE-LINKS-AS-SUPPORT`](docs-use-source-links-as-support.md). Use source links as
   support, not as wording supply. External sources should help a reader verify a claim or compare
   judgment, not supply phrasing. Helps: Keeps guidance original, source-backed where useful, and

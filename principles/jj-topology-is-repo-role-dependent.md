@@ -1,8 +1,8 @@
-# Jj Topology Is Repo Role Dependent
+# JJ Topology Is Repo Role Dependent
 
 ## Metadata
 
-- Name: `Jj Topology Is Repo Role Dependent`
+- Name: `JJ Topology Is Repo Role Dependent`
 - ID: `jj-topology-is-repo-role-dependent`
 - Status: `reviewed`
 - Audience: `both`
@@ -22,7 +22,7 @@ Remote names encode assumptions. In a simple owned repo, `origin` may be the can
 the user's fork and `upstream` point to the source repo. A stale `trunk()` alias or tracked bookmark
 can make ordinary commands rebase, compare, or publish against the wrong base.
 
-Jj makes local change management pleasant, but GitHub publication still depends on the real remote
+JJ makes local change management pleasant, but GitHub publication still depends on the real remote
 topology. Agents should make that topology explicit instead of relying on default remote names.
 
 ## Common Repo Roles

@@ -20,6 +20,14 @@ const section = getSection(Astro.params.section ?? '');
 if (!section) throw new Error(`Unknown section: ${Astro.params.section}`);
 ---
 
-<BaseLayout title={page.title} description={page.description}>
+<BaseLayout
+  title={page.title}
+  description={page.description}
+  sourceUrl={page.sourceUrl}
+  breadcrumbs={[
+    { label: section.title, href: section.route },
+    { label: page.title },
+  ]}
+>
   <PageContent page={page} />
 </BaseLayout>
