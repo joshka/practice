@@ -16,7 +16,7 @@ Prefer primary or stable sources for durable guidance.
 
 External references are most useful when they help a reader verify, compare, or challenge a rule.
 For Rust guidance, that usually means sources such as the Rust API Guidelines, Rust Book, official
-Cargo or rustdoc docs, Microsoft Pragmatic Rust Guidelines, or epage's Rust and PR style notes.
+Cargo or rustdoc docs, Microsoft Pragmatic Rust Guidelines, or Ed Page's Rust and PR style notes.
 Private repos, local paths, and transient session notes should not be the evidence a public rule
 depends on.
 

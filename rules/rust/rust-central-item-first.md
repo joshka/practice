@@ -40,4 +40,4 @@ trait impls, and helpers after the main concept.
 
 ## References
 
-- [epage Rust Style: item organization](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: item organization](https://epage.github.io/dev/rust-style/)

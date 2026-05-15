@@ -40,4 +40,4 @@ effects. Prefer names that describe the domain role rather than the operation me
 
 ## References
 
-- [epage Rust Style: names and code shape](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: names and code shape](https://epage.github.io/dev/rust-style/)

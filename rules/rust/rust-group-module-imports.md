@@ -39,5 +39,5 @@ unless doing so clarifies conflicting names or public re-exports.
 
 ## References
 
-- [epage Rust Style: imports](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: imports](https://epage.github.io/dev/rust-style/)
 - [rustfmt configuration](https://rust-lang.github.io/rustfmt/)

@@ -64,7 +64,7 @@ Ok(Catalog { items: valid, index })
 | Source                           | Use      | Note                                              |
 | -------------------------------- | -------- | ------------------------------------------------- |
 | [Tidy First, Ch. 11][tidy-ch11]  | `adapts` | Whitespace can reveal phases inside a routine.    |
-| [epage][epage]                   | `adapts` | Rust style should optimize for local readability. |
+| [Ed Page][ed-page]               | `adapts` | Rust style should optimize for local readability. |
 
 [tidy-ch11]: https://www.oreilly.com/library/view/tidy-first/9781098151232/ch11.html
-[epage]: https://epage.github.io/dev/rust-style/
+[ed-page]: https://epage.github.io/dev/rust-style/

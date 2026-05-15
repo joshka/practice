@@ -76,6 +76,6 @@ process notes that do not affect the shared decision.
 
 | Source                         | Use        | Note                                           |
 | ------------------------------ | ---------- | ---------------------------------------------- |
-| [ePage PR style][epage-pr]     | `supports` | PRs should prepare reviewers with context.     |
+| [Ed Page PR style][ed-page-pr] | `supports` | PRs should prepare reviewers with context.     |
 
-[epage-pr]: https://epage.github.io/dev/pr-style/
+[ed-page-pr]: https://epage.github.io/dev/pr-style/

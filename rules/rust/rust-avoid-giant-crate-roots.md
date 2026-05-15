@@ -42,4 +42,4 @@ the root as an orientation page instead of a dumping ground.
 
 - [Rust API Guidelines: crate-level docs are
   thorough](https://rust-lang.github.io/api-guidelines/documentation.html#c-crate-doc)
-- [epage Rust Style: source organization](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: source organization](https://epage.github.io/dev/rust-style/)

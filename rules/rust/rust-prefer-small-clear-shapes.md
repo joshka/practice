@@ -42,4 +42,4 @@ unrelated state to the concept that owns it.
 
 - [Microsoft Pragmatic Rust Guidelines: prefer simple
   abstractions](https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS)
-- [epage Rust Style: code organization](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: code organization](https://epage.github.io/dev/rust-style/)

@@ -53,7 +53,7 @@ pattern is about reviewing a change between versions, such as separating structu
 List durable sources only when they help frame, validate, or contrast the guidance.
 
 Before publishing a pattern, check relevant source catalogs for support or contrast. Common starting
-points include Rust API Guidelines, Microsoft Pragmatic Rust Guidelines, epage Rust Style, official
+points include Rust API Guidelines, Microsoft Pragmatic Rust Guidelines, Ed Page Rust Style, official
 language/framework docs, and durable design or documentation sources.
 Do not use "Local" or similar "because I said so" entries as references. Omit the reference table
 when no durable source is useful.

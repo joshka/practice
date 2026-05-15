@@ -42,4 +42,4 @@ keep re-export lists intentional and reviewable.
 
 - [Rust Reference: use
   declarations](https://doc.rust-lang.org/reference/items/use-declarations.html)
-- [epage Rust Style: imports](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: imports](https://epage.github.io/dev/rust-style/)

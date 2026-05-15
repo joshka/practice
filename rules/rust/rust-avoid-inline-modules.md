@@ -40,4 +40,4 @@ files, and keep module declarations as a readable map.
 ## References
 
 - [Rust Reference: modules and source files](https://doc.rust-lang.org/reference/items/modules.html)
-- [epage Rust Style: source organization](https://epage.github.io/dev/rust-style/)
+- [Ed Page Rust Style: source organization](https://epage.github.io/dev/rust-style/)

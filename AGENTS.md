@@ -34,7 +34,7 @@ when they contain real durable content; avoid empty placeholders.
 
 When adding or revising patterns, check durable external sources for links that support, adapt, or
 contrast the guidance. Prefer primary or stable sources such as Rust API Guidelines, Microsoft
-Pragmatic Rust Guidelines, epage Rust Style, official language/framework docs, and durable design
+Pragmatic Rust Guidelines, Ed Page Rust Style, official language/framework docs, and durable design
 or documentation sources. Do not use "Local" or similar "because I said so" entries as references;
 omit references when no durable source is useful.
 

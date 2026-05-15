@@ -52,8 +52,8 @@ if is_eligible_for_approval(user) {
 
 ## References
 
-| Source          | Use        | Note                                              |
-| --------------- | ---------- | ------------------------------------------------- |
-| [epage][epage]  | `supports` | Weak abstractions should stay close to their use. |
+| Source              | Use        | Note                                              |
+| ------------------- | ---------- | ------------------------------------------------- |
+| [Ed Page][ed-page]  | `supports` | Weak abstractions should stay close to their use. |
 
-[epage]: https://epage.github.io/dev/rust-style/
+[ed-page]: https://epage.github.io/dev/rust-style/

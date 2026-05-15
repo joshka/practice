@@ -59,8 +59,8 @@ if retryable_error && retry_budget_available {
 | --------------------------------- | ---------- | ------------------------------------------------------ |
 | [Tidy First, Ch. 8][tidy-ch8]     | `adapts`   | Name local expressions after the intent they expose.   |
 | [Extract Variable][extract-var]   | `supports` | Naming an expression can make intent easier to see.    |
-| [epage][epage]                    | `adapts`   | Reader locality favors clarity at the point of use.    |
+| [Ed Page][ed-page]                | `adapts`   | Reader locality favors clarity at the point of use.    |
 
 [tidy-ch8]: https://www.oreilly.com/library/view/tidy-first/9781098151232/ch08.html
 [extract-var]: https://refactoring.com/catalog/extractVariable.html
-[epage]: https://epage.github.io/dev/rust-style/
+[ed-page]: https://epage.github.io/dev/rust-style/

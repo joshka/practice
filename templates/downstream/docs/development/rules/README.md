@@ -17,7 +17,7 @@ boundaries such as Rust API changes, tests, docs, performance, and source contro
 - [Measure Before Optimizing](performance.md): 7 rules.
 - [Local Reasoning And Refactoring](refactoring.md): 8 rules.
 - [Private Context And Review Artifacts](review.md): 6 rules.
-- [Rust API And Crate Shape](rust.md): 46 rules.
+- [Rust API And Crate Shape](rust.md): 90 rules.
 - [Source And Context Hygiene](source.md): 4 rules.
 - [Tests Should Explain Failures](test-failures.md): 3 rules.
 - [Testing And Verification](testing.md): 22 rules.

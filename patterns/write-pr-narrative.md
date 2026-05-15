@@ -55,12 +55,12 @@ variant. The user-facing surface is the new `DuplicateTable` error. Verified wit
 
 ## References
 
-| Source                      | Use        | Note                                                   |
-| --------------------------- | ---------- | ------------------------------------------------------ |
-| [epage PR style][epage-pr]  | `adapts`   | PRs should prepare reviewers and preserve reasoning.   |
-| [GitHub PR guidance][pr]    | `supports` | PRs should give reviewers context and review guidance. |
-| [GitHub issue links][links] | `adapts`   | PR narrative can connect the change to tracked work.   |
+| Source                          | Use        | Note                                                   |
+| ------------------------------- | ---------- | ------------------------------------------------------ |
+| [Ed Page PR style][ed-page-pr]  | `adapts`   | PRs should prepare reviewers and preserve reasoning.   |
+| [GitHub PR guidance][pr]        | `supports` | PRs should give reviewers context and review guidance. |
+| [GitHub issue links][links]     | `adapts`   | PR narrative can connect the change to tracked work.   |
 
-[epage-pr]: https://epage.github.io/dev/pr-style/
+[ed-page-pr]: https://epage.github.io/dev/pr-style/
 [links]: https://docs.github.com/en/get-started/writing-on-github/working-with-advanced-formatting/using-keywords-in-issues-and-pull-requests
 [pr]: https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes

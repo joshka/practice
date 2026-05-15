@@ -11,9 +11,9 @@ material.
   errors, features, and docs. Adopt where aligned and adapt to maintainer use.
 - [Microsoft Pragmatic Rust Guidelines][ms-rust-guidelines]. Agent-facing Rust defaults and safety
   guidance. Adapt while keeping this repo's voice and local priorities.
-- [epage Rust Style](https://epage.github.io/dev/rust-style/). Rust module layout, imports,
+- [Ed Page Rust Style](https://epage.github.io/dev/rust-style/). Rust module layout, imports,
   naming, and style. Mostly adopt, with local module preferences.
-- [epage PR Style](https://epage.github.io/dev/pr-style/). PR narrative and reviewer-oriented
+- [Ed Page PR Style](https://epage.github.io/dev/pr-style/). PR narrative and reviewer-oriented
   communication. Adapt into review artifact guidance.
 - [The Rust Book](https://doc.rust-lang.org/book/) and official Rust docs. Language behavior,
   ownership, traits, and cargo. Use as primary technical reference.

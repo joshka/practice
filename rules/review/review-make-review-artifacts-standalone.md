@@ -43,6 +43,6 @@ sections, and final handoff notes that restate private decisions in shared langu
 
 - [Principle: Private Context Is Not Shared
   Context](../../principles/private-context-is-not-shared-context.md)
-- [epage: PR style](https://epage.github.io/dev/pr-style/)
+- [Ed Page: PR style](https://epage.github.io/dev/pr-style/)
 - [GitHub Docs: helping others review your
   changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)
