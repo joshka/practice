@@ -34,21 +34,29 @@ Documentation should preserve the useful local voice of a project: its directnes
 heading density, and level of formality. Generated prose often becomes smooth while losing the
 project's actual way of explaining tradeoffs.
 
-Read a draft once for structure, then once for sentence-level tells.
-Cut teaching-order commentary.
-Cut page narration.
-Cut self-justifying page text.
-Cut low-evidence recommendation language.
-Cut ranking language when the tradeoff is not stated.
-Cut router prose when an inline link would do.
-Cut abstract labels that hide a simpler term.
-Cut repeated helpful framing around the same point.
-Replace soft recommendation language with a direct statement of the tradeoff.
-Replace abstract wording with the concrete host, file, command, resource, type, or behavior.
+### Structure Pass
+
+Read a draft once for structure, then once for sentence-level tells. The structure pass should cut
+prose that exists only because the page is explaining itself: teaching-order commentary, page
+narration, self-justifying text, router prose that an inline link could replace, and repeated
+helpful framing around the same point.
+
+### Claim Strength
+
+Cut recommendation or ranking language when the evidence and tradeoff are not stated. A strong
+claim should either point to support or be narrowed until it matches what the page can justify.
+
+### Local Language
+
+Replace vague abstraction with the concrete host, file, command, resource, type, or behavior. When
+soft recommendation language hides the real decision, state the tradeoff directly instead of adding
+another abstract label.
 
 Use [Preserve Local Doc Voice][voice] when revising existing prose. Use
 [Preserve Intent Over Literalism][intent] when a requested rewrite would keep words but lose the
 decision the original text was carrying.
+Use [Avoid Generated Prose Tells][generated-tells], [Use Concrete Details][concrete-details], and
+[Write Technical Prose][technical-prose] when revision needs to remove smooth but low-signal prose.
 
 ## Repo Maps and Layers
 
@@ -66,31 +74,38 @@ Describing the change is part of the work. PRs, review packets, and jj descripti
 reviewer understand purpose, user-facing surface, decisions, validation, deferred work, and the best
 path through the diff.
 
-Prepare the reviewer before asking for review.
-Explain the problem the change addresses.
-Explain the mental model a reviewer should use when reading the diff.
-Explain where the change diverges from earlier discussion.
-Explain non-goals so follow-up ideas do not masquerade as review blockers.
-Explain what was deferred and why.
-Explain decisions made during implementation.
-Explain architecture impact when modules, APIs, boundaries, or flows changed.
-Explain observability impact when logs, metrics, traces, diagnostics, or debugging paths changed.
-Explain what lacks automated testing and what manual testing covered.
-Explain documentation deltas: what changed, what stayed accurate, and what still needs a follow-up.
-Use inline comments when a decision is best understood next to the relevant code.
-Use inline comments to acknowledge controversial choices before reviewers have to discover them.
+Prepare the reviewer before asking for review. A useful review narrative explains the problem, the
+mental model for reading the diff, where the change diverges from earlier discussion, and which
+non-goals or deferred work should not become review blockers.
+
+When the implementation changed more than local code, name the decision and its effect. Architecture
+changes should explain the impact on modules, APIs, boundaries, or flows; observability changes
+should explain the impact on logs, metrics, traces, diagnostics, or debugging paths; test notes
+should say what lacks automated coverage and what manual testing covered; documentation notes should
+say what changed, what stayed accurate, and what still needs a follow-up.
+
+Use inline comments when a decision is best understood next to the relevant code. Use
+[Explain Controversial Choices Inline][inline-choices] when a surprising decision should be visible
+before reviewers have to rediscover it.
 Remember future readers of reviews: users reading changelogs, contributors tracing motivation, and
 maintainers root-causing behavior.
 
 Use [Write PR Narrative][pr-narrative] when a change needs a review guide. Use
 [Produce Review Packets][review-packets] when the handoff should bundle summary, proof, artifacts,
 and known risks.
+Use [Make Review Artifacts Standalone][standalone-review] when issues, PRs, commit messages, or
+agent handoffs need to make sense without private session context.
 
 When a change touches support status, keep docs, examples, tests, fixtures, and user-facing claims
 aligned. A support matrix or coverage table is only useful when it stays tied to evidence.
 
+Use [Keep Drift Claims Aligned][drift-claims] when support matrices, fixtures, docs, examples, or
+public API paths need a shared validation source.
+
 When reviewing docs, lead with correctness, contract ambiguity, risk, drift, and operability. Use
 severity labels when they help the author separate merge-blocking misunderstandings from polish.
+Use [Review Docs For Correctness And Risk][docs-review-risk] when review feedback needs to separate
+contract problems from prose polish.
 
 ## Drift Remediation
 
@@ -115,10 +130,15 @@ need mechanical proof.
 
 ## Review Questions
 
+### Scope And Evidence
+
 - What documentation job is this change doing?
 - Is the pass depth explicit and small enough for the review unit?
 - Does the prose state current behavior instead of aspiration?
 - Are strong claims backed by contracts, tests, measurements, or sources?
+
+### Shape And Review
+
 - Does the edit preserve the local voice and density?
 - Are user, maintainer, reference, and decision docs in the right layer?
 - Does the review narrative explain purpose, surface, validation, and follow-up?
@@ -131,15 +151,22 @@ need mechanical proof.
 [doc-drift]: ../patterns/remediate-doc-drift.md
 [doc-locality]: ../patterns/keep-docs-near-their-subject.md
 [doc-rules]: ../rules/documentation/README.md
+[docs-review-risk]: ../rules/documentation/docs-review-correctness-and-risk-first.md
 [doc-type]: ../patterns/choose-doc-type.md
 [docs-contracts]: ../principles/docs-are-contracts.md
 [docs-snippet]: ../snippets/agents/markdown-docs.md
 [docs-validation]: ../mechanisms/rust-docs-validation.md
+[concrete-details]: ../rules/documentation/docs-use-concrete-details.md
+[drift-claims]: ../rules/testing/test-keep-drift-claims-aligned.md
 [evidence]: ../patterns/label-doc-claims-by-evidence.md
+[generated-tells]: ../rules/documentation/docs-avoid-generated-prose-tells.md
+[inline-choices]: ../rules/review/review-explain-controversial-choices-inline.md
 [intent]: ../patterns/preserve-intent-over-literalism.md
 [markdown-docs]: markdown-documentation.md
 [pass-depth]: ../patterns/choose-doc-pass-depth.md
 [pr-narrative]: ../patterns/write-pr-narrative.md
 [review-packets]: ../patterns/produce-review-packets.md
+[standalone-review]: ../rules/review/review-make-review-artifacts-standalone.md
+[technical-prose]: ../rules/documentation/docs-write-technical-prose.md
 [verification]: ../patterns/report-verification-honestly.md
 [voice]: ../patterns/preserve-local-doc-voice.md

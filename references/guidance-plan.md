@@ -178,6 +178,9 @@ Reviewed references:
 
 The first reviewed guide, pattern, and snippet set is in place. Useful next work includes:
 
+- Review the guide-audit draft rules and either mark them reviewed or revise their scope.
+- After accepting those rules, regenerate the reviewed agent rule pack and downstream template so
+  the new non-Rust guidance enters agent execution surfaces.
 - Distill reviewed principles into shorter agent and maintainer profiles.
 - Add more narrow mechanisms when repeated rule clusters expose a command, lint, CI job, or
   generated artifact that should be named directly.
@@ -197,6 +200,7 @@ The first reviewed guide, pattern, and snippet set is in place. Useful next work
 1. Add compact agent snippets.
 1. Add the first principle expansion layer.
 1. Add the first mechanism profile.
+1. Audit guide grouping and extract draft rules from hidden guide-only instructions.
 
 ## Acceptance Bar
 

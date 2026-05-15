@@ -35,7 +35,7 @@ explain that other modules should not really use the item.
 
 ## Agent Instruction
 
-When widening Rust visibility, update names and docs so the owning concept and intended callers are
+Update names and docs while widening Rust visibility so the owning concept and intended callers are
 clear.
 
 ## Mechanisms

@@ -10,3 +10,8 @@ keeps repeated source usage understandable at the repo level.
   jj, documentation, observability, security, and agent guidance.
 - [`guidance-plan`](guidance-plan.md): The intended shape of guides, rules, principles, patterns,
   mechanisms, snippets, and references.
+
+## Draft References
+
+- [`guide-rule-audit`](guide-rule-audit.md): Current audit evidence for guide grouping, draft-rule
+  extraction, agent-surface coverage, and remaining maintainer review.

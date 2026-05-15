@@ -8,6 +8,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 
 ## Rules
 
+- [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-avoid-speculative-public-api.md). Do not add public
+  API for future features before the need is real. Public API turns a local guess into a contract
+  that users, downstream integrations, examples, tests, docs, and compatibility promises may start
+  depending on. Helps: Prevents accidental compatibility commitments to unused names, types, and
+  extension points. - Keeps review focused on the current behavior rather than a guessed future
+  design.
 - [`CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`](change-avoid-unnecessary-dependency-churn.md). Do
   not include dependency churn unless it is necessary for the task. Dependency updates change
   lockfiles, feature graphs, minimum versions, build output, and downstream compatibility. Helps:
@@ -37,6 +43,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   working tree can contain edits from the user, another agent, generated state, or an earlier
   in-progress change. Helps: Protects parallel work and keeps the current diff accountable for only
   the files it owns.
+- [`CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`](change-respect-generated-artifact-ownership.md).
+  Respect generated artifact ownership instead of hand-editing generated outputs. Generated
+  changelogs, lockfiles, code, snapshots, API listings, docs, and release files often have a source
+  input that owns their contents. Helps: Prevents manual generated-file edits from being lost or
+  fighting the generator. - Makes generator, template, and release-tooling changes reviewable at the
+  source.
 - [`CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`](change-separate-structure-from-behavior.md). Keep
   structure changes separate from behavior changes when the combined diff obscures review. Structure
   changes ask reviewers to confirm the code means the same thing; behavior changes ask them to

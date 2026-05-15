@@ -35,8 +35,8 @@ methods cheap and defer validation only when a field cannot be judged independen
 
 ## Agent Instruction
 
-Validate Rust builder cross-field invariants in `build` and return an error when construction can
-fail.
+Validate Rust builder cross-field invariants in `build` and return an error for fallible
+construction.
 
 ## Mechanisms
 

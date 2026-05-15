@@ -36,7 +36,7 @@ parsing, rendering, policy, ownership, or side-effect order.
 ## Agent Instruction
 
 Use named locals, visible branches, whitespace paragraphs, and loops for side-effectful Rust logic
-when dense expressions would hide audit points.
+that dense expressions would hide.
 
 ## Mechanisms
 

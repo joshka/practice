@@ -147,7 +147,7 @@ export function descriptionFromMarkdown(markdown: string): string {
       !/^Status:\s*`?[\w-]+`?$/i.test(trimmed)
     );
   });
-  return truncateWords(paragraph?.replace(/\s+/g, ' ') ?? '', 180);
+  return truncateWords(plainTextFromMarkdown(paragraph ?? ''), 180);
 }
 
 export function renderMarkdown(repoPath: string): MarkdownPage {
@@ -416,7 +416,7 @@ function metadataFromMarkdown(markdown: string): Record<string, string> {
 function markdownIntro(markdown: string, repoPath: string): string {
   const parsed = splitMarkdownSections(markdown);
   const intro = parsed.intro.trim();
-  return rewriteLinks(marked.parse(intro) as string, repoPath);
+  return rewriteLinks(marked.parse(withReferenceDefinitions(intro, markdown)) as string, repoPath);
 }
 
 function markdownSections(markdown: string, repoPath: string): MarkdownSection[] {
@@ -424,8 +424,24 @@ function markdownSections(markdown: string, repoPath: string): MarkdownSection[]
     .filter((section) => section.title.toLowerCase() !== 'metadata')
     .map((section) => ({
       title: section.title,
-      html: rewriteLinks(marked.parse(section.markdown.trim()) as string, repoPath),
+      html: rewriteLinks(
+        marked.parse(withReferenceDefinitions(section.markdown.trim(), markdown)) as string,
+        repoPath,
+      ),
     }));
+}
+
+function withReferenceDefinitions(markdown: string, fullMarkdown: string): string {
+  const definitions = referenceDefinitions(fullMarkdown);
+  if (!markdown || !definitions) return markdown;
+  return `${markdown}\n\n${definitions}`;
+}
+
+function referenceDefinitions(markdown: string): string {
+  return Array.from(
+    markdown.matchAll(/^(?: {0,3})\[[^\]\n]+\]:[^\n]*(?:\n[ \t]+[^\n]+)*/gm),
+    (match) => match[0],
+  ).join('\n');
 }
 
 function splitMarkdownSections(markdown: string): {
@@ -506,6 +522,17 @@ function truncateWords(value: string, maxLength: number): string {
   const truncated = value.slice(0, maxLength);
   const lastSpace = truncated.lastIndexOf(' ');
   return `${truncated.slice(0, lastSpace > 80 ? lastSpace : maxLength).trimEnd()}...`;
+}
+
+function plainTextFromMarkdown(markdown: string): string {
+  return markdown
+    .replace(/^(?: {0,3})\[[^\]\n]+\]:[^\n]*(?:\n[ \t]+[^\n]+)*/gm, '')
+    .replace(/!\[([^\]\n]*)\]\([^)]+\)/g, '$1')
+    .replace(/\[([^\]\n]+)\]\[[^\]\n]+\]/g, '$1')
+    .replace(/\[([^\]\n]+)\]\([^)]+\)/g, '$1')
+    .replace(/`([^`]+)`/g, '$1')
+    .replace(/\s+/g, ' ')
+    .trim();
 }
 
 function escapeRegExp(value: string): string {

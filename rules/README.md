@@ -48,16 +48,16 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 
 ## Domains
 
-- [Agent Workflow](agent-workflow/README.md). 25 rules. Agent workflow rules cover objectives,
+- [Agent Workflow](agent-workflow/README.md). 26 rules. Agent workflow rules cover objectives,
   scoped capabilities, durable context, review packets, security proof, feedback loops, and concrete
   next choices.
-- [Explicit Boundaries Preserve Correctness](boundary/README.md). 25 rules. Boundary rules cover
+- [Explicit Boundaries Preserve Correctness](boundary/README.md). 26 rules. Boundary rules cover
   parsing, validation policy, explicit inputs, state transitions, provider diagnostics, effect
   boundaries, and external reconciliation.
-- [Change Shape](change-shape/README.md). 11 rules. Change-shape rules cover one-purpose changes,
+- [Change Shape](change-shape/README.md). 13 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 29 rules. Documentation rules cover
+- [Docs Are Contracts](documentation/README.md). 33 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
 - [Observability And Failure](observability/README.md). 5 rules. Observability rules cover owned
@@ -66,10 +66,10 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Measure Before Optimizing](performance/README.md). 7 rules. Performance rules cover measuring
   before optimizing, benchmark provenance, single-run skepticism, correctness gates, and the cost of
   complexity or dependency churn.
-- [Local Reasoning And Refactoring](refactoring/README.md). 8 rules. Refactoring rules cover local
+- [Local Reasoning And Refactoring](refactoring/README.md). 9 rules. Refactoring rules cover local
   reasoning, concept helpers, visible linear stories, side-effect loops, whitespace paragraphs, DRY
   pressure, and weak abstractions.
-- [Private Context And Review Artifacts](review/README.md). 6 rules. Review artifact rules cover
+- [Private Context And Review Artifacts](review/README.md). 11 rules. Review artifact rules cover
   issue slices, PR narratives, ADRs, speculation labels, thread ownership, and artifacts that stand
   alone without private session context.
 - [Rust API And Crate Shape](rust/README.md). 90 rules. Rust rules cover public API shape, crate
@@ -165,6 +165,12 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`AGENT-REPORT-PROOF-IN-HANDOFFS`](agent-workflow/agent-report-proof-in-handoffs.md). Report
   proof, not confidence, in agent handoffs. Confidence language is not evidence. Helps: Improves
   handoff quality and makes residual risk visible.
+- [`AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`](agent-workflow/agent-review-output-as-future-maintainer.md).
+  Review agent output from the perspective of a future maintainer who did not see the session. Agent
+  output can pass checks while depending on prompt-only context, vague names, hidden state,
+  over-broad abstractions, missing tests, or undocumented behavior changes. Helps: Catches agent
+  output that is locally plausible but hard to maintain after context disappears. - Turns review
+  from confidence assessment into durable artifact inspection.
 - [`AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`](agent-workflow/agent-separate-notes-from-corrections.md).
   Separate note capture from correction during fast review. During fast review, it is tempting for
   an agent to fix each note immediately. Helps: Preserves review signal and turns clustered feedback
@@ -245,6 +251,13 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Make exec-like tools noninteractive by default. Exec-like tools called by agents, CI, or
   background tasks cannot safely wait for prompts, editors, pagers, or credential UI. Helps:
   Prevents stuck jobs and makes tool execution reproducible in automation.
+- [`BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`](boundary/boundary-make-policy-boundaries-explicit.md).
+  Route policy-sensitive side effects through an explicit policy boundary. Filesystem writes,
+  network calls, shell execution, external publication, telemetry, redaction, credential use, and
+  user-visible changes can be technically valid while still being disallowed for the current actor,
+  profile, environment, or approval state. Helps: Makes access, privacy, publication, and approval
+  decisions reviewable before side effects run. - Gives callers actionable denial, redaction,
+  fallback, and approval behavior.
 - [`BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`](boundary/boundary-model-real-upstream-surface.md). Model
   each integration as the real upstream surface it exposes. Adapters should not pretend a provider
   supports a cleaner or broader API than it actually does. Helps: Prevents local APIs from promising
@@ -297,6 +310,12 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 
 ### Change Shape
 
+- [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-shape/change-avoid-speculative-public-api.md). Do
+  not add public API for future features before the need is real. Public API turns a local guess
+  into a contract that users, downstream integrations, examples, tests, docs, and compatibility
+  promises may start depending on. Helps: Prevents accidental compatibility commitments to unused
+  names, types, and extension points. - Keeps review focused on the current behavior rather than a
+  guessed future design.
 - [`CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`](change-shape/change-avoid-unnecessary-dependency-churn.md).
   Do not include dependency churn unless it is necessary for the task. Dependency updates change
   lockfiles, feature graphs, minimum versions, build output, and downstream compatibility. Helps:
@@ -326,6 +345,12 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   work. A working tree can contain edits from the user, another agent, generated state, or an
   earlier in-progress change. Helps: Protects parallel work and keeps the current diff accountable
   for only the files it owns.
+- [`CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`](change-shape/change-respect-generated-artifact-ownership.md).
+  Respect generated artifact ownership instead of hand-editing generated outputs. Generated
+  changelogs, lockfiles, code, snapshots, API listings, docs, and release files often have a source
+  input that owns their contents. Helps: Prevents manual generated-file edits from being lost or
+  fighting the generator. - Makes generator, template, and release-tooling changes reviewable at the
+  source.
 - [`CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`](change-shape/change-separate-structure-from-behavior.md).
   Keep structure changes separate from behavior changes when the combined diff obscures review.
   Structure changes ask reviewers to confirm the code means the same thing; behavior changes ask
@@ -370,6 +395,12 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   nearby libraries accurately and charitably. Comparisons with nearby libraries affect trust. Helps:
   Makes comparison docs credible and helps users choose based on real constraints instead of
   positioning language.
+- [`DOCS-DISTINGUISH-EXAMPLE-ROLES`](documentation/docs-distinguish-example-roles.md). Distinguish
+  example roles instead of treating every example as the same kind of proof. Examples answer
+  different reader questions. Helps: Keeps example sets from becoming a pile of generic snippets. -
+  Makes review ask whether an example is canonical, illustrative, broad, integrative, or
+  interactive. - Helps maintainers decide which examples must compile, which examples can be
+  sketches, and which examples need explicit opt-in behavior.
 - [`DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`](documentation/docs-document-lifecycle-and-side-effects.md).
   Document lifecycle, ownership, side effects, feature flags, platform assumptions, and
   compatibility when callers need them. APIs that open files, spawn tasks, touch terminals, allocate
@@ -384,6 +415,11 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`DOCS-FRONT-LOAD-USEFUL-POINT`](documentation/docs-front-load-useful-point.md). Front-load the
   useful point. Readers scan docs for the decision, command, invariant, or warning that matters.
   Helps: Improves scanning and makes important commands, contracts, and caveats harder to miss.
+- [`DOCS-GROUP-RELATED-LIST-ITEMS`](documentation/docs-group-related-list-items.md). Group related
+  list items under named subheadings when a list grows past easy scanning. Long flat lists make
+  every item compete at the same level. Helps: Turns long checklists into coherent clusters that are
+  easier to scan, review, and extend. - Makes hidden rule families visible enough to promote into
+  standalone rule pages.
 - [`DOCS-HIDE-CATALOG-MECHANICS`](documentation/docs-hide-catalog-mechanics.md). Hide catalog
   mechanics unless citation, automation, or contribution workflow depends on them. Rule IDs,
   prefixes, domains, generated indexes, source layout, and UI containers are useful maintenance
@@ -393,6 +429,12 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   lintable. Formatting drift adds review noise and makes generated or agent-edited docs harder to
   maintain. Helps: Keeps documentation diffs clean and makes style expectations enforceable by
   tools.
+- [`DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`](documentation/docs-make-guidance-review-state-visible.md).
+  Make reusable guidance review state visible in the guidance artifact. Reusable guidance changes
+  how future agents and maintainers work. Helps: Prevents draft guidance from entering copied
+  instructions as if it were accepted policy. - Makes maintainer review queues explicit instead of
+  hidden in chat, plans, or memory. - Lets generated surfaces include drafts for review while
+  keeping execution snippets limited to reviewed guidance.
 - [`DOCS-MAKE-REVIEW-EASY-TO-INSPECT`](documentation/docs-make-review-easy-to-inspect.md). Make
   documentation review easy to inspect. Docs are often reviewed as Markdown diffs even though users
   read rendered pages, generated Rustdoc, examples, screenshots, or command output. Helps: Speeds
@@ -430,6 +472,13 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`DOCS-README-AS-ENTRY-POINT`](documentation/docs-readme-as-entry-point.md). Keep README files as
   entry points. A README is usually the first page for humans and agents. Helps: Gives new readers a
   reliable starting path without duplicating every reference detail.
+- [`DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`](documentation/docs-review-correctness-and-risk-first.md).
+  Lead documentation review with correctness, contract ambiguity, risk, drift, and operability.
+  Documentation polish is visible, but the expensive failures are usually false contracts, ambiguous
+  caller obligations, stale examples, unverifiable commands, unsupported claims, hidden operational
+  effects, or docs that no longer match the code. Helps: Keeps documentation review focused on user
+  trust, operational accuracy, and contract drift. - Separates merge-blocking doc defects from style
+  or polish comments.
 - [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](documentation/docs-show-side-effects-in-live-examples.md).
   Show side effects and cleanup in live-resource examples. Examples that create files, hit networks,
   write DNS records, open terminals, spawn tasks, or mutate external services can look harmless
@@ -536,6 +585,11 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`](refactoring/refactoring-keep-weak-abstractions-close-to-their-use.md).
   Keep weak abstractions close to their use. New abstractions are often tentative. Helps: Limits
   coupling from premature abstractions and keeps experiments reversible.
+- [`REFACTORING-MAKE-EDGE-CASES-EXPLICIT`](refactoring/refactoring-make-edge-cases-explicit.md).
+  Make edge-case behavior explicit in the local control flow. Boundary values such as empty input,
+  zero sizes, overflow, underflow, duplicates, missing fields, and already-complete states often
+  decide whether a change is correct. Helps: Makes boundary behavior visible during review. -
+  Reduces accidental changes to empty, zero, overflow, and already-complete cases.
 - [`REFACTORING-PREFER-LOCAL-REASONING`](refactoring/refactoring-prefer-local-reasoning.md). Prefer
   local reasoning over distant reconstruction. Code is easier to change when the reader can see the
   relevant state, invariants, and effects nearby. Helps: Reduces cognitive load and makes behavior
@@ -551,9 +605,25 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 
 ### Private Context And Review Artifacts
 
+- [`REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`](review/review-answer-questions-before-code.md). Answer
+  reviewer questions instead of only pushing new code. Review is a discussion about correctness,
+  maintainability, and intent. Helps: Reduces repeated review rounds caused by unanswered concerns.
+  - Preserves design reasoning that would otherwise disappear into a patch update.
+- [`REVIEW-CLASSIFY-PROTOTYPE-REUSE`](review/review-classify-prototype-reuse.md). Classify what a
+  rebuild reuses from a prototype or prior implementation. Prototype rebuilds can blur four
+  different kinds of reuse: externally visible behavior, evidence from tests or production use,
+  replaceable internal shape, and load-bearing boundaries. Helps: Prevents rewrites from discarding
+  proven behavior or preserving accidental structure. - Makes load-bearing boundaries visible before
+  a smaller local API removes needed growth room.
 - [`REVIEW-DEFINE-SLICES-IN-ISSUES`](review/review-define-slices-in-issues.md). Define review-sized
   slices in issues. Issues are often the first place a future PR gets shaped. Helps: Keeps issues
   actionable, prevents accidental scope creep, and gives agents a clear unit of work.
+- [`REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`](review/review-explain-controversial-choices-inline.md).
+  Explain controversial implementation choices next to the code or artifact where reviewers will see
+  them. Some decisions are easiest to understand at the exact line, file, generated artifact, or
+  config boundary where the reviewer pauses. Helps: Turns likely review objections into explicit
+  decision points. - Keeps the PR narrative from becoming a long map of every local exception. -
+  Preserves context for future readers who land on a specific changed line or file.
 - [`REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`](review/review-explain-pr-problem-model-and-proof.md).
   Explain the problem, mental model, tradeoffs, validation, and docs impact in PR descriptions.
   Reviewers should not have to reverse-engineer the intent from the diff. Helps: Reduces reviewer
@@ -572,6 +642,15 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   commit messages, and agent handoffs are read by people who did not see the chat, scratch notes,
   local plan, or discarded attempts. Helps: Makes review possible without private context and leaves
   durable reasoning for future debugging, archaeology, and follow-up work.
+- [`REVIEW-SEPARATE-DISCOVERY-SELECTION-IMPLEMENTATION`](review/review-separate-discovery-selection-implementation.md).
+  Separate problem discovery, solution selection, and implementation review when they need different
+  decisions. Some work is not ready for one implementation PR. Helps: Prevents implementation review
+  from becoming a hidden design-selection meeting. - Makes problem statements, chosen direction, and
+  patch correctness easier to review separately.
+- [`REVIEW-UPDATE-SOURCE-OF-TRUTH`](review/review-update-source-of-truth.md). Update the source of
+  truth instead of posting low-signal status comments. Status comments can be useful when they
+  change what reviewers know. Helps: Keeps review state discoverable from the artifact that owns it.
+  - Reduces notification noise and comment archaeology.
 - [`REVIEW-USE-ADRS-FOR-BOUNDARIES-AND-OWNERSHIP`](review/review-use-adrs-for-boundaries-and-ownership.md).
   Use ADRs for durable boundary and ownership decisions. Some decisions outlive the PR that
   introduces them: module ownership, public API boundaries, storage formats, source-control

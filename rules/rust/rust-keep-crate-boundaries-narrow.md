@@ -33,8 +33,8 @@ used by several crates. Keep those crates small and explicit about what they own
 
 ## Agent Instruction
 
-Put Rust code and tests in the owning crate or module, and expose shared helpers only when the
-shared concept is intentional.
+Put Rust code and tests in the owning crate or module, and expose shared helpers only for
+intentional shared concepts.
 
 ## Mechanisms
 

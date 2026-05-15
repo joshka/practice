@@ -31,6 +31,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   libraries accurately and charitably. Comparisons with nearby libraries affect trust. Helps: Makes
   comparison docs credible and helps users choose based on real constraints instead of positioning
   language.
+- [`DOCS-DISTINGUISH-EXAMPLE-ROLES`](docs-distinguish-example-roles.md). Distinguish example roles
+  instead of treating every example as the same kind of proof. Examples answer different reader
+  questions. Helps: Keeps example sets from becoming a pile of generic snippets. - Makes review ask
+  whether an example is canonical, illustrative, broad, integrative, or interactive. - Helps
+  maintainers decide which examples must compile, which examples can be sketches, and which examples
+  need explicit opt-in behavior.
 - [`DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`](docs-document-lifecycle-and-side-effects.md).
   Document lifecycle, ownership, side effects, feature flags, platform assumptions, and
   compatibility when callers need them. APIs that open files, spawn tasks, touch terminals, allocate
@@ -45,6 +51,11 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`DOCS-FRONT-LOAD-USEFUL-POINT`](docs-front-load-useful-point.md). Front-load the useful point.
   Readers scan docs for the decision, command, invariant, or warning that matters. Helps: Improves
   scanning and makes important commands, contracts, and caveats harder to miss.
+- [`DOCS-GROUP-RELATED-LIST-ITEMS`](docs-group-related-list-items.md). Group related list items
+  under named subheadings when a list grows past easy scanning. Long flat lists make every item
+  compete at the same level. Helps: Turns long checklists into coherent clusters that are easier to
+  scan, review, and extend. - Makes hidden rule families visible enough to promote into standalone
+  rule pages.
 - [`DOCS-HIDE-CATALOG-MECHANICS`](docs-hide-catalog-mechanics.md). Hide catalog mechanics unless
   citation, automation, or contribution workflow depends on them. Rule IDs, prefixes, domains,
   generated indexes, source layout, and UI containers are useful maintenance machinery, but they are
@@ -53,6 +64,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`DOCS-KEEP-MARKDOWN-LINTABLE`](docs-keep-markdown-lintable.md). Keep Markdown lintable.
   Formatting drift adds review noise and makes generated or agent-edited docs harder to maintain.
   Helps: Keeps documentation diffs clean and makes style expectations enforceable by tools.
+- [`DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`](docs-make-guidance-review-state-visible.md). Make
+  reusable guidance review state visible in the guidance artifact. Reusable guidance changes how
+  future agents and maintainers work. Helps: Prevents draft guidance from entering copied
+  instructions as if it were accepted policy. - Makes maintainer review queues explicit instead of
+  hidden in chat, plans, or memory. - Lets generated surfaces include drafts for review while
+  keeping execution snippets limited to reviewed guidance.
 - [`DOCS-MAKE-REVIEW-EASY-TO-INSPECT`](docs-make-review-easy-to-inspect.md). Make documentation
   review easy to inspect. Docs are often reviewed as Markdown diffs even though users read rendered
   pages, generated Rustdoc, examples, screenshots, or command output. Helps: Speeds review and makes
@@ -90,6 +107,13 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`DOCS-README-AS-ENTRY-POINT`](docs-readme-as-entry-point.md). Keep README files as entry points.
   A README is usually the first page for humans and agents. Helps: Gives new readers a reliable
   starting path without duplicating every reference detail.
+- [`DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`](docs-review-correctness-and-risk-first.md). Lead
+  documentation review with correctness, contract ambiguity, risk, drift, and operability.
+  Documentation polish is visible, but the expensive failures are usually false contracts, ambiguous
+  caller obligations, stale examples, unverifiable commands, unsupported claims, hidden operational
+  effects, or docs that no longer match the code. Helps: Keeps documentation review focused on user
+  trust, operational accuracy, and contract drift. - Separates merge-blocking doc defects from style
+  or polish comments.
 - [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](docs-show-side-effects-in-live-examples.md). Show side
   effects and cleanup in live-resource examples. Examples that create files, hit networks, write DNS
   records, open terminals, spawn tasks, or mutate external services can look harmless while leaving

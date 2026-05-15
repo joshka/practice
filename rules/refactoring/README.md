@@ -27,6 +27,11 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`](refactoring-keep-weak-abstractions-close-to-their-use.md).
   Keep weak abstractions close to their use. New abstractions are often tentative. Helps: Limits
   coupling from premature abstractions and keeps experiments reversible.
+- [`REFACTORING-MAKE-EDGE-CASES-EXPLICIT`](refactoring-make-edge-cases-explicit.md). Make edge-case
+  behavior explicit in the local control flow. Boundary values such as empty input, zero sizes,
+  overflow, underflow, duplicates, missing fields, and already-complete states often decide whether
+  a change is correct. Helps: Makes boundary behavior visible during review. - Reduces accidental
+  changes to empty, zero, overflow, and already-complete cases.
 - [`REFACTORING-PREFER-LOCAL-REASONING`](refactoring-prefer-local-reasoning.md). Prefer local
   reasoning over distant reconstruction. Code is easier to change when the reader can see the
   relevant state, invariants, and effects nearby. Helps: Reduces cognitive load and makes behavior

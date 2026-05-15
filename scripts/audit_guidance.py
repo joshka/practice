@@ -13,7 +13,14 @@ from pathlib import Path
 
 ROOT = Path(__file__).resolve().parents[1]
 RULES_DIR = ROOT / "rules"
+GUIDES_DIR = ROOT / "guides"
 AGENT_RULES = ROOT / "snippets" / "agents" / "rules.md"
+CORE_AGENT_SNIPPET = ROOT / "snippets" / "agents" / "core.md"
+GUIDE_RULE_AUDIT = ROOT / "references" / "guide-rule-audit.md"
+MAX_FLAT_GUIDE_BULLETS = 7
+GUIDE_LONG_LIST_EXCEPTIONS = {
+    "guides/rust-maintainability.md",
+}
 
 REQUIRED_ROOTS = [
     "rules/README.md",
@@ -210,6 +217,110 @@ def audit_agent_pack(rules: list[Rule], errors: list[str]) -> None:
         fail(errors, "snippets/agents/rules.md should not contain Markdown links")
 
 
+def audit_core_agent_snippet(errors: list[str]) -> None:
+    if not CORE_AGENT_SNIPPET.exists():
+        fail(errors, f"missing core agent snippet: {rel(CORE_AGENT_SNIPPET)}")
+        return
+    text = CORE_AGENT_SNIPPET.read_text()
+    for guide in sorted(GUIDES_DIR.glob("*.md")):
+        guide_ref = f"guides/{guide.name}"
+        if guide_ref not in text:
+            fail(errors, f"snippets/agents/core.md does not reference {guide_ref}")
+    if "snippets/agents/rules.md" not in text:
+        fail(errors, "snippets/agents/core.md does not reference the reviewed rule pack")
+
+
+def audit_draft_review_queue(rules: list[Rule], errors: list[str]) -> None:
+    if not GUIDE_RULE_AUDIT.exists():
+        fail(errors, f"missing guide rule audit: {rel(GUIDE_RULE_AUDIT)}")
+        return
+    text = GUIDE_RULE_AUDIT.read_text()
+    queue = section(text, "Draft Review Queue")
+    queued_ids = set(re.findall(r"`([A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+)`", queue))
+    draft_ids = {rule.id for rule in rules if rule.status == "draft"}
+    for rule in sorted(rules, key=lambda item: item.id):
+        if rule.status != "draft":
+            continue
+        if rule.id not in queued_ids:
+            fail(errors, f"references/guide-rule-audit.md does not list draft rule {rule.id}")
+    known_ids = {rule.id for rule in rules}
+    for rule_id in sorted(queued_ids - draft_ids):
+        if rule_id in known_ids:
+            fail(errors, f"references/guide-rule-audit.md lists non-draft rule {rule_id}")
+        else:
+            fail(errors, f"references/guide-rule-audit.md lists unknown draft rule {rule_id}")
+
+    valid_guides = {f"guides/{path.name}" for path in GUIDES_DIR.glob("*.md")}
+    queue_items = {}
+    for item in re.findall(r"(?ms)^- .*?(?=^\- |\Z)", queue):
+        item_ids = re.findall(r"`([A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+)`", item)
+        for rule_id in item_ids:
+            queue_items[rule_id] = item
+    for rule_id in sorted(queued_ids):
+        bullet = queue_items.get(rule_id, "")
+        mentioned_guides = set(re.findall(r"`(guides/[^`]+\.md)`", bullet))
+        has_pre_existing_note = "pre-existing draft" in bullet
+        if not mentioned_guides and not has_pre_existing_note:
+            fail(errors, f"references/guide-rule-audit.md queue lacks origin context for {rule_id}")
+            continue
+        for guide in sorted(mentioned_guides - valid_guides):
+            fail(errors, f"references/guide-rule-audit.md queue records unknown origin guide {guide}")
+
+
+def audit_extracted_draft_rules(rules: list[Rule], errors: list[str]) -> None:
+    if not GUIDE_RULE_AUDIT.exists():
+        return
+    text = GUIDE_RULE_AUDIT.read_text()
+    extracted = section(text, "Extracted Draft Rules")
+    if not extracted:
+        fail(errors, "references/guide-rule-audit.md is missing extracted draft rule evidence")
+        return
+
+    extracted_ids = set(re.findall(r"`([A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+)`", extracted))
+    if not extracted_ids:
+        fail(errors, "references/guide-rule-audit.md extracted draft rule section lists no rules")
+        return
+
+    draft_ids = {rule.id for rule in rules if rule.status == "draft"}
+    known_ids = {rule.id for rule in rules}
+    for rule_id in sorted(extracted_ids - draft_ids):
+        if rule_id in known_ids:
+            fail(errors, f"references/guide-rule-audit.md extracts non-draft rule {rule_id}")
+        else:
+            fail(errors, f"references/guide-rule-audit.md extracts unknown rule {rule_id}")
+
+    queue = section(text, "Draft Review Queue")
+    queued_ids = set(re.findall(r"`([A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+)`", queue))
+    for rule_id in sorted(extracted_ids - queued_ids):
+        fail(errors, f"references/guide-rule-audit.md extracts rule not queued for review: {rule_id}")
+
+    valid_guides = {f"guides/{path.name}" for path in GUIDES_DIR.glob("*.md")}
+    for rule_id in sorted(extracted_ids):
+        match = re.search(
+            rf"((?:.|\n)*?)\[`{re.escape(rule_id)}`\]",
+            extracted,
+        )
+        if not match:
+            continue
+        bullet_start = match.group(1).rfind("\n- ")
+        bullet = extracted[bullet_start + 1 : match.end()] if bullet_start >= 0 else match.group(0)
+        mentioned_guides = set(re.findall(r"`(guides/[^`]+\.md)`", bullet))
+        if not mentioned_guides:
+            fail(errors, f"references/guide-rule-audit.md does not record an origin guide for {rule_id}")
+            continue
+        for guide in sorted(mentioned_guides - valid_guides):
+            fail(errors, f"references/guide-rule-audit.md records unknown origin guide {guide}")
+
+
+def audit_draft_external_references(rules: list[Rule], errors: list[str]) -> None:
+    for rule in rules:
+        if rule.status != "draft":
+            continue
+        references = section(rule.path.read_text(), "References")
+        if not re.search(r"https?://", references):
+            fail(errors, f"{rel(rule.path)} draft rule should cite at least one external source")
+
+
 def audit_rule_references(rules: list[Rule], errors: list[str]) -> None:
     rule_ids = {rule.id for rule in rules}
     pattern = re.compile(r"`([A-Z][A-Z0-9]+-[A-Z0-9][A-Z0-9-]+)`")
@@ -260,6 +371,66 @@ def audit_public_text(errors: list[str]) -> None:
             for match in re.finditer(pattern, text):
                 line = text[: match.start()].count("\n") + 1
                 fail(errors, f"{rel(path)}:{line} contains local/private context: {match.group(0)}")
+
+
+def audit_guide_grouping(errors: list[str]) -> None:
+    for path in sorted(GUIDES_DIR.glob("*.md")):
+        if rel(path) in GUIDE_LONG_LIST_EXCEPTIONS:
+            continue
+        lines = path.read_text().splitlines()
+        start: int | None = None
+        count = 0
+        for line_number, line in enumerate(lines, 1):
+            if line.startswith("- "):
+                if start is None:
+                    start = line_number
+                    count = 0
+                count += 1
+                continue
+            if start is not None and count > MAX_FLAT_GUIDE_BULLETS:
+                fail(
+                    errors,
+                    f"{rel(path)}:{start} has {count} consecutive top-level bullets; "
+                    "group long guide lists under named subheadings",
+                )
+            start = None
+            count = 0
+        if start is not None and count > MAX_FLAT_GUIDE_BULLETS:
+            fail(
+                errors,
+                f"{rel(path)}:{start} has {count} consecutive top-level bullets; "
+                "group long guide lists under named subheadings",
+            )
+
+
+def audit_guide_structure(errors: list[str]) -> None:
+    for path in sorted(GUIDES_DIR.glob("*.md")):
+        text = path.read_text()
+        for heading in ["Related Guidance", "Review Questions"]:
+            if f"\n## {heading}\n" not in text:
+                fail(errors, f"{rel(path)} is missing guide section: {heading}")
+        if rel(path) not in GUIDE_LONG_LIST_EXCEPTIONS:
+            review_questions = section(text, "Review Questions")
+            if not re.search(r"^### ", review_questions, re.MULTILINE):
+                fail(errors, f"{rel(path)} review questions are not grouped under named subheadings")
+
+
+def audit_related_guidance_rule_links(errors: list[str]) -> None:
+    for path in sorted(GUIDES_DIR.glob("*.md")):
+        text = path.read_text()
+        related = section(text, "Related Guidance")
+        definitions = {
+            match.group(1): match.group(2)
+            for match in re.finditer(r"^\[([^\]]+)\]:\s+(\S+)", text, re.MULTILINE)
+        }
+        inline_targets = re.findall(r"\[[^\]\n]+\]\(([^)\n]+)\)", related)
+        reference_targets = [
+            definitions[label]
+            for label in re.findall(r"\[[^\]\n]+\]\[([^\]\n]+)\]", related)
+            if label in definitions
+        ]
+        if not any(target.startswith("../rules/") for target in inline_targets + reference_targets):
+            fail(errors, f"{rel(path)} related guidance does not link to a rules artifact")
 
 
 def audit_rule_quality(rules: list[Rule], errors: list[str]) -> None:
@@ -321,9 +492,16 @@ def main() -> int:
     rules = read_rules(errors)
     audit_domain_indexes(rules, errors)
     audit_agent_pack(rules, errors)
+    audit_core_agent_snippet(errors)
+    audit_draft_review_queue(rules, errors)
+    audit_extracted_draft_rules(rules, errors)
+    audit_draft_external_references(rules, errors)
     audit_rule_references(rules, errors)
     audit_markdown_links(errors)
     audit_public_text(errors)
+    audit_guide_grouping(errors)
+    audit_guide_structure(errors)
+    audit_related_guidance_rule_links(errors)
     if args.quality:
         audit_rule_quality(rules, errors)
 

@@ -66,6 +66,16 @@ markdownlint-cli2 "**/*.md"
 - Agent instructions that merely repeat the rule title.
 - Generated indexes or snippets that are stale.
 - Downstream adoption templates that no longer contain every reviewed rule.
+- Draft rules that are missing from the guide-rule review queue, stale non-drafts left in that
+  queue, or queue entries that drop origin context.
+- Extracted draft-rule evidence that names unknown or non-draft rules, omits origin guides, or falls
+  out of sync with the review queue.
+- Draft rules that lack at least one external reference.
+- Non-Rust guide pages that rebuild long flat top-level bullet lists without named grouping.
+- Guide pages that drop their related-guidance or review-question sections.
+- Non-Rust guide review questions that stop using named subgroups.
+- Related-guidance sections that stop linking to a rule artifact.
+- Core agent instructions that stop pointing to the guide set or reviewed rule pack.
 - Markdown formatting drift that makes review noisier.
 
 ## What It Cannot Catch

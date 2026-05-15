@@ -34,7 +34,7 @@ or many related parameters. Do not force every short item into a full tutorial.
 ## Agent Instruction
 
 Write Rustdoc for caller tasks: begin with a concise behavior sentence, use prose for arguments, and
-cross-link only when the link improves understanding or auditability.
+cross-link only to improve understanding or auditability.
 
 ## Mechanisms
 

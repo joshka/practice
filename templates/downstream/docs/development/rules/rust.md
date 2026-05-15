@@ -20,8 +20,8 @@ text by hand; update the source repo and recopy this file.
   reviewable at the facade.
 - `RUST-AVOID-INLINE-MODULES`: Avoid inline modules except for tests, preludes, and generated code
   because named files improve navigation, search, and ownership.
-- `RUST-AVOID-MOD-RS-BY-DEFAULT`: Prefer named Rust module root files over `mod.rs` when the file
-  name can carry the module concept.
+- `RUST-AVOID-MOD-RS-BY-DEFAULT`: Prefer named Rust module root files over `mod.rs` for module
+  concepts that benefit from a filename.
 - `RUST-AVOID-OVERCOMMENTING-TRIVIAL-CODE`: Remove Rust comments that merely restate obvious code;
   keep comments for invariants, tradeoffs, contracts, and safety.
 - `RUST-AVOID-PATH-ATTRIBUTE`: Avoid `#[path]` in Rust modules unless an unusual generated or
@@ -67,7 +67,7 @@ text by hand; update the source repo and recopy this file.
   a bug.
 - `RUST-DOCUMENT-SCHEDULING-FOR-LONG-ASYNC`: Document scheduling expectations for async work that
   can starve executors, ignore cancellation, hold locks, or rely on runtime assumptions.
-- `RUST-DOCUMENT-VISIBILITY-OWNERSHIP`: When widening Rust visibility, update names and docs so the
+- `RUST-DOCUMENT-VISIBILITY-OWNERSHIP`: Update names and docs while widening Rust visibility so the
   owning concept and intended callers are clear.
 - `RUST-ENCODE-DURABLE-RULES-IN-LINTS`: Use lint configuration for durable project policy, not
   transient taste or migration states that need frequent exceptions.
@@ -85,8 +85,8 @@ text by hand; update the source repo and recopy this file.
   or misleading; `Debug` is the baseline diagnostic trait for Rust values.
 - `RUST-IMPLEMENT-STANDARD-TRAITS-FOR-PUBLIC-ERRORS`: Implement `Debug`, `Display`, and
   `std::error::Error` for public errors that cross into callers, logs, tests, and user messages.
-- `RUST-INJECT-HOST-INTERACTIONS-AT-BOUNDARIES`: Inject Rust host dependencies at boundaries when
-  tests or alternate environments need deterministic control.
+- `RUST-INJECT-HOST-INTERACTIONS-AT-BOUNDARIES`: Inject Rust host dependencies at boundaries for
+  tests or alternate environments that need deterministic control.
 - `RUST-KEEP-CI-HIGH-SIGNAL`: Keep Rust PR CI focused on fast deterministic gates, and move
   expensive checks to scheduled, manual, or release workflows.
 - `RUST-KEEP-COMPATIBLE-UPDATES-IN-LOCKFILE`: Keep compatible dependency updates in the lockfile,
@@ -94,31 +94,31 @@ text by hand; update the source repo and recopy this file.
 - `RUST-KEEP-CONCEPTS-COHERENT`: Keep Rust modules, types, and helpers centered on one recognizable
   concept so readers can find the owner of behavior.
 - `RUST-KEEP-CRATE-BOUNDARIES-NARROW`: Put Rust code and tests in the owning crate or module, and
-  expose shared helpers only when the shared concept is intentional.
+  expose shared helpers only for intentional shared concepts.
 - `RUST-KEEP-DEPENDENCY-UPDATES-INTENTIONAL`: Group routine Rust dependency updates, separate
   behavior-affecting updates, and use Cargo-aware commands to preserve manifest consistency.
 - `RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`: Before editing Rust code, identify the owning module
   or crate and keep unrelated cleanup out of the change.
-- `RUST-KEEP-LINTS-ACTIONABLE`: Enable Rust lints only when they encode durable policy, and keep
-  suppressions narrow with a reason.
+- `RUST-KEEP-LINTS-ACTIONABLE`: Enable Rust lints only for durable policy, and keep suppressions
+  narrow with a reason.
 - `RUST-KEEP-MARKDOWN-OUTSIDE-RUSTDOC-PURPOSEFUL`: Keep Rust API contracts in Rustdoc, README entry
   points in README, and use Markdown guides for long-form workflow, architecture, or process
   material.
 - `RUST-KEEP-PRE-RELEASE-COMPATIBILITY-INTENTIONAL`: Clean up accidental pre-release Rust API
-  compatibility when the crate has not promised that shape and the intended API becomes clearer.
+  compatibility after the intended API becomes clearer and the crate has not promised the old shape.
 - `RUST-KEEP-PRELUDES-REEXPORT-ONLY`: Keep Rust prelude modules as import surfaces that re-export
   owned items from their real modules.
 - `RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`: Keep public API shape intentional because every public
   item becomes something users can import, name, document, and depend on.
-- `RUST-KEEP-RUSTDOC-AND-README-EXAMPLES-ALIGNED`: When changing Rust public examples, update
-  README, crate Rustdoc, doctests, and example projects that teach the same contract.
+- `RUST-KEEP-RUSTDOC-AND-README-EXAMPLES-ALIGNED`: Update README, crate Rustdoc, doctests, and
+  example projects together for Rust public example changes that teach the same contract.
 - `RUST-MAKE-FEATURE-FLAGS-ADDITIVE-WHERE-POSSIBLE`: Make feature flags additive where possible
   because Rust feature unification means enabling a feature in one dependency path can affect the
   whole build.
 - `RUST-MAKE-PUBLIC-API-BROWSEABLE-FROM-LAYOUT`: Align Rust public modules, files, and re-exports so
   readers can browse from public API to owning source without translation.
-- `RUST-MAKE-SIDE-EFFECTS-EXPLICIT`: Expose Rust side effects in names, call sites, and Rustdoc when
-  the call mutates state, performs I/O, registers globally, or starts background work.
+- `RUST-MAKE-SIDE-EFFECTS-EXPLICIT`: Expose Rust side effects in names, call sites, and Rustdoc for
+  calls that mutate state, perform I/O, register globally, or start background work.
 - `RUST-NAME-AUDITABLE-INTERMEDIATES`: Name intermediate Rust values because they expose ownership,
   parsing, validation, rendering, or side-effect policy decisions.
 - `RUST-NAME-TESTS-BY-BEHAVIOR`: Name Rust tests for the behavior, boundary, or regression they
@@ -140,8 +140,8 @@ text by hand; update the source repo and recopy this file.
   disappear once the warning is fixed.
 - `RUST-PREFER-SMALL-CLEAR-SHAPES`: Prefer small functions, narrow structs, and simple enums to
   reduce live fields, branches, lifetimes, and invariants.
-- `RUST-PRESERVE-ERROR-CONTEXT`: Preserve Rust error source, operation, and recoverable context when
-  wrapping or mapping failures.
+- `RUST-PRESERVE-ERROR-CONTEXT`: Preserve Rust error source, operation, and recoverable context
+  while wrapping or mapping failures.
 - `RUST-PRESERVE-VALID-STATE-ON-FAILURE`: Stage fallible Rust refresh, parse, I/O, or render work
   before mutating usable state.
 - `RUST-REEXPORT-FOR-DISCOVERY`: Use re-exports for discovery, not ownership hiding, so users find
@@ -152,10 +152,9 @@ text by hand; update the source repo and recopy this file.
 - `RUST-REVIEW-AS-FUTURE-MAINTAINER`: Review Rust changes for the future maintainer: name
   readability causes, public API risks, docs truth, and validation gaps concretely.
 - `RUST-RUN-FEATURE-GATED-VALIDATION`: Validate the feature combinations affected by a Rust change,
-  including docs when the feature changes public items.
+  including docs for features that change public items.
 - `RUST-SHAPE-EXPRESSIONS-FOR-AUDITABILITY`: Use named locals, visible branches, whitespace
-  paragraphs, and loops for side-effectful Rust logic when dense expressions would hide audit
-  points.
+  paragraphs, and loops for side-effectful Rust logic that dense expressions would hide.
 - `RUST-TEACH-CRATE-FROM-CRATE-ROOT`: Teach the crate from the crate root because the crate root is
   the first Rustdoc page and often the first source file a reader opens.
 - `RUST-TIE-OPTIONAL-DEPENDENCIES-TO-NAMED-FEATURES`: Keep optional dependencies tied to clearly
@@ -182,7 +181,7 @@ text by hand; update the source repo and recopy this file.
 - `RUST-USE-SEND-STATIC-ACROSS-TASKS`: Use `Send + static` bounds for values, futures, errors, and
   handles that cross task or thread boundaries.
 - `RUST-VALIDATE-BUILDERS-ON-BUILD`: Validate Rust builder cross-field invariants in `build` and
-  return an error when construction can fail.
+  return an error for fallible construction.
 - `RUST-VALIDATE-PACKAGE-CONTENTS-BEFORE-RELEASE`: Validate package contents before release because
   the crate package is what users receive, not the working tree.
 - `RUST-VALIDATE-RUST-DOCS-AS-CODE`: After Rust documentation changes, run the relevant docs build,
@@ -198,7 +197,7 @@ text by hand; update the source repo and recopy this file.
 - `RUST-WRITE-ACTIONABLE-ERROR-DISPLAY`: Write human-oriented and actionable error `Display` output
   because `Display` is often what users, CLIs, logs, and support messages show.
 - `RUST-WRITE-PUBLIC-DOCS-FOR-CALLER-TASKS`: Write Rustdoc for caller tasks: begin with a concise
-  behavior sentence, use prose for arguments, and cross-link only when the link improves
-  understanding or auditability.
+  behavior sentence, use prose for arguments, and cross-link only to improve understanding or
+  auditability.
 - `RUST-WRITE-RUSTDOC-AS-API-CONTRACT`: Write Rustdoc as caller-facing contract text, not decoration
   or generic prose.

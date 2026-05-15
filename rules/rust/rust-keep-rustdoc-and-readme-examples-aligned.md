@@ -34,8 +34,8 @@ already has that machinery.
 
 ## Agent Instruction
 
-When changing Rust public examples, update README, crate Rustdoc, doctests, and example projects
-that teach the same contract.
+Update README, crate Rustdoc, doctests, and example projects together for Rust public example
+changes that teach the same contract.
 
 ## Mechanisms
 

@@ -35,8 +35,8 @@ make the intended replacement clear in docs or release notes.
 
 ## Agent Instruction
 
-Clean up accidental pre-release Rust API compatibility when the crate has not promised that shape
-and the intended API becomes clearer.
+Clean up accidental pre-release Rust API compatibility after the intended API becomes clearer and
+the crate has not promised the old shape.
 
 ## Mechanisms
 

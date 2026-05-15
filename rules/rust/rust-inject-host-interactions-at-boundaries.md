@@ -36,8 +36,8 @@ objects that hide which host capabilities a function uses.
 
 ## Agent Instruction
 
-Inject Rust host dependencies at boundaries when tests or alternate environments need deterministic
-control.
+Inject Rust host dependencies at boundaries for tests or alternate environments that need
+deterministic control.
 
 ## Mechanisms
 

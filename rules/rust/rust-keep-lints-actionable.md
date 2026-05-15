@@ -33,7 +33,7 @@ lint sets as permanent policy without a clear maintenance reason.
 
 ## Agent Instruction
 
-Enable Rust lints only when they encode durable policy, and keep suppressions narrow with a reason.
+Enable Rust lints only for durable policy, and keep suppressions narrow with a reason.
 
 ## Mechanisms
 

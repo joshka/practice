@@ -34,4 +34,8 @@ Prefer the project guides as the source of truth:
 - Jujutsu workflow: `guides/jj-workflow.md`
 - Principles and reasoning notes: `principles/README.md`
 - Tooling mechanisms: `mechanisms/README.md`
+
+For compact execution rules, use the reviewed rule pack:
+
+- Reviewed rules: `snippets/agents/rules.md`
 ```

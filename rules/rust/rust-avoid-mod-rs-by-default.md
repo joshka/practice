@@ -34,7 +34,7 @@ the clearer option. Do not churn an established crate layout just to satisfy thi
 
 ## Agent Instruction
 
-Prefer named Rust module root files over `mod.rs` when the file name can carry the module concept.
+Prefer named Rust module root files over `mod.rs` for module concepts that benefit from a filename.
 
 ## Mechanisms
 

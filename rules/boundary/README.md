@@ -60,6 +60,13 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   exec-like tools noninteractive by default. Exec-like tools called by agents, CI, or background
   tasks cannot safely wait for prompts, editors, pagers, or credential UI. Helps: Prevents stuck
   jobs and makes tool execution reproducible in automation.
+- [`BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`](boundary-make-policy-boundaries-explicit.md). Route
+  policy-sensitive side effects through an explicit policy boundary. Filesystem writes, network
+  calls, shell execution, external publication, telemetry, redaction, credential use, and
+  user-visible changes can be technically valid while still being disallowed for the current actor,
+  profile, environment, or approval state. Helps: Makes access, privacy, publication, and approval
+  decisions reviewable before side effects run. - Gives callers actionable denial, redaction,
+  fallback, and approval behavior.
 - [`BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`](boundary-model-real-upstream-surface.md). Model each
   integration as the real upstream surface it exposes. Adapters should not pretend a provider
   supports a cleaner or broader API than it actually does. Helps: Prevents local APIs from promising

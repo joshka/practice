@@ -33,7 +33,7 @@ feature combination that users are told to enable in docs or examples.
 
 ## Agent Instruction
 
-Validate the feature combinations affected by a Rust change, including docs when the feature changes
+Validate the feature combinations affected by a Rust change, including docs for features that change
 public items.
 
 ## Mechanisms

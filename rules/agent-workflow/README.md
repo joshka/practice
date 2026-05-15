@@ -80,6 +80,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`AGENT-REPORT-PROOF-IN-HANDOFFS`](agent-report-proof-in-handoffs.md). Report proof, not
   confidence, in agent handoffs. Confidence language is not evidence. Helps: Improves handoff
   quality and makes residual risk visible.
+- [`AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`](agent-review-output-as-future-maintainer.md). Review
+  agent output from the perspective of a future maintainer who did not see the session. Agent output
+  can pass checks while depending on prompt-only context, vague names, hidden state, over-broad
+  abstractions, missing tests, or undocumented behavior changes. Helps: Catches agent output that is
+  locally plausible but hard to maintain after context disappears. - Turns review from confidence
+  assessment into durable artifact inspection.
 - [`AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`](agent-separate-notes-from-corrections.md). Separate note
   capture from correction during fast review. During fast review, it is tempting for an agent to fix
   each note immediately. Helps: Preserves review signal and turns clustered feedback into better

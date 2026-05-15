@@ -14,12 +14,17 @@ the workflow into Git habits unless the task is actually about Git transport.
 
 Optimize for:
 
+### Local State
+
 - Fresh changes for separate review units.
 - Clear descriptions early in meaningful editing work.
 - Sequential source-control mutations.
 - Scoped inspection before reshaping history.
 - Pager behavior configured for non-interactive tooling.
 - Shell quoting that preserves the exact arguments jj receives.
+
+### Publication And Recovery
+
 - Bookmarks only when something needs a stable publication name.
 - Operation-log recovery instead of destructive cleanup.
 
@@ -37,13 +42,17 @@ For agent tooling, prefer configuring `JJ_PAGER=cat` once so jj output is never 
 Use `--no-pager` as the per-command fallback when the environment is not configured or when
 supporting older jj versions. Do not run jj mutations in parallel.
 
-Use [Preserve Unowned Work][preserve-work] when the working copy contains changes you did not make.
-If command shape is unfamiliar, read `--help` before mutating the repo.
+Use [Preserve Unowned Work][preserve-work] when the working copy contains changes you did not make,
+and read `--help` before mutating the repo when command shape is unfamiliar.
+Use [Inspect State Before Mutating][inspect-state], [Configure JJ Pager][jj-pager-rule], and
+[Run JJ Mutations Sequentially][sequential-mutations] when setting up agent-safe jj inspection.
 
 Most jj commands snapshot local file changes into the current change before they run. This is useful
 for agents because ordinary inspection and workflow commands create operation-log points without
 leaving the current change. Before risky reshaping, it can be reasonable to run a harmless jj
 inspection command intentionally so there is a clean operation to restore to later.
+
+Use [Create Operation Log Point Before Reshaping][op-point] before risky stack edits.
 
 When Codex or another agent needs to interpret patch text, prefer Git-formatted diffs:
 
@@ -55,6 +64,9 @@ jj show --git <revision>
 Jujutsu's default diff format is useful, but Git-formatted diffs are more in-distribution for coding
 agents, review tools, and patch-oriented reasoning. Use the default format when a human specifically
 wants jj's native presentation.
+
+Use [Use Git Formatted Diffs For Agents][git-diffs] when patch interpretation depends on agent,
+review, or diff-tool compatibility.
 
 ## Reviewable Work
 
@@ -85,6 +97,10 @@ For safe alternatives to an existing change, consider `jj duplicate` instead of 
 original or rebuilding the context manually. Keep sibling candidates separately described until the
 choice is clear.
 
+Use [JJ New For Review Lanes][jj-new-rule], [Workspace Add For Second Checkouts][workspace-add], and
+[Duplicate For Alternative Candidates][duplicate-candidates] when choosing the local shape of
+parallel or follow-up work.
+
 ## Describe The Change
 
 Set a description early for real edits, and keep it aligned with the final scope. Use
@@ -102,6 +118,9 @@ can reference the guide instead of duplicating the full workflow."
 
 Do not pass escaped `\n` sequences unless you have verified the shell expands them before jj
 receives the argument. When exact formatting matters, prefer `--stdin`.
+
+Use [Quote Revsets And Shell Syntax][quote-syntax] when revsets, bookmark names, descriptions, or
+shell-sensitive characters appear in agent-generated commands.
 
 ## Preserve Shell Arguments
 
@@ -175,6 +194,10 @@ For file state, scope commands to the intended paths. Do not run broad `jj file 
 all untracked files. Add ignore rules before `jj file untrack`, keep the file on disk when that is
 the intended outcome, and verify final tracked state instead of trusting one warning line.
 
+Use [Avoid Interactive JJ In Agent Work][avoid-interactive], [Name Exact JJ Mutation
+Targets][exact-targets], [Stop Repeated JJ Retries And Localize State][stop-retries], and [Scope JJ
+File Tracking][scope-files] when command shape or file state could surprise the working copy.
+
 ## Publish With Bookmarks
 
 Bookmarks are publication names, not the current branch. There is no active bookmark in jj. Create
@@ -197,6 +220,9 @@ clear. Ask before publishing unless the repo policy explicitly allows the push.
 For GitHub CLI handoff, keep jj as the source of truth first. Inspect bookmarks and remotes, publish
 only the intended bookmark, then pass explicit `gh` parameters such as `--repo`, `--head`, and
 `--base` when topology is non-trivial.
+
+Use [Dry Run Surprising Publication][dry-run], [Confirm GitHub Remote Topology][github-topology],
+and [Make GitHub Handoff Explicit][github-handoff] before moving public review state.
 
 ## Track Remotes Explicitly
 
@@ -232,14 +258,19 @@ jj git fetch --remote upstream
 jj bookmark list --all-remotes
 ```
 
-GitHub CLI defaults can affect remote naming. `gh repo fork` normally makes the fork `origin` and
-renames an existing `origin` to `upstream`. In that layout, `origin` is usually the writable fork
-and `upstream` is usually the canonical source repository. Confirm with `jj git remote list` instead
-of assuming the names.
+GitHub CLI defaults can affect remote naming, so confirm the topology before publishing. For
+example, `gh repo fork` normally makes the fork `origin` and renames an existing `origin` to
+`upstream`; in that layout, `origin` is usually the writable fork and `upstream` is usually the
+canonical source repository. Confirm with `jj git remote list` instead of assuming the names.
 
 Repair remotes, fetch configuration, push configuration, `trunk()`, and tracked bookmarks together
 when a host tool has changed repo topology. Do not let a forge command infer targets from stale jj
 topology.
+
+Use [Track Remotes Explicitly][track-remotes], [Treat Bookmark Remote Syntax As Version
+Sensitive][bookmark-syntax], [Match JJ Topology To Repo Role][match-topology], and [Repair Remote
+Topology Coherently][repair-topology] when remote names, tracked bookmarks, or host-tool defaults
+shape publication.
 
 ## Git Transport Boundary
 
@@ -254,6 +285,9 @@ Prefer jj-native inspection and mutation commands:
 - `jj log`, not `git log`.
 - `jj bookmark`, not local branch commands.
 - `jj git fetch` and `jj git push` for Git remotes.
+
+Use [JJ As Source Of Truth][jj-source] and [Do Not Fall Back To Git For JJ Issues][no-git-fallback]
+when deciding whether a command belongs in jj or Git.
 
 ## Recover Deliberately
 
@@ -285,6 +319,9 @@ If a workspace is stale because another workspace rewrote its working-copy commi
 state and use the jj workspace recovery path instead of cloning, resetting, or mutating the stale
 checkout blindly.
 
+Use [Recover With Operation Log][recover-oplog] and [Use Evolog And Operation Log][evolog-oplog]
+when recovery needs jj history instead of destructive cleanup.
+
 ## Agent Snippet
 
 For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
@@ -298,6 +335,8 @@ configuration and agent-safe command shapes.
 
 ## Review Questions
 
+### Local Change
+
 - Is this a separate review unit that deserves `jj new`?
 - Does this task need another filesystem checkout, or only another change lane?
 - Does the working-copy change have one coherent purpose?
@@ -305,6 +344,9 @@ configuration and agent-safe command shapes.
 - Did source-control mutations run sequentially?
 - Did mutating commands name the exact revision, destination, bookmark, remote, or fileset?
 - Are unowned edits preserved?
+
+### Publication
+
 - Does a bookmark need to move, or is this still local-only work?
 - Are forge commands receiving explicit repo/head/base values when inference is risky?
 - Was publication intent explicit, and was any high-risk remote move dry-run first?
@@ -322,15 +364,39 @@ configuration and agent-safe command shapes.
 | [CLI reference][cli]      | `supports` | Command behavior and push safety checks.                 |
 
 [bookmarks]: https://docs.jj-vcs.dev/latest/bookmarks/
+[avoid-interactive]: ../rules/vcs/vcs-avoid-interactive-jj-in-agent-work.md
+[bookmark-syntax]: ../rules/vcs/vcs-treat-bookmark-remote-syntax-as-version-sensitive.md
 [changelog]: https://github.com/jj-vcs/jj/blob/main/CHANGELOG.md
 [cli]: https://docs.jj-vcs.dev/latest/cli-reference/
 [commit-history]: ../patterns/commit-messages-for-history.md
+[dry-run]: ../rules/vcs/vcs-dry-run-surprising-publication.md
+[duplicate-candidates]: ../rules/vcs/vcs-duplicate-for-alternative-candidates.md
+[evolog-oplog]: ../rules/vcs/vcs-use-evolog-and-operation-log.md
+[exact-targets]: ../rules/vcs/vcs-name-exact-jj-mutation-targets.md
 [gh-fork]: https://cli.github.com/manual/gh_repo_fork
 [github]: https://docs.jj-vcs.dev/latest/github/
+[github-handoff]: ../rules/vcs/vcs-make-github-handoff-explicit.md
+[github-topology]: ../rules/vcs/vcs-confirm-github-remote-topology.md
+[git-diffs]: ../rules/vcs/vcs-use-git-formatted-diffs-for-agents.md
+[inspect-state]: ../rules/vcs/vcs-inspect-state-before-mutating.md
 [jj-agent-workflow]: ../mechanisms/jj-agent-workflow.md
 [jj-pager]: https://github.com/jj-vcs/jj/pull/9395
+[jj-pager-rule]: ../rules/vcs/vcs-configure-jj-pager.md
+[jj-new-rule]: ../rules/vcs/vcs-jj-new-for-review-lanes.md
 [jj-snippet]: ../snippets/agents/jj.md
+[jj-source]: ../rules/vcs/vcs-jj-as-source-of-truth.md
 [jj-topology]: ../principles/jj-topology-is-repo-role-dependent.md
+[match-topology]: ../rules/vcs/vcs-match-jj-topology-to-repo-role.md
+[no-git-fallback]: ../rules/vcs/vcs-do-not-fall-back-to-git-for-jj-issues.md
+[op-point]: ../rules/vcs/vcs-create-operation-log-point-before-reshaping.md
 [preserve-work]: ../patterns/preserve-unowned-work.md
+[quote-syntax]: ../rules/vcs/vcs-quote-revsets-and-shell-syntax.md
+[recover-oplog]: ../rules/vcs/vcs-recover-with-operation-log.md
+[repair-topology]: ../rules/vcs/vcs-repair-remote-topology-coherently.md
+[scope-files]: ../rules/vcs/vcs-scope-jj-file-tracking.md
+[sequential-mutations]: ../rules/vcs/vcs-run-jj-mutations-sequentially.md
+[stop-retries]: ../rules/vcs/vcs-stop-repeated-jj-retries-and-localize-state.md
+[track-remotes]: ../rules/vcs/vcs-track-remotes-explicitly.md
 [vcs-rules]: ../rules/vcs/README.md
+[workspace-add]: ../rules/vcs/vcs-workspace-add-for-second-checkouts.md
 [working]: https://docs.jj-vcs.dev/latest/working-copy/

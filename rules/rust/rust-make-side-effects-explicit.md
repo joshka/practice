@@ -36,8 +36,8 @@ performs irreversible I/O.
 
 ## Agent Instruction
 
-Expose Rust side effects in names, call sites, and Rustdoc when the call mutates state, performs
-I/O, registers globally, or starts background work.
+Expose Rust side effects in names, call sites, and Rustdoc for calls that mutate state, perform I/O,
+register globally, or start background work.
 
 ## Mechanisms
 

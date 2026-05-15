@@ -42,38 +42,61 @@ behavior change needed, but leaves a tangled diff behind.
 Move code toward the concept that explains why it changes. Do not split or merge code only because a
 file is long, a module is small, or an abstraction looks tidy.
 
+### Ownership
+
 - Group code by responsibility, not incidental reuse.
 - Keep related behavior together so features are understandable without excessive file-hopping.
+- Keep boundaries narrow and explicit.
+- Separate responsibilities only when doing so improves clarity.
+- Let change patterns guide structure.
+
+### Abstraction Pressure
+
 - Use one level of abstraction per function when practical.
 - Prefer local reasoning over indirection.
 - Extract helpers only when they reveal a real concept boundary.
-- Keep boundaries narrow and explicit.
 - Start with concrete code and let abstractions emerge from real pressure.
-- Make data flow and state changes visible.
-- Separate responsibilities only when doing so improves clarity.
-- Let change patterns guide structure.
 - Avoid abstractions thinner than the code they hide.
 - Align seams with real variation, not hypothetical variation.
 - Do not over-apply DRY.
+
+### Reader Context
+
+- Make data flow and state changes visible.
 - Preserve the reader's mental stack.
 - Keep the whole story visible when work is linear.
 
 Use [Name Coupling][coupling] before adding a boundary: name the future edit that would force pieces
 to move together. Use [Strengthen Cohesion][cohesion] when facts and behavior repeatedly change for
-the same reason and need a clear owner.
+the same reason and need a clear owner. Use [Align Seams With Real Variation][real-variation],
+[Do Not Over Apply DRY][dry], [Keep Weak Abstractions Close To Their Use][weak-abstractions], and
+[Prefer Local Reasoning][local-reasoning] when abstraction pressure is the main source of shape
+risk. Use [Keep Linear Story Visible][linear-story] when extraction would hide the flow a reader
+needs to audit.
 
 ## Local Expression Shape
 
 Small local moves should reduce what the reader must remember right now. They should not become a
 tour of every possible cleanup in the area.
 
+### Function Paragraphs
+
 - Use whitespace to group related logic. Those groups are the paragraphs of a function.
 - Open a group that incrementally builds state with the state being built.
 - Prefer early returns for non-business bookkeeping.
+
+### Branches And Effects
+
 - Prefer `if`, `else`, and `match` when mutually exclusive business paths are the domain rule a
   reader should see.
 - Do not mix side-effect statements and pure expressions in the same logical step.
 - Prefer loops over combinators when the body performs business-logic side effects.
+
+Use [Prefer Loops For Side Effects][side-effect-loops] when iterator chains make effects, ordering,
+or early exits harder to audit.
+
+### Pure Policy And Edge Cases
+
 - Put calculation-heavy policy into a small pure layer when rendering, I/O, or mutation would
   otherwise hide the rule being tested.
 - Keep rendering as a translation of already-computed state when that makes the behavior easier to
@@ -88,7 +111,9 @@ function.
 
 Use [Move Declaration And Initialization Together][declaration-init] when a name is introduced
 before it has a meaningful value. Use [Keep Name Current][name-current] when a stale name would make
-future readers trust the wrong concept.
+future readers trust the wrong concept. Use [Separate Pure Core From Effects][pure-core] when
+rendering, I/O, or mutation hides the rule being tested, and use [Make Edge Cases
+Explicit][edge-cases] when boundary values should be visible in the local control flow.
 
 ## Comments And Names
 
@@ -109,14 +134,22 @@ from behavior.
 
 ## Review Questions
 
+### Change Shape
+
 - Does this move reduce the live context a reader must hold?
 - Is this structure change separate from behavior where review needs that separation?
 - Is the move reversible while the design is still uncertain?
+
+### Concepts And Boundaries
+
 - Does this extraction name a real concept or just hide local details?
 - Is this boundary aligned with real variation or only incidental reuse?
 - Is the whole story still visible when the work is linear?
 - Which future edit would make this coupling expensive?
 - Did names, comments, and scopes stay current with the new shape?
+
+### Local Behavior
+
 - Is pure policy separated from rendering or I/O where that makes the rule easier to test?
 - Are edge cases visible instead of incidental?
 - Do visual groups reveal the function's real phases?
@@ -130,15 +163,23 @@ from behavior.
 [coupling]: ../patterns/name-coupling.md
 [declaration-init]: ../patterns/move-declaration-and-initialization-together.md
 [delete-comments]: ../patterns/delete-redundant-comments.md
+[edge-cases]: ../rules/refactoring/refactoring-make-edge-cases-explicit.md
 [explaining-variable]: ../patterns/use-explaining-variable.md
 [guard]: ../patterns/use-guard-clause.md
+[dry]: ../rules/refactoring/refactoring-do-not-over-apply-dry.md
 [live-context]: ../patterns/limit-live-context.md
+[linear-story]: ../rules/refactoring/refactoring-keep-linear-story-visible.md
+[local-reasoning]: ../rules/refactoring/refactoring-prefer-local-reasoning.md
 [name-current]: ../patterns/keep-name-current.md
+[pure-core]: ../rules/boundary/boundary-separate-pure-core-from-effects.md
 [reader-locality]: ../patterns/reader-locality.md
 [reader-locality-principle]: ../principles/reader-locality-reduces-change-cost.md
+[real-variation]: ../rules/refactoring/refactoring-align-seams-with-real-variation.md
 [refactoring-rules]: ../rules/refactoring/README.md
 [reversible]: ../patterns/keep-structure-reversible.md
 [rust]: rust-maintainability.md
+[side-effect-loops]: ../rules/refactoring/refactoring-prefer-loops-for-side-effects.md
 [small-chunks]: ../patterns/small-reviewable-chunks.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md
 [untangle]: ../patterns/untangle-before-changing.md
+[weak-abstractions]: ../rules/refactoring/refactoring-keep-weak-abstractions-close-to-their-use.md

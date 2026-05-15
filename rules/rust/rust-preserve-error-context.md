@@ -35,7 +35,7 @@ to keep every detail typed.
 
 ## Agent Instruction
 
-Preserve Rust error source, operation, and recoverable context when wrapping or mapping failures.
+Preserve Rust error source, operation, and recoverable context while wrapping or mapping failures.
 
 ## Mechanisms
 
