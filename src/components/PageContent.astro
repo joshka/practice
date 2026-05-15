@@ -40,12 +40,19 @@ function metadataChips(page: MarkdownPage): string[] {
 function sectionClass(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
+
+function kindLabel(value: string): string {
+  return value
+    .split('-')
+    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
 ---
 
 <article class={`page page--${kind}`}>
   <header class="detail-hero">
     <div class="detail-hero__meta">
-      <span class="detail-hero__kind">{kind.replace('-', ' ')}</span>
+      <span class="detail-hero__kind">{kindLabel(kind)}</span>
       {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
     </div>
     <h1>{page.title}</h1>

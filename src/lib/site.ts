@@ -37,9 +37,9 @@ export const repoUrl = 'https://github.com/joshka/practice';
 
 export const practiceTasks: PracticeTask[] = [
   {
-    title: 'Change shape',
+    title: 'Change scope and handoff',
     route: '/guides/software-change-preferences/',
-    description: 'Review-unit, validation-depth, and handoff decisions before a change grows.',
+    description: 'Scope, review shape, validation depth, and handoff.',
   },
   {
     title: 'Rust review',
@@ -73,7 +73,7 @@ export const sections: Section[] = [
     key: 'guides',
     title: 'Guides',
     description:
-      'Decision maps for recurring engineering work: how changes should be shaped, reviewed, documented, verified, and handed to coding agents.',
+      'Broad decisions that span rules, patterns, principles, and mechanisms.',
     sourceDir: 'guides',
     route: '/guides/',
   },
@@ -86,22 +86,22 @@ export const sections: Section[] = [
   },
   {
     key: 'why',
-    title: 'Why',
-    description: 'Principles that explain the reasoning behind several rules and patterns.',
+    title: 'Principles',
+    description: 'Rationale, tradeoffs, and limits behind related rules and patterns.',
     sourceDir: 'principles',
     route: '/why/',
   },
   {
     key: 'mechanisms',
     title: 'Mechanisms',
-    description: 'Commands, checks, lints, and workflows that make repeated guidance mechanical.',
+    description: 'Checks, commands, generators, and workflows that support the guidance.',
     sourceDir: 'mechanisms',
     route: '/mechanisms/',
   },
   {
     key: 'agents',
     title: 'Agents',
-    description: 'Copyable execution guidance and compressed rule packs for coding agents.',
+    description: 'Copyable instruction packs and rule packs for coding agents.',
     sourceDir: 'snippets/agents',
     route: '/agents/',
   },

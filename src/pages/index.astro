@@ -7,13 +7,13 @@ const homeCards = [
     title: 'Guides',
     badge: 'MAP',
     route: '/guides/',
-    description: 'Decision maps for software changes, Rust maintenance, documentation, agents, and jj.',
+    description: 'Connected guidance for broad engineering decisions.',
   },
   {
     title: 'Rules',
     badge: 'RULE',
     route: '/rules/',
-    description: 'Compact instructions grouped by domain with detail pages for every reviewed rule.',
+    description: 'Compact instructions grouped by work area with detail pages for every rule.',
   },
   {
     title: 'Patterns',
@@ -25,19 +25,19 @@ const homeCards = [
     title: 'Principles',
     badge: 'WHY',
     route: '/why/',
-    description: 'Reasoning notes that explain why several rules and patterns exist.',
+    description: 'Rationale behind related rules and patterns.',
   },
   {
     title: 'Mechanisms',
     badge: 'TOOL',
     route: '/mechanisms/',
-    description: 'Commands, checks, lints, and workflows that make repeated guidance mechanical.',
+    description: 'Checks, commands, generators, and workflows that support the guidance.',
   },
   {
     title: 'Agents',
     badge: 'AI',
     route: '/agents/',
-    description: 'Copyable execution guidance and compressed rule packs for coding agents.',
+    description: 'Copyable instruction packs and rule packs for coding agents.',
   },
 ];
 
@@ -52,29 +52,29 @@ const useCases = [
     title: 'Project setup',
     route: '/agents/core/',
     description:
-      'Copy the downstream `AGENTS.md` template and reviewed rule pack, then adapt local checks and constraints.',
+      'Copy the downstream `AGENTS.md` template and rule pack, then adapt local checks and constraints.',
   },
   {
     title: 'Agent instructions',
     route: '/agents/',
     description:
-      'Use the agent snippets when a coding tool needs compact instructions with enough intent to make good tradeoffs.',
+      'Agent snippets give coding tools compact instructions with enough context for tradeoffs.',
   },
 ];
 ---
 
 <BaseLayout
-  title="Software Practices"
+  title="Development Preferences"
   description="Durable software-development preferences for code, docs, tests, review, and coding agents."
 >
   <div class="home-shell">
     <div class="home-content">
       <section class="home-hero">
-        <div class="home-version">Public reference</div>
+        <div class="home-version">Reference site</div>
         <h1>Development Preferences</h1>
         <p>
-          A reference site for the rules, patterns, mechanisms, and agent instructions I use to
-          shape software work.
+          Rules, patterns, checks, and agent instructions for code, docs, tests, review, and source
+          control.
         </p>
         <div class="hero-rule" aria-hidden="true"></div>
       </section>
@@ -83,17 +83,17 @@ const useCases = [
         <div class="intent-panel">
           <p class="eyebrow">Site purpose</p>
           <p>
-            Practice turns repeated software-review judgment into reusable guidance for humans,
-            coding agents, and downstream repositories. It gives names to preferences that would
-            otherwise be repeated in review comments, repo setup, and agent steering.
+            This site collects repeatable preferences for reviews, repo setup, documentation,
+            source control, and coding-agent work.
           </p>
         </div>
         <div class="status-panel">
           <span class="status-dot" aria-hidden="true"></span>
           <strong>Canonical source</strong>
           <span>
-            The repo keeps <a href={withBase('/guides/')}>human explanations</a>,
-            <a href={withBase('/agents/rules/')}>compact agent rules</a>,
+            The repo contains <a href={withBase('/guides/')}>guides</a>,
+            <a href={withBase('/agents/rules/')}>rules</a>,
+            <a href={withBase('/agents/')}>agent snippets</a>,
             <a href={withBase('/agents/core/')}>templates</a>, and
             <a href={withBase('/mechanisms/')}>generated indexes</a> together.
           </span>
@@ -103,10 +103,10 @@ const useCases = [
       <section class="home-tasks" aria-labelledby="home-tasks-title">
         <div class="home-section-heading">
           <p class="eyebrow">Guide entry points</p>
-          <h2 id="home-tasks-title">Common work areas</h2>
+          <h2 id="home-tasks-title">Work areas</h2>
           <p>
-            Each card maps a recurring work area to the guide most likely to answer the first
-            decision.
+            Change shape, Rust review, documentation, coding-agent work, and jj workflow each have
+            a guide entry.
           </p>
         </div>
         <div class="task-grid">
@@ -124,8 +124,8 @@ const useCases = [
           <p class="eyebrow">Site map</p>
           <h2 id="home-library-title">Reference sections</h2>
           <p>
-            The cards provide the full map: explanations for humans, compact rules for agents,
-            named review moves, reasoning notes, and mechanical support.
+            The reference sections separate guides, rules, patterns, principles, mechanisms, and
+            agent snippets.
           </p>
         </div>
         <div class="home-card-grid" aria-label="Primary sections">
@@ -146,11 +146,11 @@ const useCases = [
           <p class="eyebrow">Use cases</p>
           <h2 id="how-to-use">Review comments, setup, and agent instructions</h2>
           <p>
-            <a href={withBase('/guides/')}>Guides</a> explain connected decisions,
+            <a href={withBase('/guides/')}>Guides</a> cover broader decisions,
             <a href={withBase('/rules/')}>rules</a> provide compact instructions,
             <a href={withBase('/patterns/')}>patterns</a> name repeatable review moves, and
-            <a href={withBase('/mechanisms/')}>mechanisms</a> collect commands, lints,
-            generators, and checks.
+            <a href={withBase('/mechanisms/')}>mechanisms</a> collect checks, generators,
+            and commands.
           </p>
         </div>
         <div class="home-use__cases">

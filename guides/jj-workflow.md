@@ -1,7 +1,7 @@
 # JJ Workflow
 
-This guide captures the repo's jujutsu workflow preferences. Use it when inspecting source-control
-state, creating reviewable changes, shaping commit descriptions, or publishing reviewed work.
+This guide covers jujutsu workflow preferences for source-control inspection, reviewable changes,
+commit descriptions, and publication.
 
 Use this guide with [Software Change Preferences](software-change-preferences.md). The goal is not
 to teach all of jj; it is to keep local work reviewable, recoverable, and aligned with jj's change

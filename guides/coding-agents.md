@@ -1,8 +1,7 @@
 # Coding Agents
 
-This guide organizes the repo's agent-workflow preferences. Use it when setting up agent tasks,
-writing `AGENTS.md` guidance, reviewing agent output, or deciding what should become tooling
-instead of another prompt.
+This guide covers agent-task setup, `AGENTS.md` guidance, agent-output review, and decisions that
+should become tooling instead of another prompt.
 
 Use this guide with [Software Change Preferences](software-change-preferences.md). Agent work still
 needs small reviewable chunks, honest verification, and careful working-copy ownership.

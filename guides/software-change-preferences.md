@@ -1,8 +1,8 @@
 # Software Change Preferences
 
-This guide collects broad preferences for shaping software changes. Use it when choosing the size,
-structure, tests, and handoff for a change. More specific Rust, code-shape, documentation, and jj
-guidance can add detail later without duplicating these defaults.
+This guide covers broad preferences for change size, structure, validation, and handoff. More
+specific Rust, code-shape, documentation, and jj guidance can add detail later without duplicating
+these defaults.
 
 ## Core Preference
 

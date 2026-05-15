@@ -44,9 +44,9 @@ const showGuideTasks = sectionKey === 'guides';
 
 const sectionConfig: Record<string, SectionConfig> = {
   guides: {
-    eyebrow: 'Decision maps',
+    eyebrow: 'Guide index',
     intro:
-      'Guides connect related rules, principles, patterns, and mechanisms into readable paths for recurring engineering decisions.',
+      'Guides cover broad decisions that span rules, patterns, principles, and mechanisms.',
     listingTitle: 'Available guides',
     density: 'standard',
   },
@@ -54,35 +54,35 @@ const sectionConfig: Record<string, SectionConfig> = {
     eyebrow: 'Pattern library',
     intro:
       'Patterns name repeatable development situations and the preferred moves that fit them. They work as review terms, guide links, and compact agent instructions.',
-    listingTitle: 'Pattern groups',
+    listingTitle: 'Pattern areas',
     density: 'dense',
   },
   why: {
     eyebrow: 'Principles',
     intro:
-      'Principles explain the beliefs, tradeoffs, and limits behind related rules and patterns.',
-    listingTitle: 'Principle groups',
+      'Principles capture the rationale, tradeoffs, and limits behind related rules and patterns.',
+    listingTitle: 'Principle areas',
     density: 'dense',
   },
   mechanisms: {
-    eyebrow: 'Mechanical support',
+    eyebrow: 'Checks and workflows',
     intro:
-      'Mechanisms name checks, commands, lints, generators, and workflows that make repeated preferences cheaper to follow and harder to forget.',
-    listingTitle: 'Mechanism groups',
+      'Mechanisms are checks, commands, generators, and workflows that make preferences easier to follow and harder to forget.',
+    listingTitle: 'Mechanism areas',
     density: 'compact',
   },
   agents: {
     eyebrow: 'Agent snippets',
     intro:
-      'Agent snippets are copyable instruction packs for downstream repositories, organized by the project surface they steer.',
-    listingTitle: 'Snippet groups',
+      'Agent snippets are copyable instruction packs for downstream repositories, grouped by the work they affect.',
+    listingTitle: 'Snippet areas',
     density: 'compact',
   },
   references: {
     eyebrow: 'Source material',
     intro:
-      'References collect durable source families and planning notes used to support, contrast, or frame the guidance.',
-    listingTitle: 'Reference groups',
+      'References collect durable sources and planning records that support, contrast, or frame the guidance.',
+    listingTitle: 'Reference areas',
     density: 'compact',
   },
 };
@@ -97,20 +97,20 @@ const config = sectionConfig[sectionKey] ?? {
 const guideGroups: Record<string, GroupConfig> = {
   core: {
     key: 'core',
-    title: 'Core change model',
-    description: 'How changes, source shape, and Rust maintainability should be reasoned about.',
+    title: 'Change, code, and Rust',
+    description: 'Change scope, code structure, and Rust maintainability.',
     hideTags: ['change', 'code', 'rust'],
   },
   boundaries: {
     key: 'boundaries',
     title: 'Boundaries and feedback',
-    description: 'How input, state, failure, and diagnostics become reviewable.',
+    description: 'Input, state, failure, diagnostics, and review evidence.',
     hideTags: ['api', 'failure'],
   },
   collaboration: {
     key: 'collaboration',
     title: 'Documentation, agents, and source control',
-    description: 'How work is explained, handed off, published, and kept understandable.',
+    description: 'Documentation, agent handoff, jj workflow, and review-facing context.',
     hideTags: ['docs', 'agents', 'vcs'],
   },
 };
@@ -119,37 +119,37 @@ const patternGroups: Record<string, GroupConfig> = {
   agents: {
     key: 'agents',
     title: 'Agent work',
-    description: 'Patterns for steering, constraining, reviewing, and improving coding-agent work.',
+    description: 'Agent steering, constraints, review, and feedback loops.',
     hideTags: ['agents'],
   },
   docs: {
     key: 'docs',
     title: 'Documentation and shared context',
-    description: 'Patterns for docs as contracts, source prose, examples, summaries, and review context.',
+    description: 'Docs as contracts, source prose, examples, summaries, and review context.',
     hideTags: ['documentation', 'docs', 'markdown'],
   },
   code: {
     key: 'code',
     title: 'Code shape and APIs',
-    description: 'Patterns for reader-local code, Rust APIs, naming, state shape, and refactoring.',
+    description: 'Reader-local code, Rust APIs, naming, state shape, and refactoring.',
     hideTags: ['rust', 'readability', 'api-design'],
   },
   correctness: {
     key: 'correctness',
     title: 'Boundaries, failure, and verification',
-    description: 'Patterns for parsing, validation, errors, observability, tests, and runtime proof.',
+    description: 'Parsing, validation, errors, observability, tests, and runtime proof.',
     hideTags: ['testing', 'errors', 'observability', 'validation'],
   },
   workflow: {
     key: 'workflow',
     title: 'Change and review workflow',
-    description: 'Patterns for review size, source control, sequencing, and collaboration.',
+    description: 'Review size, source control, sequencing, and collaboration.',
     hideTags: ['workflow', 'review', 'version-control'],
   },
   tooling: {
     key: 'tooling',
     title: 'Tooling and automation',
-    description: 'Patterns for making repeated feedback mechanical without hiding judgment.',
+    description: 'Repeated feedback made mechanical without hiding judgment.',
     hideTags: ['tooling', 'automation'],
   },
 };
@@ -158,31 +158,31 @@ const principleGroups: Record<string, GroupConfig> = {
   agents: {
     key: 'agents',
     title: 'Agents and shared context',
-    description: 'Principles for compact agent instructions, public rationale, and repeated feedback.',
+    description: 'Agent instructions, public rationale, and repeated feedback.',
     hideTags: ['agents'],
   },
   change: {
     key: 'change',
     title: 'Change, review, and locality',
-    description: 'Principles for change shape, reader-locality, and review cost.',
+    description: 'Change shape, reader locality, and review cost.',
     hideTags: ['change-shape', 'review'],
   },
   boundaries: {
     key: 'boundaries',
     title: 'Boundaries, APIs, and state',
-    description: 'Principles for explicit boundaries, public API cost, and mutable state.',
+    description: 'Explicit boundaries, public API cost, and mutable state.',
     hideTags: ['boundaries', 'api', 'state'],
   },
   verification: {
     key: 'verification',
     title: 'Testing and performance',
-    description: 'Principles for useful test failures and evidence-backed optimization.',
+    description: 'Useful test failures and evidence-backed optimization.',
     hideTags: ['testing', 'performance'],
   },
   vcs: {
     key: 'vcs',
     title: 'Version-control topology',
-    description: 'Principles for JJ, remotes, bookmarks, and publication shape.',
+    description: 'JJ, remotes, bookmarks, and publication shape.',
     hideTags: ['jj', 'vcs'],
   },
 };
@@ -191,25 +191,25 @@ const mechanismGroups: Record<string, GroupConfig> = {
   guidance: {
     key: 'guidance',
     title: 'Guidance system',
-    description: 'Mechanisms that keep rules, generated snippets, templates, and indexes synchronized.',
+    description: 'Generated snippets, templates, indexes, and rule synchronization.',
     hideTags: ['guidance', 'rules'],
   },
   vcs: {
     key: 'vcs',
     title: 'JJ workflow',
-    description: 'Mechanisms that make source-control state explicit and noninteractive for agents.',
+    description: 'Source-control state, noninteractive jj commands, and agent-safe workflow.',
     hideTags: ['jj', 'git', 'vcs'],
   },
   rust: {
     key: 'rust',
     title: 'Rust checks',
-    description: 'Mechanisms for Rust APIs, releases, docs, lints, formatting, and tool profiles.',
+    description: 'Rust API, release, docs, lint, formatting, and tooling checks.',
     hideTags: ['rust', 'cargo'],
   },
   testing: {
     key: 'testing',
     title: 'Testing and benchmarking',
-    description: 'Mechanisms that choose validation cost by risk and expected feedback value.',
+    description: 'Validation cost, risk, and expected feedback value.',
     hideTags: ['tests', 'testing', 'benchmarks'],
   },
 };
@@ -218,19 +218,19 @@ const agentGroups: Record<string, GroupConfig> = {
   baseline: {
     key: 'baseline',
     title: 'Baseline packs',
-    description: 'Core instructions and compressed rule packs that can seed a downstream project.',
+    description: 'Core instructions and rule packs for downstream projects.',
     hideTags: ['baseline'],
   },
   domain: {
     key: 'domain',
-    title: 'Domain profiles',
-    description: 'Focused snippets for common project surfaces such as Rust, docs, and source control.',
+    title: 'Project areas',
+    description: 'Snippets for Rust, docs, and source control.',
     hideTags: ['rust', 'docs', 'vcs'],
   },
   workflow: {
     key: 'workflow',
-    title: 'Workflow profiles',
-    description: 'Snippets for shaping agent task setup, review, and handoff behavior.',
+    title: 'Workflow guidance',
+    description: 'Task setup, review, and handoff guidance for coding agents.',
     hideTags: ['workflow'],
   },
 };
@@ -239,13 +239,13 @@ const referenceGroups: Record<string, GroupConfig> = {
   sources: {
     key: 'sources',
     title: 'External sources',
-    description: 'Durable references used to support, adapt, or contrast guidance in this repo.',
+    description: 'Durable sources that support, adapt, or contrast guidance in this repo.',
     hideTags: ['sources'],
   },
   planning: {
     key: 'planning',
     title: 'Planning records',
-    description: 'Working maps for how the guidance system was shaped and what may evolve next.',
+    description: 'Planning records for current structure and future guidance work.',
     hideTags: ['plan'],
   },
 };
@@ -443,10 +443,10 @@ function normalizeForCompare(value: string): string {
     <section class="section-task-panel" aria-labelledby="guide-task-title">
       <div class="section-task-panel__intro">
         <p class="eyebrow">Guide entry points</p>
-        <h2 id="guide-task-title">Common work areas</h2>
+        <h2 id="guide-task-title">Work areas</h2>
         <p>
-          Each card maps a recurring work area to the guide most likely to answer the first
-          decision.
+          Change shape, Rust review, documentation, coding-agent work, and jj workflow each have a
+          guide entry.
         </p>
       </div>
       <div class="task-grid task-grid--compact">
