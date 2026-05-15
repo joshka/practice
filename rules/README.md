@@ -75,9 +75,9 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Rust API And Crate Shape](rust/README.md). 46 rules. Rust rules cover public API shape, crate
   layout, dependency policy, docs.rs behavior, feature flags, public errors, unsafe boundaries, and
   release checks.
-- [Source And Context Hygiene](source/README.md). 3 rules. Source hygiene rules cover turning mined
-  lessons into public guidance, preferring stable sources, and keeping local or private context out
-  of shared artifacts.
+- [Source And Context Hygiene](source/README.md). 4 rules. Source hygiene rules cover turning mined
+  lessons into public guidance, preferring stable sources, keeping binary artifacts out of history,
+  and keeping local or private context out of shared artifacts.
 - [Tests Should Explain Failures](test-failures/README.md). 3 rules. Test-failure rules cover
   assertion shape and failure output that help humans and agents diagnose the failing case quickly.
 - [Testing And Verification](testing/README.md). 22 rules. Testing rules cover risk-based
@@ -775,6 +775,11 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Generalize project-specific rules before promotion. Local mining often starts from one repository,
   tool, provider, or incident. Helps: Keeps public guidance broadly reusable while preserving narrow
   lessons for the places where they actually apply.
+- [`SOURCE-KEEP-BINARIES-OUT-OF-SOURCE-CONTROL`](source/source-keep-binaries-out-of-source-control.md).
+  Keep binary artifacts out of source control. Git history is optimized for source changes, not
+  large opaque blobs. Helps: Keeps clones, fetches, CI caches, and history traversal fast; avoids
+  history rewrites for accidental large files; keeps review focused on source and provenance; and
+  separates release, PR, CI, and long-lived asset lifecycles from source history.
 - [`SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`](source/source-make-shared-artifacts-standalone.md).
   Make issues, PRs, commit messages, docs, and handoffs stand alone. Shared artifacts often leave
   the development session with missing context. Helps: Makes shared work reviewable, auditable, and

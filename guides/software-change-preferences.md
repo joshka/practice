@@ -27,6 +27,8 @@ should not mix unrelated decisions.
 Use one feature, bug fix, or documentation purpose per change.
 Do not include unrelated refactors.
 Do not include dependency churn unless it is necessary for the task.
+Do not commit binary artifacts; use Git LFS, release assets, PR uploads, CI artifacts, or external
+storage for large opaque outputs.
 Do not move broad modules unless the reader path improves.
 Do not add speculative public API for future features.
 If a change reveals separate cleanup, note it or put it in a separate change.
@@ -182,8 +184,9 @@ Use [Change Shape Rules][change-rules] for compact instructions about change siz
 artifacts, dependency churn, ownership, and structure-versus-behavior boundaries. Use
 [Change Shape Controls Review Cost][review-cost] for the reasoning behind small coherent changes.
 Use [Testing And Verification Rules][testing-rules] and [Tests Should Explain Failures][test-proof]
-when choosing proof for behavior changes. Use [Mechanisms][mechanisms] when the change needs
-tooling, CI, lint, jj, or release support.
+when choosing proof for behavior changes. Use
+[Keep Binaries Out Of Source Control][binary-artifacts] before adding opaque artifacts to history.
+Use [Mechanisms][mechanisms] when the change needs tooling, CI, lint, jj, or release support.
 
 ## Review Questions
 
@@ -204,6 +207,7 @@ tooling, CI, lint, jj, or release support.
 
 [commit-history]: ../patterns/commit-messages-for-history.md
 [code-shape]: code-shape.md
+[binary-artifacts]: ../rules/source/source-keep-binaries-out-of-source-control.md
 [change-rules]: ../rules/change-shape/README.md
 [discovery-editing]: ../patterns/separate-discovery-from-editing.md
 [honest-verification]: ../patterns/report-verification-honestly.md

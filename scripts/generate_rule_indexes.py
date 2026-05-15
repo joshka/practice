@@ -53,7 +53,8 @@ DOMAIN_SUMMARIES = {
     ),
     "source": (
         "Source hygiene rules cover turning mined lessons into public guidance, preferring stable "
-        "sources, and keeping local or private context out of shared artifacts."
+        "sources, keeping binary artifacts out of history, and keeping local or private context "
+        "out of shared artifacts."
     ),
     "test-failures": (
         "Test-failure rules cover assertion shape and failure output that help humans and agents "
