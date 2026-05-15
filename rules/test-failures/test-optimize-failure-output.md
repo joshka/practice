@@ -1,0 +1,45 @@
+# Test Optimize Failure Output
+
+## Metadata
+
+- ID: `TEST-OPTIMIZE-FAILURE-OUTPUT`
+- Legacy ID: `R-0425`
+- Status: `reviewed`
+- Domain: `test-failures`
+- Depth: `compact`
+
+## Rule
+
+Optimize tests for useful failure output.
+
+## Why
+
+A passing test is useful, but a failing test is where maintainers and agents spend repair time.
+Tests should fail with the expected and actual values, relevant input, and enough context to
+identify the broken contract without rerunning under a debugger.
+
+## Helps
+
+- Shortens repair loops and makes regression failures actionable in CI logs.
+
+## Limits
+
+Do not turn tests into verbose diagnostics when the failure is already obvious. Add output where it
+changes the speed or reliability of repair.
+
+## Agent Instruction
+
+Optimize tests for useful failure output because a passing test is useful, but a failing test is where
+maintainers and agents spend repair time.
+
+## Mechanisms
+
+Supported by whole-value comparisons, snapshots, named table cases, custom messages with input
+context, and regression tests that preserve useful failure shape.
+
+## References
+
+- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
+- [Rustdoc: documentation
+  tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)
