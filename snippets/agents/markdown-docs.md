@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `documentation, markdown, rustdoc, review-handoff`
-- Tags: `agents, snippets, docs, markdown`
+- Tags: `documentation, rustdoc, review-handoff, source-truth`
 - Related: `guides/markdown-documentation.md, guides/documentation-workflow.md, principles/docs-are-contracts.md`
 
 Use this snippet in repos where agents edit Markdown, Rustdoc, README files, or review narrative.

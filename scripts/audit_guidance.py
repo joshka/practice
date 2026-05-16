@@ -140,6 +140,14 @@ def metadata_values(text: str) -> dict[str, str]:
     return values
 
 
+def slug(value: str) -> str:
+    return re.sub(r"(^-|-$)", "", re.sub(r"[^a-z0-9]+", "-", value.strip().lower()))
+
+
+def split_metadata_list(value: str) -> list[str]:
+    return [item.strip().strip("`") for item in value.split(",") if item.strip()]
+
+
 def section(text: str, name: str) -> str:
     match = re.search(
         rf"^## {re.escape(name)}\n\n(.*?)(?=\n\n## |\Z)",
@@ -239,6 +247,49 @@ def audit_structured_guidance_metadata(errors: list[str]) -> None:
             audience = values.get("Audience", "")
             if audience and audience not in ALLOWED_AUDIENCES:
                 fail(errors, f"{rel(path)} has invalid audience: {audience}")
+
+
+def guidance_tag_vocabulary(errors: list[str]) -> set[str]:
+    source = ROOT / "src" / "lib" / "site.ts"
+    if not source.exists():
+        fail(errors, f"missing tag vocabulary source: {rel(source)}")
+        return set()
+    match = re.search(r"export const guidanceTags = \[(.*?)\] as const;", source.read_text(), re.DOTALL)
+    if not match:
+        fail(errors, f"{rel(source)} does not expose guidanceTags")
+        return set()
+    return set(re.findall(r"'([^']+)'", match.group(1)))
+
+
+def tagged_guidance_files() -> list[Path]:
+    files: list[Path] = []
+    files.extend(path for path in sorted(RULES_DIR.glob("*/*.md")) if path.name != "README.md")
+    for directory in STRUCTURED_GUIDANCE_DIRS:
+        files.extend(
+            path
+            for path in sorted((ROOT / directory).glob("*.md"))
+            if path.name != "README.md"
+        )
+    return files
+
+
+def audit_guidance_tags(errors: list[str]) -> None:
+    allowed_tags = guidance_tag_vocabulary(errors)
+    if not allowed_tags:
+        return
+
+    for path in tagged_guidance_files():
+        values = metadata_values(path.read_text())
+        tags = split_metadata_list(values.get("Tags", ""))
+        if not tags:
+            fail(errors, f"{rel(path)} is missing metadata field: Tags")
+            continue
+        for tag in tags:
+            normalized = slug(tag)
+            if tag != normalized:
+                fail(errors, f"{rel(path)} has non-canonical tag spelling: {tag}")
+            if normalized not in allowed_tags:
+                fail(errors, f"{rel(path)} uses tag outside guidanceTags: {tag}")
 
 
 def audit_structured_related_metadata(errors: list[str]) -> None:
@@ -613,6 +664,7 @@ def main() -> int:
     audit_required_roots(errors)
     audit_feedback_flow(errors)
     audit_structured_guidance_metadata(errors)
+    audit_guidance_tags(errors)
     audit_structured_related_metadata(errors)
     rules = read_rules(errors)
     audit_domain_indexes(rules, errors)

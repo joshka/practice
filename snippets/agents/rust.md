@@ -11,7 +11,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `rust, api-design, maintainability, validation`
-- Tags: `agents, snippets, rust, api-design`
+- Tags: `rust, public-api, reader-locality, verification`
 - Related: `guides/rust-maintainability.md, guides/code-shape.md, guides/boundary-correctness.md, mechanisms/rust-tooling-profile.md`
 
 Use this snippet in Rust repos where maintainability, API shape, and reviewability matter.

@@ -148,6 +148,7 @@ export const guidanceTags = [
   'release',
   'generated-artifacts',
   'review-handoff',
+  'refactoring',
 ] as const;
 
 export type GuidanceTag = (typeof guidanceTags)[number];
@@ -320,19 +321,23 @@ export function tagCounts(): { tag: string; count: number }[] {
 
 function isTaggedGuidancePage(page: MarkdownPage): boolean {
   return (
+    page.repoPath.startsWith('guides/') ||
     (page.repoPath.startsWith('rules/') && !page.repoPath.endsWith('/README.md')) ||
     page.repoPath.startsWith('patterns/') ||
     page.repoPath.startsWith('principles/') ||
-    page.repoPath.startsWith('mechanisms/')
+    page.repoPath.startsWith('mechanisms/') ||
+    page.repoPath.startsWith('snippets/agents/')
   );
 }
 
 function pageKindSort(page: MarkdownPage): string {
-  if (page.repoPath.startsWith('rules/')) return `1:${page.repoPath}`;
-  if (page.repoPath.startsWith('patterns/')) return `2:${page.repoPath}`;
-  if (page.repoPath.startsWith('principles/')) return `3:${page.repoPath}`;
-  if (page.repoPath.startsWith('mechanisms/')) return `4:${page.repoPath}`;
-  return `5:${page.repoPath}`;
+  if (page.repoPath.startsWith('guides/')) return `1:${page.repoPath}`;
+  if (page.repoPath.startsWith('rules/')) return `2:${page.repoPath}`;
+  if (page.repoPath.startsWith('patterns/')) return `3:${page.repoPath}`;
+  if (page.repoPath.startsWith('principles/')) return `4:${page.repoPath}`;
+  if (page.repoPath.startsWith('mechanisms/')) return `5:${page.repoPath}`;
+  if (page.repoPath.startsWith('snippets/agents/')) return `6:${page.repoPath}`;
+  return `7:${page.repoPath}`;
 }
 
 export function splitMetadataList(value: string | undefined): string[] {

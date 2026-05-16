@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agent-workflow, development-preferences, handoff, validation`
-- Tags: `agents, snippets, handoff, validation`
+- Tags: `agent-workflow, agent-context, review-handoff, verification`
 - Related: `guides/software-change-preferences.md, guides/coding-agents.md, snippets/agents/rules.md`
 
 Use this snippet in `AGENTS.md` files when a repo needs the broad development-preference baseline.

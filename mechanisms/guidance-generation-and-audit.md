@@ -72,6 +72,7 @@ pnpm check:search
 ## What It Catches
 
 - Missing required rule sections.
+- Structured guidance tags that fall outside the rendered tag vocabulary.
 - Draft or needs-work rules in a release-facing catalog.
 - Compressed agent rules that link back to detailed files.
 - Agent instructions that merely repeat the rule title.

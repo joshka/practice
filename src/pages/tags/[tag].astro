@@ -11,7 +11,7 @@ import {
 } from '../../lib/site';
 import type { MarkdownPage } from '../../lib/site';
 
-type GuidanceKind = 'rule' | 'pattern' | 'principle' | 'mechanism';
+type GuidanceKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism';
 
 export function getStaticPaths() {
   return guidanceTags.map((tag) => ({ params: { tag } }));
@@ -22,9 +22,11 @@ const title = tagLabel(tag);
 const pages = taggedPages(tag);
 
 function pageKind(page: MarkdownPage): GuidanceKind {
+  if (page.repoPath.startsWith('guides/')) return 'guide';
   if (page.repoPath.startsWith('patterns/')) return 'pattern';
   if (page.repoPath.startsWith('principles/')) return 'principle';
   if (page.repoPath.startsWith('mechanisms/')) return 'mechanism';
+  if (page.repoPath.startsWith('snippets/agents/')) return 'agent';
   return 'rule';
 }
 

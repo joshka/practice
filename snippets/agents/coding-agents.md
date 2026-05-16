@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agent-workflow, delegation, handoff, feedback`
-- Tags: `agents, snippets, delegation, handoff`
+- Tags: `agent-workflow, agent-context, tooling, review-handoff`
 - Related: `guides/coding-agents.md, principles/docs-are-contracts.md`
 
 Use this snippet when a repo wants agent work to be durable, reviewable, and easy to integrate.

@@ -113,7 +113,7 @@ def render(rules: list[Rule]) -> str:
         "- Status: `reviewed`",
         "- Audience: `agents`",
         "- Topics: `rules, agent-workflow, generated-artifacts, downstream-adoption`",
-        "- Tags: `agents, snippets, rules, generated`",
+        "- Tags: `agent-workflow, generated-artifacts, automation, source-truth`",
         "- Related: `rules/README.md, guides/coding-agents.md, mechanisms/guidance-generation-and-audit.md`",
         "",
         "This is the compressed agent execution surface for reviewed rules. It intentionally omits",

@@ -188,11 +188,12 @@ pnpm build
 pnpm check:search
 ```
 
-The audit checks the guidance architecture directly: rule metadata and references, domain indexes,
-generated agent-pack coverage, stale rule IDs, private local context leaks, placeholder text, and
-internal Markdown links. Regenerate rule indexes with `python3 scripts/generate_rule_indexes.py`
-after changing rule titles, rationale, or summaries. Regenerate `snippets/agents/rules.md` with
-`python3 scripts/generate_agent_rules.py` after changing reviewed rule instructions.
+The audit checks the guidance architecture directly: rule metadata and references, structured
+guidance metadata, tag vocabulary, domain indexes, generated agent-pack coverage, stale rule IDs,
+private local context leaks, placeholder text, and internal Markdown links. Regenerate rule indexes
+with `python3 scripts/generate_rule_indexes.py` after changing rule titles, rationale, or
+summaries. Regenerate `snippets/agents/rules.md` with `python3 scripts/generate_agent_rules.py`
+after changing reviewed rule instructions.
 Regenerate `templates/downstream/` with `python3 scripts/generate_downstream_template.py` after
 changing reviewed rule instructions or downstream adoption shape. Run `pnpm check:search` after
 `pnpm build` to verify important rendered search queries against `dist/search.json`.

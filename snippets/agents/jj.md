@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `jujutsu, source-control, agent-workflow, publication`
-- Tags: `agents, snippets, jj, vcs`
+- Tags: `vcs-jj, agent-workflow, tooling, review-handoff`
 - Related: `guides/jj-workflow.md, principles/jj-topology-is-repo-role-dependent.md`
 
 Use this snippet in repositories that use jujutsu for local source-control workflow.
