@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Lints Actionable`
 - ID: `RUST-KEEP-LINTS-ACTIONABLE`
+- Summary: Enforce lints that improve correctness, API quality, docs, portability, or maintenance
+  in ways reviewers want automated. Scope suppressions tightly so exceptions stay visible.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

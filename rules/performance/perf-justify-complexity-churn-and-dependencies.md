@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Justify Complexity, Churn, and Dependencies`
 - ID: `PERF-JUSTIFY-COMPLEXITY-CHURN-AND-DEPENDENCIES`
+- Summary: Explain why a performance win justifies added complexity, churn, unsafe code, caching,
+  or dependencies. Measured speedups still need to pay for the maintenance cost every future reader
+  inherits.
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

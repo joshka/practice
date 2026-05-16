@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Concepts Coherent`
 - ID: `RUST-KEEP-CONCEPTS-COHERENT`
+- Summary: Give each module, type, or helper one recognizable idea to own. Coherent ownership keeps
+  readers from carrying unrelated parsing, state, rendering, and policy facts at once.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Keep Backend Adapters At Edge`
 - ID: `BOUNDARY-KEEP-BACKEND-ADAPTERS-AT-EDGE`
+- Summary: Keep provider-specific terminal, storage, network, and runtime APIs in adapter layers at
+  the boundary. Core logic stays stable and testable while real backend differences remain modeled
+  instead of hidden behind a false common API.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

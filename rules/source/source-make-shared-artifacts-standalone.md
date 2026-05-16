@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Make Shared Artifacts Standalone`
 - ID: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`
+- Summary: Restate the problem, rationale, evidence, and tradeoffs in artifacts that leave the local
+  session. Future readers should not need private notes or transcripts to trust the result.
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `compact`

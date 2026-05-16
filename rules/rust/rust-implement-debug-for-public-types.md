@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Implement Debug for Public Types`
 - ID: `RUST-IMPLEMENT-DEBUG-FOR-PUBLIC-TYPES`
+- Summary: Provide `Debug` for public types unless it would expose secrets or mislead callers. The
+  trait is baseline support for tests, assertions, logs, and downstream diagnostics.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

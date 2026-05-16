@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Measure Goal, Change, and Comparison`
 - ID: `PERF-MEASURE-GOAL-CHANGE-COMPARE`
+- Summary: State the performance goal, baseline measurement, implementation change, and comparison
+  result together. Those pieces let reviewers judge whether the patch improved the relevant
+  workload enough to justify its tradeoffs.
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

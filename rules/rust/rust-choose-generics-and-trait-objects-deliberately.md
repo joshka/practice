@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Choose Generics and Trait Objects Deliberately`
 - ID: `RUST-CHOOSE-GENERICS-AND-TRAIT-OBJECTS-DELIBERATELY`
+- Summary: Pick generics, stored type parameters, or trait objects for the variation they actually
+  model. The choice affects compile cost, object safety, lifetimes, and caller ergonomics.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

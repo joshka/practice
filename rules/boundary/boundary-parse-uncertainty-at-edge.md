@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Parse Uncertainty At Edge`
 - ID: `BOUNDARY-PARSE-UNCERTAINTY-AT-EDGE`
+- Summary: Parse and validate raw strings, JSON, CLI args, provider responses, and user input at
+  the boundary before passing values inward. Core logic receives typed invariants, while
+  domain-specific checks that require later context remain explicit policy decisions.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

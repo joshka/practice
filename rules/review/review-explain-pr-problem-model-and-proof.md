@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Explain PR Problem Model and Proof`
 - ID: `REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`
+- Summary: Use PR descriptions to explain the problem, mental model, tradeoffs, validation, and
+  documentation impact. Reviewers can then evaluate the diff against stated intent instead of
+  reverse-engineering it.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

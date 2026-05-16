@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Group Module Imports`
 - ID: `RUST-GROUP-MODULE-IMPORTS`
+- Summary: Group related imports by module when that matches local style. This makes dependency
+  shape easier to scan and avoids churn from one-import-per-line edits.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

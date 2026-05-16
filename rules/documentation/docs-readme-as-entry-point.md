@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `README as Entry Point`
 - ID: `DOCS-README-AS-ENTRY-POINT`
+- Summary: `Use README files to orient readers to purpose, setup, first useful use, and deeper docs.
+  Split out manual-level detail when it hides the starting path.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

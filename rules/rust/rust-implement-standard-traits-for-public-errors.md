@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Implement Standard Traits for Public Errors`
 - ID: `RUST-IMPLEMENT-STANDARD-TRAITS-FOR-PUBLIC-ERRORS`
+- Summary: Make reusable public errors implement the standard diagnostic traits where appropriate.
+  This lets callers compose, display, chain, and inspect errors in ordinary Rust workflows.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use Source Links as Support`
 - ID: `DOCS-USE-SOURCE-LINKS-AS-SUPPORT`
+- Summary: `Use references to verify, frame, or contrast local guidance instead of supplying the
+  wording. This keeps the repo voice original while still making claims checkable.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

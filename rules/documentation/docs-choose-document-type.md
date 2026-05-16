@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Choose Document Type`
 - ID: `DOCS-CHOOSE-DOCUMENT-TYPE`
+- Summary: `Pick the dominant document mode before editing so the page serves one reader task well.
+  Link out to secondary modes instead of blending tutorial, reference, decisions, and changelog.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

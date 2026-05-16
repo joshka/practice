@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Expose Primary Path from Crate Root`
 - ID: `RUST-EXPOSE-PRIMARY-PATH-FROM-CRATE-ROOT`
+- Summary: Make the crate root show the main workflow, types, and import path. Users should not
+  have to infer the intended entry point from private layout details.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

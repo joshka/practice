@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Keep Weak Abstractions Close`
 - ID: `REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`
+- Summary: Keep tentative helpers, types, or traits near their first use until the boundary proves
+  itself. Local placement makes weak abstractions easier to revise, inline, or delete before other
+  modules depend on them.
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Run Timing Benchmarks Sequentially`
 - ID: `PERF-RUN-TIMING-BENCHMARKS-SEQUENTIALLY`
+- Summary: Serialize timing-sensitive benchmarks when their numbers will be used as evidence.
+  Concurrent runs compete for shared resources and can make the comparison describe the runner more
+  than the code.
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

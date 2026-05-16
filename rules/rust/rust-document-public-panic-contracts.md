@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Public Panic Contracts`
 - ID: `RUST-DOCUMENT-PUBLIC-PANIC-CONTRACTS`
+- Summary: Document when public APIs can panic and what callers can do to avoid it. Panic contracts
+  keep recoverable errors, invariants, and misuse boundaries explicit.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

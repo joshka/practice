@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use One Purpose per Change`
 - ID: `CHANGE-USE-ONE-PURPOSE-PER-CHANGE`
+- Summary: Shape each change around one review question and one reason for existing. Related tests,
+  docs, and generated files can travel with it when they support that same purpose.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

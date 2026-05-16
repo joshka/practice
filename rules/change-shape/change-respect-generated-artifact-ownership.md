@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Respect Generated Artifact Ownership`
 - ID: `CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`
+- Summary: Fix generated outputs through their source inputs, templates, metadata, or generator
+  configuration whenever those own the result. Hand edits are durable only when the tool workflow
+  explicitly supports curation.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

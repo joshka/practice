@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Choose Resource Identity Model`
 - ID: `BOUNDARY-CHOOSE-RESOURCE-IDENTITY-MODEL`
+- Summary: Decide whether the boundary mutates records, sets, files, sessions, handles, or whole
+  documents before designing reconciliation. The chosen unit controls idempotency, matching,
+  conflict handling, and the cost of later migration.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

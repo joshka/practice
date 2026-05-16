@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Inject Host Interactions at Boundaries`
 - ID: `RUST-INJECT-HOST-INTERACTIONS-AT-BOUNDARIES`
+- Summary: Pass filesystem, network, time, randomness, and process behavior through boundaries when
+  tests or alternate environments need control. This keeps the core deterministic and effects
+  explicit.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

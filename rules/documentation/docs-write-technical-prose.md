@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Write Technical Prose`
 - ID: `DOCS-WRITE-TECHNICAL-PROSE`
+- Summary: `Use direct technical language that carries contracts, commands, evidence, and tradeoffs.
+  Cut marketing, coaching, chat, and page narration when they do not explain the system.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

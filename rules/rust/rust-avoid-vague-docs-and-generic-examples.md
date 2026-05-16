@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Vague Docs and Generic Examples`
 - ID: `RUST-AVOID-VAGUE-DOCS-AND-GENERIC-EXAMPLES`
+- Summary: Write Rustdoc and examples around real caller scenarios, not generic claims of
+  usefulness. Concrete examples expose ownership, errors, features, and lifecycle expectations.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

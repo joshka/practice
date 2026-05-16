@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Preserve Operation Context in Errors`
 - ID: `OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`
+- Summary: Carry the operation, resource, provider, input class, and policy context that explain a
+  failure. Stable identifiers and sanitized summaries shorten debugging without exposing payloads.
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

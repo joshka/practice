@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Identify Owning Module Before Editing`
 - ID: `CHANGE-IDENTIFY-OWNING-MODULE-BEFORE-EDITING`
+- Summary: Find the component that owns the concept before adding or moving logic. That keeps
+  invariants, tests, and future maintenance close to the responsible code.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

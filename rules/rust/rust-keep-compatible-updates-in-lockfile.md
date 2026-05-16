@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Compatible Updates in Lockfile`
 - ID: `RUST-KEEP-COMPATIBLE-UPDATES-IN-LOCKFILE`
+- Summary: Let lockfiles record newer compatible dependency versions when the manifest floor has
+  not changed. This tests fresh releases without narrowing downstream compatibility.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

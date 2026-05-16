@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Isolate Controversial Changes`
 - ID: `CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`
+- Summary: Put risky or contentious moves in their own review unit when they can stand alone. This
+  lets reviewers approve, reject, or revise the decision without incidental cleanup attached.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

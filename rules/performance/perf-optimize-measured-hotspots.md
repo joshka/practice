@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Optimize Measured Hotspots`
 - ID: `PERF-OPTIMIZE-MEASURED-HOTSPOTS`
+- Summary: Optimize code that measurement shows is on the important runtime path. This keeps review
+  attention on changes whose user-visible impact justifies altering the code shape.
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

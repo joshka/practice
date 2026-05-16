@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Central Item First`
 - ID: `RUST-CENTRAL-ITEM-FIRST`
+- Summary: Put the main type, trait, enum, or function before supporting details. Readers can learn
+  the module's purpose before chasing helpers and adapters.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

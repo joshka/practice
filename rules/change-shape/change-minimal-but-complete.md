@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Minimal but Complete`
 - ID: `CHANGE-MINIMAL-BUT-COMPLETE`
+- Summary: Keep the diff as small as the purpose allows while including the evidence that purpose
+  needs. Reviewers should see one coherent unit they can understand, validate, and revert.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

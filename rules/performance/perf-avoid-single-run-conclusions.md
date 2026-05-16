@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Avoid Single-Run Performance Conclusions`
 - ID: `PERF-AVOID-SINGLE-RUN-CONCLUSIONS`
+- Summary: Do not land performance conclusions from one short benchmark run. Repeat and
+  contextualize timing evidence because warmup, scheduling, cache state, and background load can
+  make a single result non-reproducible.
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Reject Unsupported Shapes`
 - ID: `BOUNDARY-REJECT-UNSUPPORTED-SHAPES`
+- Summary: Fail unsupported names, values, TTLs, targets, record families, protocols, or modes at
+  the boundary with clear errors. Preserve unknown data only when compatibility requires
+  round-tripping and the system can do so safely.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

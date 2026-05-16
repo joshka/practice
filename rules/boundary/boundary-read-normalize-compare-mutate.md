@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Read Normalize Compare Mutate`
 - ID: `BOUNDARY-READ-NORMALIZE-COMPARE-MUTATE`
+- Summary: Reconcile external state by reading the current provider view, normalizing it, comparing
+  intent, and mutating only the real difference. The loop avoids destructive or noisy writes when
+  formatting, defaults, ordering, or outside actors create drift.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

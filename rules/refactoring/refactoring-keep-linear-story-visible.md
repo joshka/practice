@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Linear Story Visible`
 - ID: `REFACTORING-KEEP-LINEAR-STORY-VISIBLE`
+- Summary: Keep simple ordered workflows inline when the sequence is the clearest explanation.
+  Extract only the substeps that carry their own concept, policy, reuse, or test surface.
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

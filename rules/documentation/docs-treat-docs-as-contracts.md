@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Treat Docs as Contracts`
 - ID: `DOCS-TREAT-DOCS-AS-CONTRACTS`
+- Summary: `Treat supported behavior, commands, errors, and examples in docs as promises readers may
+  rely on. Separate normative claims from background, examples, and future plans.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

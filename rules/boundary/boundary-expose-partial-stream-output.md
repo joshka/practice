@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Expose Partial Stream Output`
 - ID: `BOUNDARY-EXPOSE-PARTIAL-STREAM-OUTPUT`
+- Summary: Surface streaming tokens, chunks, or events as provisional output until completion
+  promotes a final result. Callers get progress and diagnostics without corrupting authoritative
+  state with partial provider data.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

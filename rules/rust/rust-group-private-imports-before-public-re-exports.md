@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Group Private Imports Before Public Re-Exports`
 - ID: `RUST-GROUP-PRIVATE-IMPORTS-BEFORE-PUBLIC-RE-EXPORTS`
+- Summary: Separate implementation imports from public re-exports in module prologues. The grouping
+  lets readers distinguish internal dependencies from the API surface being presented.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

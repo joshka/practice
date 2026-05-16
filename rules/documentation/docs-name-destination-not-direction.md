@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Name Destination, Not Direction`
 - ID: `DOCS-NAME-DESTINATION-NOT-DIRECTION`
+- Summary: `Use labels that name the section, object, or decision the reader will reach. Directional
+  labels make readers follow the page order before knowing whether it is relevant.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

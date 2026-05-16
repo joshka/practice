@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Distinguish Failure States`
 - ID: `OBSERVABILITY-DISTINGUISH-FAILURE-STATES`
+- Summary: Preserve status distinctions that change recovery, messaging, metrics, or debugging.
+  Collapsing timeouts, denials, aborts, partial work, and failures makes callers guess.
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

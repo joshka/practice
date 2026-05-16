@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `State Current Behavior, Not Aspiration`
 - ID: `DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`
+- Summary: `Describe what the system does now and label limitations or future plans separately.
+  Otherwise roadmap language becomes a false contract for readers and agents.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Scheduling for Long Async Work`
 - ID: `RUST-DOCUMENT-SCHEDULING-FOR-LONG-ASYNC`
+- Summary: Explain executor, cancellation, blocking, and fairness expectations for async work that
+  can run long. Callers need those constraints to avoid starvation and runtime surprises.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

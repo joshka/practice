@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Opaque Boolean Assertions`
 - ID: `TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`
+- Summary: Prefer comparisons or richer assertions when many causes can make a boolean false. The
+  first failure should show the actual state needed to diagnose the regression.
 - Status: `reviewed`
 - Domain: `test-failures`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Treat And as Scope Warning`
 - ID: `CHANGE-TREAT-AND-AS-SCOPE-WARNING`
+- Summary: Use compound change descriptions as a prompt to inspect whether the work has more than
+  one purpose. The word is not a rule, but it catches scope creep while splitting is still cheap.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

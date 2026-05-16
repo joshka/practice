@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prefer Primary Stable Sources`
 - ID: `SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
+- Summary: Anchor durable guidance in sources readers can inspect, compare, and challenge. Use links
+  to clarify judgment, not to decorate rules or depend on private memory.
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `compact`

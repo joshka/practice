@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Markdown Lintable`
 - ID: `DOCS-KEEP-MARKDOWN-LINTABLE`
+- Summary: `Use project Markdown style so formatting stays enforceable and review noise stays low.
+  Treat lint exceptions as intentional local choices, not accumulated drift.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

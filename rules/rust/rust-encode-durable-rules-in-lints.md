@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Encode Durable Rules in Lints`
 - ID: `RUST-ENCODE-DURABLE-RULES-IN-LINTS`
+- Summary: Use lint configuration for project policies stable enough to automate. Durable lints
+  catch repeated mistakes without turning subjective taste into CI noise.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

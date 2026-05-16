@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Visibility Ownership`
 - ID: `RUST-DOCUMENT-VISIBILITY-OWNERSHIP`
+- Summary: Pair widened visibility with names and docs that identify the owning concept. This
+  prevents shared internals from looking like accidental stable API.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

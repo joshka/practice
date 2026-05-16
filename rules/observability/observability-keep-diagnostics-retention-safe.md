@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Diagnostics Retention Safe`
 - ID: `OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`
+- Summary: Match diagnostic detail to its audience and retention period. Redact or summarize
+  sensitive values while preserving enough operation context to debug.
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

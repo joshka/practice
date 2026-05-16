@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Dependency Updates Intentional`
 - ID: `RUST-KEEP-DEPENDENCY-UPDATES-INTENTIONAL`
+- Summary: Separate maintenance-only dependency refreshes from updates that change behavior,
+  features, MSRV, or integration. Reviewable grouping lowers noise without hiding downstream risk.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

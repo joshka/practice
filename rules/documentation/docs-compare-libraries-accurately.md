@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Compare Libraries Accurately`
 - ID: `DOCS-COMPARE-LIBRARIES-ACCURATELY`
+- Summary: `Check current upstream behavior before comparing nearby libraries or crates. Charitable,
+  source-backed comparisons preserve trust while still helping users choose.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use ADRs for Boundaries and Ownership`
 - ID: `REVIEW-USE-ADRS-FOR-BOUNDARIES-AND-OWNERSHIP`
+- Summary: Record durable ownership, API, storage, topology, runtime, or service-boundary decisions
+  in ADRs. A decision record gives later contributors a stable tradeoff to affirm, revise, or
+  replace.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

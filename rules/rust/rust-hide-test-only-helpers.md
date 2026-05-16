@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Hide Test-Only Helpers`
 - ID: `RUST-HIDE-TEST-ONLY-HELPERS`
+- Summary: Keep fixtures and shortcuts behind test-only modules, features, or support crates unless
+  they are deliberate API. This prevents scaffolding from leaking into production contracts.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

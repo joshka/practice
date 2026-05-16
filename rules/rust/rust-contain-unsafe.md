@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Contain Unsafe`
 - ID: `RUST-CONTAIN-UNSAFE`
+- Summary: Keep unsafe blocks small, wrapped by safe APIs, documented, and tested through safe
+  behavior. Localized obligations make the safety argument auditable.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

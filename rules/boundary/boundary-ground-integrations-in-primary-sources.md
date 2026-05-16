@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Ground Integrations In Primary Sources`
 - ID: `BOUNDARY-GROUND-INTEGRATIONS-IN-PRIMARY-SOURCES`
+- Summary: Base adapter behavior on provider docs, specs, or captured API responses before encoding
+  local assumptions. When primary sources are incomplete, label observations and inferences so
+  guesses do not become fake guarantees.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

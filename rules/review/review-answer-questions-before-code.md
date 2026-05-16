@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Answer Questions Before Code`
 - ID: `REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`
+- Summary: Answer reviewer questions before or alongside the code changes that address them. This
+  keeps intent, tradeoffs, and unresolved choices visible instead of burying the reasoning in a new
+  patch.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

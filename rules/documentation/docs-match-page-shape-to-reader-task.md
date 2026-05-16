@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Match Page Shape to Reader Task`
 - ID: `DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`
+- Summary: `Shape pages around the reader's task, such as learning, choosing, reference, or review.
+  The right structure lowers scan cost without forcing one page to do every job.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `expanded`

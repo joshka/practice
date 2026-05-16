@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Unnecessary Dependency Churn`
 - ID: `CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`
+- Summary: Keep package, manifest, and lockfile movement out of unrelated work. Separate dependency
+  changes make build, compatibility, and downstream risk reviewable on their own.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

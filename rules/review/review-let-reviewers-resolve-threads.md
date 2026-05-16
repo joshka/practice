@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Let Reviewers Resolve Threads`
 - ID: `REVIEW-LET-REVIEWERS-RESOLVE-THREADS`
+- Summary: Leave nontrivial review threads for the reviewer to resolve after they confirm the
+  concern was addressed. Authors should only close unambiguous mechanical threads, because
+  resolution carries communication ownership.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

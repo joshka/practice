@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Track Dynamic Registration Provenance`
 - ID: `BOUNDARY-TRACK-DYNAMIC-REGISTRATION-PROVENANCE`
+- Summary: Store stable source names, versions, paths, owners, or generated identifiers for
+  extension, guest, generated-code, and config registrations. Provenance makes conflicts and
+  failures diagnosable while avoiding sensitive source details.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

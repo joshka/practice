@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Verify Commands, Paths, and Links`
 - ID: `DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`
+- Summary: `Check commands, file paths, and linked references because readers treat them as
+  executable instructions. Note assumptions when credentials, services, or platforms prevent a full
+  run.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

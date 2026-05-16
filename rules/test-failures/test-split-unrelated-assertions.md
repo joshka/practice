@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Split Unrelated Assertions`
 - ID: `TEST-SPLIT-UNRELATED-ASSERTIONS`
+- Summary: Split assertions that diagnose different behaviors when one failure would hide another.
+  Keep checks together only when they express one contract more clearly as a group.
 - Status: `reviewed`
 - Domain: `test-failures`
 - Depth: `compact`

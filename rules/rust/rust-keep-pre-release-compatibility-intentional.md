@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Pre-Release Compatibility Intentional`
 - ID: `RUST-KEEP-PRE-RELEASE-COMPATIBILITY-INTENTIONAL`
+- Summary: Preserve pre-release compatibility only when it reflects a chosen contract. Early cleanup
+  is often cheaper than freezing accidental names, re-exports, features, or variants.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Distinguish Example Roles`
 - ID: `DOCS-DISTINGUISH-EXAMPLE-ROLES`
+- Summary: `Name whether an example is focused, canonical, survey, integration, or showcase work.
+  That role controls how complete, copyable, and validated the example must be.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

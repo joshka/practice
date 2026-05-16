@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Make Ambient Inputs Explicit`
 - ID: `BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`
+- Summary: Pass time, randomness, environment, locale, terminal size, network clients, and process
+  state through visible inputs when they affect behavior. Injecting only the relevant ambient values
+  improves tests and portability without spreading oversized context objects.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

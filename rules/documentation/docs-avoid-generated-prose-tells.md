@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Generated Prose Tells`
 - ID: `DOCS-AVOID-GENERATED-PROSE-TELLS`
+- Summary: `Replace templated, UI-centered, or polished-but-vague phrasing with concrete behavior.
+  Keep the local voice trustworthy without cutting useful explanation.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

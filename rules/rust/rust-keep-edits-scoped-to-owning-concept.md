@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Edits Scoped to Owning Concept`
 - ID: `RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`
+- Summary: Change the module, crate, feature, or facade that owns the behavior being fixed. Scoped
+  edits keep reviews atomic and prevent nearby files from pulling in unrelated concepts.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

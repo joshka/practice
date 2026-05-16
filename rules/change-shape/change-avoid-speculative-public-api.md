@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Speculative Public API`
 - ID: `CHANGE-AVOID-SPECULATIVE-PUBLIC-API`
+- Summary: Add public surfaces only when current or accepted callers need them. Waiting for concrete
+  pressure keeps compatibility commitments smaller and easier to validate.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

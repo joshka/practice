@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Make Review Easy to Inspect`
 - ID: `DOCS-MAKE-REVIEW-EASY-TO-INSPECT`
+- Summary: `Package documentation changes so reviewers can see scope, evidence, and rendered impact
+  quickly. Small inspectable changes reduce hidden drift and style-only review loops.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

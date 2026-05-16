@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use Descriptive Headings`
 - ID: `DOCS-USE-DESCRIPTIVE-HEADINGS`
+- Summary: `Write headings that name the section content, destination, or decision area. Reserve
+  imperative headings for procedures where the section is truly a step.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

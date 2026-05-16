@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Keep Binaries Out of Source Control`
 - ID: `SOURCE-KEEP-BINARIES-OUT-OF-SOURCE-CONTROL`
+- Summary: Store large or opaque artifacts in systems designed for assets, releases, CI evidence, or
+  external data. Keeping source history textual and reviewable avoids clone cost and painful history
+  rewrites.
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `expanded`

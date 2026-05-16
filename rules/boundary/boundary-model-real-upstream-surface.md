@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Model Real Upstream Surface`
 - ID: `BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`
+- Summary: Shape local integration APIs around the provider's actual records, pages, permissions,
+  rate limits, and consistency behavior. Wrappers may simplify common paths, but they should not
+  promise capabilities the upstream cannot provide.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

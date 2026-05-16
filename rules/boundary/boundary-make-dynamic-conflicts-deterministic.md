@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Make Dynamic Conflicts Deterministic`
 - ID: `BOUNDARY-MAKE-DYNAMIC-CONFLICTS-DETERMINISTIC`
+- Summary: Define stable ordering, duplicate handling, priority, or override policy for dynamic
+  registrations. Deterministic conflict behavior prevents hash order or load timing from changing
+  which plugin, guest, generated item, or handler wins.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

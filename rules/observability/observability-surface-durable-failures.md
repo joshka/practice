@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Surface Durable Failures`
 - ID: `OBSERVABILITY-SURFACE-DURABLE-FAILURES`
+- Summary: Give persistent failures a stable status, error surface, or retry path instead of only an
+  ephemeral UI log. Users and maintainers need something actionable after the moment passes.
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

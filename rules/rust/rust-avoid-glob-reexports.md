@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Glob Re-Exports`
 - ID: `RUST-AVOID-GLOB-REEXPORTS`
+- Summary: Re-export public facade names explicitly instead of using globs. This prevents
+  accidental API expansion and makes exported names visible during review.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

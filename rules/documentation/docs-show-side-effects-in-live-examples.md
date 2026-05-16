@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Show Side Effects in Live Examples`
 - ID: `DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`
+- Summary: `Show setup, visible effects, and cleanup when examples touch live resources or
+  persistent state. Gate costly or externally visible actions so examples stay honest and safe to
+  adapt.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

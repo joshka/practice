@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Report Provider Diagnostics`
 - ID: `BOUNDARY-REPORT-PROVIDER-DIAGNOSTICS`
+- Summary: Return freshness, permission, budget, load, cache, partial-result, and degradation
+  signals with provider-backed data. These diagnostics help callers decide trust, retry, display,
+  and support behavior without exposing unactionable internals.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

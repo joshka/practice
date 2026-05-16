@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Identify Anemic State Machines`
 - ID: `BOUNDARY-IDENTIFY-ANEMIC-STATE-MACHINES`
+- Summary: Replace scattered booleans and conditionals with named states and transitions when
+  lifecycle behavior is already complex. The move exposes illegal transitions and missing recovery
+  paths without over-formalizing simple linear code.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

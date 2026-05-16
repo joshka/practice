@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Separate Pure Core From Effects`
 - ID: `BOUNDARY-SEPARATE-PURE-CORE-FROM-EFFECTS`
+- Summary: Move domain computation away from rendering, I/O, mutation, and global state when effects
+  obscure the decision being tested. The split gives tests a stable surface, but should be skipped
+  when it adds indirection without a useful boundary.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

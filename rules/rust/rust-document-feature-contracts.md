@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Feature Contracts`
 - ID: `RUST-DOCUMENT-FEATURE-CONTRACTS`
+- Summary: Explain what each feature flag enables, requires, and promises. Feature contracts help
+  users choose combinations without guessing from dependency names.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

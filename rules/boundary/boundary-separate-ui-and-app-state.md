@@ -2,7 +2,12 @@
 
 ## Metadata
 
+- Name: `Separate UI And App State`
 - ID: `BOUNDARY-SEPARATE-UI-AND-APP-STATE`
+- Summary: Keep selection, focus, scroll, expansion, and transient input mode separate from
+  application-owned data when they change under different rules. The separation prevents rendering
+  concerns from mutating domain state while allowing tiny tools to stay simple until friction
+  appears.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

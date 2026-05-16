@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Deny Accidental Unsafe`
 - ID: `RUST-DENY-ACCIDENTAL-UNSAFE`
+- Summary: Use a crate-level lint when a crate intends to avoid unsafe code entirely. Executable
+  policy catches accidental unsafe before it becomes normal implementation detail.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

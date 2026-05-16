@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prefer Small Follow-Ups`
 - ID: `CHANGE-PREFER-SMALL-FOLLOW-UPS`
+- Summary: Move adjacent cleanup or broader improvements into focused follow-up changes when the
+  current diff can stand alone. This preserves review focus while still capturing useful work.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

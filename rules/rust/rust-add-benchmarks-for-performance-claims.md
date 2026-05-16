@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Add Benchmarks for Performance Claims`
 - ID: `RUST-ADD-BENCHMARKS-FOR-PERFORMANCE-CLAIMS`
+- Summary: Use benchmarks when Rust changes rely on speed, allocation, or hot-path claims. The
+  evidence makes performance tradeoffs reviewable instead of relying on intuition.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

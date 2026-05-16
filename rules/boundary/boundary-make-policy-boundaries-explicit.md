@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Make Policy Boundaries Explicit`
 - ID: `BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`
+- Summary: Route writes, network calls, shell execution, publication, telemetry, redaction, and
+  credential use through a visible policy decision before effects run. Callers can then understand
+  allowed, denied, redacted, fallback, preserved, and unsupported outcomes.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Make Guidance Review State Visible`
 - ID: `DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`
+- Summary: `Mark guidance maturity so readers know whether a rule is draft, reviewed, or ready for
+  reuse. Visible state prevents tentative advice from becoming an accidental standard.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

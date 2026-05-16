@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Giant Crate Roots`
 - ID: `RUST-AVOID-GIANT-CRATE-ROOTS`
+- Summary: Use the crate root to teach the public shape and route readers to focused modules. This
+  keeps `lib.rs` or `main.rs` from becoming the whole implementation surface.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

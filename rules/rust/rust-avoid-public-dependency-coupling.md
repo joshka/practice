@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Public Dependency Coupling`
 - ID: `RUST-AVOID-PUBLIC-DEPENDENCY-COUPLING`
+- Summary: Keep dependency types out of public APIs unless interoperability is the purpose. This
+  preserves semver freedom and avoids forcing downstream users onto implementation choices.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

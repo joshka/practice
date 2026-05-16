@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Review Correctness and Risk First`
 - ID: `DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`
+- Summary: `Lead documentation review with false contracts, drift, operability, and unsupported
+  claims before style polish. This separates blocking risk from wording cleanup.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

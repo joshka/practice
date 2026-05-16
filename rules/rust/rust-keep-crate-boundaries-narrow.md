@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Crate Boundaries Narrow`
 - ID: `RUST-KEEP-CRATE-BOUNDARIES-NARROW`
+- Summary: Put behavior and tests in the crate or module that owns them before extracting shared
+  helpers. Narrow boundaries reduce dependency fan-out, feature pressure, and hidden coupling.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

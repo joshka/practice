@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Separate Discovery, Selection, and Implementation`
 - ID: `REVIEW-SEPARATE-DISCOVERY-SELECTION-IMPLEMENTATION`
+- Summary: Split problem discovery, solution selection, and implementation review when they require
+  different decisions. This keeps design debate out of patch correctness review once scope or
+  direction is still unsettled.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

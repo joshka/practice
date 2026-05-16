@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Do Not Default pub(crate)`
 - ID: `RUST-DO-NOT-DEFAULT-PUB-CRATE`
+- Summary: Start items private and widen to `pub(crate)` only for deliberate shared internals. This
+  keeps modules independent and makes crate-local contracts visible.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

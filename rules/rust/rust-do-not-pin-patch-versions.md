@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Do Not Pin Patch Versions`
 - ID: `RUST-DO-NOT-PIN-PATCH-VERSIONS`
+- Summary: Keep manifest requirements as wide as the crate honestly supports. Patch pins belong in
+  `Cargo.toml` only when code depends on that patch's API, fix, or behavior.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

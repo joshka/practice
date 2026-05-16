@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Lifecycle and Side Effects`
 - ID: `DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`
+- Summary: `Document caller-visible lifecycle, ownership, platform, feature, and side-effect
+  obligations. Skip internal narration, but make operational responsibilities clear.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

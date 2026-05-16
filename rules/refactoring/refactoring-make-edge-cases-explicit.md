@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Make Edge Cases Explicit`
 - ID: `REFACTORING-MAKE-EDGE-CASES-EXPLICIT`
+- Summary: Name boundary behavior near the branch, calculation, or return that depends on it. This
+  makes policy reviewable and shows when stronger types should prevent invalid states instead.
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

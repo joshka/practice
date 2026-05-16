@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use Concrete Details`
 - ID: `DOCS-USE-CONCRETE-DETAILS`
+- Summary: `Name real commands, paths, defaults, types, examples, and work areas when they clarify
+  scope. Concrete detail removes guesswork without overloading prose with incidental facts.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

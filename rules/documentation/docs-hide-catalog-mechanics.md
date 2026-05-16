@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Hide Catalog Mechanics`
 - ID: `DOCS-HIDE-CATALOG-MECHANICS`
+- Summary: `Lead user-facing copy with work areas, artifacts, and destinations instead of IDs or
+  generated structure. Mention catalog mechanics only when citation or contribution work needs
+  them.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

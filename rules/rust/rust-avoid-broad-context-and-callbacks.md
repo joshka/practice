@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Broad Context and Callbacks`
 - ID: `RUST-AVOID-BROAD-CONTEXT-AND-CALLBACKS`
+- Summary: Pass explicit inputs and keep control flow local instead of hiding it in context bags or
+  callbacks. This makes ownership, effects, and ordering easier to audit.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

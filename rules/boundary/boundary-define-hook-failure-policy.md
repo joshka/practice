@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Define Hook Failure Policy`
 - ID: `BOUNDARY-DEFINE-HOOK-FAILURE-POLICY`
+- Summary: Specify whether each hook class blocks, retries, logs and continues, rolls back, or
+  leaves partial state. This gives extension points predictable failure behavior without forcing one
+  global answer onto every hook.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

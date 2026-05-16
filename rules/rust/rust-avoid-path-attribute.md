@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Path Attributes`
 - ID: `RUST-AVOID-PATH-ATTRIBUTE`
+- Summary: Use normal Rust module lookup unless generated or platform-specific layout needs
+  `#[path]`. Predictable file paths make navigation and ownership easier to infer.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

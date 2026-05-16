@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use Whitespace as Function Paragraphs`
 - ID: `REFACTORING-USE-WHITESPACE-AS-FUNCTION-PARAGRAPHS`
+- Summary: Use blank lines to group related statements inside a function before extracting more
+  names. Paragraph-like spacing can reveal the local story while avoiding unnecessary helper jumps.
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

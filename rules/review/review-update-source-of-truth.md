@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Update Source of Truth`
 - ID: `REVIEW-UPDATE-SOURCE-OF-TRUTH`
+- Summary: Put durable status changes in the owning issue, PR description, checklist, plan, or
+  handoff instead of posting low-signal comments. Updating the source of truth reduces notification
+  churn and makes the current state discoverable.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

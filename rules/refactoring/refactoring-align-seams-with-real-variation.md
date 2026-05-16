@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Align Seams with Real Variation`
 - ID: `REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION`
+- Summary: Put abstraction seams where code already varies across backends, policies, protocols,
+  tests, or ownership boundaries. Avoid adding names and jumps for hypothetical futures unless the
+  next change or risk clearly justifies them.
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Sync Generated Artifacts`
 - ID: `CHANGE-SYNC-GENERATED-ARTIFACTS`
+- Summary: Update checked-in generated outputs when their source inputs change and they are part of
+  review. Keeping them aligned prevents consumers from seeing stale artifacts.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

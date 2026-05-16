@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Group Related List Items`
 - ID: `DOCS-GROUP-RELATED-LIST-ITEMS`
+- Summary: `Cluster long lists under useful names when the relationships matter. Keep short or
+  causal material flat or in prose so structure does not add noise.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

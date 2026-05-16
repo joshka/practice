@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Current Implemented Behavior`
 - ID: `RUST-DOCUMENT-CURRENT-IMPLEMENTED-BEHAVIOR`
+- Summary: Document what the crate does today instead of presenting future plans as available
+  contract. Clear tense and labels prevent callers from relying on unimplemented behavior.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

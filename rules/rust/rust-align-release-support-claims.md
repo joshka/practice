@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Align Release Support Claims`
 - ID: `RUST-ALIGN-RELEASE-SUPPORT-CLAIMS`
+- Summary: Keep crate metadata, docs, changelogs, and support statements saying the same thing. The
+  alignment helps downstream users know which compatibility contract to trust.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

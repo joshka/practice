@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Avoid Tiny Module Mazes`
 - ID: `RUST-AVOID-TINY-MODULE-MAZES`
+- Summary: Keep small helper code near its use unless a separate module owns a real concept. This
+  reduces file-jumping and preserves reader locality.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

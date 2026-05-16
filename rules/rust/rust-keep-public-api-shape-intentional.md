@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Public API Shape Intentional`
 - ID: `RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
+- Summary: Make public visibility, aliases, features, re-exports, bounds, and variants reflect
+  intended commitments. Published surface area becomes something downstream users can depend on.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

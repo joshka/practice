@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Consider Downstream API Impact`
 - ID: `RUST-CONSIDER-DOWNSTREAM-API-IMPACT`
+- Summary: Check public API changes against downstream imports, traits, inference, and examples
+  before reshaping them. Additive paths and deprecations often avoid unnecessary breakage.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

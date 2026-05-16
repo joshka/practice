@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prove Real Use With Examples`
 - ID: `DOCS-PROVE-REAL-USE-WITH-EXAMPLES`
+- Summary: `Use examples that show realistic ownership, errors, lifecycle, configuration, or
+  integration shape. Keep them focused, but make them strong enough to prove the contract.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

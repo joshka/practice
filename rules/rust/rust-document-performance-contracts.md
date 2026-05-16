@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Performance Contracts`
 - ID: `RUST-DOCUMENT-PERFORMANCE-CONTRACTS`
+- Summary: State meaningful performance expectations when callers may design around them. Clear
+  limits keep complexity and optimization claims tied to supported behavior.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

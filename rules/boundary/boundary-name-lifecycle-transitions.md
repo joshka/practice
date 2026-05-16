@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Name Lifecycle Transitions`
 - ID: `BOUNDARY-NAME-LIFECYCLE-TRANSITIONS`
+- Summary: Model creation, activation, cancellation, teardown, reload, and promotion as named
+  operations when they carry different invariants. This keeps ordering, cleanup, retry, and recovery
+  rules visible without adding ceremony to simple constructed values.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

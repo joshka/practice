@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Front-Load Useful Point`
 - ID: `DOCS-FRONT-LOAD-USEFUL-POINT`
+- Summary: `Put the decision, command, invariant, or warning before broad setup. Readers and agents
+  can then use the page without hunting through introductory prose.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

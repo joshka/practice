@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Build Docs Like Users Read Them`
 - ID: `DOCS-BUILD-DOCS-LIKE-USERS-READ-THEM`
+- Summary: `Review rendered Rust documentation, links, cfg behavior, and examples in the modes users
+  see. Match validation depth to the risk of feature, metadata, or public example changes.`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Classify Prototype Reuse`
 - ID: `REVIEW-CLASSIFY-PROTOTYPE-REUSE`
+- Summary: Classify whether a rebuild is reusing behavior, evidence, replaceable internal shape, or
+  load-bearing boundaries. That separation helps preserve proven compatibility while discarding
+  prototype scaffolding.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

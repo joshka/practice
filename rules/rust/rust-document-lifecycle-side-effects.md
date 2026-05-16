@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Document Lifecycle Side Effects`
 - ID: `RUST-DOCUMENT-LIFECYCLE-SIDE-EFFECTS`
+- Summary: Document construction, start, stop, drop, and cleanup behavior when side effects matter.
+  Callers need to know when resources are acquired, released, spawned, or blocked.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

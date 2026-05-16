@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Configure docs.rs`
 - ID: `RUST-CONFIGURE-DOCS-RS`
+- Summary: Configure docs.rs metadata when features, cfgs, or rustdoc flags affect rendered API
+  docs. Users should see the documentation surface the crate expects to support.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

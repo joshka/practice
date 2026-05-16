@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Define Compaction Invariants`
 - ID: `BOUNDARY-DEFINE-COMPACTION-INVARIANTS`
+- Summary: State the budget and cut-point rules before deleting, summarizing, or moving context.
+  Explicit invariants make compaction reviewable and reduce the risk that later work treats lossy or
+  nondeterministic summaries as authoritative.
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

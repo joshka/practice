@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Preserve Unowned Work`
 - ID: `CHANGE-PRESERVE-UNOWNED-WORK`
+- Summary: Treat nearby edits from users, agents, generators, or earlier changes as outside your
+  ownership unless the task says otherwise. Adapting around them protects parallel work and context.
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

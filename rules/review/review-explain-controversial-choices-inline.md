@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Explain Controversial Choices Inline`
 - ID: `REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`
+- Summary: Put short rationale near surprising dependencies, unsafe blocks, generated artifacts,
+  policy exceptions, or compatibility choices. Local explanation prevents reviewers and future
+  readers from rediscovering the same concern.
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`
