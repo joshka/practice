@@ -2,9 +2,10 @@
 
 This directory carries repo-local development guidance for agents and maintainers.
 
-The generated rule files are copied from the `development-preferences` repo, which is the canonical
-source for these shared rules. Update local validation commands and repo-specific notes here, but
-refresh copied rule text from upstream instead of editing it by hand.
+The generated rule files are copied from the `development-preferences` repo. The canonical rendered
+reference is [Software Practices](https://www.joshka.net/practice/). Update local validation
+commands and repo-specific notes in the repo's `AGENTS.md`, but refresh copied shared guidance from
+upstream instead of editing it by hand.
 
 From the canonical repo, refresh this downstream copy with:
 
@@ -12,16 +13,32 @@ From the canonical repo, refresh this downstream copy with:
 python3 scripts/generate_downstream_template.py --output /path/to/this-repo
 ```
 
+From this downstream repo, refresh this copy from GitHub with:
+
+```bash
+python3 docs/development/update.py
+```
+
+Set `DEVELOPMENT_PREFERENCES_DIR=/path/to/development-preferences` only when testing against a
+local source checkout.
+
 ## Files
 
+- `bootstrap-downstream.md`: instructions for an agent bootstrapping this guidance into a repo.
+- `snippets/agents/rules.md`: generated single-file reviewed-rule pack.
 - `rules/README.md`: generated index for the full compressed reviewed-rule pack.
 - `rules/*.md`: generated domain files containing every reviewed rule.
+- `update.py`: helper that refreshes this directory from the canonical source repository.
 
 ## Adoption Notes
 
 Keep `AGENTS.md` short enough to scan. Put the full rule pack in generated domain files so agents
 can load only the domains relevant to the task, while still ensuring every reviewed rule is
 represented downstream.
+
+This template intentionally copies compact agent-facing guidance rather than every source guide,
+pattern, principle, and mechanism. When a compact rule needs more context, use the public reference
+site or the canonical source repo.
 
 Update local validation commands, source-control notes, and project-specific boundaries in
 `AGENTS.md` or nearby local docs. If a generated rule is wrong, update the canonical

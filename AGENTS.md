@@ -18,6 +18,9 @@ paths.
 - Prefer concise, named guidance files over large monolithic docs when an idea needs reuse.
 - Give referenceable guidance stable names or IDs so it can be linked from guides, review comments,
   and agent snippets.
+- Capture feedback from downstream use when a rule, pattern, principle, mechanism, agent snippet,
+  or guide causes problems in another repo, especially when the issue would likely apply to most
+  work or most Rust work.
 
 ## Guidance Content
 

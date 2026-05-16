@@ -15,16 +15,19 @@ from generate_agent_rules import RULES_DIR, discover_rules, domain_name
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_TEMPLATE_DIR = ROOT / "templates" / "downstream"
+AGENT_RULE_PACK = ROOT / "snippets" / "agents" / "rules.md"
+CANONICAL_SITE = "https://www.joshka.net/practice/"
 
 
 def render_agents() -> str:
     return """# Agent Guidance
 
-Use this file as the repo-local map. Keep the full reviewed rule pack in
-`docs/development/rules/` so every rule is available without making this file a long manual.
+Use this file as the repo-local map. Keep the reviewed shared rule pack in
+`docs/development/` so every rule is available without making this file a long manual.
 
-The copied rule files come from the `development-preferences` repo, which is the canonical source
-for these rules. Refresh those files from that repo when the shared rule set changes.
+The copied development guidance comes from the `development-preferences` repo. The public reference
+site is [Software Practices](https://www.joshka.net/practice/). Use the local compact rules first,
+and use the site when a rule, pattern, principle, or guide needs more context.
 
 ## Local Rules
 
@@ -33,7 +36,14 @@ for these rules. Refresh those files from that repo when the shared rule set cha
 - Keep changes small, atomic, and reviewable.
 - Report validation evidence in handoffs instead of confidence language.
 - Use the validation commands listed below before handoff.
-- Read `docs/development/rules/README.md` for the full reviewed development rule pack.
+- Read `docs/development/snippets/agents/rules.md` for the single-file reviewed rule pack.
+- Read `docs/development/rules/README.md` when a task needs only one rule domain.
+- Preserve and prioritize repo-specific instructions in this file. Merge shared guidance into the
+  local agent map; do not replace local project rules with the template blindly.
+- Refresh copied guidance with `python3 docs/development/update.py` when the shared rule set
+  changes.
+- If a shared rule causes trouble or should be changed for most projects, capture that feedback for
+  the `development-preferences` repo.
 
 ## Validation
 
@@ -47,8 +57,13 @@ markdownlint-cli2 "**/*.md"
 
 ## Deeper Guidance
 
-- `docs/development/rules/README.md`: generated index for all reviewed rule domains.
+- `docs/development/snippets/agents/rules.md`: generated single-file reviewed rule pack.
+- `docs/development/rules/README.md`: generated index for reviewed rule domains.
+- `docs/development/bootstrap-downstream.md`: instructions for refreshing and merging this guidance
+  into a downstream repo.
 - `docs/development/README.md`: local map for development guidance.
+- [Software Practices](https://www.joshka.net/practice/): canonical rendered reference for guides,
+  rules, patterns, principles, mechanisms, and tags.
 """
 
 
@@ -57,9 +72,10 @@ def render_readme() -> str:
 
 This directory carries repo-local development guidance for agents and maintainers.
 
-The generated rule files are copied from the `development-preferences` repo, which is the canonical
-source for these shared rules. Update local validation commands and repo-specific notes here, but
-refresh copied rule text from upstream instead of editing it by hand.
+The generated rule files are copied from the `development-preferences` repo. The canonical rendered
+reference is [Software Practices](https://www.joshka.net/practice/). Update local validation
+commands and repo-specific notes in the repo's `AGENTS.md`, but refresh copied shared guidance from
+upstream instead of editing it by hand.
 
 From the canonical repo, refresh this downstream copy with:
 
@@ -67,10 +83,22 @@ From the canonical repo, refresh this downstream copy with:
 python3 scripts/generate_downstream_template.py --output /path/to/this-repo
 ```
 
+From this downstream repo, refresh this copy from GitHub with:
+
+```bash
+python3 docs/development/update.py
+```
+
+Set `DEVELOPMENT_PREFERENCES_DIR=/path/to/development-preferences` only when testing against a
+local source checkout.
+
 ## Files
 
+- `bootstrap-downstream.md`: instructions for an agent bootstrapping this guidance into a repo.
+- `snippets/agents/rules.md`: generated single-file reviewed-rule pack.
 - `rules/README.md`: generated index for the full compressed reviewed-rule pack.
 - `rules/*.md`: generated domain files containing every reviewed rule.
+- `update.py`: helper that refreshes this directory from the canonical source repository.
 
 ## Adoption Notes
 
@@ -78,10 +106,164 @@ Keep `AGENTS.md` short enough to scan. Put the full rule pack in generated domai
 can load only the domains relevant to the task, while still ensuring every reviewed rule is
 represented downstream.
 
+This template intentionally copies compact agent-facing guidance rather than every source guide,
+pattern, principle, and mechanism. When a compact rule needs more context, use the public reference
+site or the canonical source repo.
+
 Update local validation commands, source-control notes, and project-specific boundaries in
 `AGENTS.md` or nearby local docs. If a generated rule is wrong, update the canonical
 `development-preferences` repo and recopy the generated files.
 """
+
+
+def render_bootstrap_doc() -> str:
+    return """# Bootstrap Downstream Guidance
+
+Use this document when an agent is asked to bring shared development guidance into a downstream
+repository.
+
+The goal is a useful local agent map, not a verbatim replacement of the downstream repo's existing
+instructions. Preserve local project rules, validation commands, architecture notes, and workflow
+constraints. Add links to the copied shared guidance so future agents can load more context when a
+task needs it.
+
+## Source
+
+- Canonical source repository: `https://github.com/joshka/practice`
+- Canonical rendered reference: [Software Practices](https://www.joshka.net/practice/)
+- Local copied guidance root: `docs/development/`
+
+## Bootstrap Steps
+
+1. Inspect the downstream repo's existing `AGENTS.md` and nearby project docs.
+1. Refresh or install the copied shared guidance:
+
+   ```bash
+   python3 docs/development/update.py
+   ```
+
+   If this file is not present yet, copy `templates/downstream/` from the source repo or run the
+   source generator:
+
+   ```bash
+   python3 scripts/generate_downstream_template.py --output /path/to/downstream-repo
+   ```
+
+1. Merge the shared guidance into the downstream `AGENTS.md` instead of replacing local content.
+1. Keep `AGENTS.md` short. It should route agents to deeper files rather than becoming the full
+   rule book.
+1. Add or keep local validation commands, source-control rules, ownership boundaries, and project
+   conventions.
+1. Run the downstream repo's normal formatting, linting, and test checks.
+1. Report what changed, what was preserved, and what validation ran.
+
+## Recommended `AGENTS.md` Entry
+
+Adapt this section to the downstream repo's voice:
+
+```markdown
+## Shared Development Preferences
+
+This repo carries a local copy of shared development guidance in `docs/development/`.
+Use this repo's local rules first. When local guidance is silent, use the shared guidance as a
+fallback.
+
+Entry points:
+
+- `docs/development/snippets/agents/rules.md`: compact reviewed rule pack.
+- `docs/development/rules/README.md`: rule domains for targeted loading.
+- `docs/development/bootstrap-downstream.md`: how to refresh and merge the guidance.
+- https://www.joshka.net/practice/: rendered reference with deeper guide, rule, pattern, principle,
+  mechanism, and tag context.
+
+If a shared rule causes friction or seems wrong for most Rust or agent work, capture that feedback
+for the `development-preferences` repo instead of only patching around it locally.
+```
+
+## Merge Guidance
+
+Prefer local specificity over shared defaults. For example, keep project-specific validation such as
+`just check`, `cargo +nightly fmt --all`, fixture-update commands, or release gates.
+
+Prefer shared guidance for general agent behavior, review handoffs, jj workflow, Rust
+maintainability, documentation shape, and source-control hygiene when the downstream repo does not
+already have a stronger local rule.
+
+Do not copy every source guide into `AGENTS.md`. Link to the local compact rules and the public site
+for deeper context.
+"""
+
+
+def render_update_script() -> str:
+    return '''#!/usr/bin/env python3
+"""Refresh copied development guidance from the canonical source repository."""
+
+from __future__ import annotations
+
+import os
+import shutil
+import subprocess
+import sys
+import tempfile
+from pathlib import Path
+
+
+SOURCE_REPO = "https://github.com/joshka/practice.git"
+
+
+def explicit_source() -> Path | None:
+    configured = os.environ.get("DEVELOPMENT_PREFERENCES_DIR")
+    if not configured:
+        return None
+    source = Path(configured).expanduser().resolve()
+    generator = source / "scripts" / "generate_downstream_template.py"
+    if not generator.exists():
+        raise SystemExit(
+            f"DEVELOPMENT_PREFERENCES_DIR does not contain {generator.relative_to(source)}"
+        )
+    return source
+
+
+def clone_source() -> tuple[tempfile.TemporaryDirectory[str], Path]:
+    if shutil.which("git") is None:
+        raise SystemExit(
+            "git is required to refresh guidance from GitHub. Install git or set "
+            "DEVELOPMENT_PREFERENCES_DIR to a local checkout."
+        )
+
+    temp = tempfile.TemporaryDirectory(prefix="development-preferences-")
+    source = Path(temp.name) / "practice"
+    subprocess.run(
+        ["git", "-c", "commit.gpgsign=false", "clone", "--depth", "1", SOURCE_REPO, str(source)],
+        check=True,
+    )
+    return temp, source
+
+
+def main() -> int:
+    repo_root = Path(__file__).resolve().parents[2]
+    temp: tempfile.TemporaryDirectory[str] | None = None
+    source = explicit_source()
+    if source is None:
+        temp, source = clone_source()
+
+    try:
+        generator = source / "scripts" / "generate_downstream_template.py"
+        subprocess.run(
+            [sys.executable, str(generator), "--output", str(repo_root), "--preserve-agents"],
+            check=True,
+        )
+    finally:
+        if temp is not None:
+            temp.cleanup()
+
+    print(f"Refreshed development guidance from {source}")
+    return 0
+
+
+if __name__ == "__main__":
+    raise SystemExit(main())
+'''
 
 
 def wrap_bullet(text: str) -> list[str]:
@@ -146,12 +328,18 @@ def render_domain_rules(domain: str, rules: list) -> str:
 
 def outputs(template_dir: Path) -> dict[Path, str]:
     agents = template_dir / "AGENTS.md"
+    bootstrap = template_dir / "docs" / "development" / "bootstrap-downstream.md"
     readme = template_dir / "docs" / "development" / "README.md"
+    update_script = template_dir / "docs" / "development" / "update.py"
+    snippets = template_dir / "docs" / "development" / "snippets" / "agents"
     rules = template_dir / "docs" / "development" / "rules"
     domains = rules_by_domain()
     rendered = {
         agents: render_agents(),
+        bootstrap: render_bootstrap_doc(),
         readme: render_readme(),
+        update_script: render_update_script(),
+        snippets / "rules.md": AGENT_RULE_PACK.read_text(),
         rules / "README.md": render_domain_index(domains),
     }
     for domain, domain_rules in domains.items():
@@ -175,10 +363,18 @@ def main() -> int:
             "AGENTS.md and docs/development/rules there"
         ),
     )
+    parser.add_argument(
+        "--preserve-agents",
+        action="store_true",
+        help="do not overwrite an existing AGENTS.md in the output directory",
+    )
     args = parser.parse_args()
 
     template_dir = args.output if args.output.is_absolute() else ROOT / args.output
     rendered = outputs(template_dir)
+    agents_path = template_dir / "AGENTS.md"
+    if args.preserve_agents and agents_path.exists():
+        rendered.pop(agents_path, None)
     if args.check:
         stale = [
             path.relative_to(ROOT).as_posix()
