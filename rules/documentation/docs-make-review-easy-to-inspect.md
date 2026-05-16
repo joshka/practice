@@ -8,7 +8,8 @@
   quickly. Small inspectable changes reduce hidden drift and style-only review loops.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reviewability, review-handoff`
+- Related: `small-reviewable-chunks, produce-review-packets`
 
 ## Rule
 

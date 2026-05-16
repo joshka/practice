@@ -6,9 +6,11 @@
 - ID: `AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`
 - Summary: Put invisible constraints such as security, accessibility, latency, and compatibility
   near the task. Encoding them upfront makes those requirements part of the implementation target.
+- Related: `encode-nonfunctional-requirements, make-bad-output-mechanically-hard,
+  explicit-boundaries-preserve-correctness`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, security-privacy, performance, verification`
 
 ## Rule
 

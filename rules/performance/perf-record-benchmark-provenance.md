@@ -9,7 +9,8 @@
   from environment drift.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, verification, tooling, source-truth`
+- Related: `measure-before-optimizing, report-verification-honestly, prefer-durable-summaries`
 
 ## Rule
 

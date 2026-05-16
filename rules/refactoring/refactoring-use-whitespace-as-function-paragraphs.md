@@ -8,7 +8,8 @@
   names. Paragraph-like spacing can reveal the local story while avoiding unnecessary helper jumps.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `reader-locality, local-conventions, change-shape`
+- Related: `chunk-statements, reader-locality, use-explaining-variable`
 
 ## Rule
 

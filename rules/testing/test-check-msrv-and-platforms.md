@@ -8,7 +8,8 @@
   Compatibility claims are public contracts, so skip matrices only when no such claim exists.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, rust, verification, automation`
+- Related: `rust-align-release-support-claims, test-keep-drift-claims-aligned`
 
 ## Rule
 

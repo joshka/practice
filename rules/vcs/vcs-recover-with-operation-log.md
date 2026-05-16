@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-use-evolog-and-operation-log, preserve-unowned-work`
 
 ## Rule
 

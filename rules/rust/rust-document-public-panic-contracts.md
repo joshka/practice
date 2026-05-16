@@ -8,7 +8,8 @@
   keep recoverable errors, invariants, and misuse boundaries explicit.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, errors, validation-policy`
+- Related: `document-errors-panics-safety, make-validation-policy-explicit`
 
 ## Rule
 

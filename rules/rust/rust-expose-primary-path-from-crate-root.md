@@ -8,7 +8,8 @@
   have to infer the intended entry point from private layout details.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, reader-locality, rustdoc`
+- Related: `RUST-TEACH-CRATE-FROM-CRATE-ROOT, RUST-REEXPORT-FOR-DISCOVERY`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   prevents shared internals from looking like accidental stable API.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, ownership, public-api`
+- Related: `reader-locality, RUST-DO-NOT-DEFAULT-PUB-CRATE, RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   keeps `lib.rs` or `main.rs` from becoming the whole implementation surface.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, public-api, documentation`
+- Related: `reader-locality, RUST-EXPOSE-PRIMARY-PATH-FROM-CRATE-ROOT`
 
 ## Rule
 

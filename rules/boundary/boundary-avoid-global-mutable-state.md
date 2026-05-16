@@ -9,7 +9,8 @@
   globals such as caches or registries when their contract is visible.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, state-transitions, side-effects, testing`
+- Related: `avoid-global-mutable-state, inject-time-and-randomness, make-side-effects-visible`
 
 ## Rule
 

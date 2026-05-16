@@ -8,7 +8,8 @@
   Extract only the substeps that carry their own concept, policy, reuse, or test surface.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `reader-locality, change-shape`
+- Related: `reader-locality, chunk-statements, separate-structure-from-behavior`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   correct.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, documentation, examples, source-truth`
+- Related: `docs-are-contracts, remediate-doc-drift, DOCS-ALIGN-README-AND-CRATE-RUSTDOC`
 
 ## Rule
 

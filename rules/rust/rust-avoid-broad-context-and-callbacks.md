@@ -8,7 +8,8 @@
   callbacks. This makes ownership, effects, and ordering easier to audit.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, side-effects, boundary-correctness`
+- Related: `make-parameters-explicit, limit-live-context`
 
 ## Rule
 

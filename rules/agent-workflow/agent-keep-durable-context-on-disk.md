@@ -6,9 +6,11 @@
 - ID: `AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`
 - Summary: Store project facts, accepted decisions, and long-lived operating notes in files instead
   of relying on chat context. Durable context makes future sessions and reviews resumable.
+- Related: `use-disk-as-context-sink, prefer-durable-summaries,
+  private-context-is-not-shared-context`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, agent-context, source-truth, documentation`
 
 ## Rule
 

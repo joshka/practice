@@ -9,7 +9,8 @@
   domain-specific checks that require later context remain explicit policy decisions.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, validation-policy, errors, source-truth`
+- Related: `parse-dont-validate, make-validation-policy-explicit, label-doc-claims-by-evidence`
 
 ## Rule
 

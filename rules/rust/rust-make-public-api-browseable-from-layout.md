@@ -9,7 +9,8 @@
   the owning concept.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, reader-locality, ownership`
+- Related: `rust-reexport-for-discovery, rust-expose-primary-path-from-crate-root, reader-locality`
 
 ## Rule
 

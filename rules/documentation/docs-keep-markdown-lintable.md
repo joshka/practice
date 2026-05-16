@@ -8,7 +8,8 @@
   Treat lint exceptions as intentional local choices, not accumulated drift.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, tooling, local-conventions, reviewability`
+- Related: `make-bad-output-mechanically-hard, TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
 
 ## Rule
 

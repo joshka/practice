@@ -9,7 +9,8 @@
   soundness, or design repair still justify the break.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, verification, release`
+- Related: `public-api-changes-have-downstream-cost, rust-consider-downstream-api-impact`
 
 ## Rule
 

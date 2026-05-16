@@ -8,7 +8,8 @@
   They remove mechanical failures quickly, but they do not replace validation of risky behavior.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, tooling, automation, reviewability`
+- Related: `close-the-agent-loop, test-keep-slow-checks-out-of-pr-ci`
 
 ## Rule
 

@@ -6,9 +6,11 @@
 - ID: `AGENT-PREFER-TOOLS-OVER-PROMPTS`
 - Summary: Move repeated instructions into tools, checks, templates, or durable guides. Tooling
   catches failures even when prompts are short, compacted, or interpreted differently.
+- Related: `prefer-tools-over-prompts, teach-agents-through-tools,
+  make-bad-output-mechanically-hard`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, tooling, automation, documentation`
 
 ## Rule
 

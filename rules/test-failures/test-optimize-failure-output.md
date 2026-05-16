@@ -6,9 +6,11 @@
 - ID: `TEST-OPTIMIZE-FAILURE-OUTPUT`
 - Summary: Design tests so failures include expected values, actual values, inputs, and contract
   context where that helps repair. Useful output shortens CI and agent debugging loops.
+- Related: `tests-should-explain-failures, test-observable-behavior,
+  smallest-trustworthy-verification`
 - Status: `reviewed`
 - Domain: `test-failures`
-- Depth: `compact`
+- Tags: `testing, failure-output, errors, reviewability`
 
 ## Rule
 

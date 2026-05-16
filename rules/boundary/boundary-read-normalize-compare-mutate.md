@@ -9,7 +9,8 @@
   formatting, defaults, ordering, or outside actors create drift.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, state-transitions, validation-policy, side-effects`
+- Related: `parse-dont-validate, prefer-standard-conversions, make-state-transitions-explicit`
 
 ## Rule
 

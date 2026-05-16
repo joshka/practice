@@ -9,7 +9,8 @@
   builds.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, validation-policy, failure-output`
+- Related: `make-invalid-states-hard-to-express, rust-document-public-panic-contracts`
 
 ## Rule
 

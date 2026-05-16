@@ -9,7 +9,8 @@
   documentation.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, public-api, reader-locality`
+- Related: `rust-reexport-for-discovery, rust-teach-crate-from-crate-root`
 
 ## Rule
 

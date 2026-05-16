@@ -9,7 +9,8 @@
   opt-in or capability-detected after the baseline is readable and usable.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, tooling, local-conventions, verification`
+- Related: `make-parameters-explicit, make-bad-output-mechanically-hard, test-observable-behavior`
 
 ## Rule
 

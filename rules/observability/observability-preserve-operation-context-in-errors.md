@@ -6,9 +6,11 @@
 - ID: `OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`
 - Summary: Carry the operation, resource, provider, input class, and policy context that explain a
   failure. Stable identifiers and sanitized summaries shorten debugging without exposing payloads.
+- Related: `preserve-error-context, make-failures-observable,
+  write-actionable-error-messages`
 - Status: `reviewed`
 - Domain: `observability`
-- Depth: `compact`
+- Tags: `observability, errors, failure-output, boundary-correctness`
 
 ## Rule
 

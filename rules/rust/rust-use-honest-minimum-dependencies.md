@@ -8,7 +8,8 @@
   Raise minimums only for required APIs, fixes, features, security needs, or MSRV interactions.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, public-api, verification`
+- Related: `keep-public-dependencies-intentional, rust-keep-compatible-updates-in-lockfile`
 
 ## Rule
 

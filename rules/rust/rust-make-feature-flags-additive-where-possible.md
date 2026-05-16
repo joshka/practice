@@ -9,7 +9,8 @@
   addition cannot model the real choice.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, public-api, boundary-correctness`
+- Related: `keep-public-dependencies-intentional, rust-document-feature-contracts`
 
 ## Rule
 

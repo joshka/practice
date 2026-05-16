@@ -9,7 +9,9 @@
   patch.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, review-handoff, agent-context`
+- Related: private-context-is-not-shared-context, produce-review-packets,
+  preserve-intent-over-literalism
 
 ## Rule
 

@@ -8,7 +8,8 @@
   parallel items. The shape should reveal the relationship instead of hiding it in bullets.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, reviewability`
+- Related: `chunk-statements, DOCS-GROUP-RELATED-LIST-ITEMS`
 
 ## Rule
 

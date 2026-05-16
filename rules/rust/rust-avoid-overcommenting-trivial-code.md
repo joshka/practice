@@ -8,7 +8,8 @@
   restating obvious operations. This keeps comments useful and less prone to drift.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, reader-locality`
+- Related: `delete-redundant-comments, document-errors-panics-safety`
 
 ## Rule
 

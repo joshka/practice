@@ -6,9 +6,11 @@
 - ID: `OBSERVABILITY-DISTINGUISH-FAILURE-STATES`
 - Summary: Preserve status distinctions that change recovery, messaging, metrics, or debugging.
   Collapsing timeouts, denials, aborts, partial work, and failures makes callers guess.
+- Related: `make-failures-observable, return-structured-errors,
+  make-state-transitions-explicit`
 - Status: `reviewed`
 - Domain: `observability`
-- Depth: `compact`
+- Tags: `observability, failure-output, errors, state-transitions`
 
 ## Rule
 

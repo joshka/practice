@@ -9,7 +9,9 @@
   replace.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, boundary-correctness, ownership, documentation`
+- Related: document-system-mental-models, explicit-boundaries-preserve-correctness,
+  docs-are-contracts
 
 ## Rule
 

@@ -6,9 +6,11 @@
 - ID: `AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`
 - Summary: Capture fast-review notes before fixing them when there are multiple comments or unclear
   patterns. Separating capture from correction preserves signal and supports coherent follow-up.
+- Related: `separate-discovery-from-editing, preserve-agent-context-coherence,
+  produce-review-packets`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, agent-context, reviewability, change-shape`
 
 ## Rule
 

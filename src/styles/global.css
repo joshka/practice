@@ -69,8 +69,10 @@
     inset 0 1px 0 rgb(255 255 255 / 0.04);
   --panel-gradient: linear-gradient(180deg, #252a35 0%, #202530 100%);
   --panel-gradient-high: linear-gradient(180deg, #303747 0%, #252b36 100%);
+  --summary-gradient: linear-gradient(180deg, #31405d 0%, #27344d 100%);
   --primary-gradient: linear-gradient(180deg, #3d66c8 0%, #2d52ae 100%);
   --primary-glow: 0 0 0 1px rgb(173 200 243 / 0.26), 0 0 20px rgb(61 102 200 / 0.24);
+  --summary-glow: 0 0 0 1px rgb(173 200 243 / 0.34), 0 16px 34px rgb(61 102 200 / 0.16);
   --engraved-text: 0 1px 0 rgb(0 0 0 / 0.55);
 }
 
@@ -130,8 +132,10 @@ html[data-theme="light"] {
     inset 0 1px 0 rgb(255 255 255 / 0.76);
   --panel-gradient: linear-gradient(180deg, #ffffff 0%, #edf2f8 100%);
   --panel-gradient-high: linear-gradient(180deg, #f8fbff 0%, #e7eef8 100%);
+  --summary-gradient: linear-gradient(180deg, #f1f6ff 0%, #dfeaff 100%);
   --primary-gradient: linear-gradient(180deg, #4f79d6 0%, #315fba 100%);
   --primary-glow: 0 0 0 1px rgb(49 95 186 / 0.18), 0 12px 24px rgb(49 95 186 / 0.14);
+  --summary-glow: 0 0 0 1px rgb(49 95 186 / 0.24), 0 14px 28px rgb(49 95 186 / 0.12);
   --engraved-text: none;
 }
 
@@ -372,15 +376,34 @@ html[data-theme="light"] .code-block pre code {
     background: var(--color-surface-container-high);
   }
 
+  .site-search__result-meta {
+    @apply flex min-w-0 flex-wrap items-center gap-2;
+  }
+
+  .site-search__kind {
+    @apply inline-flex h-6 items-center gap-1.5 rounded px-2 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--panel-sunken);
+  }
+
+  .site-search__kind svg {
+    @apply size-3 shrink-0;
+    fill: currentcolor;
+  }
+
+  .site-search__kind em {
+    @apply not-italic;
+  }
+
   .site-search__result strong {
     @apply text-base leading-snug text-on-background;
   }
 
   .site-search__result small {
-    @apply font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
+    @apply font-mono text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant;
   }
 
-  .site-search__result span {
+  .site-search__result-description {
     @apply line-clamp-2 text-sm leading-relaxed text-on-surface-variant;
   }
 
@@ -893,8 +916,8 @@ html[data-theme="light"] .code-block pre code {
 
   .detail-summary {
     @apply mb-3 min-w-0 rounded-lg p-5;
-    background: var(--panel-gradient-high);
-    box-shadow: var(--panel-raised), var(--primary-glow);
+    background: var(--summary-gradient);
+    box-shadow: var(--panel-raised), var(--summary-glow);
   }
 
   .detail-summary h2 {

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-quote-revsets-and-shell-syntax, vcs-track-remotes-explicitly`
 
 ## Rule
 

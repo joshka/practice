@@ -8,7 +8,8 @@
   changes behavior invalidates the benchmark claim and wastes review effort.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, verification, testing`
+- Related: `test-observable-behavior, smallest-trustworthy-verification, review-proof-not-just-code`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   This keeps local instructions honest while leaving slow or credentialed checks to special jobs.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, automation, tooling, verification`
+- Related: `keep-automations-repo-owned, report-verification-honestly`
 
 ## Rule
 

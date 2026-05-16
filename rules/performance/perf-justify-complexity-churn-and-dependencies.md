@@ -9,7 +9,8 @@
   inherits.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, dependencies, reviewability, change-shape`
+- Related: `measure-before-optimizing, keep-public-dependencies-intentional, cap-change-radius`
 
 ## Rule
 

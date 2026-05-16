@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `preserve-unowned-work, vcs-inspect-sparse-state, vcs-name-exact-jj-mutation-targets`
 
 ## Rule
 

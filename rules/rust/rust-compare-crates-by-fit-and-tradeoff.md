@@ -8,7 +8,8 @@
   superiority claims. This helps users choose without turning docs into brittle marketing.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, documentation, source-truth`
+- Related: `label-doc-claims-by-evidence, SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
 
 ## Rule
 

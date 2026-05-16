@@ -8,7 +8,8 @@
   evidence makes performance tradeoffs reviewable instead of relying on intuition.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, performance, verification, reviewability`
+- Related: `measure-before-optimizing, PERF-MEASURE-GOAL-CHANGE-COMPARE`
 
 ## Rule
 

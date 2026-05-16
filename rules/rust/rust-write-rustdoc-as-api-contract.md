@@ -9,7 +9,8 @@
   the public contract.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, documentation, public-api`
+- Related: `write-docs-as-contracts, rust-write-public-docs-for-caller-tasks`
 
 ## Rule
 

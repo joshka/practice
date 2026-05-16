@@ -8,7 +8,8 @@
   alignment helps downstream users know which compatibility contract to trust.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, release, documentation, source-truth`
+- Related: `docs-are-contracts, RUST-VALIDATE-PACKAGE-CONTENTS-BEFORE-RELEASE`
 
 ## Rule
 

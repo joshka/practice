@@ -9,7 +9,8 @@
   dumping internals into the user-facing string.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, errors, failure-output, observability`
+- Related: `write-actionable-error-messages, rust-preserve-error-context`
 
 ## Rule
 

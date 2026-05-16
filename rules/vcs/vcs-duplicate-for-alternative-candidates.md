@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `keep-structure-reversible, change-isolate-controversial-changes`
 
 ## Rule
 

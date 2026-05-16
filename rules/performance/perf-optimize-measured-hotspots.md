@@ -8,7 +8,8 @@
   attention on changes whose user-visible impact justifies altering the code shape.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, verification, change-shape`
+- Related: `measure-before-optimizing, encode-nonfunctional-requirements, cap-change-radius`
 
 ## Rule
 

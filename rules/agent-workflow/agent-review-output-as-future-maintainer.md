@@ -6,9 +6,11 @@
 - ID: `AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`
 - Summary: Review agent output as someone who will not have the chat transcript. This keeps attention
   on durable code, docs, tests, validation proof, and residual risk.
+- Related: `review-proof-not-just-code, optimize-for-long-term-coherence,
+  private-context-is-not-shared-context`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, reviewability, reader-locality, review-handoff`
 
 ## Rule
 

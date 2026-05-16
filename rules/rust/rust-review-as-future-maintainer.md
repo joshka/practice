@@ -9,7 +9,8 @@
   changes that merely compile.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reviewability, reader-locality, review-handoff`
+- Related: `review-proof-not-just-code, rust-working-rust-code-not-enough, reader-locality`
 
 ## Rule
 

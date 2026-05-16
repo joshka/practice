@@ -8,7 +8,8 @@
   review. Keeping them aligned prevents consumers from seeing stale artifacts.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, generated-artifacts, verification, automation`
+- Related: `CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP, report-verification-honestly`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   contract.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, testing, boundary-correctness, security-privacy`
+- Related: `rust-contain-unsafe, rust-deny-accidental-unsafe`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   when it adds indirection without a useful boundary.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, side-effects, testing, reader-locality`
+- Related: `make-side-effects-visible, inject-time-and-randomness, test-observable-behavior`
 
 ## Rule
 

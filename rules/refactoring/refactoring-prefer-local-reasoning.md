@@ -9,7 +9,8 @@
   load and error risk.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `reader-locality, side-effects, change-shape`
+- Related: `reader-locality, limit-live-context, make-side-effects-visible`
 
 ## Rule
 

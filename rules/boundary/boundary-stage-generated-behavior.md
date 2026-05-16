@@ -9,7 +9,8 @@
   generated artifacts can fail after deployment.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, generated-artifacts, verification, automation`
+- Related: `make-bad-output-mechanically-hard, CHANGE-SYNC-GENERATED-ARTIFACTS`
 
 ## Rule
 

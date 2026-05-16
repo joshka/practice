@@ -9,7 +9,8 @@
   session context.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, review-handoff, source-truth, documentation`
+- Related: `private-context-is-not-shared-context, produce-review-packets, prefer-durable-summaries`
 
 ## Rule
 

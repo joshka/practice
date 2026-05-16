@@ -6,9 +6,11 @@
 - ID: `AGENT-PROVE-SECURITY-IMPACT`
 - Summary: Separate security hypotheses from proof of reachability, exploitability, assets, and
   user impact. This keeps prioritization and mitigation tied to demonstrated risk.
+- Related: `prove-security-impact, smallest-trustworthy-verification,
+  report-verification-honestly`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, security-privacy, verification, review-handoff`
 
 ## Rule
 

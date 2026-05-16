@@ -6,9 +6,11 @@
 - ID: `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
 - Summary: Ask for human judgment where product behavior, API compatibility, naming, or security
   posture is still ambiguous. Resolving direction early prevents large speculative diffs.
+- Related: `spend-human-attention-on-ambiguity, define-good-before-judgment-heavy-work,
+  manage-agent-work-not-sessions`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, agent-context, reviewability, public-api`
 
 ## Rule
 

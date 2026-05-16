@@ -9,7 +9,8 @@
   improves tests and portability without spreading oversized context objects.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, side-effects, testing, validation-policy`
+- Related: `inject-time-and-randomness, make-parameters-explicit, TEST-PREFER-DETERMINISTIC-TESTS`
 
 ## Rule
 

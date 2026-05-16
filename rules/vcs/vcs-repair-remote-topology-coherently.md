@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-match-jj-topology-to-repo-role, vcs-track-remotes-explicitly`
 
 ## Rule
 

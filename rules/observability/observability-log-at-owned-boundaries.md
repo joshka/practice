@@ -6,9 +6,10 @@
 - ID: `OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`
 - Summary: Emit logs where the code still knows the operation, intent, input class, and external
   boundary. That placement gives useful context without duplicating noise through every layer.
+- Related: `log-at-owned-boundaries, contain-observability-policy, preserve-error-context`
 - Status: `reviewed`
 - Domain: `observability`
-- Depth: `compact`
+- Tags: `observability, ownership, side-effects, security-privacy`
 
 ## Rule
 

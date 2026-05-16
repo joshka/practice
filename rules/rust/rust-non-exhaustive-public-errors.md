@@ -9,7 +9,8 @@
   downstream breakage.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, errors, public-api`
+- Related: `rust-preserve-error-context, public-api-changes-have-downstream-cost`
 
 ## Rule
 

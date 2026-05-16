@@ -9,7 +9,8 @@
   clarifying the boundary.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, reviewability, validation-policy`
+- Related: `use-explaining-variable, chunk-statements, rust-shape-expressions-for-auditability`
 
 ## Rule
 

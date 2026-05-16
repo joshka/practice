@@ -9,7 +9,8 @@
   guesses do not become fake guarantees.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, source-truth, public-api, validation-policy`
+- Related: `label-doc-claims-by-evidence, SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
 
 ## Rule
 

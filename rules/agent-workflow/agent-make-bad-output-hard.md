@@ -6,9 +6,11 @@
 - ID: `AGENT-MAKE-BAD-OUTPUT-HARD`
 - Summary: Turn recurring bad agent output into scripts, templates, lint, or checks that fail fast.
   Mechanical enforcement lowers review cost more reliably than repeated prompt reminders.
+- Related: `make-bad-output-mechanically-hard, prefer-tools-over-prompts,
+  mechanize-repeated-feedback`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, tooling, automation, verification`
 
 ## Rule
 

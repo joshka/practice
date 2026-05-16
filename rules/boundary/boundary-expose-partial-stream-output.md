@@ -9,7 +9,8 @@
   state with partial provider data.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, async, state-transitions, failure-output`
+- Related: `keep-async-boundaries-explicit, make-state-transitions-explicit, preserve-error-context`
 
 ## Rule
 

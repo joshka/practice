@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-recover-with-operation-log, vcs-inspect-state-before-mutating`
 
 ## Rule
 

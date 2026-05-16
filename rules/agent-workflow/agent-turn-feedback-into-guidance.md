@@ -6,9 +6,11 @@
 - ID: `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`
 - Summary: Convert repeated review corrections into rules, templates, snippets, or checks. Durable
   guidance fixes the workflow problem instead of requiring the same steering again.
+- Related: `turn-feedback-into-guidance, record-agent-operating-lessons,
+  mechanize-repeated-feedback`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, documentation, automation, reviewability`
 
 ## Rule
 

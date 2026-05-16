@@ -8,7 +8,8 @@
   features, MSRV, or integration. Reviewable grouping lowers noise without hiding downstream risk.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, change-shape, reviewability`
+- Related: `small-reviewable-chunks, keep-public-dependencies-intentional`
 
 ## Rule
 

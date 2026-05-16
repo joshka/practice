@@ -8,7 +8,8 @@
   intended commitments. Published surface area becomes something downstream users can depend on.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, change-shape, reviewability`
+- Related: `public-api-changes-have-downstream-cost, RUST-CONSIDER-DOWNSTREAM-API-IMPACT`
 
 ## Rule
 

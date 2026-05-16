@@ -8,7 +8,8 @@
   or roadmaps. Track speculation where it can be decided instead of implying a promise.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, source-truth, reviewability`
+- Related: `document-intentional-non-goals, DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`
 
 ## Rule
 

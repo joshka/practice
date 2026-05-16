@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-confirm-github-remote-topology, vcs-dry-run-surprising-publication`
 
 ## Rule
 

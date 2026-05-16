@@ -9,7 +9,8 @@
   run.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, verification, tooling`
+- Related: `report-verification-honestly, TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
 
 ## Rule
 

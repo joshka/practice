@@ -8,7 +8,8 @@
   changes make build, compatibility, and downstream risk reviewable on their own.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, dependencies, public-api, reviewability`
+- Related: `keep-public-dependencies-intentional, public-api-changes-have-downstream-cost`
 
 ## Rule
 

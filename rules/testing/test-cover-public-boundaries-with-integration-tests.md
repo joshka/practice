@@ -8,7 +8,8 @@
   They catch composition failures unit tests miss, while local logic can stay unit-tested.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, public-api, boundary-correctness, verification`
+- Related: `explicit-boundaries-preserve-correctness, test-match-evidence-to-surface`
 
 ## Rule
 

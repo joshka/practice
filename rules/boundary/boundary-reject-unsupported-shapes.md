@@ -9,7 +9,8 @@
   round-tripping and the system can do so safely.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, validation-policy, errors, public-api`
+- Related: `make-validation-policy-explicit, write-actionable-error-messages, parse-dont-validate`
 
 ## Rule
 

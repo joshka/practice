@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `isolate-agent-workspaces, vcs-jj-new-for-review-lanes, preserve-agent-context-coherence`
 
 ## Rule
 

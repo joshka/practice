@@ -8,7 +8,8 @@
   Quoting, redaction, ordering, and platform formatting can fail even when a local happy path works.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, tooling, verification`
+- Related: `boundary-make-exec-tools-noninteractive, make-side-effects-visible`
 
 ## Rule
 

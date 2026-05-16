@@ -9,7 +9,8 @@
   explicitly supports curation.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, generated-artifacts, ownership, automation`
+- Related: `CHANGE-SYNC-GENERATED-ARTIFACTS, keep-automations-repo-owned`
 
 ## Rule
 

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-confirm-github-remote-topology, vcs-make-github-handoff-explicit`
 
 ## Rule
 

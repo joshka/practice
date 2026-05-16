@@ -8,7 +8,8 @@
   They give fast precise feedback, while boundary behavior still needs higher-level tests.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, reader-locality, verification`
+- Related: `test-prove-contracts-not-trivia, boundary-separate-pure-core-from-effects`
 
 ## Rule
 

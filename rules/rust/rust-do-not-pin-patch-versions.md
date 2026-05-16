@@ -8,7 +8,8 @@
   `Cargo.toml` only when code depends on that patch's API, fix, or behavior.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, public-api`
+- Related: `keep-public-dependencies-intentional, RUST-KEEP-COMPATIBLE-UPDATES-IN-LOCKFILE`
 
 ## Rule
 

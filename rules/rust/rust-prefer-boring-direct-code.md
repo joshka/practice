@@ -9,7 +9,8 @@
   invariants.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, reviewability`
+- Related: `reader-locality, limit-live-context, refactoring-prefer-local-reasoning`
 
 ## Rule
 

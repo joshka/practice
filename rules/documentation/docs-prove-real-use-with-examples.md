@@ -8,7 +8,8 @@
   integration shape. Keep them focused, but make them strong enough to prove the contract.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, examples, verification, public-api`
+- Related: `test-observable-behavior, DOCS-DISTINGUISH-EXAMPLE-ROLES`
 
 ## Rule
 

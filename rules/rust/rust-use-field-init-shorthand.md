@@ -9,7 +9,8 @@
   attention.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, local-conventions`
+- Related: `reader-locality, rust-prefer-boring-direct-code, follow-local-conventions`
 
 ## Rule
 

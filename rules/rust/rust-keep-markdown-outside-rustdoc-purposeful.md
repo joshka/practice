@@ -9,7 +9,8 @@
   current.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, rustdoc, source-truth`
+- Related: `choose-doc-type, keep-docs-near-their-subject, RUST-WRITE-RUSTDOC-AS-API-CONTRACT`
 
 ## Rule
 

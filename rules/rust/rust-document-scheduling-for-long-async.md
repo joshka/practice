@@ -8,7 +8,8 @@
   can run long. Callers need those constraints to avoid starvation and runtime surprises.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, async, side-effects`
+- Related: `keep-async-boundaries-explicit, make-side-effects-visible`
 
 ## Rule
 

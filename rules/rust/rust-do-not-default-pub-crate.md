@@ -8,7 +8,8 @@
   keeps modules independent and makes crate-local contracts visible.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, ownership, boundary-correctness`
+- Related: `explicit-boundaries-preserve-correctness, RUST-DOCUMENT-VISIBILITY-OWNERSHIP`
 
 ## Rule
 

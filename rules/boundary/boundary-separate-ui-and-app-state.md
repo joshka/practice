@@ -10,7 +10,8 @@
   appears.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, state-transitions, reader-locality`
+- Related: `make-state-transitions-explicit, separate-structure-from-behavior`
 
 ## Rule
 

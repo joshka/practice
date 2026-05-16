@@ -8,7 +8,8 @@
   reuse. Visible state prevents tentative advice from becoming an accidental standard.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reviewability, source-truth`
+- Related: `make-plans-versioned-artifacts, DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`
 
 ## Rule
 

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-jj-as-source-of-truth, vcs-recover-with-operation-log`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   paths without over-formalizing simple linear code.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, state-transitions, reader-locality`
+- Related: `make-state-transitions-explicit, make-invalid-states-hard-to-express`
 
 ## Rule
 

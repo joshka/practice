@@ -9,7 +9,8 @@
   reverse-engineering it.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, review-handoff, verification, documentation`
+- Related: `write-pr-narrative, produce-review-packets, review-proof-not-just-code`
 
 ## Rule
 

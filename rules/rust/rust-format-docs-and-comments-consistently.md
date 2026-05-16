@@ -8,7 +8,8 @@
   source formatting keeps docs readable and prevents noisy future diffs.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, rustdoc, local-conventions`
+- Related: `follow-local-conventions, DOCS-KEEP-MARKDOWN-LINTABLE, RUST-VALIDATE-RUST-DOCS-AS-CODE`
 
 ## Rule
 

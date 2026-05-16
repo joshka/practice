@@ -8,7 +8,8 @@
   readers from carrying unrelated parsing, state, rendering, and policy facts at once.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, ownership`
+- Related: `strengthen-cohesion, reader-locality, RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`
 
 ## Rule
 

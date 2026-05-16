@@ -8,7 +8,8 @@
   Policy value lives at decision boundaries, so assert caller-visible behavior instead of internals.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, validation-policy, verification`
+- Related: `make-validation-policy-explicit, boundary-make-policy-boundaries-explicit`
 
 ## Rule
 

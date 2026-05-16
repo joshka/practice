@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-name-exact-jj-mutation-targets, boundary-make-exec-tools-noninteractive`
 
 ## Rule
 

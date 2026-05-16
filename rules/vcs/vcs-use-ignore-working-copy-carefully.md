@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-run-jj-mutations-sequentially, vcs-inspect-state-before-mutating`
 
 ## Rule
 

@@ -6,9 +6,10 @@
 - ID: `SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
 - Summary: Anchor durable guidance in sources readers can inspect, compare, and challenge. Use links
   to clarify judgment, not to decorate rules or depend on private memory.
+- Related: `label-doc-claims-by-evidence, write-docs-as-contracts, docs-are-contracts`
 - Status: `reviewed`
 - Domain: `source`
-- Depth: `compact`
+- Tags: `source-truth, documentation, public-api, verification`
 
 ## Rule
 

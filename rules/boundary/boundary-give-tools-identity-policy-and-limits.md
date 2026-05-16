@@ -9,7 +9,8 @@
   recovery, and blast-radius control matter.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, tooling, security-privacy, side-effects`
+- Related: `grant-scoped-agent-capabilities, make-side-effects-visible, keep-secrets-out-of-context`
 
 ## Rule
 

@@ -6,9 +6,11 @@
 - ID: `AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`
 - Summary: Put checkout-only facts in ignored override files instead of shared guidance. Local
   overrides keep machine-specific steering useful without leaking it to every contributor.
+- Related: `use-agents-md-as-map, use-disk-as-context-sink,
+  private-context-is-not-shared-context`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, local-conventions, agent-context, source-truth`
 
 ## Rule
 

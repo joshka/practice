@@ -8,7 +8,8 @@
   These cases protect request correlation and cleanup without relying on wall-clock luck.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, async, state-transitions, verification`
+- Related: `keep-async-boundaries-explicit, inject-time-and-randomness`
 
 ## Rule
 

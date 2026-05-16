@@ -8,7 +8,8 @@
   Feature flags change APIs and compile paths, so use a risk-based matrix instead of every combo.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, verification, validation-policy`
+- Related: `rust-run-feature-gated-validation, rust-make-feature-flags-additive-where-possible`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   policy catches accidental unsafe before it becomes normal implementation detail.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, security-privacy, tooling, automation`
+- Related: `make-bad-output-mechanically-hard, RUST-CONTAIN-UNSAFE`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   scope. Concrete detail removes guesswork without overloading prose with incidental facts.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, examples`
+- Related: `label-doc-claims-by-evidence, DOCS-NAME-DESTINATION-NOT-DIRECTION`
 
 ## Rule
 

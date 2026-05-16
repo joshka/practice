@@ -9,7 +9,8 @@
   churn and makes the current state discoverable.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, source-truth, review-handoff, documentation`
+- Related: `prefer-durable-summaries, write-pr-narrative, produce-review-packets`
 
 ## Rule
 

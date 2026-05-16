@@ -8,7 +8,8 @@
   Users expect preludes to aid imports, not hide implementation ownership.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, ownership, reader-locality`
+- Related: `RUST-REEXPORT-FOR-DISCOVERY, RUST-USE-DOC-INLINE-FOR-CANONICAL-REEXPORTS`
 
 ## Rule
 

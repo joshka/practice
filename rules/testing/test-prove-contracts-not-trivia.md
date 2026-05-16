@@ -8,7 +8,8 @@
   This preserves refactoring freedom unless the detail is itself the promised behavior.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, public-api, verification`
+- Related: `test-observable-behavior, tests-should-explain-failures`
 
 ## Rule
 

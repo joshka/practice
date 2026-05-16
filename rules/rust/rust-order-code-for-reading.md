@@ -9,7 +9,8 @@
   mechanical rearrangement.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, reviewability`
+- Related: `reader-locality, rust-central-item-first, refactoring-keep-linear-story-visible`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   needs. Reviewers should see one coherent unit they can understand, validate, and revert.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, reviewability, verification`
+- Related: `small-reviewable-chunks, review-proof-not-just-code, smallest-trustworthy-verification`
 
 ## Rule
 

@@ -6,9 +6,10 @@
 - ID: `TEST-SPLIT-UNRELATED-ASSERTIONS`
 - Summary: Split assertions that diagnose different behaviors when one failure would hide another.
   Keep checks together only when they express one contract more clearly as a group.
+- Related: `tests-should-explain-failures, test-observable-behavior, limit-live-context`
 - Status: `reviewed`
 - Domain: `test-failures`
-- Depth: `compact`
+- Tags: `testing, failure-output, reviewability`
 
 ## Rule
 

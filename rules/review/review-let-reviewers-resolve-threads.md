@@ -9,7 +9,9 @@
   resolution carries communication ownership.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, review-handoff, agent-context`
+- Related: private-context-is-not-shared-context, preserve-intent-over-literalism,
+  report-verification-honestly
 
 ## Rule
 

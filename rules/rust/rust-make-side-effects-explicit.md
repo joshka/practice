@@ -9,7 +9,8 @@
   already makes the effect obvious.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, side-effects, reader-locality, boundary-correctness`
+- Related: `make-side-effects-visible, docs-document-lifecycle-and-side-effects`
 
 ## Rule
 

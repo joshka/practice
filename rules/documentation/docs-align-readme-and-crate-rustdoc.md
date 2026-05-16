@@ -8,7 +8,8 @@
   behavior. Let the pages serve different tasks, but prevent conflicting contracts.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, rustdoc, source-truth, public-api`
+- Related: `docs-are-contracts, write-docs-as-contracts, remediate-doc-drift`
 
 ## Rule
 

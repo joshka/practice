@@ -9,7 +9,8 @@
   modules depend on them.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `reader-locality, change-shape, ownership`
+- Related: `keep-structure-reversible, cap-change-radius, reader-locality`
 
 ## Rule
 

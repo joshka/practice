@@ -8,7 +8,8 @@
   creep and give maintainers or agents a practical unit of work without losing the larger purpose.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, change-shape, review-handoff`
+- Related: `small-reviewable-chunks, cap-change-radius, define-good-before-judgment-heavy-work`
 
 ## Rule
 

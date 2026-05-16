@@ -9,7 +9,8 @@
   and support behavior without exposing unactionable internals.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, observability, errors, failure-output`
+- Related: `preserve-error-context, write-actionable-error-messages, make-failures-observable`
 
 ## Rule
 

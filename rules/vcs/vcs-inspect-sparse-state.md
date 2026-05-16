@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-scope-jj-file-tracking, preserve-unowned-work, vcs-inspect-state-before-mutating`
 
 ## Rule
 

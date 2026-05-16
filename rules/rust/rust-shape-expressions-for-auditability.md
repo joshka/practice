@@ -9,7 +9,8 @@
   readers must verify.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, reviewability, validation-policy`
+- Related: `chunk-statements, use-explaining-variable, rust-name-auditable-intermediates`
 
 ## Rule
 

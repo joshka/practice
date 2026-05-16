@@ -8,7 +8,8 @@
   Link out to secondary modes instead of blending tutorial, reference, decisions, and changelog.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, source-truth`
+- Related: `choose-doc-type, DOCS-ONE-DOMINANT-MODE-PER-PAGE`
 
 ## Rule
 

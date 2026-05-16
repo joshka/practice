@@ -8,7 +8,8 @@
   in ways reviewers want automated. Scope suppressions tightly so exceptions stay visible.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, tooling, automation, failure-output`
+- Related: `mechanize-repeated-feedback, RUST-ENCODE-DURABLE-RULES-IN-LINTS`
 
 ## Rule
 

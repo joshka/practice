@@ -6,9 +6,11 @@
 - ID: `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`
 - Summary: After a validated chunk, offer specific follow-up chunks with their tradeoffs. Concrete
   options let the maintainer steer scope without decoding vague requests to continue.
+- Related: `spend-human-attention-on-ambiguity, small-reviewable-chunks,
+  manage-agent-work-not-sessions`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, review-handoff, reviewability, change-shape`
 
 ## Rule
 

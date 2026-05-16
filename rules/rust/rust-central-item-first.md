@@ -8,7 +8,8 @@
   the module's purpose before chasing helpers and adapters.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, public-api`
+- Related: `reader-locality, RUST-ORDER-CODE-FOR-READING, RUST-ORDER-ITEMS-FOR-API-READING`
 
 ## Rule
 

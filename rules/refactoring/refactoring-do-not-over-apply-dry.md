@@ -8,7 +8,8 @@
   Premature sharing can couple unrelated policies and make later edits harder.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `reader-locality, change-shape, ownership`
+- Related: `name-coupling, strengthen-cohesion, keep-structure-reversible`
 
 ## Rule
 

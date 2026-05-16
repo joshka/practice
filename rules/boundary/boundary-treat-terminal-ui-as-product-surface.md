@@ -9,7 +9,8 @@
   reviewable without requiring full visual testing for every tiny internal tool.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, tooling, testing, local-conventions`
+- Related: `make-runtime-state-agent-legible, test-observable-behavior`
 
 ## Rule
 

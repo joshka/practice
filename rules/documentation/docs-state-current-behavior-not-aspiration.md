@@ -8,7 +8,8 @@
   Otherwise roadmap language becomes a false contract for readers and agents.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, source-truth, verification`
+- Related: `docs-are-contracts, remediate-doc-drift`
 
 ## Rule
 

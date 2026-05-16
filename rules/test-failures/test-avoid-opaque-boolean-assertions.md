@@ -6,9 +6,11 @@
 - ID: `TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`
 - Summary: Prefer comparisons or richer assertions when many causes can make a boolean false. The
   first failure should show the actual state needed to diagnose the regression.
+- Related: `tests-should-explain-failures, test-observable-behavior,
+  write-actionable-error-messages`
 - Status: `reviewed`
 - Domain: `test-failures`
-- Depth: `compact`
+- Tags: `testing, failure-output, reviewability`
 
 ## Rule
 

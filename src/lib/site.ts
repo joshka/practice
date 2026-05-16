@@ -115,6 +115,43 @@ export const sections: Section[] = [
   },
 ];
 
+export const guidanceTags = [
+  'reader-locality',
+  'change-shape',
+  'reviewability',
+  'verification',
+  'testing',
+  'failure-output',
+  'boundary-correctness',
+  'validation-policy',
+  'state-transitions',
+  'side-effects',
+  'async',
+  'observability',
+  'errors',
+  'security-privacy',
+  'public-api',
+  'rust',
+  'rustdoc',
+  'dependencies',
+  'performance',
+  'documentation',
+  'examples',
+  'source-truth',
+  'local-conventions',
+  'ownership',
+  'agent-workflow',
+  'agent-context',
+  'tooling',
+  'automation',
+  'vcs-jj',
+  'release',
+  'generated-artifacts',
+  'review-handoff',
+] as const;
+
+export type GuidanceTag = (typeof guidanceTags)[number];
+
 const root = process.cwd();
 
 marked.use({ gfm: true });
@@ -239,6 +276,71 @@ export function allPublicPages(): MarkdownPage[] {
 }
 
 let publicPagesCache: MarkdownPage[] | undefined;
+
+export function tagSlug(value: string): string {
+  return value.trim().toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
+}
+
+export function tagLabel(value: string): string {
+  const acronyms: Record<string, string> = {
+    async: 'Async',
+    rustdoc: 'Rustdoc',
+    rust: 'Rust',
+    vcs: 'VCS',
+    jj: 'JJ',
+  };
+  return tagSlug(value)
+    .split('-')
+    .map((part) => acronyms[part] ?? part.charAt(0).toUpperCase() + part.slice(1))
+    .join(' ');
+}
+
+export function tagsForPage(page: MarkdownPage): string[] {
+  const tags = splitMetadataList(page.metadata.tags).map(tagSlug).filter(Boolean);
+  const domain = page.metadata.domain ? tagSlug(page.metadata.domain) : '';
+  if (domain && guidanceTags.includes(domain as GuidanceTag) && !tags.includes(domain)) {
+    tags.unshift(domain);
+  }
+  return [...new Set(tags)];
+}
+
+export function taggedPages(tag: string): MarkdownPage[] {
+  const normalized = tagSlug(tag);
+  return allPublicPages()
+    .filter((page) => isTaggedGuidancePage(page) && tagsForPage(page).includes(normalized))
+    .sort((a, b) => pageKindSort(a).localeCompare(pageKindSort(b)) || a.title.localeCompare(b.title));
+}
+
+export function tagCounts(): { tag: string; count: number }[] {
+  return guidanceTags
+    .map((tag) => ({ tag, count: taggedPages(tag).length }))
+    .filter((entry) => entry.count > 0);
+}
+
+function isTaggedGuidancePage(page: MarkdownPage): boolean {
+  return (
+    (page.repoPath.startsWith('rules/') && !page.repoPath.endsWith('/README.md')) ||
+    page.repoPath.startsWith('patterns/') ||
+    page.repoPath.startsWith('principles/') ||
+    page.repoPath.startsWith('mechanisms/')
+  );
+}
+
+function pageKindSort(page: MarkdownPage): string {
+  if (page.repoPath.startsWith('rules/')) return `1:${page.repoPath}`;
+  if (page.repoPath.startsWith('patterns/')) return `2:${page.repoPath}`;
+  if (page.repoPath.startsWith('principles/')) return `3:${page.repoPath}`;
+  if (page.repoPath.startsWith('mechanisms/')) return `4:${page.repoPath}`;
+  return `5:${page.repoPath}`;
+}
+
+export function splitMetadataList(value: string | undefined): string[] {
+  if (!value) return [];
+  return value
+    .split(',')
+    .map((item) => cleanMetadataValue(item))
+    .filter(Boolean);
+}
 
 export function routeForRepoPath(repoPath: string): string {
   const normalized = repoPath.replaceAll('\\', '/');

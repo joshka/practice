@@ -8,7 +8,8 @@
   model. The choice affects compile cost, object safety, lifetimes, and caller ergonomics.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, performance, reader-locality`
+- Related: `make-parameters-explicit, public-api-changes-have-downstream-cost`
 
 ## Rule
 

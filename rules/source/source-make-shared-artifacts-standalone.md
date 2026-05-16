@@ -6,9 +6,11 @@
 - ID: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`
 - Summary: Restate the problem, rationale, evidence, and tradeoffs in artifacts that leave the local
   session. Future readers should not need private notes or transcripts to trust the result.
+- Related: `private-context-is-not-shared-context, prefer-durable-summaries,
+  produce-review-packets`
 - Status: `reviewed`
 - Domain: `source`
-- Depth: `compact`
+- Tags: `source-truth, documentation, review-handoff, agent-context`
 
 ## Rule
 

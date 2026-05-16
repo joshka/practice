@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `boundary-make-exec-tools-noninteractive, vcs-run-jj-mutations-sequentially`
 
 ## Rule
 

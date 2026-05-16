@@ -9,7 +9,8 @@
   global answer onto every hook.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, failure-output, async, errors`
+- Related: `make-failures-observable, return-structured-errors, keep-async-boundaries-explicit`
 
 ## Rule
 

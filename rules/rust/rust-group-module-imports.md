@@ -8,7 +8,8 @@
   shape easier to scan and avoids churn from one-import-per-line edits.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, local-conventions`
+- Related: `reader-locality, follow-local-conventions`
 
 ## Rule
 

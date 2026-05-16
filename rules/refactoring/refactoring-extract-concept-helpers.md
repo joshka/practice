@@ -8,7 +8,8 @@
   purpose. Hiding a few lines behind a weak name adds a jump without reducing the reader's burden.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `reader-locality, change-shape, ownership`
+- Related: `reader-locality, use-explaining-variable, strengthen-cohesion`
 
 ## Rule
 

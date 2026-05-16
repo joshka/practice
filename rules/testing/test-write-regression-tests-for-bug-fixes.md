@@ -8,7 +8,8 @@
   Skip only when reproduction is impractical, and then record the closest trustworthy validation.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, verification, change-shape`
+- Related: `test-observable-behavior, test-prove-contracts-not-trivia, review-proof-not-just-code`
 
 ## Rule
 

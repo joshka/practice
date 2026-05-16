@@ -8,7 +8,8 @@
   lets reviewers approve, reject, or revise the decision without incidental cleanup attached.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, reviewability, public-api`
+- Related: `cap-change-radius, change-shape-controls-review-cost`
 
 ## Rule
 

@@ -6,9 +6,10 @@
 - ID: `AGENT-PREFER-IN-DISTRIBUTION-TOOLS`
 - Summary: Use standard project commands, supported CLIs, and documented workflows before inventing
   ad hoc tool paths. Familiar tools reduce misuse and make agent output easier to rerun.
+- Related: `prefer-in-distribution-tools, choose-good-enough-tools, follow-local-conventions`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, tooling, local-conventions`
 
 ## Rule
 

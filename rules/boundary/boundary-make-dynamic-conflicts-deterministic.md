@@ -9,7 +9,8 @@
   which plugin, guest, generated item, or handler wins.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, validation-policy, state-transitions, tooling`
+- Related: `make-validation-policy-explicit, make-state-transitions-explicit`
 
 ## Rule
 

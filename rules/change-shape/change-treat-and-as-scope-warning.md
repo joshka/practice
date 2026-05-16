@@ -8,7 +8,8 @@
   one purpose. The word is not a rule, but it catches scope creep while splitting is still cheap.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, reviewability, reader-locality`
+- Related: `small-reviewable-chunks, change-shape-controls-review-cost`
 
 ## Rule
 

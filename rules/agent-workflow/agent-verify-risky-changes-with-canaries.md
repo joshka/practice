@@ -6,9 +6,11 @@
 - ID: `AGENT-VERIFY-RISKY-CHANGES-WITH-CANARIES`
 - Summary: Use staged rollout, shadowing, dry runs, or partial publication for changes that can
   fail only under real conditions. Canaries reduce blast radius while evidence accumulates.
+- Related: `verify-with-canaries-before-cutover, smallest-trustworthy-verification,
+  close-the-agent-loop`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, verification, release, automation`
 
 ## Rule
 

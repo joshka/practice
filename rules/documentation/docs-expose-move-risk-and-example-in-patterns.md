@@ -8,7 +8,8 @@
   instruction. The extra structure makes repeatable advice easier to cite and apply.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reviewability, agent-workflow, examples`
+- Related: `write-docs-as-contracts, label-doc-claims-by-evidence`
 
 ## Rule
 

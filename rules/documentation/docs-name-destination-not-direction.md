@@ -8,7 +8,8 @@
   labels make readers follow the page order before knowing whether it is relevant.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, local-conventions`
+- Related: `keep-name-current, DOCS-USE-DESCRIPTIVE-HEADINGS`
 
 ## Rule
 

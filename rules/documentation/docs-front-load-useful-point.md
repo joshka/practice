@@ -8,7 +8,8 @@
   can then use the page without hunting through introductory prose.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, agent-context`
+- Related: `reader-locality, DOCS-WRITE-FOR-NON-LINEAR-READERS`
 
 ## Rule
 

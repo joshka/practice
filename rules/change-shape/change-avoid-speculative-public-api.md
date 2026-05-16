@@ -8,7 +8,8 @@
   pressure keeps compatibility commitments smaller and easier to validate.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, public-api, reviewability`
+- Related: `public-api-changes-have-downstream-cost, document-intentional-non-goals`
 
 ## Rule
 

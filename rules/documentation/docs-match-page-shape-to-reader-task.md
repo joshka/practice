@@ -8,7 +8,8 @@
   The right structure lowers scan cost without forcing one page to do every job.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `expanded`
+- Tags: `documentation, reader-locality, reviewability`
+- Related: `choose-doc-type, DOCS-CHOOSE-DOCUMENT-TYPE`
 
 ## Rule
 

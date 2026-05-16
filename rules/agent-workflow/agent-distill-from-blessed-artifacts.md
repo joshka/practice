@@ -5,9 +5,11 @@
 - Name: `Distill From Blessed Artifacts`
 - ID: `AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`
 - Summary: `Study accepted code, docs, tests, and reviews first. Adapt local convention to this task.`
+- Related: `distill-from-blessed-artifacts, follow-local-conventions,
+  preserve-local-doc-voice`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, local-conventions, source-truth, documentation`
 
 ## Rule
 

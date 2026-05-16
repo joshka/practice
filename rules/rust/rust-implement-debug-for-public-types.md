@@ -8,7 +8,8 @@
   trait is baseline support for tests, assertions, logs, and downstream diagnostics.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, failure-output, security-privacy`
+- Related: `write-actionable-error-messages, test-observable-behavior`
 
 ## Rule
 

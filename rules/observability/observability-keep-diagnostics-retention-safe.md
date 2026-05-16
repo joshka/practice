@@ -6,9 +6,11 @@
 - ID: `OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`
 - Summary: Match diagnostic detail to its audience and retention period. Redact or summarize
   sensitive values while preserving enough operation context to debug.
+- Related: `avoid-secret-or-private-log-context, keep-secrets-out-of-context,
+  contain-observability-policy`
 - Status: `reviewed`
 - Domain: `observability`
-- Depth: `compact`
+- Tags: `observability, security-privacy, failure-output`
 
 ## Rule
 

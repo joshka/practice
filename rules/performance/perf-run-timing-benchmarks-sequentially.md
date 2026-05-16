@@ -9,7 +9,9 @@
   than the code.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, verification, automation`
+- Related: measure-before-optimizing, smallest-trustworthy-verification,
+  report-verification-honestly
 
 ## Rule
 

@@ -8,7 +8,8 @@
   intent. Separate review units make meaning preservation and new behavior easier to check.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, reviewability, reader-locality`
+- Related: `change-shape-controls-review-cost, separate-structure-from-behavior`
 
 ## Rule
 

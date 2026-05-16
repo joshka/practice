@@ -9,7 +9,8 @@
   more stable contract.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, public-api, documentation`
+- Related: `rust-make-feature-flags-additive-where-possible, keep-public-dependencies-intentional`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   failures diagnosable while avoiding sensitive source details.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, source-truth, observability, tooling`
+- Related: `label-doc-claims-by-evidence, preserve-error-context, make-runtime-state-agent-legible`
 
 ## Rule
 

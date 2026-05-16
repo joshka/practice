@@ -8,7 +8,8 @@
   Fast gates preserve review flow, while heavier checks belong in release or scheduled validation.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, automation, reviewability, performance`
+- Related: `budget-tokens-for-feedback-loops, test-choose-validation-by-risk`
 
 ## Rule
 

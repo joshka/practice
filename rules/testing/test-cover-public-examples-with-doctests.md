@@ -8,7 +8,8 @@
   Executable examples catch stale guidance, reserving no-run or ignored examples for real limits.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, examples, rustdoc, verification`
+- Related: `docs-prove-real-use-with-examples, rust-validate-rust-docs-as-code`
 
 ## Rule
 

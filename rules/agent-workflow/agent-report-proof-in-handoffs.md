@@ -6,9 +6,10 @@
 - ID: `AGENT-REPORT-PROOF-IN-HANDOFFS`
 - Summary: Replace confidence language with the exact checks, inspection, screenshots, and skipped
   validation behind a handoff. Proof lets reviewers decide what to trust and what remains risky.
+- Related: `report-verification-honestly, review-proof-not-just-code, produce-review-packets`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, review-handoff, verification, testing`
 
 ## Rule
 

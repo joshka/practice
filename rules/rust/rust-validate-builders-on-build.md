@@ -9,7 +9,8 @@
   impossible.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, validation-policy, state-transitions, testing`
+- Related: `rust-use-builders-for-optional-or-validated-fields, make-validation-policy-explicit`
 
 ## Rule
 

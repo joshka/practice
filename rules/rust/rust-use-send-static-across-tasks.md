@@ -9,7 +9,8 @@
   valid use.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, async, boundary-correctness, public-api`
+- Related: `keep-async-boundaries-explicit, rust-document-scheduling-for-long-async`
 
 ## Rule
 

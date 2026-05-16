@@ -8,7 +8,8 @@
   rely on. Separate normative claims from background, examples, and future plans.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, source-truth, public-api, verification`
+- Related: `docs-are-contracts, write-docs-as-contracts`
 
 ## Rule
 

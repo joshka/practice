@@ -6,9 +6,11 @@
 - ID: `AGENT-PREFER-BUILD-PRESERVING-EDITS`
 - Summary: Make multi-step edits in slices that keep compilation or tests close to green when the
   route allows it. Build-preserving work keeps failures close to the edit that caused them.
+- Related: `small-reviewable-chunks, smallest-trustworthy-verification,
+  change-shape-controls-review-cost`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, change-shape, verification, testing`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   ritual trains maintainers to ignore failures while real drift accumulates.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, verification, testing, automation`
+- Related: `smallest-trustworthy-verification, tests-should-explain-failures`
 
 ## Rule
 

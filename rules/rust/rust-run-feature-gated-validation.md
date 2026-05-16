@@ -9,7 +9,8 @@
   would be too expensive.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, testing, verification, dependencies`
+- Related: `test-check-important-feature-combinations, rust-document-feature-contracts`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   Stable claims need evidence, but wording-only changes should not break broad tests.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, source-truth, verification, documentation`
+- Related: `remediate-doc-drift, label-doc-claims-by-evidence, test-match-evidence-to-surface`
 
 ## Rule
 

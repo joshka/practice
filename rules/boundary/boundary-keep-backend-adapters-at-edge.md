@@ -9,7 +9,8 @@
   instead of hidden behind a false common API.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, side-effects, public-api, local-conventions`
+- Related: `make-side-effects-visible, prefer-standard-conversions`
 
 ## Rule
 

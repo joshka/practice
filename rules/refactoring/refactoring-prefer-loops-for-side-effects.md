@@ -9,7 +9,8 @@
   order, early exits, and error handling.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `side-effects, reader-locality, change-shape`
+- Related: `make-side-effects-visible, reader-locality, chunk-statements`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   preserves semver freedom and avoids forcing downstream users onto implementation choices.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, public-api`
+- Related: `keep-public-dependencies-intentional, public-api-changes-have-downstream-cost`
 
 ## Rule
 

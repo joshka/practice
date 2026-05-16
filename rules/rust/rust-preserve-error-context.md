@@ -9,7 +9,8 @@
   actionable context.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, errors, observability, failure-output`
+- Related: `preserve-error-context, return-structured-errors, rust-write-actionable-error-display`
 
 ## Rule
 

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `shape-tool-output-for-agents, produce-review-packets, vcs-jj-as-source-of-truth`
 
 ## Rule
 

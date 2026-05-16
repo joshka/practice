@@ -9,7 +9,8 @@
   expire.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, tooling, automation, reviewability`
+- Related: `rust-keep-lints-actionable, rust-encode-durable-rules-in-lints`
 
 ## Rule
 

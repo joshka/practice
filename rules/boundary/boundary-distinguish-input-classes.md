@@ -9,7 +9,8 @@
   while allowing small internal parsers to stay simpler.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, validation-policy, errors, failure-output`
+- Related: `parse-dont-validate, make-validation-policy-explicit, write-actionable-error-messages`
 
 ## Rule
 

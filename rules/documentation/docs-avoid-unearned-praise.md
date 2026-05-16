@@ -8,7 +8,8 @@
   evaluative claims only when the basis is explicit enough for readers to verify.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, verification, reviewability`
+- Related: `label-doc-claims-by-evidence, DOCS-USE-CONCRETE-DETAILS`
 
 ## Rule
 

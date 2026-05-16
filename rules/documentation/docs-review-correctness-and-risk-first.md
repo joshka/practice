@@ -8,7 +8,8 @@
   claims before style polish. This separates blocking risk from wording cleanup.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reviewability, verification, review-handoff`
+- Related: `review-proof-not-just-code, DOCS-TREAT-DOCS-AS-CONTRACTS`
 
 ## Rule
 

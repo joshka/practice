@@ -8,7 +8,8 @@
   scan. Respect macros, generated code, and local convention when another order communicates better.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, public-api`
+- Related: `reader-locality, rust-order-code-for-reading, rust-group-module-imports`
 
 ## Rule
 

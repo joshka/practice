@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-avoid-interactive-jj-in-agent-work, vcs-use-ignore-working-copy-carefully`
 
 ## Rule
 

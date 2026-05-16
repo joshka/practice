@@ -9,7 +9,8 @@
   construction is truly part of the contract.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, validation-policy, public-api, boundary-correctness`
+- Related: `prefer-standard-conversions, make-invalid-states-hard-to-express`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   limits keep complexity and optimization claims tied to supported behavior.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, performance, public-api`
+- Related: `measure-before-optimizing, encode-nonfunctional-requirements`
 
 ## Rule
 

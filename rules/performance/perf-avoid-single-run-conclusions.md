@@ -9,7 +9,9 @@
   make a single result non-reproducible.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, verification, reviewability`
+- Related: measure-before-optimizing, smallest-trustworthy-verification,
+  review-proof-not-just-code
 
 ## Rule
 

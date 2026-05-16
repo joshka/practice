@@ -8,7 +8,8 @@
   contract. Clear tense and labels prevent callers from relying on unimplemented behavior.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, source-truth, public-api`
+- Related: `docs-are-contracts, label-doc-claims-by-evidence`
 
 ## Rule
 

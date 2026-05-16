@@ -8,7 +8,8 @@
   invariants, tests, and future maintenance close to the responsible code.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, ownership, reader-locality, local-conventions`
+- Related: `reader-locality, strengthen-cohesion, follow-local-conventions`
 
 ## Rule
 

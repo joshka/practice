@@ -9,7 +9,8 @@
   nondeterministic summaries as authoritative.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, agent-context, state-transitions, verification`
+- Related: `limit-live-context, prefer-durable-summaries, report-verification-honestly`
 
 ## Rule
 

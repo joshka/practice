@@ -8,7 +8,8 @@
   Otherwise it adds conversions and concepts without improving correctness.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, ownership, change-shape`
+- Related: `reader-locality, strengthen-cohesion, RUST-USE-MEANINGFUL-STANDARD-TYPES`
 
 ## Rule
 

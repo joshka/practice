@@ -9,7 +9,8 @@
   workload enough to justify its tradeoffs.
 - Status: `reviewed`
 - Domain: `performance`
-- Depth: `compact`
+- Tags: `performance, verification, reviewability`
+- Related: `measure-before-optimizing, review-proof-not-just-code, write-pr-narrative`
 
 ## Rule
 

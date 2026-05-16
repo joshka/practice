@@ -8,7 +8,8 @@
   usefulness. Concrete examples expose ownership, errors, features, and lifecycle expectations.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, documentation, examples`
+- Related: `write-docs-as-contracts, DOCS-PROVE-REAL-USE-WITH-EXAMPLES`
 
 ## Rule
 

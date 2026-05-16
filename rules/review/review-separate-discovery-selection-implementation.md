@@ -9,7 +9,9 @@
   direction is still unsettled.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, change-shape, agent-workflow`
+- Related: separate-discovery-from-editing, small-reviewable-chunks,
+  spend-human-attention-on-ambiguity
 
 ## Rule
 

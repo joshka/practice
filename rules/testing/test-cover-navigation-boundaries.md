@@ -8,7 +8,8 @@
   Boundary cases catch cursor and scrolling bugs that polished manual demos often miss.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, boundary-correctness, verification`
+- Related: `boundary-treat-terminal-ui-as-product-surface, test-cover-local-logic-with-unit-tests`
 
 ## Rule
 

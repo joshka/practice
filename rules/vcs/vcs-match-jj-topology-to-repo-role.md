@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `jj-topology-is-repo-role-dependent, vcs-confirm-github-remote-topology`
 
 ## Rule
 

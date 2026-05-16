@@ -8,7 +8,8 @@
   Lockfile tests can hide newer API usage, so use targeted minimal-version checks when needed.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, dependencies, rust, verification`
+- Related: `rust-use-honest-minimum-dependencies, keep-public-dependencies-intentional`
 
 ## Rule
 

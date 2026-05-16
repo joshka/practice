@@ -8,7 +8,8 @@
   labels keep readers from treating illustrative code as a supported copy-paste contract.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, examples, verification, rustdoc`
+- Related: `docs-are-contracts, DOCS-DISTINGUISH-EXAMPLE-ROLES`
 
 ## Rule
 

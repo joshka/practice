@@ -8,7 +8,8 @@
   they are deliberate API. This prevents scaffolding from leaking into production contracts.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, testing, public-api, boundary-correctness`
+- Related: `public-api-changes-have-downstream-cost, RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
 
 ## Rule
 

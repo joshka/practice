@@ -8,7 +8,8 @@
   current diff can stand alone. This preserves review focus while still capturing useful work.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, reviewability, documentation`
+- Related: `small-reviewable-chunks, make-the-change-easy-first, remediate-doc-drift`
 
 ## Rule
 

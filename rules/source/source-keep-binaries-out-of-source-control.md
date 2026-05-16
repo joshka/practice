@@ -7,9 +7,11 @@
 - Summary: Store large or opaque artifacts in systems designed for assets, releases, CI evidence, or
   external data. Keeping source history textual and reviewable avoids clone cost and painful history
   rewrites.
+- Related: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE, report-verification-honestly,
+  preserve-unowned-work`
 - Status: `reviewed`
 - Domain: `source`
-- Depth: `expanded`
+- Tags: `source-truth, generated-artifacts, release, reviewability`
 
 ## Rule
 

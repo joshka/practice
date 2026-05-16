@@ -6,9 +6,11 @@
 - ID: `AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`
 - Summary: Avoid putting real credentials or sensitive values into prompts, docs, logs, and tests.
   Keeping secrets out of context reduces leakage through retained, repeated, or committed text.
+- Related: `keep-secrets-out-of-context, avoid-secret-or-private-log-context,
+  grant-scoped-agent-capabilities`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, security-privacy, agent-context, observability`
 
 ## Rule
 

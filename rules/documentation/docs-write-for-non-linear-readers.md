@@ -8,7 +8,8 @@
   retrieval. Avoid repeating the whole introduction; add only the subject and prerequisite needed.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, agent-context`
+- Related: `reader-locality, deliver-context-just-in-time`
 
 ## Rule
 

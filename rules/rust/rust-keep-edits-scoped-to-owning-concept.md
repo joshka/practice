@@ -8,7 +8,8 @@
   edits keep reviews atomic and prevent nearby files from pulling in unrelated concepts.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, change-shape, ownership, reviewability`
+- Related: `cap-change-radius, change-shape-controls-review-cost, RUST-KEEP-CONCEPTS-COHERENT`
 
 ## Rule
 

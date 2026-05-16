@@ -8,7 +8,8 @@
   Cheap checks come first, but risky or uncertain behavior needs targeted evidence.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, verification, validation-policy, reviewability`
+- Related: `smallest-trustworthy-verification, review-proof-not-just-code`
 
 ## Rule
 

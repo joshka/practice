@@ -8,7 +8,8 @@
   Move behavior onto a type when the method relationship clarifies state, policy, or trait design.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, ownership, reader-locality, change-shape`
+- Related: `name-coupling, rust-avoid-empty-wrapper-types, strengthen-cohesion`
 
 ## Rule
 

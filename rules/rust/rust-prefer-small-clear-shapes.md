@@ -8,7 +8,8 @@
   readers. Do not split cohesive logic into fragments that force more navigation than understanding.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, ownership`
+- Related: `reader-locality, limit-live-context, rust-keep-concepts-coherent`
 
 ## Rule
 

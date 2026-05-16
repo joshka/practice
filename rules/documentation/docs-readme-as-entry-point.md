@@ -8,7 +8,8 @@
   Split out manual-level detail when it hides the starting path.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, source-truth`
+- Related: `bootstrap-repo-docs, keep-docs-near-their-subject`
 
 ## Rule
 

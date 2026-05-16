@@ -8,7 +8,8 @@
   This lets callers compose, display, chain, and inspect errors in ordinary Rust workflows.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, errors, public-api, observability`
+- Related: `preserve-error-context, write-actionable-error-messages`
 
 ## Rule
 

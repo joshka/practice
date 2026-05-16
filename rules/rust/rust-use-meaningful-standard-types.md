@@ -9,7 +9,8 @@
   standard type cannot prevent meaningful mixups.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, validation-policy, public-api, reader-locality`
+- Related: `prefer-standard-conversions, make-invalid-states-hard-to-express`
 
 ## Rule
 

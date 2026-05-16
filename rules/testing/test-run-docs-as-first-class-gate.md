@@ -8,7 +8,8 @@
   Prose-only edits may need less proof, but API-facing docs should fail before stale guidance ships.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, documentation, examples, automation`
+- Related: `rust-validate-rust-docs-as-code, docs-verify-commands-paths-and-links`
 
 ## Rule
 

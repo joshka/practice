@@ -8,7 +8,8 @@
   Large input spaces hide failures, so keep long fuzzing outside PR gates unless it is stable.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, boundary-correctness, state-transitions, validation-policy`
+- Related: `parse-dont-validate, make-state-transitions-explicit, test-use-realistic-parser-samples`
 
 ## Rule
 

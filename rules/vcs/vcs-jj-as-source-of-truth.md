@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `jj-topology-is-repo-role-dependent, vcs-do-not-fall-back-to-git-for-jj-issues`
 
 ## Rule
 

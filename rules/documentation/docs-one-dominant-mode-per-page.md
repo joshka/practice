@@ -8,7 +8,8 @@
   readers from paying for tutorial, reference, explanation, and policy at once.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, source-truth`
+- Related: `choose-doc-type, DOCS-CHOOSE-DOCUMENT-TYPE`
 
 ## Rule
 

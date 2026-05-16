@@ -9,7 +9,8 @@
   explicit.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, boundary-correctness, side-effects, testing`
+- Related: `inject-time-and-randomness, make-side-effects-visible`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   adapt.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, examples, side-effects, verification`
+- Related: `make-side-effects-visible, DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`
 
 ## Rule
 

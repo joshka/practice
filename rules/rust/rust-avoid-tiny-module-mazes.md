@@ -8,7 +8,8 @@
   reduces file-jumping and preserves reader locality.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, ownership`
+- Related: `reader-locality, limit-live-context, RUST-KEEP-CONCEPTS-COHERENT`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   causal material flat or in prose so structure does not add noise.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, reviewability`
+- Related: `reader-locality, DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`
 
 ## Rule
 

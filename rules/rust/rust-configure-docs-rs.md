@@ -8,7 +8,8 @@
   docs. Users should see the documentation surface the crate expects to support.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, documentation, tooling`
+- Related: `docs-are-contracts, RUST-RUN-FEATURE-GATED-VALIDATION, RUST-VALIDATE-RUST-DOCS-AS-CODE`
 
 ## Rule
 

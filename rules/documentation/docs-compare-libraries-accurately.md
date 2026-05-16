@@ -8,7 +8,8 @@
   source-backed comparisons preserve trust while still helping users choose.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, verification, dependencies, source-truth`
+- Related: `label-doc-claims-by-evidence, DOCS-USE-SOURCE-LINKS-AS-SUPPORT`
 
 ## Rule
 

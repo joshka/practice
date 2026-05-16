@@ -8,7 +8,8 @@
   docs, and generated files can travel with it when they support that same purpose.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, reviewability, vcs-jj`
+- Related: `change-shape-controls-review-cost, small-reviewable-chunks`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   obligations. Skip internal narration, but make operational responsibilities clear.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, side-effects, ownership, public-api`
+- Related: `make-side-effects-visible, document-errors-panics-safety`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   catch repeated mistakes without turning subjective taste into CI noise.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, tooling, automation, local-conventions`
+- Related: `mechanize-repeated-feedback, make-bad-output-mechanically-hard`
 
 ## Rule
 

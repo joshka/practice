@@ -8,7 +8,8 @@
   imperative headings for procedures where the section is truly a step.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, local-conventions`
+- Related: `reader-locality, DOCS-NAME-DESTINATION-NOT-DIRECTION`
 
 ## Rule
 

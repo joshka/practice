@@ -9,7 +9,8 @@
   allowed, denied, redacted, fallback, preserved, and unsupported outcomes.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, validation-policy, side-effects, security-privacy`
+- Related: `make-validation-policy-explicit, contain-observability-policy, prove-security-impact`
 
 ## Rule
 

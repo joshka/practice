@@ -8,7 +8,8 @@
   lets readers distinguish internal dependencies from the API surface being presented.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, public-api, local-conventions`
+- Related: `RUST-GROUP-MODULE-IMPORTS, RUST-REEXPORT-FOR-DISCOVERY`
 
 ## Rule
 

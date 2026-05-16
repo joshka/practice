@@ -9,7 +9,8 @@
   maintainers inherit those choices.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reviewability, verification`
+- Related: `rust-review-as-future-maintainer, review-proof-not-just-code`
 
 ## Rule
 

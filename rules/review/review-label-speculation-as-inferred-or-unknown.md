@@ -8,7 +8,8 @@
   matters. Clear labels keep guesses from hardening into false project knowledge.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, source-truth, verification, documentation`
+- Related: `label-doc-claims-by-evidence, report-verification-honestly, review-proof-not-just-code`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   is often cheaper than freezing accidental names, re-exports, features, or variants.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, public-api, release, change-shape`
+- Related: `public-api-changes-have-downstream-cost, RUST-CONSIDER-DOWNSTREAM-API-IMPACT`
 
 ## Rule
 

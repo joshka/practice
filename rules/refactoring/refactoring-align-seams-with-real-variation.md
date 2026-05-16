@@ -9,7 +9,8 @@
   next change or risk clearly justifies them.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `change-shape, ownership, boundary-correctness`
+- Related: `keep-structure-reversible, name-coupling, separate-structure-from-behavior`
 
 ## Rule
 

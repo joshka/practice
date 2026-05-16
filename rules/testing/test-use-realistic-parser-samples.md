@@ -8,7 +8,8 @@
   Real samples catch compatibility failures, but fixtures should be minimized and scrubbed.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, boundary-correctness, examples, validation-policy`
+- Related: `parse-dont-validate, test-fuzz-parsers-formatters-and-state-machines`
 
 ## Rule
 

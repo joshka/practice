@@ -9,7 +9,9 @@
   prototype scaffolding.
 - Status: `reviewed`
 - Domain: `review`
-- Depth: `compact`
+- Tags: `reviewability, change-shape, verification, reader-locality`
+- Related: preserve-intent-over-literalism, keep-structure-reversible,
+  explicit-boundaries-preserve-correctness
 
 ## Rule
 

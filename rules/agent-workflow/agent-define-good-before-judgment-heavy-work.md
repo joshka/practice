@@ -6,9 +6,11 @@
 - ID: `AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`
 - Summary: State the quality bar before work where taste, naming, API shape, or review expectations
   matter. Clear criteria give the agent goalposts before it creates a large speculative diff.
+- Related: `define-good-before-judgment-heavy-work, spend-human-attention-on-ambiguity,
+  preserve-intent-over-literalism`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, reviewability, public-api, documentation`
 
 ## Rule
 

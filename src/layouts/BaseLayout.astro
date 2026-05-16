@@ -1,6 +1,18 @@
 ---
 import '../styles/global.css';
-import { faDesktop, faMagnifyingGlass, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
+import {
+  faBook,
+  faBrain,
+  faCompassDrafting,
+  faDesktop,
+  faGlobe,
+  faMagnifyingGlass,
+  faMoon,
+  faRobot,
+  faRuler,
+  faSun,
+  faWrench,
+} from '@fortawesome/free-solid-svg-icons';
 import { withBase } from '../lib/site';
 
 type Props = {
@@ -26,10 +38,27 @@ const themeIcons = {
   dark: faMoon,
 };
 const searchIcon = faMagnifyingGlass;
+const searchKindIcons = {
+  agent: iconData(faRobot),
+  guide: iconData(faBook),
+  mechanism: iconData(faWrench),
+  page: iconData(faGlobe),
+  pattern: iconData(faCompassDrafting),
+  principle: iconData(faBrain),
+  reference: iconData(faGlobe),
+  rule: iconData(faRuler),
+};
 
 function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
   const [, , , , path] = icon.icon;
   return Array.isArray(path) ? path.join(' ') : path;
+}
+
+function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
+  return {
+    path: iconPath(icon),
+    viewBox: `0 0 ${icon.icon[0]} ${icon.icon[1]}`,
+  };
 }
 ---
 
@@ -57,6 +86,7 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
   <body
     class="min-h-screen bg-background text-on-background font-sans text-base antialiased"
     data-search-index={withBase('/search.json')}
+    data-search-kind-icons={JSON.stringify(searchKindIcons)}
   >
     <header class="site-header sticky top-0 z-50">
       <div class="site-header__inner">
@@ -205,6 +235,8 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
       type SearchEntry = {
         title: string;
         id?: string;
+        kind: string;
+        kindLabel: string;
         description: string;
         url: string;
         headings: string[];
@@ -272,6 +304,8 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
 
       let searchIndex: SearchEntry[] | undefined;
       let selectedSearchIndex = 0;
+      const rawSearchKindIcons = document.body.dataset.searchKindIcons || '{}';
+      const searchKindIcons = JSON.parse(rawSearchKindIcons) as Record<string, { path: string; viewBox: string }>;
 
       function normalizeSearchText(value: string): string {
         return value.toLowerCase().replace(/\s+/g, ' ').trim();
@@ -340,13 +374,24 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
         }
 
         searchResults.innerHTML = results
-          .map((result, index) => `
+          .map((result, index) => {
+            const icon = searchKindIcons[result.kind] || searchKindIcons.page;
+            return `
             <a class="site-search__result" href="${result.url}" data-search-result data-index="${index}" aria-selected="${index === selectedSearchIndex}">
+              <span class="site-search__result-meta">
+                <span class="site-search__kind">
+                  <svg aria-hidden="true" viewBox="${escapeSearchHtml(icon.viewBox)}">
+                    <path d="${escapeSearchHtml(icon.path)}"></path>
+                  </svg>
+                  <em>${escapeSearchHtml(result.kindLabel)}</em>
+                </span>
+                ${result.id ? `<small>${escapeSearchHtml(result.id)}</small>` : ''}
+              </span>
               <strong>${escapeSearchHtml(result.title)}</strong>
-              ${result.id ? `<small>${escapeSearchHtml(result.id)}</small>` : ''}
-              <span>${escapeSearchHtml(result.description || result.snippet)}</span>
+              <span class="site-search__result-description">${escapeSearchHtml(result.description || result.snippet)}</span>
             </a>
-          `)
+          `;
+          })
           .join('');
       }
 

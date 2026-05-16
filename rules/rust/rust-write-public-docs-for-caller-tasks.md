@@ -9,7 +9,8 @@
   when they help the task.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, documentation, public-api`
+- Related: `docs-build-docs-like-users-read-them, rust-write-rustdoc-as-api-contract`
 
 ## Rule
 

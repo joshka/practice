@@ -6,9 +6,10 @@
 - ID: `AGENT-PRESERVE-HUMAN-WORK`
 - Summary: Inspect and protect unrelated local edits before changing files. Preserving human work
   keeps the task diff focused and avoids destroying unfinished or intentional changes.
+- Related: `preserve-unowned-work, separate-discovery-from-editing, follow-local-conventions`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, change-shape, ownership, vcs-jj`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   That role controls how complete, copyable, and validated the example must be.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, examples, verification`
+- Related: `DOCS-PROVE-REAL-USE-WITH-EXAMPLES, DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`
 
 ## Rule
 

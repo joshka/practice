@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `small-reviewable-chunks, change-use-one-purpose-per-change`
 
 ## Rule
 

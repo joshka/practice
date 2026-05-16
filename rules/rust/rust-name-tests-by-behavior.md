@@ -9,7 +9,8 @@
   setup details.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, testing, failure-output, reviewability`
+- Related: `tests-should-explain-failures, test-optimize-failure-output`
 
 ## Rule
 

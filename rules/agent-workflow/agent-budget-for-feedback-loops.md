@@ -6,9 +6,11 @@
 - ID: `AGENT-BUDGET-FOR-FEEDBACK-LOOPS`
 - Summary: Reserve enough time and tokens for checks, failure inspection, and handoff proof.
   Planning for the feedback loop keeps validation from being squeezed out after the first edit.
+- Related: `budget-tokens-for-feedback-loops, close-the-agent-loop,
+  report-verification-honestly`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, verification, review-handoff`
 
 ## Rule
 

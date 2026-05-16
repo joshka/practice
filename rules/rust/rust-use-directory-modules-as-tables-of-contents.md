@@ -9,7 +9,8 @@
   table of contents.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, reader-locality, ownership, documentation`
+- Related: `rust-prefer-concept-owned-modules-and-named-files, rust-avoid-giant-crate-roots`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   Deterministic failures are reproducible, while real integration checks should be isolated by cost.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, verification, tooling`
+- Related: `inject-time-and-randomness, smallest-trustworthy-verification`
 
 ## Rule
 

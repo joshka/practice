@@ -9,7 +9,8 @@
   conflict handling, and the cost of later migration.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, state-transitions, validation-policy, public-api`
+- Related: `parse-dont-validate, make-state-transitions-explicit, prefer-standard-conversions`
 
 ## Rule
 

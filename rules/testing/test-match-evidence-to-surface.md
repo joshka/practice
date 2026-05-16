@@ -8,7 +8,8 @@
   The narrowest relevant proof is more persuasive than unrelated broad test success.
 - Status: `reviewed`
 - Domain: `testing`
-- Depth: `compact`
+- Tags: `testing, verification, reviewability`
+- Related: `smallest-trustworthy-verification, report-verification-honestly`
 
 ## Rule
 

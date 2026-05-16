@@ -9,7 +9,8 @@
   construction communicates the contract better.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, validation-policy, public-api`
+- Related: `rust-validate-builders-on-build, make-invalid-states-hard-to-express`
 
 ## Rule
 

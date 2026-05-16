@@ -8,7 +8,8 @@
   Keep the local voice trustworthy without cutting useful explanation.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, generated-artifacts, reader-locality`
+- Related: `preserve-local-doc-voice, DOCS-HIDE-CATALOG-MECHANICS`
 
 ## Rule
 

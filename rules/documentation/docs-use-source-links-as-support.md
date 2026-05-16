@@ -8,7 +8,8 @@
   wording. This keeps the repo voice original while still making claims checkable.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, source-truth, verification`
+- Related: `label-doc-claims-by-evidence, SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
 
 ## Rule
 

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-recover-with-operation-log, vcs-use-evolog-and-operation-log`
 
 ## Rule
 

@@ -8,7 +8,8 @@
   unclear. The baseline separates intentional behavior changes from accidental drift.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, testing, verification`
+- Related: `test-observable-behavior, smallest-trustworthy-verification`
 
 ## Rule
 

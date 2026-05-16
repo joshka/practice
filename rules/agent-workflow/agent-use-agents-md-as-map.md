@@ -6,9 +6,10 @@
 - ID: `AGENT-USE-AGENTS-MD-AS-MAP`
 - Summary: Keep `AGENTS.md` compact by using it to route agents to deeper guides and mechanisms.
   Treating it as a map preserves startup context without losing durable project guidance.
+- Related: `use-agents-md-as-map, deliver-context-just-in-time, keep-docs-near-their-subject`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Depth: `compact`
+- Tags: `agent-workflow, agent-context, documentation, source-truth`
 
 ## Rule
 

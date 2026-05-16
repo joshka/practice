@@ -8,7 +8,8 @@
   makes policy reviewable and shows when stronger types should prevent invalid states instead.
 - Status: `reviewed`
 - Domain: `refactoring`
-- Depth: `compact`
+- Tags: `boundary-correctness, validation-policy, reader-locality`
+- Related: `make-invalid-states-hard-to-express, use-guard-clause, make-validation-policy-explicit`
 
 ## Rule
 

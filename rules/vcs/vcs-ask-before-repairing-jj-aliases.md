@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `jj-topology-is-repo-role-dependent, vcs-match-jj-topology-to-repo-role`
 
 ## Rule
 

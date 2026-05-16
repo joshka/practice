@@ -6,9 +6,11 @@
 - ID: `OBSERVABILITY-SURFACE-DURABLE-FAILURES`
 - Summary: Give persistent failures a stable status, error surface, or retry path instead of only an
   ephemeral UI log. Users and maintainers need something actionable after the moment passes.
+- Related: `make-failures-observable, make-runtime-state-agent-legible,
+  make-state-transitions-explicit`
 - Status: `reviewed`
 - Domain: `observability`
-- Depth: `compact`
+- Tags: `observability, failure-output, errors, state-transitions`
 
 ## Rule
 

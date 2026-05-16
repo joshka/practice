@@ -9,7 +9,8 @@
   explicit opt-ins.
 - Status: `reviewed`
 - Domain: `boundary`
-- Depth: `compact`
+- Tags: `boundary-correctness, tooling, automation, agent-workflow`
+- Related: `make-side-effects-visible, VCS-AVOID-INTERACTIVE-JJ-IN-AGENT-WORK`
 
 ## Rule
 

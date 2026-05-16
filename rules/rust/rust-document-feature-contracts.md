@@ -8,7 +8,8 @@
   users choose combinations without guessing from dependency names.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, public-api, dependencies`
+- Related: `docs-are-contracts, RUST-TIE-OPTIONAL-DEPENDENCIES-TO-NAMED-FEATURES`
 
 ## Rule
 

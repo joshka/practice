@@ -8,7 +8,8 @@
   behavior. Localized obligations make the safety argument auditable.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, boundary-correctness, security-privacy, testing`
+- Related: `explicit-boundaries-preserve-correctness, RUST-DENY-ACCIDENTAL-UNSAFE`
 
 ## Rule
 

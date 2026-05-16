@@ -8,7 +8,8 @@
   Cut marketing, coaching, chat, and page narration when they do not explain the system.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, reader-locality, public-api`
+- Related: `preserve-local-doc-voice, DOCS-AVOID-GENERATED-PROSE-TELLS`
 
 ## Rule
 

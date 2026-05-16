@@ -9,7 +9,8 @@
   Markdown lint according to the changed surface.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, rustdoc, testing, verification`
+- Related: `test-run-docs-as-first-class-gate, test-cover-public-examples-with-doctests`
 
 ## Rule
 

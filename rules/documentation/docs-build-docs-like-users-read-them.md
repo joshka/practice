@@ -8,7 +8,8 @@
   see. Match validation depth to the risk of feature, metadata, or public example changes.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Depth: `compact`
+- Tags: `documentation, rustdoc, verification, examples`
+- Related: `docs-are-contracts, TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
 
 ## Rule
 

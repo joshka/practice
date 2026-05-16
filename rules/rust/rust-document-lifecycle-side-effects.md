@@ -8,7 +8,8 @@
   Callers need to know when resources are acquired, released, spawned, or blocked.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, documentation, side-effects`
+- Related: `make-side-effects-visible, DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`
 
 ## Rule
 

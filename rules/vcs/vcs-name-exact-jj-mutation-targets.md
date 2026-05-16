@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
+- Related: `vcs-confirm-broad-jj-operations, make-parameters-explicit`
 
 ## Rule
 

@@ -9,7 +9,8 @@
   broken state.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, state-transitions, errors, boundary-correctness`
+- Related: `make-state-transitions-explicit, boundary-read-normalize-compare-mutate`
 
 ## Rule
 

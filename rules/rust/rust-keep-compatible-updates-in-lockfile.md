@@ -8,7 +8,8 @@
   not changed. This tests fresh releases without narrowing downstream compatibility.
 - Status: `reviewed`
 - Domain: `rust`
-- Depth: `compact`
+- Tags: `rust, dependencies, verification`
+- Related: `keep-public-dependencies-intentional, RUST-DO-NOT-PIN-PATCH-VERSIONS`
 
 ## Rule
 

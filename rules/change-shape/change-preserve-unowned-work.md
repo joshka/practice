@@ -8,7 +8,8 @@
   ownership unless the task says otherwise. Adapting around them protects parallel work and context.
 - Status: `reviewed`
 - Domain: `change-shape`
-- Depth: `compact`
+- Tags: `change-shape, ownership, vcs-jj`
+- Related: `preserve-unowned-work, private-context-is-not-shared-context`
 
 ## Rule
 
