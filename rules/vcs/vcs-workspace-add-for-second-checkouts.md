@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-WORKSPACE-ADD-FOR-SECOND-CHECKOUTS`
+- Name: `Workspace Add for Second Checkouts`
+- Summary: Use `jj workspace add` only when a task needs another filesystem checkout.
+  Ordinary review separation should use `jj new`; workspaces fit clean validation or parallelism.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

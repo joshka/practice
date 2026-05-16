@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-CONFIGURE-JJ-PAGER`
+- Name: `Configure JJ Pager`
+- Summary: Scope pager control with `--no-pager`, `JJ_PAGER=cat`, or session configuration.
+  Direct output keeps source-control evidence visible without changing the user's global pager.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

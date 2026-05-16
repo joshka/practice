@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-SCOPE-JJ-FILE-TRACKING`
+- Name: `Scope JJ File Tracking`
+- Summary: Pass intended paths to `jj file track` and `jj file untrack`.
+  Scoped tracking keeps local-only, generated, or unrelated files out of publication state.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

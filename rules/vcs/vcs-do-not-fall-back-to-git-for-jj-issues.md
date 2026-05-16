@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-DO-NOT-FALL-BACK-TO-GIT-FOR-JJ-ISSUES`
+- Name: `Do Not Fall Back to Git for JJ Issues`
+- Summary: Diagnose jj locks, pager issues, and state problems through jj before switching tools.
+  Git bypasses jj change-graph semantics, so use it only for transport after jj state is coherent.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

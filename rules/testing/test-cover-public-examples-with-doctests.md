@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-COVER-PUBLIC-EXAMPLES-WITH-DOCTESTS`
+- Name: `Cover Public Examples with Doctests`
+- Summary: Compile public documentation examples as doctests when they do not need fragile state.
+  Executable examples catch stale guidance, reserving no-run or ignored examples for real limits.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-PREFER-DETERMINISTIC-TESTS`
+- Name: `Prefer Deterministic Tests`
+- Summary: Prefer tests controlled by fixed inputs, clocks, ordering, and local state.
+  Deterministic failures are reproducible, while real integration checks should be isolated by cost.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

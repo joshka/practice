@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-COVER-NAVIGATION-BOUNDARIES`
+- Name: `Cover Navigation Boundaries`
+- Summary: Exercise first, last, empty, oversized, and repeated-navigation states in tests.
+  Boundary cases catch cursor and scrolling bugs that polished manual demos often miss.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-WRITE-REGRESSION-TESTS-FOR-BUG-FIXES`
+- Name: `Write Regression Tests for Bug Fixes`
+- Summary: Add a test that fails before the bug fix and protects the repaired contract.
+  Skip only when reproduction is impractical, and then record the closest trustworthy validation.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

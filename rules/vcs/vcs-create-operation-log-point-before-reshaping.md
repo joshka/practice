@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-CREATE-OPERATION-LOG-POINT-BEFORE-RESHAPING`
+- Name: `Create an Operation Log Point Before Reshaping`
+- Summary: Create a recent jj operation boundary before risky stack reshaping.
+  Recovery is easier when there is a known point before rebases, splits, squashes, or repairs.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

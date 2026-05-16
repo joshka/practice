@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
+- Name: `Run Docs as a First-Class Gate`
+- Summary: Treat documentation checks as real validation for examples, links, commands, and claims.
+  Prose-only edits may need less proof, but API-facing docs should fail before stale guidance ships.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

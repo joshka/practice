@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-KEEP-SLOW-CHECKS-OUT-OF-PR-CI`
+- Name: `Keep Slow Checks out of PR CI`
+- Summary: Keep long fuzzing, exhaustive matrices, and noisy benchmarks out of required PR CI.
+  Fast gates preserve review flow, while heavier checks belong in release or scheduled validation.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

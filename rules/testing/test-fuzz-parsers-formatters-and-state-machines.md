@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-FUZZ-PARSERS-FORMATTERS-AND-STATE-MACHINES`
+- Name: `Fuzz Parsers, Formatters, and State Machines`
+- Summary: Use fuzzing or property tests for input-heavy parsers, formatters, and state machines.
+  Large input spaces hide failures, so keep long fuzzing outside PR gates unless it is stable.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

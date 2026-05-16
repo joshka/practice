@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-COVER-ASYNC-ROUTING-EDGE-CASES`
+- Name: `Cover Async Routing Edge Cases`
+- Summary: Test late replies, unrelated input, timeouts, and unmatched async responses.
+  These cases protect request correlation and cleanup without relying on wall-clock luck.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

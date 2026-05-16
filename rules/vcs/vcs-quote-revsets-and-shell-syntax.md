@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-QUOTE-REVSETS-AND-SHELL-SYNTAX`
+- Name: `Quote Revsets and Shell Syntax`
+- Summary: Quote jj revsets, bookmark syntax, and other shell-sensitive command fragments.
+  Shell metacharacters can alter commands, so examples should prefer simple safe quoting.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-CONFIRM-GITHUB-REMOTE-TOPOLOGY`
+- Name: `Confirm GitHub Remote Topology`
+- Summary: Inspect `origin`, `upstream`, push remote, PR base, and PR head before publication.
+  Fork and owned-repo layouts differ, so defaults can push or target the wrong repository.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

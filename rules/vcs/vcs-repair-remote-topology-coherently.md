@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`
+- Name: `Repair Remote Topology Coherently`
+- Summary: Repair fetch, push, tracking, trunk alias, PR base, and PR head assumptions together.
+  Remote topology is coupled, so partial fixes can leave publication commands half-correct.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

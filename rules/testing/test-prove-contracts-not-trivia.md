@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-PROVE-CONTRACTS-NOT-TRIVIA`
+- Name: `Prove Contracts Not Trivia`
+- Summary: Write tests around observable contracts instead of private helper trivia.
+  This preserves refactoring freedom unless the detail is itself the promised behavior.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

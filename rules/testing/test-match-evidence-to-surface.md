@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-MATCH-EVIDENCE-TO-SURFACE`
+- Name: `Match Evidence to Surface`
+- Summary: Validate the actual changed surface, such as rendered docs, API behavior, or byte output.
+  The narrowest relevant proof is more persuasive than unrelated broad test success.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-JJ-AS-SOURCE-OF-TRUTH`
+- Name: `JJ as Source of Truth`
+- Summary: Use jj for local workflow in repositories with `.jj` state.
+  This preserves descriptions, stack shape, operation-log recovery, and bookmark semantics.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

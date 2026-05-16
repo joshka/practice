@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-KEEP-DRIFT-CLAIMS-ALIGNED`
+- Name: `Keep Drift Claims Aligned`
+- Summary: Tie support claims, fixtures, examples, docs, and API paths to executable drift checks.
+  Stable claims need evidence, but wording-only changes should not break broad tests.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

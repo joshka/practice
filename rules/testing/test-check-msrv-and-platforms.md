@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-CHECK-MSRV-AND-PLATFORMS`
+- Name: `Check MSRV and Platforms`
+- Summary: Run checks for declared Rust versions and supported platforms when they are promised.
+  Compatibility claims are public contracts, so skip matrices only when no such claim exists.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

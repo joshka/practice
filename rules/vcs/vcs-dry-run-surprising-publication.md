@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-DRY-RUN-SURPRISING-PUBLICATION`
+- Name: `Dry Run Surprising Publication`
+- Summary: Use dry-run for ambiguous or surprising remote publication, not every routine push.
+  Extra verification pays off when remotes, bookmarks, force-like updates, or PR bases are unclear.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

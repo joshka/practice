@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-RUN-FAST-FORMAT-AND-LINT-GATES-EARLY`
+- Name: `Run Fast Format and Lint Gates Early`
+- Summary: Run cheap format and lint gates early in the feedback loop.
+  They remove mechanical failures quickly, but they do not replace validation of risky behavior.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

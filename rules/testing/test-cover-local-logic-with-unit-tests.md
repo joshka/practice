@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-COVER-LOCAL-LOGIC-WITH-UNIT-TESTS`
+- Name: `Cover Local Logic with Unit Tests`
+- Summary: Use unit tests for small local logic such as parsing helpers and policy branches.
+  They give fast precise feedback, while boundary behavior still needs higher-level tests.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

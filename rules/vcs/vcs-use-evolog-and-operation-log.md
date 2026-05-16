@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-USE-EVOLOG-AND-OPERATION-LOG`
+- Name: `Use Evolog and Operation Log`
+- Summary: Use `jj evolog` for a change's evolution and `jj op log` for repository operations.
+  Picking the right log distinguishes rewrite history from workspace, bookmark, and import events.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-CHECK-IMPORTANT-FEATURE-COMBINATIONS`
+- Name: `Check Important Feature Combinations`
+- Summary: Exercise default, disabled-default, all-feature, and important feature-pair builds.
+  Feature flags change APIs and compile paths, so use a risk-based matrix instead of every combo.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

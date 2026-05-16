@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-CONFIRM-BROAD-JJ-OPERATIONS`
+- Name: `Confirm Broad JJ Operations`
+- Summary: Confirm jj operations that abandon, rebase, squash, split, restore, publish, or go broad.
+  Confirmation protects unrelated work when a command can reshape history or public state.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

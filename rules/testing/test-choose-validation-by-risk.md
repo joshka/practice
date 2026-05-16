@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `TEST-CHOOSE-VALIDATION-BY-RISK`
+- Name: `Choose Validation by Risk`
+- Summary: Match the amount and kind of validation to the changed surface and failure cost.
+  Cheap checks come first, but risky or uncertain behavior needs targeted evidence.
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

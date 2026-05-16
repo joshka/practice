@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`
+- Name: `Make GitHub Handoff Explicit`
+- Summary: Name bookmark, remote, base, head, and repo when handing coherent jj state to GitHub.
+  Explicit publication avoids host-tool inference mistakes in forks, stacks, and multi-remote repos.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

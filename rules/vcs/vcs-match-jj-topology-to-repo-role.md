@@ -3,6 +3,9 @@
 ## Metadata
 
 - ID: `VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`
+- Name: `Match JJ Topology to Repo Role`
+- Summary: Align fetch remotes, push remotes, tracked bookmarks, aliases, and PR bases to repo role.
+  Owned, maintainer, and fork-only workflows need different topology assumptions.
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`
