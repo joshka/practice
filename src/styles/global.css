@@ -245,6 +245,30 @@ html[data-theme="light"] .code-block pre code {
     @apply mr-3 hidden max-w-[21rem] flex-wrap justify-end gap-x-5 gap-y-2;
   }
 
+  .mobile-nav {
+    @apply relative inline-flex;
+  }
+
+  .mobile-nav__trigger {
+    @apply grid size-8 place-items-center text-on-surface-variant transition-colors duration-200 hover:text-primary;
+    text-shadow: var(--engraved-text);
+  }
+
+  .mobile-nav__trigger svg {
+    @apply size-4;
+    fill: currentcolor;
+  }
+
+  .mobile-nav__menu {
+    @apply absolute right-0 top-full z-50 mt-3 grid min-w-48 gap-1 rounded-lg p-1.5;
+    background: var(--panel-gradient);
+    box-shadow: var(--panel-raised);
+  }
+
+  .mobile-nav__link {
+    @apply rounded px-3 py-2 text-sm font-bold text-on-surface-variant no-underline transition-colors duration-200 hover:text-primary;
+  }
+
   .nav-link {
     @apply text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant no-underline transition-colors duration-200 hover:text-primary;
     text-shadow: var(--engraved-text);
@@ -1323,6 +1347,10 @@ html[data-theme="light"] .code-block pre code {
 @media (min-width: 900px) {
   .primary-nav {
     display: flex;
+  }
+
+  .mobile-nav {
+    display: none;
   }
 }
 

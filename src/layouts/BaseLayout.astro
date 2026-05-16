@@ -3,6 +3,7 @@ import '../styles/global.css';
 import {
   faBook,
   faBrain,
+  faBars,
   faCompassDrafting,
   faDesktop,
   faGlobe,
@@ -37,7 +38,17 @@ const themeIcons = {
   light: faSun,
   dark: faMoon,
 };
+const menuIcon = faBars;
 const searchIcon = faMagnifyingGlass;
+const primaryLinks = [
+  { label: 'Guides', href: '/guides/' },
+  { label: 'Rules', href: '/rules/' },
+  { label: 'Patterns', href: '/patterns/' },
+  { label: 'Principles', href: '/why/' },
+  { label: 'Mechanisms', href: '/mechanisms/' },
+  { label: 'Agents', href: '/agents/' },
+  { label: 'References', href: '/references/' },
+];
 const searchKindIcons = {
   agent: iconData(faRobot),
   guide: iconData(faBook),
@@ -108,14 +119,25 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
         </a>
         <div class="site-header__actions">
           <nav class="primary-nav" aria-label="Primary">
-            <a class="nav-link" href={withBase('/guides/')}>Guides</a>
-            <a class="nav-link" href={withBase('/rules/')}>Rules</a>
-            <a class="nav-link" href={withBase('/patterns/')}>Patterns</a>
-            <a class="nav-link" href={withBase('/why/')}>Principles</a>
-            <a class="nav-link" href={withBase('/mechanisms/')}>Mechanisms</a>
-            <a class="nav-link" href={withBase('/agents/')}>Agents</a>
-            <a class="nav-link" href={withBase('/references/')}>References</a>
+            {primaryLinks.map((link) => <a class="nav-link" href={withBase(link.href)}>{link.label}</a>)}
           </nav>
+          <div class="mobile-nav">
+            <button
+              class="mobile-nav__trigger"
+              type="button"
+              aria-label="Open section navigation"
+              aria-expanded="false"
+              aria-controls="mobile-primary-nav"
+              data-mobile-nav-trigger
+            >
+              <svg aria-hidden="true" viewBox={`0 0 ${menuIcon.icon[0]} ${menuIcon.icon[1]}`}>
+                <path d={iconPath(menuIcon)} />
+              </svg>
+            </button>
+            <nav class="mobile-nav__menu" id="mobile-primary-nav" aria-label="Primary" hidden>
+              {primaryLinks.map((link) => <a class="mobile-nav__link" href={withBase(link.href)}>{link.label}</a>)}
+            </nav>
+          </div>
           <button
             class="site-search-trigger"
             type="button"
@@ -225,6 +247,9 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
       const themeTrigger = document.querySelector('.theme-switcher__trigger');
       const themeMenu = document.querySelector('.theme-switcher__menu');
       const themeButtons = document.querySelectorAll('[data-theme-option]');
+      const mobileNav = document.querySelector('.mobile-nav');
+      const mobileNavTrigger = document.querySelector('[data-mobile-nav-trigger]');
+      const mobileNavMenu = document.querySelector('.mobile-nav__menu');
       const searchDialog = document.querySelector('[data-search-dialog]');
       const searchInput = document.querySelector('[data-search-input]');
       const searchResults = document.querySelector('[data-search-results]');
@@ -300,6 +325,25 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
 
       themeQuery.addEventListener('change', () => {
         if (themePreference() === 'system') applyTheme('system');
+      });
+
+      function closeMobileNav() {
+        if (!(mobileNavTrigger instanceof HTMLElement) || !(mobileNavMenu instanceof HTMLElement)) return;
+        mobileNavTrigger.setAttribute('aria-expanded', 'false');
+        mobileNavMenu.hidden = true;
+      }
+
+      mobileNavTrigger?.addEventListener('click', () => {
+        if (!(mobileNavTrigger instanceof HTMLElement) || !(mobileNavMenu instanceof HTMLElement)) return;
+        const expanded = mobileNavTrigger.getAttribute('aria-expanded') === 'true';
+        mobileNavTrigger.setAttribute('aria-expanded', String(!expanded));
+        mobileNavMenu.hidden = expanded;
+      });
+
+      document.addEventListener('click', (event) => {
+        if (!(mobileNav instanceof HTMLElement)) return;
+        if (event.target instanceof Node && mobileNav.contains(event.target)) return;
+        closeMobileNav();
       });
 
       let searchIndex: SearchEntry[] | undefined;
@@ -476,6 +520,10 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
           event.preventDefault();
           openSearch();
           return;
+        }
+
+        if (event.key === 'Escape') {
+          closeMobileNav();
         }
 
         if (!(searchDialog instanceof HTMLElement) || searchDialog.hidden) return;
