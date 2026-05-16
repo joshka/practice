@@ -50,6 +50,7 @@
 
 :root {
   color-scheme: dark;
+  --body-gradient-start: #181c25;
   --panel-raised:
     inset 0 1px 0 rgb(255 255 255 / 0.09),
     inset 0 -1px 0 rgb(0 0 0 / 0.55),
@@ -73,6 +74,90 @@
   --engraved-text: 0 1px 0 rgb(0 0 0 / 0.55);
 }
 
+html[data-theme="light"] {
+  color-scheme: light;
+  --color-background: #f4f6f9;
+  --color-surface: #f4f6f9;
+  --color-surface-dim: #e7ebf1;
+  --color-surface-bright: #ffffff;
+  --color-surface-container-lowest: #ffffff;
+  --color-surface-container-low: #eef2f7;
+  --color-surface-container: #e7edf5;
+  --color-surface-container-high: #dfe7f1;
+  --color-surface-container-highest: #d6e0ec;
+  --color-on-background: #20242c;
+  --color-on-surface: #20242c;
+  --color-on-surface-variant: #596273;
+  --color-inverse-surface: #20242c;
+  --color-inverse-on-surface: #f4f6f9;
+  --color-outline: #737d8f;
+  --color-outline-variant: #c2cad8;
+  --color-surface-tint: #315fba;
+  --color-primary: #315fba;
+  --color-on-primary: #ffffff;
+  --color-primary-container: #d7e4ff;
+  --color-on-primary-container: #183e87;
+  --color-inverse-primary: #adc8f3;
+  --color-secondary: #59677f;
+  --color-on-secondary: #ffffff;
+  --color-secondary-container: #dbe4f4;
+  --color-on-secondary-container: #34435d;
+  --color-tertiary: #9a4b22;
+  --color-on-tertiary: #ffffff;
+  --color-tertiary-container: #ffdccd;
+  --color-on-tertiary-container: #5d2200;
+  --color-error: #ba1a1a;
+  --color-on-error: #ffffff;
+  --color-error-container: #ffdad6;
+  --color-on-error-container: #410002;
+  --color-code-bg: #eef3f9;
+  --body-gradient-start: #e8eef7;
+  --panel-raised:
+    inset 0 1px 0 rgb(255 255 255 / 0.92),
+    inset 0 -1px 0 rgb(70 83 103 / 0.16),
+    0 14px 28px rgb(27 38 61 / 0.13),
+    0 1px 0 rgb(70 83 103 / 0.14);
+  --panel-raised-soft:
+    inset 0 1px 0 rgb(255 255 255 / 0.88),
+    inset 0 -1px 0 rgb(70 83 103 / 0.12),
+    0 8px 18px rgb(27 38 61 / 0.1),
+    0 1px 0 rgb(70 83 103 / 0.12);
+  --panel-sunken:
+    inset 0 1px 3px rgb(70 83 103 / 0.16),
+    inset 0 -1px 0 rgb(255 255 255 / 0.9);
+  --panel-pressed:
+    inset 0 2px 6px rgb(70 83 103 / 0.2),
+    inset 0 1px 0 rgb(255 255 255 / 0.76);
+  --panel-gradient: linear-gradient(180deg, #ffffff 0%, #edf2f8 100%);
+  --panel-gradient-high: linear-gradient(180deg, #f8fbff 0%, #e7eef8 100%);
+  --primary-gradient: linear-gradient(180deg, #4f79d6 0%, #315fba 100%);
+  --primary-glow: 0 0 0 1px rgb(49 95 186 / 0.18), 0 12px 24px rgb(49 95 186 / 0.14);
+  --engraved-text: none;
+}
+
+html[data-theme="light"] pre,
+html[data-theme="light"] code {
+  box-shadow: inset 0 0 0 1px rgb(115 125 143 / 0.12);
+}
+
+html[data-theme="light"] pre code {
+  display: block;
+  border-radius: 0;
+  background: transparent;
+  padding: 0;
+  box-shadow: none;
+}
+
+html[data-theme="light"] .code-block pre {
+  border: 1px solid color-mix(in srgb, var(--color-outline-variant) 64%, transparent);
+  box-shadow: inset 0 1px 2px rgb(70 83 103 / 0.08);
+}
+
+html[data-theme="light"] .code-block pre code {
+  background: transparent;
+  box-shadow: none;
+}
+
 @layer base {
   html {
     background: var(--color-background);
@@ -80,7 +165,7 @@
 
   body {
     background:
-      linear-gradient(180deg, #181c25 0, var(--color-background) 19rem),
+      linear-gradient(180deg, var(--body-gradient-start) 0, var(--color-background) 19rem),
       var(--color-background);
     text-rendering: optimizeLegibility;
     text-shadow: var(--engraved-text);
@@ -138,6 +223,10 @@
     @apply mx-auto flex min-h-16 w-full max-w-container items-center justify-between gap-8 px-page py-3 md:px-page-lg;
   }
 
+  .site-header__actions {
+    @apply ml-auto flex min-w-0 items-center justify-end gap-5;
+  }
+
   .site-header img {
     box-shadow:
       inset 0 1px 0 rgb(255 255 255 / 0.16),
@@ -155,6 +244,50 @@
   .nav-link {
     @apply text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant no-underline transition-colors duration-200 hover:text-primary;
     text-shadow: var(--engraved-text);
+  }
+
+  .theme-switcher {
+    @apply relative ml-auto inline-flex shrink-0 items-center;
+  }
+
+  .theme-switcher__trigger {
+    @apply grid size-8 place-items-center text-on-surface-variant transition-colors duration-200 hover:text-primary;
+    text-shadow: var(--engraved-text);
+  }
+
+  .theme-switcher__trigger svg {
+    @apply size-4;
+    fill: currentcolor;
+  }
+
+  .theme-switcher__current {
+    @apply hidden;
+  }
+
+  html[data-theme-preference="system"] .theme-switcher__current[data-theme-current="system"],
+  html[data-theme-preference="light"] .theme-switcher__current[data-theme-current="light"],
+  html[data-theme-preference="dark"] .theme-switcher__current[data-theme-current="dark"] {
+    @apply block;
+  }
+
+  .theme-switcher__menu {
+    @apply absolute right-0 top-full z-50 mt-3 min-w-32 rounded-lg p-1.5;
+    background: var(--panel-gradient);
+    box-shadow: var(--panel-raised);
+  }
+
+  .theme-switcher__option {
+    @apply flex w-full items-center gap-2 rounded px-2.5 py-2 text-left font-mono text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant transition-colors duration-200 hover:text-primary;
+  }
+
+  .theme-switcher__option svg {
+    @apply size-3.5 shrink-0;
+    fill: currentcolor;
+  }
+
+  .theme-switcher__option[aria-checked="true"] {
+    @apply text-on-background;
+    background: var(--color-surface-container-high);
   }
 
   .breadcrumbs {
@@ -831,6 +964,10 @@
   }
 
   .detail-section__body--code pre {
+    @apply pr-20 whitespace-pre-wrap;
+  }
+
+  .page--agent-snippet .code-block pre {
     @apply pr-20 whitespace-pre-wrap;
   }
 

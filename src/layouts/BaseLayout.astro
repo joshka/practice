@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import { faDesktop, faMoon, faSun } from '@fortawesome/free-solid-svg-icons';
 import { withBase } from '../lib/site';
 
 type Props = {
@@ -19,6 +20,16 @@ const isHomePage = title === 'Practice' || title === 'Software Practices';
 const breadcrumbsIncludeCurrent = breadcrumbs.at(-1)?.href === undefined && breadcrumbs.length > 0;
 const currentBreadcrumb = breadcrumbsIncludeCurrent ? undefined : title;
 const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
+const themeIcons = {
+  system: faDesktop,
+  light: faSun,
+  dark: faMoon,
+};
+
+function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
+  const [, , , , path] = icon.icon;
+  return Array.isArray(path) ? path.join(' ') : path;
+}
 ---
 
 <!doctype html>
@@ -33,6 +44,13 @@ const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
       href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap"
       rel="stylesheet"
     />
+    <script is:inline>
+      const storedTheme = localStorage.getItem('theme-preference');
+      const systemTheme = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+      const themePreference = storedTheme === 'light' || storedTheme === 'dark' ? storedTheme : 'system';
+      document.documentElement.dataset.theme = themePreference === 'system' ? systemTheme : themePreference;
+      document.documentElement.dataset.themePreference = themePreference;
+    </script>
     <title>{title === 'Practice' ? title : `${title} | Practice`}</title>
   </head>
   <body class="min-h-screen bg-background text-on-background font-sans text-base antialiased">
@@ -54,15 +72,53 @@ const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
             </span>
           </span>
         </a>
-        <nav class="primary-nav" aria-label="Primary">
-          <a class="nav-link" href={withBase('/guides/')}>Guides</a>
-          <a class="nav-link" href={withBase('/rules/')}>Rules</a>
-          <a class="nav-link" href={withBase('/patterns/')}>Patterns</a>
-          <a class="nav-link" href={withBase('/why/')}>Principles</a>
-          <a class="nav-link" href={withBase('/mechanisms/')}>Mechanisms</a>
-          <a class="nav-link" href={withBase('/agents/')}>Agents</a>
-          <a class="nav-link" href={withBase('/references/')}>References</a>
-        </nav>
+        <div class="site-header__actions">
+          <nav class="primary-nav" aria-label="Primary">
+            <a class="nav-link" href={withBase('/guides/')}>Guides</a>
+            <a class="nav-link" href={withBase('/rules/')}>Rules</a>
+            <a class="nav-link" href={withBase('/patterns/')}>Patterns</a>
+            <a class="nav-link" href={withBase('/why/')}>Principles</a>
+            <a class="nav-link" href={withBase('/mechanisms/')}>Mechanisms</a>
+            <a class="nav-link" href={withBase('/agents/')}>Agents</a>
+            <a class="nav-link" href={withBase('/references/')}>References</a>
+          </nav>
+          <div class="theme-switcher">
+            <button
+              class="theme-switcher__trigger"
+              type="button"
+              aria-label="Choose theme mode"
+              aria-expanded="false"
+              aria-haspopup="menu"
+            >
+              {Object.entries(themeIcons).map(([name, icon]) => (
+                <svg
+                  class="theme-switcher__current"
+                  data-theme-current={name}
+                  aria-hidden="true"
+                  viewBox={`0 0 ${icon.icon[0]} ${icon.icon[1]}`}
+                >
+                  <path d={iconPath(icon)} />
+                </svg>
+              ))}
+            </button>
+            <div class="theme-switcher__menu" role="menu" hidden>
+              {Object.entries(themeIcons).map(([name, icon]) => (
+                <button
+                  class="theme-switcher__option"
+                  type="button"
+                  data-theme-option={name}
+                  role="menuitemradio"
+                  aria-checked="false"
+                >
+                  <svg aria-hidden="true" viewBox={`0 0 ${icon.icon[0]} ${icon.icon[1]}`}>
+                    <path d={iconPath(icon)} />
+                  </svg>
+                  <span>{name}</span>
+                </button>
+              ))}
+            </div>
+          </div>
+        </div>
       </div>
     </header>
     <main class="main-shell mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12">
@@ -94,6 +150,69 @@ const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
       {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
     </footer>
     <script>
+      const themeQuery = window.matchMedia('(prefers-color-scheme: light)');
+      const themeSwitcher = document.querySelector('.theme-switcher');
+      const themeTrigger = document.querySelector('.theme-switcher__trigger');
+      const themeMenu = document.querySelector('.theme-switcher__menu');
+      const themeButtons = document.querySelectorAll('[data-theme-option]');
+
+      type ThemePreference = 'system' | 'light' | 'dark';
+
+      function themePreference(): ThemePreference {
+        const stored = localStorage.getItem('theme-preference');
+        return stored === 'light' || stored === 'dark' ? stored : 'system';
+      }
+
+      function resolvedTheme(preference: ThemePreference): 'light' | 'dark' {
+        return preference === 'system' ? (themeQuery.matches ? 'light' : 'dark') : preference;
+      }
+
+      function applyTheme(preference: ThemePreference) {
+        document.documentElement.dataset.themePreference = preference;
+        document.documentElement.dataset.theme = resolvedTheme(preference);
+        for (const button of themeButtons) {
+          const active = button instanceof HTMLElement && button.dataset.themeOption === preference;
+          button.setAttribute('aria-checked', String(active));
+        }
+      }
+
+      applyTheme(themePreference());
+
+      themeTrigger?.addEventListener('click', () => {
+        if (!(themeTrigger instanceof HTMLElement) || !(themeMenu instanceof HTMLElement)) return;
+        const expanded = themeTrigger.getAttribute('aria-expanded') === 'true';
+        themeTrigger.setAttribute('aria-expanded', String(!expanded));
+        themeMenu.hidden = expanded;
+      });
+
+      for (const button of themeButtons) {
+        button.addEventListener('click', () => {
+          if (!(button instanceof HTMLElement)) return;
+          const preference = button.dataset.themeOption;
+          if (preference !== 'system' && preference !== 'light' && preference !== 'dark') return;
+
+          if (preference === 'system') {
+            localStorage.removeItem('theme-preference');
+          } else {
+            localStorage.setItem('theme-preference', preference);
+          }
+          applyTheme(preference);
+          if (themeTrigger instanceof HTMLElement) themeTrigger.setAttribute('aria-expanded', 'false');
+          if (themeMenu instanceof HTMLElement) themeMenu.hidden = true;
+        });
+      }
+
+      document.addEventListener('click', (event) => {
+        if (!(themeSwitcher instanceof HTMLElement) || !(themeMenu instanceof HTMLElement)) return;
+        if (event.target instanceof Node && themeSwitcher.contains(event.target)) return;
+        themeMenu.hidden = true;
+        if (themeTrigger instanceof HTMLElement) themeTrigger.setAttribute('aria-expanded', 'false');
+      });
+
+      themeQuery.addEventListener('change', () => {
+        if (themePreference() === 'system') applyTheme('system');
+      });
+
       for (const pre of document.querySelectorAll('pre')) {
         if (!(pre.firstElementChild instanceof HTMLElement) || pre.firstElementChild.tagName !== 'CODE') {
           continue;
