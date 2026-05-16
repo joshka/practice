@@ -1,5 +1,18 @@
 # Markdown And Docs Agent Instructions
 
+## Metadata
+
+- Name: `Markdown And Docs Agent Instructions`
+- ID: `agent-markdown-docs-instructions`
+- Summary: `Compact documentation instructions for agents editing Markdown, Rustdoc, READMEs,
+  review notes, or adjacent narrative. The snippet focuses on current behavior, local voice, page
+  purpose, drift repair, and markdownlint-compatible formatting.`
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `documentation, markdown, rustdoc, review-handoff`
+- Tags: `agents, snippets, docs, markdown`
+- Related: `guides/markdown-documentation.md, guides/documentation-workflow.md, principles/docs-are-contracts.md`
+
 Use this snippet in repos where agents edit Markdown, Rustdoc, README files, or review narrative.
 
 ```markdown

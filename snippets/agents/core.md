@@ -1,5 +1,18 @@
 # Core Agent Instructions
 
+## Metadata
+
+- Name: `Core Agent Instructions`
+- ID: `agent-core-instructions`
+- Summary: `Broad baseline instructions for coding agents working in repositories that adopt these
+  development preferences. The snippet keeps AGENTS.md short while routing agents to canonical
+  guides, principles, mechanisms, and the reviewed rule pack.`
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `agent-workflow, development-preferences, handoff, validation`
+- Tags: `agents, snippets, handoff, validation`
+- Related: `guides/software-change-preferences.md, guides/coding-agents.md, snippets/agents/rules.md`
+
 Use this snippet in `AGENTS.md` files when a repo needs the broad development-preference baseline.
 
 ```markdown

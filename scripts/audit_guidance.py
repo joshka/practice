@@ -66,6 +66,7 @@ STRUCTURED_GUIDANCE_DIRS = {
     "patterns": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
     "principles": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
     "mechanisms": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "snippets/agents": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
 }
 
 PLACEHOLDER_PATTERNS = [

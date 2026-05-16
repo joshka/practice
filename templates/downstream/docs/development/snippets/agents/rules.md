@@ -1,5 +1,18 @@
 # Reviewed Rule Agent Pack
 
+## Metadata
+
+- Name: `Reviewed Rule Agent Pack`
+- ID: `agent-reviewed-rule-pack`
+- Summary: `Generated compact execution surface for every reviewed rule. The pack gives agents
+  stable rule IDs and instructions while leaving rationale, examples, and deeper context in the
+  canonical rule files.`
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `rules, agent-workflow, generated-artifacts, downstream-adoption`
+- Tags: `agents, snippets, rules, generated`
+- Related: `rules/README.md, guides/coding-agents.md, mechanisms/guidance-generation-and-audit.md`
+
 This is the compressed agent execution surface for reviewed rules. It intentionally omits
 rationale, examples, tradeoff detail, and links. Use rule IDs as stable handles when a
 handoff needs to identify which instruction drove a decision.

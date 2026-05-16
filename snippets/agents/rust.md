@@ -1,5 +1,19 @@
 # Rust Agent Instructions
 
+## Metadata
+
+- Name: `Rust Agent Instructions`
+- ID: `agent-rust-instructions`
+- Summary: `Compact Rust maintainability instructions for agents working on APIs, Rustdoc, tests,
+  dependencies, and reviewable implementation changes. The snippet routes agents toward reader
+  locality, explicit boundaries, documented contracts, validation evidence, and pragmatic
+  performance work.`
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `rust, api-design, maintainability, validation`
+- Tags: `agents, snippets, rust, api-design`
+- Related: `guides/rust-maintainability.md, guides/code-shape.md, guides/boundary-correctness.md, mechanisms/rust-tooling-profile.md`
+
 Use this snippet in Rust repos where maintainability, API shape, and reviewability matter.
 
 ```markdown

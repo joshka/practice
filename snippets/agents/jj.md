@@ -1,5 +1,18 @@
 # Jujutsu Agent Instructions
 
+## Metadata
+
+- Name: `Jujutsu Agent Instructions`
+- ID: `agent-jj-instructions`
+- Summary: `Compact source-control instructions for coding agents working in repositories that use
+  jujutsu. The snippet covers fresh changes, descriptions, non-interactive commands, recovery,
+  remote handoff, and publication approval.`
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `jujutsu, source-control, agent-workflow, publication`
+- Tags: `agents, snippets, jj, vcs`
+- Related: `guides/jj-workflow.md, principles/jj-topology-is-repo-role-dependent.md`
+
 Use this snippet in repositories that use jujutsu for local source-control workflow.
 
 ```markdown

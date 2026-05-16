@@ -1,5 +1,18 @@
 # Coding Agent Workflow Instructions
 
+## Metadata
+
+- Name: `Coding Agent Workflow Instructions`
+- ID: `agent-coding-workflow-instructions`
+- Summary: `Compact workflow instructions for repositories that delegate implementation or review
+  work to coding agents. The snippet emphasizes objectives, boundaries, durable handoff, repo-owned
+  context, and feedback that becomes reusable guidance.`
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `agent-workflow, delegation, handoff, feedback`
+- Tags: `agents, snippets, delegation, handoff`
+- Related: `guides/coding-agents.md, principles/docs-are-contracts.md`
+
 Use this snippet when a repo wants agent work to be durable, reviewable, and easy to integrate.
 
 ```markdown
