@@ -16,6 +16,7 @@ export type MarkdownPage = {
 
 export type MarkdownSection = {
   title: string;
+  markdown: string;
   html: string;
 };
 
@@ -422,13 +423,17 @@ function markdownIntro(markdown: string, repoPath: string): string {
 function markdownSections(markdown: string, repoPath: string): MarkdownSection[] {
   return splitMarkdownSections(markdown).sections
     .filter((section) => section.title.toLowerCase() !== 'metadata')
-    .map((section) => ({
-      title: section.title,
-      html: rewriteLinks(
-        marked.parse(withReferenceDefinitions(section.markdown.trim(), markdown)) as string,
-        repoPath,
-      ),
-    }));
+    .map((section) => {
+      const sectionMarkdown = section.markdown.trim();
+      return {
+        title: section.title,
+        markdown: sectionMarkdown,
+        html: rewriteLinks(
+          marked.parse(withReferenceDefinitions(sectionMarkdown, markdown)) as string,
+          repoPath,
+        ),
+      };
+    });
 }
 
 function withReferenceDefinitions(markdown: string, fullMarkdown: string): string {

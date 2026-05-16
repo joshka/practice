@@ -808,6 +808,32 @@
     @apply mt-3 mb-5;
   }
 
+  .code-block {
+    @apply relative my-5 min-w-0;
+  }
+
+  .code-block pre {
+    @apply my-0;
+  }
+
+  .code-block__copy {
+    @apply absolute right-3 top-3 rounded px-2.5 py-1 font-mono text-[0.7rem] font-bold uppercase tracking-[0.08em] text-primary transition-colors duration-200 hover:text-on-background;
+    background: color-mix(in srgb, var(--color-surface-container-lowest) 82%, transparent);
+    box-shadow: var(--panel-sunken);
+  }
+
+  .detail-section__body--code {
+    @apply pt-0;
+  }
+
+  .detail-section__body--code .code-block {
+    @apply my-0;
+  }
+
+  .detail-section__body--code pre {
+    @apply pr-20 whitespace-pre-wrap;
+  }
+
   .prose table {
     @apply my-6 block w-full overflow-x-auto border-collapse;
   }

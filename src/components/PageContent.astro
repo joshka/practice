@@ -48,6 +48,10 @@ function sectionClass(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
+function isAgentInstruction(title: string): boolean {
+  return title.toLowerCase() === 'agent instruction';
+}
+
 function pageIconKind(value: string): IconKind | undefined {
   if (value === 'agent-snippet') return 'agent';
   if (value === 'guide') return 'guide';
@@ -84,7 +88,16 @@ function pageIconKind(value: string): IconKind | undefined {
     {page.sections.map((section) => (
       <section class={`detail-section detail-section--${sectionClass(section.title)}`}>
         <h2>{section.title}</h2>
-        <div class="prose detail-section__body" set:html={section.html} />
+        {isAgentInstruction(section.title) ? (
+          <div class="prose detail-section__body detail-section__body--code">
+            <div class="code-block">
+              <button class="code-block__copy" type="button">Copy</button>
+              <pre><code>{section.markdown}</code></pre>
+            </div>
+          </div>
+        ) : (
+          <div class="prose detail-section__body" set:html={section.html} />
+        )}
       </section>
     ))}
   </div>

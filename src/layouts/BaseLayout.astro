@@ -93,5 +93,42 @@ const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
       <p class="m-0">Durable software practices for code, documentation, tests, review, and coding agents.</p>
       {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
     </footer>
+    <script>
+      for (const pre of document.querySelectorAll('pre')) {
+        if (!(pre.firstElementChild instanceof HTMLElement) || pre.firstElementChild.tagName !== 'CODE') {
+          continue;
+        }
+
+        let block = pre.parentElement;
+        if (!block?.classList.contains('code-block')) {
+          block = document.createElement('div');
+          block.className = 'code-block';
+          pre.replaceWith(block);
+          block.append(pre);
+        }
+
+        if (block.querySelector('.code-block__copy')) continue;
+
+        const button = document.createElement('button');
+        button.className = 'code-block__copy';
+        button.type = 'button';
+        button.textContent = 'Copy';
+        block.prepend(button);
+      }
+
+      document.addEventListener('click', async (event) => {
+        const button = event.target instanceof Element ? event.target.closest('.code-block__copy') : null;
+        if (!(button instanceof HTMLButtonElement)) return;
+
+        const code = button.closest('.code-block')?.querySelector('pre code')?.textContent;
+        if (!code) return;
+
+        await navigator.clipboard.writeText(code);
+        button.textContent = 'Copied';
+        window.setTimeout(() => {
+          button.textContent = 'Copy';
+        }, 1200);
+      });
+    </script>
   </body>
 </html>
