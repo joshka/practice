@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Order Items For API Reading`
 - ID: `RUST-ORDER-ITEMS-FOR-API-READING`
+- Summary: Order imports, public items, impls, trait impls, and helpers so the API story is easy to
+  scan. Respect macros, generated code, and local convention when another order communicates better.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

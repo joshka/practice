@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use Send Static Across Tasks`
 - ID: `RUST-USE-SEND-STATIC-ACROSS-TASKS`
+- Summary: Require owned `Send + 'static` values, futures, errors, and handles when they cross spawn
+  or thread boundaries. Avoid imposing those bounds on local synchronous APIs where they would reject
+  valid use.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

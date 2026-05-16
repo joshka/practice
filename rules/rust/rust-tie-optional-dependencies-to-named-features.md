@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Tie Optional Dependencies To Named Features`
 - ID: `RUST-TIE-OPTIONAL-DEPENDENCIES-TO-NAMED-FEATURES`
+- Summary: Connect optional dependencies to clear feature names that explain the capability callers
+  enable. Avoid leaking dependency names as the public feature design when the capability needs a
+  more stable contract.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

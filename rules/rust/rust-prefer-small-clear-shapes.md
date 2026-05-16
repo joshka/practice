@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prefer Small Clear Shapes`
 - ID: `RUST-PREFER-SMALL-CLEAR-SHAPES`
+- Summary: Favor small functions, narrow structs, and simple enums that keep live facts local for
+  readers. Do not split cohesive logic into fragments that force more navigation than understanding.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

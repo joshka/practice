@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Working Rust Code Not Enough`
 - ID: `RUST-WORKING-RUST-CODE-NOT-ENOUGH`
+- Summary: Treat compilation as necessary but insufficient evidence for long-lived Rust code. Review
+  API shape, docs, errors, tests, features, dependencies, and module organization because users and
+  maintainers inherit those choices.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

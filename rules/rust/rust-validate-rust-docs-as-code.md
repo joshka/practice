@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Validate Rust Docs As Code`
 - ID: `RUST-VALIDATE-RUST-DOCS-AS-CODE`
+- Summary: Treat Rust documentation examples, links, feature assumptions, and generated README
+  content as code that must be checked. Use docs builds, doctests, feature-gated checks, and
+  Markdown lint according to the changed surface.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

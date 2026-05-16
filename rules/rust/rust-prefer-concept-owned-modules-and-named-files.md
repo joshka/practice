@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Prefer Concept Owned Modules And Named Files`
 - ID: `RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`
+- Summary: Organize modules around domain concepts and give important concepts named files that own
+  their types, invariants, tests, and docs. Use infrastructure modules only when the cross-cutting
+  concept is real and bounded.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

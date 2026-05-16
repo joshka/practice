@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Review As Future Maintainer`
 - ID: `RUST-REVIEW-AS-FUTURE-MAINTAINER`
+- Summary: Review Rust changes for the reader who will debug, extend, or release the code later, not
+  only for immediate correctness. Favor maintainable API shape, docs, tests, and error behavior over
+  changes that merely compile.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

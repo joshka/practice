@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Prefer Boring Direct Code`
 - ID: `RUST-PREFER-BORING-DIRECT-CODE`
+- Summary: Prefer explicit Rust control flow, types, and error handling over clever framework-shaped
+  indirection. Use macros or abstractions when they remove real repetition or enforce real
+  invariants.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

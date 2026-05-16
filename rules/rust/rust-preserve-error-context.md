@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Preserve Error Context`
 - ID: `RUST-PRESERVE-ERROR-CONTEXT`
+- Summary: Wrap and model errors so callers can see the operation, relevant input, source cause, and
+  recovery signal. Avoid flattening failures into broad strings or generic variants that remove
+  actionable context.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

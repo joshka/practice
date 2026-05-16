@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Name Auditable Intermediates`
 - ID: `RUST-NAME-AUDITABLE-INTERMEDIATES`
+- Summary: Introduce named locals where parsing, validation, rendering, ownership, or side-effect
+  decisions need review. Avoid naming every trivial expression when it would add ceremony without
+  clarifying the boundary.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

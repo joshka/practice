@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use Debug Assert For Internal Invariants`
 - ID: `RUST-USE-DEBUG-ASSERT-FOR-INTERNAL-INVARIANTS`
+- Summary: Use debug assertions for internal invariants that should hold if nearby code is correct.
+  Do not use them for caller validation or safety requirements that must be enforced in release
+  builds.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

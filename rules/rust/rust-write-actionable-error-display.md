@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Write Actionable Error Display`
 - ID: `RUST-WRITE-ACTIONABLE-ERROR-DISPLAY`
+- Summary: Write `Display` messages that tell humans what failed and what useful next action or
+  context exists. Keep structured state in error fields, sources, diagnostics, or `Debug` instead of
+  dumping internals into the user-facing string.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

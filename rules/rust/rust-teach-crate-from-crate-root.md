@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Teach Crate From Crate Root`
 - ID: `RUST-TEACH-CRATE-FROM-CRATE-ROOT`
+- Summary: Use crate-root docs and exports to teach the crate's main concepts, entry points, and
+  common paths. Keep the root focused enough to orient readers without duplicating every item-level
+  contract.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

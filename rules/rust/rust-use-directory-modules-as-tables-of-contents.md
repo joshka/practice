@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use Directory Modules As Tables Of Contents`
 - ID: `RUST-USE-DIRECTORY-MODULES-AS-TABLES-OF-CONTENTS`
+- Summary: Let directory module files introduce, organize, and re-export the concepts owned by that
+  directory. Keep substantial implementation in named child files so the module remains a readable
+  table of contents.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

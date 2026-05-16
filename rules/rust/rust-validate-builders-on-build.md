@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Validate Builders On Build`
 - ID: `RUST-VALIDATE-BUILDERS-ON-BUILD`
+- Summary: Validate cross-field builder invariants in `build` where partial configuration becomes a
+  usable value. Keep `build` infallible only when defaults and setters make invalid states
+  impossible.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

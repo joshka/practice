@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Name Tests By Behavior`
 - ID: `RUST-NAME-TESTS-BY-BEHAVIOR`
+- Summary: Name tests after the behavior, boundary, or regression they protect so failure output is
+  useful before a reader opens the body. Keep names concise and let module context carry repeated
+  setup details.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

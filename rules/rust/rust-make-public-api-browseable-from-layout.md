@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Make Public API Browseable From Layout`
 - ID: `RUST-MAKE-PUBLIC-API-BROWSEABLE-FROM-LAYOUT`
+- Summary: Align public modules, re-exports, and source files so readers can navigate from API to
+  ownership without translation. Facades are fine when they improve discovery and still point toward
+  the owning concept.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

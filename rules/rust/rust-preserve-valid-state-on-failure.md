@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Preserve Valid State On Failure`
 - ID: `RUST-PRESERVE-VALID-STATE-ON-FAILURE`
+- Summary: Keep values valid when fallible operations return errors so callers can retry, inspect, or
+  drop them predictably. Use transactional updates or staging when partial mutation would expose a
+  broken state.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

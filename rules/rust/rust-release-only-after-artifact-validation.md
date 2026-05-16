@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Release Only After Artifact Validation`
 - ID: `RUST-RELEASE-ONLY-AFTER-ARTIFACT-VALIDATION`
+- Summary: Validate the actual release artifact before publishing instead of trusting the working
+  tree. This catches missing files, stale generated content, and packaging mistakes while the
+  release can still be fixed.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Shape Expressions For Auditability`
 - ID: `RUST-SHAPE-EXPRESSIONS-FOR-AUDITABILITY`
+- Summary: Shape complex expressions so ownership, validation, error handling, and side effects can
+  be audited at the point they occur. Break chains or introduce names when density hides a decision
+  readers must verify.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

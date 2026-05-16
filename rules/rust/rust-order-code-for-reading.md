@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Order Code For Reading`
 - ID: `RUST-ORDER-CODE-FOR-READING`
+- Summary: Arrange code so central items, callers, or public API appear before supporting helpers
+  when that makes the file readable top to bottom. Prefer the order that reduces reader jumping over
+  mechanical rearrangement.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

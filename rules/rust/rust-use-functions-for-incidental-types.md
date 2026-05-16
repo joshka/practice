@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use Functions For Incidental Types`
 - ID: `RUST-USE-FUNCTIONS-FOR-INCIDENTAL-TYPES`
+- Summary: Prefer free or module functions when a type does not own the operation or invariant.
+  Move behavior onto a type when the method relationship clarifies state, policy, or trait design.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

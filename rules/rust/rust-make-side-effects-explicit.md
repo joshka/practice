@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Make Side Effects Explicit`
 - ID: `RUST-MAKE-SIDE-EFFECTS-EXPLICIT`
+- Summary: Put mutation, I/O, registration, cleanup, and background work in names, call sites, or
+  docs when callers must account for them. Keep tiny private helpers plain when the surrounding code
+  already makes the effect obvious.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

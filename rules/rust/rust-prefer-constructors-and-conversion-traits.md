@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Prefer Constructors And Conversion Traits`
 - ID: `RUST-PREFER-CONSTRUCTORS-AND-CONVERSION-TRAITS`
+- Summary: Use inherent constructors and standard conversion traits to show whether construction
+  builds, validates, converts, borrows, allocates, or can fail. Prefer public fields only when direct
+  construction is truly part of the contract.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

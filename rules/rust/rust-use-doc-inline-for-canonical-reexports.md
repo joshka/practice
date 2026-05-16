@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use Doc Inline For Canonical Reexports`
 - ID: `RUST-USE-DOC-INLINE-FOR-CANONICAL-REEXPORTS`
+- Summary: Use `#[doc(inline)]` when a re-export should be the canonical place readers encounter an
+  item. Avoid inlining re-exports that would obscure the owning module or create duplicate-looking
+  documentation.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

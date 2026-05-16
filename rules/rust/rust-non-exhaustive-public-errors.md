@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Non Exhaustive Public Errors`
 - ID: `RUST-NON-EXHAUSTIVE-PUBLIC-ERRORS`
+- Summary: Mark public error enums non-exhaustive unless exhaustive matching is part of the contract.
+  This preserves room for future integration, validation, or provider failures without needless
+  downstream breakage.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

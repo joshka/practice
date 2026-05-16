@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Make Feature Flags Additive Where Possible`
 - ID: `RUST-MAKE-FEATURE-FLAGS-ADDITIVE-WHERE-POSSIBLE`
+- Summary: Design feature flags as additive capabilities whenever possible so Cargo feature
+  unification does not surprise downstream builds. Make incompatible combinations explicit when
+  addition cannot model the real choice.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

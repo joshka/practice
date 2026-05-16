@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Prefer Expect For Lint Suppressions`
 - ID: `RUST-PREFER-EXPECT-FOR-LINT-SUPPRESSIONS`
+- Summary: Use `#[expect]` for targeted lint suppressions that should disappear when the warning is
+  fixed. Reserve broad `allow` attributes for deliberate policy choices that are not expected to
+  expire.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

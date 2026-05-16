@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Write Public Docs For Caller Tasks`
 - ID: `RUST-WRITE-PUBLIC-DOCS-FOR-CALLER-TASKS`
+- Summary: Write public Rustdoc around what callers are trying to decide, do, and rely on. Start
+  with concise behavior and add arguments, failures, lifecycle, features, links, or examples only
+  when they help the task.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

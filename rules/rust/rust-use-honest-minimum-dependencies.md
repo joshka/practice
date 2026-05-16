@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use Honest Minimum Dependencies`
 - ID: `RUST-USE-HONEST-MINIMUM-DEPENDENCIES`
+- Summary: Set dependency requirements to the lowest compatible versions the crate actually supports.
+  Raise minimums only for required APIs, fixes, features, security needs, or MSRV interactions.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

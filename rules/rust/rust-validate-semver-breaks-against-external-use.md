@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Validate Semver Breaks Against External Use`
 - ID: `RUST-VALIDATE-SEMVER-BREAKS-AGAINST-EXTERNAL-USE`
+- Summary: Check semver-breaking changes against real examples, dependents, or migration paths
+  before treating an API cleanup as cheap. External evidence informs the cost even when security,
+  soundness, or design repair still justify the break.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

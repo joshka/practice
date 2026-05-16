@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Write Rustdoc As API Contract`
 - ID: `RUST-WRITE-RUSTDOC-AS-API-CONTRACT`
+- Summary: Use Rustdoc to state caller-facing behavior, invariants, failures, side effects, and
+  compatibility promises. Leave private implementation detail in comments unless it helps maintain
+  the public contract.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

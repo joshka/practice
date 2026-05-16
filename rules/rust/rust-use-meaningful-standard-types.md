@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use Meaningful Standard Types`
 - ID: `RUST-USE-MEANINGFUL-STANDARD-TYPES`
+- Summary: Prefer standard or ecosystem types that encode ownership, units, paths, durations,
+  optionality, and invariants better than raw strings or integers. Use domain newtypes when the
+  standard type cannot prevent meaningful mixups.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

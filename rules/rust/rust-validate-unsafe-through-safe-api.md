@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Validate Unsafe Through Safe API`
 - ID: `RUST-VALIDATE-UNSAFE-THROUGH-SAFE-API`
+- Summary: Test unsafe internals through the safe API wrapper that callers rely on. Internal unsafe
+  tests and tools such as Miri should support, not replace, proof that safe calls uphold the
+  contract.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

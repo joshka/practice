@@ -2,7 +2,11 @@
 
 ## Metadata
 
+- Name: `Use Field Init Shorthand`
 - ID: `RUST-USE-FIELD-INIT-SHORTHAND`
+- Summary: Use field init shorthand when variable names already match struct fields so initialization
+  stays compact and familiar. Spell fields out when renaming, conversion, or policy deserves visible
+  attention.
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`
