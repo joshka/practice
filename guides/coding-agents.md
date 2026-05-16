@@ -1,5 +1,19 @@
 # Coding Agents
 
+## Metadata
+
+- Name: `Coding Agents`
+- ID: `coding-agents`
+- Summary: Coding-agent guidance covers task setup, repo-owned context, tools, workspaces,
+  verification, handoff proof, feedback loops, and maintainer review flow. It treats agents as
+  workers in a system whose output should be reviewable, durable, and easy to integrate.
+- Status: `reviewed`
+- Audience: `agents`
+- Topics: `agents, workflow, context, tools, validation, review`
+- Tags: `agent-workflow, agent-context, tooling, verification, review-handoff`
+- Related: `agent-instructions-are-operational-controls, mechanize-repeated-feedback,
+  give-agents-objectives-with-boundaries`
+
 This guide covers agent-task setup, `AGENTS.md` guidance, agent-output review, and decisions that
 should become tooling instead of another prompt.
 

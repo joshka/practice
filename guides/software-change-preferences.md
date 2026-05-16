@@ -1,5 +1,18 @@
 # Software Change Preferences
 
+## Metadata
+
+- Name: `Software Change Preferences`
+- ID: `software-change-preferences`
+- Summary: Software-change guidance covers broad preferences for change size, structure,
+  validation, review artifacts, commit history, and handoff. It favors small coherent changes,
+  explicit tradeoffs, and evidence matched to the changed surface.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `change-shape, review, validation, handoff, source-control`
+- Tags: `change-shape, reviewability, verification, review-handoff`
+- Related: `change-shape-controls-review-cost, small-reviewable-chunks, produce-review-packets`
+
 This guide covers broad preferences for change size, structure, validation, and handoff. More
 specific Rust, code-shape, documentation, and jj guidance can add detail later without duplicating
 these defaults.

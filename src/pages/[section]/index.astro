@@ -245,18 +245,6 @@ const referenceGroups: Record<string, GroupConfig> = {
   },
 };
 
-const guideTags: Record<string, string[]> = {
-  'Boundary Correctness': ['API', 'STATE', 'INPUT'],
-  'Code Shape': ['CODE', 'READING'],
-  'Coding Agents': ['AGENTS', 'WORKFLOW'],
-  'Documentation Workflow': ['DOCS', 'REVIEW'],
-  'JJ Workflow': ['VCS', 'JJ'],
-  'Markdown and Documentation': ['MARKDOWN', 'DOCS'],
-  'Observability and Failure': ['FAILURE', 'DIAGNOSTICS'],
-  'Rust Maintainability': ['RUST', 'API'],
-  'Software Change Preferences': ['CHANGE', 'REVIEW'],
-};
-
 const snippetTags: Record<string, string[]> = {
   'Coding Agents': ['WORKFLOW'],
   Core: ['BASELINE'],
@@ -379,7 +367,7 @@ function agentGroupFor(item: MarkdownPage): GroupConfig {
 }
 
 function tagsFor(item: MarkdownPage): string[] {
-  if (sectionKey === 'guides') return guideTags[item.title] ?? [];
+  if (sectionKey === 'guides') return tagsForPage(item).slice(0, 4);
   if (sectionKey === 'agents') return snippetTags[item.title] ?? [];
   if (sectionKey === 'references') return referenceTags[item.title] ?? [];
   return tagsForPage(item).slice(0, 4);

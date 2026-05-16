@@ -1,5 +1,20 @@
 # Boundary Correctness
 
+## Metadata
+
+- Name: `Boundary Correctness`
+- ID: `boundary-correctness`
+- Summary: Boundary-correctness guidance covers APIs and internal boundaries where uncertain input
+  becomes trusted data, state changes, ambient inputs enter the system, or async work crosses an
+  ownership boundary. It favors visible caller obligations, typed transitions, explicit policy, and
+  provider behavior modeled as it really exists.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `rust, api, validation, state, side-effects, async`
+- Tags: `boundary-correctness, validation-policy, state-transitions, side-effects, async`
+- Related: `explicit-boundaries-preserve-correctness, parse-dont-validate,
+  make-validation-policy-explicit`
+
 This guide collects preferences for Rust APIs and internal boundaries where uncertain input becomes
 trusted data, domain state changes, ambient inputs enter the system, or async work crosses an
 ownership boundary. Use it with [Rust Maintainability][rust], [Code Shape][code-shape], and

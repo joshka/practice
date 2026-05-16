@@ -1,5 +1,18 @@
 # JJ Workflow
 
+## Metadata
+
+- Name: `JJ Workflow`
+- ID: `jj-workflow`
+- Summary: JJ workflow guidance covers source-control inspection, reviewable changes, descriptions,
+  bookmarks, publication, and recovery in jujutsu repositories. It keeps agents and maintainers
+  thinking in jj changes and operations instead of Git-shaped habits.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `jj, vcs, changes, bookmarks, recovery, github`
+- Tags: `vcs-jj, change-shape, reviewability, tooling`
+- Related: `jj-topology-is-repo-role-dependent, jj-agent-workflow, vcs-jj-as-source-of-truth`
+
 This guide covers jujutsu workflow preferences for source-control inspection, reviewable changes,
 commit descriptions, and publication.
 

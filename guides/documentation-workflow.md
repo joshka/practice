@@ -1,6 +1,18 @@
 # Documentation Workflow
 
-Status: `reviewed`
+## Metadata
+
+- Name: `Documentation Workflow`
+- ID: `documentation-workflow`
+- Summary: Documentation-workflow guidance covers deciding what documentation work belongs in a
+  change, how deep the edit should go, and how review-facing prose should carry evidence. It keeps
+  documentation scope explicit so local fixes, page rewrites, repo maps, and review narratives do
+  not collapse into one unreviewable pass.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `documentation, review, evidence, drift, handoff`
+- Tags: `documentation, reviewability, source-truth, review-handoff`
+- Related: `docs-are-contracts, choose-doc-pass-depth, write-pr-narrative`
 
 This guide collects preferences for deciding what documentation work belongs in a change, how deep
 the edit should go, and how review-facing prose should carry evidence. Use it with

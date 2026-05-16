@@ -1,5 +1,18 @@
 # Markdown And Documentation
 
+## Metadata
+
+- Name: `Markdown And Documentation`
+- ID: `markdown-documentation`
+- Summary: Markdown and documentation guidance covers lintable Markdown, reader paths, page modes,
+  Rustdoc, examples, references, and reusable guidance style. It favors current behavior,
+  task-first user docs, durable source links, and prose that preserves local voice.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `markdown, documentation, rustdoc, examples, references`
+- Tags: `documentation, rustdoc, examples, source-truth`
+- Related: `docs-are-contracts, preserve-local-doc-voice, rust-docs-validation`
+
 This guide captures how documentation should be shaped in this repo and in downstream project
 guidance. Prefer docs that reduce rediscovery, carry contracts clearly, and stay easy to lint,
 review, and reuse.

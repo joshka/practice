@@ -1,5 +1,19 @@
 # Rust Maintainability
 
+## Metadata
+
+- Name: `Rust Maintainability`
+- ID: `rust-maintainability`
+- Summary: Rust maintainability guidance applies the repo's software-change preferences to Rust
+  code, APIs, modules, errors, tests, dependencies, documentation, and release risk. It favors Rust
+  that is easy to read locally, hard to misuse, and honest about public behavior.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `rust, api, modules, errors, testing, dependencies, release`
+- Tags: `rust, public-api, reader-locality, testing, dependencies, release`
+- Related: `reader-locality-reduces-change-cost, public-api-changes-have-downstream-cost,
+  rust-api-and-release-checks`
+
 This guide applies the repo's software-change preferences to Rust code. Prefer Rust that is easy to
 read locally, hard to misuse, and honest about behavior, performance, and error boundaries.
 

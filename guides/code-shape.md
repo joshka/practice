@@ -1,5 +1,18 @@
 # Code Shape
 
+## Metadata
+
+- Name: `Code Shape`
+- ID: `code-shape`
+- Summary: Code-shape guidance covers small source-level moves that reduce live context, improve
+  reader locality, and keep structure changes reviewable. It focuses on local expression shape,
+  cohesion, coupling, reversible structure, and separating behavior from preparation.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `rust, refactoring, reader-locality, cohesion, review`
+- Tags: `reader-locality, refactoring, change-shape, reviewability`
+- Related: `reader-locality-reduces-change-cost, reader-locality, separate-structure-from-behavior`
+
 This guide collects preferences for small source-level moves that make Rust and Rust-adjacent code
 easier to read, review, and change. Use it with [Rust Maintainability][rust], not instead of it.
 

@@ -62,6 +62,7 @@ ALLOWED_STATUSES = {"draft", "reviewed", "needs-work"}
 ALLOWED_AUDIENCES = {"humans", "agents", "both"}
 
 STRUCTURED_GUIDANCE_DIRS = {
+    "guides": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
     "patterns": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
     "principles": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
     "mechanisms": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],

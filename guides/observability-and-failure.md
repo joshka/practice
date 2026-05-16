@@ -1,6 +1,18 @@
 # Observability And Failure
 
-Status: `reviewed`
+## Metadata
+
+- Name: `Observability And Failure`
+- ID: `observability-and-failure`
+- Summary: Observability and failure guidance covers Rust and service boundaries where failures
+  need to be understandable after the fact. It favors structured errors, owned logging boundaries,
+  distinct failure states, safe diagnostics, and enough context for the owner to act.
+- Status: `reviewed`
+- Audience: `both`
+- Topics: `observability, errors, logging, diagnostics, privacy`
+- Tags: `observability, errors, failure-output, security-privacy`
+- Related: `tests-should-explain-failures, make-failures-observable,
+  contain-observability-policy`
 
 This guide collects preferences for Rust and service boundaries where failures need to be
 understandable after the fact. Use it with [Boundary Correctness][boundary],
