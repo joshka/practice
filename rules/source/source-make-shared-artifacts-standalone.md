@@ -4,23 +4,24 @@
 
 - Name: `Make Shared Artifacts Standalone`
 - ID: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`
-- Summary: Restate the problem, rationale, evidence, and tradeoffs in artifacts that leave the local
-  session. Future readers should not need private notes or transcripts to trust the result.
+- Summary: Restate the problem, rationale, evidence, and tradeoffs in shared docs, templates,
+  generated packs, or reusable guidance. Future readers should not need private notes or
+  transcripts to trust the artifact.
 - Related: `private-context-is-not-shared-context, prefer-durable-summaries,
-  produce-review-packets`
+  review-make-review-artifacts-standalone`
 - Status: `reviewed`
 - Domain: `source`
 - Tags: `source-truth, documentation, review-handoff, agent-context`
 
 ## Rule
 
-Make issues, PRs, commit messages, docs, and handoffs stand alone.
+Make shared docs, templates, generated packs, and reusable guidance stand alone.
 
 ## Why
 
-Shared artifacts often leave the development session with missing context. Issues, PRs, commits,
-docs, and handoffs should restate the problem, rationale, decision, evidence, and relevant
-tradeoffs for readers who did not see the local notes or agent transcript.
+Shared source artifacts often leave the development session with missing context. Docs, templates,
+generated packs, and reusable guidance should restate the problem, rationale, decision, evidence,
+and relevant tradeoffs for readers who did not see the local notes or agent transcript.
 
 ## Helps
 
@@ -33,10 +34,13 @@ Shared artifacts do not need to replay every local note or abandoned path. Inclu
 for the reader to trust the result, and leave out private scaffolding that would distract from the
 published decision.
 
+For issues, PRs, commit messages, and review handoffs, use
+[`REVIEW-MAKE-REVIEW-ARTIFACTS-STANDALONE`](../review/review-make-review-artifacts-standalone.md).
+
 ## Agent Instruction
 
-Make issues, PRs, commit messages, docs, and handoffs stand alone because they leave the development
-session.
+Make shared docs, templates, generated packs, and reusable guidance stand alone because they leave
+the development session.
 
 ## Mechanisms
 

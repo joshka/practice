@@ -10,7 +10,8 @@
 - Status: `reviewed`
 - Domain: `review`
 - Tags: `reviewability, review-handoff, source-truth, documentation`
-- Related: `private-context-is-not-shared-context, produce-review-packets, prefer-durable-summaries`
+- Related: `private-context-is-not-shared-context, produce-review-packets,
+  source-make-shared-artifacts-standalone`
 
 ## Rule
 
@@ -32,6 +33,9 @@ session that produced it.
 
 Do not paste transcripts or long local notes. Summarize only the context that changes how a
 reviewer, maintainer, or future agent should understand the work.
+
+For reusable source artifacts such as docs, templates, generated packs, or shared guidance, use
+[`SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`](../source/source-make-shared-artifacts-standalone.md).
 
 ## Agent Instruction
 

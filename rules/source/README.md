@@ -17,8 +17,9 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   data. Keeping source history textual and reviewable avoids clone cost and painful history
   rewrites.
 - [`SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`](source-make-shared-artifacts-standalone.md). Restate
-  the problem, rationale, evidence, and tradeoffs in artifacts that leave the local session. Future
-  readers should not need private notes or transcripts to trust the result.
+  the problem, rationale, evidence, and tradeoffs in shared docs, templates, generated packs, or
+  reusable guidance. Future readers should not need private notes or transcripts to trust the
+  artifact.
 - [`SOURCE-PREFER-PRIMARY-STABLE-SOURCES`](source-prefer-primary-stable-sources.md). Anchor durable
   guidance in sources readers can inspect, compare, and challenge. Use links to clarify judgment,
   not to decorate rules or depend on private memory.
