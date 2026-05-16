@@ -16,7 +16,6 @@ RULES_DIR = ROOT / "rules"
 GUIDES_DIR = ROOT / "guides"
 AGENT_RULES = ROOT / "snippets" / "agents" / "rules.md"
 CORE_AGENT_SNIPPET = ROOT / "snippets" / "agents" / "core.md"
-GUIDE_RULE_AUDIT = ROOT / "references" / "guide-rule-audit.md"
 MAX_FLAT_GUIDE_BULLETS = 7
 GUIDE_LONG_LIST_EXCEPTIONS = {
     "guides/rust-maintainability.md",
@@ -30,7 +29,6 @@ REQUIRED_ROOTS = [
     "mechanisms/README.md",
     "snippets/agents/README.md",
     "snippets/agents/rules.md",
-    "references/guidance-plan.md",
     "templates/rule.md",
     "scripts/generate_rule_indexes.py",
     "scripts/generate_downstream_template.py",
@@ -61,7 +59,6 @@ RULE_SECTIONS = [
 ]
 
 ALLOWED_STATUSES = {"draft", "reviewed", "needs-work"}
-ALLOWED_DEPTHS = {"compact", "expanded"}
 
 PLACEHOLDER_PATTERNS = [
     r"\bTBD\b",
@@ -89,7 +86,6 @@ class Rule:
     id: str
     status: str
     domain: str
-    depth: str
     agent_instruction: str
 
 
@@ -143,14 +139,12 @@ def read_rules(errors: list[str]) -> list[Rule]:
             id=metadata(text, "ID"),
             status=metadata(text, "Status"),
             domain=metadata(text, "Domain"),
-            depth=metadata(text, "Depth"),
             agent_instruction=section(text, "Agent Instruction"),
         )
         for field, value in [
             ("ID", rule.id),
             ("Status", rule.status),
             ("Domain", rule.domain),
-            ("Depth", rule.depth),
         ]:
             if not value:
                 fail(errors, f"{rel(path)} is missing metadata field: {field}")
@@ -162,8 +156,6 @@ def read_rules(errors: list[str]) -> list[Rule]:
             seen_ids[rule.id] = path
         if rule.status and rule.status not in ALLOWED_STATUSES:
             fail(errors, f"{rel(path)} has invalid status: {rule.status}")
-        if rule.depth and rule.depth not in ALLOWED_DEPTHS:
-            fail(errors, f"{rel(path)} has invalid depth: {rule.depth}")
         if rule.domain and path.parent.name != rule.domain:
             fail(errors, f"{rel(path)} domain does not match directory: {rule.domain}")
         if rule.agent_instruction and "\n\n" in rule.agent_instruction:
@@ -267,13 +259,17 @@ def audit_core_agent_snippet(errors: list[str]) -> None:
 
 
 def audit_draft_review_queue(rules: list[Rule], errors: list[str]) -> None:
-    if not GUIDE_RULE_AUDIT.exists():
-        fail(errors, f"missing guide rule audit: {rel(GUIDE_RULE_AUDIT)}")
+    draft_ids = {rule.id for rule in rules if rule.status == "draft"}
+    if not draft_ids:
         return
-    text = GUIDE_RULE_AUDIT.read_text()
+
+    guide_rule_audit = ROOT / "references" / "guide-rule-audit.md"
+    if not guide_rule_audit.exists():
+        fail(errors, f"missing guide rule audit: {rel(guide_rule_audit)}")
+        return
+    text = guide_rule_audit.read_text()
     queue = section(text, "Draft Review Queue")
     queued_ids = set(re.findall(r"`([A-Z][A-Z0-9]+(?:-[A-Z0-9]+)+)`", queue))
-    draft_ids = {rule.id for rule in rules if rule.status == "draft"}
     for rule in sorted(rules, key=lambda item: item.id):
         if rule.status != "draft":
             continue
@@ -304,9 +300,14 @@ def audit_draft_review_queue(rules: list[Rule], errors: list[str]) -> None:
 
 
 def audit_extracted_draft_rules(rules: list[Rule], errors: list[str]) -> None:
-    if not GUIDE_RULE_AUDIT.exists():
+    draft_ids = {rule.id for rule in rules if rule.status == "draft"}
+    if not draft_ids:
         return
-    text = GUIDE_RULE_AUDIT.read_text()
+
+    guide_rule_audit = ROOT / "references" / "guide-rule-audit.md"
+    if not guide_rule_audit.exists():
+        return
+    text = guide_rule_audit.read_text()
     extracted = section(text, "Extracted Draft Rules")
     if not extracted:
         fail(errors, "references/guide-rule-audit.md is missing extracted draft rule evidence")
@@ -317,7 +318,6 @@ def audit_extracted_draft_rules(rules: list[Rule], errors: list[str]) -> None:
         fail(errors, "references/guide-rule-audit.md extracted draft rule section lists no rules")
         return
 
-    draft_ids = {rule.id for rule in rules if rule.status == "draft"}
     known_ids = {rule.id for rule in rules}
     for rule_id in sorted(extracted_ids - draft_ids):
         if rule_id in known_ids:
