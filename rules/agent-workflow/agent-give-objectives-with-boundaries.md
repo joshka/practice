@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Give Objectives With Boundaries`
 - ID: `AGENT-GIVE-OBJECTIVES-WITH-BOUNDARIES`
+- Summary: Describe the outcome, scope, non-goals, forbidden moves, and proof instead of handing
+  over brittle steps. Boundaries preserve intent while leaving room for local implementation choices.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

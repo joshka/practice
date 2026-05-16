@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Define Good Before Judgment-Heavy Work`
 - ID: `AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`
+- Summary: State the quality bar before work where taste, naming, API shape, or review expectations
+  matter. Clear criteria give the agent goalposts before it creates a large speculative diff.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

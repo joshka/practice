@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Verify Risky Changes With Canaries`
 - ID: `AGENT-VERIFY-RISKY-CHANGES-WITH-CANARIES`
+- Summary: Use staged rollout, shadowing, dry runs, or partial publication for changes that can
+  fail only under real conditions. Canaries reduce blast radius while evidence accumulates.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

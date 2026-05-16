@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Preserve Intent`
 - ID: `AGENT-PRESERVE-INTENT`
+- Summary: Optimize for the user's underlying objective when literal wording would miss the point.
+  Intent-preserving work keeps changes aligned with the real readability, review, or behavior goal.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Suggest Local Override Files`
 - ID: `AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`
+- Summary: Put checkout-only facts in ignored override files instead of shared guidance. Local
+  overrides keep machine-specific steering useful without leaking it to every contributor.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

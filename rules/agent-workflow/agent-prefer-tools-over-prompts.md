@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prefer Tools Over Prompts`
 - ID: `AGENT-PREFER-TOOLS-OVER-PROMPTS`
+- Summary: Move repeated instructions into tools, checks, templates, or durable guides. Tooling
+  catches failures even when prompts are short, compacted, or interpreted differently.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

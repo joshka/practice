@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Spend Human Attention on Ambiguity`
 - ID: `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
+- Summary: Ask for human judgment where product behavior, API compatibility, naming, or security
+  posture is still ambiguous. Resolving direction early prevents large speculative diffs.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

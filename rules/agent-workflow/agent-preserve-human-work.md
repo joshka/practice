@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Preserve Human Work`
 - ID: `AGENT-PRESERVE-HUMAN-WORK`
+- Summary: Inspect and protect unrelated local edits before changing files. Preserving human work
+  keeps the task diff focused and avoids destroying unfinished or intentional changes.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

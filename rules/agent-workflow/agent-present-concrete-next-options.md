@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Present Concrete Next Options`
 - ID: `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`
+- Summary: After a validated chunk, offer specific follow-up chunks with their tradeoffs. Concrete
+  options let the maintainer steer scope without decoding vague requests to continue.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

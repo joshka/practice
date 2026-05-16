@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Separate Notes From Corrections`
 - ID: `AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`
+- Summary: Capture fast-review notes before fixing them when there are multiple comments or unclear
+  patterns. Separating capture from correction preserves signal and supports coherent follow-up.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

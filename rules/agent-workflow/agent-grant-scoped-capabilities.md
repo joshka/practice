@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Grant Scoped Capabilities`
 - ID: `AGENT-GRANT-SCOPED-CAPABILITIES`
+- Summary: Give agents only the permissions and external authority the task actually needs. Scoped
+  capability keeps progress possible while reducing accidental mutation, publication, or exposure.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

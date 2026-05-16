@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Report Proof in Handoffs`
 - ID: `AGENT-REPORT-PROOF-IN-HANDOFFS`
+- Summary: Replace confidence language with the exact checks, inspection, screenshots, and skipped
+  validation behind a handoff. Proof lets reviewers decide what to trust and what remains risky.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

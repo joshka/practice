@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prefer Build-Preserving Edits`
 - ID: `AGENT-PREFER-BUILD-PRESERVING-EDITS`
+- Summary: Make multi-step edits in slices that keep compilation or tests close to green when the
+  route allows it. Build-preserving work keeps failures close to the edit that caused them.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Budget for Feedback Loops`
 - ID: `AGENT-BUDGET-FOR-FEEDBACK-LOOPS`
+- Summary: Reserve enough time and tokens for checks, failure inspection, and handoff proof.
+  Planning for the feedback loop keeps validation from being squeezed out after the first edit.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

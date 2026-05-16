@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Use AGENTS.md as Map`
 - ID: `AGENT-USE-AGENTS-MD-AS-MAP`
+- Summary: Keep `AGENTS.md` compact by using it to route agents to deeper guides and mechanisms.
+  Treating it as a map preserves startup context without losing durable project guidance.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

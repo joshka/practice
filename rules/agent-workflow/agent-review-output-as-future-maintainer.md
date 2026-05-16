@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Review Output as Future Maintainer`
 - ID: `AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`
+- Summary: Review agent output as someone who will not have the chat transcript. This keeps attention
+  on durable code, docs, tests, validation proof, and residual risk.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

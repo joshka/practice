@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Keep Secrets Out of Context`
 - ID: `AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`
+- Summary: Avoid putting real credentials or sensitive values into prompts, docs, logs, and tests.
+  Keeping secrets out of context reduces leakage through retained, repeated, or committed text.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Prefer In-Distribution Tools`
 - ID: `AGENT-PREFER-IN-DISTRIBUTION-TOOLS`
+- Summary: Use standard project commands, supported CLIs, and documented workflows before inventing
+  ad hoc tool paths. Familiar tools reduce misuse and make agent output easier to rerun.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

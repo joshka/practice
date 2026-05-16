@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Turn Feedback Into Guidance`
 - ID: `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`
+- Summary: Convert repeated review corrections into rules, templates, snippets, or checks. Durable
+  guidance fixes the workflow problem instead of requiring the same steering again.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

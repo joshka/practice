@@ -2,7 +2,10 @@
 
 ## Metadata
 
+- Name: `Produce Review Packets`
 - ID: `AGENT-PRODUCE-REVIEW-PACKETS`
+- Summary: Hand off agent work with purpose, changed files, evidence, skipped checks, risks, and
+  follow-ups. A review packet lets maintainers inspect the output without replaying the session.
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`
