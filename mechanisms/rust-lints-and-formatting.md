@@ -4,6 +4,9 @@
 
 - Name: `Rust Lints And Formatting`
 - ID: `rust-lints-and-formatting`
+- Summary: Rust and Markdown formatting plus targeted project lints encode stable mechanical
+  preferences. The mechanism removes repeat style debate from review while leaving design judgment
+  to humans and higher-level guidance.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, clippy, rustfmt, lint, markdownlint`

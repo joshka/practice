@@ -4,6 +4,9 @@
 
 - Name: `Guidance Generation And Audit`
 - ID: `guidance-generation-and-audit`
+- Summary: Generators and audits keep rule indexes, compressed agent snippets, downstream
+  templates, and Markdown synchronized. The checks catch recurring drift so review attention stays
+  on judgment instead of mechanical bookkeeping.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `guidance, rules, agents, generated-artifacts, markdown`

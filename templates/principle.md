@@ -7,9 +7,11 @@ before publishing an entry.
 
 - Name: `[Human-readable name]`
 - ID: `[stable-kebab-case-id]`
+- Summary: `[two-to-four sentence scan summary]`
 - Status: `draft`
 - Audience: `[humans | agents | both]`
 - Topics: `[comma-separated topics]`
+- Tags: `[comma-separated cluster tags]`
 - Related: `[related stable IDs, if any]`
 
 ## Claim

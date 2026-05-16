@@ -4,8 +4,11 @@
 
 - Name: `JJ Agent Workflow`
 - ID: `jj-agent-workflow`
+- Summary: Noninteractive jj defaults, topology checks, and local override conventions make agent
+  source-control work safer. The mechanism keeps local workflow state explicit without leaking
+  private checkout assumptions into shared artifacts.
 - Status: `reviewed`
-- Audience: `agent`
+- Audience: `agents`
 - Topics: `jj, git, workspaces, agents, vcs`
 - Tags: `vcs-jj, agent-workflow, tooling, agent-context, review-handoff`
 - Related: `jj-topology-is-repo-role-dependent, private-context-is-not-shared-context`

@@ -4,6 +4,9 @@
 
 - Name: `Testing And Benchmarking`
 - ID: `testing-and-benchmarking`
+- Summary: Test, feature-matrix, fuzzing, property, and benchmark tools should be chosen by risk
+  and feedback cost. This mechanism helps match validation depth to the behavior, integration
+  surface, or performance claim under review.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `tests, ci, benchmarks, fuzzing, cargo`

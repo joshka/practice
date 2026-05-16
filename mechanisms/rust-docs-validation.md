@@ -4,6 +4,9 @@
 
 - Name: `Rust Docs Validation`
 - ID: `rust-docs-validation`
+- Summary: Doctests, Rustdoc warnings, rendered docs, and docs.rs-style builds prove documentation
+  surfaces the way users will see them. Use this mechanism when examples, public API docs, feature
+  docs, or release-facing documentation changes.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, rustdoc, docs.rs, doctest, examples`

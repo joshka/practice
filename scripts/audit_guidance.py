@@ -59,6 +59,13 @@ RULE_SECTIONS = [
 ]
 
 ALLOWED_STATUSES = {"draft", "reviewed", "needs-work"}
+ALLOWED_AUDIENCES = {"humans", "agents", "both"}
+
+STRUCTURED_GUIDANCE_DIRS = {
+    "patterns": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "principles": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "mechanisms": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+}
 
 PLACEHOLDER_PATTERNS = [
     r"\bTBD\b",
@@ -100,6 +107,35 @@ def fail(errors: list[str], message: str) -> None:
 def metadata(text: str, name: str) -> str:
     match = re.search(rf"^- {re.escape(name)}: `([^`]+)`$", text, re.MULTILINE)
     return match.group(1) if match else ""
+
+
+def metadata_values(text: str) -> dict[str, str]:
+    match = re.search(r"^## Metadata\n\n(.*?)(?=\n\n## |\Z)", text, re.MULTILINE | re.DOTALL)
+    if not match:
+        return {}
+
+    values: dict[str, str] = {}
+    key = ""
+    parts: list[str] = []
+
+    def commit() -> None:
+        if not key:
+            return
+        value = " ".join(parts).strip()
+        values[key] = value.strip("`").strip()
+
+    for line in match.group(1).splitlines():
+        item = re.match(r"^- ([^:]+):\s+(.+)$", line)
+        if item:
+            commit()
+            key = item.group(1).strip()
+            parts = [item.group(2).strip()]
+            continue
+        if key and re.match(r"^\s+\S", line):
+            parts.append(line.strip())
+
+    commit()
+    return values
 
 
 def section(text: str, name: str) -> str:
@@ -172,6 +208,35 @@ def audit_required_roots(errors: list[str]) -> None:
     for item in REQUIRED_ROOTS:
         if not (ROOT / item).exists():
             fail(errors, f"missing required guidance artifact: {item}")
+
+
+def audit_structured_guidance_metadata(errors: list[str]) -> None:
+    seen_ids: dict[str, Path] = {}
+    for directory, required_fields in STRUCTURED_GUIDANCE_DIRS.items():
+        for path in sorted((ROOT / directory).glob("*.md")):
+            if path.name == "README.md":
+                continue
+            values = metadata_values(path.read_text())
+            for field in required_fields:
+                if not values.get(field):
+                    fail(errors, f"{rel(path)} is missing metadata field: {field}")
+
+            item_id = values.get("ID", "")
+            if item_id:
+                if not re.fullmatch(r"[a-z0-9]+(?:-[a-z0-9]+)*", item_id):
+                    fail(errors, f"{rel(path)} has invalid stable ID: {item_id}")
+                if item_id in seen_ids:
+                    fail(errors, f"{rel(path)} duplicates ID from {rel(seen_ids[item_id])}: {item_id}")
+                else:
+                    seen_ids[item_id] = path
+
+            status = values.get("Status", "")
+            if status and status not in ALLOWED_STATUSES:
+                fail(errors, f"{rel(path)} has invalid status: {status}")
+
+            audience = values.get("Audience", "")
+            if audience and audience not in ALLOWED_AUDIENCES:
+                fail(errors, f"{rel(path)} has invalid audience: {audience}")
 
 
 def audit_feedback_flow(errors: list[str]) -> None:
@@ -526,6 +591,7 @@ def main() -> int:
     errors: list[str] = []
     audit_required_roots(errors)
     audit_feedback_flow(errors)
+    audit_structured_guidance_metadata(errors)
     rules = read_rules(errors)
     audit_domain_indexes(rules, errors)
     audit_agent_pack(rules, errors)

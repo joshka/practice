@@ -4,6 +4,9 @@
 
 - Name: `Rust Tooling Profile`
 - ID: `rust-tooling-profile`
+- Summary: The broad Rust tooling profile gathers lints, docs, release, CI, performance, and agent
+  workflow checks in one place. Use it as a menu of mechanical supports, not as a substitute for
+  project-specific risk judgment.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, lints, rustfmt, cargo, ci, agents`

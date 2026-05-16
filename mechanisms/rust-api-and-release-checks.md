@@ -4,6 +4,9 @@
 
 - Name: `Rust API And Release Checks`
 - ID: `rust-api-and-release-checks`
+- Summary: Cargo release, semver, feature, packaging, and minimum-version checks protect downstream
+  users from accidental compatibility changes. Use these checks when public API, crate metadata, or
+  release artifacts are part of the changed surface.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api, semver, release, cargo`
