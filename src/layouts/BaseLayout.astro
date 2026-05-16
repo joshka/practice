@@ -49,6 +49,10 @@ const primaryLinks = [
   { label: 'Agents', href: '/agents/' },
   { label: 'References', href: '/references/' },
 ];
+const footerLinks = [
+  { label: 'About this reference', href: '/about/' },
+  { label: 'Tags', href: '/tags/' },
+];
 const searchKindIcons = {
   agent: iconData(faRobot),
   guide: iconData(faBook),
@@ -239,7 +243,10 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
           Copyright © 2026 Josh McKinney · <a href="https://joshka.net/practice/">joshka.net/practice</a>
         </p>
       </div>
-      {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
+      <div class="site-footer__links">
+        {footerLinks.map((link) => <a class="footer-source" href={withBase(link.href)}>{link.label}</a>)}
+        {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
+      </div>
     </footer>
     <script>
       const themeQuery = window.matchMedia('(prefers-color-scheme: light)');

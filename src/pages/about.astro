@@ -1,0 +1,146 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import KindIcon from '../components/KindIcon.astro';
+import { withBase } from '../lib/site';
+
+const kinds = [
+  {
+    title: 'Guides',
+    kind: 'guide' as const,
+    route: '/guides/',
+    question: 'Where do I start for this work area?',
+    description:
+      'Guides map broad work areas and route readers to the rules, patterns, principles, mechanisms, and references that matter for that kind of work.',
+  },
+  {
+    title: 'Rules',
+    kind: 'rule' as const,
+    route: '/rules/',
+    question: 'What should I do?',
+    description:
+      'Rules are compact, reviewable instructions. They carry enough rationale and limits to apply safely, and they can be compressed into agent-facing rule packs.',
+  },
+  {
+    title: 'Patterns',
+    kind: 'pattern' as const,
+    route: '/patterns/',
+    question: 'What situation am I seeing, and what move fits?',
+    description:
+      'Patterns name repeated situations and preferred moves. They are useful as review vocabulary when the same shape appears in more than one domain.',
+  },
+  {
+    title: 'Principles',
+    kind: 'principle' as const,
+    route: '/why/',
+    question: 'Why does this judgment hold, and where does it stop?',
+    description:
+      'Principles explain the tradeoffs behind related rules and patterns. They help maintainers decide whether a rule belongs and when it should bend.',
+  },
+  {
+    title: 'Mechanisms',
+    kind: 'mechanism' as const,
+    route: '/mechanisms/',
+    question: 'What tool, check, command, or workflow supports this?',
+    description:
+      'Mechanisms make guidance operational through checks, generators, commands, configuration, and workflows. They reduce repeated drift without replacing judgment.',
+  },
+  {
+    title: 'Agents',
+    kind: 'agent' as const,
+    route: '/agents/',
+    question: 'What should a coding agent load?',
+    description:
+      'Agent snippets are compact execution surfaces for downstream repositories. They point to deeper guidance instead of carrying every argument inline.',
+  },
+  {
+    title: 'References',
+    kind: 'reference' as const,
+    route: '/references/',
+    question: 'What source supports, frames, or contrasts the claim?',
+    description:
+      'References collect durable external sources. They support local judgment, but they do not replace this repo\'s own guidance or voice.',
+  },
+  {
+    title: 'Tags',
+    kind: 'tag' as const,
+    route: '/tags/',
+    question: 'What cross-cutting cluster am I browsing?',
+    description:
+      'Tags connect related ideas across kinds. They are facets for discovery, not guidance artifacts by themselves.',
+  },
+];
+---
+
+<BaseLayout
+  title="About This Reference"
+  description="How to read the Software Practices reference site and distinguish guides, rules, patterns, principles, mechanisms, agents, references, and tags."
+>
+  <article class="page page--about">
+    <header class="detail-hero">
+      <h1>About This Reference</h1>
+      <p>
+        This site is a task router for durable software-development preferences. The sections are
+        separated so a reader can find the right kind of help without turning every page into a
+        manual, rule pack, design essay, and command list at once.
+      </p>
+    </header>
+
+    <section class="rules-use" aria-labelledby="about-core-claim">
+      <div>
+        <h2 id="about-core-claim">Core distinction</h2>
+      </div>
+      <div class="rules-use__steps">
+        <p>
+          The difference between sections is the reader task. A reviewer often needs a short rule or
+          pattern to cite. A maintainer deciding whether that rule belongs needs a principle. A
+          contributor entering a broad topic needs a guide. A coding agent needs a compact snippet.
+          A repo needs mechanisms that make the preferred behavior cheaper to follow.
+        </p>
+        <p>
+          The kinds are useful only when they reduce search and review cost. If the taxonomy makes a
+          reader work harder, the guidance should be merged, renamed, or moved.
+        </p>
+      </div>
+    </section>
+
+    <section class="home-library" aria-labelledby="about-kinds">
+      <div class="home-section-heading">
+        <h2 id="about-kinds">Reference sections</h2>
+        <p>
+          Each section answers a different question. Use the question to decide where to look, or
+          where a new idea should live.
+        </p>
+      </div>
+      <div class="home-card-grid" aria-label="Guidance kinds">
+        {kinds.map((item) => (
+          <a class="home-card" href={withBase(item.route)}>
+            <h2 class="home-card__title">
+              <span class="home-card__icon" aria-hidden="true">
+                <KindIcon kind={item.kind} />
+              </span>
+              <span>{item.title}</span>
+            </h2>
+            <p><strong>{item.question}</strong></p>
+            <p>{item.description}</p>
+          </a>
+        ))}
+      </div>
+    </section>
+
+    <section class="detail-section">
+      <h2>How Ideas Move</h2>
+      <div class="prose detail-section__body">
+        <p>
+          Guidance can move between kinds as it becomes clearer. A reusable instruction hidden in a
+          guide can become a rule. Repeated rule rationale can become a principle. A repeated review
+          move can become a pattern. A recurring manual correction can become a mechanism.
+        </p>
+        <p>
+          Movement should make the site easier to use. If a proposed artifact mostly renames
+          existing guidance, creates a vague umbrella, or forces readers to understand the taxonomy
+          before they can act, it should be rejected or folded into an existing page.
+        </p>
+      </div>
+    </section>
+  </article>
+</BaseLayout>

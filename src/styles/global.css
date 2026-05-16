@@ -439,6 +439,10 @@ html[data-theme="light"] .code-block pre code {
     @apply m-0;
   }
 
+  .site-footer__links {
+    @apply flex flex-wrap gap-2 md:justify-end;
+  }
+
   .home-shell {
     @apply mx-auto max-w-5xl;
   }
