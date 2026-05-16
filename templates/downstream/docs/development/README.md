@@ -7,10 +7,15 @@ reference is [Software Practices](https://www.joshka.net/practice/). Update loca
 commands and repo-specific notes in the repo's `AGENTS.md`, but refresh copied shared guidance from
 upstream instead of editing it by hand.
 
-From the canonical repo, refresh this downstream copy with:
+From a downstream repo that does not yet have this directory, install the copied guidance with:
 
 ```bash
-python3 scripts/generate_downstream_template.py --output /path/to/this-repo
+temp_dir="$(mktemp -d)"
+git -c commit.gpgsign=false clone --depth 1 https://github.com/joshka/practice.git \
+  "$temp_dir/practice"
+python3 "$temp_dir/practice/scripts/generate_downstream_template.py" \
+  --output "$PWD" \
+  --preserve-agents
 ```
 
 From this downstream repo, refresh this copy from GitHub with:

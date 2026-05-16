@@ -77,10 +77,15 @@ reference is [Software Practices](https://www.joshka.net/practice/). Update loca
 commands and repo-specific notes in the repo's `AGENTS.md`, but refresh copied shared guidance from
 upstream instead of editing it by hand.
 
-From the canonical repo, refresh this downstream copy with:
+From a downstream repo that does not yet have this directory, install the copied guidance with:
 
 ```bash
-python3 scripts/generate_downstream_template.py --output /path/to/this-repo
+temp_dir="$(mktemp -d)"
+git -c commit.gpgsign=false clone --depth 1 https://github.com/joshka/practice.git \\
+  "$temp_dir/practice"
+python3 "$temp_dir/practice/scripts/generate_downstream_template.py" \\
+  --output "$PWD" \\
+  --preserve-agents
 ```
 
 From this downstream repo, refresh this copy from GitHub with:
@@ -136,17 +141,22 @@ task needs it.
 ## Bootstrap Steps
 
 1. Inspect the downstream repo's existing `AGENTS.md` and nearby project docs.
-1. Refresh or install the copied shared guidance:
+1. Install the copied shared guidance from a temporary clone when this repo does not yet have
+   `docs/development/update.py`:
+
+   ```bash
+   temp_dir="$(mktemp -d)"
+   git -c commit.gpgsign=false clone --depth 1 https://github.com/joshka/practice.git \\
+     "$temp_dir/practice"
+   python3 "$temp_dir/practice/scripts/generate_downstream_template.py" \\
+     --output "$PWD" \\
+     --preserve-agents
+   ```
+
+1. Refresh an existing copied guidance directory with:
 
    ```bash
    python3 docs/development/update.py
-   ```
-
-   If this file is not present yet, copy `templates/downstream/` from the source repo or run the
-   source generator:
-
-   ```bash
-   python3 scripts/generate_downstream_template.py --output /path/to/downstream-repo
    ```
 
 1. Merge the shared guidance into the downstream `AGENTS.md` instead of replacing local content.
@@ -156,6 +166,36 @@ task needs it.
    conventions.
 1. Run the downstream repo's normal formatting, linting, and test checks.
 1. Report what changed, what was preserved, and what validation ran.
+
+## Prompt For Another Agent
+
+Use this prompt when asking a fresh Codex session to bootstrap another repo:
+
+```text
+Bootstrap this repo with the shared development guidance from
+https://github.com/joshka/practice.
+
+Use the downstream bootstrap template in that repo. Preserve this repo's existing AGENTS.md
+instructions, validation commands, source-control rules, and project-specific conventions. Merge the
+shared guidance into AGENTS.md instead of replacing local rules.
+
+Install or refresh:
+
+- docs/development/bootstrap-downstream.md
+- docs/development/README.md
+- docs/development/update.py
+- docs/development/snippets/agents/rules.md
+- docs/development/rules/*.md
+
+Add a short "Shared Development Preferences" section to AGENTS.md that points agents to the copied
+docs/development files and to https://www.joshka.net/practice/ for deeper context.
+
+If a shared rule causes friction or seems wrong for most Rust or agent work, note that as feedback
+for the upstream development-preferences/practice repo rather than only patching around it locally.
+
+Keep the change small and report exactly what was copied, what local instructions were preserved,
+and what validation ran or was skipped.
+```
 
 ## Recommended `AGENTS.md` Entry
 
