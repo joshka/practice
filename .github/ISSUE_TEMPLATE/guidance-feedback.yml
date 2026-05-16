@@ -4,32 +4,38 @@ title: "Feedback: "
 labels:
   - guidance-feedback
 body:
+  - type: markdown
+    attributes:
+      value: |
+        This form is usually opened from a guidance page, which pre-fills the rendered URL, source
+        file, stable ID, and item kind. If you opened it directly, fill in the fields you know and
+        write `NA` for any item-specific field that does not apply.
   - type: input
     id: item_url
     attributes:
       label: Rendered item URL
-      description: The public page where the guidance appears.
+      description: The public page where the guidance appears, or `NA` if this is general feedback.
     validations:
       required: true
   - type: input
     id: item_file
     attributes:
       label: Source file
-      description: The repository path for the guidance source.
+      description: The repository path for the guidance source, or `NA` if this is general feedback.
     validations:
       required: true
   - type: input
     id: item_id
     attributes:
       label: Stable ID
-      description: The guidance ID, or the page title when no stable ID exists.
+      description: The guidance ID, page title, or `NA` if there is no specific guidance item.
     validations:
       required: true
   - type: input
     id: item_kind
     attributes:
       label: Item kind
-      description: Guide, rule, pattern, principle, or mechanism.
+      description: Guide, rule, pattern, principle, mechanism, or `NA` for general feedback.
     validations:
       required: true
   - type: dropdown
