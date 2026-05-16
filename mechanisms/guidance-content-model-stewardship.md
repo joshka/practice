@@ -82,8 +82,9 @@ These queues are intentionally review-oriented rather than automatic changes:
   feedback links, copy actions, search checks, search-modal focus handling, and grouped tag pages.
   Remaining review should focus on representative page rhythm and whether large non-tag index pages
   need local grouping.
-- Downstream canaries. A temp downstream adoption pass preserves an existing `AGENTS.md` and
-  renders the copied rule pack, but a real downstream repo canary is still a publication decision.
+- Downstream canaries. A temp downstream adoption pass now verifies that unsafe generation refuses
+  to overwrite an existing `AGENTS.md`, that `--preserve-agents` keeps local policy intact, and
+  that the copied rule pack renders. A real downstream repo canary is still a publication decision.
 - Publication. Local validated jj changes still need maintainer review before pushing to `main`.
 
 ## What It Cannot Catch

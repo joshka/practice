@@ -136,7 +136,7 @@ domain files under `docs/development/rules/`.
 From this repo, generate or refresh the downstream files into a target repo:
 
 ```bash
-python3 scripts/generate_downstream_template.py --output /path/to/target-repo
+python3 scripts/generate_downstream_template.py --output /path/to/target-repo --preserve-agents
 ```
 
 This writes:

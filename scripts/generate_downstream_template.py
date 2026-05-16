@@ -420,6 +420,14 @@ def main() -> int:
     template_dir = args.output if args.output.is_absolute() else ROOT / args.output
     rendered = outputs(template_dir)
     agents_path = template_dir / "AGENTS.md"
+    default_template_dir = DEFAULT_TEMPLATE_DIR.resolve()
+    is_template_refresh = template_dir.resolve() == default_template_dir
+    if not is_template_refresh and agents_path.exists() and not args.preserve_agents:
+        print(
+            f"{agents_path} already exists; pass --preserve-agents to keep local agent policy",
+            file=sys.stderr,
+        )
+        return 1
     if args.preserve_agents and agents_path.exists():
         rendered.pop(agents_path, None)
     if args.check:
