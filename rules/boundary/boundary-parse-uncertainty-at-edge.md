@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-PARSE-UNCERTAINTY-AT-EDGE`
-- Legacy ID: `R-0300`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

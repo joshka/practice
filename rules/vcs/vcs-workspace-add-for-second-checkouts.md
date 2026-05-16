@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-WORKSPACE-ADD-FOR-SECOND-CHECKOUTS`
-- Legacy ID: `R-0702`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

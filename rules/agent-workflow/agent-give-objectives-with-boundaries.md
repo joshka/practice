@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-GIVE-OBJECTIVES-WITH-BOUNDARIES`
-- Legacy ID: `R-0800`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

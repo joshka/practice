@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-VERIFY-RISKY-CHANGES-WITH-CANARIES`
-- Legacy ID: `R-0817`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

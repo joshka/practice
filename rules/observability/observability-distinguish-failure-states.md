@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `OBSERVABILITY-DISTINGUISH-FAILURE-STATES`
-- Legacy ID: `R-0603`
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

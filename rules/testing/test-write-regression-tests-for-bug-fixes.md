@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-WRITE-REGRESSION-TESTS-FOR-BUG-FIXES`
-- Legacy ID: `R-0410`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

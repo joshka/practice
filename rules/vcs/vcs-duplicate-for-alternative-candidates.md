@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-DUPLICATE-FOR-ALTERNATIVE-CANDIDATES`
-- Legacy ID: `R-0714`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

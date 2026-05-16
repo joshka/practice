@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-USE-ONE-PURPOSE-PER-CHANGE`
-- Legacy ID: `R-0001`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

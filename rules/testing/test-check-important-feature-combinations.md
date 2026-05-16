@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-CHECK-IMPORTANT-FEATURE-COMBINATIONS`
-- Legacy ID: `R-0422`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

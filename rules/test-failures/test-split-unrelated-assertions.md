@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-SPLIT-UNRELATED-ASSERTIONS`
-- Legacy ID: `R-0427`
 - Status: `reviewed`
 - Domain: `test-failures`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`
-- Legacy ID: `R-0907`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

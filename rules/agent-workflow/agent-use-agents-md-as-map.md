@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-USE-AGENTS-MD-AS-MAP`
-- Legacy ID: `R-0811`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

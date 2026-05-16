@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-IDENTIFY-OWNING-MODULE-BEFORE-EDITING`
-- Legacy ID: `R-0006`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

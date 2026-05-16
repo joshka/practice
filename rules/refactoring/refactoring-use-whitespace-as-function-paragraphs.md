@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-USE-WHITESPACE-AS-FUNCTION-PARAGRAPHS`
-- Legacy ID: `R-0105`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-CHOOSE-VALIDATION-BY-RISK`
-- Legacy ID: `R-0401`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

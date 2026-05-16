@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-PRESERVE-UNOWNED-WORK`
-- Legacy ID: `R-0007`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

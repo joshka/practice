@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-AVOID-SINGLE-RUN-CONCLUSIONS`
-- Legacy ID: `R-0403`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-USE-DESCRIPTIVE-HEADINGS`
-- Legacy ID: `R-0525`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

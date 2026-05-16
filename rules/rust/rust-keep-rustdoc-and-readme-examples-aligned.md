@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-RUSTDOC-AND-README-EXAMPLES-ALIGNED`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

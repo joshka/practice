@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PREFER-BUILD-PRESERVING-EDITS`
-- Legacy ID: `R-0823`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

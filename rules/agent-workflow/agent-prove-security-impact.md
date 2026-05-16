@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PROVE-SECURITY-IMPACT`
-- Legacy ID: `R-0818`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

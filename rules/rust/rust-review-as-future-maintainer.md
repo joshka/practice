@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-REVIEW-AS-FUTURE-MAINTAINER`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

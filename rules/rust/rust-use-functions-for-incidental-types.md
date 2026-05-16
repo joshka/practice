@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-FUNCTIONS-FOR-INCIDENTAL-TYPES`
-- Legacy ID: `R-0220`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

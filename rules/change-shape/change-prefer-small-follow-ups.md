@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-PREFER-SMALL-FOLLOW-UPS`
-- Legacy ID: `R-0003`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

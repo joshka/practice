@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`
-- Legacy ID: `R-0721`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-NAME-DESTINATION-NOT-DIRECTION`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

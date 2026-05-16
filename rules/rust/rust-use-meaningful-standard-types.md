@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-MEANINGFUL-STANDARD-TYPES`
-- Legacy ID: `R-0204`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

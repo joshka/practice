@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-EXPOSE-MOVE-RISK-AND-EXAMPLE-IN-PATTERNS`
-- Legacy ID: `R-0506`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

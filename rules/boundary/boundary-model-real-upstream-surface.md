@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`
-- Legacy ID: `R-0301`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

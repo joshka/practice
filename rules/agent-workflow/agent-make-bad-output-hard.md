@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-MAKE-BAD-OUTPUT-HARD`
-- Legacy ID: `R-0812`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

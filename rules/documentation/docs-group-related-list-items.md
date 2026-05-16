@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-GROUP-RELATED-LIST-ITEMS`
-- Legacy ID: `R-0527`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

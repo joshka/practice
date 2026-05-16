@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-COMPATIBLE-UPDATES-IN-LOCKFILE`
-- Legacy ID: `R-0245`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

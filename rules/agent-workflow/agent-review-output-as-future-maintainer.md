@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`
-- Legacy ID: `R-0825`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

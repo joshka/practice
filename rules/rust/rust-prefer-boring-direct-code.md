@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PREFER-BORING-DIRECT-CODE`
-- Legacy ID: `R-0212`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-RUN-FAST-FORMAT-AND-LINT-GATES-EARLY`
-- Legacy ID: `R-0420`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`
-- Legacy ID: `R-0305`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

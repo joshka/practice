@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PRODUCE-REVIEW-PACKETS`
-- Legacy ID: `R-0816`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-JJ-AS-SOURCE-OF-TRUTH`
-- Legacy ID: `R-0700`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

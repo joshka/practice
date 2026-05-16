@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-CHOOSE-RESOURCE-IDENTITY-MODEL`
-- Legacy ID: `R-0312`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-INSPECT-STATE-BEFORE-MUTATING`
-- Legacy ID: `R-0712`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DENY-ACCIDENTAL-UNSAFE`
-- Legacy ID: `R-0235`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

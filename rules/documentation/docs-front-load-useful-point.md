@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-FRONT-LOAD-USEFUL-POINT`
-- Legacy ID: `R-0510`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

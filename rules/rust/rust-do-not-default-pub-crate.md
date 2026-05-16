@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DO-NOT-DEFAULT-PUB-CRATE`
-- Legacy ID: `R-0225`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

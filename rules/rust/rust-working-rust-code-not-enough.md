@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-WORKING-RUST-CODE-NOT-ENOUGH`
-- Legacy ID: `R-0211`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

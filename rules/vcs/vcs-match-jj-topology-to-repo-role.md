@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`
-- Legacy ID: `R-0726`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

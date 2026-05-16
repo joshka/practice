@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-PREFER-DETERMINISTIC-TESTS`
-- Legacy ID: `R-0411`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

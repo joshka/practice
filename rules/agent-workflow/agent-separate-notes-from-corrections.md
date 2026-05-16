@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`
-- Legacy ID: `R-0807`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

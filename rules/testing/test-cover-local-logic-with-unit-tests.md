@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-COVER-LOCAL-LOGIC-WITH-UNIT-TESTS`
-- Legacy ID: `R-0407`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

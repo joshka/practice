@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-WRITE-PUBLIC-DOCS-FOR-CALLER-TASKS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

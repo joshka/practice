@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-VALIDATE-RUST-DOCS-AS-CODE`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

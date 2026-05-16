@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-GRANT-SCOPED-CAPABILITIES`
-- Legacy ID: `R-0813`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

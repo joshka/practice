@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-GIANT-CRATE-ROOTS`
-- Legacy ID: `R-0222`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

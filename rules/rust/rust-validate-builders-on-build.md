@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-VALIDATE-BUILDERS-ON-BUILD`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`
-- Legacy ID: `R-0602`
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

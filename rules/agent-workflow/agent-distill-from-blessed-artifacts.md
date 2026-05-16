@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`
-- Legacy ID: `R-0810`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

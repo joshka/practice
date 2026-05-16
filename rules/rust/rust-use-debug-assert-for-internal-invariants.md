@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-DEBUG-ASSERT-FOR-INTERNAL-INVARIANTS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

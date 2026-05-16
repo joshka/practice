@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`
-- Legacy ID: `R-0518`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

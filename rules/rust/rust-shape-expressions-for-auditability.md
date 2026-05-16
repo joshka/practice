@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-SHAPE-EXPRESSIONS-FOR-AUDITABILITY`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`
-- Legacy ID: `R-0004`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

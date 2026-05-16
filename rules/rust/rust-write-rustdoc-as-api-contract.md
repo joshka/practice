@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-WRITE-RUSTDOC-AS-API-CONTRACT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

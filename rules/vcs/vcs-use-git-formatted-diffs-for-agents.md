@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-USE-GIT-FORMATTED-DIFFS-FOR-AGENTS`
-- Legacy ID: `R-0704`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

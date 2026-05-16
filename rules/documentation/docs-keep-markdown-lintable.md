@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-KEEP-MARKDOWN-LINTABLE`
-- Legacy ID: `R-0522`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`
-- Legacy ID: `R-0824`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

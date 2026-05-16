@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-BUILD-DOCS-LIKE-USERS-READ-THEM`
-- Legacy ID: `R-0523`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

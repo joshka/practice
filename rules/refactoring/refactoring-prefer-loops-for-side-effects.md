@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-PREFER-LOOPS-FOR-SIDE-EFFECTS`
-- Legacy ID: `R-0106`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

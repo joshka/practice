@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-MOD-RS-BY-DEFAULT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-ADD-BENCHMARKS-FOR-PERFORMANCE-CLAIMS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

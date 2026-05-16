@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-CONFIGURE-DOCS-RS`
-- Legacy ID: `R-0236`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-USE-SOURCE-LINKS-AS-SUPPORT`
-- Legacy ID: `R-0507`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

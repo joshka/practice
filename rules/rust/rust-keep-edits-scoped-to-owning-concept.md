@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

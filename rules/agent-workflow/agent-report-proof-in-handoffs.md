@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-REPORT-PROOF-IN-HANDOFFS`
-- Legacy ID: `R-0804`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

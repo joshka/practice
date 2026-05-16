@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-SYNC-GENERATED-ARTIFACTS`
-- Legacy ID: `R-0005`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

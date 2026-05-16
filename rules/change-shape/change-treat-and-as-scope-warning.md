@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-TREAT-AND-AS-SCOPE-WARNING`
-- Legacy ID: `R-0009`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

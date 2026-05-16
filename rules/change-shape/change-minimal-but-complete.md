@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-MINIMAL-BUT-COMPLETE`
-- Legacy ID: `R-0008`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-OPTIMIZE-FAILURE-OUTPUT`
-- Legacy ID: `R-0425`
 - Status: `reviewed`
 - Domain: `test-failures`
 - Depth: `compact`

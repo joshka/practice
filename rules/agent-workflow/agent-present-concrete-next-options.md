@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`
-- Legacy ID: `R-0806`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`
-- Legacy ID: `R-0820`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

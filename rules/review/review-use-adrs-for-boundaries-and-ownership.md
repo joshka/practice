@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-USE-ADRS-FOR-BOUNDARIES-AND-OWNERSHIP`
-- Legacy ID: `R-0904`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

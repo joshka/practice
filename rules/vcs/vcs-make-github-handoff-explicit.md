@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`
-- Legacy ID: `R-0709`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

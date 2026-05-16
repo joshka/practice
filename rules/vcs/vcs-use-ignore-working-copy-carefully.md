@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-USE-IGNORE-WORKING-COPY-CAREFULLY`
-- Legacy ID: `R-0722`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

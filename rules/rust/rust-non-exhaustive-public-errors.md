@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-NON-EXHAUSTIVE-PUBLIC-ERRORS`
-- Legacy ID: `R-0216`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

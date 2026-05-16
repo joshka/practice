@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-MEASURE-GOAL-CHANGE-COMPARE`
-- Legacy ID: `R-0429`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

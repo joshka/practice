@@ -5,7 +5,6 @@ Use this template for one stable rule. Replace bracketed text before publishing 
 ## Metadata
 
 - ID: `[DOMAIN-VERB-OBJECT]`
-- Legacy ID: `[R-0000 or none]`
 - Status: `draft`
 - Domain: `[domain]`
 - Depth: `[compact | expanded]`

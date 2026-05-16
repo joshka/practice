@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`
-- Legacy ID: `R-0325`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-UPDATE-SOURCE-OF-TRUTH`
-- Legacy ID: `R-0906`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

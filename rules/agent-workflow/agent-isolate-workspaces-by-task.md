@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-ISOLATE-WORKSPACES-BY-TASK`
-- Legacy ID: `R-0815`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

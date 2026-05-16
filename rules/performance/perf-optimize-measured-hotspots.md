@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-OPTIMIZE-MEASURED-HOTSPOTS`
-- Legacy ID: `R-0428`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

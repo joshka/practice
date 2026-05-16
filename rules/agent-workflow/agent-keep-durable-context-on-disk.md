@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`
-- Legacy ID: `R-0801`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

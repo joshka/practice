@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-NAME-AUDITABLE-INTERMEDIATES`
-- Legacy ID: `R-0214`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

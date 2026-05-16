@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`
-- Legacy ID: `R-0102`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

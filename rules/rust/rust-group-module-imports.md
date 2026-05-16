@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-GROUP-MODULE-IMPORTS`
-- Legacy ID: `R-0227`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

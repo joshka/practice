@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-CONFIRM-GITHUB-REMOTE-TOPOLOGY`
-- Legacy ID: `R-0720`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

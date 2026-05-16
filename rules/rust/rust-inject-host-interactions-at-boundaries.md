@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-INJECT-HOST-INTERACTIONS-AT-BOUNDARIES`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

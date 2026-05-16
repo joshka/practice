@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-FIELD-INIT-SHORTHAND`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

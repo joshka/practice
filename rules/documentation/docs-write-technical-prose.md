@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-WRITE-TECHNICAL-PROSE`
-- Legacy ID: `R-0502`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

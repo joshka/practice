@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`
-- Legacy ID: `R-0426`
 - Status: `reviewed`
 - Domain: `test-failures`
 - Depth: `compact`

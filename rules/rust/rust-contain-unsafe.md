@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-CONTAIN-UNSAFE`
-- Legacy ID: `R-0209`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

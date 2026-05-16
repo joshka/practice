@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-USE-CONCRETE-DETAILS`
-- Legacy ID: `R-0511`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

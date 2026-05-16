@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-KEEP-BACKEND-ADAPTERS-AT-EDGE`
-- Legacy ID: `R-0315`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

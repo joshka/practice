@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-HONEST-MINIMUM-DEPENDENCIES`
-- Legacy ID: `R-0243`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

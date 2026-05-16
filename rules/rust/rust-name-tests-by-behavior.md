@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-NAME-TESTS-BY-BEHAVIOR`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

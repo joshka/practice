@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`
-- Legacy ID: `R-0805`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

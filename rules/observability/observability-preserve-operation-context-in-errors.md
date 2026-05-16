@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`
-- Legacy ID: `R-0600`
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

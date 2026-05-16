@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-GLOB-REEXPORTS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

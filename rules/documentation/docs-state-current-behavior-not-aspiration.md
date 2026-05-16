@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`
-- Legacy ID: `R-0501`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

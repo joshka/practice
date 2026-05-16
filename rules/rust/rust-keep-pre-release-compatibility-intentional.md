@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-PRE-RELEASE-COMPATIBILITY-INTENTIONAL`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

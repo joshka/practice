@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
-- Legacy ID: `R-0809`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

@@ -205,7 +205,7 @@ def render_root(rules: list[Rule]) -> str:
         "",
         "Each rule file should keep these sections:",
         "",
-        "- `Metadata`: stable ID, legacy ID, status, domain, and depth.",
+        "- `Metadata`: stable ID, status, domain, and depth.",
         "- `Rule`: the direct human-readable instruction.",
         "- `Why`: rationale when the rule needs justification or tradeoff framing.",
         "- `Helps`: concrete development outcomes the rule improves.",

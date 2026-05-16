@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `OBSERVABILITY-SURFACE-DURABLE-FAILURES`
-- Legacy ID: `R-0604`
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

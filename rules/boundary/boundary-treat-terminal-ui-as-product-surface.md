@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-TREAT-TERMINAL-UI-AS-PRODUCT-SURFACE`
-- Legacy ID: `R-0323`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

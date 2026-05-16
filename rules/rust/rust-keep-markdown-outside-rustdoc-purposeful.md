@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-MARKDOWN-OUTSIDE-RUSTDOC-PURPOSEFUL`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

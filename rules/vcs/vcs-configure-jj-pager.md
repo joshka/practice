@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-CONFIGURE-JJ-PAGER`
-- Legacy ID: `R-0711`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

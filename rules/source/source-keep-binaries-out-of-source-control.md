@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `SOURCE-KEEP-BINARIES-OUT-OF-SOURCE-CONTROL`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `expanded`

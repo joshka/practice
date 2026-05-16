@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-KEEP-DRIFT-CLAIMS-ALIGNED`
-- Legacy ID: `R-0417`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

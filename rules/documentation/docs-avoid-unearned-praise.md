@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-AVOID-UNEARNED-PRAISE`
-- Legacy ID: `R-0512`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

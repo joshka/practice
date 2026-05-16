@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-PROVE-REAL-USE-WITH-EXAMPLES`
-- Legacy ID: `R-0505`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -75,7 +75,6 @@ PRIVATE_CONTEXT_PATTERNS = [
 class Rule:
     path: Path
     id: str
-    legacy_id: str
     status: str
     domain: str
     depth: str
@@ -130,7 +129,6 @@ def read_rules(errors: list[str]) -> list[Rule]:
         rule = Rule(
             path=path,
             id=metadata(text, "ID"),
-            legacy_id=metadata(text, "Legacy ID"),
             status=metadata(text, "Status"),
             domain=metadata(text, "Domain"),
             depth=metadata(text, "Depth"),
@@ -138,7 +136,6 @@ def read_rules(errors: list[str]) -> list[Rule]:
         )
         for field, value in [
             ("ID", rule.id),
-            ("Legacy ID", rule.legacy_id),
             ("Status", rule.status),
             ("Domain", rule.domain),
             ("Depth", rule.depth),

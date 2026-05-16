@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-FUZZ-PARSERS-FORMATTERS-AND-STATE-MACHINES`
-- Legacy ID: `R-0418`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

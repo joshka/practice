@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-DO-NOT-FALL-BACK-TO-GIT-FOR-JJ-ISSUES`
-- Legacy ID: `R-0723`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

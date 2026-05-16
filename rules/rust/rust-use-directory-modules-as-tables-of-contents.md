@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-DIRECTORY-MODULES-AS-TABLES-OF-CONTENTS`
-- Legacy ID: `R-0223`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PRESERVE-ERROR-CONTEXT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

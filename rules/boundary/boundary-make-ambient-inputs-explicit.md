@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`
-- Legacy ID: `R-0304`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

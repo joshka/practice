@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-PROVE-COMMAND-CONSTRUCTION-AND-DISPLAY`
-- Legacy ID: `R-0414`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

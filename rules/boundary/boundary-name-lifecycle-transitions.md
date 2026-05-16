@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-NAME-LIFECYCLE-TRANSITIONS`
-- Legacy ID: `R-0306`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

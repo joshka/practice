@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-ALIGN-README-AND-CRATE-RUSTDOC`
-- Legacy ID: `R-0517`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

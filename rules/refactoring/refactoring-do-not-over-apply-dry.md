@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-DO-NOT-OVER-APPLY-DRY`
-- Legacy ID: `R-0104`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

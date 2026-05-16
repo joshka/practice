@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-INLINE-MODULES`
-- Legacy ID: `R-0224`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

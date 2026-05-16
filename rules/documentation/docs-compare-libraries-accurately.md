@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-COMPARE-LIBRARIES-ACCURATELY`
-- Legacy ID: `R-0515`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

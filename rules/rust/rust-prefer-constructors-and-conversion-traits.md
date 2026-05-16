@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PREFER-CONSTRUCTORS-AND-CONVERSION-TRAITS`
-- Legacy ID: `R-0219`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

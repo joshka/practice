@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-HIDE-TEST-ONLY-HELPERS`
-- Legacy ID: `R-0231`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

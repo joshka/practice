@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-USE-REALISTIC-PARSER-SAMPLES`
-- Legacy ID: `R-0412`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

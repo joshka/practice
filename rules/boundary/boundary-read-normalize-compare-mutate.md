@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-READ-NORMALIZE-COMPARE-MUTATE`
-- Legacy ID: `R-0313`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

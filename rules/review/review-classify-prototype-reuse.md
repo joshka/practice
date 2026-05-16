@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-CLASSIFY-PROTOTYPE-REUSE`
-- Legacy ID: `R-0706`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

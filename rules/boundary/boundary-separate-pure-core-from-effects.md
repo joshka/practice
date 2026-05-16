@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-SEPARATE-PURE-CORE-FROM-EFFECTS`
-- Legacy ID: `R-0316`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-WRITE-ACTIONABLE-ERROR-DISPLAY`
-- Legacy ID: `R-0218`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

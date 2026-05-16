@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`
-- Legacy ID: `R-0808`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

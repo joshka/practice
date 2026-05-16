@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PREFER-SMALL-CLEAR-SHAPES`
-- Legacy ID: `R-0213`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

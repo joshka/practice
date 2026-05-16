@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`
-- Legacy ID: `R-0521`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`
-- Legacy ID: `R-1001`
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `compact`

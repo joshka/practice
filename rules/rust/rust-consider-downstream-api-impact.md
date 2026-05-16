@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-CONSIDER-DOWNSTREAM-API-IMPACT`
-- Legacy ID: `R-0241`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-STOP-REPEATED-JJ-RETRIES-AND-LOCALIZE-STATE`
-- Legacy ID: `R-0725`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

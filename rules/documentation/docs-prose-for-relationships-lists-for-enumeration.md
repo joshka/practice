@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`
-- Legacy ID: `R-0509`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

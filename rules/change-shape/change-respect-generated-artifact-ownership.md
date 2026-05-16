@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`
-- Legacy ID: `R-0013`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

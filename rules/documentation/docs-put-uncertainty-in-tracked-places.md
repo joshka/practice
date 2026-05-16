@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`
-- Legacy ID: `R-0516`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-KEEP-LINEAR-STORY-VISIBLE`
-- Legacy ID: `R-0107`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

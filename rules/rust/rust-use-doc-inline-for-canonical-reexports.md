@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-DOC-INLINE-FOR-CANONICAL-REEXPORTS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-GIVE-TOOLS-IDENTITY-POLICY-AND-LIMITS`
-- Legacy ID: `R-0310`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

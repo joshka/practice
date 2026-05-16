@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-DEFINE-COMPACTION-INVARIANTS`
-- Legacy ID: `R-0322`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

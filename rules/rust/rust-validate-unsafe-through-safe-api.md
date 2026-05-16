@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-VALIDATE-UNSAFE-THROUGH-SAFE-API`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

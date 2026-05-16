@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-STAGE-GENERATED-BEHAVIOR`
-- Legacy ID: `R-0309`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

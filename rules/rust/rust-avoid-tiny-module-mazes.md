@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-TINY-MODULE-MAZES`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

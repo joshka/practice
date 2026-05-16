@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-USE-CONSERVATIVE-TERMINAL-DEFAULTS`
-- Legacy ID: `R-0324`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

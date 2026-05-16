@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-CHOOSE-GENERICS-AND-TRAIT-OBJECTS-DELIBERATELY`
-- Legacy ID: `R-0230`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

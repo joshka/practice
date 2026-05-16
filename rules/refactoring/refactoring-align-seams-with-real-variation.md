@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION`
-- Legacy ID: `R-0103`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

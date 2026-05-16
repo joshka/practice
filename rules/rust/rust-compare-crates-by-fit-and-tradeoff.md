@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-COMPARE-CRATES-BY-FIT-AND-TRADEOFF`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-DISTINGUISH-INPUT-CLASSES`
-- Legacy ID: `R-0303`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

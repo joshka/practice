@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
-- Legacy ID: `R-1000`
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `compact`

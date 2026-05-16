@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-DEFINE-SLICES-IN-ISSUES`
-- Legacy ID: `R-0900`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

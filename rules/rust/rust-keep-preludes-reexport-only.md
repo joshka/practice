@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-PRELUDES-REEXPORT-ONLY`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

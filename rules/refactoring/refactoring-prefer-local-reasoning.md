@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-PREFER-LOCAL-REASONING`
-- Legacy ID: `R-0100`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

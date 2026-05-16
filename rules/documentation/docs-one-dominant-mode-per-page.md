@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-ONE-DOMINANT-MODE-PER-PAGE`
-- Legacy ID: `R-0508`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

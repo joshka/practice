@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-SEPARATE-UI-AND-APP-STATE`
-- Legacy ID: `R-0308`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

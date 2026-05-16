@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-RECORD-BENCHMARK-PROVENANCE`
-- Legacy ID: `R-0404`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

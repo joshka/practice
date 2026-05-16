@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-COVER-PUBLIC-BOUNDARIES-WITH-INTEGRATION-TESTS`
-- Legacy ID: `R-0408`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

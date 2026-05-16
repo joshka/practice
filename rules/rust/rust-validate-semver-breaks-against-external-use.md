@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-VALIDATE-SEMVER-BREAKS-AGAINST-EXTERNAL-USE`
-- Legacy ID: `R-0242`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

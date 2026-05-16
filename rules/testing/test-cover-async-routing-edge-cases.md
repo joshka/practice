@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-COVER-ASYNC-ROUTING-EDGE-CASES`
-- Legacy ID: `R-0416`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

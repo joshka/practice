@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-IMPLEMENT-DEBUG-FOR-PUBLIC-TYPES`
-- Legacy ID: `R-0217`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

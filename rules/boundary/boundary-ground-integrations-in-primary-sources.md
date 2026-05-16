@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-GROUND-INTEGRATIONS-IN-PRIMARY-SOURCES`
-- Legacy ID: `R-0314`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-NAME-EXACT-JJ-MUTATION-TARGETS`
-- Legacy ID: `R-0707`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

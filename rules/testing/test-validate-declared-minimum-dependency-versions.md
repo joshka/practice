@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-VALIDATE-DECLARED-MINIMUM-DEPENDENCY-VERSIONS`
-- Legacy ID: `R-0431`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DOCUMENT-SCHEDULING-FOR-LONG-ASYNC`
-- Legacy ID: `R-0240`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

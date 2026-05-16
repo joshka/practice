@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-CHECK-MSRV-AND-PLATFORMS`
-- Legacy ID: `R-0423`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

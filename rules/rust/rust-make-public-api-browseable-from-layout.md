@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-MAKE-PUBLIC-API-BROWSEABLE-FROM-LAYOUT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

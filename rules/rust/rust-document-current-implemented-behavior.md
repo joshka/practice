@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DOCUMENT-CURRENT-IMPLEMENTED-BEHAVIOR`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

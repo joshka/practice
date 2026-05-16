@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-SEND-STATIC-ACROSS-TASKS`
-- Legacy ID: `R-0229`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

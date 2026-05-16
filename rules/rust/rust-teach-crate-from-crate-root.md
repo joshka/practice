@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-TEACH-CRATE-FROM-CRATE-ROOT`
-- Legacy ID: `R-0221`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

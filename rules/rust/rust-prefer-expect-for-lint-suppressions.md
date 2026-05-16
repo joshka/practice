@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PREFER-EXPECT-FOR-LINT-SUPPRESSIONS`
-- Legacy ID: `R-0210`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

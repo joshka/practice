@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-PROVE-CONTRACTS-NOT-TRIVIA`
-- Legacy ID: `R-0400`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

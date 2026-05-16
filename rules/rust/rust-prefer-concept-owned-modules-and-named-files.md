@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`
-- Legacy ID: `R-0207`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

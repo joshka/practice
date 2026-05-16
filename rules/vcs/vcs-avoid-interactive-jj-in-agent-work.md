@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-AVOID-INTERACTIVE-JJ-IN-AGENT-WORK`
-- Legacy ID: `R-0706`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

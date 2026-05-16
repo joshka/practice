@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PRESERVE-INTENT`
-- Legacy ID: `R-0819`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

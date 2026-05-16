@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-CHECK-MAINTAINER-COMMANDS-IN-CI`
-- Legacy ID: `R-0419`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-SEPARATE-DISCOVERY-SELECTION-IMPLEMENTATION`
-- Legacy ID: `R-0908`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

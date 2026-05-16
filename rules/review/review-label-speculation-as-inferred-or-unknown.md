@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-LABEL-SPECULATION-AS-INFERRED-OR-UNKNOWN`
-- Legacy ID: `R-0902`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

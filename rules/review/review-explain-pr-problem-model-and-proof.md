@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`
-- Legacy ID: `R-0901`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

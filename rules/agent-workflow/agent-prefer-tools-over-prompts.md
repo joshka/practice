@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PREFER-TOOLS-OVER-PROMPTS`
-- Legacy ID: `R-0802`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

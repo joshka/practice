@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-HIDE-CATALOG-MECHANICS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

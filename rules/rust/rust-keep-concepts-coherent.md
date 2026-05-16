@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-CONCEPTS-COHERENT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

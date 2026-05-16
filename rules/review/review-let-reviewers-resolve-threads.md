@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-LET-REVIEWERS-RESOLVE-THREADS`
-- Legacy ID: `R-0903`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

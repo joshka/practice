@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`
-- Legacy ID: `R-0814`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

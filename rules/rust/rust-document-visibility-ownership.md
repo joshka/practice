@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DOCUMENT-VISIBILITY-OWNERSHIP`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

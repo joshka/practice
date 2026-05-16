@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DOCUMENT-PUBLIC-PANIC-CONTRACTS`
-- Legacy ID: `R-0203`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

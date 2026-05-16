@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-CONFIRM-BROAD-JJ-OPERATIONS`
-- Legacy ID: `R-0716`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`
-- Legacy ID: `R-0519`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

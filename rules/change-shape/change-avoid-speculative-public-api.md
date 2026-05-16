@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-AVOID-SPECULATIVE-PUBLIC-API`
-- Legacy ID: `R-0012`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

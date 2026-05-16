@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-REPORT-PROVIDER-DIAGNOSTICS`
-- Legacy ID: `R-0320`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

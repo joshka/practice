@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-IMPLEMENT-STANDARD-TRAITS-FOR-PUBLIC-ERRORS`
-- Legacy ID: `R-0202`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

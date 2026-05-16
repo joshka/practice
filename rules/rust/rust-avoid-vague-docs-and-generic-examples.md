@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-VAGUE-DOCS-AND-GENERIC-EXAMPLES`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

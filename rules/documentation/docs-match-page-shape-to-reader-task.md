@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`
-- Legacy ID: `R-0526`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `expanded`

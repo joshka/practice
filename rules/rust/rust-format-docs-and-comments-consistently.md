@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-FORMAT-DOCS-AND-COMMENTS-CONSISTENTLY`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

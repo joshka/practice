@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-MAKE-SIDE-EFFECTS-EXPLICIT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
-- Legacy ID: `R-0421`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

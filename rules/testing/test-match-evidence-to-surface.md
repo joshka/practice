@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-MATCH-EVIDENCE-TO-SURFACE`
-- Legacy ID: `R-0406`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`
-- Legacy ID: `R-0011`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

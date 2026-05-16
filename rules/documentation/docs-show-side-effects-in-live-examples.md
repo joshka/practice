@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`
-- Legacy ID: `R-0520`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

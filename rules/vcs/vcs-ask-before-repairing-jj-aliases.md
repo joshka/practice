@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`
-- Legacy ID: `R-0727`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

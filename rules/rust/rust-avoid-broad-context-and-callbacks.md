@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-BROAD-CONTEXT-AND-CALLBACKS`
-- Legacy ID: `R-0215`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

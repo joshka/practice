@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-KEEP-SLOW-CHECKS-OUT-OF-PR-CI`
-- Legacy ID: `R-0424`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

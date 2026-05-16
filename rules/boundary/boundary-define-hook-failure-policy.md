@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-DEFINE-HOOK-FAILURE-POLICY`
-- Legacy ID: `R-0319`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

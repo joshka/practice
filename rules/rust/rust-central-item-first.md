@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-CENTRAL-ITEM-FIRST`
-- Legacy ID: `R-0226`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

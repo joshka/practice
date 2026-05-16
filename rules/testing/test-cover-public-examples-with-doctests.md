@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-COVER-PUBLIC-EXAMPLES-WITH-DOCTESTS`
-- Legacy ID: `R-0409`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

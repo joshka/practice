@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-ORDER-ITEMS-FOR-API-READING`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

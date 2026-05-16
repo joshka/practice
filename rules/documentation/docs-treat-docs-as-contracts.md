@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-TREAT-DOCS-AS-CONTRACTS`
-- Legacy ID: `R-0500`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

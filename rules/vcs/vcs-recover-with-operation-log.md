@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-RECOVER-WITH-OPERATION-LOG`
-- Legacy ID: `R-0708`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

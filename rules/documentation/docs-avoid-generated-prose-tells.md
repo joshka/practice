@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-AVOID-GENERATED-PROSE-TELLS`
-- Legacy ID: `R-0513`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

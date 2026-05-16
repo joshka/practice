@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-TRACK-DYNAMIC-REGISTRATION-PROVENANCE`
-- Legacy ID: `R-0317`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

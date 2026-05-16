@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-DRY-RUN-SURPRISING-PUBLICATION`
-- Legacy ID: `R-0717`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

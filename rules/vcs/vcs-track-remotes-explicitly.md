@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-TRACK-REMOTES-EXPLICITLY`
-- Legacy ID: `R-0718`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

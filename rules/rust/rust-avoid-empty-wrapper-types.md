@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-EMPTY-WRAPPER-TYPES`
-- Legacy ID: `R-0206`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

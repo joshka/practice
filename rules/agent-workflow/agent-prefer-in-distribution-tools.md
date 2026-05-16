@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PREFER-IN-DISTRIBUTION-TOOLS`
-- Legacy ID: `R-0821`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

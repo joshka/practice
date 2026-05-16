@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-ALIGN-RELEASE-SUPPORT-CLAIMS`
-- Legacy ID: `R-0238`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

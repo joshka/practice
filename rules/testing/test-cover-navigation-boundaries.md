@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-COVER-NAVIGATION-BOUNDARIES`
-- Legacy ID: `R-0413`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

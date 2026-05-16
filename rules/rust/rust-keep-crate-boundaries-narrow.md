@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-CRATE-BOUNDARIES-NARROW`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

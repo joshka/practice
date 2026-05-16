@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
-- Legacy ID: `R-0200`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-USE-EVOLOG-AND-OPERATION-LOG`
-- Legacy ID: `R-0715`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

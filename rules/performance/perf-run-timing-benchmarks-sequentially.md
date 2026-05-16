@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-RUN-TIMING-BENCHMARKS-SEQUENTIALLY`
-- Legacy ID: `R-0405`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

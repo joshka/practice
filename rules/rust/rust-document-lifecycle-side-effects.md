@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DOCUMENT-LIFECYCLE-SIDE-EFFECTS`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

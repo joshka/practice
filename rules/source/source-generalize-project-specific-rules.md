@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `SOURCE-GENERALIZE-PROJECT-SPECIFIC-RULES`
-- Legacy ID: `R-1002`
 - Status: `reviewed`
 - Domain: `source`
 - Depth: `compact`

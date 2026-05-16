@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-BUDGET-FOR-FEEDBACK-LOOPS`
-- Legacy ID: `R-0822`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

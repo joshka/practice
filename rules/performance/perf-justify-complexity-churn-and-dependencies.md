@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-JUSTIFY-COMPLEXITY-CHURN-AND-DEPENDENCIES`
-- Legacy ID: `R-0430`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

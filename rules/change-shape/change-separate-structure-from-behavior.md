@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`
-- Legacy ID: `R-0002`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

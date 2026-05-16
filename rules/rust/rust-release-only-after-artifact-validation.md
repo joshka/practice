@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-RELEASE-ONLY-AFTER-ARTIFACT-VALIDATION`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

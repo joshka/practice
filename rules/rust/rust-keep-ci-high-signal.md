@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-CI-HIGH-SIGNAL`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

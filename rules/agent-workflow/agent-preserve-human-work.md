@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `AGENT-PRESERVE-HUMAN-WORK`
-- Legacy ID: `R-0803`
 - Status: `reviewed`
 - Domain: `agent-workflow`
 - Depth: `compact`

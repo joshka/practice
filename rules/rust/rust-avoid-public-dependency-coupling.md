@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-PUBLIC-DEPENDENCY-COUPLING`
-- Legacy ID: `R-0201`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

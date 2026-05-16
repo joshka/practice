@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-SCOPE-JJ-FILE-TRACKING`
-- Legacy ID: `R-0710`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

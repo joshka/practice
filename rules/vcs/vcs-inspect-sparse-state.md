@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-INSPECT-SPARSE-STATE`
-- Legacy ID: `R-0724`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

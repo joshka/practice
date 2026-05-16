@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-AVOID-OVERCOMMENTING-TRIVIAL-CODE`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

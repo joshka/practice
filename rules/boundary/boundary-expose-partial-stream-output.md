@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-EXPOSE-PARTIAL-STREAM-OUTPUT`
-- Legacy ID: `R-0321`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

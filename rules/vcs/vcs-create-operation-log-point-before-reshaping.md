@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-CREATE-OPERATION-LOG-POINT-BEFORE-RESHAPING`
-- Legacy ID: `R-0713`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

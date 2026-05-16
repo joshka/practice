@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DOCUMENT-PERFORMANCE-CONTRACTS`
-- Legacy ID: `R-0239`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

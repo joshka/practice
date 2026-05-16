@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-IDENTIFY-ANEMIC-STATE-MACHINES`
-- Legacy ID: `R-0307`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-MAKE-FEATURE-FLAGS-ADDITIVE-WHERE-POSSIBLE`
-- Legacy ID: `R-0232`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

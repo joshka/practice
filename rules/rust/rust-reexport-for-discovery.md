@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-REEXPORT-FOR-DISCOVERY`
-- Legacy ID: `R-0208`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

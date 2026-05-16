@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-EXPOSE-PRIMARY-PATH-FROM-CRATE-ROOT`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

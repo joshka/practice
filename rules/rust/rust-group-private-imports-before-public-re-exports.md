@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-GROUP-PRIVATE-IMPORTS-BEFORE-PUBLIC-RE-EXPORTS`
-- Legacy ID: `R-0228`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

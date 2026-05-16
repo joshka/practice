@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-MAKE-DYNAMIC-CONFLICTS-DETERMINISTIC`
-- Legacy ID: `R-0318`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

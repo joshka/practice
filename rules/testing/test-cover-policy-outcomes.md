@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `TEST-COVER-POLICY-OUTCOMES`
-- Legacy ID: `R-0415`
 - Status: `reviewed`
 - Domain: `testing`
 - Depth: `compact`

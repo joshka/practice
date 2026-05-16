@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`
-- Legacy ID: `R-0703`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

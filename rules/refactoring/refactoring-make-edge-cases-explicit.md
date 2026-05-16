@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-MAKE-EDGE-CASES-EXPLICIT`
-- Legacy ID: `R-0108`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

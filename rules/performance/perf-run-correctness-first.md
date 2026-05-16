@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `PERF-RUN-CORRECTNESS-FIRST`
-- Legacy ID: `R-0402`
 - Status: `reviewed`
 - Domain: `performance`
 - Depth: `compact`

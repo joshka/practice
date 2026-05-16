@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `CHANGE-PIN-BEHAVIOR-WITH-EARLY-TESTS`
-- Legacy ID: `R-0010`
 - Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`

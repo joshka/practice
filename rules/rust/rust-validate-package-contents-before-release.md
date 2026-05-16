@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-VALIDATE-PACKAGE-CONTENTS-BEFORE-RELEASE`
-- Legacy ID: `R-0237`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

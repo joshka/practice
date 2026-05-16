@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-DISTINGUISH-EXAMPLE-ROLES`
-- Legacy ID: `R-0529`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

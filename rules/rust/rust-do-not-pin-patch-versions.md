@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-DO-NOT-PIN-PATCH-VERSIONS`
-- Legacy ID: `R-0244`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

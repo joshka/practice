@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-MAKE-EXEC-TOOLS-NONINTERACTIVE`
-- Legacy ID: `R-0311`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`

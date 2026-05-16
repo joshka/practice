@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-USE-BUILDERS-FOR-OPTIONAL-OR-VALIDATED-FIELDS`
-- Legacy ID: `R-0205`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

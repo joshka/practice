@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`
-- Legacy ID: `R-0601`
 - Status: `reviewed`
 - Domain: `observability`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-KEEP-DEPENDENCY-UPDATES-INTENTIONAL`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

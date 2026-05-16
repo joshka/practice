@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-RUN-FEATURE-GATED-VALIDATION`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

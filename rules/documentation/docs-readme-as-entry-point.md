@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-README-AS-ENTRY-POINT`
-- Legacy ID: `R-0504`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

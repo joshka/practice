@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-TREAT-BOOKMARK-REMOTE-SYNTAX-AS-VERSION-SENSITIVE`
-- Legacy ID: `R-0719`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

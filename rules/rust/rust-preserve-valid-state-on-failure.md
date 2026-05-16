@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-PRESERVE-VALID-STATE-ON-FAILURE`
-- Legacy ID: `none`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

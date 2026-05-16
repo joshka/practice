@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-QUOTE-REVSETS-AND-SHELL-SYNTAX`
-- Legacy ID: `R-0705`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `VCS-JJ-NEW-FOR-REVIEW-LANES`
-- Legacy ID: `R-0701`
 - Status: `reviewed`
 - Domain: `vcs`
 - Depth: `compact`

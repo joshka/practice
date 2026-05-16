@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REFACTORING-EXTRACT-CONCEPT-HELPERS`
-- Legacy ID: `R-0101`
 - Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`

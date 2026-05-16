@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-ENCODE-DURABLE-RULES-IN-LINTS`
-- Legacy ID: `R-0234`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

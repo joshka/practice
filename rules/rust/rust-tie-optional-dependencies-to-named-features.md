@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `RUST-TIE-OPTIONAL-DEPENDENCIES-TO-NAMED-FEATURES`
-- Legacy ID: `R-0233`
 - Status: `reviewed`
 - Domain: `rust`
 - Depth: `compact`

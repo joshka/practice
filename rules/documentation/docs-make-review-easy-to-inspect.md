@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `DOCS-MAKE-REVIEW-EASY-TO-INSPECT`
-- Legacy ID: `R-0524`
 - Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`

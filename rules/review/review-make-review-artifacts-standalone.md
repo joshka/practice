@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `REVIEW-MAKE-REVIEW-ARTIFACTS-STANDALONE`
-- Legacy ID: `R-0905`
 - Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`

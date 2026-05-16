@@ -3,7 +3,6 @@
 ## Metadata
 
 - ID: `BOUNDARY-REJECT-UNSUPPORTED-SHAPES`
-- Legacy ID: `R-0302`
 - Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`
