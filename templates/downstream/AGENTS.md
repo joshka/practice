@@ -20,8 +20,8 @@ and use the site when a rule, pattern, principle, or guide needs more context.
   local agent map; do not replace local project rules with the template blindly.
 - Refresh copied guidance with `python3 docs/development/update.py` when the shared rule set
   changes.
-- If a shared rule causes trouble or should be changed for most projects, capture that feedback for
-  the `development-preferences` repo.
+- If a shared rule causes trouble or should be changed for most projects, open a
+  [guidance feedback issue][guidance-feedback].
 
 ## Validation
 
@@ -42,3 +42,5 @@ markdownlint-cli2 "**/*.md"
 - `docs/development/README.md`: local map for development guidance.
 - [Software Practices](https://www.joshka.net/practice/): canonical rendered reference for guides,
   rules, patterns, principles, mechanisms, and tags.
+
+[guidance-feedback]: https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml

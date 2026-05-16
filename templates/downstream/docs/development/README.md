@@ -46,5 +46,8 @@ pattern, principle, and mechanism. When a compact rule needs more context, use t
 site or the canonical source repo.
 
 Update local validation commands, source-control notes, and project-specific boundaries in
-`AGENTS.md` or nearby local docs. If a generated rule is wrong, update the canonical
-`development-preferences` repo and recopy the generated files.
+`AGENTS.md` or nearby local docs. If a generated rule is wrong for most projects, open a
+[guidance feedback issue][guidance-feedback], update the canonical `development-preferences` repo,
+and recopy the generated files.
+
+[guidance-feedback]: https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml

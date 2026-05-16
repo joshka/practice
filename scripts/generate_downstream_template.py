@@ -42,8 +42,8 @@ and use the site when a rule, pattern, principle, or guide needs more context.
   local agent map; do not replace local project rules with the template blindly.
 - Refresh copied guidance with `python3 docs/development/update.py` when the shared rule set
   changes.
-- If a shared rule causes trouble or should be changed for most projects, capture that feedback for
-  the `development-preferences` repo.
+- If a shared rule causes trouble or should be changed for most projects, open a
+  [guidance feedback issue][guidance-feedback].
 
 ## Validation
 
@@ -64,6 +64,8 @@ markdownlint-cli2 "**/*.md"
 - `docs/development/README.md`: local map for development guidance.
 - [Software Practices](https://www.joshka.net/practice/): canonical rendered reference for guides,
   rules, patterns, principles, mechanisms, and tags.
+
+[guidance-feedback]: https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
 """
 
 
@@ -116,8 +118,11 @@ pattern, principle, and mechanism. When a compact rule needs more context, use t
 site or the canonical source repo.
 
 Update local validation commands, source-control notes, and project-specific boundaries in
-`AGENTS.md` or nearby local docs. If a generated rule is wrong, update the canonical
-`development-preferences` repo and recopy the generated files.
+`AGENTS.md` or nearby local docs. If a generated rule is wrong for most projects, open a
+[guidance feedback issue][guidance-feedback], update the canonical `development-preferences` repo,
+and recopy the generated files.
+
+[guidance-feedback]: https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
 """
 
 
@@ -190,8 +195,9 @@ Install or refresh:
 Add a short "Shared Development Preferences" section to AGENTS.md that points agents to the copied
 docs/development files and to https://www.joshka.net/practice/ for deeper context.
 
-If a shared rule causes friction or seems wrong for most Rust or agent work, note that as feedback
-for the upstream development-preferences/practice repo rather than only patching around it locally.
+If a shared rule causes friction or seems wrong for most Rust or agent work, open a guidance
+feedback issue upstream rather than only patching around it locally:
+https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
 
 Keep the change small and report exactly what was copied, what local instructions were preserved,
 and what validation ran or was skipped.
@@ -216,8 +222,9 @@ Entry points:
 - https://www.joshka.net/practice/: rendered reference with deeper guide, rule, pattern, principle,
   mechanism, and tag context.
 
-If a shared rule causes friction or seems wrong for most Rust or agent work, capture that feedback
-for the `development-preferences` repo instead of only patching around it locally.
+If a shared rule causes friction or seems wrong for most Rust or agent work, open a guidance
+feedback issue instead of only patching around it locally:
+https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
 ```
 
 ## Merge Guidance

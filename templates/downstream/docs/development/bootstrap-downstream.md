@@ -66,8 +66,9 @@ Install or refresh:
 Add a short "Shared Development Preferences" section to AGENTS.md that points agents to the copied
 docs/development files and to https://www.joshka.net/practice/ for deeper context.
 
-If a shared rule causes friction or seems wrong for most Rust or agent work, note that as feedback
-for the upstream development-preferences/practice repo rather than only patching around it locally.
+If a shared rule causes friction or seems wrong for most Rust or agent work, open a guidance
+feedback issue upstream rather than only patching around it locally:
+https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
 
 Keep the change small and report exactly what was copied, what local instructions were preserved,
 and what validation ran or was skipped.
@@ -92,8 +93,9 @@ Entry points:
 - https://www.joshka.net/practice/: rendered reference with deeper guide, rule, pattern, principle,
   mechanism, and tag context.
 
-If a shared rule causes friction or seems wrong for most Rust or agent work, capture that feedback
-for the `development-preferences` repo instead of only patching around it locally.
+If a shared rule causes friction or seems wrong for most Rust or agent work, open a guidance
+feedback issue instead of only patching around it locally:
+https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
 ```
 
 ## Merge Guidance
