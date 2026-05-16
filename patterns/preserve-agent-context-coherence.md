@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, context, workflow`
+- Tags: `agent-context, agent-workflow, review-handoff`
 - Related: `small-reviewable-chunks, separate-discovery-from-editing`
 
 ## Problem

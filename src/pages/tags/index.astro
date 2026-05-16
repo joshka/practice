@@ -1,0 +1,37 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import KindIcon from '../../components/KindIcon.astro';
+import { tagCounts, tagLabel, withBase } from '../../lib/site';
+
+const tags = tagCounts();
+---
+
+<BaseLayout
+  title="Tags"
+  description="Cross-cutting guidance clusters across rules, patterns, principles, and mechanisms."
+>
+  <section class="section-hero" aria-labelledby="tags-title">
+    <div class="hero-title">
+      <span class="hero-title__icon" aria-hidden="true">
+        <KindIcon kind="tag" />
+      </span>
+      <h1 id="tags-title">Tags</h1>
+    </div>
+    <p>
+      Cross-cutting clusters for rules, patterns, principles, and mechanisms. Tags avoid duplicating
+      page type, review status, and compactness metadata.
+    </p>
+  </section>
+
+  <section class="listing tag-index" aria-labelledby="tag-index-title">
+    <h2 id="tag-index-title">Guidance tags</h2>
+    <div class="tag-grid">
+      {tags.map(({ tag, count }) => (
+        <a class="tag-card" href={withBase(`/tags/${tag}/`)}>
+          <span class="tag-card__label">{tagLabel(tag)}</span>
+          <span class="tag-card__count">{count} {count === 1 ? 'item' : 'items'}</span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

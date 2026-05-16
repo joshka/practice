@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, review, verification`
+- Tags: `reviewability, verification, review-handoff`
 - Related: `define-good-before-judgment-heavy-work, report-verification-honestly`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, evidence, review`
+- Tags: `documentation, source-truth, verification`
 - Related: `write-docs-as-contracts, report-verification-honestly`
 
 ## Problem

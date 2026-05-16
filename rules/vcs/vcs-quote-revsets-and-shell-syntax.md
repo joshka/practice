@@ -8,7 +8,7 @@
   Shell metacharacters can alter commands, so examples should prefer simple safe quoting.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, automation`
 - Related: `vcs-name-exact-jj-mutation-targets, boundary-make-exec-tools-noninteractive`
 
 ## Rule

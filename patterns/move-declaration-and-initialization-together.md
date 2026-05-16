@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, state`
+- Tags: `reader-locality, change-shape`
 - Related: `limit-live-context, reader-locality, use-explaining-variable`
 
 ## Problem

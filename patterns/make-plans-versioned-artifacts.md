@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, planning, documentation`
+- Tags: `agent-workflow, source-truth, review-handoff`
 - Related: `define-good-before-judgment-heavy-work, preserve-agent-context-coherence`
 
 ## Problem

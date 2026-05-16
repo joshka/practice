@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, validation, tooling`
+- Tags: `tooling, automation, agent-workflow`
 - Related: `make-bad-output-mechanically-hard, smallest-trustworthy-verification`
 
 ## Problem

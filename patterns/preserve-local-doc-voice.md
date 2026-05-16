@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, style, agents`
+- Tags: `documentation, local-conventions, source-truth`
 - Related: `follow-local-conventions, preserve-intent-over-literalism`
 
 ## Problem

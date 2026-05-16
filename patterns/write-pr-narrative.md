@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `review, documentation, collaboration`
+- Tags: `review-handoff, reviewability, verification`
 - Related: `produce-review-packets, report-verification-honestly`
 
 ## Problem

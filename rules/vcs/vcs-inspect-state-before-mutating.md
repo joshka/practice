@@ -8,7 +8,7 @@
   Current state keeps edits scoped and avoids rewriting work the agent did not inspect.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, verification, ownership, change-shape`
 - Related: `preserve-unowned-work, vcs-name-exact-jj-mutation-targets`
 
 ## Rule

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, rust, readability`
+- Tags: `boundary-correctness, validation-policy, public-api, reader-locality`
 - Related: `make-invalid-states-hard-to-express, reader-locality`
 
 ## Problem

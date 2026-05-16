@@ -11,7 +11,7 @@
   preserve-unowned-work`
 - Status: `reviewed`
 - Domain: `source`
-- Tags: `source-truth, generated-artifacts, release, reviewability`
+- Tags: `source-truth, generated-artifacts, reviewability`
 
 ## Rule
 

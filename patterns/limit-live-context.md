@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, decomposition`
+- Tags: `reader-locality, agent-context, reviewability`
 - Related: `reader-locality, chunk-statements, move-declaration-and-initialization-together`
 
 ## Problem

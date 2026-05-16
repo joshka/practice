@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, delegation, workflow`
+- Tags: `agent-workflow, agent-context, boundary-correctness`
 - Related: `define-good-before-judgment-heavy-work, grant-scoped-agent-capabilities`
 
 ## Problem

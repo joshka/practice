@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `errors, documentation, support`
+- Tags: `errors, failure-output, public-api`
 - Related: `preserve-error-context, test-observable-behavior`
 
 ## Problem

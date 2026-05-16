@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, context, harness`
+- Tags: `agent-context, agent-workflow, documentation`
 - Related: `use-disk-as-context-sink, keep-docs-near-their-subject`
 
 ## Problem

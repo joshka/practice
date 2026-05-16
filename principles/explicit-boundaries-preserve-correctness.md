@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `boundaries, parsing, validation, state, side effects`
+- Tags: `boundary-correctness, validation-policy, state-transitions, side-effects`
 - Related: `parse-dont-validate, make-validation-policy-explicit, make-parameters-explicit`
 
 ## Claim

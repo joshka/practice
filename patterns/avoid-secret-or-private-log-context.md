@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `logging, privacy, security`
+- Tags: `security-privacy, observability, agent-context`
 - Related: `keep-secrets-out-of-context, log-at-owned-boundaries`
 
 ## Problem

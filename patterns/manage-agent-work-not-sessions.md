@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, workflow, orchestration`
+- Tags: `agent-workflow, agent-context, source-truth`
 - Related: `produce-review-packets, spend-human-attention-on-ambiguity`
 
 ## Problem

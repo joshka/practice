@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, architecture, documentation`
+- Tags: `agent-context, agent-workflow, reader-locality`
 - Related: `document-system-mental-models, make-runtime-state-agent-legible`
 
 ## Problem

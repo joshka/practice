@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, feedback, process`
+- Tags: `agent-workflow, automation, source-truth`
 - Related: `prefer-durable-summaries, report-verification-honestly`
 
 ## Problem

@@ -6,6 +6,7 @@ import {
   faGlobe,
   faRobot,
   faRuler,
+  faTags,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 
@@ -16,7 +17,8 @@ type GuidanceKind =
   | 'pattern'
   | 'principle'
   | 'mechanism'
-  | 'reference';
+  | 'reference'
+  | 'tag';
 
 type Props = {
   kind: GuidanceKind;
@@ -32,6 +34,7 @@ const icons = {
   principle: faBrain,
   mechanism: faWrench,
   reference: faGlobe,
+  tag: faTags,
 } satisfies Record<GuidanceKind, typeof faRuler>;
 const icon = icons[kind];
 const [width, height, , , path] = icon.icon;

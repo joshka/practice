@@ -8,7 +8,7 @@
   Separate candidate changes preserve comparison and recovery without mutating the only option.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, change-shape, reviewability`
 - Related: `keep-structure-reversible, change-isolate-controversial-changes`
 
 ## Rule

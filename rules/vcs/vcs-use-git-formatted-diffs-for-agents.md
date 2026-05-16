@@ -8,7 +8,7 @@
   Git patch format preserves hunks and paths in a shape those consumers can parse reliably.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, agent-workflow, review-handoff, tooling`
 - Related: `shape-tool-output-for-agents, produce-review-packets, vcs-jj-as-source-of-truth`
 
 ## Rule

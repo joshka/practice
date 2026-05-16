@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, naming, maintenance`
+- Tags: `reader-locality, documentation, source-truth`
 - Related: `reader-locality, separate-structure-from-behavior`
 
 ## Problem

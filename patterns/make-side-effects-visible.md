@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, api-design, side-effects`
+- Tags: `side-effects, boundary-correctness, documentation`
 - Related: `write-docs-as-contracts, preserve-error-context`
 
 ## Problem

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, diagnostics, agents`
+- Tags: `testing, failure-output, verification`
 - Related: `test-observable-behavior, smallest-trustworthy-verification, review-proof-not-just-code`
 
 ## Claim

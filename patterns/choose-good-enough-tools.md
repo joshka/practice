@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `tooling, judgment, pragmatism`
+- Tags: `tooling, local-conventions, agent-workflow, reviewability`
 - Related: `prefer-in-distribution-tools, encode-nonfunctional-requirements`
 
 ## Problem

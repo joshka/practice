@@ -1,6 +1,6 @@
 ---
 import KindIcon from './KindIcon.astro';
-import { allPublicPages, withBase } from '../lib/site';
+import { allPublicPages, tagLabel, tagSlug, tagsForPage, withBase } from '../lib/site';
 import type { MarkdownPage } from '../lib/site';
 
 type Props = {
@@ -37,14 +37,10 @@ function pageKind(repoPath: string): string {
 
 function metadataChips(page: MarkdownPage): string[] {
   const chips: string[] = [];
-  if (page.metadata.domain) chips.push(formatChip(page.metadata.domain));
-  if (page.metadata.depth) chips.push(formatChip(page.metadata.depth));
   if (page.metadata.audience && page.metadata.audience !== 'both') chips.push(page.metadata.audience);
-  if (page.metadata.topics) {
-    for (const topic of page.metadata.topics.split(',').map((value) => value.trim()).filter(Boolean)) {
-      if (chips.length >= 5) break;
-      chips.push(formatChip(topic));
-    }
+  for (const tag of tagsForPage(page)) {
+    if (chips.length >= 6) break;
+    chips.push(tag);
   }
   return [...new Set(chips)];
 }
@@ -133,7 +129,13 @@ function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
     {(chips.length > 0 || reviewNote) && (
       <div class="detail-hero__meta" aria-label="Page topics">
         <div class="detail-hero__chips">
-          {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
+          {chips.map((chip) => (
+            chip.includes('-') || tagsForPage(page).includes(tagSlug(chip)) ? (
+              <a class="detail-chip" href={withBase(`/tags/${tagSlug(chip)}/`)}>{tagLabel(chip)}</a>
+            ) : (
+              <span class="detail-chip">{formatChip(chip)}</span>
+            )
+          ))}
         </div>
         {reviewNote && (
           <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>

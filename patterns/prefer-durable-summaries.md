@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, summaries, rationale`
+- Tags: `documentation, agent-context, source-truth`
 - Related: `write-docs-as-contracts, delete-redundant-comments`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, context, tooling`
+- Tags: `agent-context, documentation, source-truth`
 - Related: `prefer-durable-summaries, deliver-context-just-in-time`
 
 ## Problem

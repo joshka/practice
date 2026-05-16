@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, errors, observability`
+- Tags: `observability, errors, failure-output`
 - Related: `preserve-error-context, write-actionable-error-messages`
 
 ## Problem

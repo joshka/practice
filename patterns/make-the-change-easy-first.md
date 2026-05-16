@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `refactoring, workflow, tooling`
+- Tags: `change-shape, tooling, reviewability`
 - Related: `separate-structure-from-behavior, prefer-tools-over-prompts`
 
 ## Problem

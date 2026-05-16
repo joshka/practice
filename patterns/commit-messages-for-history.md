@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `version-control, jj, review`
+- Tags: `vcs-jj, review-handoff, source-truth`
 - Related: `small-reviewable-chunks, report-verification-honestly`
 
 ## Problem

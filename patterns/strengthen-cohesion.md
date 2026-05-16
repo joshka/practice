@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, architecture, readability`
+- Tags: `reader-locality, change-shape, ownership`
 - Related: `reader-locality, cap-change-radius`
 
 ## Problem

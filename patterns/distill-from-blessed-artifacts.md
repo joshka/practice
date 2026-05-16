@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, discovery, examples`
+- Tags: `source-truth, documentation, local-conventions, agent-context`
 - Related: `follow-local-conventions, document-system-mental-models`
 
 ## Problem

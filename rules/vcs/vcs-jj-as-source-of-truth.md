@@ -8,7 +8,7 @@
   This preserves descriptions, stack shape, operation-log recovery, and bookmark semantics.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, source-truth, tooling`
 - Related: `jj-topology-is-repo-role-dependent, vcs-do-not-fall-back-to-git-for-jj-issues`
 
 ## Rule

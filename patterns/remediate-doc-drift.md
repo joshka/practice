@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, maintenance, correctness`
+- Tags: `documentation, source-truth, verification`
 - Related: `write-docs-as-contracts, keep-docs-near-their-subject`
 
 ## Problem

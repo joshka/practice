@@ -8,7 +8,7 @@
   Confirmation protects unrelated work when a command can reshape history or public state.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, reviewability, verification, review-handoff`
 - Related: `preserve-unowned-work, vcs-name-exact-jj-mutation-targets`
 
 ## Rule

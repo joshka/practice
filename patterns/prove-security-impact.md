@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, security, review`
+- Tags: `security-privacy, verification, review-handoff`
 - Related: `report-verification-honestly, smallest-trustworthy-verification`
 
 ## Problem

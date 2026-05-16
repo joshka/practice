@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, review, guardrails`
+- Tags: `agent-workflow, reviewability, review-handoff`
 - Related: `make-bad-output-mechanically-hard, review-proof-not-just-code`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, structure, review`
+- Tags: `documentation, source-truth, reviewability`
 - Related: `write-docs-as-contracts`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `jj, github, remotes, publishing`
+- Tags: `vcs-jj, tooling, review-handoff`
 - Related: `commit-messages-for-history, preserve-unowned-work`
 
 ## Claim

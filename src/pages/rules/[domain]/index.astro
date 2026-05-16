@@ -1,7 +1,15 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
 import KindIcon from '../../../components/KindIcon.astro';
-import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../../lib/site';
+import {
+  renderMarkdown,
+  ruleDomains,
+  rulesForDomain,
+  tagLabel,
+  tagSlug,
+  tagsForPage,
+  withBase,
+} from '../../../lib/site';
 
 type DomainConfig = {
   use: string;
@@ -96,6 +104,11 @@ function cardTitle(rule: (typeof rules)[number]): string {
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
+
+function visibleRuleTags(rule: (typeof rules)[number]): string[] {
+  const domainTag = tagSlug(domain);
+  return tagsForPage(rule).filter((tag) => tag !== domainTag).slice(0, 3);
+}
 ---
 
 <BaseLayout
@@ -123,6 +136,13 @@ function escapeRegExp(value: string): string {
       {rules.map((rule) => (
         <a class="index-entry index-entry--with-icon" href={withBase(rule.route)}>
           <span class="index-entry__body">
+            {visibleRuleTags(rule).length > 0 && (
+              <span class="index-entry__tags">
+                {visibleRuleTags(rule).map((tag) => (
+                  <span class="index-entry__tag">{tagLabel(tag)}</span>
+                ))}
+              </span>
+            )}
             <span class="index-entry__title">
               <span class="index-entry__kind-icon" aria-hidden="true">
                 <KindIcon kind="rule" />

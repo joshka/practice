@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, async, api-design`
+- Tags: `async, boundary-correctness, side-effects, testing`
 - Related: `make-side-effects-visible, make-parameters-explicit`
 
 ## Problem

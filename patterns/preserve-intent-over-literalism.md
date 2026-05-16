@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, judgment, safety`
+- Tags: `agent-workflow, review-handoff, agent-context`
 - Related: `define-good-before-judgment-heavy-work, spend-human-attention-on-ambiguity`
 
 ## Problem

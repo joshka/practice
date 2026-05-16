@@ -8,7 +8,7 @@
   Extra verification pays off when remotes, bookmarks, force-like updates, or PR bases are unclear.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, verification, release, review-handoff`
 - Related: `vcs-confirm-github-remote-topology, vcs-make-github-handoff-explicit`
 
 ## Rule

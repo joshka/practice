@@ -8,7 +8,7 @@
   Sequential mutations avoid locks, stale reads, and confusing operation order.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, automation, agent-workflow`
 - Related: `vcs-avoid-interactive-jj-in-agent-work, vcs-use-ignore-working-copy-carefully`
 
 ## Rule

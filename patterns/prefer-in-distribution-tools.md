@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, tooling, architecture`
+- Tags: `tooling, local-conventions, agent-workflow`
 - Related: `follow-local-conventions, deliver-context-just-in-time`
 
 ## Problem

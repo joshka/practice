@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, acceptance criteria, verification, judgment`
+- Tags: `agent-workflow, verification, reviewability`
 - Related: `smallest-trustworthy-verification, report-verification-honestly`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, tooling, enablement`
+- Tags: `tooling, automation, agent-workflow`
 - Related: `prefer-tools-over-prompts, code-is-memory-of-process`
 
 ## Problem

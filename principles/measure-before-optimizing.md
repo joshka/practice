@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `performance, testing, review`
+- Tags: `performance, verification, testing`
 - Related: `smallest-trustworthy-verification, review-proof-not-just-code`
 
 ## Claim

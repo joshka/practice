@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `workflow, agents, review`
+- Tags: `agent-workflow, change-shape, reviewability`
 - Related: `follow-local-conventions, preserve-unowned-work`
 
 ## Problem

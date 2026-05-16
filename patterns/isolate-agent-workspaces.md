@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, workflow, safety`
+- Tags: `agent-workflow, agent-context, vcs-jj, ownership`
 - Related: `preserve-agent-context-coherence, grant-scoped-agent-capabilities`
 
 ## Problem

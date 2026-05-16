@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, security, secrets`
+- Tags: `security-privacy, agent-context`
 - Related: `grant-scoped-agent-capabilities, prefer-tools-over-prompts`
 
 ## Problem

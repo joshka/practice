@@ -8,7 +8,7 @@
   Explicit targets make intent reviewable and prevent defaults from acting on surprising state.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, verification, reviewability`
 - Related: `vcs-confirm-broad-jj-operations, make-parameters-explicit`
 
 ## Rule

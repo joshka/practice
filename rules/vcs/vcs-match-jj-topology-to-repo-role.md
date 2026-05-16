@@ -8,7 +8,7 @@
   Owned, maintainer, and fork-only workflows need different topology assumptions.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, source-truth, tooling, review-handoff`
 - Related: `jj-topology-is-repo-role-dependent, vcs-confirm-github-remote-topology`
 
 ## Rule

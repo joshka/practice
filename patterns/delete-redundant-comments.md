@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, comments, readability`
+- Tags: `documentation, reader-locality, reviewability`
 - Related: `write-docs-as-contracts`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `workflow, version-control, agents`
+- Tags: `ownership, change-shape, vcs-jj`
 - Related: `follow-local-conventions, small-reviewable-chunks`
 
 ## Problem

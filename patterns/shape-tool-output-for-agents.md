@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, tooling, context`
+- Tags: `tooling, agent-context, failure-output`
 - Related: `use-disk-as-context-sink, deliver-context-just-in-time`
 
 ## Problem

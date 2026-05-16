@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, testing, side-effects`
+- Tags: `boundary-correctness, side-effects, testing`
 - Related: `make-parameters-explicit, test-observable-behavior`
 
 ## Problem

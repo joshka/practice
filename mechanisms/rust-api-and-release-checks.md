@@ -7,6 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api, semver, release, cargo`
+- Tags: `rust, public-api, release, dependencies, verification`
 - Related: `public-api-changes-have-downstream-cost`
 
 ## Purpose

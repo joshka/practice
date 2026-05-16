@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `change-shape, review, commits, refactoring`
+- Tags: `change-shape, reviewability, review-handoff, verification`
 - Related: `private-context-is-not-shared-context`
 
 ## Claim

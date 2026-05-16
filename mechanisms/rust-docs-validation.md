@@ -7,6 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, rustdoc, docs.rs, doctest, examples`
+- Tags: `rust, rustdoc, documentation, verification, examples`
 - Related: `docs-are-contracts`
 
 ## Purpose

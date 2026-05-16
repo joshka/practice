@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `code-shape, refactoring, cognition, maintainability`
+- Tags: `reader-locality, change-shape, reviewability`
 - Related: `change-shape-controls-review-cost`
 
 ## Claim

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, deployment, verification`
+- Tags: `verification, testing, automation`
 - Related: `define-good-before-judgment-heavy-work, close-the-agent-loop`
 
 ## Problem

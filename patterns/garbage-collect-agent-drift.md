@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, maintenance, refactoring`
+- Tags: `agent-workflow, agent-context, source-truth, automation`
 - Related: `optimize-for-long-term-coherence, turn-feedback-into-guidance`
 
 ## Problem

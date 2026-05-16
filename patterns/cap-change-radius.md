@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, refactoring, review`
+- Tags: `change-shape, reviewability, reader-locality`
 - Related: `reader-locality, separate-structure-from-behavior`
 
 ## Problem

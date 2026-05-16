@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, errors, api-design`
+- Tags: `errors, public-api, boundary-correctness`
 - Related: `preserve-error-context, write-actionable-error-messages`
 
 ## Problem

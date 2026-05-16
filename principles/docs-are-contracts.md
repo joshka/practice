@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, rustdoc, agents, contracts`
+- Tags: `documentation, source-truth, public-api, verification`
 - Related: `write-docs-as-contracts, remediate-doc-drift, keep-docs-near-their-subject`
 
 ## Claim

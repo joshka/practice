@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, validation`
+- Tags: `validation-policy, boundary-correctness, reviewability`
 - Related: `parse-dont-validate, make-invalid-states-hard-to-express`
 
 ## Problem

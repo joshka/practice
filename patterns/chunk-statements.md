@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, formatting`
+- Tags: `reader-locality, change-shape, reviewability`
 - Related: `reader-locality, use-explaining-variable`
 
 ## Problem

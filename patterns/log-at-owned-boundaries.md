@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `logging, observability, rust`
+- Tags: `observability, ownership, boundary-correctness, side-effects`
 - Related: `contain-observability-policy, preserve-error-context`
 
 ## Problem

@@ -8,7 +8,7 @@
   Sparse patterns can hide files, so inspection prevents recreating or editing the wrong path.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, source-truth`
 - Related: `vcs-scope-jj-file-tracking, preserve-unowned-work, vcs-inspect-state-before-mutating`
 
 ## Rule

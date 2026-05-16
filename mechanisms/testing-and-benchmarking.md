@@ -7,6 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `tests, ci, benchmarks, fuzzing, cargo`
+- Tags: `testing, performance, verification, tooling, automation`
 - Related: `tests-should-explain-failures, measure-before-optimizing`
 
 ## Purpose

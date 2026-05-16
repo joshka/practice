@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, review, verification`
+- Tags: `review-handoff, verification, agent-workflow`
 - Related: `review-proof-not-just-code, report-verification-honestly`
 
 ## Problem

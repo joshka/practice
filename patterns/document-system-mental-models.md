@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, architecture, mental-models`
+- Tags: `documentation, source-truth, agent-context`
 - Related: `write-docs-as-contracts, choose-doc-type`
 
 ## Problem

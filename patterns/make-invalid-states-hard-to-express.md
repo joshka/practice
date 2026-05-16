@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, correctness, rust`
+- Tags: `boundary-correctness, validation-policy, state-transitions, public-api`
 - Related: `avoid-boolean-flag-parameters, test-observable-behavior`
 
 ## Problem

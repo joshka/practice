@@ -8,7 +8,7 @@
   Aliases encode workflow policy, so silent repairs can alter future user commands.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, local-conventions, review-handoff`
 - Related: `jj-topology-is-repo-role-dependent, vcs-match-jj-topology-to-repo-role`
 
 ## Rule

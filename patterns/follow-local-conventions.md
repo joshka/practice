@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `workflow, review, agents`
+- Tags: `local-conventions, change-shape, reviewability`
 - Related: `preserve-unowned-work, small-reviewable-chunks`
 
 ## Problem

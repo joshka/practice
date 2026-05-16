@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, review, drift`
+- Tags: `documentation, source-truth, public-api`
 - Related: `delete-redundant-comments, document-errors-panics-safety`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, tooling, quality`
+- Tags: `automation, tooling, agent-workflow, verification`
 - Related: `prefer-tools-over-prompts, make-invalid-states-hard-to-express`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, skills, reliability`
+- Tags: `agent-workflow, verification, automation`
 - Related: `close-the-agent-loop, define-good-before-judgment-heavy-work`
 
 ## Problem

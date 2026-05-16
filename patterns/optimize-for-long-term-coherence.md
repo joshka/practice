@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, maintainability, design`
+- Tags: `change-shape, reader-locality, source-truth`
 - Related: `reader-locality, small-reviewable-chunks`
 
 ## Problem

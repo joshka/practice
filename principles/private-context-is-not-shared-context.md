@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, review, communication, provenance`
+- Tags: `agent-context, review-handoff, documentation, source-truth`
 - Related: `write-pr-narrative, produce-review-packets, prefer-durable-summaries`
 
 ## Claim

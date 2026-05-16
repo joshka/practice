@@ -8,7 +8,7 @@
   Git bypasses jj change-graph semantics, so use it only for transport after jj state is coherent.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, source-truth`
 - Related: `vcs-jj-as-source-of-truth, vcs-recover-with-operation-log`
 
 ## Rule

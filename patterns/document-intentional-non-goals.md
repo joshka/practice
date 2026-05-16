@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, scope, rationale`
+- Tags: `documentation, source-truth, review-handoff`
 - Related: `write-docs-as-contracts, document-system-mental-models`
 
 ## Problem

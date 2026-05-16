@@ -7,7 +7,7 @@ Use this template for one stable rule. Replace bracketed text before publishing 
 - ID: `[DOMAIN-VERB-OBJECT]`
 - Status: `draft`
 - Domain: `[domain]`
-- Depth: `[compact | expanded]`
+- Tags: `[comma-separated cluster tags]`
 
 ## Rule
 

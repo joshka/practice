@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rustdoc, errors, safety`
+- Tags: `documentation, errors, security-privacy, public-api`
 - Related: `preserve-error-context, write-actionable-error-messages`
 
 ## Problem

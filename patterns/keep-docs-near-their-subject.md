@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, locality, maintenance`
+- Tags: `documentation, source-truth, local-conventions`
 - Related: `write-docs-as-contracts, document-system-mental-models`
 
 ## Problem

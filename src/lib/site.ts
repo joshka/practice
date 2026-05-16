@@ -283,6 +283,7 @@ export function tagSlug(value: string): string {
 
 export function tagLabel(value: string): string {
   const acronyms: Record<string, string> = {
+    api: 'API',
     async: 'Async',
     rustdoc: 'Rustdoc',
     rust: 'Rust',

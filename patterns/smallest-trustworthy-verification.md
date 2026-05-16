@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, workflow, review`
+- Tags: `verification, testing, reviewability`
 - Related: `report-verification-honestly`
 
 ## Problem

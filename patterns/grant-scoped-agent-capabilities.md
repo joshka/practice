@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, security, tools`
+- Tags: `agent-workflow, security-privacy, tooling`
 - Related: `keep-secrets-out-of-context, make-bad-output-mechanically-hard`
 
 ## Problem

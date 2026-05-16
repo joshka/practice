@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, prioritization, review`
+- Tags: `agent-workflow, reviewability, review-handoff`
 - Related: `small-reviewable-chunks, define-good-before-judgment-heavy-work`
 
 ## Problem

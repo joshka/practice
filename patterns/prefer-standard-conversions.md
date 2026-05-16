@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, rust, interoperability`
+- Tags: `public-api, rust, validation-policy`
 - Related: `keep-public-dependencies-intentional`
 
 ## Problem

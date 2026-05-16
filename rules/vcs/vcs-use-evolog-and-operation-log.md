@@ -8,7 +8,7 @@
   Picking the right log distinguishes rewrite history from workspace, bookmark, and import events.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, source-truth, verification`
 - Related: `vcs-recover-with-operation-log, vcs-inspect-state-before-mutating`
 
 ## Rule

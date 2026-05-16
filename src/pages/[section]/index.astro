@@ -9,6 +9,9 @@ import {
   sectionIndex,
   sectionPages,
   sections,
+  tagLabel,
+  tagSlug,
+  tagsForPage,
   withBase,
 } from '../../lib/site';
 
@@ -328,17 +331,17 @@ function guideGroupFor(item: MarkdownPage): GroupConfig {
 
 function patternGroupFor(item: MarkdownPage): GroupConfig {
   const topics = topicsFor(item);
-  if (hasAny(topics, ['agents'])) return patternGroups.agents;
-  if (hasAny(topics, ['documentation', 'docs', 'markdown', 'rustdoc', 'summaries'])) {
+  if (hasAny(topics, ['agents', 'agent-workflow', 'agent-context'])) return patternGroups.agents;
+  if (hasAny(topics, ['documentation', 'docs', 'markdown', 'rustdoc', 'summaries', 'source-truth', 'examples'])) {
     return patternGroups.docs;
   }
-  if (hasAny(topics, ['api-design', 'rust', 'readability', 'refactoring', 'code-shape', 'naming'])) {
+  if (hasAny(topics, ['api-design', 'rust', 'readability', 'refactoring', 'code-shape', 'naming', 'reader-locality', 'public-api', 'ownership'])) {
     return patternGroups.code;
   }
-  if (hasAny(topics, ['testing', 'correctness', 'errors', 'observability', 'validation', 'logging', 'privacy'])) {
+  if (hasAny(topics, ['testing', 'correctness', 'errors', 'observability', 'validation', 'validation-policy', 'logging', 'privacy', 'security-privacy', 'boundary-correctness', 'state-transitions', 'side-effects', 'async', 'failure-output'])) {
     return patternGroups.correctness;
   }
-  if (hasAny(topics, ['workflow', 'review', 'version-control', 'jj', 'collaboration'])) {
+  if (hasAny(topics, ['workflow', 'review', 'version-control', 'jj', 'collaboration', 'change-shape', 'reviewability', 'review-handoff', 'vcs-jj'])) {
     return patternGroups.workflow;
   }
   return patternGroups.tooling;
@@ -346,24 +349,24 @@ function patternGroupFor(item: MarkdownPage): GroupConfig {
 
 function principleGroupFor(item: MarkdownPage): GroupConfig {
   const topics = topicsFor(item);
-  if (hasAny(topics, ['agents', 'rules', 'automation', 'communication', 'provenance'])) {
+  if (hasAny(topics, ['agents', 'agent-workflow', 'agent-context', 'rules', 'automation', 'communication', 'provenance'])) {
     return principleGroups.agents;
   }
-  if (hasAny(topics, ['change-shape', 'review', 'commits', 'refactoring', 'code-shape', 'cognition'])) {
+  if (hasAny(topics, ['change-shape', 'review', 'reviewability', 'review-handoff', 'commits', 'refactoring', 'code-shape', 'cognition', 'reader-locality'])) {
     return principleGroups.change;
   }
-  if (hasAny(topics, ['boundaries', 'api', 'state', 'rust', 'semver', 'libraries'])) {
+  if (hasAny(topics, ['boundaries', 'boundary-correctness', 'api', 'public-api', 'state', 'state-transitions', 'rust', 'semver', 'libraries'])) {
     return principleGroups.boundaries;
   }
-  if (hasAny(topics, ['testing', 'performance', 'diagnostics'])) return principleGroups.verification;
+  if (hasAny(topics, ['testing', 'performance', 'diagnostics', 'verification', 'failure-output'])) return principleGroups.verification;
   return principleGroups.vcs;
 }
 
 function mechanismGroupFor(item: MarkdownPage): GroupConfig {
   const topics = topicsFor(item);
-  if (hasAny(topics, ['guidance', 'generated-artifacts', 'markdown'])) return mechanismGroups.guidance;
-  if (hasAny(topics, ['jj', 'git', 'workspaces', 'vcs'])) return mechanismGroups.vcs;
-  if (hasAny(topics, ['rust', 'cargo', 'rustdoc', 'docs.rs', 'clippy', 'rustfmt'])) return mechanismGroups.rust;
+  if (hasAny(topics, ['guidance', 'generated-artifacts', 'markdown', 'documentation', 'source-truth'])) return mechanismGroups.guidance;
+  if (hasAny(topics, ['jj', 'git', 'workspaces', 'vcs', 'vcs-jj'])) return mechanismGroups.vcs;
+  if (hasAny(topics, ['rust', 'cargo', 'rustdoc', 'docs.rs', 'clippy', 'rustfmt', 'public-api', 'release', 'dependencies'])) return mechanismGroups.rust;
   return mechanismGroups.testing;
 }
 
@@ -379,15 +382,11 @@ function tagsFor(item: MarkdownPage): string[] {
   if (sectionKey === 'guides') return guideTags[item.title] ?? [];
   if (sectionKey === 'agents') return snippetTags[item.title] ?? [];
   if (sectionKey === 'references') return referenceTags[item.title] ?? [];
-  return topicTags(item.metadata.topics);
-}
-
-function topicTags(topics: string | undefined): string[] {
-  return normalizeTopics(topics).map((topic) => topic.toUpperCase()).slice(0, 3);
+  return tagsForPage(item).slice(0, 4);
 }
 
 function topicsFor(item: MarkdownPage): string[] {
-  return normalizeTopics(item.metadata.topics);
+  return [...new Set([...tagsForPage(item), ...normalizeTopics(item.metadata.topics)])];
 }
 
 function normalizeTopics(topics: string | undefined): string[] {
@@ -501,7 +500,9 @@ function cardKindForSection(key: string): CardKind | undefined {
                   {tags.length > 0 && (
                     <span class="index-entry__tags">
                       {tags.map((tag) => (
-                        <span class="index-entry__tag">{tag}</span>
+                        <span class="index-entry__tag">
+                          {tagsForPage(item).includes(tagSlug(tag)) ? tagLabel(tag) : tag}
+                        </span>
                       ))}
                     </span>
                   )}

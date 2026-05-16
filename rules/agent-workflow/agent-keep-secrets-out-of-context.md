@@ -10,7 +10,7 @@
   grant-scoped-agent-capabilities`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Tags: `agent-workflow, security-privacy, agent-context, observability`
+- Tags: `agent-workflow, security-privacy, agent-context`
 
 ## Rule
 

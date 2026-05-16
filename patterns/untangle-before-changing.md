@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, refactoring, workflow`
+- Tags: `change-shape, reader-locality, reviewability`
 - Related: `separate-structure-from-behavior, cap-change-radius`
 
 ## Problem

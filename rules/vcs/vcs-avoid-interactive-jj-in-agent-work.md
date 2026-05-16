@@ -8,7 +8,7 @@
   Interactive editors, prompts, merge tools, and pagers can hang unattended sessions.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, agent-workflow, tooling, automation`
 - Related: `boundary-make-exec-tools-noninteractive, vcs-run-jj-mutations-sequentially`
 
 ## Rule

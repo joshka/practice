@@ -8,7 +8,7 @@
   Separate changes keep review atomic while leaving later squash or absorb decisions easy.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, change-shape, reviewability`
 - Related: `small-reviewable-chunks, change-use-one-purpose-per-change`
 
 ## Rule

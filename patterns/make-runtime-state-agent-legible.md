@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, observability, validation`
+- Tags: `agent-context, state-transitions, observability`
 - Related: `define-good-before-judgment-heavy-work, close-the-agent-loop`
 
 ## Problem

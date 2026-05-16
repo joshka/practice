@@ -7,6 +7,7 @@
 - Status: `reviewed`
 - Audience: `agent`
 - Topics: `jj, git, workspaces, agents, vcs`
+- Tags: `vcs-jj, agent-workflow, tooling, agent-context, review-handoff`
 - Related: `jj-topology-is-repo-role-dependent, private-context-is-not-shared-context`
 
 ## Purpose

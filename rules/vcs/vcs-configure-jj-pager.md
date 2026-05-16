@@ -8,7 +8,7 @@
   Direct output keeps source-control evidence visible without changing the user's global pager.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, agent-workflow`
 - Related: `vcs-avoid-interactive-jj-in-agent-work, shape-tool-output-for-agents`
 
 ## Rule

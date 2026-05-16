@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `readability, refactoring, organization`
+- Tags: `reader-locality, change-shape, reviewability`
 - Related: `small-reviewable-chunks, separate-structure-from-behavior`
 
 ## Problem

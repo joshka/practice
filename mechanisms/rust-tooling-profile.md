@@ -7,6 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, lints, rustfmt, cargo, ci, agents`
+- Tags: `rust, tooling, automation, verification, release`
 - Related: `docs-are-contracts, measure-before-optimizing, public-api-changes-have-downstream-cost`
 
 ## Purpose

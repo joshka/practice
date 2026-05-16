@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, correctness, review`
+- Tags: `testing, verification, observability`
 - Related: `smallest-trustworthy-verification, preserve-error-context`
 
 ## Problem

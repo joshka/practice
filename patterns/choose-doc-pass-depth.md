@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, workflow, review`
+- Tags: `documentation, reviewability, source-truth`
 - Related: `choose-doc-type, small-reviewable-chunks`
 
 ## Problem

@@ -7,6 +7,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, clippy, rustfmt, lint, markdownlint`
+- Tags: `rust, tooling, automation, documentation, verification`
 - Related: `explicit-boundaries-preserve-correctness`
 
 ## Purpose

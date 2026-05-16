@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, rules, instructions, token-budget`
+- Tags: `agent-workflow, tooling, automation, agent-context`
 - Related: `mechanize-repeated-feedback, private-context-is-not-shared-context`
 
 ## Claim

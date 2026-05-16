@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, naming`
+- Tags: `reader-locality, change-shape`
 - Related: `reader-locality, chunk-statements`
 
 ## Problem

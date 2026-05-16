@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, state`
+- Tags: `state-transitions, boundary-correctness, reader-locality`
 - Related: `make-invalid-states-hard-to-express, strengthen-cohesion`
 
 ## Problem

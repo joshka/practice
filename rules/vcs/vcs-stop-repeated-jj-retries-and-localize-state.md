@@ -8,7 +8,7 @@
   Diagnosis beats command spam when locks, sparse paths, bookmarks, or remotes disagree.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, verification`
 - Related: `vcs-inspect-state-before-mutating, vcs-use-evolog-and-operation-log`
 
 ## Rule

@@ -8,7 +8,7 @@
   Explicit publication avoids host-tool inference mistakes in forks, stacks, and multi-remote repos.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, review-handoff, source-truth`
 - Related: `vcs-confirm-github-remote-topology, vcs-dry-run-surprising-publication`
 
 ## Rule

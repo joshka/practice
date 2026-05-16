@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `refactoring, review, workflow`
+- Tags: `change-shape, reviewability, reader-locality`
 - Related: `small-reviewable-chunks, smallest-trustworthy-verification`
 
 ## Problem

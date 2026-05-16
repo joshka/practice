@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `refactoring, legacy-code, collaboration`
+- Tags: `agent-workflow, reviewability, agent-context, documentation`
 - Related: `preserve-intent-over-literalism, document-intentional-non-goals`
 
 ## Problem

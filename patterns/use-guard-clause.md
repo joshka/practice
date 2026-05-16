@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, control-flow, readability`
+- Tags: `reader-locality, boundary-correctness, change-shape`
 - Related: `reader-locality, make-invalid-states-hard-to-express`
 
 ## Problem

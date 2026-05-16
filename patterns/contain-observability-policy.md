@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `observability, architecture, rust`
+- Tags: `observability, security-privacy, side-effects, ownership`
 - Related: `make-failures-observable, make-side-effects-visible`
 
 ## Problem

@@ -9,6 +9,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api, semver, libraries`
+- Tags: `public-api, dependencies, release, rust`
 - Related: `keep-public-dependencies-intentional, document-errors-panics-safety`
 
 ## Claim

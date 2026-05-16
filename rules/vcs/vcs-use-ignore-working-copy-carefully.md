@@ -8,7 +8,7 @@
   It may read stale file state, so do not use it to bypass normal synchronization before edits.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, verification`
 - Related: `vcs-run-jj-mutations-sequentially, vcs-inspect-state-before-mutating`
 
 ## Rule

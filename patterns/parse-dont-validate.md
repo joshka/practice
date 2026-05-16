@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, validation`
+- Tags: `boundary-correctness, validation-policy, public-api`
 - Related: `make-invalid-states-hard-to-express, prefer-standard-conversions`
 
 ## Problem

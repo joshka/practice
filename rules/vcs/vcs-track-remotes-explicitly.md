@@ -8,7 +8,7 @@
   This prevents fetch, rebase, and publication ambiguity in fork and upstream workflows.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, source-truth, review-handoff`
 - Related: `vcs-match-jj-topology-to-repo-role, vcs-repair-remote-topology-coherently`
 
 ## Rule

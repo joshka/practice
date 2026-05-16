@@ -1,0 +1,80 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import KindIcon from '../../components/KindIcon.astro';
+import {
+  guidanceTags,
+  taggedPages,
+  tagLabel,
+  tagSlug,
+  tagsForPage,
+  withBase,
+} from '../../lib/site';
+import type { MarkdownPage } from '../../lib/site';
+
+type GuidanceKind = 'rule' | 'pattern' | 'principle' | 'mechanism';
+
+export function getStaticPaths() {
+  return guidanceTags.map((tag) => ({ params: { tag } }));
+}
+
+const tag = tagSlug(Astro.params.tag ?? '');
+const title = tagLabel(tag);
+const pages = taggedPages(tag);
+
+function pageKind(page: MarkdownPage): GuidanceKind {
+  if (page.repoPath.startsWith('patterns/')) return 'pattern';
+  if (page.repoPath.startsWith('principles/')) return 'principle';
+  if (page.repoPath.startsWith('mechanisms/')) return 'mechanism';
+  return 'rule';
+}
+
+function pageKindLabel(page: MarkdownPage): string {
+  return tagLabel(pageKind(page));
+}
+---
+
+<BaseLayout
+  title={title}
+  description={`Guidance tagged ${title}.`}
+  breadcrumbs={[
+    { label: 'Tags', href: '/tags/' },
+  ]}
+>
+  <section class="section-hero tag-hero" aria-labelledby="tag-title">
+    <div class="hero-title">
+      <span class="hero-title__icon" aria-hidden="true">
+        <KindIcon kind="tag" />
+      </span>
+      <h1 id="tag-title">{title}</h1>
+    </div>
+    <p>{pages.length} {pages.length === 1 ? 'item' : 'items'} in this guidance cluster.</p>
+  </section>
+
+  <section class="listing tag-results" aria-labelledby="tag-results-title">
+    <h2 id="tag-results-title">Tagged guidance</h2>
+    <div class="index-list index-list--cards">
+      {pages.map((page) => (
+        <a class="index-entry index-entry--with-icon" href={withBase(page.route)}>
+          <span class="index-entry__body">
+            <span class="index-entry__tags">
+              <span class="index-entry__tag">
+                <span class="index-entry__kind-icon" aria-hidden="true">
+                  <KindIcon kind={pageKind(page)} />
+                </span>
+                {pageKindLabel(page)}
+              </span>
+              {tagsForPage(page).filter((pageTag) => pageTag !== tag).slice(0, 3).map((pageTag) => (
+                <span class="index-entry__tag">{tagLabel(pageTag)}</span>
+              ))}
+            </span>
+            <span class="index-entry__title">
+              <strong>{page.title}</strong>
+            </span>
+            {page.metadata.id && <span class="index-entry__id">{page.metadata.id}</span>}
+            {page.description && <span class="index-entry__description">{page.description}</span>}
+          </span>
+        </a>
+      ))}
+    </div>
+  </section>
+</BaseLayout>

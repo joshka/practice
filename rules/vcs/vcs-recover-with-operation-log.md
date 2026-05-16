@@ -8,7 +8,7 @@
   The operation log preserves recoverable graph states, but inspect the target before restoring.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, verification, source-truth`
 - Related: `vcs-use-evolog-and-operation-log, preserve-unowned-work`
 
 ## Rule

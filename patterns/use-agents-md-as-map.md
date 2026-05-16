@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, documentation, context`
+- Tags: `agent-context, documentation, local-conventions`
 - Related: `deliver-context-just-in-time, keep-docs-near-their-subject`
 
 ## Problem

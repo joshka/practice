@@ -8,7 +8,7 @@
   Ordinary review separation should use `jj new`; workspaces fit clean validation or parallelism.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, agent-workflow, change-shape, tooling`
 - Related: `isolate-agent-workspaces, vcs-jj-new-for-review-lanes, preserve-agent-context-coherence`
 
 ## Rule

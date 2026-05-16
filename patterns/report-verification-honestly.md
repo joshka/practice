@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, workflow, agents`
+- Tags: `verification, review-handoff`
 - Related: `smallest-trustworthy-verification`
 
 ## Problem

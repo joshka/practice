@@ -9,7 +9,7 @@
   them.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Tags: `documentation, reader-locality, generated-artifacts`
+- Tags: `documentation, reader-locality`
 - Related: `DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK, DOCS-USE-CONCRETE-DETAILS`
 
 ## Rule

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, architecture, quality`
+- Tags: `agent-workflow, verification, security-privacy, performance`
 - Related: `make-bad-output-mechanically-hard, prefer-tools-over-prompts`
 
 ## Problem

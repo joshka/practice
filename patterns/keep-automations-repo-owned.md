@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, automation, runbooks`
+- Tags: `automation, tooling, ownership, local-conventions`
 - Related: `code-is-memory-of-process, keep-docs-near-their-subject`
 
 ## Problem

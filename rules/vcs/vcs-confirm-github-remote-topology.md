@@ -8,7 +8,7 @@
   Fork and owned-repo layouts differ, so defaults can push or target the wrong repository.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, review-handoff, release, verification`
 - Related: `jj-topology-is-repo-role-dependent, vcs-match-jj-topology-to-repo-role`
 
 ## Rule

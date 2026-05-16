@@ -8,7 +8,7 @@
   Recovery is easier when there is a known point before rebases, splits, squashes, or repairs.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, change-shape, verification, reviewability`
 - Related: `vcs-recover-with-operation-log, vcs-use-evolog-and-operation-log`
 
 ## Rule

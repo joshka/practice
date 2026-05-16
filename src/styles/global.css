@@ -883,9 +883,13 @@ html[data-theme="light"] .code-block pre code {
   }
 
   .detail-chip {
-    @apply inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
+    @apply inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary no-underline;
     background: var(--color-surface-container-lowest);
     box-shadow: var(--panel-sunken);
+  }
+
+  .detail-chip:hover {
+    @apply text-on-background;
   }
 
   .detail-copy {
@@ -1160,6 +1164,38 @@ html[data-theme="light"] .code-block pre code {
 
   .listing {
     @apply mt-8;
+  }
+
+  .tag-grid {
+    @apply grid grid-cols-1 gap-3 md:grid-cols-2 lg:grid-cols-3;
+  }
+
+  .tag-card {
+    @apply flex items-center justify-between gap-4 rounded-lg p-4 text-on-surface no-underline transition-all duration-200 hover:text-on-surface;
+    background: var(--panel-gradient);
+    box-shadow: var(--panel-raised-soft);
+  }
+
+  .tag-card:hover {
+    transform: translateY(-1px);
+    background: var(--panel-gradient-high);
+    box-shadow: var(--panel-raised);
+  }
+
+  .tag-card__label {
+    @apply min-w-0 text-base font-bold leading-tight text-on-background;
+  }
+
+  .tag-card__count {
+    @apply shrink-0 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
+  }
+
+  .index-entry__tag .index-entry__kind-icon {
+    @apply mr-2 size-5 bg-transparent p-0 shadow-none;
+  }
+
+  .index-entry__tag .index-entry__kind-icon svg {
+    @apply size-3;
   }
 
   .listing h2 {

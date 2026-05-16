@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, dependencies, rust`
+- Tags: `dependencies, public-api, rust, change-shape`
 - Related: `prefer-standard-conversions, preserve-error-context`
 
 ## Problem

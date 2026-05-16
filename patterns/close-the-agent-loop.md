@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, verification, feedback`
+- Tags: `agent-workflow, verification, review-handoff`
 - Related: `turn-feedback-into-guidance, define-good-before-judgment-heavy-work`
 
 ## Problem

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `workflow, review, version-control`
+- Tags: `change-shape, reviewability, review-handoff`
 - Related: `report-verification-honestly, smallest-trustworthy-verification`
 
 ## Problem

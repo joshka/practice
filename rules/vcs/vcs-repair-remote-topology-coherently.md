@@ -8,7 +8,7 @@
   Remote topology is coupled, so partial fixes can leave publication commands half-correct.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, source-truth, review-handoff, tooling`
 - Related: `vcs-match-jj-topology-to-repo-role, vcs-track-remotes-explicitly`
 
 ## Rule

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `state, rust, lifecycle, testing`
+- Tags: `boundary-correctness, state-transitions, side-effects, ownership`
 - Related: `inject-time-and-randomness, make-state-transitions-explicit, make-side-effects-visible`
 
 ## Claim

@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, repositories, onboarding`
+- Tags: `documentation, source-truth, agent-context, local-conventions`
 - Related: `document-system-mental-models, use-agents-md-as-map`
 
 ## Problem

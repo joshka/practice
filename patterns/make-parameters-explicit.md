@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, parameters`
+- Tags: `boundary-correctness, side-effects, reader-locality`
 - Related: `make-side-effects-visible, limit-live-context`
 
 ## Problem

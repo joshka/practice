@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, automation, process`
+- Tags: `source-truth, tooling, automation, agent-workflow`
 - Related: `prefer-tools-over-prompts, prefer-durable-summaries`
 
 ## Problem

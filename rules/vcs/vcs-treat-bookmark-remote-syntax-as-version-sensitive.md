@@ -8,7 +8,7 @@
   Durable guidance should avoid assuming one spelling works across commands and releases.
 - Status: `reviewed`
 - Domain: `vcs`
-- Depth: `compact`
+- Tags: `vcs-jj, tooling, source-truth`
 - Related: `vcs-quote-revsets-and-shell-syntax, vcs-track-remotes-explicitly`
 
 ## Rule

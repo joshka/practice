@@ -10,6 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `errors, boundaries, review`
+- Tags: `errors, failure-output, observability`
 - Related: `write-actionable-error-messages, test-observable-behavior`
 
 ## Problem
