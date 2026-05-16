@@ -48,13 +48,6 @@ function sectionClass(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
 
-function kindLabel(value: string): string {
-  return value
-    .split('-')
-    .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
-    .join(' ');
-}
-
 function pageIconKind(value: string): IconKind | undefined {
   if (value === 'agent-snippet') return 'agent';
   if (value === 'guide') return 'guide';
@@ -69,7 +62,6 @@ function pageIconKind(value: string): IconKind | undefined {
 
 <article class={`page page--${kind}`}>
   <header class="detail-hero">
-    <p class="eyebrow">{kindLabel(kind)}</p>
     <div class="hero-title">
       {iconKind && (
         <span class="hero-title__icon" aria-hidden="true">

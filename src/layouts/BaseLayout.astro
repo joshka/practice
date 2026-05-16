@@ -15,6 +15,10 @@ const {
   sourceUrl,
   breadcrumbs = [],
 } = Astro.props;
+const isHomePage = title === 'Practice' || title === 'Software Practices';
+const breadcrumbsIncludeCurrent = breadcrumbs.at(-1)?.href === undefined && breadcrumbs.length > 0;
+const currentBreadcrumb = breadcrumbsIncludeCurrent ? undefined : title;
+const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
 ---
 
 <!doctype html>
@@ -62,7 +66,7 @@ const {
       </div>
     </header>
     <main class="main-shell mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12">
-      {breadcrumbs.length > 0 && (
+      {showBreadcrumbs && (
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href={withBase('/')}>Home</a>
           {breadcrumbs.map((crumb) => (
@@ -75,6 +79,12 @@ const {
               )}
             </>
           ))}
+          {currentBreadcrumb && (
+            <>
+              <span aria-hidden="true">/</span>
+              <span aria-current="page">{currentBreadcrumb}</span>
+            </>
+          )}
         </nav>
       )}
       <slot />

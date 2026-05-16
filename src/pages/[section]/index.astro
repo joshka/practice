@@ -1,6 +1,7 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import KindIcon from '../../components/KindIcon.astro';
+import PageContent from '../../components/PageContent.astro';
 import {
   type MarkdownPage,
   getSection,
@@ -12,7 +13,6 @@ import {
 } from '../../lib/site';
 
 type SectionConfig = {
-  eyebrow: string;
   intro: string;
   listingTitle: string;
   density: 'compact' | 'standard' | 'dense';
@@ -45,45 +45,40 @@ const page = sectionIndex(section);
 const pages = sectionPages(section);
 const showGuideTasks = sectionKey === 'guides';
 const sectionKind = cardKindForSection(sectionKey);
+const showSinglePage = sectionKey === 'references';
 
 const sectionConfig: Record<string, SectionConfig> = {
   guides: {
-    eyebrow: 'Guide index',
     intro:
       'Guides cover broad decisions that span rules, patterns, principles, and mechanisms.',
     listingTitle: 'Available guides',
     density: 'standard',
   },
   patterns: {
-    eyebrow: 'Pattern library',
     intro:
       'Patterns name repeatable development situations and the preferred moves that fit them. They work as review terms, guide links, and compact agent instructions.',
     listingTitle: 'Pattern areas',
     density: 'dense',
   },
   why: {
-    eyebrow: 'Principles',
     intro:
       'Principles capture the rationale, tradeoffs, and limits behind related rules and patterns.',
     listingTitle: 'Principle areas',
     density: 'dense',
   },
   mechanisms: {
-    eyebrow: 'Checks and workflows',
     intro:
       'Mechanisms are checks, commands, generators, and workflows that make preferences easier to follow and harder to forget.',
     listingTitle: 'Mechanism areas',
     density: 'compact',
   },
   agents: {
-    eyebrow: 'Agent snippets',
     intro:
       'Agent snippets are copyable instruction packs for downstream repositories, grouped by the work they affect.',
     listingTitle: 'Snippet areas',
     density: 'compact',
   },
   references: {
-    eyebrow: 'Source material',
     intro:
       'References collect durable sources and planning records that support, contrast, or frame the guidance.',
     listingTitle: 'Reference areas',
@@ -92,7 +87,6 @@ const sectionConfig: Record<string, SectionConfig> = {
 };
 
 const config = sectionConfig[sectionKey] ?? {
-  eyebrow: section.title,
   intro: section.description,
   listingTitle: section.title,
   density: 'standard',
@@ -246,12 +240,6 @@ const referenceGroups: Record<string, GroupConfig> = {
     description: 'Durable sources that support, adapt, or contrast guidance in this repo.',
     hideTags: ['sources'],
   },
-  planning: {
-    key: 'planning',
-    title: 'Planning records',
-    description: 'Planning records for current structure and future guidance work.',
-    hideTags: ['plan'],
-  },
 };
 
 const guideTags: Record<string, string[]> = {
@@ -276,8 +264,6 @@ const snippetTags: Record<string, string[]> = {
 };
 
 const referenceTags: Record<string, string[]> = {
-  'External Source Ledger': ['SOURCES'],
-  'Guidance Plan': ['PLAN'],
 };
 
 const groupedEntries = groupEntries(pages);
@@ -326,7 +312,7 @@ function groupFor(item: MarkdownPage): GroupConfig {
   if (sectionKey === 'why') return principleGroupFor(item);
   if (sectionKey === 'mechanisms') return mechanismGroupFor(item);
   if (sectionKey === 'agents') return agentGroupFor(item);
-  if (sectionKey === 'references') return item.title === 'Guidance Plan' ? referenceGroups.planning : referenceGroups.sources;
+  if (sectionKey === 'references') return referenceGroups.sources;
   return groupConfigsForSection().default;
 }
 
@@ -446,8 +432,11 @@ function cardKindForSection(key: string): CardKind | undefined {
   description={page.description}
   sourceUrl={page.sourceUrl}
 >
+  {showSinglePage ? (
+    <PageContent page={page} />
+  ) : (
+    <>
   <section class="section-hero" aria-labelledby="section-title">
-    <p class="eyebrow">{config.eyebrow}</p>
     <div class="hero-title">
       {sectionKind && (
         <span class="hero-title__icon" aria-hidden="true">
@@ -462,7 +451,6 @@ function cardKindForSection(key: string): CardKind | undefined {
   {showGuideTasks && (
     <section class="section-task-panel" aria-labelledby="guide-task-title">
       <div class="section-task-panel__intro">
-        <p class="eyebrow">Guide entry points</p>
         <h2 id="guide-task-title">Work areas</h2>
         <p>
           Change shape, Rust review, documentation, coding-agent work, and jj workflow each have a
@@ -529,4 +517,6 @@ function cardKindForSection(key: string): CardKind | undefined {
       ))}
     </div>
   </section>
+    </>
+  )}
 </BaseLayout>

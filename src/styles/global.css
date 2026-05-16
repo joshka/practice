@@ -8,29 +8,29 @@
   --color-background: #12151b;
   --color-surface: #12151b;
   --color-surface-dim: #12151b;
-  --color-surface-bright: #363d4d;
+  --color-surface-bright: #373c49;
   --color-surface-container-lowest: #0c1018;
-  --color-surface-container-low: #1a1e28;
-  --color-surface-container: #202634;
-  --color-surface-container-high: #293142;
-  --color-surface-container-highest: #333c50;
+  --color-surface-container-low: #1b1e26;
+  --color-surface-container: #212631;
+  --color-surface-container-high: #2a303d;
+  --color-surface-container-highest: #333b4a;
   --color-on-background: #e5e6e6;
   --color-on-surface: #e5e6e6;
   --color-on-surface-variant: #c1c8d3;
   --color-inverse-surface: #e5e6e6;
   --color-inverse-on-surface: #2f3440;
-  --color-outline: #8792a5;
-  --color-outline-variant: #404a5d;
-  --color-surface-tint: #a8c8ff;
-  --color-primary: #a8c8ff;
+  --color-outline: #88909f;
+  --color-outline-variant: #424955;
+  --color-surface-tint: #adc8f3;
+  --color-primary: #adc8f3;
   --color-on-primary: #eef3ff;
-  --color-primary-container: #3468d8;
+  --color-primary-container: #3d66c8;
   --color-on-primary-container: #eef3ff;
-  --color-inverse-primary: #315fca;
-  --color-secondary: #b8c6dc;
+  --color-inverse-primary: #3b61bd;
+  --color-secondary: #bcc6d4;
   --color-on-secondary: #182d63;
-  --color-secondary-container: #33467e;
-  --color-on-secondary-container: #a4b6f5;
+  --color-secondary-container: #39466f;
+  --color-on-secondary-container: #aab8e6;
   --color-tertiary: #ffb596;
   --color-on-tertiary: #581e00;
   --color-tertiary-container: #bc4800;
@@ -66,10 +66,10 @@
   --panel-pressed:
     inset 0 2px 7px rgb(0 0 0 / 0.78),
     inset 0 1px 0 rgb(255 255 255 / 0.04);
-  --panel-gradient: linear-gradient(180deg, #252b39 0%, #1f2531 100%);
-  --panel-gradient-high: linear-gradient(180deg, #30384a 0%, #242b39 100%);
-  --primary-gradient: linear-gradient(180deg, #3468d8 0%, #244fbb 100%);
-  --primary-glow: 0 0 0 1px rgb(168 200 255 / 0.28), 0 0 20px rgb(52 104 216 / 0.28);
+  --panel-gradient: linear-gradient(180deg, #252a35 0%, #202530 100%);
+  --panel-gradient-high: linear-gradient(180deg, #303747 0%, #252b36 100%);
+  --primary-gradient: linear-gradient(180deg, #3d66c8 0%, #2d52ae 100%);
+  --primary-glow: 0 0 0 1px rgb(173 200 243 / 0.26), 0 0 20px rgb(61 102 200 / 0.24);
   --engraved-text: 0 1px 0 rgb(0 0 0 / 0.55);
 }
 
@@ -80,7 +80,7 @@
 
   body {
     background:
-      linear-gradient(180deg, #171c27 0, var(--color-background) 19rem),
+      linear-gradient(180deg, #181c25 0, var(--color-background) 19rem),
       var(--color-background);
     text-rendering: optimizeLegibility;
     text-shadow: var(--engraved-text);
@@ -155,10 +155,6 @@
   .nav-link {
     @apply text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant no-underline transition-colors duration-200 hover:text-primary;
     text-shadow: var(--engraved-text);
-  }
-
-  .eyebrow {
-    @apply mb-4 block font-mono text-xs font-semibold uppercase tracking-[0.08em] text-primary;
   }
 
   .breadcrumbs {
@@ -244,7 +240,7 @@
     @apply mt-0 mb-3 text-3xl font-bold leading-tight text-on-background;
   }
 
-  .home-section-heading p:not(.eyebrow) {
+  .home-section-heading p {
     @apply m-0 max-w-[68ch] text-base leading-relaxed text-on-surface-variant;
   }
 
@@ -322,7 +318,7 @@
     @apply mb-4 text-3xl font-bold leading-tight text-on-background md:text-4xl;
   }
 
-  .home-use__intro p:not(.eyebrow) {
+  .home-use__intro p {
     @apply m-0 text-base leading-relaxed text-on-surface-variant;
   }
 
@@ -366,7 +362,7 @@
     @apply size-9;
   }
 
-  .rules-hero p:not(.eyebrow) {
+  .rules-hero p {
     @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
   }
 
@@ -628,7 +624,7 @@
   }
 
   .detail-hero {
-    @apply mb-10 max-w-4xl;
+    @apply mb-10 max-w-5xl;
   }
 
   .detail-hero__meta {
@@ -645,7 +641,7 @@
     @apply m-0 max-w-4xl text-4xl font-bold leading-tight tracking-normal text-on-background md:text-5xl;
   }
 
-  .detail-hero p:not(.eyebrow) {
+  .detail-hero p {
     @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
   }
 
@@ -654,7 +650,7 @@
   }
 
   .detail-sections {
-    @apply grid min-w-0 max-w-4xl gap-3;
+    @apply grid w-full min-w-0 gap-3;
   }
 
   .detail-section {
@@ -707,7 +703,7 @@
     @apply m-0 text-4xl font-bold leading-tight tracking-normal text-on-background md:text-5xl;
   }
 
-  .section-hero p:not(.eyebrow) {
+  .section-hero p {
     @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
   }
 
@@ -725,7 +721,7 @@
     @apply mt-0 mb-3 text-3xl font-bold leading-tight text-on-background;
   }
 
-  .section-task-panel__intro p:not(.eyebrow) {
+  .section-task-panel__intro p {
     @apply m-0 text-base leading-relaxed text-on-surface-variant;
   }
 

@@ -1,17 +1,32 @@
 # References
 
-References explain durable source families that support, contrast, or frame the guidance in this
-repo. Individual rules and principles should still link to narrow sources directly; this directory
-keeps repeated source usage understandable at the repo level.
+This page records durable external sources that inform the guidance in this repo.
 
-## Reviewed References
+## Source Families
 
-- [`external-source-ledger`](external-source-ledger.md): Stable external source families for Rust,
-  jj, documentation, observability, security, and agent guidance.
-- [`guidance-plan`](guidance-plan.md): The intended shape of guides, rules, principles, patterns,
-  mechanisms, snippets, and references.
+- [Rust API Guidelines](https://rust-lang.github.io/api-guidelines/). Rust API shape, traits,
+  errors, features, and docs.
+- [Microsoft Pragmatic Rust Guidelines][ms-rust-guidelines]. Agent-facing Rust defaults and safety
+  guidance.
+- [Ed Page Rust Style](https://epage.github.io/dev/rust-style/). Rust module layout, imports,
+  naming, and style.
+- [Ed Page PR Style](https://epage.github.io/dev/pr-style/). PR narrative and reviewer-oriented
+  communication.
+- [The Rust Book](https://doc.rust-lang.org/book/) and official Rust docs. Language behavior,
+  ownership, traits, and cargo.
+- [Cargo Book](https://doc.rust-lang.org/cargo/). Cargo metadata, features, packaging, and
+  dependency behavior.
+- [rustdoc docs](https://doc.rust-lang.org/rustdoc/). Rustdoc, doctests, and docs.rs-style builds.
+- [Jujutsu docs](https://docs.jj-vcs.dev/). jj commands, revsets, bookmarks, remotes, and recovery.
+- [Diataxis](https://diataxis.fr/). Documentation type distinctions.
+- [OpenTelemetry](https://opentelemetry.io/docs/). Logs, traces, metrics, and observability
+  concepts.
+- [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/). Secret handling, logging safety, and
+  security review.
+- [Martin Fowler](https://martinfowler.com/) and [Refactoring](https://refactoring.com/).
+  Refactoring, change shape, and design vocabulary.
+- [Parse, don't validate][parse-dont-validate]. Boundary correctness and typed validation.
+- [OpenAI docs](https://platform.openai.com/docs/). Agent and model behavior where product-specific.
 
-## Draft References
-
-- [`guide-rule-audit`](guide-rule-audit.md): Current audit evidence for guide grouping, draft-rule
-  extraction, agent-surface coverage, and remaining maintainer review.
+[ms-rust-guidelines]: https://microsoft.github.io/rust-guidelines/agents/index.html
+[parse-dont-validate]: https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/

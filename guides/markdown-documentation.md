@@ -460,7 +460,7 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 [rustdoc-readme]: ../rules/rust/rust-keep-rustdoc-and-readme-examples-aligned.md
 [rustdoc]: https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html
 [side-effects]: ../patterns/make-side-effects-visible.md
-[source-ledger]: ../references/external-source-ledger.md
+[source-ledger]: ../references/
 [source-links]: ../rules/documentation/docs-use-source-links-as-support.md
 [system-models]: ../patterns/document-system-mental-models.md
 [technical-prose]: ../rules/documentation/docs-write-technical-prose.md

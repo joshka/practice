@@ -33,7 +33,6 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
 <BaseLayout title={page.title} description={page.description} sourceUrl={page.sourceUrl}>
   <div class="rules-shell">
     <section class="rules-hero" aria-labelledby="rules-title">
-      <p class="eyebrow">Rule catalog</p>
       <div class="hero-title">
         <span class="hero-title__icon" aria-hidden="true">
           <KindIcon kind="rule" />
@@ -53,7 +52,6 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
 
     <section class="rules-use" aria-labelledby="rules-use-title">
       <div>
-        <p class="eyebrow">Work areas</p>
         <h2 id="rules-use-title">Rule work areas</h2>
       </div>
       <div class="rules-use__steps">

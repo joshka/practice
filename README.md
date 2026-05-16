@@ -124,10 +124,8 @@ Use [rules](rules/README.md) when you need a compact instruction with its own re
 [principles](principles/README.md) when you need the reasoning behind a rule. Use
 [patterns](patterns/README.md) when you need a stable review term or a compact rule to cite. Use
 [mechanisms](mechanisms/README.md) when you need the lint, command, CI, or configuration support
-behind a rule. Use [agent snippets](snippets/agents/README.md) when you need copyable `AGENTS.md`
-sections or a compressed reviewed-rule pack for another repo. Use
-[the guidance plan](references/guidance-plan.md) to see how the current guide set is organized and
-where future work belongs.
+behind a rule. Use [agent snippets](snippets/agents/README.md) when you need copyable
+`AGENTS.md` sections or a compressed reviewed-rule pack for another repo.
 
 ## Use In Another Project
 
