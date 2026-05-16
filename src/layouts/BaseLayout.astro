@@ -348,6 +348,7 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
 
       let searchIndex: SearchEntry[] | undefined;
       let selectedSearchIndex = 0;
+      let searchReturnFocus: HTMLElement | undefined;
       const rawSearchKindIcons = document.body.dataset.searchKindIcons || '{}';
       const searchKindIcons = JSON.parse(rawSearchKindIcons) as Record<string, { path: string; viewBox: string }>;
 
@@ -458,8 +459,20 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
         renderSearchResults(results);
       }
 
+      function searchFocusableElements(): HTMLElement[] {
+        if (!(searchDialog instanceof HTMLElement)) return [];
+        return Array.from(
+          searchDialog.querySelectorAll<HTMLElement>(
+            'a[href], button:not([disabled]), input:not([disabled]), [tabindex]:not([tabindex="-1"])',
+          ),
+        ).filter((element) => element.offsetParent !== null);
+      }
+
       function openSearch() {
         if (!(searchDialog instanceof HTMLElement) || !(searchInput instanceof HTMLInputElement)) return;
+        if (document.activeElement instanceof HTMLElement && !searchDialog.contains(document.activeElement)) {
+          searchReturnFocus = document.activeElement;
+        }
         searchDialog.hidden = false;
         document.body.classList.add('site-search-open');
         window.setTimeout(() => searchInput.focus(), 0);
@@ -470,6 +483,10 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
         if (!(searchDialog instanceof HTMLElement)) return;
         searchDialog.hidden = true;
         document.body.classList.remove('site-search-open');
+        if (searchReturnFocus?.isConnected) {
+          searchReturnFocus.focus();
+        }
+        searchReturnFocus = undefined;
       }
 
       function selectedSearchResult(): HTMLAnchorElement | undefined {
@@ -530,6 +547,18 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
         if (event.key === 'Escape') {
           event.preventDefault();
           closeSearch();
+        } else if (event.key === 'Tab') {
+          const focusable = searchFocusableElements();
+          if (focusable.length === 0) return;
+          const first = focusable[0];
+          const last = focusable.at(-1) ?? first;
+          if (event.shiftKey && document.activeElement === first) {
+            event.preventDefault();
+            last.focus();
+          } else if (!event.shiftKey && document.activeElement === last) {
+            event.preventDefault();
+            first.focus();
+          }
         } else if (event.key === 'ArrowDown') {
           event.preventDefault();
           moveSearchSelection(1);
