@@ -69,6 +69,12 @@ pnpm build
 pnpm check:search
 ```
 
+- Check package dependency freshness.
+
+```bash
+pnpm check:deps
+```
+
 ## What It Catches
 
 - Missing required rule sections.
@@ -88,6 +94,7 @@ pnpm check:search
 - Non-Rust guide review questions that stop using named subgroups.
 - Related-guidance sections that stop linking to a rule artifact.
 - Search index changes that stop important queries from returning expected guidance pages.
+- Package manifests whose dependencies have newer wanted or latest versions available.
 - Core agent instructions that stop pointing to the guide set or reviewed rule pack.
 - Markdown formatting drift that makes review noisier.
 

@@ -186,6 +186,7 @@ python3 scripts/generate_downstream_template.py --check
 markdownlint-cli2 "**/*.md"
 pnpm build
 pnpm check:search
+pnpm check:deps
 ```
 
 The audit checks the guidance architecture directly: rule metadata and references, structured
@@ -196,7 +197,9 @@ summaries. Regenerate `snippets/agents/rules.md` with `python3 scripts/generate_
 after changing reviewed rule instructions.
 Regenerate `templates/downstream/` with `python3 scripts/generate_downstream_template.py` after
 changing reviewed rule instructions or downstream adoption shape. Run `pnpm check:search` after
-`pnpm build` to verify important rendered search queries against `dist/search.json`.
+`pnpm build` to verify important rendered search queries against `dist/search.json`. Run
+`pnpm check:deps` to make dependency freshness explicit before handing off broad repository
+maintenance changes.
 
 Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode
 flags rules whose rationale still starts by repeating the rule text, which is a sign that the rule

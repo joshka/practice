@@ -11,6 +11,7 @@
     "dev": "astro dev",
     "check": "astro check",
     "build": "astro check && astro build",
+    "check:deps": "python3 scripts/check_dependency_health.py",
     "check:search": "python3 scripts/check_search_quality.py",
     "preview": "astro preview"
   },
