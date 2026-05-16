@@ -1,0 +1,67 @@
+name: Guidance feedback
+description: Report guidance that is confusing, wrong, hard to apply, or worth reinforcing.
+title: "Feedback: "
+labels:
+  - guidance-feedback
+body:
+  - type: input
+    id: item_url
+    attributes:
+      label: Rendered item URL
+      description: The public page where the guidance appears.
+    validations:
+      required: true
+  - type: input
+    id: item_file
+    attributes:
+      label: Source file
+      description: The repository path for the guidance source.
+    validations:
+      required: true
+  - type: input
+    id: item_id
+    attributes:
+      label: Stable ID
+      description: The guidance ID, or the page title when no stable ID exists.
+    validations:
+      required: true
+  - type: input
+    id: item_kind
+    attributes:
+      label: Item kind
+      description: Guide, rule, pattern, principle, or mechanism.
+    validations:
+      required: true
+  - type: dropdown
+    id: feedback_type
+    attributes:
+      label: Feedback type
+      description: Choose the closest reason this item needs attention.
+      options:
+        - Confusing
+        - Wrong
+        - Too broad
+        - Too narrow
+        - Missing necessary context
+        - Hard to apply downstream
+        - Useful enough to reinforce
+    validations:
+      required: true
+  - type: textarea
+    id: what_happened
+    attributes:
+      label: What happened?
+      description: Describe the work, review, or downstream adoption moment where this guidance failed or helped.
+      placeholder: "During ..., this guidance was hard to use because ..."
+    validations:
+      required: true
+  - type: textarea
+    id: suggested_change
+    attributes:
+      label: Suggested change
+      description: Name the rule, example, wording, link, mechanism, or adoption flow that would improve it.
+  - type: textarea
+    id: downstream_context
+    attributes:
+      label: Downstream context
+      description: Include repo type, language, framework, agent workflow, or adoption details when they matter.

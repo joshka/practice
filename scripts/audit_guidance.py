@@ -23,6 +23,7 @@ GUIDE_LONG_LIST_EXCEPTIONS = {
 }
 
 REQUIRED_ROOTS = [
+    ".github/ISSUE_TEMPLATE/guidance-feedback.yml",
     "rules/README.md",
     "principles/README.md",
     "patterns/README.md",
@@ -36,6 +37,17 @@ REQUIRED_ROOTS = [
     "templates/downstream/AGENTS.md",
     "templates/downstream/docs/development/rules/README.md",
 ]
+
+FEEDBACK_FORM_FIELDS = {
+    "item_url",
+    "item_file",
+    "item_id",
+    "item_kind",
+    "feedback_type",
+    "what_happened",
+    "suggested_change",
+    "downstream_context",
+}
 
 RULE_SECTIONS = [
     "Metadata",
@@ -168,6 +180,33 @@ def audit_required_roots(errors: list[str]) -> None:
     for item in REQUIRED_ROOTS:
         if not (ROOT / item).exists():
             fail(errors, f"missing required guidance artifact: {item}")
+
+
+def audit_feedback_flow(errors: list[str]) -> None:
+    template = ROOT / ".github" / "ISSUE_TEMPLATE" / "guidance-feedback.yml"
+    if not template.exists():
+        return
+
+    text = template.read_text()
+    fields = set(re.findall(r"^\s+id: ([a-z_]+)$", text, re.MULTILINE))
+    for field in sorted(FEEDBACK_FORM_FIELDS - fields):
+        fail(errors, f"{rel(template)} is missing issue-form field id: {field}")
+
+    component = ROOT / "src" / "components" / "PageContent.astro"
+    if not component.exists():
+        fail(errors, "missing detail page component for feedback action")
+        return
+    component_text = component.read_text()
+    for snippet in [
+        "template', 'guidance-feedback.yml'",
+        "'item_url'",
+        "'item_file'",
+        "'item_id'",
+        "'item_kind'",
+        "Give feedback",
+    ]:
+        if snippet not in component_text:
+            fail(errors, f"src/components/PageContent.astro feedback flow is missing: {snippet}")
 
 
 def audit_domain_indexes(rules: list[Rule], errors: list[str]) -> None:
@@ -486,6 +525,7 @@ def main() -> int:
 
     errors: list[str] = []
     audit_required_roots(errors)
+    audit_feedback_flow(errors)
     rules = read_rules(errors)
     audit_domain_indexes(rules, errors)
     audit_agent_pack(rules, errors)

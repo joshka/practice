@@ -892,10 +892,25 @@ html[data-theme="light"] .code-block pre code {
     @apply text-on-background;
   }
 
-  .detail-copy {
+  .detail-copy,
+  .detail-action {
     @apply ml-auto inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-on-primary transition-colors duration-200 hover:text-on-primary-container;
     background: var(--primary-gradient);
     box-shadow: var(--primary-glow), var(--panel-raised-soft);
+  }
+
+  .detail-action {
+    @apply no-underline;
+  }
+
+  .detail-copy + .detail-action {
+    @apply ml-0;
+  }
+
+  .detail-action--secondary {
+    @apply text-primary hover:text-on-background;
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--panel-sunken);
   }
 
   .detail-hero h1 {

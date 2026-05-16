@@ -1,6 +1,6 @@
 ---
 import KindIcon from './KindIcon.astro';
-import { allPublicPages, tagLabel, tagSlug, tagsForPage, withBase } from '../lib/site';
+import { allPublicPages, repoUrl, tagLabel, tagSlug, tagsForPage, withBase } from '../lib/site';
 import type { MarkdownPage } from '../lib/site';
 
 type Props = {
@@ -15,6 +15,7 @@ const showHeaderDescription = !isReviewable && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
 const reviewNote = reviewCopyMarkdown(page, kind);
+const feedbackUrl = feedbackIssueUrl(page, kind, Astro.site?.href ?? 'https://joshka.net');
 const heroTitle = page.title;
 const heroId = isReviewable && page.metadata.id && page.title !== page.metadata.id
   ? page.metadata.id
@@ -72,6 +73,31 @@ function isReviewableKind(value: string): boolean {
   return value === 'rule' || value === 'pattern' || value === 'principle';
 }
 
+function isFeedbackableKind(value: string): boolean {
+  return (
+    value === 'guide' ||
+    value === 'rule' ||
+    value === 'pattern' ||
+    value === 'principle' ||
+    value === 'mechanism'
+  );
+}
+
+function feedbackIssueUrl(page: MarkdownPage, kind: string, site: string): string | undefined {
+  if (!isFeedbackableKind(kind)) return undefined;
+
+  const itemUrl = new URL(withBase(page.route), site).href;
+  const itemId = page.metadata.id || page.title;
+  const url = new URL(`${repoUrl}/issues/new`);
+  url.searchParams.set('template', 'guidance-feedback.yml');
+  url.searchParams.set('title', `Feedback: ${itemId}`);
+  url.searchParams.set('item_url', itemUrl);
+  url.searchParams.set('item_file', page.repoPath);
+  url.searchParams.set('item_id', itemId);
+  url.searchParams.set('item_kind', kind);
+  return url.href;
+}
+
 function reviewCopyMarkdown(page: MarkdownPage, kind: string): string | undefined {
   if (!isReviewableKind(kind)) return undefined;
 
@@ -126,7 +152,7 @@ function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
     </div>
     {heroId && <p class="detail-hero__id">{heroId}</p>}
     {showHeaderDescription && page.description && <p>{page.description}</p>}
-    {(chips.length > 0 || reviewNote) && (
+    {(chips.length > 0 || reviewNote || feedbackUrl) && (
       <div class="detail-hero__meta" aria-label="Page topics">
         <div class="detail-hero__chips">
           {chips.map((chip) => (
@@ -141,6 +167,11 @@ function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
           <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>
             Copy review note
           </button>
+        )}
+        {feedbackUrl && (
+          <a class="detail-action detail-action--secondary" href={feedbackUrl}>
+            Give feedback
+          </a>
         )}
       </div>
     )}
