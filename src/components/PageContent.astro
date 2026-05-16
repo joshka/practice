@@ -21,7 +21,7 @@ const heroId = isReviewable && page.metadata.id && page.title !== page.metadata.
   ? page.metadata.id
   : undefined;
 const summary = isReviewable ? page.metadata.summary : undefined;
-const relatedPages = isReviewable ? relatedGuidancePages(page) : [];
+const relatedPages = relatedGuidancePages(page);
 
 type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
@@ -134,9 +134,18 @@ function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
       .filter((candidate) => candidate.metadata.id && candidate.route !== page.route)
       .map((candidate) => [candidate.metadata.id.toLowerCase(), candidate]),
   );
+  const pagesByPath = new Map(
+    allPublicPages()
+      .filter((candidate) => candidate.route !== page.route)
+      .map((candidate) => [candidate.repoPath.toLowerCase(), candidate]),
+  );
   return related
-    .map((id) => pagesById.get(id))
+    .map((id) => pagesById.get(id) ?? pagesByPath.get(id))
     .filter((candidate): candidate is MarkdownPage => Boolean(candidate));
+}
+
+function relatedLabel(page: MarkdownPage): string {
+  return page.metadata.id || page.title;
 }
 ---
 
@@ -192,7 +201,7 @@ function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
       <div class="detail-related__links">
         {relatedPages.map((related) => (
           <a href={withBase(related.route)}>
-            <strong>{related.metadata.id}</strong>
+            <strong>{relatedLabel(related)}</strong>
             <span>{related.title}</span>
           </a>
         ))}

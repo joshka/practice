@@ -241,6 +241,25 @@ def audit_structured_guidance_metadata(errors: list[str]) -> None:
                 fail(errors, f"{rel(path)} has invalid audience: {audience}")
 
 
+def audit_structured_related_metadata(errors: list[str]) -> None:
+    valid_targets: set[str] = set()
+    for path in public_markdown_files():
+        repo_path = rel(path)
+        valid_targets.add(repo_path.lower())
+        item_id = metadata(path.read_text(), "ID")
+        if item_id:
+            valid_targets.add(item_id.lower())
+
+    for directory in STRUCTURED_GUIDANCE_DIRS:
+        for path in sorted((ROOT / directory).glob("*.md")):
+            if path.name == "README.md":
+                continue
+            related = metadata_values(path.read_text()).get("Related", "")
+            for target in [value.strip().lower() for value in related.split(",") if value.strip()]:
+                if target not in valid_targets:
+                    fail(errors, f"{rel(path)} related metadata points at unknown guidance: {target}")
+
+
 def audit_feedback_flow(errors: list[str]) -> None:
     template = ROOT / ".github" / "ISSUE_TEMPLATE" / "guidance-feedback.yml"
     if not template.exists():
@@ -594,6 +613,7 @@ def main() -> int:
     audit_required_roots(errors)
     audit_feedback_flow(errors)
     audit_structured_guidance_metadata(errors)
+    audit_structured_related_metadata(errors)
     rules = read_rules(errors)
     audit_domain_indexes(rules, errors)
     audit_agent_pack(rules, errors)
