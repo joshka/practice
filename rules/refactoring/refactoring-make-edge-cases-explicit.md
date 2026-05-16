@@ -4,7 +4,7 @@
 
 - ID: `REFACTORING-MAKE-EDGE-CASES-EXPLICIT`
 - Legacy ID: `R-0108`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `refactoring`
 - Depth: `compact`
 

@@ -4,7 +4,7 @@
 
 - ID: `REVIEW-SEPARATE-DISCOVERY-SELECTION-IMPLEMENTATION`
 - Legacy ID: `R-0908`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`
 

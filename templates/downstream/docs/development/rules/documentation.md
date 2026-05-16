@@ -20,22 +20,34 @@ text by hand; update the source repo and recopy this file.
   every mode.
 - `DOCS-COMPARE-LIBRARIES-ACCURATELY`: Compare nearby libraries accurately and charitably;
   inaccurate comparisons undermine trust.
+- `DOCS-DISTINGUISH-EXAMPLE-ROLES`: Name the example's primary role before expanding it; keep
+  focused, canonical, survey, integration, and showcase examples from collapsing into one generic
+  snippet.
 - `DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`: Document lifecycle, ownership, side effects, feature
   flags, platform assumptions, and compatibility for APIs that create caller obligations.
 - `DOCS-EXPOSE-MOVE-RISK-AND-EXAMPLE-IN-PATTERNS`: For pattern-style guidance, include the
   recognizable situation, preferred move, risk, example, and agent instruction.
 - `DOCS-FRONT-LOAD-USEFUL-POINT`: Front-load the useful point because readers scan docs for the
   decision, command, invariant, or warning that matters.
+- `DOCS-GROUP-RELATED-LIST-ITEMS`: Group long lists into named clusters for distinct rule families,
+  reader tasks, or decision surfaces; keep short homogeneous lists flat.
 - `DOCS-HIDE-CATALOG-MECHANICS`: Lead with reader-facing work areas and artifacts; mention rule IDs,
   prefixes, domains, generated indexes, source layout, or UI containers only for citation,
   automation, or contribution workflow.
 - `DOCS-KEEP-MARKDOWN-LINTABLE`: Keep Markdown lintable because formatting drift adds review noise
   and makes generated or agent-edited docs harder to maintain.
+- `DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`: Keep guidance status visible on reusable rules,
+  patterns, principles, and mechanisms; route drafts to review queues before copying them into
+  execution packs.
 - `DOCS-MAKE-REVIEW-EASY-TO-INSPECT`: Make documentation review easy to inspect because docs are
   often reviewed as Markdown diffs even though users read rendered pages, generated Rustdoc,
   examples, screenshots, or command output.
 - `DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`: Prefer compiling Rust examples, and mark noncompiling
   examples honestly because users and doctests often copy them directly.
+- `DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`: For documentation sites that render Markdown, choose a
+  page shape for the reader task before exposing the content. Use catalogs for choosing, prose pages
+  for explanation, rule layouts for instructions, mechanism layouts for runnable checks, and
+  reference layouts for source catalogs.
 - `DOCS-NAME-DESTINATION-NOT-DIRECTION`: Write navigation and index copy as destination, decision,
   artifact, or work-area labels; avoid directive phrases such as "start here," "use this guide," and
   "open this guide" on reference surfaces.
@@ -51,6 +63,9 @@ text by hand; update the source repo and recopy this file.
   user docs that should describe current truth.
 - `DOCS-README-AS-ENTRY-POINT`: Keep README files as entry points because a README is usually the
   first page for humans and agents.
+- `DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`: Review docs for correctness, contract ambiguity, risk,
+  drift, and operability before style polish; use severity labels to separate blocking
+  misunderstandings from wording cleanup.
 - `DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`: Show side effects and cleanup in examples that create
   files, hit networks, write records, open terminals, spawn tasks, or mutate services.
 - `DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`: State current behavior, not aspiration, because

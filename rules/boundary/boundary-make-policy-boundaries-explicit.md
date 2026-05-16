@@ -4,7 +4,7 @@
 
 - ID: `BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`
 - Legacy ID: `R-0325`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `boundary`
 - Depth: `compact`
 

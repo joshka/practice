@@ -4,7 +4,7 @@
 
 - ID: `REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`
 - Legacy ID: `R-0907`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`
 

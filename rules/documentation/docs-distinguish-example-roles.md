@@ -4,7 +4,7 @@
 
 - ID: `DOCS-DISTINGUISH-EXAMPLE-ROLES`
 - Legacy ID: `R-0529`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`
 

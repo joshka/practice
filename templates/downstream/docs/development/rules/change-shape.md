@@ -5,6 +5,9 @@ text by hand; update the source repo and recopy this file.
 
 ## Instructions
 
+- `CHANGE-AVOID-SPECULATIVE-PUBLIC-API`: Avoid speculative public API; add public names, types,
+  extension points, and compatibility promises only for concrete current needs or explicitly
+  accepted near-term requirements.
 - `CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`: Avoid dependency churn unless it is necessary for the
   task; dependency updates change lockfiles, feature graphs, minimum versions, build output, and
   downstream compatibility.
@@ -23,6 +26,9 @@ text by hand; update the source repo and recopy this file.
   issues, or broader refactoring so the current diff keeps its purpose.
 - `CHANGE-PRESERVE-UNOWNED-WORK`: Preserve unowned work because a working tree can contain edits
   from the user, another agent, generated state, or an earlier in-progress change.
+- `CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`: Edit the source input, template, release metadata,
+  or generator config for generated artifacts; hand edit generated output only for tool workflows
+  that make curation durable.
 - `CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`: Separate structure and behavior changes because the
   combined diff makes reviewers prove both meaning preservation and new behavior.
 - `CHANGE-SYNC-GENERATED-ARTIFACTS`: Update them with the source change because checked-in generated

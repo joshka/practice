@@ -4,7 +4,7 @@
 
 - ID: `DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`
 - Legacy ID: `R-0526`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `documentation`
 - Depth: `expanded`
 

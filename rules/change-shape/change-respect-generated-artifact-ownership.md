@@ -4,7 +4,7 @@
 
 - ID: `CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`
 - Legacy ID: `R-0013`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `change-shape`
 - Depth: `compact`
 

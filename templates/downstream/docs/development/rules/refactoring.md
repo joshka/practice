@@ -15,6 +15,8 @@ text by hand; update the source repo and recopy this file.
   read input, validate, transform, then emit result.
 - `REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`: Keep weak abstractions close to their use
   because new abstractions are often tentative.
+- `REFACTORING-MAKE-EDGE-CASES-EXPLICIT`: Make edge-case behavior visible near correctness-sensitive
+  branches, calculations, or returns; prefer stronger types for reusable invariants.
 - `REFACTORING-PREFER-LOCAL-REASONING`: Prefer designs where readers can see relevant state,
   invariants, and effects nearby instead of reconstructing distant context.
 - `REFACTORING-PREFER-LOOPS-FOR-SIDE-EFFECTS`: Prefer loops over combinators for business-logic side

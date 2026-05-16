@@ -4,7 +4,7 @@
 
 - ID: `REVIEW-CLASSIFY-PROTOTYPE-REUSE`
 - Legacy ID: `R-0706`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`
 

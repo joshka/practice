@@ -37,6 +37,9 @@ text by hand; update the source repo and recopy this file.
 - `BOUNDARY-MAKE-EXEC-TOOLS-NONINTERACTIVE`: Make exec-like tools noninteractive by default because
   exec-like tools called by agents, CI, or background tasks cannot safely wait for prompts, editors,
   pagers, or credential UI.
+- `BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`: Route policy-sensitive side effects through an
+  explicit policy boundary before execution, and make allowed, denied, redacted, fallback,
+  preserved, and unsupported outcomes visible to callers.
 - `BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`: Model each integration as the real upstream surface it
   exposes because adapters should not pretend a provider supports a cleaner or broader API than it
   actually does.

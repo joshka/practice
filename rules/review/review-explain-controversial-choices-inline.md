@@ -4,7 +4,7 @@
 
 - ID: `REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`
 - Legacy ID: `R-0909`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `review`
 - Depth: `compact`
 

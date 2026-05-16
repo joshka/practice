@@ -44,6 +44,9 @@ text by hand; update the source repo and recopy this file.
   claims are easy to overstate.
 - `AGENT-REPORT-PROOF-IN-HANDOFFS`: Report proof in handoffs instead of confidence language, because
   confidence is not evidence.
+- `AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`: Review agent output as a future maintainer: check
+  correctness, edge cases, API clarity, documentation truthfulness, readable ownership, focused
+  tests, validation proof, and residual risk.
 - `AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`: Separate note capture from correction during fast review
   so clustered feedback becomes cleaner edits or durable guidance.
 - `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`: Spend human attention on ambiguity because agents can

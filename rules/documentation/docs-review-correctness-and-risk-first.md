@@ -4,7 +4,7 @@
 
 - ID: `DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`
 - Legacy ID: `R-0528`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`
 

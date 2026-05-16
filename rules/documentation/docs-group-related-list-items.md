@@ -4,7 +4,7 @@
 
 - ID: `DOCS-GROUP-RELATED-LIST-ITEMS`
 - Legacy ID: `R-0527`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`
 

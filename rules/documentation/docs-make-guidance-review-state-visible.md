@@ -4,7 +4,7 @@
 
 - ID: `DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`
 - Legacy ID: `R-0530`
-- Status: `draft`
+- Status: `reviewed`
 - Domain: `documentation`
 - Depth: `compact`
 
