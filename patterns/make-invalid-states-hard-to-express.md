@@ -4,6 +4,9 @@
 
 - Name: `Make Invalid States Hard To Express`
 - ID: `make-invalid-states-hard-to-express`
+- Summary: Repeated validation spreads invariants across callers and lets unchecked values travel
+  too far. Move the rule into a construction boundary or precise type when that reduces downstream
+  reasoning without adding local ceremony.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, correctness, rust`

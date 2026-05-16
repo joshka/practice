@@ -4,6 +4,9 @@
 
 - Name: `Explicit Boundaries Preserve Correctness`
 - ID: `explicit-boundaries-preserve-correctness`
+- Summary: `Move uncertainty into named boundary policy before core logic uses the data. Parsed
+  inputs, explicit side effects, and visible lifecycle transitions reduce repeated downstream
+  guessing.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `boundaries, parsing, validation, state, side effects`

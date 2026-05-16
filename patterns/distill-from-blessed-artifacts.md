@@ -4,6 +4,9 @@
 
 - Name: `Distill From Blessed Artifacts`
 - ID: `distill-from-blessed-artifacts`
+- Summary: Durable guidance should come from accepted examples, reviewed decisions, and working
+  artifacts rather than transient preferences. Distill stable lessons from blessed sources and keep
+  uncertain ideas marked as draft.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, discovery, examples`

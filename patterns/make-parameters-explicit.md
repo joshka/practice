@@ -4,6 +4,9 @@
 
 - Name: `Make Parameters Explicit`
 - ID: `make-parameters-explicit`
+- Summary: Hidden configuration, time, randomness, globals, or environment reads make behavior hard
+  to reason about and test. Gather ambient data at the outer boundary, then pass typed inputs or a
+  cohesive context to the inner operation.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, parameters`

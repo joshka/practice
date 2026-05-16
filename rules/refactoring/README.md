@@ -9,38 +9,32 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 ## Rules
 
 - [`REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION`](refactoring-align-seams-with-real-variation.md).
-  Align seams with real variation, not hypothetical variation. A seam is useful when the code
-  actually varies there: different backends, policies, protocols, test doubles, or ownership
-  boundaries. Helps: Keeps abstractions tied to observed change pressure and avoids speculative
-  indirection.
-- [`REFACTORING-DO-NOT-OVER-APPLY-DRY`](refactoring-do-not-over-apply-dry.md). Do not over-apply
-  DRY. Two blocks that look similar may change for different reasons. Helps: Preserves useful
-  duplication until the shared concept and change pattern are real.
+  Put abstraction seams where code already varies across backends, policies, protocols, tests, or
+  ownership boundaries. Avoid adding names and jumps for hypothetical futures unless the next change
+  or risk clearly justifies them.
+- [`REFACTORING-DO-NOT-OVER-APPLY-DRY`](refactoring-do-not-over-apply-dry.md). Keep similar-looking
+  code separate until it has the same meaning and changes together. Premature sharing can couple
+  unrelated policies and make later edits harder.
 - [`REFACTORING-EXTRACT-CONCEPT-HELPERS`](refactoring-extract-concept-helpers.md). Extract helpers
-  only when they reveal a real concept boundary. A helper should reduce the reader's burden by
-  naming a concept, not merely hide three lines. Helps: Improves local reasoning by replacing
-  low-level steps with a meaningful name.
-- [`REFACTORING-KEEP-LINEAR-STORY-VISIBLE`](refactoring-keep-linear-story-visible.md). Keep the
-  whole story visible when work is linear. Some logic is easiest to understand as a straight
-  narrative: read input, validate, transform, emit result. Helps: Preserves readability when the
-  order of operations is the main concept.
+  when the new function names a real concept boundary with a stable purpose. Hiding a few lines
+  behind a weak name adds a jump without reducing the reader's burden.
+- [`REFACTORING-KEEP-LINEAR-STORY-VISIBLE`](refactoring-keep-linear-story-visible.md). Keep simple
+  ordered workflows inline when the sequence is the clearest explanation. Extract only the substeps
+  that carry their own concept, policy, reuse, or test surface.
 - [`REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`](refactoring-keep-weak-abstractions-close-to-their-use.md).
-  Keep weak abstractions close to their use. New abstractions are often tentative. Helps: Limits
-  coupling from premature abstractions and keeps experiments reversible.
-- [`REFACTORING-MAKE-EDGE-CASES-EXPLICIT`](refactoring-make-edge-cases-explicit.md). Make edge-case
-  behavior explicit in the local control flow. Boundary values such as empty input, zero sizes,
-  overflow, underflow, duplicates, missing fields, and already-complete states often decide whether
-  a change is correct. Helps: Makes boundary behavior visible during review. - Reduces accidental
-  changes to empty, zero, overflow, and already-complete cases.
-- [`REFACTORING-PREFER-LOCAL-REASONING`](refactoring-prefer-local-reasoning.md). Prefer local
-  reasoning over distant reconstruction. Code is easier to change when the reader can see the
-  relevant state, invariants, and effects nearby. Helps: Reduces cognitive load and makes behavior
-  changes less error-prone.
-- [`REFACTORING-PREFER-LOOPS-FOR-SIDE-EFFECTS`](refactoring-prefer-loops-for-side-effects.md).
-  Prefer loops over combinators for business-logic side effects. Iterator chains are compact, but
-  business-logic side effects often need named steps, early exits, logging, error handling, or
-  comments. Helps: Keeps side effects and branch behavior readable in review.
+  Keep tentative helpers, types, or traits near their first use until the boundary proves itself.
+  Local placement makes weak abstractions easier to revise, inline, or delete before other modules
+  depend on them.
+- [`REFACTORING-MAKE-EDGE-CASES-EXPLICIT`](refactoring-make-edge-cases-explicit.md). Name boundary
+  behavior near the branch, calculation, or return that depends on it. This makes policy reviewable
+  and shows when stronger types should prevent invalid states instead.
+- [`REFACTORING-PREFER-LOCAL-REASONING`](refactoring-prefer-local-reasoning.md). Shape code so
+  relevant state, invariants, and effects are visible near the change. Centralize only when it
+  reduces total reasoning, because distant reconstruction raises cognitive load and error risk.
+- [`REFACTORING-PREFER-LOOPS-FOR-SIDE-EFFECTS`](refactoring-prefer-loops-for-side-effects.md). Use
+  ordinary loops when the main purpose is mutation, I/O, logging, or other side effects. Iterator
+  chains are better for value transformation; using them for effects can hide order, early exits,
+  and error handling.
 - [`REFACTORING-USE-WHITESPACE-AS-FUNCTION-PARAGRAPHS`](refactoring-use-whitespace-as-function-paragraphs.md).
-  Use whitespace as function paragraphs. Blank lines can show that a function has phases: gather
-  inputs, validate, calculate, perform effects, return. Helps: Improves scanability without
-  introducing new names or control flow.
+  Use blank lines to group related statements inside a function before extracting more names.
+  Paragraph-like spacing can reveal the local story while avoiding unnecessary helper jumps.

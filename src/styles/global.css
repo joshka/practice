@@ -376,6 +376,10 @@ html[data-theme="light"] .code-block pre code {
     @apply text-base leading-snug text-on-background;
   }
 
+  .site-search__result small {
+    @apply font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
+  }
+
   .site-search__result span {
     @apply line-clamp-2 text-sm leading-relaxed text-on-surface-variant;
   }
@@ -887,6 +891,52 @@ html[data-theme="light"] .code-block pre code {
     @apply mb-10;
   }
 
+  .detail-summary {
+    @apply mb-3 min-w-0 rounded-lg p-5;
+    background: var(--panel-gradient-high);
+    box-shadow: var(--panel-raised), var(--primary-glow);
+  }
+
+  .detail-summary h2 {
+    @apply mt-0 mb-5 text-xl font-bold uppercase leading-tight tracking-[0.08em] text-primary;
+  }
+
+  .detail-summary p {
+    @apply m-0 max-w-none text-base leading-relaxed text-on-surface;
+  }
+
+  .detail-related {
+    @apply mb-3 grid gap-3 rounded-lg p-5;
+    background: var(--color-surface-container-low);
+    box-shadow: var(--panel-raised-soft);
+  }
+
+  .detail-related h2 {
+    @apply m-0 text-sm font-bold uppercase leading-tight tracking-[0.08em] text-primary;
+  }
+
+  .detail-related__links {
+    @apply flex flex-wrap gap-2;
+  }
+
+  .detail-related__links a {
+    @apply inline-grid min-h-8 gap-0.5 rounded px-3 py-2 no-underline transition-colors duration-150;
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--panel-sunken);
+  }
+
+  .detail-related__links a:hover {
+    background: var(--color-surface-container-high);
+  }
+
+  .detail-related__links strong {
+    @apply font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
+  }
+
+  .detail-related__links span {
+    @apply text-xs leading-snug text-on-surface-variant;
+  }
+
   .detail-sections {
     @apply grid w-full min-w-0 gap-3;
   }
@@ -905,10 +955,6 @@ html[data-theme="light"] .code-block pre code {
     @apply min-w-0 pt-0;
   }
 
-  .detail-section--rule,
-  .detail-section--claim,
-  .detail-section--purpose,
-  .detail-section--preferred-move,
   .detail-section--agent-instruction {
     background: var(--panel-gradient-high);
     box-shadow: var(--panel-raised), var(--primary-glow);

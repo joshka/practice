@@ -8,141 +8,102 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 
 ## Rules
 
-- [`DOCS-ALIGN-README-AND-CRATE-RUSTDOC`](docs-align-readme-and-crate-rustdoc.md). Keep crate README
-  and crate-level Rustdoc aligned. Crate users often meet the README on GitHub and the crate-level
-  Rustdoc on docs.rs. Helps: Keeps the two main Rust entry points coherent and reduces drift between
-  examples, feature flags, and public API claims.
-- [`DOCS-AVOID-GENERATED-PROSE-TELLS`](docs-avoid-generated-prose-tells.md). Avoid generated-prose
-  tells. Generated prose often sounds polished while hiding that it did not learn the project voice.
-  Helps: Preserves local voice, keeps docs dense, and makes claims easier to verify.
-- [`DOCS-AVOID-UNEARNED-PRAISE`](docs-avoid-unearned-praise.md). Avoid unearned ranking and vague
-  praise. Words such as "simple," "powerful," "best," and "easy" are often unearned unless the doc
-  states the comparison or tradeoff. Helps: Keeps claims credible and replaces praise with
-  observable behavior, constraints, or tradeoffs.
-- [`DOCS-BUILD-DOCS-LIKE-USERS-READ-THEM`](docs-build-docs-like-users-read-them.md). Build Rust docs
-  the way users will read them. Rust docs are consumed through rendered Rustdoc, docs.rs feature
-  configuration, intra-doc links, search, and examples. Helps: Catches rendered-doc failures and
-  makes documentation review match the user-facing artifact.
-- [`DOCS-CHOOSE-DOCUMENT-TYPE`](docs-choose-document-type.md). Choose the document type before
-  editing. A page that mixes tutorial, reference, explanation, decision record, and changelog work
-  makes every reader pay for every mode. Helps: Keeps docs navigable and prevents local edits from
-  expanding into accidental page rewrites.
-- [`DOCS-COMPARE-LIBRARIES-ACCURATELY`](docs-compare-libraries-accurately.md). Compare nearby
-  libraries accurately and charitably. Comparisons with nearby libraries affect trust. Helps: Makes
-  comparison docs credible and helps users choose based on real constraints instead of positioning
-  language.
-- [`DOCS-DISTINGUISH-EXAMPLE-ROLES`](docs-distinguish-example-roles.md). Distinguish example roles
-  instead of treating every example as the same kind of proof. Examples answer different reader
-  questions. Helps: Keeps example sets from becoming a pile of generic snippets. - Makes review ask
-  whether an example is canonical, illustrative, broad, integrative, or interactive. - Helps
-  maintainers decide which examples must compile, which examples can be sketches, and which examples
-  need explicit opt-in behavior.
+- [`DOCS-ALIGN-README-AND-CRATE-RUSTDOC`](docs-align-readme-and-crate-rustdoc.md). Keep README and
+  crate-level Rustdoc consistent where users learn setup and supported behavior. Let the pages serve
+  different tasks, but prevent conflicting contracts.
+- [`DOCS-AVOID-GENERATED-PROSE-TELLS`](docs-avoid-generated-prose-tells.md). Replace templated,
+  UI-centered, or polished-but-vague phrasing with concrete behavior. Keep the local voice
+  trustworthy without cutting useful explanation.
+- [`DOCS-AVOID-UNEARNED-PRAISE`](docs-avoid-unearned-praise.md). Replace vague ranking words with
+  observable behavior, evidence, or tradeoffs. Use evaluative claims only when the basis is explicit
+  enough for readers to verify.
+- [`DOCS-BUILD-DOCS-LIKE-USERS-READ-THEM`](docs-build-docs-like-users-read-them.md). Review rendered
+  Rust documentation, links, cfg behavior, and examples in the modes users see. Match validation
+  depth to the risk of feature, metadata, or public example changes.
+- [`DOCS-CHOOSE-DOCUMENT-TYPE`](docs-choose-document-type.md). Pick the dominant document mode
+  before editing so the page serves one reader task well. Link out to secondary modes instead of
+  blending tutorial, reference, decisions, and changelog.
+- [`DOCS-COMPARE-LIBRARIES-ACCURATELY`](docs-compare-libraries-accurately.md). Check current
+  upstream behavior before comparing nearby libraries or crates. Charitable, source-backed
+  comparisons preserve trust while still helping users choose.
+- [`DOCS-DISTINGUISH-EXAMPLE-ROLES`](docs-distinguish-example-roles.md). Name whether an example is
+  focused, canonical, survey, integration, or showcase work. That role controls how complete,
+  copyable, and validated the example must be.
 - [`DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`](docs-document-lifecycle-and-side-effects.md).
-  Document lifecycle, ownership, side effects, feature flags, platform assumptions, and
-  compatibility when callers need them. APIs that open files, spawn tasks, touch terminals, allocate
-  resources, mutate global state, enable feature flags, or depend on platform behavior create
-  obligations for callers. Helps: Makes caller obligations visible and reduces misuse around
-  runtime, platform, feature, and cleanup behavior.
+  Document caller-visible lifecycle, ownership, platform, feature, and side-effect obligations. Skip
+  internal narration, but make operational responsibilities clear.
 - [`DOCS-EXPOSE-MOVE-RISK-AND-EXAMPLE-IN-PATTERNS`](docs-expose-move-risk-and-example-in-patterns.md).
-  Expose symptom, move, risk, example, and agent instruction in pattern-style guidance.
-  Pattern-style guidance is useful when a reader can recognize the situation and apply the move.
-  Helps: Makes patterns reviewable, teachable, and usable as agent instructions instead of vague
-  slogans.
-- [`DOCS-FRONT-LOAD-USEFUL-POINT`](docs-front-load-useful-point.md). Front-load the useful point.
-  Readers scan docs for the decision, command, invariant, or warning that matters. Helps: Improves
-  scanning and makes important commands, contracts, and caveats harder to miss.
-- [`DOCS-GROUP-RELATED-LIST-ITEMS`](docs-group-related-list-items.md). Group related list items
-  under named subheadings when a list grows past easy scanning. Long flat lists make every item
-  compete at the same level. Helps: Turns long checklists into coherent clusters that are easier to
-  scan, review, and extend. - Makes hidden rule families visible enough to promote into standalone
-  rule pages.
-- [`DOCS-HIDE-CATALOG-MECHANICS`](docs-hide-catalog-mechanics.md). Hide catalog mechanics unless
-  citation, automation, or contribution workflow depends on them. Rule IDs, prefixes, domains,
-  generated indexes, source layout, and UI containers are useful maintenance machinery, but they are
-  usually not the reader's task. Helps: Keeps site copy oriented around work areas and artifacts
-  instead of implementation taxonomy.
-- [`DOCS-KEEP-MARKDOWN-LINTABLE`](docs-keep-markdown-lintable.md). Keep Markdown lintable.
-  Formatting drift adds review noise and makes generated or agent-edited docs harder to maintain.
-  Helps: Keeps documentation diffs clean and makes style expectations enforceable by tools.
-- [`DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`](docs-make-guidance-review-state-visible.md). Make
-  reusable guidance review state visible in the guidance artifact. Reusable guidance changes how
-  future agents and maintainers work. Helps: Prevents draft guidance from entering copied
-  instructions as if it were accepted policy. - Makes maintainer review queues explicit instead of
-  hidden in chat, plans, or memory. - Lets generated surfaces include drafts for review while
-  keeping execution snippets limited to reviewed guidance.
-- [`DOCS-MAKE-REVIEW-EASY-TO-INSPECT`](docs-make-review-easy-to-inspect.md). Make documentation
-  review easy to inspect. Docs are often reviewed as Markdown diffs even though users read rendered
-  pages, generated Rustdoc, examples, screenshots, or command output. Helps: Speeds review and makes
-  documentation proof concrete rather than confidence-based.
-- [`DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`](docs-mark-noncompiling-examples-honestly.md). Prefer
-  examples that compile, and mark noncompiling examples honestly. Rust examples are often copied
-  directly into user projects or enforced as doctests. Helps: Keeps examples trustworthy and lets
-  doctests protect public API usage where possible.
-- [`DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`](docs-match-page-shape-to-reader-task.md). Match each
-  rendered documentation page shape to the reader task it serves. A documentation site can use
-  Markdown as its source without making every page feel like raw Markdown. Helps: Keeps navigation
-  pages from turning into README dumps. - Makes links, tags, cards, rows, code blocks, and source
-  metadata behave consistently. - Gives first-time readers a clear answer to where they are, what
-  the page is for, and what to click next.
-- [`DOCS-NAME-DESTINATION-NOT-DIRECTION`](docs-name-destination-not-direction.md). Name the
-  destination, decision, artifact, or work area instead of directing the reader. Reference pages,
-  indexes, cards, and navigation labels should help readers choose by recognition. Helps: Keeps
-  navigation copy scannable, reference-like, and grounded in the reader's task.
-- [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](docs-one-dominant-mode-per-page.md). Pick one dominant
-  documentation mode per page. A page with competing modes forces readers to switch mental models.
-  Helps: Keeps each page useful for its main reader and moves secondary detail to better-linked
-  places.
+  Give pattern guidance a recognizable trigger, preferred move, risk, example, and agent
+  instruction. The extra structure makes repeatable advice easier to cite and apply.
+- [`DOCS-FRONT-LOAD-USEFUL-POINT`](docs-front-load-useful-point.md). Put the decision, command,
+  invariant, or warning before broad setup. Readers and agents can then use the page without hunting
+  through introductory prose.
+- [`DOCS-GROUP-RELATED-LIST-ITEMS`](docs-group-related-list-items.md). Cluster long lists under
+  useful names when the relationships matter. Keep short or causal material flat or in prose so
+  structure does not add noise.
+- [`DOCS-HIDE-CATALOG-MECHANICS`](docs-hide-catalog-mechanics.md). Lead user-facing copy with work
+  areas, artifacts, and destinations instead of IDs or generated structure. Mention catalog
+  mechanics only when citation or contribution work needs them.
+- [`DOCS-KEEP-MARKDOWN-LINTABLE`](docs-keep-markdown-lintable.md). Use project Markdown style so
+  formatting stays enforceable and review noise stays low. Treat lint exceptions as intentional
+  local choices, not accumulated drift.
+- [`DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`](docs-make-guidance-review-state-visible.md). Mark
+  guidance maturity so readers know whether a rule is draft, reviewed, or ready for reuse. Visible
+  state prevents tentative advice from becoming an accidental standard.
+- [`DOCS-MAKE-REVIEW-EASY-TO-INSPECT`](docs-make-review-easy-to-inspect.md). Package documentation
+  changes so reviewers can see scope, evidence, and rendered impact quickly. Small inspectable
+  changes reduce hidden drift and style-only review loops.
+- [`DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`](docs-mark-noncompiling-examples-honestly.md). Label
+  examples that are sketches, partial snippets, or intentionally not run. Honest labels keep readers
+  from treating illustrative code as a supported copy-paste contract.
+- [`DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`](docs-match-page-shape-to-reader-task.md). Shape pages
+  around the reader's task, such as learning, choosing, reference, or review. The right structure
+  lowers scan cost without forcing one page to do every job.
+- [`DOCS-NAME-DESTINATION-NOT-DIRECTION`](docs-name-destination-not-direction.md). Use labels that
+  name the section, object, or decision the reader will reach. Directional labels make readers
+  follow the page order before knowing whether it is relevant.
+- [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](docs-one-dominant-mode-per-page.md). Let each page have one
+  primary mode and move competing material behind links. This keeps readers from paying for
+  tutorial, reference, explanation, and policy at once.
 - [`DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`](docs-prose-for-relationships-lists-for-enumeration.md).
-  Use prose for relationships and lists for enumeration. Lists are good for fields, steps, options,
-  and checks, but weak for explaining causality. Helps: Makes explanations coherent while keeping
-  procedural or enumerated material easy to scan.
-- [`DOCS-PROVE-REAL-USE-WITH-EXAMPLES`](docs-prove-real-use-with-examples.md). Prove real use with
-  examples. Examples that only construct a type or call the happy-path function do not prove that
-  the API works in the way users need. Helps: Turns examples into contract evidence and prevents
-  shallow examples from hiding missing integration details.
-- [`DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`](docs-put-uncertainty-in-tracked-places.md). Put
-  uncertainty in issues, ADRs, or roadmaps rather than burying it in user docs. User docs should
-  describe what is true now. Helps: Keeps user docs authoritative while preserving uncertainty in
-  places where it can be tracked and resolved.
-- [`DOCS-README-AS-ENTRY-POINT`](docs-readme-as-entry-point.md). Keep README files as entry points.
-  A README is usually the first page for humans and agents. Helps: Gives new readers a reliable
-  starting path without duplicating every reference detail.
+  Use prose when causality, contrast, or priority matters, and lists when enumerating parallel
+  items. The shape should reveal the relationship instead of hiding it in bullets.
+- [`DOCS-PROVE-REAL-USE-WITH-EXAMPLES`](docs-prove-real-use-with-examples.md). Use examples that
+  show realistic ownership, errors, lifecycle, configuration, or integration shape. Keep them
+  focused, but make them strong enough to prove the contract.
+- [`DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`](docs-put-uncertainty-in-tracked-places.md). Keep user
+  docs focused on current truth and move unresolved direction to issues, ADRs, or roadmaps. Track
+  speculation where it can be decided instead of implying a promise.
+- [`DOCS-README-AS-ENTRY-POINT`](docs-readme-as-entry-point.md). Use README files to orient readers
+  to purpose, setup, first useful use, and deeper docs. Split out manual-level detail when it hides
+  the starting path.
 - [`DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`](docs-review-correctness-and-risk-first.md). Lead
-  documentation review with correctness, contract ambiguity, risk, drift, and operability.
-  Documentation polish is visible, but the expensive failures are usually false contracts, ambiguous
-  caller obligations, stale examples, unverifiable commands, unsupported claims, hidden operational
-  effects, or docs that no longer match the code. Helps: Keeps documentation review focused on user
-  trust, operational accuracy, and contract drift. - Separates merge-blocking doc defects from style
-  or polish comments.
-- [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](docs-show-side-effects-in-live-examples.md). Show side
-  effects and cleanup in live-resource examples. Examples that create files, hit networks, write DNS
-  records, open terminals, spawn tasks, or mutate external services can look harmless while leaving
-  persistent state or requiring cleanup. Helps: Reduces unsafe copy-paste behavior and makes
-  live-resource examples honest about their effects.
+  documentation review with false contracts, drift, operability, and unsupported claims before style
+  polish. This separates blocking risk from wording cleanup.
+- [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](docs-show-side-effects-in-live-examples.md). Show
+  setup, visible effects, and cleanup when examples touch live resources or persistent state. Gate
+  costly or externally visible actions so examples stay honest and safe to adapt.
 - [`DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`](docs-state-current-behavior-not-aspiration.md).
-  State current behavior, not aspiration. Docs that describe intended behavior as if it already
-  exists become false contracts. Helps: Keeps docs trustworthy and prevents roadmaps from
-  masquerading as API or behavior guarantees.
-- [`DOCS-TREAT-DOCS-AS-CONTRACTS`](docs-treat-docs-as-contracts.md). Treat docs as contracts. Docs
-  increasingly guide both humans and agents. Helps: Aligns code, tests, examples, and agent behavior
-  around explicit English-language contracts.
-- [`DOCS-USE-CONCRETE-DETAILS`](docs-use-concrete-details.md). Use concrete nouns and real paths,
-  defaults, commands, and examples. Abstract nouns make readers infer the actual object. Helps:
-  Makes guidance easier to apply, review, and encode for agents.
-- [`DOCS-USE-DESCRIPTIVE-HEADINGS`](docs-use-descriptive-headings.md). Use headings that describe
-  the section content instead of slogan-like instructions or directions. Headings are navigation.
-  Helps: Makes pages easier to skim, search, link, and navigate non-linearly.
-- [`DOCS-USE-SOURCE-LINKS-AS-SUPPORT`](docs-use-source-links-as-support.md). Use source links as
-  support, not as wording supply. External sources should help a reader verify a claim or compare
-  judgment, not supply phrasing. Helps: Keeps guidance original, source-backed where useful, and
-  free of accidental paraphrase or citation theater.
-- [`DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`](docs-verify-commands-paths-and-links.md). Verify example
-  commands, file paths, and linked references. Commands, paths, and links are executable
-  instructions in disguise. Helps: Keeps docs operationally accurate and reduces repair time for
-  readers following examples.
-- [`DOCS-WRITE-FOR-NON-LINEAR-READERS`](docs-write-for-non-linear-readers.md). Write docs for
-  non-linear readers. Many readers do not read documentation front to back. Helps: Makes sections
-  useful when linked directly and improves agent retrieval quality.
-- [`DOCS-WRITE-TECHNICAL-PROSE`](docs-write-technical-prose.md). Write technical docs, not
-  marketing, coaching, or chat. Technical docs should help readers make correct decisions. Helps:
-  Keeps documentation direct, actionable, and grounded in behavior rather than persuasion.
+  Describe what the system does now and label limitations or future plans separately. Otherwise
+  roadmap language becomes a false contract for readers and agents.
+- [`DOCS-TREAT-DOCS-AS-CONTRACTS`](docs-treat-docs-as-contracts.md). Treat supported behavior,
+  commands, errors, and examples in docs as promises readers may rely on. Separate normative claims
+  from background, examples, and future plans.
+- [`DOCS-USE-CONCRETE-DETAILS`](docs-use-concrete-details.md). Name real commands, paths, defaults,
+  types, examples, and work areas when they clarify scope. Concrete detail removes guesswork without
+  overloading prose with incidental facts.
+- [`DOCS-USE-DESCRIPTIVE-HEADINGS`](docs-use-descriptive-headings.md). Write headings that name the
+  section content, destination, or decision area. Reserve imperative headings for procedures where
+  the section is truly a step.
+- [`DOCS-USE-SOURCE-LINKS-AS-SUPPORT`](docs-use-source-links-as-support.md). Use references to
+  verify, frame, or contrast local guidance instead of supplying the wording. This keeps the repo
+  voice original while still making claims checkable.
+- [`DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`](docs-verify-commands-paths-and-links.md). Check commands,
+  file paths, and linked references because readers treat them as executable instructions. Note
+  assumptions when credentials, services, or platforms prevent a full run.
+- [`DOCS-WRITE-FOR-NON-LINEAR-READERS`](docs-write-for-non-linear-readers.md). Give sections enough
+  local context to work when reached from search, links, review, or retrieval. Avoid repeating the
+  whole introduction; add only the subject and prerequisite needed.
+- [`DOCS-WRITE-TECHNICAL-PROSE`](docs-write-technical-prose.md). Use direct technical language that
+  carries contracts, commands, evidence, and tradeoffs. Cut marketing, coaching, chat, and page
+  narration when they do not explain the system.

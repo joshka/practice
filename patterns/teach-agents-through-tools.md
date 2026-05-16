@@ -4,6 +4,9 @@
 
 - Name: `Teach Agents Through Tools`
 - ID: `teach-agents-through-tools`
+- Summary: Repeated agent confusion often means the repo lacks a command, fixture, wrapper, or
+  check rather than another instruction. Convert repeatable setup, inspection, validation, and
+  remediation into tools when they will improve future runs.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, tooling, enablement`

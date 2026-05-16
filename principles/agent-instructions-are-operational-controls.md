@@ -4,6 +4,9 @@
 
 - Name: `Agent Instructions Are Operational Controls`
 - ID: `agent-instructions-are-operational-controls`
+- Summary: `Agent instructions should change future behavior, not merely restate a preference.
+  Compact rules need enough trigger, purpose, and boundary context for agents to apply them
+  without blind literalism.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, rules, instructions, token-budget`

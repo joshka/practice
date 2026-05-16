@@ -4,6 +4,9 @@
 
 - Name: `Test Observable Behavior`
 - ID: `test-observable-behavior`
+- Summary: Tests that pin private structure can block useful refactors while missing broken user
+  outcomes. Test observable outputs, errors, side effects, state, events, and boundaries, reserving
+  private tests for dense rules that are otherwise hard to reach.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, correctness, review`

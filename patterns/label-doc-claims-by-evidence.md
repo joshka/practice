@@ -4,6 +4,9 @@
 
 - Name: `Label Doc Claims By Evidence`
 - ID: `label-doc-claims-by-evidence`
+- Summary: Documentation loses trust when speculation, observed behavior, policy, and verified
+  facts look the same. Label claims by their evidence level so readers know what can be relied on
+  and what still needs confirmation.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, evidence, review`

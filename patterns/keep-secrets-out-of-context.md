@@ -4,6 +4,9 @@
 
 - Name: `Keep Secrets Out Of Context`
 - ID: `keep-secrets-out-of-context`
+- Summary: Secrets and private data can leak through prompts, transcripts, logs, and generated
+  artifacts even when the code change is harmless. Redact or replace sensitive values before they
+  enter shared context, and use controlled channels when real secrets are required.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, security, secrets`

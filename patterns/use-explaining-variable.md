@@ -4,6 +4,9 @@
 
 - Name: `Use Explaining Variable`
 - ID: `use-explaining-variable`
+- Summary: Important decisions disappear when nested expressions or repeated conditions expose
+  syntax before domain meaning. Introduce a local name when it makes the next branch, call, or
+  return read in terms of the fact the reader needs.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, naming`

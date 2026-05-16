@@ -4,6 +4,9 @@
 
 - Name: `Private Context Is Not Shared Context`
 - ID: `private-context-is-not-shared-context`
+- Summary: `Shared artifacts must carry the reasoning that downstream readers did not see in the
+  private session. Issues, PRs, commits, guides, and review packets should restate the decision
+  context that matters.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, review, communication, provenance`

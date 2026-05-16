@@ -4,6 +4,9 @@
 
 - Name: `Smallest Trustworthy Verification`
 - ID: `smallest-trustworthy-verification`
+- Summary: Verification is weak when it is either skipped or broad without covering the likely
+  failure. Run the cheapest check that could catch the risk introduced by the change, broadening
+  only when shared contracts or user-visible behavior require it.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, workflow, review`

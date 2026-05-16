@@ -4,6 +4,9 @@
 
 - Name: `Limit Live Context`
 - ID: `limit-live-context`
+- Summary: Readers make mistakes when they must keep too many facts active to understand a change.
+  Reduce live context by moving related facts together, naming intermediate concepts, and keeping
+  dependencies local.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, decomposition`

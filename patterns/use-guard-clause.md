@@ -4,6 +4,9 @@
 
 - Name: `Use Guard Clause`
 - ID: `use-guard-clause`
+- Summary: The normal path is harder to see when the rest of a routine is indented under a
+  precondition or failure case. Exit early for boring gates so the ordinary behavior stays flat,
+  visible, and ordered by what readers must rule out.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, control-flow, readability`

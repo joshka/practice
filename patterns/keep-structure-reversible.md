@@ -4,6 +4,9 @@
 
 - Name: `Keep Structure Reversible`
 - ID: `keep-structure-reversible`
+- Summary: Early structure can harden into unnecessary abstraction before the design is proven.
+  Prefer arrangements that are easy to inline, split, merge, or rename until the underlying concept
+  earns permanence.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, refactoring, design`

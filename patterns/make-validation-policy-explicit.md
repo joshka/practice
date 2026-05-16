@@ -4,6 +4,9 @@
 
 - Name: `Make Validation Policy Explicit`
 - ID: `make-validation-policy-explicit`
+- Summary: Validation rules often differ by workflow even when they touch the same field. Name the
+  policy at the boundary with distinct constructors, modes, policy types, or parsed values once
+  real competing rules exist.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, validation`

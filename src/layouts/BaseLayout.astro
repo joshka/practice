@@ -204,6 +204,7 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
       type ThemePreference = 'system' | 'light' | 'dark';
       type SearchEntry = {
         title: string;
+        id?: string;
         description: string;
         url: string;
         headings: string[];
@@ -300,6 +301,7 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
 
       function scoreSearchEntry(entry: SearchEntry, tokens: string[], query: string): SearchResult | undefined {
         const title = normalizeSearchText(entry.title);
+        const id = normalizeSearchText(entry.id || '');
         const description = normalizeSearchText(entry.description);
         const headings = normalizeSearchText(entry.headings.join(' '));
         const text = normalizeSearchText(entry.text);
@@ -308,11 +310,15 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
 
         let score = 0;
         if (title === query) score += 80;
+        if (id === query) score += 95;
         if (title.startsWith(query)) score += 45;
+        if (id.startsWith(query)) score += 65;
         if (title.includes(query)) score += 30;
+        if (id.includes(query)) score += 45;
         if (description.includes(query)) score += 12;
         if (headings.includes(query)) score += 18;
         for (const token of tokens) {
+          if (id.includes(token)) score += 18;
           if (title.includes(token)) score += 12;
           if (headings.includes(token)) score += 8;
           if (description.includes(token)) score += 4;
@@ -337,6 +343,7 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
           .map((result, index) => `
             <a class="site-search__result" href="${result.url}" data-search-result data-index="${index}" aria-selected="${index === selectedSearchIndex}">
               <strong>${escapeSearchHtml(result.title)}</strong>
+              ${result.id ? `<small>${escapeSearchHtml(result.id)}</small>` : ''}
               <span>${escapeSearchHtml(result.description || result.snippet)}</span>
             </a>
           `)

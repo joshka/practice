@@ -4,6 +4,9 @@
 
 - Name: `Record Agent Operating Lessons`
 - ID: `record-agent-operating-lessons`
+- Summary: Agent work produces useful operational knowledge that is easy to lose after the task
+  succeeds or fails. Record reusable lessons in the right durable place so future runs inherit the
+  improved workflow instead of rediscovering it.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, observability, handoff`

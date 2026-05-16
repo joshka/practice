@@ -4,6 +4,9 @@
 
 - Name: `Write Actionable Error Messages`
 - ID: `write-actionable-error-messages`
+- Summary: Accurate error messages can still leave users, operators, callers, or support unable to
+  act. Write for the boundary where the message appears, including the cause, next step, and
+  diagnostic context that audience can use.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `errors, documentation, support`

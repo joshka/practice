@@ -4,6 +4,9 @@
 
 - Name: `Encode Nonfunctional Requirements`
 - ID: `encode-nonfunctional-requirements`
+- Summary: Performance, security, accessibility, privacy, and reliability expectations are easy to
+  lose when they live only in prose. Encode important requirements in tests, budgets, schemas,
+  automation, or review gates where the system can keep enforcing them.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, architecture, quality`

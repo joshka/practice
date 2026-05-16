@@ -4,6 +4,9 @@
 
 - Name: `Make Plans Versioned Artifacts`
 - ID: `make-plans-versioned-artifacts`
+- Summary: Chat-only plans are difficult to review, resume, cite, or keep current once work spans
+  sessions. Put substantial plans in the repository with goals, constraints, progress, decisions,
+  and open questions, while keeping obvious one-step edits lightweight.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, planning, documentation`

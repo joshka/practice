@@ -4,6 +4,9 @@
 
 - Name: `Remediate Doc Drift`
 - ID: `remediate-doc-drift`
+- Summary: Documentation drift misleads readers when behavior, workflow, or project shape has moved
+  on. Fix the source of truth and nearby references together, choosing whether the code or the doc
+  represents the intended contract.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, maintenance, correctness`

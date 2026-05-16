@@ -4,6 +4,9 @@
 
 - Name: `Verify With Canaries Before Cutover`
 - ID: `verify-with-canaries-before-cutover`
+- Summary: Automation is risky when production cutover is the first real proof. Use a canary path,
+  rollback plan, and human approval for operations with remote access, credentials, production data,
+  or long-lived service impact.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, deployment, verification`

@@ -4,6 +4,9 @@
 
 - Name: `Return Structured Errors`
 - ID: `return-structured-errors`
+- Summary: String-only errors hide the stable facts callers need for branching, retrying, logging,
+  and support. Return structured error values with machine-readable kinds and context, then render
+  audience-specific messages at the boundary.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, errors, api-design`

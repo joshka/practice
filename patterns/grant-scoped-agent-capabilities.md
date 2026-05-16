@@ -4,6 +4,9 @@
 
 - Name: `Grant Scoped Agent Capabilities`
 - ID: `grant-scoped-agent-capabilities`
+- Summary: Broad tool access increases the blast radius of agent mistakes and makes review harder.
+  Grant the smallest capabilities needed for the current task, then expand deliberately when the
+  work proves it needs more reach.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, security, tools`

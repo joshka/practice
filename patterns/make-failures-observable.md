@@ -4,6 +4,9 @@
 
 - Name: `Make Failures Observable`
 - ID: `make-failures-observable`
+- Summary: Errors without diagnostic context force future readers and operators to rediscover what
+  failed. Preserve typed errors while adding operation context, correlation, metrics, or logs at the
+  boundary that owns the meaning.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, errors, observability`

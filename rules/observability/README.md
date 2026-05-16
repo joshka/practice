@@ -9,22 +9,17 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 ## Rules
 
 - [`OBSERVABILITY-DISTINGUISH-FAILURE-STATES`](observability-distinguish-failure-states.md).
-  Distinguish partial, aborted, timed-out, denied, failed, and completed states. A timeout,
-  permission denial, user abort, partial write, and provider failure need different recovery paths.
-  Helps: Improves retry behavior, user support, and post-failure diagnosis.
+  Preserve status distinctions that change recovery, messaging, metrics, or debugging. Collapsing
+  timeouts, denials, aborts, partial work, and failures makes callers guess.
 - [`OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`](observability-keep-diagnostics-retention-safe.md).
-  Keep diagnostics safe for their retention boundary. Diagnostics that are safe in a local debug log
-  may be unsafe in long-lived telemetry, CI artifacts, PR comments, or user-visible error reports.
-  Helps: Keeps debugging useful while reducing privacy, compliance, and accidental disclosure risk.
-- [`OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`](observability-log-at-owned-boundaries.md). Log at owned
-  boundaries. The best diagnostic point is usually where code still knows the operation, caller
-  intent, input class, and external system boundary. Helps: Produces logs that identify the
-  responsible operation without duplicating noise at every layer.
+  Match diagnostic detail to its audience and retention period. Redact or summarize sensitive values
+  while preserving enough operation context to debug.
+- [`OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`](observability-log-at-owned-boundaries.md). Emit logs
+  where the code still knows the operation, intent, input class, and external boundary. That
+  placement gives useful context without duplicating noise through every layer.
 - [`OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`](observability-preserve-operation-context-in-errors.md).
-  Preserve operation context in errors. An error such as "not found" or "permission denied" is
-  rarely enough. Helps: Shortens debugging by carrying the missing operation and resource context
-  with the failure.
-- [`OBSERVABILITY-SURFACE-DURABLE-FAILURES`](observability-surface-durable-failures.md). Do not hide
-  durable failures only in UI logs. A durable failure that only appears in an ephemeral UI log can
-  disappear before a maintainer or user can act. Helps: Makes persistent failures visible after the
-  immediate UI event is gone.
+  Carry the operation, resource, provider, input class, and policy context that explain a failure.
+  Stable identifiers and sanitized summaries shorten debugging without exposing payloads.
+- [`OBSERVABILITY-SURFACE-DURABLE-FAILURES`](observability-surface-durable-failures.md). Give
+  persistent failures a stable status, error surface, or retry path instead of only an ephemeral UI
+  log. Users and maintainers need something actionable after the moment passes.

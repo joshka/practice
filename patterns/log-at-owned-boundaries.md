@@ -4,6 +4,9 @@
 
 - Name: `Log At Owned Boundaries`
 - ID: `log-at-owned-boundaries`
+- Summary: Logs become noisy and inconsistent when every helper records the same failure from a
+  partial viewpoint. Log where the code owns the operation and can attach useful, safe diagnostic
+  context.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `logging, observability, rust`

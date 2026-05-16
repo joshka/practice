@@ -4,6 +4,9 @@
 
 - Name: `Use AGENTS.md As Map`
 - ID: `use-agents-md-as-map`
+- Summary: A giant `AGENTS.md` grows stale and crowds out the context the agent actually needs.
+  Keep it as a compact map to canonical guides, patterns, commands, and safety rules, with details
+  living in owned files.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, documentation, context`

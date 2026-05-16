@@ -4,6 +4,9 @@
 
 - Name: `Garbage Collect Agent Drift`
 - ID: `garbage-collect-agent-drift`
+- Summary: Agent-generated notes, plans, and assumptions can outlive their usefulness and mislead
+  later work. Periodically remove, update, or promote them so durable guidance stays current and
+  temporary scaffolding does not become false context.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, maintenance, refactoring`

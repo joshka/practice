@@ -4,6 +4,9 @@
 
 - Name: `Chunk Statements`
 - ID: `chunk-statements`
+- Summary: Dense prose asks readers to hold too many claims at once and hides which idea needs
+  review. Split statements into coherent chunks so each paragraph, bullet, or sentence carries one
+  inspectable purpose.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, formatting`

@@ -4,6 +4,9 @@
 
 - Name: `Turn Feedback Into Guidance`
 - ID: `turn-feedback-into-guidance`
+- Summary: Repeated steering signals that a preference is missing from durable repo guidance or
+  tooling. Fix the current artifact and encode the reusable lesson at the right level when the
+  feedback applies beyond one line.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, feedback, process`

@@ -4,6 +4,9 @@
 
 - Name: `Optimize For Long Term Coherence`
 - ID: `optimize-for-long-term-coherence`
+- Summary: Agent-produced work can satisfy a prompt while weakening the system's future concepts,
+  names, boundaries, and tests. Choose the smallest change that preserves long-term direction
+  without using coherence as an excuse for speculative architecture.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, maintainability, design`

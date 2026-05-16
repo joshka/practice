@@ -4,6 +4,9 @@
 
 - Name: `Prefer Durable Summaries`
 - ID: `prefer-durable-summaries`
+- Summary: Important context is costly when every reader must rediscover it from implementation
+  details, but exhaustive narration becomes stale. Capture stable invariants, rationale, boundaries,
+  or side effects in short summaries that survive nearby changes.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, summaries, rationale`

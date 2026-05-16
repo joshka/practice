@@ -4,6 +4,9 @@
 
 - Name: `Give Agents Objectives With Boundaries`
 - ID: `give-agents-objectives-with-boundaries`
+- Summary: Agents perform better when they know both the desired outcome and the limits around
+  scope, authority, and risk. State objectives with concrete boundaries so the agent can act
+  autonomously without expanding the task accidentally.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, delegation, workflow`

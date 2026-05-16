@@ -4,6 +4,9 @@
 
 - Name: `Review Proof Not Just Code`
 - ID: `review-proof-not-just-code`
+- Summary: Code review is weaker when it inspects the diff without checking whether the claimed
+  behavior was proven. Ask for the smallest trustworthy evidence that the change works and that the
+  likely failure mode was covered.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, review, verification`

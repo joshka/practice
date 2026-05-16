@@ -4,6 +4,9 @@
 
 - Name: `Prove Security Impact`
 - ID: `prove-security-impact`
+- Summary: Security reports create noise when they imply exploitability without showing reachability
+  or consequence. Prove the attacker path and impact, or clearly label the finding as an unproven
+  hypothesis.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, security, review`

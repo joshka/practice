@@ -4,6 +4,8 @@
 
 - Name: `Public API Changes Have Downstream Cost`
 - ID: `public-api-changes-have-downstream-cost`
+- Summary: `Public API edits impose migration, semver, documentation, and integration costs beyond
+  the local diff. Prefer additive paths and explicit migration proof when a break is justified.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api, semver, libraries`

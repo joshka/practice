@@ -4,6 +4,8 @@
 
 - Name: `Separate Structure From Behavior`
 - ID: `separate-structure-from-behavior`
+- Summary: Diffs that mix moves, renames, formatting, and behavior make review and rollback harder.
+  Separate behavior-preserving structure from rule changes when each can be checked on its own.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `refactoring, review, workflow`

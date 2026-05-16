@@ -4,6 +4,9 @@
 
 - Name: `Shape Tool Output For Agents`
 - ID: `shape-tool-output-for-agents`
+- Summary: Human-oriented tool output can bury the failure signal an agent needs to act. Prefer
+  quiet summaries, structured output, and saved full logs so agents see the actionable slice first
+  without losing debugging context.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, tooling, context`

@@ -4,6 +4,9 @@
 
 - Name: `Report Verification Honestly`
 - ID: `report-verification-honestly`
+- Summary: Handoffs become risky when verification is overstated, omitted, or blurred with
+  assumptions. Report exactly what ran, what passed or failed, what was not checked, and what risk
+  remains.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `testing, workflow, agents`

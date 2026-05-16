@@ -4,6 +4,8 @@
 
 - Name: `Keep Docs Near Their Subject`
 - ID: `keep-docs-near-their-subject`
+- Summary: Documentation drifts when it is far from the code, policy, or workflow it explains. Put
+  guidance close enough that maintainers naturally update it with the thing it describes.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, locality, maintenance`

@@ -9,6 +9,7 @@ export function GET() {
 
     return {
       title: page.title,
+      id: page.metadata.id,
       description: page.description,
       url: withBase(page.route),
       headings: page.sections.map((section) => section.title),

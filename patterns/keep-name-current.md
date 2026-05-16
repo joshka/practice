@@ -4,6 +4,8 @@
 
 - Name: `Keep Name Current`
 - ID: `keep-name-current`
+- Summary: Names that preserve old intent make readers distrust the code or documentation around
+  them. Rename when the concept changes enough that the old name now teaches the wrong model.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, naming, maintenance`

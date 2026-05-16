@@ -4,6 +4,9 @@
 
 - Name: `Preserve Intent Over Literalism`
 - ID: `preserve-intent-over-literalism`
+- Summary: Literal compliance can violate the user's actual goal when a request touches risky,
+  privileged, or externally visible actions. Infer the safe operating intent and stop when policy,
+  review expectations, or irreversible consequences conflict with the words alone.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, judgment, safety`

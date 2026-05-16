@@ -4,6 +4,9 @@
 
 - Name: `Move Declaration And Initialization Together`
 - ID: `move-declaration-and-initialization-together`
+- Summary: A value declared before it is valid makes readers track an empty slot and its future
+  assignment. Declare values where they become meaningful, using immutable locals and narrow scopes
+  unless evaluation order requires more care.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, readability, state`

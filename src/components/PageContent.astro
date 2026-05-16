@@ -1,6 +1,6 @@
 ---
 import KindIcon from './KindIcon.astro';
-import { withBase } from '../lib/site';
+import { allPublicPages, withBase } from '../lib/site';
 import type { MarkdownPage } from '../lib/site';
 
 type Props = {
@@ -10,14 +10,17 @@ type Props = {
 const { page } = Astro.props;
 const kind = pageKind(page.repoPath);
 const chips = metadataChips(page);
-const showHeaderDescription = kind !== 'rule' && kind !== 'agent-snippet';
+const isReviewable = isReviewableKind(kind);
+const showHeaderDescription = !isReviewable && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
 const reviewNote = reviewCopyMarkdown(page, kind);
 const heroTitle = page.title;
-const heroId = kind === 'rule' && page.metadata.id && page.title !== page.metadata.id
+const heroId = isReviewable && page.metadata.id && page.title !== page.metadata.id
   ? page.metadata.id
   : undefined;
+const summary = isReviewable ? page.metadata.summary : undefined;
+const relatedPages = isReviewable ? relatedGuidancePages(page) : [];
 
 type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
@@ -69,8 +72,12 @@ function pageIconKind(value: string): IconKind | undefined {
   return undefined;
 }
 
+function isReviewableKind(value: string): boolean {
+  return value === 'rule' || value === 'pattern' || value === 'principle';
+}
+
 function reviewCopyMarkdown(page: MarkdownPage, kind: string): string | undefined {
-  if (kind !== 'rule' && kind !== 'pattern' && kind !== 'principle') return undefined;
+  if (!isReviewableKind(kind)) return undefined;
 
   const summary = reviewSummary(page, kind);
   if (!summary) return undefined;
@@ -91,6 +98,23 @@ function reviewSummary(page: MarkdownPage, kind: string): string {
   }[kind];
   const section = page.sections.find((section) => section.title.toLowerCase() === preferredSection);
   return (section?.markdown || page.description).trim();
+}
+
+function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
+  const related = page.metadata.related
+    ?.split(',')
+    .map((value) => value.trim().toLowerCase())
+    .filter(Boolean) ?? [];
+  if (related.length === 0) return [];
+
+  const pagesById = new Map(
+    allPublicPages()
+      .filter((candidate) => candidate.metadata.id && candidate.route !== page.route)
+      .map((candidate) => [candidate.metadata.id.toLowerCase(), candidate]),
+  );
+  return related
+    .map((id) => pagesById.get(id))
+    .filter((candidate): candidate is MarkdownPage => Boolean(candidate));
 }
 ---
 
@@ -121,6 +145,27 @@ function reviewSummary(page: MarkdownPage, kind: string): string {
   </header>
 
   {showIntro && page.introHtml && <div class="prose detail-intro" set:html={page.introHtml} />}
+
+  {summary && (
+    <section class="detail-summary" aria-labelledby="detail-summary-title">
+      <h2 id="detail-summary-title">Summary</h2>
+      <p>{summary}</p>
+    </section>
+  )}
+
+  {relatedPages.length > 0 && (
+    <nav class="detail-related" aria-labelledby="detail-related-title">
+      <h2 id="detail-related-title">Related</h2>
+      <div class="detail-related__links">
+        {relatedPages.map((related) => (
+          <a href={withBase(related.route)}>
+            <strong>{related.metadata.id}</strong>
+            <span>{related.title}</span>
+          </a>
+        ))}
+      </div>
+    </nav>
+  )}
 
   <div class="detail-sections">
     {page.sections.map((section) => (

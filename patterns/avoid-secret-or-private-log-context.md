@@ -4,6 +4,9 @@
 
 - Name: `Avoid Secret Or Private Log Context`
 - ID: `avoid-secret-or-private-log-context`
+- Summary: Diagnostics can outlive their request and move through systems with different access
+  rules. Record safe identifiers and classifications at the boundary that understands data
+  sensitivity, using explicit protected workflows for rare sensitive evidence.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `logging, privacy, security`

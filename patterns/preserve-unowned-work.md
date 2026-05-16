@@ -4,6 +4,9 @@
 
 - Name: `Preserve Unowned Work`
 - ID: `preserve-unowned-work`
+- Summary: Shared working copies may contain edits from another person or an earlier task. Check
+  state before editing, work around unrelated changes, and stop for direction when unowned work
+  blocks the current change.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `workflow, version-control, agents`

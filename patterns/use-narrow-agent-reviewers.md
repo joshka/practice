@@ -4,6 +4,9 @@
 
 - Name: `Use Narrow Agent Reviewers`
 - ID: `use-narrow-agent-reviewers`
+- Summary: Broad review prompts often miss specific risks or return vague feedback. Add focused
+  agent reviewers for important, repeatable concerns when narrow context will produce more useful
+  findings than another general pass.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, review, guardrails`

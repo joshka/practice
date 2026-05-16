@@ -4,6 +4,9 @@
 
 - Name: `Practice Agent Workouts`
 - ID: `practice-agent-workouts`
+- Summary: High-risk or repeated agent workflows are unreliable when first exercised during real
+  work. Build safe practice tasks with explicit win conditions so the workflow, skill, or runbook
+  can improve before pressure arrives.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, skills, reliability`

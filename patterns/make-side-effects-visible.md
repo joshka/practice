@@ -4,6 +4,9 @@
 
 - Name: `Make Side Effects Visible`
 - ID: `make-side-effects-visible`
+- Summary: Callers need to know when an operation touches persistence, networks, time, global state,
+  caches, metrics, processes, or other external systems. Make caller-relevant effects visible in
+  names, docs, or examples without documenting implementation noise.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, api-design, side-effects`

@@ -4,6 +4,9 @@
 
 - Name: `Preserve Local Doc Voice`
 - ID: `preserve-local-doc-voice`
+- Summary: Documentation edits can become bland or mismatched even when they are grammatically
+  correct. Patch only what needs changing while keeping local terms, structure, density, and tone
+  unless the existing voice blocks clarity or accessibility.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, style, agents`

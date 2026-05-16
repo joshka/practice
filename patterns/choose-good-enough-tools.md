@@ -4,6 +4,9 @@
 
 - Name: `Choose Good Enough Tools`
 - ID: `choose-good-enough-tools`
+- Summary: Tooling choices can become a distraction when the available tool is already adequate for
+  the risk. Prefer the simplest tool that gives trustworthy feedback, upgrading only when accuracy,
+  repeatability, or scale requires it.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `tooling, judgment, pragmatism`

@@ -4,6 +4,9 @@
 
 - Name: `Choose Doc Pass Depth`
 - ID: `choose-doc-pass-depth`
+- Summary: Documentation work ranges from quick polish to structural repair, and using the wrong
+  pass depth wastes attention. Match the edit depth to the evidence, risk, and review need before
+  changing the document.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, workflow, review`

@@ -91,1195 +91,930 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 
 ### Agent Workflow
 
-- [`AGENT-BUDGET-FOR-FEEDBACK-LOOPS`](agent-workflow/agent-budget-for-feedback-loops.md). Budget
-  tokens and time for feedback loops. Agent work needs room for reading, editing, running checks,
-  inspecting failures, and reporting proof. Helps: Prevents premature handoff and makes validation
-  failures part of the planned work instead of a surprise.
+- [`AGENT-BUDGET-FOR-FEEDBACK-LOOPS`](agent-workflow/agent-budget-for-feedback-loops.md). Reserve
+  enough time and tokens for checks, failure inspection, and handoff proof. Planning for the
+  feedback loop keeps validation from being squeezed out after the first edit.
 - [`AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`](agent-workflow/agent-define-good-before-judgment-heavy-work.md).
-  Define good before judgment-heavy work. Agents are weak at guessing taste after the fact. Helps:
-  Produces better first-pass output and reduces rewrites caused by hidden taste criteria.
+  State the quality bar before work where taste, naming, API shape, or review expectations matter.
+  Clear criteria give the agent goalposts before it creates a large speculative diff.
 - [`AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`](agent-workflow/agent-distill-from-blessed-artifacts.md).
   Study accepted code, docs, tests, and reviews first. Adapt local convention to this task.
 - [`AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`](agent-workflow/agent-encode-nonfunctional-requirements.md).
-  Encode nonfunctional requirements. Requirements such as latency, accessibility, reviewability,
-  security, privacy, determinism, and downstream compatibility are easy for agents to miss because
-  they may not appear in the immediate diff. Helps: Keeps invisible constraints from being
-  discovered only during review or production use.
+  Put invisible constraints such as security, accessibility, latency, and compatibility near the
+  task. Encoding them upfront makes those requirements part of the implementation target.
 - [`AGENT-GIVE-OBJECTIVES-WITH-BOUNDARIES`](agent-workflow/agent-give-objectives-with-boundaries.md).
-  Give agents objectives with boundaries, not brittle step lists. A brittle step list can make an
-  agent follow the wrong route even after the codebase shows a better one. Helps: Preserves intent
-  while letting the agent adapt to real repo structure and discovered constraints.
-- [`AGENT-GRANT-SCOPED-CAPABILITIES`](agent-workflow/agent-grant-scoped-capabilities.md). Grant
-  scoped agent capabilities. Agents with broad authority can accidentally mutate external systems,
-  publish state, delete files, or read secrets unrelated to the task. Helps: Reduces blast radius
-  and makes permission boundaries auditable.
-- [`AGENT-ISOLATE-WORKSPACES-BY-TASK`](agent-workflow/agent-isolate-workspaces-by-task.md). Isolate
-  agent workspaces by task. Parallel agent tasks can overwrite each other, mix unrelated diffs, or
-  make validation ambiguous when they share one working copy. Helps: Keeps concurrent work
-  reviewable and prevents one task from inheriting another task's partial edits.
-- [`AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`](agent-workflow/agent-keep-durable-context-on-disk.md). Keep
-  durable context on disk. Prompt context disappears, compacts, or becomes invisible to future
-  sessions. Helps: Prevents accepted guidance from being trapped in one chat and makes long-running
-  work resumable.
-- [`AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`](agent-workflow/agent-keep-secrets-out-of-context.md). Keep
-  secrets out of context. Secrets pasted into prompts, docs, logs, or test output can be retained,
-  repeated, or committed accidentally. Helps: Reduces credential leakage and keeps shared artifacts
-  safe to publish.
-- [`AGENT-MAKE-BAD-OUTPUT-HARD`](agent-workflow/agent-make-bad-output-hard.md). Make bad output
-  mechanically hard. Repeated prompt reminders are weaker than a repo that rejects bad output
-  mechanically. Helps: Turns recurring review feedback into enforcement and lowers the cost of good
-  output.
+  Describe the outcome, scope, non-goals, forbidden moves, and proof instead of handing over brittle
+  steps. Boundaries preserve intent while leaving room for local implementation choices.
+- [`AGENT-GRANT-SCOPED-CAPABILITIES`](agent-workflow/agent-grant-scoped-capabilities.md). Give
+  agents only the permissions and external authority the task actually needs. Scoped capability
+  keeps progress possible while reducing accidental mutation, publication, or exposure.
+- [`AGENT-ISOLATE-WORKSPACES-BY-TASK`](agent-workflow/agent-isolate-workspaces-by-task.md). Put
+  separable or parallel agent work in its own workspace or source-control lane. Isolation keeps
+  diffs, validation, and ownership clear when multiple changes are in flight.
+- [`AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`](agent-workflow/agent-keep-durable-context-on-disk.md).
+  Store project facts, accepted decisions, and long-lived operating notes in files instead of
+  relying on chat context. Durable context makes future sessions and reviews resumable.
+- [`AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`](agent-workflow/agent-keep-secrets-out-of-context.md). Avoid
+  putting real credentials or sensitive values into prompts, docs, logs, and tests. Keeping secrets
+  out of context reduces leakage through retained, repeated, or committed text.
+- [`AGENT-MAKE-BAD-OUTPUT-HARD`](agent-workflow/agent-make-bad-output-hard.md). Turn recurring bad
+  agent output into scripts, templates, lint, or checks that fail fast. Mechanical enforcement
+  lowers review cost more reliably than repeated prompt reminders.
 - [`AGENT-PREFER-BUILD-PRESERVING-EDITS`](agent-workflow/agent-prefer-build-preserving-edits.md).
-  Prefer build-preserving edits when the route stays natural. A long period of broken build state
-  hides which edit caused the failure and makes agent recovery harder. Helps: Improves
-  bisectability, local recovery, and confidence during multi-step edits.
-- [`AGENT-PREFER-IN-DISTRIBUTION-TOOLS`](agent-workflow/agent-prefer-in-distribution-tools.md).
-  Prefer in-distribution tools for agent-facing work. Agents are more reliable with tools that match
-  their trained and tested workflow. Helps: Reduces tool misuse and makes commands easier for humans
-  to rerun.
-- [`AGENT-PREFER-TOOLS-OVER-PROMPTS`](agent-workflow/agent-prefer-tools-over-prompts.md). Prefer
-  tools and checks over repeated prompting. If the same instruction must be repeated to every agent,
-  it belongs in a tool, check, template, or guide. Helps: Converts repeated steering into durable
-  enforcement and frees human attention for ambiguous decisions.
+  Make multi-step edits in slices that keep compilation or tests close to green when the route
+  allows it. Build-preserving work keeps failures close to the edit that caused them.
+- [`AGENT-PREFER-IN-DISTRIBUTION-TOOLS`](agent-workflow/agent-prefer-in-distribution-tools.md). Use
+  standard project commands, supported CLIs, and documented workflows before inventing ad hoc tool
+  paths. Familiar tools reduce misuse and make agent output easier to rerun.
+- [`AGENT-PREFER-TOOLS-OVER-PROMPTS`](agent-workflow/agent-prefer-tools-over-prompts.md). Move
+  repeated instructions into tools, checks, templates, or durable guides. Tooling catches failures
+  even when prompts are short, compacted, or interpreted differently.
 - [`AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`](agent-workflow/agent-present-concrete-next-options.md).
-  Present concrete next options after validated chunks. After a validated chunk, the maintainer
-  needs to decide what happens next, not decode vague choices such as "continue" or "more cleanup."
-  Naming the next chunk and why to choose it makes review flow cheap and keeps scope under human
-  control. Helps: Makes iterative work easy to steer and prevents agents from silently choosing
-  preference-sensitive follow-ups.
-- [`AGENT-PRESERVE-HUMAN-WORK`](agent-workflow/agent-preserve-human-work.md). Preserve unrelated
-  human work. Agents share a working tree with human edits and sometimes other agents. Helps:
-  Protects user work and keeps diffs limited to the task the agent owns.
-- [`AGENT-PRESERVE-INTENT`](agent-workflow/agent-preserve-intent.md). Preserve intent over
-  literalism. Literal execution can satisfy the words while missing the goal. Helps: Keeps agent
-  work aligned with the user's real objective instead of producing brittle literal compliance.
-- [`AGENT-PRODUCE-REVIEW-PACKETS`](agent-workflow/agent-produce-review-packets.md). Produce review
-  packets for agent output. Agent output often spans code, docs, generated artifacts, and validation
-  logs. Helps: Makes agent output reviewable and reduces trust gaps around what was actually
-  checked.
-- [`AGENT-PROVE-SECURITY-IMPACT`](agent-workflow/agent-prove-security-impact.md). Prove security
-  impact separately from hypotheses. Security claims are easy to overstate. Helps: Makes security
-  review concrete and keeps mitigations tied to demonstrated risk.
-- [`AGENT-REPORT-PROOF-IN-HANDOFFS`](agent-workflow/agent-report-proof-in-handoffs.md). Report
-  proof, not confidence, in agent handoffs. Confidence language is not evidence. Helps: Improves
-  handoff quality and makes residual risk visible.
+  After a validated chunk, offer specific follow-up chunks with their tradeoffs. Concrete options
+  let the maintainer steer scope without decoding vague requests to continue.
+- [`AGENT-PRESERVE-HUMAN-WORK`](agent-workflow/agent-preserve-human-work.md). Inspect and protect
+  unrelated local edits before changing files. Preserving human work keeps the task diff focused and
+  avoids destroying unfinished or intentional changes.
+- [`AGENT-PRESERVE-INTENT`](agent-workflow/agent-preserve-intent.md). Optimize for the user's
+  underlying objective when literal wording would miss the point. Intent-preserving work keeps
+  changes aligned with the real readability, review, or behavior goal.
+- [`AGENT-PRODUCE-REVIEW-PACKETS`](agent-workflow/agent-produce-review-packets.md). Hand off agent
+  work with purpose, changed files, evidence, skipped checks, risks, and follow-ups. A review packet
+  lets maintainers inspect the output without replaying the session.
+- [`AGENT-PROVE-SECURITY-IMPACT`](agent-workflow/agent-prove-security-impact.md). Separate security
+  hypotheses from proof of reachability, exploitability, assets, and user impact. This keeps
+  prioritization and mitigation tied to demonstrated risk.
+- [`AGENT-REPORT-PROOF-IN-HANDOFFS`](agent-workflow/agent-report-proof-in-handoffs.md). Replace
+  confidence language with the exact checks, inspection, screenshots, and skipped validation behind
+  a handoff. Proof lets reviewers decide what to trust and what remains risky.
 - [`AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`](agent-workflow/agent-review-output-as-future-maintainer.md).
-  Review agent output from the perspective of a future maintainer who did not see the session. Agent
-  output can pass checks while depending on prompt-only context, vague names, hidden state,
-  over-broad abstractions, missing tests, or undocumented behavior changes. Helps: Catches agent
-  output that is locally plausible but hard to maintain after context disappears. - Turns review
-  from confidence assessment into durable artifact inspection.
+  Review agent output as someone who will not have the chat transcript. This keeps attention on
+  durable code, docs, tests, validation proof, and residual risk.
 - [`AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`](agent-workflow/agent-separate-notes-from-corrections.md).
-  Separate note capture from correction during fast review. During fast review, it is tempting for
-  an agent to fix each note immediately. Helps: Preserves review signal and turns clustered feedback
-  into better guidance or cleaner edits.
+  Capture fast-review notes before fixing them when there are multiple comments or unclear patterns.
+  Separating capture from correction preserves signal and supports coherent follow-up.
 - [`AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`](agent-workflow/agent-spend-human-attention-on-ambiguity.md).
-  Spend human attention on ambiguity. Agents can spend a lot of effort executing through an
-  unresolved decision. Helps: Uses human attention where it changes direction and lets agents handle
-  the well-bounded work after that.
-- [`AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`](agent-workflow/agent-suggest-local-override-files.md).
-  Suggest ignored agent override files for local-only repo context. Some agent instructions are true
-  only for one checkout: local jj topology, ignored plan directories, machine-specific paths, or
-  temporary repo notes. Helps: Separates local steering from shared policy and reduces accidental
-  leakage of machine-specific state.
-- [`AGENT-TURN-FEEDBACK-INTO-GUIDANCE`](agent-workflow/agent-turn-feedback-into-guidance.md). Turn
-  repeated feedback into durable guidance. Repeated corrections such as "show why," "name the next
-  thing," or "do not use abstract rule names" are process bugs. Helps: Converts review friction into
-  durable improvement of the workflow.
-- [`AGENT-USE-AGENTS-MD-AS-MAP`](agent-workflow/agent-use-agents-md-as-map.md). Use `AGENTS.md` as a
-  map, not the whole manual. `AGENTS.md` becomes hard to use when it tries to contain every rule,
-  example, and exception. Helps: Keeps agent instructions scannable and reduces context bloat
-  without losing durable guidance.
+  Ask for human judgment where product behavior, API compatibility, naming, or security posture is
+  still ambiguous. Resolving direction early prevents large speculative diffs.
+- [`AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`](agent-workflow/agent-suggest-local-override-files.md). Put
+  checkout-only facts in ignored override files instead of shared guidance. Local overrides keep
+  machine-specific steering useful without leaking it to every contributor.
+- [`AGENT-TURN-FEEDBACK-INTO-GUIDANCE`](agent-workflow/agent-turn-feedback-into-guidance.md).
+  Convert repeated review corrections into rules, templates, snippets, or checks. Durable guidance
+  fixes the workflow problem instead of requiring the same steering again.
+- [`AGENT-USE-AGENTS-MD-AS-MAP`](agent-workflow/agent-use-agents-md-as-map.md). Keep `AGENTS.md`
+  compact by using it to route agents to deeper guides and mechanisms. Treating it as a map
+  preserves startup context without losing durable project guidance.
 - [`AGENT-VERIFY-RISKY-CHANGES-WITH-CANARIES`](agent-workflow/agent-verify-risky-changes-with-canaries.md).
-  Verify risky changes with canaries before cutover. Some changes can pass local tests and still
-  fail when exposed to real traffic, real docs rendering, real provider state, or real users. Helps:
-  Reduces blast radius for deployment, integration, migration, and generated-behavior changes.
+  Use staged rollout, shadowing, dry runs, or partial publication for changes that can fail only
+  under real conditions. Canaries reduce blast radius while evidence accumulates.
 
 ### Explicit Boundaries Preserve Correctness
 
-- [`BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`](boundary/boundary-avoid-global-mutable-state.md). Avoid
-  global mutable state. Global mutable state hides ownership, ordering, reset, and concurrency
-  requirements. Helps: Improves test isolation, explicit lifecycle management, and reasoning about
-  shared state.
+- [`BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`](boundary/boundary-avoid-global-mutable-state.md). Keep
+  shared process state behind explicit owners, handles, synchronization, and reset policy. This
+  preserves test isolation and lifecycle reasoning while still allowing deliberate globals such as
+  caches or registries when their contract is visible.
 - [`BOUNDARY-CHOOSE-RESOURCE-IDENTITY-MODEL`](boundary/boundary-choose-resource-identity-model.md).
-  Choose the resource identity model up front. A system that mutates individual records behaves
-  differently from one that mutates record sets, files, sessions, handles, or whole documents.
-  Helps: Prevents reconciliation bugs caused by comparing or mutating the wrong unit of state.
+  Decide whether the boundary mutates records, sets, files, sessions, handles, or whole documents
+  before designing reconciliation. The chosen unit controls idempotency, matching, conflict
+  handling, and the cost of later migration.
 - [`BOUNDARY-DEFINE-COMPACTION-INVARIANTS`](boundary/boundary-define-compaction-invariants.md).
-  Define explicit budget and cut-point invariants for compaction. Compaction deletes, summarizes, or
-  moves information. Helps: Makes summarization, pruning, and context-window management testable and
-  reviewable.
-- [`BOUNDARY-DEFINE-HOOK-FAILURE-POLICY`](boundary/boundary-define-hook-failure-policy.md). Define
-  hook failure policy. Hooks can fail before, during, or after the main operation. Helps: Makes
-  extension, callback, and automation behavior predictable under failure.
+  State the budget and cut-point rules before deleting, summarizing, or moving context. Explicit
+  invariants make compaction reviewable and reduce the risk that later work treats lossy or
+  nondeterministic summaries as authoritative.
+- [`BOUNDARY-DEFINE-HOOK-FAILURE-POLICY`](boundary/boundary-define-hook-failure-policy.md). Specify
+  whether each hook class blocks, retries, logs and continues, rolls back, or leaves partial state.
+  This gives extension points predictable failure behavior without forcing one global answer onto
+  every hook.
 - [`BOUNDARY-DISTINGUISH-INPUT-CLASSES`](boundary/boundary-distinguish-input-classes.md). Keep
-  unknown, unsupported, denied, and preserved inputs distinct. Unknown, unsupported, denied, and
-  preserved inputs require different treatment. Helps: Preserves compatibility semantics and gives
-  callers actionable errors.
+  unknown, unsupported, denied, and preserved inputs in separate result or error paths. The
+  distinction protects compatibility, authorization messaging, and recovery behavior while allowing
+  small internal parsers to stay simpler.
 - [`BOUNDARY-EXPOSE-PARTIAL-STREAM-OUTPUT`](boundary/boundary-expose-partial-stream-output.md).
-  Expose partial provider-stream output without making it authoritative too early. Provider streams
-  often deliver partial tokens, chunks, or events before the final authoritative result. Helps:
-  Supports progress and diagnostics while keeping final state promotion explicit.
+  Surface streaming tokens, chunks, or events as provisional output until completion promotes a
+  final result. Callers get progress and diagnostics without corrupting authoritative state with
+  partial provider data.
 - [`BOUNDARY-GIVE-TOOLS-IDENTITY-POLICY-AND-LIMITS`](boundary/boundary-give-tools-identity-policy-and-limits.md).
-  Give tool boundaries typed identity, policy, cancellation, and output limits. Tool calls need
-  typed identity, authorization policy, cancellation behavior, and output limits because they cross
-  from controlled code into filesystem, shell, network, provider, or user-visible effects. Helps:
-  Reduces tool blast radius and makes execution, cancellation, and diagnostics predictable.
+  Give effectful callable units typed identity, authorization policy, cancellation, and bounded
+  output. The added ceremony is reserved for real tool boundaries where auditability, recovery, and
+  blast-radius control matter.
 - [`BOUNDARY-GROUND-INTEGRATIONS-IN-PRIMARY-SOURCES`](boundary/boundary-ground-integrations-in-primary-sources.md).
-  Ground integration behavior in primary source documentation. Provider and platform behavior
-  changes, and memory of an integration is often wrong. Helps: Keeps adapters honest and makes
-  integration limits reviewable.
+  Base adapter behavior on provider docs, specs, or captured API responses before encoding local
+  assumptions. When primary sources are incomplete, label observations and inferences so guesses do
+  not become fake guarantees.
 - [`BOUNDARY-IDENTIFY-ANEMIC-STATE-MACHINES`](boundary/boundary-identify-anemic-state-machines.md).
-  Identify anemic state machines. Auth flows, UI state, async routing, setup wizards, and lifecycle
-  code often hide a state machine inside booleans and scattered conditionals. Helps: Makes stateful
-  behavior easier to test, extend, and reason about.
+  Replace scattered booleans and conditionals with named states and transitions when lifecycle
+  behavior is already complex. The move exposes illegal transitions and missing recovery paths
+  without over-formalizing simple linear code.
 - [`BOUNDARY-KEEP-BACKEND-ADAPTERS-AT-EDGE`](boundary/boundary-keep-backend-adapters-at-edge.md).
-  Keep backend adapters at the edge. Backend-specific APIs for terminals, storage, network
-  providers, or runtimes spread quickly if they enter core logic. Helps: Reduces coupling to
-  specific providers and makes alternate backends easier to test or add.
-- [`BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`](boundary/boundary-make-ambient-inputs-explicit.md). Make
-  ambient inputs explicit. Time, randomness, environment variables, current directories, locale,
-  terminal size, network clients, and process state can change behavior without appearing in
-  function signatures. Helps: Makes nondeterminism injectable and reduces hidden dependencies.
+  Keep provider-specific terminal, storage, network, and runtime APIs in adapter layers at the
+  boundary. Core logic stays stable and testable while real backend differences remain modeled
+  instead of hidden behind a false common API.
+- [`BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`](boundary/boundary-make-ambient-inputs-explicit.md). Pass
+  time, randomness, environment, locale, terminal size, network clients, and process state through
+  visible inputs when they affect behavior. Injecting only the relevant ambient values improves
+  tests and portability without spreading oversized context objects.
 - [`BOUNDARY-MAKE-DYNAMIC-CONFLICTS-DETERMINISTIC`](boundary/boundary-make-dynamic-conflicts-deterministic.md).
-  Make dynamic registration conflicts deterministic and explicit. Dynamic registration from plugins,
-  generated code, guests, or config can produce duplicate names, ordering conflicts, or shadowed
-  handlers. Helps: Makes extension systems predictable and diagnosable.
+  Define stable ordering, duplicate handling, priority, or override policy for dynamic
+  registrations. Deterministic conflict behavior prevents hash order or load timing from changing
+  which plugin, guest, generated item, or handler wins.
 - [`BOUNDARY-MAKE-EXEC-TOOLS-NONINTERACTIVE`](boundary/boundary-make-exec-tools-noninteractive.md).
-  Make exec-like tools noninteractive by default. Exec-like tools called by agents, CI, or
-  background tasks cannot safely wait for prompts, editors, pagers, or credential UI. Helps:
-  Prevents stuck jobs and makes tool execution reproducible in automation.
+  Default agent, CI, and background exec paths away from prompts, editors, pagers, and credential
+  UI. Commands then fail or complete predictably, while human interactive modes remain explicit
+  opt-ins.
 - [`BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`](boundary/boundary-make-policy-boundaries-explicit.md).
-  Route policy-sensitive side effects through an explicit policy boundary. Filesystem writes,
-  network calls, shell execution, external publication, telemetry, redaction, credential use, and
-  user-visible changes can be technically valid while still being disallowed for the current actor,
-  profile, environment, or approval state. Helps: Makes access, privacy, publication, and approval
-  decisions reviewable before side effects run. - Gives callers actionable denial, redaction,
-  fallback, and approval behavior.
-- [`BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`](boundary/boundary-model-real-upstream-surface.md). Model
-  each integration as the real upstream surface it exposes. Adapters should not pretend a provider
-  supports a cleaner or broader API than it actually does. Helps: Prevents local APIs from promising
-  behavior the upstream cannot provide.
-- [`BOUNDARY-NAME-LIFECYCLE-TRANSITIONS`](boundary/boundary-name-lifecycle-transitions.md). Treat
-  lifecycle transitions as named operations. Creation, activation, cancellation, teardown, reload,
-  and promotion are different operations with different invariants. Helps: Makes lifecycle behavior
-  explicit and keeps invalid ordering visible.
-- [`BOUNDARY-PARSE-UNCERTAINTY-AT-EDGE`](boundary/boundary-parse-uncertainty-at-edge.md). Push
-  uncertainty to the boundary, then pass trusted values inward. Raw strings, JSON, CLI args,
-  provider responses, and user input contain uncertainty. Helps: Concentrates validation policy and
-  reduces invalid states in core logic.
+  Route writes, network calls, shell execution, publication, telemetry, redaction, and credential
+  use through a visible policy decision before effects run. Callers can then understand allowed,
+  denied, redacted, fallback, preserved, and unsupported outcomes.
+- [`BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`](boundary/boundary-model-real-upstream-surface.md). Shape
+  local integration APIs around the provider's actual records, pages, permissions, rate limits, and
+  consistency behavior. Wrappers may simplify common paths, but they should not promise capabilities
+  the upstream cannot provide.
+- [`BOUNDARY-NAME-LIFECYCLE-TRANSITIONS`](boundary/boundary-name-lifecycle-transitions.md). Model
+  creation, activation, cancellation, teardown, reload, and promotion as named operations when they
+  carry different invariants. This keeps ordering, cleanup, retry, and recovery rules visible
+  without adding ceremony to simple constructed values.
+- [`BOUNDARY-PARSE-UNCERTAINTY-AT-EDGE`](boundary/boundary-parse-uncertainty-at-edge.md). Parse and
+  validate raw strings, JSON, CLI args, provider responses, and user input at the boundary before
+  passing values inward. Core logic receives typed invariants, while domain-specific checks that
+  require later context remain explicit policy decisions.
 - [`BOUNDARY-READ-NORMALIZE-COMPARE-MUTATE`](boundary/boundary-read-normalize-compare-mutate.md).
-  Reconcile external state by reading, normalizing, comparing, and then mutating. External state may
-  be formatted differently, reordered, defaulted, or partially managed by another actor. Helps:
-  Makes reconciliation idempotent and safer against provider drift.
-- [`BOUNDARY-REJECT-UNSUPPORTED-SHAPES`](boundary/boundary-reject-unsupported-shapes.md). Reject
-  unsupported shapes early with clear errors. Unsupported names, values, TTLs, targets, record
-  families, protocols, or config modes should fail at the boundary with a clear error. Helps: Makes
-  unsupported behavior explicit and prevents partial internal handling of invalid shapes.
-- [`BOUNDARY-REPORT-PROVIDER-DIAGNOSTICS`](boundary/boundary-report-provider-diagnostics.md). Report
-  freshness, permissions, budget, and load diagnostics from resource providers. When data comes from
-  a provider, callers need to know whether it is fresh, partial, permission-limited, rate-limited,
-  cached, or degraded. Helps: Helps users and agents interpret provider-backed results safely.
+  Reconcile external state by reading the current provider view, normalizing it, comparing intent,
+  and mutating only the real difference. The loop avoids destructive or noisy writes when
+  formatting, defaults, ordering, or outside actors create drift.
+- [`BOUNDARY-REJECT-UNSUPPORTED-SHAPES`](boundary/boundary-reject-unsupported-shapes.md). Fail
+  unsupported names, values, TTLs, targets, record families, protocols, or modes at the boundary
+  with clear errors. Preserve unknown data only when compatibility requires round-tripping and the
+  system can do so safely.
+- [`BOUNDARY-REPORT-PROVIDER-DIAGNOSTICS`](boundary/boundary-report-provider-diagnostics.md). Return
+  freshness, permission, budget, load, cache, partial-result, and degradation signals with
+  provider-backed data. These diagnostics help callers decide trust, retry, display, and support
+  behavior without exposing unactionable internals.
 - [`BOUNDARY-SEPARATE-PURE-CORE-FROM-EFFECTS`](boundary/boundary-separate-pure-core-from-effects.md).
-  Separate pure computation from rendering, I/O, or mutation when that gives tests a stable surface.
-  Rendering, filesystem access, network calls, terminal mutation, and global state make behavior
-  harder to test. Helps: Improves testability and keeps domain decisions visible without running the
-  environment.
-- [`BOUNDARY-SEPARATE-UI-AND-APP-STATE`](boundary/boundary-separate-ui-and-app-state.md). Keep UI
-  state separate from application-owned state. UI state such as selection, scroll offset, focus,
-  expanded rows, or transient input mode changes at a different rate than application-owned data.
-  Helps: Keeps UI behavior testable and prevents presentation concerns from leaking into core state.
-- [`BOUNDARY-STAGE-GENERATED-BEHAVIOR`](boundary/boundary-stage-generated-behavior.md). Stage
-  generated or reloadable behavior before promotion. Generated, reloadable, or plugin-provided
-  behavior can be malformed, stale, or incompatible with the current runtime. Helps: Makes dynamic
-  behavior safer and more recoverable.
+  Move domain computation away from rendering, I/O, mutation, and global state when effects obscure
+  the decision being tested. The split gives tests a stable surface, but should be skipped when it
+  adds indirection without a useful boundary.
+- [`BOUNDARY-SEPARATE-UI-AND-APP-STATE`](boundary/boundary-separate-ui-and-app-state.md). Keep
+  selection, focus, scroll, expansion, and transient input mode separate from application-owned data
+  when they change under different rules. The separation prevents rendering concerns from mutating
+  domain state while allowing tiny tools to stay simple until friction appears.
+- [`BOUNDARY-STAGE-GENERATED-BEHAVIOR`](boundary/boundary-stage-generated-behavior.md). Validate
+  generated, reloadable, or plugin-provided behavior in a staging path before promoting it over
+  known-good behavior. Staging adds recovery cost only where runtime-loaded or generated artifacts
+  can fail after deployment.
 - [`BOUNDARY-TRACK-DYNAMIC-REGISTRATION-PROVENANCE`](boundary/boundary-track-dynamic-registration-provenance.md).
-  Track provenance for registrations from extensions, guests, or generated code. When extensions,
-  guests, generated code, or config register handlers, commands, routes, or tools, later conflicts
-  and failures need to identify where each registration came from. Helps: Makes dynamic systems
-  auditable and easier to debug after registration conflicts or failures.
+  Store stable source names, versions, paths, owners, or generated identifiers for extension, guest,
+  generated-code, and config registrations. Provenance makes conflicts and failures diagnosable
+  while avoiding sensitive source details.
 - [`BOUNDARY-TREAT-TERMINAL-UI-AS-PRODUCT-SURFACE`](boundary/boundary-treat-terminal-ui-as-product-surface.md).
-  Treat terminal UI as a product surface with platform-specific contracts. Terminal UI is not just
-  debug output. Helps: Makes terminal behavior reviewable and protects users from layout and
-  interaction regressions.
+  Treat terminal layout, input, scroll behavior, color, viewport size, and platform differences as a
+  user-facing contract when people rely on the interface. This makes regressions reviewable without
+  requiring full visual testing for every tiny internal tool.
 - [`BOUNDARY-USE-CONSERVATIVE-TERMINAL-DEFAULTS`](boundary/boundary-use-conservative-terminal-defaults.md).
-  Use conservative terminal defaults. Terminals vary in color support, width, input behavior, fonts,
-  and accessibility settings. Helps: Improves first-run usability and cross-terminal compatibility.
+  Choose first-run terminal behavior that works with limited color, small viewports, ordinary
+  keyboard input, and varied fonts or accessibility settings. Advanced styling can remain opt-in or
+  capability-detected after the baseline is readable and usable.
 
 ### Change Shape
 
-- [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-shape/change-avoid-speculative-public-api.md). Do
-  not add public API for future features before the need is real. Public API turns a local guess
-  into a contract that users, downstream integrations, examples, tests, docs, and compatibility
-  promises may start depending on. Helps: Prevents accidental compatibility commitments to unused
-  names, types, and extension points. - Keeps review focused on the current behavior rather than a
-  guessed future design.
+- [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-shape/change-avoid-speculative-public-api.md). Add
+  public surfaces only when current or accepted callers need them. Waiting for concrete pressure
+  keeps compatibility commitments smaller and easier to validate.
 - [`CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`](change-shape/change-avoid-unnecessary-dependency-churn.md).
-  Do not include dependency churn unless it is necessary for the task. Dependency updates change
-  lockfiles, feature graphs, minimum versions, build output, and downstream compatibility. Helps:
-  Keeps dependency risk reviewable and prevents unrelated lockfile movement from obscuring the task.
+  Keep package, manifest, and lockfile movement out of unrelated work. Separate dependency changes
+  make build, compatibility, and downstream risk reviewable on their own.
 - [`CHANGE-IDENTIFY-OWNING-MODULE-BEFORE-EDITING`](change-shape/change-identify-owning-module-before-editing.md).
-  Identify the owning module before editing. Editing the first file that mentions a behavior can put
-  new logic in a caller, facade, test helper, or adapter that does not own the concept. Helps:
-  Reduces scattered fixes and makes future readers find the behavior where they expect it.
+  Find the component that owns the concept before adding or moving logic. That keeps invariants,
+  tests, and future maintenance close to the responsible code.
 - [`CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`](change-shape/change-isolate-controversial-changes.md).
-  Isolate controversial changes. Formatting, renames, API breaks, dependency changes, unsafe code,
-  large rewrites, and behavior changes all invite different review questions. Helps: Keeps
-  contentious decisions explicit and makes reverting or revising them cheaper.
-- [`CHANGE-MINIMAL-BUT-COMPLETE`](change-shape/change-minimal-but-complete.md). Keep each change
-  minimal but complete. A change that is too large hides risk, but a change that is too small can
-  leave reviewers with an unexplained half-step. Helps: Gives reviewers a coherent unit that can be
-  understood, validated, and reverted.
+  Put risky or contentious moves in their own review unit when they can stand alone. This lets
+  reviewers approve, reject, or revise the decision without incidental cleanup attached.
+- [`CHANGE-MINIMAL-BUT-COMPLETE`](change-shape/change-minimal-but-complete.md). Keep the diff as
+  small as the purpose allows while including the evidence that purpose needs. Reviewers should see
+  one coherent unit they can understand, validate, and revert.
 - [`CHANGE-PIN-BEHAVIOR-WITH-EARLY-TESTS`](change-shape/change-pin-behavior-with-early-tests.md).
-  Use early test changes to pin existing behavior when that makes behavior changes easier to review.
-  Before changing messy behavior, an early test can document what the system currently does. Helps:
-  Makes behavior changes safer and clarifies whether later diffs preserve or intentionally change
-  existing behavior.
-- [`CHANGE-PREFER-SMALL-FOLLOW-UPS`](change-shape/change-prefer-small-follow-ups.md). Prefer small
-  follow-up changes over overloaded changes. When a change uncovers adjacent cleanup, docs drift,
-  naming issues, or broader refactoring, folding all of it into the current diff can hide the
-  original purpose. Helps: Preserves review focus while still capturing useful nearby work.
-- [`CHANGE-PRESERVE-UNOWNED-WORK`](change-shape/change-preserve-unowned-work.md). Preserve unowned
-  work. A working tree can contain edits from the user, another agent, generated state, or an
-  earlier in-progress change. Helps: Protects parallel work and keeps the current diff accountable
-  for only the files it owns.
+  Add characterization tests before changing messy behavior when the existing contract is unclear.
+  The baseline separates intentional behavior changes from accidental drift.
+- [`CHANGE-PREFER-SMALL-FOLLOW-UPS`](change-shape/change-prefer-small-follow-ups.md). Move adjacent
+  cleanup or broader improvements into focused follow-up changes when the current diff can stand
+  alone. This preserves review focus while still capturing useful work.
+- [`CHANGE-PRESERVE-UNOWNED-WORK`](change-shape/change-preserve-unowned-work.md). Treat nearby edits
+  from users, agents, generators, or earlier changes as outside your ownership unless the task says
+  otherwise. Adapting around them protects parallel work and context.
 - [`CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`](change-shape/change-respect-generated-artifact-ownership.md).
-  Respect generated artifact ownership instead of hand-editing generated outputs. Generated
-  changelogs, lockfiles, code, snapshots, API listings, docs, and release files often have a source
-  input that owns their contents. Helps: Prevents manual generated-file edits from being lost or
-  fighting the generator. - Makes generator, template, and release-tooling changes reviewable at the
-  source.
+  Fix generated outputs through their source inputs, templates, metadata, or generator configuration
+  whenever those own the result. Hand edits are durable only when the tool workflow explicitly
+  supports curation.
 - [`CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`](change-shape/change-separate-structure-from-behavior.md).
-  Keep structure changes separate from behavior changes when the combined diff obscures review.
-  Structure changes ask reviewers to confirm the code means the same thing; behavior changes ask
-  them to confirm the system now does the right new thing. Helps: Makes reviews sharper and makes
-  structure-only changes easier to revert if they were wrong.
-- [`CHANGE-SYNC-GENERATED-ARTIFACTS`](change-shape/change-sync-generated-artifacts.md). Keep
-  generated artifacts in sync when they are part of the review surface. Generated files, lockfiles,
-  snapshots, API listings, and agent packs are part of the review surface when they are checked into
-  the repo. Helps: Prevents drift between source inputs and generated outputs.
-- [`CHANGE-TREAT-AND-AS-SCOPE-WARNING`](change-shape/change-treat-and-as-scope-warning.md). Treat
-  `and` in a change description as a scope warning. A change titled "fix parser and update docs and
-  clean API" often contains multiple review units. Helps: Catches accidental scope creep before the
-  diff becomes hard to split.
-- [`CHANGE-USE-ONE-PURPOSE-PER-CHANGE`](change-shape/change-use-one-purpose-per-change.md). Use one
-  purpose per change. One-purpose changes let reviewers ask one main question: did this accomplish
-  the stated goal? Helps: Improves review speed, revertability, and historical understanding of why
-  code changed.
+  Split refactoring or layout changes from behavior changes when the combined diff obscures intent.
+  Separate review units make meaning preservation and new behavior easier to check.
+- [`CHANGE-SYNC-GENERATED-ARTIFACTS`](change-shape/change-sync-generated-artifacts.md). Update
+  checked-in generated outputs when their source inputs change and they are part of review. Keeping
+  them aligned prevents consumers from seeing stale artifacts.
+- [`CHANGE-TREAT-AND-AS-SCOPE-WARNING`](change-shape/change-treat-and-as-scope-warning.md). Use
+  compound change descriptions as a prompt to inspect whether the work has more than one purpose.
+  The word is not a rule, but it catches scope creep while splitting is still cheap.
+- [`CHANGE-USE-ONE-PURPOSE-PER-CHANGE`](change-shape/change-use-one-purpose-per-change.md). Shape
+  each change around one review question and one reason for existing. Related tests, docs, and
+  generated files can travel with it when they support that same purpose.
 
 ### Docs Are Contracts
 
 - [`DOCS-ALIGN-README-AND-CRATE-RUSTDOC`](documentation/docs-align-readme-and-crate-rustdoc.md).
-  Keep crate README and crate-level Rustdoc aligned. Crate users often meet the README on GitHub and
-  the crate-level Rustdoc on docs.rs. Helps: Keeps the two main Rust entry points coherent and
-  reduces drift between examples, feature flags, and public API claims.
-- [`DOCS-AVOID-GENERATED-PROSE-TELLS`](documentation/docs-avoid-generated-prose-tells.md). Avoid
-  generated-prose tells. Generated prose often sounds polished while hiding that it did not learn
-  the project voice. Helps: Preserves local voice, keeps docs dense, and makes claims easier to
-  verify.
-- [`DOCS-AVOID-UNEARNED-PRAISE`](documentation/docs-avoid-unearned-praise.md). Avoid unearned
-  ranking and vague praise. Words such as "simple," "powerful," "best," and "easy" are often
-  unearned unless the doc states the comparison or tradeoff. Helps: Keeps claims credible and
-  replaces praise with observable behavior, constraints, or tradeoffs.
+  Keep README and crate-level Rustdoc consistent where users learn setup and supported behavior. Let
+  the pages serve different tasks, but prevent conflicting contracts.
+- [`DOCS-AVOID-GENERATED-PROSE-TELLS`](documentation/docs-avoid-generated-prose-tells.md). Replace
+  templated, UI-centered, or polished-but-vague phrasing with concrete behavior. Keep the local
+  voice trustworthy without cutting useful explanation.
+- [`DOCS-AVOID-UNEARNED-PRAISE`](documentation/docs-avoid-unearned-praise.md). Replace vague ranking
+  words with observable behavior, evidence, or tradeoffs. Use evaluative claims only when the basis
+  is explicit enough for readers to verify.
 - [`DOCS-BUILD-DOCS-LIKE-USERS-READ-THEM`](documentation/docs-build-docs-like-users-read-them.md).
-  Build Rust docs the way users will read them. Rust docs are consumed through rendered Rustdoc,
-  docs.rs feature configuration, intra-doc links, search, and examples. Helps: Catches rendered-doc
-  failures and makes documentation review match the user-facing artifact.
-- [`DOCS-CHOOSE-DOCUMENT-TYPE`](documentation/docs-choose-document-type.md). Choose the document
-  type before editing. A page that mixes tutorial, reference, explanation, decision record, and
-  changelog work makes every reader pay for every mode. Helps: Keeps docs navigable and prevents
-  local edits from expanding into accidental page rewrites.
-- [`DOCS-COMPARE-LIBRARIES-ACCURATELY`](documentation/docs-compare-libraries-accurately.md). Compare
-  nearby libraries accurately and charitably. Comparisons with nearby libraries affect trust. Helps:
-  Makes comparison docs credible and helps users choose based on real constraints instead of
-  positioning language.
-- [`DOCS-DISTINGUISH-EXAMPLE-ROLES`](documentation/docs-distinguish-example-roles.md). Distinguish
-  example roles instead of treating every example as the same kind of proof. Examples answer
-  different reader questions. Helps: Keeps example sets from becoming a pile of generic snippets. -
-  Makes review ask whether an example is canonical, illustrative, broad, integrative, or
-  interactive. - Helps maintainers decide which examples must compile, which examples can be
-  sketches, and which examples need explicit opt-in behavior.
+  Review rendered Rust documentation, links, cfg behavior, and examples in the modes users see.
+  Match validation depth to the risk of feature, metadata, or public example changes.
+- [`DOCS-CHOOSE-DOCUMENT-TYPE`](documentation/docs-choose-document-type.md). Pick the dominant
+  document mode before editing so the page serves one reader task well. Link out to secondary modes
+  instead of blending tutorial, reference, decisions, and changelog.
+- [`DOCS-COMPARE-LIBRARIES-ACCURATELY`](documentation/docs-compare-libraries-accurately.md). Check
+  current upstream behavior before comparing nearby libraries or crates. Charitable, source-backed
+  comparisons preserve trust while still helping users choose.
+- [`DOCS-DISTINGUISH-EXAMPLE-ROLES`](documentation/docs-distinguish-example-roles.md). Name whether
+  an example is focused, canonical, survey, integration, or showcase work. That role controls how
+  complete, copyable, and validated the example must be.
 - [`DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`](documentation/docs-document-lifecycle-and-side-effects.md).
-  Document lifecycle, ownership, side effects, feature flags, platform assumptions, and
-  compatibility when callers need them. APIs that open files, spawn tasks, touch terminals, allocate
-  resources, mutate global state, enable feature flags, or depend on platform behavior create
-  obligations for callers. Helps: Makes caller obligations visible and reduces misuse around
-  runtime, platform, feature, and cleanup behavior.
+  Document caller-visible lifecycle, ownership, platform, feature, and side-effect obligations. Skip
+  internal narration, but make operational responsibilities clear.
 - [`DOCS-EXPOSE-MOVE-RISK-AND-EXAMPLE-IN-PATTERNS`](documentation/docs-expose-move-risk-and-example-in-patterns.md).
-  Expose symptom, move, risk, example, and agent instruction in pattern-style guidance.
-  Pattern-style guidance is useful when a reader can recognize the situation and apply the move.
-  Helps: Makes patterns reviewable, teachable, and usable as agent instructions instead of vague
-  slogans.
-- [`DOCS-FRONT-LOAD-USEFUL-POINT`](documentation/docs-front-load-useful-point.md). Front-load the
-  useful point. Readers scan docs for the decision, command, invariant, or warning that matters.
-  Helps: Improves scanning and makes important commands, contracts, and caveats harder to miss.
-- [`DOCS-GROUP-RELATED-LIST-ITEMS`](documentation/docs-group-related-list-items.md). Group related
-  list items under named subheadings when a list grows past easy scanning. Long flat lists make
-  every item compete at the same level. Helps: Turns long checklists into coherent clusters that are
-  easier to scan, review, and extend. - Makes hidden rule families visible enough to promote into
-  standalone rule pages.
-- [`DOCS-HIDE-CATALOG-MECHANICS`](documentation/docs-hide-catalog-mechanics.md). Hide catalog
-  mechanics unless citation, automation, or contribution workflow depends on them. Rule IDs,
-  prefixes, domains, generated indexes, source layout, and UI containers are useful maintenance
-  machinery, but they are usually not the reader's task. Helps: Keeps site copy oriented around work
-  areas and artifacts instead of implementation taxonomy.
-- [`DOCS-KEEP-MARKDOWN-LINTABLE`](documentation/docs-keep-markdown-lintable.md). Keep Markdown
-  lintable. Formatting drift adds review noise and makes generated or agent-edited docs harder to
-  maintain. Helps: Keeps documentation diffs clean and makes style expectations enforceable by
-  tools.
+  Give pattern guidance a recognizable trigger, preferred move, risk, example, and agent
+  instruction. The extra structure makes repeatable advice easier to cite and apply.
+- [`DOCS-FRONT-LOAD-USEFUL-POINT`](documentation/docs-front-load-useful-point.md). Put the decision,
+  command, invariant, or warning before broad setup. Readers and agents can then use the page
+  without hunting through introductory prose.
+- [`DOCS-GROUP-RELATED-LIST-ITEMS`](documentation/docs-group-related-list-items.md). Cluster long
+  lists under useful names when the relationships matter. Keep short or causal material flat or in
+  prose so structure does not add noise.
+- [`DOCS-HIDE-CATALOG-MECHANICS`](documentation/docs-hide-catalog-mechanics.md). Lead user-facing
+  copy with work areas, artifacts, and destinations instead of IDs or generated structure. Mention
+  catalog mechanics only when citation or contribution work needs them.
+- [`DOCS-KEEP-MARKDOWN-LINTABLE`](documentation/docs-keep-markdown-lintable.md). Use project
+  Markdown style so formatting stays enforceable and review noise stays low. Treat lint exceptions
+  as intentional local choices, not accumulated drift.
 - [`DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`](documentation/docs-make-guidance-review-state-visible.md).
-  Make reusable guidance review state visible in the guidance artifact. Reusable guidance changes
-  how future agents and maintainers work. Helps: Prevents draft guidance from entering copied
-  instructions as if it were accepted policy. - Makes maintainer review queues explicit instead of
-  hidden in chat, plans, or memory. - Lets generated surfaces include drafts for review while
-  keeping execution snippets limited to reviewed guidance.
-- [`DOCS-MAKE-REVIEW-EASY-TO-INSPECT`](documentation/docs-make-review-easy-to-inspect.md). Make
-  documentation review easy to inspect. Docs are often reviewed as Markdown diffs even though users
-  read rendered pages, generated Rustdoc, examples, screenshots, or command output. Helps: Speeds
-  review and makes documentation proof concrete rather than confidence-based.
+  Mark guidance maturity so readers know whether a rule is draft, reviewed, or ready for reuse.
+  Visible state prevents tentative advice from becoming an accidental standard.
+- [`DOCS-MAKE-REVIEW-EASY-TO-INSPECT`](documentation/docs-make-review-easy-to-inspect.md). Package
+  documentation changes so reviewers can see scope, evidence, and rendered impact quickly. Small
+  inspectable changes reduce hidden drift and style-only review loops.
 - [`DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`](documentation/docs-mark-noncompiling-examples-honestly.md).
-  Prefer examples that compile, and mark noncompiling examples honestly. Rust examples are often
-  copied directly into user projects or enforced as doctests. Helps: Keeps examples trustworthy and
-  lets doctests protect public API usage where possible.
+  Label examples that are sketches, partial snippets, or intentionally not run. Honest labels keep
+  readers from treating illustrative code as a supported copy-paste contract.
 - [`DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`](documentation/docs-match-page-shape-to-reader-task.md).
-  Match each rendered documentation page shape to the reader task it serves. A documentation site
-  can use Markdown as its source without making every page feel like raw Markdown. Helps: Keeps
-  navigation pages from turning into README dumps. - Makes links, tags, cards, rows, code blocks,
-  and source metadata behave consistently. - Gives first-time readers a clear answer to where they
-  are, what the page is for, and what to click next.
-- [`DOCS-NAME-DESTINATION-NOT-DIRECTION`](documentation/docs-name-destination-not-direction.md).
-  Name the destination, decision, artifact, or work area instead of directing the reader. Reference
-  pages, indexes, cards, and navigation labels should help readers choose by recognition. Helps:
-  Keeps navigation copy scannable, reference-like, and grounded in the reader's task.
-- [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](documentation/docs-one-dominant-mode-per-page.md). Pick one
-  dominant documentation mode per page. A page with competing modes forces readers to switch mental
-  models. Helps: Keeps each page useful for its main reader and moves secondary detail to
-  better-linked places.
+  Shape pages around the reader's task, such as learning, choosing, reference, or review. The right
+  structure lowers scan cost without forcing one page to do every job.
+- [`DOCS-NAME-DESTINATION-NOT-DIRECTION`](documentation/docs-name-destination-not-direction.md). Use
+  labels that name the section, object, or decision the reader will reach. Directional labels make
+  readers follow the page order before knowing whether it is relevant.
+- [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](documentation/docs-one-dominant-mode-per-page.md). Let each
+  page have one primary mode and move competing material behind links. This keeps readers from
+  paying for tutorial, reference, explanation, and policy at once.
 - [`DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`](documentation/docs-prose-for-relationships-lists-for-enumeration.md).
-  Use prose for relationships and lists for enumeration. Lists are good for fields, steps, options,
-  and checks, but weak for explaining causality. Helps: Makes explanations coherent while keeping
-  procedural or enumerated material easy to scan.
-- [`DOCS-PROVE-REAL-USE-WITH-EXAMPLES`](documentation/docs-prove-real-use-with-examples.md). Prove
-  real use with examples. Examples that only construct a type or call the happy-path function do not
-  prove that the API works in the way users need. Helps: Turns examples into contract evidence and
-  prevents shallow examples from hiding missing integration details.
+  Use prose when causality, contrast, or priority matters, and lists when enumerating parallel
+  items. The shape should reveal the relationship instead of hiding it in bullets.
+- [`DOCS-PROVE-REAL-USE-WITH-EXAMPLES`](documentation/docs-prove-real-use-with-examples.md). Use
+  examples that show realistic ownership, errors, lifecycle, configuration, or integration shape.
+  Keep them focused, but make them strong enough to prove the contract.
 - [`DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`](documentation/docs-put-uncertainty-in-tracked-places.md).
-  Put uncertainty in issues, ADRs, or roadmaps rather than burying it in user docs. User docs should
-  describe what is true now. Helps: Keeps user docs authoritative while preserving uncertainty in
-  places where it can be tracked and resolved.
-- [`DOCS-README-AS-ENTRY-POINT`](documentation/docs-readme-as-entry-point.md). Keep README files as
-  entry points. A README is usually the first page for humans and agents. Helps: Gives new readers a
-  reliable starting path without duplicating every reference detail.
+  Keep user docs focused on current truth and move unresolved direction to issues, ADRs, or
+  roadmaps. Track speculation where it can be decided instead of implying a promise.
+- [`DOCS-README-AS-ENTRY-POINT`](documentation/docs-readme-as-entry-point.md). Use README files to
+  orient readers to purpose, setup, first useful use, and deeper docs. Split out manual-level detail
+  when it hides the starting path.
 - [`DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`](documentation/docs-review-correctness-and-risk-first.md).
-  Lead documentation review with correctness, contract ambiguity, risk, drift, and operability.
-  Documentation polish is visible, but the expensive failures are usually false contracts, ambiguous
-  caller obligations, stale examples, unverifiable commands, unsupported claims, hidden operational
-  effects, or docs that no longer match the code. Helps: Keeps documentation review focused on user
-  trust, operational accuracy, and contract drift. - Separates merge-blocking doc defects from style
-  or polish comments.
+  Lead documentation review with false contracts, drift, operability, and unsupported claims before
+  style polish. This separates blocking risk from wording cleanup.
 - [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](documentation/docs-show-side-effects-in-live-examples.md).
-  Show side effects and cleanup in live-resource examples. Examples that create files, hit networks,
-  write DNS records, open terminals, spawn tasks, or mutate external services can look harmless
-  while leaving persistent state or requiring cleanup. Helps: Reduces unsafe copy-paste behavior and
-  makes live-resource examples honest about their effects.
+  Show setup, visible effects, and cleanup when examples touch live resources or persistent state.
+  Gate costly or externally visible actions so examples stay honest and safe to adapt.
 - [`DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`](documentation/docs-state-current-behavior-not-aspiration.md).
-  State current behavior, not aspiration. Docs that describe intended behavior as if it already
-  exists become false contracts. Helps: Keeps docs trustworthy and prevents roadmaps from
-  masquerading as API or behavior guarantees.
-- [`DOCS-TREAT-DOCS-AS-CONTRACTS`](documentation/docs-treat-docs-as-contracts.md). Treat docs as
-  contracts. Docs increasingly guide both humans and agents. Helps: Aligns code, tests, examples,
-  and agent behavior around explicit English-language contracts.
-- [`DOCS-USE-CONCRETE-DETAILS`](documentation/docs-use-concrete-details.md). Use concrete nouns and
-  real paths, defaults, commands, and examples. Abstract nouns make readers infer the actual object.
-  Helps: Makes guidance easier to apply, review, and encode for agents.
-- [`DOCS-USE-DESCRIPTIVE-HEADINGS`](documentation/docs-use-descriptive-headings.md). Use headings
-  that describe the section content instead of slogan-like instructions or directions. Headings are
-  navigation. Helps: Makes pages easier to skim, search, link, and navigate non-linearly.
+  Describe what the system does now and label limitations or future plans separately. Otherwise
+  roadmap language becomes a false contract for readers and agents.
+- [`DOCS-TREAT-DOCS-AS-CONTRACTS`](documentation/docs-treat-docs-as-contracts.md). Treat supported
+  behavior, commands, errors, and examples in docs as promises readers may rely on. Separate
+  normative claims from background, examples, and future plans.
+- [`DOCS-USE-CONCRETE-DETAILS`](documentation/docs-use-concrete-details.md). Name real commands,
+  paths, defaults, types, examples, and work areas when they clarify scope. Concrete detail removes
+  guesswork without overloading prose with incidental facts.
+- [`DOCS-USE-DESCRIPTIVE-HEADINGS`](documentation/docs-use-descriptive-headings.md). Write headings
+  that name the section content, destination, or decision area. Reserve imperative headings for
+  procedures where the section is truly a step.
 - [`DOCS-USE-SOURCE-LINKS-AS-SUPPORT`](documentation/docs-use-source-links-as-support.md). Use
-  source links as support, not as wording supply. External sources should help a reader verify a
-  claim or compare judgment, not supply phrasing. Helps: Keeps guidance original, source-backed
-  where useful, and free of accidental paraphrase or citation theater.
+  references to verify, frame, or contrast local guidance instead of supplying the wording. This
+  keeps the repo voice original while still making claims checkable.
 - [`DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`](documentation/docs-verify-commands-paths-and-links.md).
-  Verify example commands, file paths, and linked references. Commands, paths, and links are
-  executable instructions in disguise. Helps: Keeps docs operationally accurate and reduces repair
-  time for readers following examples.
-- [`DOCS-WRITE-FOR-NON-LINEAR-READERS`](documentation/docs-write-for-non-linear-readers.md). Write
-  docs for non-linear readers. Many readers do not read documentation front to back. Helps: Makes
-  sections useful when linked directly and improves agent retrieval quality.
-- [`DOCS-WRITE-TECHNICAL-PROSE`](documentation/docs-write-technical-prose.md). Write technical docs,
-  not marketing, coaching, or chat. Technical docs should help readers make correct decisions.
-  Helps: Keeps documentation direct, actionable, and grounded in behavior rather than persuasion.
+  Check commands, file paths, and linked references because readers treat them as executable
+  instructions. Note assumptions when credentials, services, or platforms prevent a full run.
+- [`DOCS-WRITE-FOR-NON-LINEAR-READERS`](documentation/docs-write-for-non-linear-readers.md). Give
+  sections enough local context to work when reached from search, links, review, or retrieval. Avoid
+  repeating the whole introduction; add only the subject and prerequisite needed.
+- [`DOCS-WRITE-TECHNICAL-PROSE`](documentation/docs-write-technical-prose.md). Use direct technical
+  language that carries contracts, commands, evidence, and tradeoffs. Cut marketing, coaching, chat,
+  and page narration when they do not explain the system.
 
 ### Observability And Failure
 
 - [`OBSERVABILITY-DISTINGUISH-FAILURE-STATES`](observability/observability-distinguish-failure-states.md).
-  Distinguish partial, aborted, timed-out, denied, failed, and completed states. A timeout,
-  permission denial, user abort, partial write, and provider failure need different recovery paths.
-  Helps: Improves retry behavior, user support, and post-failure diagnosis.
+  Preserve status distinctions that change recovery, messaging, metrics, or debugging. Collapsing
+  timeouts, denials, aborts, partial work, and failures makes callers guess.
 - [`OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`](observability/observability-keep-diagnostics-retention-safe.md).
-  Keep diagnostics safe for their retention boundary. Diagnostics that are safe in a local debug log
-  may be unsafe in long-lived telemetry, CI artifacts, PR comments, or user-visible error reports.
-  Helps: Keeps debugging useful while reducing privacy, compliance, and accidental disclosure risk.
+  Match diagnostic detail to its audience and retention period. Redact or summarize sensitive values
+  while preserving enough operation context to debug.
 - [`OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`](observability/observability-log-at-owned-boundaries.md).
-  Log at owned boundaries. The best diagnostic point is usually where code still knows the
-  operation, caller intent, input class, and external system boundary. Helps: Produces logs that
-  identify the responsible operation without duplicating noise at every layer.
+  Emit logs where the code still knows the operation, intent, input class, and external boundary.
+  That placement gives useful context without duplicating noise through every layer.
 - [`OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`](observability/observability-preserve-operation-context-in-errors.md).
-  Preserve operation context in errors. An error such as "not found" or "permission denied" is
-  rarely enough. Helps: Shortens debugging by carrying the missing operation and resource context
-  with the failure.
+  Carry the operation, resource, provider, input class, and policy context that explain a failure.
+  Stable identifiers and sanitized summaries shorten debugging without exposing payloads.
 - [`OBSERVABILITY-SURFACE-DURABLE-FAILURES`](observability/observability-surface-durable-failures.md).
-  Do not hide durable failures only in UI logs. A durable failure that only appears in an ephemeral
-  UI log can disappear before a maintainer or user can act. Helps: Makes persistent failures visible
-  after the immediate UI event is gone.
+  Give persistent failures a stable status, error surface, or retry path instead of only an
+  ephemeral UI log. Users and maintainers need something actionable after the moment passes.
 
 ### Measure Before Optimizing
 
 - [`PERF-AVOID-SINGLE-RUN-CONCLUSIONS`](performance/perf-avoid-single-run-conclusions.md). Do not
-  decide performance from one short benchmark run. One short benchmark run can be dominated by
-  warmup, scheduling, cache state, background load, or measurement noise. Helps: Keeps performance
-  claims reviewable and avoids optimizing noise.
+  land performance conclusions from one short benchmark run. Repeat and contextualize timing
+  evidence because warmup, scheduling, cache state, and background load can make a single result
+  non-reproducible.
 - [`PERF-JUSTIFY-COMPLEXITY-CHURN-AND-DEPENDENCIES`](performance/perf-justify-complexity-churn-and-dependencies.md).
-  Justify complexity, churn, and dependency cost in performance wins. Performance changes often buy
-  speed by adding branches, unsafe code, caching, data structure churn, or dependencies. Helps:
-  Keeps performance improvements proportional to their maintenance and downstream costs.
-- [`PERF-MEASURE-GOAL-CHANGE-COMPARE`](performance/perf-measure-goal-change-compare.md). Performance
-  changes need goal, measurement, change, and comparison. A performance patch is hard to review
-  without knowing the goal, baseline, change, and comparison. Helps: Gives reviewers the evidence
-  needed to accept or reject a performance tradeoff.
-- [`PERF-OPTIMIZE-MEASURED-HOTSPOTS`](performance/perf-optimize-measured-hotspots.md). Optimize
-  measured hotspots, not interesting code. Speeding up code that runs once, is not on the critical
-  path, or is not visible to users usually wastes review attention. Helps: Focuses optimization on
-  code whose runtime contribution justifies changing its shape.
-- [`PERF-RECORD-BENCHMARK-PROVENANCE`](performance/perf-record-benchmark-provenance.md). Record
-  benchmark provenance. Benchmark numbers without provenance are hard to compare later. Helps: Makes
-  performance evidence repeatable enough for future review and regression analysis.
-- [`PERF-RUN-CORRECTNESS-FIRST`](performance/perf-run-correctness-first.md). Run correctness before
-  performance timing. Fast wrong code is still wrong, and correctness failures can invalidate timing
-  data. Helps: Keeps performance work grounded in behavior preservation before speed claims.
+  Explain why a performance win justifies added complexity, churn, unsafe code, caching, or
+  dependencies. Measured speedups still need to pay for the maintenance cost every future reader
+  inherits.
+- [`PERF-MEASURE-GOAL-CHANGE-COMPARE`](performance/perf-measure-goal-change-compare.md). State the
+  performance goal, baseline measurement, implementation change, and comparison result together.
+  Those pieces let reviewers judge whether the patch improved the relevant workload enough to
+  justify its tradeoffs.
+- [`PERF-OPTIMIZE-MEASURED-HOTSPOTS`](performance/perf-optimize-measured-hotspots.md). Optimize code
+  that measurement shows is on the important runtime path. This keeps review attention on changes
+  whose user-visible impact justifies altering the code shape.
+- [`PERF-RECORD-BENCHMARK-PROVENANCE`](performance/perf-record-benchmark-provenance.md). Record the
+  commands, inputs, tool versions, build profile, and runner conditions behind benchmark numbers.
+  Provenance makes future comparisons meaningful and helps separate real changes from environment
+  drift.
+- [`PERF-RUN-CORRECTNESS-FIRST`](performance/perf-run-correctness-first.md). Run relevant
+  correctness checks before interpreting performance timing. Fast code that changes behavior
+  invalidates the benchmark claim and wastes review effort.
 - [`PERF-RUN-TIMING-BENCHMARKS-SEQUENTIALLY`](performance/perf-run-timing-benchmarks-sequentially.md).
-  Never run timing benchmarks in parallel when timing data matters. Parallel timing benchmarks
-  compete for CPU, cache, memory bandwidth, disk, and thermal headroom. Helps: Produces timing data
-  that reviewers can treat as meaningful.
+  Serialize timing-sensitive benchmarks when their numbers will be used as evidence. Concurrent runs
+  compete for shared resources and can make the comparison describe the runner more than the code.
 
 ### Local Reasoning And Refactoring
 
 - [`REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION`](refactoring/refactoring-align-seams-with-real-variation.md).
-  Align seams with real variation, not hypothetical variation. A seam is useful when the code
-  actually varies there: different backends, policies, protocols, test doubles, or ownership
-  boundaries. Helps: Keeps abstractions tied to observed change pressure and avoids speculative
-  indirection.
-- [`REFACTORING-DO-NOT-OVER-APPLY-DRY`](refactoring/refactoring-do-not-over-apply-dry.md). Do not
-  over-apply DRY. Two blocks that look similar may change for different reasons. Helps: Preserves
-  useful duplication until the shared concept and change pattern are real.
+  Put abstraction seams where code already varies across backends, policies, protocols, tests, or
+  ownership boundaries. Avoid adding names and jumps for hypothetical futures unless the next change
+  or risk clearly justifies them.
+- [`REFACTORING-DO-NOT-OVER-APPLY-DRY`](refactoring/refactoring-do-not-over-apply-dry.md). Keep
+  similar-looking code separate until it has the same meaning and changes together. Premature
+  sharing can couple unrelated policies and make later edits harder.
 - [`REFACTORING-EXTRACT-CONCEPT-HELPERS`](refactoring/refactoring-extract-concept-helpers.md).
-  Extract helpers only when they reveal a real concept boundary. A helper should reduce the reader's
-  burden by naming a concept, not merely hide three lines. Helps: Improves local reasoning by
-  replacing low-level steps with a meaningful name.
+  Extract helpers when the new function names a real concept boundary with a stable purpose. Hiding
+  a few lines behind a weak name adds a jump without reducing the reader's burden.
 - [`REFACTORING-KEEP-LINEAR-STORY-VISIBLE`](refactoring/refactoring-keep-linear-story-visible.md).
-  Keep the whole story visible when work is linear. Some logic is easiest to understand as a
-  straight narrative: read input, validate, transform, emit result. Helps: Preserves readability
-  when the order of operations is the main concept.
+  Keep simple ordered workflows inline when the sequence is the clearest explanation. Extract only
+  the substeps that carry their own concept, policy, reuse, or test surface.
 - [`REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`](refactoring/refactoring-keep-weak-abstractions-close-to-their-use.md).
-  Keep weak abstractions close to their use. New abstractions are often tentative. Helps: Limits
-  coupling from premature abstractions and keeps experiments reversible.
+  Keep tentative helpers, types, or traits near their first use until the boundary proves itself.
+  Local placement makes weak abstractions easier to revise, inline, or delete before other modules
+  depend on them.
 - [`REFACTORING-MAKE-EDGE-CASES-EXPLICIT`](refactoring/refactoring-make-edge-cases-explicit.md).
-  Make edge-case behavior explicit in the local control flow. Boundary values such as empty input,
-  zero sizes, overflow, underflow, duplicates, missing fields, and already-complete states often
-  decide whether a change is correct. Helps: Makes boundary behavior visible during review. -
-  Reduces accidental changes to empty, zero, overflow, and already-complete cases.
-- [`REFACTORING-PREFER-LOCAL-REASONING`](refactoring/refactoring-prefer-local-reasoning.md). Prefer
-  local reasoning over distant reconstruction. Code is easier to change when the reader can see the
-  relevant state, invariants, and effects nearby. Helps: Reduces cognitive load and makes behavior
-  changes less error-prone.
+  Name boundary behavior near the branch, calculation, or return that depends on it. This makes
+  policy reviewable and shows when stronger types should prevent invalid states instead.
+- [`REFACTORING-PREFER-LOCAL-REASONING`](refactoring/refactoring-prefer-local-reasoning.md). Shape
+  code so relevant state, invariants, and effects are visible near the change. Centralize only when
+  it reduces total reasoning, because distant reconstruction raises cognitive load and error risk.
 - [`REFACTORING-PREFER-LOOPS-FOR-SIDE-EFFECTS`](refactoring/refactoring-prefer-loops-for-side-effects.md).
-  Prefer loops over combinators for business-logic side effects. Iterator chains are compact, but
-  business-logic side effects often need named steps, early exits, logging, error handling, or
-  comments. Helps: Keeps side effects and branch behavior readable in review.
+  Use ordinary loops when the main purpose is mutation, I/O, logging, or other side effects.
+  Iterator chains are better for value transformation; using them for effects can hide order, early
+  exits, and error handling.
 - [`REFACTORING-USE-WHITESPACE-AS-FUNCTION-PARAGRAPHS`](refactoring/refactoring-use-whitespace-as-function-paragraphs.md).
-  Use whitespace as function paragraphs. Blank lines can show that a function has phases: gather
-  inputs, validate, calculate, perform effects, return. Helps: Improves scanability without
-  introducing new names or control flow.
+  Use blank lines to group related statements inside a function before extracting more names.
+  Paragraph-like spacing can reveal the local story while avoiding unnecessary helper jumps.
 
 ### Private Context And Review Artifacts
 
 - [`REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`](review/review-answer-questions-before-code.md). Answer
-  reviewer questions instead of only pushing new code. Review is a discussion about correctness,
-  maintainability, and intent. Helps: Reduces repeated review rounds caused by unanswered concerns.
-  - Preserves design reasoning that would otherwise disappear into a patch update.
-- [`REVIEW-CLASSIFY-PROTOTYPE-REUSE`](review/review-classify-prototype-reuse.md). Classify what a
-  rebuild reuses from a prototype or prior implementation. Prototype rebuilds can blur four
-  different kinds of reuse: externally visible behavior, evidence from tests or production use,
-  replaceable internal shape, and load-bearing boundaries. Helps: Prevents rewrites from discarding
-  proven behavior or preserving accidental structure. - Makes load-bearing boundaries visible before
-  a smaller local API removes needed growth room.
-- [`REVIEW-DEFINE-SLICES-IN-ISSUES`](review/review-define-slices-in-issues.md). Define review-sized
-  slices in issues. Issues are often the first place a future PR gets shaped. Helps: Keeps issues
-  actionable, prevents accidental scope creep, and gives agents a clear unit of work.
+  reviewer questions before or alongside the code changes that address them. This keeps intent,
+  tradeoffs, and unresolved choices visible instead of burying the reasoning in a new patch.
+- [`REVIEW-CLASSIFY-PROTOTYPE-REUSE`](review/review-classify-prototype-reuse.md). Classify whether a
+  rebuild is reusing behavior, evidence, replaceable internal shape, or load-bearing boundaries.
+  That separation helps preserve proven compatibility while discarding prototype scaffolding.
+- [`REVIEW-DEFINE-SLICES-IN-ISSUES`](review/review-define-slices-in-issues.md). Shape issues around
+  review-sized slices with clear outcomes. Coherent slices reduce scope creep and give maintainers
+  or agents a practical unit of work without losing the larger purpose.
 - [`REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`](review/review-explain-controversial-choices-inline.md).
-  Explain controversial implementation choices next to the code or artifact where reviewers will see
-  them. Some decisions are easiest to understand at the exact line, file, generated artifact, or
-  config boundary where the reviewer pauses. Helps: Turns likely review objections into explicit
-  decision points. - Keeps the PR narrative from becoming a long map of every local exception. -
-  Preserves context for future readers who land on a specific changed line or file.
+  Put short rationale near surprising dependencies, unsafe blocks, generated artifacts, policy
+  exceptions, or compatibility choices. Local explanation prevents reviewers and future readers from
+  rediscovering the same concern.
 - [`REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`](review/review-explain-pr-problem-model-and-proof.md).
-  Explain the problem, mental model, tradeoffs, validation, and docs impact in PR descriptions.
-  Reviewers should not have to reverse-engineer the intent from the diff. Helps: Reduces reviewer
-  guesswork, speeds review, and leaves future maintainers a useful explanation of why the change
-  exists.
+  Use PR descriptions to explain the problem, mental model, tradeoffs, validation, and documentation
+  impact. Reviewers can then evaluate the diff against stated intent instead of reverse-engineering
+  it.
 - [`REVIEW-LABEL-SPECULATION-AS-INFERRED-OR-UNKNOWN`](review/review-label-speculation-as-inferred-or-unknown.md).
-  Label speculation as inferred or unknown. Review notes often mix facts, traces, guesses, and
-  model-based conclusions. Helps: Makes risk visible, keeps review discussion precise, and helps
-  future readers decide what still needs verification.
-- [`REVIEW-LET-REVIEWERS-RESOLVE-THREADS`](review/review-let-reviewers-resolve-threads.md). Let
-  reviewers resolve review threads unless resolution is unambiguous. Resolving a review thread is a
-  communication act, not just a UI cleanup. Helps: Preserves reviewer trust and prevents important
-  concerns from disappearing before they are rechecked.
+  Mark review claims as observed, inferred, assumed, or unknown when the evidence level matters.
+  Clear labels keep guesses from hardening into false project knowledge.
+- [`REVIEW-LET-REVIEWERS-RESOLVE-THREADS`](review/review-let-reviewers-resolve-threads.md). Leave
+  nontrivial review threads for the reviewer to resolve after they confirm the concern was
+  addressed. Authors should only close unambiguous mechanical threads, because resolution carries
+  communication ownership.
 - [`REVIEW-MAKE-REVIEW-ARTIFACTS-STANDALONE`](review/review-make-review-artifacts-standalone.md).
-  Make issues, PRs, commit messages, and review handoffs stand alone. Issues, PR descriptions,
-  commit messages, and agent handoffs are read by people who did not see the chat, scratch notes,
-  local plan, or discarded attempts. Helps: Makes review possible without private context and leaves
-  durable reasoning for future debugging, archaeology, and follow-up work.
+  Put the needed problem, decision, context, validation, and risk in the issue, PR, commit, or
+  handoff itself. Standalone artifacts make review and future debugging possible without private
+  session context.
 - [`REVIEW-SEPARATE-DISCOVERY-SELECTION-IMPLEMENTATION`](review/review-separate-discovery-selection-implementation.md).
-  Separate problem discovery, solution selection, and implementation review when they need different
-  decisions. Some work is not ready for one implementation PR. Helps: Prevents implementation review
-  from becoming a hidden design-selection meeting. - Makes problem statements, chosen direction, and
-  patch correctness easier to review separately.
-- [`REVIEW-UPDATE-SOURCE-OF-TRUTH`](review/review-update-source-of-truth.md). Update the source of
-  truth instead of posting low-signal status comments. Status comments can be useful when they
-  change what reviewers know. Helps: Keeps review state discoverable from the artifact that owns it.
-  - Reduces notification noise and comment archaeology.
+  Split problem discovery, solution selection, and implementation review when they require different
+  decisions. This keeps design debate out of patch correctness review once scope or direction is
+  still unsettled.
+- [`REVIEW-UPDATE-SOURCE-OF-TRUTH`](review/review-update-source-of-truth.md). Put durable status
+  changes in the owning issue, PR description, checklist, plan, or handoff instead of posting
+  low-signal comments. Updating the source of truth reduces notification churn and makes the current
+  state discoverable.
 - [`REVIEW-USE-ADRS-FOR-BOUNDARIES-AND-OWNERSHIP`](review/review-use-adrs-for-boundaries-and-ownership.md).
-  Use ADRs for durable boundary and ownership decisions. Some decisions outlive the PR that
-  introduces them: module ownership, public API boundaries, storage formats, source-control
-  topology, runtime responsibility, and service or crate boundaries. Helps: Preserves architectural
-  context, reduces repeated debate, and gives future changes a decision to affirm, revise, or
-  replace.
+  Record durable ownership, API, storage, topology, runtime, or service-boundary decisions in ADRs.
+  A decision record gives later contributors a stable tradeoff to affirm, revise, or replace.
 
 ### Rust API And Crate Shape
 
 - [`RUST-ADD-BENCHMARKS-FOR-PERFORMANCE-CLAIMS`](rust/rust-add-benchmarks-for-performance-claims.md).
-  Add benchmarks where Rust performance claims, hot paths, or allocation behavior matter.
-  Performance-sensitive Rust changes are easy to justify from intuition and hard to validate by
-  inspection. Helps: Helps performance-sensitive changes carry evidence instead of folklore.
-- [`RUST-ALIGN-RELEASE-SUPPORT-CLAIMS`](rust/rust-align-release-support-claims.md). Keep version,
-  changelog, metadata, docs, and support claims aligned. Rust releases have several public truth
-  sources: `Cargo.toml`, README, crate Rustdoc, changelog, docs.rs metadata, examples, and CI
-  support matrices. Helps: Helps release reviewers compare every public claim before publishing and
-  helps downstream users trust the crate docs, package metadata, and changelog as one contract.
-- [`RUST-AVOID-BROAD-CONTEXT-AND-CALLBACKS`](rust/rust-avoid-broad-context-and-callbacks.md). Avoid
-  broad context objects and callback-heavy control flow. Broad context objects and callback-heavy
-  flows hide which inputs, effects, and ordering a function needs. Helps: Helps readers see a
-  function's real inputs, outputs, lifetimes, and side effects without tracing a context bag or
-  callback chain through distant code.
-- [`RUST-AVOID-EMPTY-WRAPPER-TYPES`](rust/rust-avoid-empty-wrapper-types.md). Avoid wrapper types
-  that add no invariant, behavior, or ownership clarity. A wrapper type should earn its name by
-  adding an invariant, behavior, ownership boundary, or API meaning. Helps: Helps keep the type
-  system meaningful by reserving new names for real invariants, ownership boundaries, validation
-  rules, or domain concepts.
-- [`RUST-AVOID-GIANT-CRATE-ROOTS`](rust/rust-avoid-giant-crate-roots.md). Avoid giant crate roots. A
-  giant `lib.rs` or `main.rs` makes the crate root carry every concept, helper, import, and
-  re-export. Helps: Helps the crate root teach users the public shape while letting maintainers find
-  implementation concepts in focused modules.
-- [`RUST-AVOID-GLOB-REEXPORTS`](rust/rust-avoid-glob-reexports.md). Avoid glob re-exports in public
-  facades. `pub use module::*` hides which names the facade intends to expose. Helps: Helps public
-  API review see every re-exported name and avoid accidental facade expansion.
-- [`RUST-AVOID-INLINE-MODULES`](rust/rust-avoid-inline-modules.md). Avoid inline modules except for
-  tests, preludes, and generated code. Inline modules hide file boundaries and make navigation,
-  search, and ownership harder in larger Rust crates. Helps: Helps search, review, ownership, and
-  navigation by giving each nontrivial module a stable file path.
-- [`RUST-AVOID-MOD-RS-BY-DEFAULT`](rust/rust-avoid-mod-rs-by-default.md). Avoid `mod.rs` unless
-  there is a strong reason. Named module root files such as `parser.rs` or `transport.rs` make
-  editor tabs, search results, and diffs easier to scan than many files named `mod.rs`. Helps: Helps
-  readers identify module ownership from file paths and editor labels.
-- [`RUST-AVOID-OVERCOMMENTING-TRIVIAL-CODE`](rust/rust-avoid-overcommenting-trivial-code.md). Avoid
-  over-commenting trivial Rust code. Comments that restate obvious assignments, matches, or function
-  calls add maintenance cost without adding understanding. Helps: Helps comments stay reserved for
-  invariants, non-obvious tradeoffs, safety, and contracts.
-- [`RUST-AVOID-PATH-ATTRIBUTE`](rust/rust-avoid-path-attribute.md). Avoid `#[path]` unless generated
-  code or platform layout makes it the clearest option. `#[path]` breaks the ordinary relationship
-  between module names and file paths. Helps: Helps module paths remain predictable for readers,
-  tools, and code review.
-- [`RUST-AVOID-PUBLIC-DEPENDENCY-COUPLING`](rust/rust-avoid-public-dependency-coupling.md). Avoid
-  leaking dependency types in public APIs unless integration is the point. Public APIs that expose
-  dependency types force downstream users to care about that dependency version, feature set, and
-  semantics. Helps: Helps preserve semver freedom by keeping implementation dependencies from
-  becoming downstream compile-time, feature, and version requirements.
-- [`RUST-AVOID-TINY-MODULE-MAZES`](rust/rust-avoid-tiny-module-mazes.md). Do not split Rust files
-  into a maze of tiny modules. Small modules are useful when each module owns a concept. Helps:
-  Helps keep local reasoning cheap and prevents structure from obscuring simple code.
+  Use benchmarks when Rust changes rely on speed, allocation, or hot-path claims. The evidence makes
+  performance tradeoffs reviewable instead of relying on intuition.
+- [`RUST-ALIGN-RELEASE-SUPPORT-CLAIMS`](rust/rust-align-release-support-claims.md). Keep crate
+  metadata, docs, changelogs, and support statements saying the same thing. The alignment helps
+  downstream users know which compatibility contract to trust.
+- [`RUST-AVOID-BROAD-CONTEXT-AND-CALLBACKS`](rust/rust-avoid-broad-context-and-callbacks.md). Pass
+  explicit inputs and keep control flow local instead of hiding it in context bags or callbacks.
+  This makes ownership, effects, and ordering easier to audit.
+- [`RUST-AVOID-EMPTY-WRAPPER-TYPES`](rust/rust-avoid-empty-wrapper-types.md). Add a wrapper type
+  only when it carries an invariant, behavior, or ownership boundary. Otherwise it adds conversions
+  and concepts without improving correctness.
+- [`RUST-AVOID-GIANT-CRATE-ROOTS`](rust/rust-avoid-giant-crate-roots.md). Use the crate root to
+  teach the public shape and route readers to focused modules. This keeps `lib.rs` or `main.rs` from
+  becoming the whole implementation surface.
+- [`RUST-AVOID-GLOB-REEXPORTS`](rust/rust-avoid-glob-reexports.md). Re-export public facade names
+  explicitly instead of using globs. This prevents accidental API expansion and makes exported names
+  visible during review.
+- [`RUST-AVOID-INLINE-MODULES`](rust/rust-avoid-inline-modules.md). Put nontrivial modules in named
+  files unless tests, preludes, or generated code justify inline layout. Stable paths make search,
+  review, and ownership clearer.
+- [`RUST-AVOID-MOD-RS-BY-DEFAULT`](rust/rust-avoid-mod-rs-by-default.md). Prefer named module files
+  when they make tabs, paths, and search results clearer. Reserve `mod.rs` for cases where local
+  convention or layout makes it the better signal.
+- [`RUST-AVOID-OVERCOMMENTING-TRIVIAL-CODE`](rust/rust-avoid-overcommenting-trivial-code.md).
+  Comment Rust code for invariants, contracts, and surprising tradeoffs rather than restating
+  obvious operations. This keeps comments useful and less prone to drift.
+- [`RUST-AVOID-PATH-ATTRIBUTE`](rust/rust-avoid-path-attribute.md). Use normal Rust module lookup
+  unless generated or platform-specific layout needs `#[path]`. Predictable file paths make
+  navigation and ownership easier to infer.
+- [`RUST-AVOID-PUBLIC-DEPENDENCY-COUPLING`](rust/rust-avoid-public-dependency-coupling.md). Keep
+  dependency types out of public APIs unless interoperability is the purpose. This preserves semver
+  freedom and avoids forcing downstream users onto implementation choices.
+- [`RUST-AVOID-TINY-MODULE-MAZES`](rust/rust-avoid-tiny-module-mazes.md). Keep small helper code
+  near its use unless a separate module owns a real concept. This reduces file-jumping and preserves
+  reader locality.
 - [`RUST-AVOID-VAGUE-DOCS-AND-GENERIC-EXAMPLES`](rust/rust-avoid-vague-docs-and-generic-examples.md).
-  Avoid vague Rustdoc and examples that only prove an item can be called. Docs that say an item is
-  useful, flexible, simple, or convenient do not tell callers what behavior they can depend on.
-  Helps: Helps examples demonstrate real use and helps docs answer caller questions directly.
-- [`RUST-CENTRAL-ITEM-FIRST`](rust/rust-central-item-first.md). Put the central item first and keep
-  inherent impls near the type. A Rust module is easier to read when the main type, trait, enum, or
-  function appears before helpers. Helps: Helps readers open a module and immediately find the type,
-  trait, enum, or function the file exists to define.
+  Write Rustdoc and examples around real caller scenarios, not generic claims of usefulness.
+  Concrete examples expose ownership, errors, features, and lifecycle expectations.
+- [`RUST-CENTRAL-ITEM-FIRST`](rust/rust-central-item-first.md). Put the main type, trait, enum, or
+  function before supporting details. Readers can learn the module's purpose before chasing helpers
+  and adapters.
 - [`RUST-CHOOSE-GENERICS-AND-TRAIT-OBJECTS-DELIBERATELY`](rust/rust-choose-generics-and-trait-objects-deliberately.md).
-  Use generics, stored generic parameters, and trait objects deliberately. Generics, stored type
-  parameters, and trait objects trade off monomorphization, API complexity, object safety, compile
-  times, and caller ergonomics. Helps: Helps APIs expose the right kind of variation without
-  surprising callers with compile-time cost, object-safety constraints, allocation, or lifetime
-  complexity.
+  Pick generics, stored type parameters, or trait objects for the variation they actually model. The
+  choice affects compile cost, object safety, lifetimes, and caller ergonomics.
 - [`RUST-COMPARE-CRATES-BY-FIT-AND-TRADEOFF`](rust/rust-compare-crates-by-fit-and-tradeoff.md).
-  Compare nearby Rust crates by fit, scope, and tradeoff. Rust ecosystems often have several crates
-  solving adjacent problems. Helps: Helps users understand when this crate is the right tool without
-  misrepresenting alternatives.
-- [`RUST-CONFIGURE-DOCS-RS`](rust/rust-configure-docs-rs.md). Configure docs.rs metadata
-  intentionally. docs.rs is often the rendered documentation users see first. Helps: Helps users see
-  the same features, cfg-gated items, and documentation warnings that the crate expects to support
-  on docs.rs.
-- [`RUST-CONSIDER-DOWNSTREAM-API-IMPACT`](rust/rust-consider-downstream-api-impact.md). Consider
-  downstream impact before changing public API. Changing a public Rust API can break external
-  imports, trait impls, type inference, docs, examples, and semver expectations. Helps: Helps
-  library maintainers avoid turning local cleanup into downstream breakage across imports, examples,
-  trait impls, type inference, and semver expectations.
-- [`RUST-CONTAIN-UNSAFE`](rust/rust-contain-unsafe.md). Keep unsafe small, wrapped, documented, and
-  tested through the safe API. Unsafe code concentrates obligations the compiler cannot check.
-  Helps: Helps reviewers audit safety invariants locally and lets most tests exercise the unsafe
-  behavior through a safe public contract.
-- [`RUST-DENY-ACCIDENTAL-UNSAFE`](rust/rust-deny-accidental-unsafe.md). Deny accidental unsafe code
-  when the crate does not need unsafe. If a crate does not need unsafe, accidental unsafe blocks
-  should fail loudly. Helps: Helps crates that intend to be safe Rust catch accidental unsafe
-  introductions during review and CI.
-- [`RUST-DO-NOT-DEFAULT-PUB-CRATE`](rust/rust-do-not-default-pub-crate.md). Do not default to
-  `pub(crate)`. `pub(crate)` looks safe because it is not public API, but it still expands the
-  crate-wide surface and lets modules reach into each other. Helps: Helps keep internal APIs narrow
-  so modules can change independently and readers can tell which items are truly shared
-  implementation surface.
-- [`RUST-DO-NOT-PIN-PATCH-VERSIONS`](rust/rust-do-not-pin-patch-versions.md). Do not pin patch
-  versions in `Cargo.toml` unless the patch is required. A patch-pinned dependency requirement in
-  `Cargo.toml` raises the minimum version for every downstream resolver even when any compatible
-  patch would work. Helps: Helps downstream users keep compatible dependency graphs flexible and
-  avoids raising minimum versions just because local lockfiles are newer.
+  Compare adjacent crates by intended fit, scope, and constraints instead of broad superiority
+  claims. This helps users choose without turning docs into brittle marketing.
+- [`RUST-CONFIGURE-DOCS-RS`](rust/rust-configure-docs-rs.md). Configure docs.rs metadata when
+  features, cfgs, or rustdoc flags affect rendered API docs. Users should see the documentation
+  surface the crate expects to support.
+- [`RUST-CONSIDER-DOWNSTREAM-API-IMPACT`](rust/rust-consider-downstream-api-impact.md). Check public
+  API changes against downstream imports, traits, inference, and examples before reshaping them.
+  Additive paths and deprecations often avoid unnecessary breakage.
+- [`RUST-CONTAIN-UNSAFE`](rust/rust-contain-unsafe.md). Keep unsafe blocks small, wrapped by safe
+  APIs, documented, and tested through safe behavior. Localized obligations make the safety argument
+  auditable.
+- [`RUST-DENY-ACCIDENTAL-UNSAFE`](rust/rust-deny-accidental-unsafe.md). Use a crate-level lint when
+  a crate intends to avoid unsafe code entirely. Executable policy catches accidental unsafe before
+  it becomes normal implementation detail.
+- [`RUST-DO-NOT-DEFAULT-PUB-CRATE`](rust/rust-do-not-default-pub-crate.md). Start items private and
+  widen to `pub(crate)` only for deliberate shared internals. This keeps modules independent and
+  makes crate-local contracts visible.
+- [`RUST-DO-NOT-PIN-PATCH-VERSIONS`](rust/rust-do-not-pin-patch-versions.md). Keep manifest
+  requirements as wide as the crate honestly supports. Patch pins belong in `Cargo.toml` only when
+  code depends on that patch's API, fix, or behavior.
 - [`RUST-DOCUMENT-CURRENT-IMPLEMENTED-BEHAVIOR`](rust/rust-document-current-implemented-behavior.md).
-  Document current implemented Rust behavior, not aspirations. Rustdoc and README examples are part
-  of a crate's public contract. Helps: Helps crate docs stay truthful about what users can depend on
-  today.
-- [`RUST-DOCUMENT-FEATURE-CONTRACTS`](rust/rust-document-feature-contracts.md). Document each
-  feature flag as a public contract. Feature flags can add public API, change runtime behavior,
-  enable optional dependencies, affect platform support, and alter docs.rs output. Helps: Helps
-  users choose features intentionally and helps maintainers test feature-gated behavior.
+  Document what the crate does today instead of presenting future plans as available contract. Clear
+  tense and labels prevent callers from relying on unimplemented behavior.
+- [`RUST-DOCUMENT-FEATURE-CONTRACTS`](rust/rust-document-feature-contracts.md). Explain what each
+  feature flag enables, requires, and promises. Feature contracts help users choose combinations
+  without guessing from dependency names.
 - [`RUST-DOCUMENT-LIFECYCLE-SIDE-EFFECTS`](rust/rust-document-lifecycle-side-effects.md). Document
-  lifecycle and side effects for APIs that touch runtime, process, host, or UI state. APIs that
-  register globally, spawn tasks, mutate process state, touch the filesystem, use the network, draw
-  terminal UI, or manage runtime resources affect more than their return value. Helps: Helps callers
-  plan ownership, cleanup, cancellation, retries, and multiple-instance behavior.
-- [`RUST-DOCUMENT-PERFORMANCE-CONTRACTS`](rust/rust-document-performance-contracts.md). Document
-  blocking behavior, allocation expectations, and performance constraints. Blocking behavior,
-  allocation expectations, buffering, clone cost, and runtime constraints can be part of a Rust API
-  contract. Helps: Helps callers understand hidden costs such as allocation, blocking, complexity,
-  caching, and large-data behavior before they choose an API.
+  construction, start, stop, drop, and cleanup behavior when side effects matter. Callers need to
+  know when resources are acquired, released, spawned, or blocked.
+- [`RUST-DOCUMENT-PERFORMANCE-CONTRACTS`](rust/rust-document-performance-contracts.md). State
+  meaningful performance expectations when callers may design around them. Clear limits keep
+  complexity and optimization claims tied to supported behavior.
 - [`RUST-DOCUMENT-PUBLIC-PANIC-CONTRACTS`](rust/rust-document-public-panic-contracts.md). Document
-  public panic contracts as precondition violations. A public panic is a contract boundary: the
-  caller violated a precondition or the crate has a bug. Helps: Helps callers distinguish misuse
-  preconditions from ordinary recoverable errors and makes panic behavior testable in public APIs.
+  when public APIs can panic and what callers can do to avoid it. Panic contracts keep recoverable
+  errors, invariants, and misuse boundaries explicit.
 - [`RUST-DOCUMENT-SCHEDULING-FOR-LONG-ASYNC`](rust/rust-document-scheduling-for-long-async.md).
-  Document scheduling expectations for async code that can run for a long time. Long-running async
-  work can starve executors, ignore cancellation, hold locks across await points, or surprise
-  callers with runtime assumptions. Helps: Helps async callers reason about executor occupancy,
-  cancellation, backpressure, blocking work, and fairness.
-- [`RUST-DOCUMENT-VISIBILITY-OWNERSHIP`](rust/rust-document-visibility-ownership.md). When a Rust
-  item becomes visible outside its module, its name and docs should make ownership obvious. Widening
-  visibility creates a new surface for other modules or downstream users to depend on. Helps: Helps
-  prevent accidental shared APIs and makes ownership clear at call sites.
+  Explain executor, cancellation, blocking, and fairness expectations for async work that can run
+  long. Callers need those constraints to avoid starvation and runtime surprises.
+- [`RUST-DOCUMENT-VISIBILITY-OWNERSHIP`](rust/rust-document-visibility-ownership.md). Pair widened
+  visibility with names and docs that identify the owning concept. This prevents shared internals
+  from looking like accidental stable API.
 - [`RUST-ENCODE-DURABLE-RULES-IN-LINTS`](rust/rust-encode-durable-rules-in-lints.md). Use lint
-  configuration only for durable project rules. Lints are useful when they encode durable project
-  policy, not transient taste. Helps: Helps CI enforce policies that are stable enough to automate,
-  reducing review noise and making agent output easier to validate mechanically.
+  configuration for project policies stable enough to automate. Durable lints catch repeated
+  mistakes without turning subjective taste into CI noise.
 - [`RUST-EXPOSE-PRIMARY-PATH-FROM-CRATE-ROOT`](rust/rust-expose-primary-path-from-crate-root.md).
-  Expose the crate's primary path from the crate root. The crate root is the landing page for
-  Rustdoc and the first import path many users try. Helps: Helps users find the intended starting
-  point and helps maintainers keep facade shape intentional.
+  Make the crate root show the main workflow, types, and import path. Users should not have to infer
+  the intended entry point from private layout details.
 - [`RUST-FORMAT-DOCS-AND-COMMENTS-CONSISTENTLY`](rust/rust-format-docs-and-comments-consistently.md).
-  Format Rust docs and comments consistently. Rustdoc examples, doc attributes, imports, and prose
-  comments are part of the source readers review. Helps: Helps Rust docs, examples, imports, and
-  comments produce stable diffs and readable source.
-- [`RUST-GROUP-MODULE-IMPORTS`](rust/rust-group-module-imports.md). Prefer grouped module imports
-  over one-import-per-line style. Grouped module imports keep related names together and make
-  dependencies easier to scan. Helps: Helps readers see dependency shape by module and reduces churn
-  from one-import-per-line edits.
+  Apply stable formatting to Rustdoc, examples, attributes, and prose comments. Consistent source
+  formatting keeps docs readable and prevents noisy future diffs.
+- [`RUST-GROUP-MODULE-IMPORTS`](rust/rust-group-module-imports.md). Group related imports by module
+  when that matches local style. This makes dependency shape easier to scan and avoids churn from
+  one-import-per-line edits.
 - [`RUST-GROUP-PRIVATE-IMPORTS-BEFORE-PUBLIC-RE-EXPORTS`](rust/rust-group-private-imports-before-public-re-exports.md).
-  Group private imports before public re-exports. Private imports and public re-exports answer
-  different questions. Helps: Helps separate implementation dependencies from the public discovery
-  surface exposed through `pub use`.
-- [`RUST-HIDE-TEST-ONLY-HELPERS`](rust/rust-hide-test-only-helpers.md). Keep test-only helpers out
-  of the normal public API. Test-only helpers should not become production API or crate-wide
-  concepts by accident. Helps: Helps keep normal APIs free of fixtures, shortcuts, and constructors
-  that exist only to make tests convenient.
-- [`RUST-IMPLEMENT-DEBUG-FOR-PUBLIC-TYPES`](rust/rust-implement-debug-for-public-types.md).
-  Implement `Debug` for public types unless that is unsafe or misleading. `Debug` is the baseline
-  diagnostic trait for Rust values. Helps: Helps downstream tests, logs, assertions, and diagnostics
-  show useful values without bespoke formatting.
+  Separate implementation imports from public re-exports in module prologues. The grouping lets
+  readers distinguish internal dependencies from the API surface being presented.
+- [`RUST-HIDE-TEST-ONLY-HELPERS`](rust/rust-hide-test-only-helpers.md). Keep fixtures and shortcuts
+  behind test-only modules, features, or support crates unless they are deliberate API. This
+  prevents scaffolding from leaking into production contracts.
+- [`RUST-IMPLEMENT-DEBUG-FOR-PUBLIC-TYPES`](rust/rust-implement-debug-for-public-types.md). Provide
+  `Debug` for public types unless it would expose secrets or mislead callers. The trait is baseline
+  support for tests, assertions, logs, and downstream diagnostics.
 - [`RUST-IMPLEMENT-STANDARD-TRAITS-FOR-PUBLIC-ERRORS`](rust/rust-implement-standard-traits-for-public-errors.md).
-  Implement `Debug`, `Display`, and `std::error::Error` for reusable public errors. Public errors
-  cross boundaries into callers, logs, tests, and user messages. Helps: Helps public errors work
-  with `?`, error chains, logs, test output, and common error-reporting libraries.
+  Make reusable public errors implement the standard diagnostic traits where appropriate. This lets
+  callers compose, display, chain, and inspect errors in ordinary Rust workflows.
 - [`RUST-INJECT-HOST-INTERACTIONS-AT-BOUNDARIES`](rust/rust-inject-host-interactions-at-boundaries.md).
-  Make filesystem, network, time, randomness, process, and other host interactions injectable at a
-  boundary when tests or alternate environments need control. Ambient host interactions make Rust
-  code harder to test and harder to run in alternate environments. Helps: Helps tests control
-  nondeterminism and keeps host effects at explicit boundaries.
-- [`RUST-KEEP-CI-HIGH-SIGNAL`](rust/rust-keep-ci-high-signal.md). Keep Rust CI strict, fast,
-  deterministic, and high-signal. CI should make quality cheaper. Helps: Helps required checks catch
-  real regressions without burying maintainers in ritual.
+  Pass filesystem, network, time, randomness, and process behavior through boundaries when tests or
+  alternate environments need control. This keeps the core deterministic and effects explicit.
+- [`RUST-KEEP-CI-HIGH-SIGNAL`](rust/rust-keep-ci-high-signal.md). Keep required Rust checks strict,
+  fast, deterministic, and actionable. Slow or flaky ritual trains maintainers to ignore failures
+  while real drift accumulates.
 - [`RUST-KEEP-COMPATIBLE-UPDATES-IN-LOCKFILE`](rust/rust-keep-compatible-updates-in-lockfile.md).
-  Keep compatible dependency updates in the lockfile, not the manifest. Compatible dependency
-  updates usually belong in the lockfile, not the manifest requirement. Helps: Helps avoid
-  unnecessary downstream minimum-version bumps while still letting this checkout test with newer
-  compatible releases.
-- [`RUST-KEEP-CONCEPTS-COHERENT`](rust/rust-keep-concepts-coherent.md). Keep Rust concepts coherent.
-  A module, type, or helper should own one recognizable idea. Helps: Helps readers find the owner of
-  a behavior and change it without learning unrelated concepts.
-- [`RUST-KEEP-CRATE-BOUNDARIES-NARROW`](rust/rust-keep-crate-boundaries-narrow.md). Keep Rust crate
-  boundaries and shared dependency surfaces narrow. Every cross-crate helper, shared dependency,
-  root facade, and crate-local utility module becomes a coupling point. Helps: Helps workspaces
-  avoid accidental coupling, dependency fan-out, and facade modules that hide ownership.
+  Let lockfiles record newer compatible dependency versions when the manifest floor has not changed.
+  This tests fresh releases without narrowing downstream compatibility.
+- [`RUST-KEEP-CONCEPTS-COHERENT`](rust/rust-keep-concepts-coherent.md). Give each module, type, or
+  helper one recognizable idea to own. Coherent ownership keeps readers from carrying unrelated
+  parsing, state, rendering, and policy facts at once.
+- [`RUST-KEEP-CRATE-BOUNDARIES-NARROW`](rust/rust-keep-crate-boundaries-narrow.md). Put behavior and
+  tests in the crate or module that owns them before extracting shared helpers. Narrow boundaries
+  reduce dependency fan-out, feature pressure, and hidden coupling.
 - [`RUST-KEEP-DEPENDENCY-UPDATES-INTENTIONAL`](rust/rust-keep-dependency-updates-intentional.md).
-  Keep Rust dependency updates intentional and low-noise. Dependency updates can change parsing
-  behavior, trait implementations, feature resolution, MSRV, platform support, compile time, and
-  downstream integration even when the manifest requirement looks semver-compatible. Helps: Helps
-  dependency maintenance stay reviewable without surprising downstream users.
+  Separate maintenance-only dependency refreshes from updates that change behavior, features, MSRV,
+  or integration. Reviewable grouping lowers noise without hiding downstream risk.
 - [`RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`](rust/rust-keep-edits-scoped-to-owning-concept.md).
-  Keep Rust edits scoped to the owning concept. Rust crates often make it easy to touch nearby
-  modules, re-exports, features, and examples while solving one issue. Helps: Helps changes stay
-  atomic and lets reviewers verify the behavior in the module that owns it.
-- [`RUST-KEEP-LINTS-ACTIONABLE`](rust/rust-keep-lints-actionable.md). Keep Rust lints actionable and
-  scoped. Lint configuration should encode durable project policy, not a large pile of taste
-  preferences that developers learn to silence. Helps: Helps lint failures stay meaningful and keeps
-  suppressions from becoming invisible cleanup debt.
+  Change the module, crate, feature, or facade that owns the behavior being fixed. Scoped edits keep
+  reviews atomic and prevent nearby files from pulling in unrelated concepts.
+- [`RUST-KEEP-LINTS-ACTIONABLE`](rust/rust-keep-lints-actionable.md). Enforce lints that improve
+  correctness, API quality, docs, portability, or maintenance in ways reviewers want automated.
+  Scope suppressions tightly so exceptions stay visible.
 - [`RUST-KEEP-MARKDOWN-OUTSIDE-RUSTDOC-PURPOSEFUL`](rust/rust-keep-markdown-outside-rustdoc-purposeful.md).
-  Use Markdown docs for Rust material that does not fit in Rustdoc or README. Rustdoc is best for
-  API contracts and examples near the items users call. Helps: Helps each Rust documentation surface
-  carry the kind of information readers expect there.
+  Use standalone Markdown for architecture, workflow, release, or operational guidance that would
+  make API docs noisy. Choosing the right surface keeps contracts and long-form context current.
 - [`RUST-KEEP-PRE-RELEASE-COMPATIBILITY-INTENTIONAL`](rust/rust-keep-pre-release-compatibility-intentional.md).
-  Do not preserve accidental development-era compatibility in pre-release crates. Before a crate
-  commits to stable public API, preserving accidental names, re-exports, features, or error variants
-  can freeze poor shapes early. Helps: Helps pre-release crates converge on intentional public shape
-  before semver compatibility hardens.
-- [`RUST-KEEP-PRELUDES-REEXPORT-ONLY`](rust/rust-keep-preludes-reexport-only.md). Keep prelude
-  modules re-export only. A prelude is a convenience import surface, not an owner of behavior.
-  Helps: Helps users import common names without obscuring where those names are defined.
-- [`RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`](rust/rust-keep-public-api-shape-intentional.md). Keep
-  public API shape intentional. Every public item becomes something users can import, name,
-  document, and depend on. Helps: Helps prevent accidental semver commitments through visibility,
-  type aliases, features, re-exports, trait bounds, and error variants.
+  Preserve pre-release compatibility only when it reflects a chosen contract. Early cleanup is often
+  cheaper than freezing accidental names, re-exports, features, or variants.
+- [`RUST-KEEP-PRELUDES-REEXPORT-ONLY`](rust/rust-keep-preludes-reexport-only.md). Put only
+  re-exports in prelude modules and keep original behavior in its owning module. Users expect
+  preludes to aid imports, not hide implementation ownership.
+- [`RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`](rust/rust-keep-public-api-shape-intentional.md). Make
+  public visibility, aliases, features, re-exports, bounds, and variants reflect intended
+  commitments. Published surface area becomes something downstream users can depend on.
 - [`RUST-KEEP-RUSTDOC-AND-README-EXAMPLES-ALIGNED`](rust/rust-keep-rustdoc-and-readme-examples-aligned.md).
-  Keep README examples, Rustdoc examples, generated README content, and example directories aligned.
-  Rust crates often teach the same API in several places. Helps: Helps public documentation present
-  one coherent usage contract.
+  Keep README, Rustdoc, generated docs, and example directories teaching the same current usage
+  contract. Aligned examples prevent users from guessing which import path or lifecycle is correct.
 - [`RUST-MAKE-FEATURE-FLAGS-ADDITIVE-WHERE-POSSIBLE`](rust/rust-make-feature-flags-additive-where-possible.md).
-  Make feature flags additive where possible. Rust feature unification means enabling a feature in
-  one dependency path can affect the whole build. Helps: Helps dependency unification behave
-  predictably when multiple downstream crates enable different feature sets.
+  Design feature flags as additive capabilities whenever possible so Cargo feature unification does
+  not surprise downstream builds. Make incompatible combinations explicit when addition cannot model
+  the real choice.
 - [`RUST-MAKE-PUBLIC-API-BROWSEABLE-FROM-LAYOUT`](rust/rust-make-public-api-browseable-from-layout.md).
-  Make the public API browseable from the file layout. When public modules, re-exports, and files
-  disagree, users and maintainers must translate between Rustdoc paths and source paths. Helps:
-  Helps source browsing, Rustdoc navigation, and review align around the same conceptual map.
-- [`RUST-MAKE-SIDE-EFFECTS-EXPLICIT`](rust/rust-make-side-effects-explicit.md). Make side effects
-  explicit in names, call sites, and docs. Rust's ownership model makes many data-flow effects
-  visible, but I/O, global registration, background tasks, process state, logging, caches, and
-  mutation through shared handles can still be hidden behind innocent-looking calls. Helps: Helps
-  callers and reviewers see mutation, I/O, registration, cleanup, and background work.
-- [`RUST-NAME-AUDITABLE-INTERMEDIATES`](rust/rust-name-auditable-intermediates.md). Use named locals
-  when parsing, rendering, or side effects need auditability. Intermediate variables can make Rust
-  code easier to audit when they name ownership, parsing, validation, or policy decisions. Helps:
-  Helps reviewers inspect parsing, rendering, validation, and side effects by turning dense
-  expressions into named facts.
-- [`RUST-NAME-TESTS-BY-BEHAVIOR`](rust/rust-name-tests-by-behavior.md). Name Rust tests by the
-  behavior they protect. Test names are the first diagnostic readers see when a Rust test fails.
-  Helps: Helps test output explain the broken behavior before a reader opens the test body.
-- [`RUST-NON-EXHAUSTIVE-PUBLIC-ERRORS`](rust/rust-non-exhaustive-public-errors.md). Use
-  `#[non_exhaustive]` for public error enums unless exhaustive matching is intentional. Public error
-  enums often need new variants as integrations, validation, and provider behavior expand. Helps:
-  Helps libraries add future error cases without forcing every downstream match expression to break
-  at the next release.
-- [`RUST-ORDER-CODE-FOR-READING`](rust/rust-order-code-for-reading.md). Order Rust code by execution
-  order or conceptual dependency order. File order is a reading interface. Helps: Helps modules read
-  top-to-bottom and keeps helpers in context.
-- [`RUST-ORDER-ITEMS-FOR-API-READING`](rust/rust-order-items-for-api-reading.md). Order Rust items
-  so the API is easy to read. Item order is part of source readability. Helps: Helps readers scan
-  modules for API, implementation, and type behavior without jumping around.
-- [`RUST-PREFER-BORING-DIRECT-CODE`](rust/rust-prefer-boring-direct-code.md). Prefer boring direct
-  Rust over clever framework-shaped code. Boring Rust makes ownership, error handling, and control
-  flow visible. Helps: Helps maintainers and agents reason about ownership, control flow, and errors
-  without learning an avoidable framework-shaped abstraction first.
+  Align public modules, re-exports, and source files so readers can navigate from API to ownership
+  without translation. Facades are fine when they improve discovery and still point toward the
+  owning concept.
+- [`RUST-MAKE-SIDE-EFFECTS-EXPLICIT`](rust/rust-make-side-effects-explicit.md). Put mutation, I/O,
+  registration, cleanup, and background work in names, call sites, or docs when callers must account
+  for them. Keep tiny private helpers plain when the surrounding code already makes the effect
+  obvious.
+- [`RUST-NAME-AUDITABLE-INTERMEDIATES`](rust/rust-name-auditable-intermediates.md). Introduce named
+  locals where parsing, validation, rendering, ownership, or side-effect decisions need review.
+  Avoid naming every trivial expression when it would add ceremony without clarifying the boundary.
+- [`RUST-NAME-TESTS-BY-BEHAVIOR`](rust/rust-name-tests-by-behavior.md). Name tests after the
+  behavior, boundary, or regression they protect so failure output is useful before a reader opens
+  the body. Keep names concise and let module context carry repeated setup details.
+- [`RUST-NON-EXHAUSTIVE-PUBLIC-ERRORS`](rust/rust-non-exhaustive-public-errors.md). Mark public
+  error enums non-exhaustive unless exhaustive matching is part of the contract. This preserves room
+  for future integration, validation, or provider failures without needless downstream breakage.
+- [`RUST-ORDER-CODE-FOR-READING`](rust/rust-order-code-for-reading.md). Arrange code so central
+  items, callers, or public API appear before supporting helpers when that makes the file readable
+  top to bottom. Prefer the order that reduces reader jumping over mechanical rearrangement.
+- [`RUST-ORDER-ITEMS-FOR-API-READING`](rust/rust-order-items-for-api-reading.md). Order imports,
+  public items, impls, trait impls, and helpers so the API story is easy to scan. Respect macros,
+  generated code, and local convention when another order communicates better.
+- [`RUST-PREFER-BORING-DIRECT-CODE`](rust/rust-prefer-boring-direct-code.md). Prefer explicit Rust
+  control flow, types, and error handling over clever framework-shaped indirection. Use macros or
+  abstractions when they remove real repetition or enforce real invariants.
 - [`RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`](rust/rust-prefer-concept-owned-modules-and-named-files.md).
-  Prefer concept-owned modules and named files. Modules should be owned by concepts, not by
-  miscellaneous implementation layers. Helps: Helps readers find the code for a domain concept
-  without translating through arbitrary layers such as helpers, utils, types, or misc.
+  Organize modules around domain concepts and give important concepts named files that own their
+  types, invariants, tests, and docs. Use infrastructure modules only when the cross-cutting concept
+  is real and bounded.
 - [`RUST-PREFER-CONSTRUCTORS-AND-CONVERSION-TRAITS`](rust/rust-prefer-constructors-and-conversion-traits.md).
-  Prefer inherent constructors or trait implementations for construction. Construction should tell
-  callers whether they are building a new value, validating input, converting between
-  representations, or borrowing a view. Helps: Helps callers discover how values are created and
-  whether construction validates, converts, borrows, allocates, or can fail.
+  Use inherent constructors and standard conversion traits to show whether construction builds,
+  validates, converts, borrows, allocates, or can fail. Prefer public fields only when direct
+  construction is truly part of the contract.
 - [`RUST-PREFER-EXPECT-FOR-LINT-SUPPRESSIONS`](rust/rust-prefer-expect-for-lint-suppressions.md).
-  Prefer `#[expect]` over `#[allow]` when suppression should be revisited. `#[allow]` can silently
-  outlive the reason it was added. Helps: Helps suppressions fail when they stop being needed,
-  preventing stale `allow` attributes from hiding fixed warnings forever.
-- [`RUST-PREFER-SMALL-CLEAR-SHAPES`](rust/rust-prefer-small-clear-shapes.md). Prefer small
-  functions, narrow structs, and simple enums. Small functions, narrow structs, and simple enums
-  reduce the number of fields, branches, lifetimes, and invariants a reader must hold at once.
-  Helps: Helps keep the number of live fields, branches, parameters, and invariants small enough for
-  readers to understand locally.
-- [`RUST-PRESERVE-ERROR-CONTEXT`](rust/rust-preserve-error-context.md). Preserve enough Rust error
-  context for callers to act. Mapping every failure to a broad string or generic variant loses the
-  operation, input, source error, and recovery signal. Helps: Helps callers diagnose failures and
-  preserve error chains without depending on private details.
-- [`RUST-PRESERVE-VALID-STATE-ON-FAILURE`](rust/rust-preserve-valid-state-on-failure.md). Preserve
-  the current usable state when refresh, parsing, I/O, or rendering preparation fails. Partially
-  applied failure paths can leave callers with neither the old valid state nor the new state. Helps:
-  Helps stateful Rust code avoid corrupting usable state after fallible work.
-- [`RUST-REEXPORT-FOR-DISCOVERY`](rust/rust-reexport-for-discovery.md). Use re-exports for
-  discovery, not ownership hiding. Re-exports help users find the public API from the crate root or
-  module facade, but they should not obscure where the concept is owned. Helps: Helps users find the
-  intended API from the crate root or module facade while preserving clear implementation ownership.
+  Use `#[expect]` for targeted lint suppressions that should disappear when the warning is fixed.
+  Reserve broad `allow` attributes for deliberate policy choices that are not expected to expire.
+- [`RUST-PREFER-SMALL-CLEAR-SHAPES`](rust/rust-prefer-small-clear-shapes.md). Favor small functions,
+  narrow structs, and simple enums that keep live facts local for readers. Do not split cohesive
+  logic into fragments that force more navigation than understanding.
+- [`RUST-PRESERVE-ERROR-CONTEXT`](rust/rust-preserve-error-context.md). Wrap and model errors so
+  callers can see the operation, relevant input, source cause, and recovery signal. Avoid flattening
+  failures into broad strings or generic variants that remove actionable context.
+- [`RUST-PRESERVE-VALID-STATE-ON-FAILURE`](rust/rust-preserve-valid-state-on-failure.md). Keep
+  values valid when fallible operations return errors so callers can retry, inspect, or drop them
+  predictably. Use transactional updates or staging when partial mutation would expose a broken
+  state.
+- [`RUST-REEXPORT-FOR-DISCOVERY`](rust/rust-reexport-for-discovery.md). Re-export public items where
+  callers naturally look so the crate surface is discoverable without hiding ownership. Keep
+  canonical definitions and docs clear so re-exports do not become competing homes.
 - [`RUST-RELEASE-ONLY-AFTER-ARTIFACT-VALIDATION`](rust/rust-release-only-after-artifact-validation.md).
-  Release and tag Rust crates only after validating the package artifact. The crate package is the
-  artifact users receive. Helps: Helps Rust releases avoid missing docs, stale generated files,
-  wrong metadata, and premature tags.
+  Validate the actual release artifact before publishing instead of trusting the working tree. This
+  catches missing files, stale generated content, and packaging mistakes while the release can still
+  be fixed.
 - [`RUST-REVIEW-AS-FUTURE-MAINTAINER`](rust/rust-review-as-future-maintainer.md). Review Rust
-  changes from the perspective of a future maintainer who did not write the code. Rust changes can
-  compile and pass tests while leaving future readers with vague ownership, surprising visibility,
-  hidden side effects, unclear errors, or brittle feature behavior. Helps: Helps review prioritize
-  correctness, public API clarity, documentation truth, and maintainability.
-- [`RUST-RUN-FEATURE-GATED-VALIDATION`](rust/rust-run-feature-gated-validation.md). Run
-  feature-gated tests and docs when changing feature-gated Rust integrations. Feature-gated code can
-  compile, document, and behave differently from the default build. Helps: Helps optional
-  integrations stay buildable, documented, and behaviorally covered.
+  changes for the reader who will debug, extend, or release the code later, not only for immediate
+  correctness. Favor maintainable API shape, docs, tests, and error behavior over changes that
+  merely compile.
+- [`RUST-RUN-FEATURE-GATED-VALIDATION`](rust/rust-run-feature-gated-validation.md). Exercise the
+  feature combinations touched by a Rust change so gated code, docs, and integrations actually
+  build. Choose representative combinations when exhaustive feature matrices would be too expensive.
 - [`RUST-SHAPE-EXPRESSIONS-FOR-AUDITABILITY`](rust/rust-shape-expressions-for-auditability.md).
-  Shape Rust expressions so parsing, rendering, state changes, and side effects are easy to audit.
-  Dense chains, side-effectful closures, and mixed pure/effect steps can hide the order and meaning
-  of important work. Helps: Helps reviewers inspect edge cases and side effects without mentally
-  executing dense expressions.
-- [`RUST-TEACH-CRATE-FROM-CRATE-ROOT`](rust/rust-teach-crate-from-crate-root.md). Teach the crate
-  from the crate root. The crate root is the first Rustdoc page and often the first source file a
-  reader opens. Helps: Helps new users learn the crate purpose, main types, feature flags, and first
-  example before they browse module details.
+  Shape complex expressions so ownership, validation, error handling, and side effects can be
+  audited at the point they occur. Break chains or introduce names when density hides a decision
+  readers must verify.
+- [`RUST-TEACH-CRATE-FROM-CRATE-ROOT`](rust/rust-teach-crate-from-crate-root.md). Use crate-root
+  docs and exports to teach the crate's main concepts, entry points, and common paths. Keep the root
+  focused enough to orient readers without duplicating every item-level contract.
 - [`RUST-TIE-OPTIONAL-DEPENDENCIES-TO-NAMED-FEATURES`](rust/rust-tie-optional-dependencies-to-named-features.md).
-  Keep optional dependencies tied to clearly named features. Optional dependencies become part of
-  the feature contract. Helps: Helps downstream users understand why an optional dependency exists
-  and how enabling it changes compile time, platform support, and API surface.
+  Connect optional dependencies to clear feature names that explain the capability callers enable.
+  Avoid leaking dependency names as the public feature design when the capability needs a more
+  stable contract.
 - [`RUST-USE-BUILDERS-FOR-OPTIONAL-OR-VALIDATED-FIELDS`](rust/rust-use-builders-for-optional-or-validated-fields.md).
-  Use builders for many optional fields or cross-field validation. Constructors with many optional
-  arguments or cross-field validation become hard to call correctly and hard to extend compatibly.
-  Helps: Helps APIs avoid long argument lists while giving validation and cross-field defaults a
-  named home.
+  Use builders when construction has many optional inputs or cross-field validation that would make
+  constructors hard to read. Avoid builder APIs for simple values where direct construction
+  communicates the contract better.
 - [`RUST-USE-DEBUG-ASSERT-FOR-INTERNAL-INVARIANTS`](rust/rust-use-debug-assert-for-internal-invariants.md).
-  Use `debug_assert!` for internal invariants that should be checked during development. Some
-  invariants indicate programmer mistakes inside the crate rather than ordinary caller-facing
-  errors. Helps: Helps distinguish internal correctness assumptions from recoverable public errors.
+  Use debug assertions for internal invariants that should hold if nearby code is correct. Do not
+  use them for caller validation or safety requirements that must be enforced in release builds.
 - [`RUST-USE-DIRECTORY-MODULES-AS-TABLES-OF-CONTENTS`](rust/rust-use-directory-modules-as-tables-of-contents.md).
-  Use directory-root modules as tables of contents. A directory-root module should orient readers to
-  the submodules it owns. Helps: Helps directory modules orient readers to submodules and public
-  exports instead of hiding implementation in a large `mod.rs`.
+  Let directory module files introduce, organize, and re-export the concepts owned by that
+  directory. Keep substantial implementation in named child files so the module remains a readable
+  table of contents.
 - [`RUST-USE-DOC-INLINE-FOR-CANONICAL-REEXPORTS`](rust/rust-use-doc-inline-for-canonical-reexports.md).
-  Use `#[doc(inline)]` when a re-export is the canonical path readers should land on. Rustdoc can
-  show a re-export as a link away from the facade or inline the item's documentation at the facade.
-  Helps: Helps Rustdoc present canonical public paths without hiding implementation ownership in
-  source.
+  Use `#[doc(inline)]` when a re-export should be the canonical place readers encounter an item.
+  Avoid inlining re-exports that would obscure the owning module or create duplicate-looking
+  documentation.
 - [`RUST-USE-FIELD-INIT-SHORTHAND`](rust/rust-use-field-init-shorthand.md). Use field init shorthand
-  when it improves ordinary Rust readability. Rust readers expect `Self { name, path, count }` when
-  local variable names already match field names. Helps: Helps struct construction stay concise and
-  idiomatic when names already carry meaning.
+  when variable names already match struct fields so initialization stays compact and familiar.
+  Spell fields out when renaming, conversion, or policy deserves visible attention.
 - [`RUST-USE-FUNCTIONS-FOR-INCIDENTAL-TYPES`](rust/rust-use-functions-for-incidental-types.md).
-  Prefer regular functions over associated functions when the type name is incidental. Associated
-  functions imply the type owns the operation. Helps: Helps callers avoid chasing an irrelevant type
-  just to find a stateless operation or one-off transformation.
-- [`RUST-USE-HONEST-MINIMUM-DEPENDENCIES`](rust/rust-use-honest-minimum-dependencies.md). Use the
-  lowest honest compatible dependency requirement. The manifest should state the lowest compatible
-  dependency versions the crate honestly supports. Helps: Helps downstream users with older
-  compatible dependency graphs build the crate without unnecessary version pressure.
-- [`RUST-USE-MEANINGFUL-STANDARD-TYPES`](rust/rust-use-meaningful-standard-types.md). Use standard
-  library types that carry meaning. Standard library types such as `PathBuf`, `NonZeroUsize`,
-  `Duration`, `Cow`, `Arc`, and `Result` carry familiar ownership and invariant signals. Helps:
-  Helps encode units, ownership, paths, durations, nonzero constraints, borrowing, and optionality
-  directly in function signatures.
-- [`RUST-USE-SEND-STATIC-ACROSS-TASKS`](rust/rust-use-send-static-across-tasks.md). Use `Send +
-  'static` errors, futures, and service handles across tasks or threads. Values crossing task or
-  thread boundaries often need `Send + 'static` because the executor may move or retain them beyond
-  the caller's stack frame. Helps: Helps spawned tasks and threads avoid borrowing stack-local
-  values or non-thread-safe state that cannot outlive the caller.
-- [`RUST-VALIDATE-BUILDERS-ON-BUILD`](rust/rust-validate-builders-on-build.md). Builder `build`
-  methods should validate cross-field invariants and return errors when construction can fail.
-  Builders spread configuration across multiple calls. Helps: Helps keep partially configured
-  builders flexible while keeping constructed values valid.
+  Prefer free or module functions when a type does not own the operation or invariant. Move behavior
+  onto a type when the method relationship clarifies state, policy, or trait design.
+- [`RUST-USE-HONEST-MINIMUM-DEPENDENCIES`](rust/rust-use-honest-minimum-dependencies.md). Set
+  dependency requirements to the lowest compatible versions the crate actually supports. Raise
+  minimums only for required APIs, fixes, features, security needs, or MSRV interactions.
+- [`RUST-USE-MEANINGFUL-STANDARD-TYPES`](rust/rust-use-meaningful-standard-types.md). Prefer
+  standard or ecosystem types that encode ownership, units, paths, durations, optionality, and
+  invariants better than raw strings or integers. Use domain newtypes when the standard type cannot
+  prevent meaningful mixups.
+- [`RUST-USE-SEND-STATIC-ACROSS-TASKS`](rust/rust-use-send-static-across-tasks.md). Require owned
+  `Send + 'static` values, futures, errors, and handles when they cross spawn or thread boundaries.
+  Avoid imposing those bounds on local synchronous APIs where they would reject valid use.
+- [`RUST-VALIDATE-BUILDERS-ON-BUILD`](rust/rust-validate-builders-on-build.md). Validate cross-field
+  builder invariants in `build` where partial configuration becomes a usable value. Keep `build`
+  infallible only when defaults and setters make invalid states impossible.
 - [`RUST-VALIDATE-PACKAGE-CONTENTS-BEFORE-RELEASE`](rust/rust-validate-package-contents-before-release.md).
-  Validate package contents before release. The crate package is what users receive, not the working
-  tree. Helps: Helps catch missing README files, examples, license files, generated assets, and
-  accidental inclusions before publishing an immutable crate package.
-- [`RUST-VALIDATE-RUST-DOCS-AS-CODE`](rust/rust-validate-rust-docs-as-code.md). Validate Rust docs
-  as code. Rust documentation often contains imports, feature assumptions, examples, generated
-  README content, and links that users copy directly. Helps: Helps Rust documentation stay
-  executable, linked, and aligned with the crate's public behavior.
+  Inspect and build the package users will receive, not just the repository checkout. This catches
+  missing assets, accidental inclusions, README drift, and include/exclude mistakes before
+  publication.
+- [`RUST-VALIDATE-RUST-DOCS-AS-CODE`](rust/rust-validate-rust-docs-as-code.md). Treat Rust
+  documentation examples, links, feature assumptions, and generated README content as code that must
+  be checked. Use docs builds, doctests, feature-gated checks, and Markdown lint according to the
+  changed surface.
 - [`RUST-VALIDATE-SEMVER-BREAKS-AGAINST-EXTERNAL-USE`](rust/rust-validate-semver-breaks-against-external-use.md).
-  Validate semver-breaking changes against real external use. Semver tools can detect many API
-  breaks, but real downstream code shows how the public surface is actually used. Helps: Helps
-  distinguish theoretical API cleanup from real downstream breakage, especially for library crates
-  with examples, tutorials, and external dependents.
+  Check semver-breaking changes against real examples, dependents, or migration paths before
+  treating an API cleanup as cheap. External evidence informs the cost even when security,
+  soundness, or design repair still justify the break.
 - [`RUST-VALIDATE-UNSAFE-THROUGH-SAFE-API`](rust/rust-validate-unsafe-through-safe-api.md). Test
-  unsafe behavior through the safe wrapper. Unsafe internals matter because of the safe API contract
-  they support. Helps: Helps unsafe invariants stay connected to the public or crate-local safe
-  contract.
-- [`RUST-WORKING-RUST-CODE-NOT-ENOUGH`](rust/rust-working-rust-code-not-enough.md). Working Rust
-  code is not enough. Rust code can compile while still being hard to read, poorly documented,
-  wrongly public, feature-fragile, or painful for downstream users. Helps: Helps review Rust changes
-  for API clarity, docs, errors, tests, feature behavior, module shape, and downstream compatibility
-  instead of stopping at compilation.
+  unsafe internals through the safe API wrapper that callers rely on. Internal unsafe tests and
+  tools such as Miri should support, not replace, proof that safe calls uphold the contract.
+- [`RUST-WORKING-RUST-CODE-NOT-ENOUGH`](rust/rust-working-rust-code-not-enough.md). Treat
+  compilation as necessary but insufficient evidence for long-lived Rust code. Review API shape,
+  docs, errors, tests, features, dependencies, and module organization because users and maintainers
+  inherit those choices.
 - [`RUST-WRITE-ACTIONABLE-ERROR-DISPLAY`](rust/rust-write-actionable-error-display.md). Write
-  human-oriented and actionable error `Display` output. `Display` is often what users, CLIs, logs,
-  and support messages show. Helps: Helps users and agents fix failures from the message they
-  actually see in CLI output, logs, test diffs, and error reports.
+  `Display` messages that tell humans what failed and what useful next action or context exists.
+  Keep structured state in error fields, sources, diagnostics, or `Debug` instead of dumping
+  internals into the user-facing string.
 - [`RUST-WRITE-PUBLIC-DOCS-FOR-CALLER-TASKS`](rust/rust-write-public-docs-for-caller-tasks.md).
-  Write public Rust docs around caller tasks. Public Rustdoc should help a caller decide what an
-  item is for, how to use it, and what contract it creates. Helps: Helps public item docs answer
-  caller questions without bloated reference tables or vague prose.
-- [`RUST-WRITE-RUSTDOC-AS-API-CONTRACT`](rust/rust-write-rustdoc-as-api-contract.md). Write Rustdoc
-  as an API contract. Rustdoc is often the first and most durable public view of a crate. Helps:
-  Helps downstream users understand behavior without reading private implementation details.
+  Write public Rustdoc around what callers are trying to decide, do, and rely on. Start with concise
+  behavior and add arguments, failures, lifecycle, features, links, or examples only when they help
+  the task.
+- [`RUST-WRITE-RUSTDOC-AS-API-CONTRACT`](rust/rust-write-rustdoc-as-api-contract.md). Use Rustdoc to
+  state caller-facing behavior, invariants, failures, side effects, and compatibility promises.
+  Leave private implementation detail in comments unless it helps maintain the public contract.
 
 ### Source And Context Hygiene
 
 - [`SOURCE-GENERALIZE-PROJECT-SPECIFIC-RULES`](source/source-generalize-project-specific-rules.md).
-  Generalize project-specific rules before promotion. Local mining often starts from one repository,
-  tool, provider, or incident. Helps: Keeps public guidance broadly reusable while preserving narrow
-  lessons for the places where they actually apply.
+  Extract the portable failure mode before promoting local lessons into shared guidance. Provider,
+  repo, or tool details should stay local unless they clarify the durable rule.
 - [`SOURCE-KEEP-BINARIES-OUT-OF-SOURCE-CONTROL`](source/source-keep-binaries-out-of-source-control.md).
-  Keep binary artifacts out of source control. Git history is optimized for source changes, not
-  large opaque blobs. Helps: Keeps clones, fetches, CI caches, and history traversal fast; avoids
-  history rewrites for accidental large files; keeps review focused on source and provenance; and
-  separates release, PR, CI, and long-lived asset lifecycles from source history.
+  Store large or opaque artifacts in systems designed for assets, releases, CI evidence, or external
+  data. Keeping source history textual and reviewable avoids clone cost and painful history
+  rewrites.
 - [`SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`](source/source-make-shared-artifacts-standalone.md).
-  Make issues, PRs, commit messages, docs, and handoffs stand alone. Shared artifacts often leave
-  the development session with missing context. Helps: Makes shared work reviewable, auditable, and
-  useful to future readers without local source material.
-- [`SOURCE-PREFER-PRIMARY-STABLE-SOURCES`](source/source-prefer-primary-stable-sources.md). Prefer
-  primary or stable sources for durable guidance. External references are most useful when they help
-  a reader verify, compare, or challenge a rule. Helps: Makes rules easier to audit, easier to
-  justify in review, and less dependent on private memory.
+  Restate the problem, rationale, evidence, and tradeoffs in artifacts that leave the local session.
+  Future readers should not need private notes or transcripts to trust the result.
+- [`SOURCE-PREFER-PRIMARY-STABLE-SOURCES`](source/source-prefer-primary-stable-sources.md). Anchor
+  durable guidance in sources readers can inspect, compare, and challenge. Use links to clarify
+  judgment, not to decorate rules or depend on private memory.
 
 ### Tests Should Explain Failures
 
 - [`TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`](test-failures/test-avoid-opaque-boolean-assertions.md).
-  Avoid boolean assertions for values with multiple failure causes. An assertion like
-  `assert!(items.contains(x))` or `assert!(result.is_ok())` can fail for many reasons while showing
-  little useful state. Helps: Makes CI and agent failures easier to diagnose from the first failure
-  message.
-- [`TEST-OPTIMIZE-FAILURE-OUTPUT`](test-failures/test-optimize-failure-output.md). Optimize tests
-  for useful failure output. A passing test is useful, but a failing test is where maintainers and
-  agents spend repair time. Helps: Shortens repair loops and makes regression failures actionable in
-  CI logs.
-- [`TEST-SPLIT-UNRELATED-ASSERTIONS`](test-failures/test-split-unrelated-assertions.md). Keep
-  unrelated assertions separate when failure diagnosis matters. One test that checks parsing,
-  formatting, ordering, error display, and cleanup may stop at the first failure and hide the real
-  scope of the regression. Helps: Makes failures local to one behavior and prevents one broken check
-  from masking another.
+  Prefer comparisons or richer assertions when many causes can make a boolean false. The first
+  failure should show the actual state needed to diagnose the regression.
+- [`TEST-OPTIMIZE-FAILURE-OUTPUT`](test-failures/test-optimize-failure-output.md). Design tests so
+  failures include expected values, actual values, inputs, and contract context where that helps
+  repair. Useful output shortens CI and agent debugging loops.
+- [`TEST-SPLIT-UNRELATED-ASSERTIONS`](test-failures/test-split-unrelated-assertions.md). Split
+  assertions that diagnose different behaviors when one failure would hide another. Keep checks
+  together only when they express one contract more clearly as a group.
 
 ### Testing And Verification
 
 - [`TEST-CHECK-IMPORTANT-FEATURE-COMBINATIONS`](testing/test-check-important-feature-combinations.md).
-  Test all features and important feature combinations. Rust feature flags can change public API,
-  optional dependencies, cfg-gated docs, and compile paths. Helps: Catches feature-gated regressions
-  before downstream users combine features differently than the maintainer did.
-- [`TEST-CHECK-MAINTAINER-COMMANDS-IN-CI`](testing/test-check-maintainer-commands-in-ci.md). Check
-  the same commands in CI that maintainers are expected to run locally. If the README or maintainer
-  guide says to run `cargo test`, `cargo doc`, `markdownlint-cli2`, or a release check, CI should
-  exercise the same command or an intentionally stronger equivalent. Helps: Keeps contributor
-  instructions honest and prevents maintainers from relying on checks that CI never runs.
-- [`TEST-CHECK-MSRV-AND-PLATFORMS`](testing/test-check-msrv-and-platforms.md). Run MSRV and platform
-  checks when the crate declares them. MSRV and platform support are public compatibility claims.
-  Helps: Keeps support claims aligned with reality and catches accidental platform or toolchain
-  regressions.
-- [`TEST-CHOOSE-VALIDATION-BY-RISK`](testing/test-choose-validation-by-risk.md). Choose validation
-  by risk. Different changes need different proof. Helps: Avoids both under-testing risky work and
-  over-testing low-risk edits.
-- [`TEST-COVER-ASYNC-ROUTING-EDGE-CASES`](testing/test-cover-async-routing-edge-cases.md). Cover
-  unrelated input, late replies, timeouts, and unmatched responses in async routing tests. Async
-  routing bugs often appear when replies arrive late, time out, match the wrong request, or include
-  unrelated input. Helps: Protects request/response correlation, timeout behavior, and cleanup in
-  async systems.
-- [`TEST-COVER-LOCAL-LOGIC-WITH-UNIT-TESTS`](testing/test-cover-local-logic-with-unit-tests.md).
-  Cover local logic with unit tests. Small pure logic is cheapest to test close to where it lives.
-  Helps: Gives fast, precise feedback for local contracts and edge cases.
-- [`TEST-COVER-NAVIGATION-BOUNDARIES`](testing/test-cover-navigation-boundaries.md). Cover
-  navigation and scroll boundaries in tests. Navigation and scrolling bugs usually happen at the
-  edges: empty lists, first item, last item, small viewport, oversized content, saturating offsets,
-  and repeated key presses. Helps: Prevents off-by-one and underflow behavior in terminal UI, list,
-  cursor, and paging code.
-- [`TEST-COVER-POLICY-OUTCOMES`](testing/test-cover-policy-outcomes.md). Cover allowed, denied,
-  redacted, and fallback behavior in policy tests. Policy code is most useful at its decision
-  boundaries: allowed, denied, redacted, fallback, preserved, and unsupported. Helps: Makes access,
-  privacy, compatibility, and fallback behavior explicit and reviewable.
+  Exercise default, disabled-default, all-feature, and important feature-pair builds. Feature flags
+  change APIs and compile paths, so use a risk-based matrix instead of every combo.
+- [`TEST-CHECK-MAINTAINER-COMMANDS-IN-CI`](testing/test-check-maintainer-commands-in-ci.md). Put
+  documented maintainer commands, or intentionally stronger equivalents, in CI. This keeps local
+  instructions honest while leaving slow or credentialed checks to special jobs.
+- [`TEST-CHECK-MSRV-AND-PLATFORMS`](testing/test-check-msrv-and-platforms.md). Run checks for
+  declared Rust versions and supported platforms when they are promised. Compatibility claims are
+  public contracts, so skip matrices only when no such claim exists.
+- [`TEST-CHOOSE-VALIDATION-BY-RISK`](testing/test-choose-validation-by-risk.md). Match the amount
+  and kind of validation to the changed surface and failure cost. Cheap checks come first, but risky
+  or uncertain behavior needs targeted evidence.
+- [`TEST-COVER-ASYNC-ROUTING-EDGE-CASES`](testing/test-cover-async-routing-edge-cases.md). Test late
+  replies, unrelated input, timeouts, and unmatched async responses. These cases protect request
+  correlation and cleanup without relying on wall-clock luck.
+- [`TEST-COVER-LOCAL-LOGIC-WITH-UNIT-TESTS`](testing/test-cover-local-logic-with-unit-tests.md). Use
+  unit tests for small local logic such as parsing helpers and policy branches. They give fast
+  precise feedback, while boundary behavior still needs higher-level tests.
+- [`TEST-COVER-NAVIGATION-BOUNDARIES`](testing/test-cover-navigation-boundaries.md). Exercise first,
+  last, empty, oversized, and repeated-navigation states in tests. Boundary cases catch cursor and
+  scrolling bugs that polished manual demos often miss.
+- [`TEST-COVER-POLICY-OUTCOMES`](testing/test-cover-policy-outcomes.md). Test allowed, denied,
+  redacted, fallback, and unsupported policy outcomes. Policy value lives at decision boundaries, so
+  assert caller-visible behavior instead of internals.
 - [`TEST-COVER-PUBLIC-BOUNDARIES-WITH-INTEGRATION-TESTS`](testing/test-cover-public-boundaries-with-integration-tests.md).
-  Cover public behavior across module boundaries with integration tests. Public behavior can break
-  across module, crate, feature, or adapter boundaries even when unit tests pass. Helps: Catches
-  wiring, visibility, feature, and cross-module regressions at the user-facing boundary.
+  Use integration tests to prove public module, crate, or adapter boundaries. They catch composition
+  failures unit tests miss, while local logic can stay unit-tested.
 - [`TEST-COVER-PUBLIC-EXAMPLES-WITH-DOCTESTS`](testing/test-cover-public-examples-with-doctests.md).
-  Cover public examples with doctests when they can compile without fragile assumptions. Public
-  examples teach users and agents how to call the API. Helps: Keeps documentation examples
-  executable and aligned with public API shape.
+  Compile public documentation examples as doctests when they do not need fragile state. Executable
+  examples catch stale guidance, reserving no-run or ignored examples for real limits.
 - [`TEST-FUZZ-PARSERS-FORMATTERS-AND-STATE-MACHINES`](testing/test-fuzz-parsers-formatters-and-state-machines.md).
-  Use fuzzing or property tests for parsers, formatters, decoders, state machines, and untrusted
-  input. Parsers, formatters, decoders, and state machines have large input spaces with edge cases
-  humans will not enumerate. Helps: Finds edge cases beyond hand-written examples and protects
-  input-facing code from surprising shapes.
-- [`TEST-KEEP-DRIFT-CLAIMS-ALIGNED`](testing/test-keep-drift-claims-aligned.md). Keep support
-  claims, fixtures, docs, examples, and API paths aligned with drift tests. Support matrices,
-  fixtures, docs, examples, and public API paths often drift independently. Helps: Keeps user-facing
-  support claims tied to executable evidence.
-- [`TEST-KEEP-SLOW-CHECKS-OUT-OF-PR-CI`](testing/test-keep-slow-checks-out-of-pr-ci.md). Keep slow
-  fuzzing, long benchmarks, and exhaustive compatibility checks out of required PR CI unless they
-  are fast and deterministic. Required PR CI should give fast, reliable feedback. Helps: Keeps
-  normal review fast while preserving heavier checks for release or scheduled validation.
-- [`TEST-MATCH-EVIDENCE-TO-SURFACE`](testing/test-match-evidence-to-surface.md). Match validation
-  evidence to the changed surface. A change to rendered docs, terminal layout, parser output, public
-  API, or performance needs evidence from that surface. Helps: Makes validation persuasive because
-  the proof matches what changed.
-- [`TEST-PREFER-DETERMINISTIC-TESTS`](testing/test-prefer-deterministic-tests.md). Prefer
-  deterministic tests over timing or external-state tests. Tests that depend on timing, network
-  state, random ordering, real clocks, or external services fail for reasons unrelated to the code
-  under review. Helps: Reduces flaky CI and makes failures actionable.
+  Use fuzzing or property tests for input-heavy parsers, formatters, and state machines. Large input
+  spaces hide failures, so keep long fuzzing outside PR gates unless it is stable.
+- [`TEST-KEEP-DRIFT-CLAIMS-ALIGNED`](testing/test-keep-drift-claims-aligned.md). Tie support claims,
+  fixtures, examples, docs, and API paths to executable drift checks. Stable claims need evidence,
+  but wording-only changes should not break broad tests.
+- [`TEST-KEEP-SLOW-CHECKS-OUT-OF-PR-CI`](testing/test-keep-slow-checks-out-of-pr-ci.md). Keep long
+  fuzzing, exhaustive matrices, and noisy benchmarks out of required PR CI. Fast gates preserve
+  review flow, while heavier checks belong in release or scheduled validation.
+- [`TEST-MATCH-EVIDENCE-TO-SURFACE`](testing/test-match-evidence-to-surface.md). Validate the actual
+  changed surface, such as rendered docs, API behavior, or byte output. The narrowest relevant proof
+  is more persuasive than unrelated broad test success.
+- [`TEST-PREFER-DETERMINISTIC-TESTS`](testing/test-prefer-deterministic-tests.md). Prefer tests
+  controlled by fixed inputs, clocks, ordering, and local state. Deterministic failures are
+  reproducible, while real integration checks should be isolated by cost.
 - [`TEST-PROVE-COMMAND-CONSTRUCTION-AND-DISPLAY`](testing/test-prove-command-construction-and-display.md).
-  Prove command construction and display behavior in tests. Command-building code can be wrong in
-  quoting, argument order, display redaction, environment handling, or platform formatting while
-  still invoking a happy path locally. Helps: Prevents shell, display, redaction, and platform bugs
-  in command-facing code.
-- [`TEST-PROVE-CONTRACTS-NOT-TRIVIA`](testing/test-prove-contracts-not-trivia.md). Prove contracts
-  with tests, not implementation trivia. Tests that lock down private helper order, incidental
-  formatting, or intermediate variables make refactoring expensive without proving user-visible
-  behavior. Helps: Keeps tests useful through refactoring and focused on behavior that matters.
-- [`TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`](testing/test-run-docs-as-first-class-gate.md). Run docs as a
-  first-class validation job. Docs contain commands, examples, feature claims, public API paths, and
-  Rustdoc links. Helps: Keeps documentation, examples, and public API contracts aligned with code.
+  Test both executable command shape and displayed command text when users rely on them. Quoting,
+  redaction, ordering, and platform formatting can fail even when a local happy path works.
+- [`TEST-PROVE-CONTRACTS-NOT-TRIVIA`](testing/test-prove-contracts-not-trivia.md). Write tests
+  around observable contracts instead of private helper trivia. This preserves refactoring freedom
+  unless the detail is itself the promised behavior.
+- [`TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`](testing/test-run-docs-as-first-class-gate.md). Treat
+  documentation checks as real validation for examples, links, commands, and claims. Prose-only
+  edits may need less proof, but API-facing docs should fail before stale guidance ships.
 - [`TEST-RUN-FAST-FORMAT-AND-LINT-GATES-EARLY`](testing/test-run-fast-format-and-lint-gates-early.md).
-  Run formatting and clippy early because they fail fast. Formatting and lint failures are cheap to
-  find and noisy to review. Helps: Shortens feedback loops and keeps review focused on behavior
-  instead of mechanics.
-- [`TEST-USE-REALISTIC-PARSER-SAMPLES`](testing/test-use-realistic-parser-samples.md). Use realistic
-  samples and safe degradation cases in parser tests. Parser tests built only from idealized
-  examples miss real whitespace, ordering, partial data, unknown fields, legacy formats, invalid
-  input, and safe degradation behavior. Helps: Catches parsing regressions and documents how
-  malformed or unexpected input is handled.
+  Run cheap format and lint gates early in the feedback loop. They remove mechanical failures
+  quickly, but they do not replace validation of risky behavior.
+- [`TEST-USE-REALISTIC-PARSER-SAMPLES`](testing/test-use-realistic-parser-samples.md). Test parsers
+  with representative input, malformed cases, and safe degradation examples. Real samples catch
+  compatibility failures, but fixtures should be minimized and scrubbed.
 - [`TEST-VALIDATE-DECLARED-MINIMUM-DEPENDENCY-VERSIONS`](testing/test-validate-declared-minimum-dependency-versions.md).
-  Validate declared minimum dependency versions. Cargo manifests communicate the minimum compatible
-  versions a downstream project may resolve. Helps: Keeps dependency requirements honest and
-  protects downstream minimal-version builds.
+  Check that declared minimum dependency versions still build the supported behavior. Lockfile tests
+  can hide newer API usage, so use targeted minimal-version checks when needed.
 - [`TEST-WRITE-REGRESSION-TESTS-FOR-BUG-FIXES`](testing/test-write-regression-tests-for-bug-fixes.md).
-  Write regression tests for bug fixes unless impractical. A bug fix without a regression test can
-  silently revert later, especially when the original failure was an edge case, integration path, or
-  user-reported behavior. Helps: Preserves user-reported fixes and gives future maintainers a
-  precise failure when the bug returns.
+  Add a test that fails before the bug fix and protects the repaired contract. Skip only when
+  reproduction is impractical, and then record the closest trustworthy validation.
 
 ### JJ Topology And Source Control
 
-- [`VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`](vcs/vcs-ask-before-repairing-jj-aliases.md). Ask the user
-  to repair jj aliases when topology and aliases disagree. Aliases such as `trunk()` or publish
-  helpers encode assumptions about remotes and bookmarks. Helps: Keeps user-level jj configuration
-  deliberate and prevents agents from rewriting source-control policy unexpectedly.
-- [`VCS-AVOID-INTERACTIVE-JJ-IN-AGENT-WORK`](vcs/vcs-avoid-interactive-jj-in-agent-work.md). Avoid
-  interactive-by-default jj commands in unattended agent work. Interactive jj commands can open
-  editors, prompts, merge tools, or pagers that unattended agents cannot handle reliably. Helps:
-  Keeps agent source-control operations repeatable and reviewable.
-- [`VCS-CONFIGURE-JJ-PAGER`](vcs/vcs-configure-jj-pager.md). Configure `JJ_PAGER` for agent tooling
-  when available. Paged output can block or truncate agent command results. Helps: Prevents stuck
-  commands and makes source-control evidence visible in handoffs.
-- [`VCS-CONFIRM-BROAD-JJ-OPERATIONS`](vcs/vcs-confirm-broad-jj-operations.md). Treat broad jj
-  operations as confirmation-worthy. Commands that abandon, rebase, squash, split, restore, publish,
-  or affect many revisions can rewrite a large part of the graph. Helps: Reduces accidental history
-  reshaping and publication mistakes.
-- [`VCS-CONFIRM-GITHUB-REMOTE-TOPOLOGY`](vcs/vcs-confirm-github-remote-topology.md). Confirm GitHub
-  `origin` and `upstream` topology before publication. Forks and GitHub defaults can make `origin`
-  mean the user fork while `upstream` means the canonical repo, or vice versa in owned repos. Helps:
-  Keeps push remote, PR head, PR base, and tracked bookmarks aligned.
+- [`VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`](vcs/vcs-ask-before-repairing-jj-aliases.md). Ask before
+  changing jj aliases when they disagree with the observed repository topology. Aliases encode
+  workflow policy, so silent repairs can alter future user commands.
+- [`VCS-AVOID-INTERACTIVE-JJ-IN-AGENT-WORK`](vcs/vcs-avoid-interactive-jj-in-agent-work.md). Use
+  noninteractive jj commands with explicit messages, targets, and files in agent work. Interactive
+  editors, prompts, merge tools, and pagers can hang unattended sessions.
+- [`VCS-CONFIGURE-JJ-PAGER`](vcs/vcs-configure-jj-pager.md). Scope pager control with `--no-pager`,
+  `JJ_PAGER=cat`, or session configuration. Direct output keeps source-control evidence visible
+  without changing the user's global pager.
+- [`VCS-CONFIRM-BROAD-JJ-OPERATIONS`](vcs/vcs-confirm-broad-jj-operations.md). Confirm jj operations
+  that abandon, rebase, squash, split, restore, publish, or go broad. Confirmation protects
+  unrelated work when a command can reshape history or public state.
+- [`VCS-CONFIRM-GITHUB-REMOTE-TOPOLOGY`](vcs/vcs-confirm-github-remote-topology.md). Inspect
+  `origin`, `upstream`, push remote, PR base, and PR head before publication. Fork and owned-repo
+  layouts differ, so defaults can push or target the wrong repository.
 - [`VCS-CREATE-OPERATION-LOG-POINT-BEFORE-RESHAPING`](vcs/vcs-create-operation-log-point-before-reshaping.md).
-  Use harmless jj inspection to create an operation-log point before risky reshaping. JJ can recover
-  through the operation log, but recovery is easier when there is a recent known point before a
-  risky stack reshape. Helps: Makes recovery from a bad reshape faster and easier to explain.
+  Create a recent jj operation boundary before risky stack reshaping. Recovery is easier when there
+  is a known point before rebases, splits, squashes, or repairs.
 - [`VCS-DO-NOT-FALL-BACK-TO-GIT-FOR-JJ-ISSUES`](vcs/vcs-do-not-fall-back-to-git-for-jj-issues.md).
-  Do not switch to Git because a jj command hits a transient lock or sandbox issue. In a jj repo,
-  Git does not represent the full working-copy and change graph semantics. Helps: Keeps jj as the
-  source of truth and avoids mixed-tool corruption or confusion.
+  Diagnose jj locks, pager issues, and state problems through jj before switching tools. Git
+  bypasses jj change-graph semantics, so use it only for transport after jj state is coherent.
 - [`VCS-DRY-RUN-SURPRISING-PUBLICATION`](vcs/vcs-dry-run-surprising-publication.md). Use dry-run for
-  surprising or ambiguous remote publication, not routine latency. Dry-run is most valuable when
-  publication would be surprising: ambiguous remote, new bookmark, force-like update, fork topology,
-  or unclear PR base. Helps: Applies extra verification where publication risk is real.
+  ambiguous or surprising remote publication, not every routine push. Extra verification pays off
+  when remotes, bookmarks, force-like updates, or PR bases are unclear.
 - [`VCS-DUPLICATE-FOR-ALTERNATIVE-CANDIDATES`](vcs/vcs-duplicate-for-alternative-candidates.md). Use
-  `jj duplicate` for safe alternative candidates. When comparing two possible fixes or refactor
-  shapes, mutating the only candidate makes it hard to return to the original. Helps: Makes
-  experiments reversible and keeps competing designs reviewable.
-- [`VCS-INSPECT-SPARSE-STATE`](vcs/vcs-inspect-sparse-state.md). Inspect sparse state before
-  treating a missing path as missing history. In sparse checkouts, a missing file may be outside the
-  sparse patterns rather than deleted from history. Helps: Prevents false conclusions about
-  repository contents in sparse workspaces.
+  `jj duplicate` when two plausible fixes or refactors need independent validation. Separate
+  candidate changes preserve comparison and recovery without mutating the only option.
+- [`VCS-INSPECT-SPARSE-STATE`](vcs/vcs-inspect-sparse-state.md). Check sparse checkout state before
+  treating a missing path as absent from history. Sparse patterns can hide files, so inspection
+  prevents recreating or editing the wrong path.
 - [`VCS-INSPECT-STATE-BEFORE-MUTATING`](vcs/vcs-inspect-state-before-mutating.md). Inspect
-  working-copy and stack state before mutating. Before creating, squashing, rebasing, publishing, or
-  editing files, the agent needs to know the current working copy, parent, bookmarks, conflicts, and
-  unowned changes. Helps: Keeps changes scoped and avoids surprises from hidden graph or
-  working-copy state.
-- [`VCS-JJ-AS-SOURCE-OF-TRUTH`](vcs/vcs-jj-as-source-of-truth.md). Use `jj` as the source of truth
-  in `.jj` repositories. A `.jj` repo has jj changes, operation log, working-copy state, and
-  bookmarks layered over Git storage. Helps: Prevents Git commands from bypassing jj semantics and
-  confusing the change graph.
-- [`VCS-JJ-NEW-FOR-REVIEW-LANES`](vcs/vcs-jj-new-for-review-lanes.md). Use `jj new` for separate
-  review lanes. A new task needs a separate review lane before unrelated edits accumulate. Helps:
-  Keeps review units atomic and prevents unrelated work from piling into one change.
-- [`VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`](vcs/vcs-make-github-handoff-explicit.md). Make GitHub handoff
-  explicit after jj state is coherent. JJ state and GitHub state are related but not identical.
-  Helps: Makes PR publication reproducible and avoids confusing branch or fork inference.
-- [`VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`](vcs/vcs-match-jj-topology-to-repo-role.md). Match jj remote
-  topology to the repository role. Owned repos, maintainer-access repos, and fork-only contributor
-  repos need different remote and bookmark topology. Helps: Keeps local jj aliases and publication
-  behavior aligned with the actual collaboration model.
-- [`VCS-NAME-EXACT-JJ-MUTATION-TARGETS`](vcs/vcs-name-exact-jj-mutation-targets.md). Name exact
-  targets for mutating jj commands. Mutating commands that rely on defaults can target the wrong
-  revision, fileset, bookmark, or destination when the stack is not what the agent assumes. Helps:
-  Reduces accidental rewrites and makes command effects easier to audit.
-- [`VCS-QUOTE-REVSETS-AND-SHELL-SYNTAX`](vcs/vcs-quote-revsets-and-shell-syntax.md). Quote revsets
-  and shell-sensitive syntax. Revsets and bookmark syntax often contain characters such as `@`, `|`,
-  `&`, `~`, parentheses, or spaces that shells can interpret. Helps: Prevents shell parsing bugs in
-  jj examples, scripts, and agent commands.
-- [`VCS-RECOVER-WITH-OPERATION-LOG`](vcs/vcs-recover-with-operation-log.md). Use operation-log
-  recovery instead of destructive cleanup. JJ records repository operations so many mistakes are
-  recoverable without destructive Git reset or stash habits. Helps: Makes recovery safer and avoids
-  destroying unrelated local work.
+  working-copy, stack, bookmark, conflict, and unowned state before mutation. Current state keeps
+  edits scoped and avoids rewriting work the agent did not inspect.
+- [`VCS-JJ-AS-SOURCE-OF-TRUTH`](vcs/vcs-jj-as-source-of-truth.md). Use jj for local workflow in
+  repositories with `.jj` state. This preserves descriptions, stack shape, operation-log recovery,
+  and bookmark semantics.
+- [`VCS-JJ-NEW-FOR-REVIEW-LANES`](vcs/vcs-jj-new-for-review-lanes.md). Start unrelated review units
+  with `jj new` before edits accumulate. Separate changes keep review atomic while leaving later
+  squash or absorb decisions easy.
+- [`VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`](vcs/vcs-make-github-handoff-explicit.md). Name bookmark,
+  remote, base, head, and repo when handing coherent jj state to GitHub. Explicit publication avoids
+  host-tool inference mistakes in forks, stacks, and multi-remote repos.
+- [`VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`](vcs/vcs-match-jj-topology-to-repo-role.md). Align fetch
+  remotes, push remotes, tracked bookmarks, aliases, and PR bases to repo role. Owned, maintainer,
+  and fork-only workflows need different topology assumptions.
+- [`VCS-NAME-EXACT-JJ-MUTATION-TARGETS`](vcs/vcs-name-exact-jj-mutation-targets.md). Specify
+  revisions, filesets, bookmarks, and destinations for mutating jj commands. Explicit targets make
+  intent reviewable and prevent defaults from acting on surprising state.
+- [`VCS-QUOTE-REVSETS-AND-SHELL-SYNTAX`](vcs/vcs-quote-revsets-and-shell-syntax.md). Quote jj
+  revsets, bookmark syntax, and other shell-sensitive command fragments. Shell metacharacters can
+  alter commands, so examples should prefer simple safe quoting.
+- [`VCS-RECOVER-WITH-OPERATION-LOG`](vcs/vcs-recover-with-operation-log.md). Use jj operation-log
+  recovery before destructive cleanup habits. The operation log preserves recoverable graph states,
+  but inspect the target before restoring.
 - [`VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`](vcs/vcs-repair-remote-topology-coherently.md). Repair
-  remote topology coherently. Remote topology has several coupled pieces: fetch remote, push remote,
-  tracked bookmark, trunk alias, PR base, and PR head. Helps: Keeps jj, GitHub, and local aliases
-  consistent after topology drift.
-- [`VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`](vcs/vcs-run-jj-mutations-sequentially.md). Run jj mutations
-  sequentially. JJ mutating commands update working-copy and operation state. Helps: Keeps
-  source-control state coherent and avoids avoidable lock contention.
-- [`VCS-SCOPE-JJ-FILE-TRACKING`](vcs/vcs-scope-jj-file-tracking.md). Scope jj file track and untrack
-  commands to intended paths. `jj file track` and `jj file untrack` can affect more files than
-  intended if paths are omitted or globbed too broadly. Helps: Prevents accidental publication or
-  removal of local-only and unrelated files.
+  fetch, push, tracking, trunk alias, PR base, and PR head assumptions together. Remote topology is
+  coupled, so partial fixes can leave publication commands half-correct.
+- [`VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`](vcs/vcs-run-jj-mutations-sequentially.md). Do not overlap jj
+  commands that write repo, working-copy, bookmark, or config state. Sequential mutations avoid
+  locks, stale reads, and confusing operation order.
+- [`VCS-SCOPE-JJ-FILE-TRACKING`](vcs/vcs-scope-jj-file-tracking.md). Pass intended paths to `jj file
+  track` and `jj file untrack`. Scoped tracking keeps local-only, generated, or unrelated files out
+  of publication state.
 - [`VCS-STOP-REPEATED-JJ-RETRIES-AND-LOCALIZE-STATE`](vcs/vcs-stop-repeated-jj-retries-and-localize-state.md).
-  Stop repeated jj retries and localize state. Repeating a failing jj command without new
-  information usually compounds confusion. Helps: Turns source-control failures into diagnosis
-  instead of command spam.
-- [`VCS-TRACK-REMOTES-EXPLICITLY`](vcs/vcs-track-remotes-explicitly.md). Track remotes explicitly
-  when bookmark names exist on multiple remotes. When the same bookmark name exists on multiple
-  remotes, implicit tracking can choose the wrong source or make publication ambiguous. Helps:
-  Prevents fetch, rebase, and publication confusion in fork and upstream workflows.
+  Stop repeating a failing jj command after a transient retry and inspect relevant state. Diagnosis
+  beats command spam when locks, sparse paths, bookmarks, or remotes disagree.
+- [`VCS-TRACK-REMOTES-EXPLICITLY`](vcs/vcs-track-remotes-explicitly.md). Set explicit remote
+  tracking when the same bookmark name exists on multiple remotes. This prevents fetch, rebase, and
+  publication ambiguity in fork and upstream workflows.
 - [`VCS-TREAT-BOOKMARK-REMOTE-SYNTAX-AS-VERSION-SENSITIVE`](vcs/vcs-treat-bookmark-remote-syntax-as-version-sensitive.md).
-  Treat `bookmark@remote` command syntax as version-sensitive. JJ command syntax around
-  `bookmark@remote` and remote bookmark handling can vary by version and command. Helps: Keeps jj
-  guidance accurate across version differences and reduces command-shape failures.
+  Verify `bookmark@remote` and remote-bookmark syntax against the installed jj version. Durable
+  guidance should avoid assuming one spelling works across commands and releases.
 - [`VCS-USE-EVOLOG-AND-OPERATION-LOG`](vcs/vcs-use-evolog-and-operation-log.md). Use `jj evolog` for
-  one change's evolution and `jj op log` for repository operations. `jj evolog` answers how one
-  change evolved; `jj op log` answers how the repository state changed. Helps: Makes diagnosis
-  faster by choosing the log that matches the question.
+  a change's evolution and `jj op log` for repository operations. Picking the right log
+  distinguishes rewrite history from workspace, bookmark, and import events.
 - [`VCS-USE-GIT-FORMATTED-DIFFS-FOR-AGENTS`](vcs/vcs-use-git-formatted-diffs-for-agents.md). Prefer
-  Git-formatted diffs when agents need to interpret patch text. Many agents and review tools
-  understand Git patch format better than native jj summaries. Helps: Makes diffs easier for agents
-  and humans to inspect, quote, and apply.
+  `jj diff --git` when agents or patch-oriented tools need diff text. Git patch format preserves
+  hunks and paths in a shape those consumers can parse reliably.
 - [`VCS-USE-IGNORE-WORKING-COPY-CAREFULLY`](vcs/vcs-use-ignore-working-copy-carefully.md). Use
-  `--ignore-working-copy` only for lock-safe inspection or intended metadata updates.
-  `--ignore-working-copy` can be useful when the working copy is locked or when only metadata is
-  needed, but it also means jj may not snapshot current file changes before answering. Helps: Avoids
-  stale reads and accidental metadata changes during lock recovery.
+  `--ignore-working-copy` only for understood lock-safe inspection or metadata work. It may read
+  stale file state, so do not use it to bypass normal synchronization before edits.
 - [`VCS-WORKSPACE-ADD-FOR-SECOND-CHECKOUTS`](vcs/vcs-workspace-add-for-second-checkouts.md). Use `jj
-  workspace add` only when a second filesystem checkout is needed. `jj new` creates another change
-  in the current checkout; `jj workspace add` creates another filesystem checkout. Helps: Avoids
-  unnecessary checkout proliferation while preserving isolation when filesystem state matters.
+  workspace add` only when a task needs another filesystem checkout. Ordinary review separation
+  should use `jj new`; workspaces fit clean validation or parallelism.

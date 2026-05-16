@@ -4,6 +4,9 @@
 
 - Name: `Manage Agent Work Not Sessions`
 - ID: `manage-agent-work-not-sessions`
+- Summary: Interactive sessions do not scale when the maintainer must remember every thread,
+  terminal, and handoff. Represent agent work as durable tasks with states, owners, validation,
+  and review criteria so humans spend attention on priorities and judgment.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, workflow, orchestration`

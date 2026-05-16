@@ -4,6 +4,9 @@
 
 - Name: `Reader Locality Reduces Change Cost`
 - ID: `reader-locality-reduces-change-cost`
+- Summary: `Code is cheaper to change when the reader can understand the local decision without
+  distant facts. Keep related state, inputs, side effects, and policy close enough to inspect
+  together.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `code-shape, refactoring, cognition, maintainability`

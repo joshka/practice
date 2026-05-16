@@ -4,6 +4,9 @@
 
 - Name: `Inject Time And Randomness`
 - ID: `inject-time-and-randomness`
+- Summary: Direct reads of clocks and random sources make behavior hard to reproduce, test, and
+  explain. Pass time and randomness through explicit seams at the boundary where nondeterminism is
+  chosen.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, testing, side-effects`

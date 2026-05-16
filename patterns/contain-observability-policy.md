@@ -4,6 +4,9 @@
 
 - Name: `Contain Observability Policy`
 - ID: `contain-observability-policy`
+- Summary: Logging, metrics, tracing, and privacy choices become inconsistent when every call site
+  invents its own policy. Put observability decisions at owned boundaries so lower layers expose
+  facts without duplicating policy.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `observability, architecture, rust`

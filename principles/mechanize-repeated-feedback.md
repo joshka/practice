@@ -4,6 +4,9 @@
 
 - Name: `Mechanize Repeated Feedback`
 - ID: `mechanize-repeated-feedback`
+- Summary: `Repeated corrections should become checks, templates, generators, lints, or reusable
+  guidance when the pattern is stable. Mechanizing the feedback moves human attention back to
+  judgment instead of recall.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `automation, agents, review, tooling`

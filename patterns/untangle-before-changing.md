@@ -4,6 +4,9 @@
 
 - Name: `Untangle Before Changing`
 - ID: `untangle-before-changing`
+- Summary: Behavior changes become risky when policy, formatting, validation, persistence, and side
+  effects are braided together. Untangle only enough structure to give the new behavior a clear
+  owner, then keep the behavior change reviewable.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, refactoring, workflow`

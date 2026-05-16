@@ -4,6 +4,9 @@
 
 - Name: `JJ Topology Is Repo Role Dependent`
 - ID: `jj-topology-is-repo-role-dependent`
+- Summary: `JJ publication behavior depends on whether the checkout is owned, maintained, or
+  fork-based. Align remotes, bookmarks, trunk, and GitHub handoff with that role before mutating
+  public state.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `jj, github, remotes, publishing`

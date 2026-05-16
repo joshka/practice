@@ -4,6 +4,9 @@
 
 - Name: `Commit Messages For History`
 - ID: `commit-messages-for-history`
+- Summary: Commit messages become future debugging and review aids, not just publication labels.
+  Write them to explain the reason and effect of the change, with enough context to survive outside
+  the original conversation.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `version-control, jj, review`

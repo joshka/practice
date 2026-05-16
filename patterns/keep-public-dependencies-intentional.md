@@ -4,6 +4,9 @@
 
 - Name: `Keep Public Dependencies Intentional`
 - ID: `keep-public-dependencies-intentional`
+- Summary: Public dependencies shape downstream compatibility, API expectations, and maintenance
+  cost. Add or raise them only when the public behavior needs that requirement, using lockfile
+  updates for ordinary compatible refreshes.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, dependencies, rust`

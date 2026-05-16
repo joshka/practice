@@ -4,6 +4,9 @@
 
 - Name: `Close The Agent Loop`
 - ID: `close-the-agent-loop`
+- Summary: Agent work is incomplete when it stops at edits without checking the result or explaining
+  residual risk. Finish the loop by validating, reporting evidence, and making the next human
+  decision clear.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, verification, feedback`

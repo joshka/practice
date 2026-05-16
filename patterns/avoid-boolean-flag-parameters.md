@@ -4,6 +4,9 @@
 
 - Name: `Avoid Boolean Flag Parameters`
 - ID: `avoid-boolean-flag-parameters`
+- Summary: Boolean parameters make call sites depend on hidden ordering and branch semantics.
+  Prefer named operations, enums, options types, or builders when the choice is part of the API
+  contract.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, rust, readability`

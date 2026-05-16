@@ -8,61 +8,43 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 
 ## Rules
 
-- [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-avoid-speculative-public-api.md). Do not add public
-  API for future features before the need is real. Public API turns a local guess into a contract
-  that users, downstream integrations, examples, tests, docs, and compatibility promises may start
-  depending on. Helps: Prevents accidental compatibility commitments to unused names, types, and
-  extension points. - Keeps review focused on the current behavior rather than a guessed future
-  design.
-- [`CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`](change-avoid-unnecessary-dependency-churn.md). Do
-  not include dependency churn unless it is necessary for the task. Dependency updates change
-  lockfiles, feature graphs, minimum versions, build output, and downstream compatibility. Helps:
-  Keeps dependency risk reviewable and prevents unrelated lockfile movement from obscuring the task.
+- [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-avoid-speculative-public-api.md). Add public
+  surfaces only when current or accepted callers need them. Waiting for concrete pressure keeps
+  compatibility commitments smaller and easier to validate.
+- [`CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`](change-avoid-unnecessary-dependency-churn.md). Keep
+  package, manifest, and lockfile movement out of unrelated work. Separate dependency changes make
+  build, compatibility, and downstream risk reviewable on their own.
 - [`CHANGE-IDENTIFY-OWNING-MODULE-BEFORE-EDITING`](change-identify-owning-module-before-editing.md).
-  Identify the owning module before editing. Editing the first file that mentions a behavior can put
-  new logic in a caller, facade, test helper, or adapter that does not own the concept. Helps:
-  Reduces scattered fixes and makes future readers find the behavior where they expect it.
-- [`CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`](change-isolate-controversial-changes.md). Isolate
-  controversial changes. Formatting, renames, API breaks, dependency changes, unsafe code, large
-  rewrites, and behavior changes all invite different review questions. Helps: Keeps contentious
-  decisions explicit and makes reverting or revising them cheaper.
-- [`CHANGE-MINIMAL-BUT-COMPLETE`](change-minimal-but-complete.md). Keep each change minimal but
-  complete. A change that is too large hides risk, but a change that is too small can leave
-  reviewers with an unexplained half-step. Helps: Gives reviewers a coherent unit that can be
-  understood, validated, and reverted.
-- [`CHANGE-PIN-BEHAVIOR-WITH-EARLY-TESTS`](change-pin-behavior-with-early-tests.md). Use early test
-  changes to pin existing behavior when that makes behavior changes easier to review. Before
-  changing messy behavior, an early test can document what the system currently does. Helps: Makes
-  behavior changes safer and clarifies whether later diffs preserve or intentionally change existing
-  behavior.
-- [`CHANGE-PREFER-SMALL-FOLLOW-UPS`](change-prefer-small-follow-ups.md). Prefer small follow-up
-  changes over overloaded changes. When a change uncovers adjacent cleanup, docs drift, naming
-  issues, or broader refactoring, folding all of it into the current diff can hide the original
-  purpose. Helps: Preserves review focus while still capturing useful nearby work.
-- [`CHANGE-PRESERVE-UNOWNED-WORK`](change-preserve-unowned-work.md). Preserve unowned work. A
-  working tree can contain edits from the user, another agent, generated state, or an earlier
-  in-progress change. Helps: Protects parallel work and keeps the current diff accountable for only
-  the files it owns.
+  Find the component that owns the concept before adding or moving logic. That keeps invariants,
+  tests, and future maintenance close to the responsible code.
+- [`CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`](change-isolate-controversial-changes.md). Put risky or
+  contentious moves in their own review unit when they can stand alone. This lets reviewers approve,
+  reject, or revise the decision without incidental cleanup attached.
+- [`CHANGE-MINIMAL-BUT-COMPLETE`](change-minimal-but-complete.md). Keep the diff as small as the
+  purpose allows while including the evidence that purpose needs. Reviewers should see one coherent
+  unit they can understand, validate, and revert.
+- [`CHANGE-PIN-BEHAVIOR-WITH-EARLY-TESTS`](change-pin-behavior-with-early-tests.md). Add
+  characterization tests before changing messy behavior when the existing contract is unclear. The
+  baseline separates intentional behavior changes from accidental drift.
+- [`CHANGE-PREFER-SMALL-FOLLOW-UPS`](change-prefer-small-follow-ups.md). Move adjacent cleanup or
+  broader improvements into focused follow-up changes when the current diff can stand alone. This
+  preserves review focus while still capturing useful work.
+- [`CHANGE-PRESERVE-UNOWNED-WORK`](change-preserve-unowned-work.md). Treat nearby edits from users,
+  agents, generators, or earlier changes as outside your ownership unless the task says otherwise.
+  Adapting around them protects parallel work and context.
 - [`CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`](change-respect-generated-artifact-ownership.md).
-  Respect generated artifact ownership instead of hand-editing generated outputs. Generated
-  changelogs, lockfiles, code, snapshots, API listings, docs, and release files often have a source
-  input that owns their contents. Helps: Prevents manual generated-file edits from being lost or
-  fighting the generator. - Makes generator, template, and release-tooling changes reviewable at the
-  source.
-- [`CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`](change-separate-structure-from-behavior.md). Keep
-  structure changes separate from behavior changes when the combined diff obscures review. Structure
-  changes ask reviewers to confirm the code means the same thing; behavior changes ask them to
-  confirm the system now does the right new thing. Helps: Makes reviews sharper and makes
-  structure-only changes easier to revert if they were wrong.
-- [`CHANGE-SYNC-GENERATED-ARTIFACTS`](change-sync-generated-artifacts.md). Keep generated artifacts
-  in sync when they are part of the review surface. Generated files, lockfiles, snapshots, API
-  listings, and agent packs are part of the review surface when they are checked into the repo.
-  Helps: Prevents drift between source inputs and generated outputs.
-- [`CHANGE-TREAT-AND-AS-SCOPE-WARNING`](change-treat-and-as-scope-warning.md). Treat `and` in a
-  change description as a scope warning. A change titled "fix parser and update docs and clean API"
-  often contains multiple review units. Helps: Catches accidental scope creep before the diff
-  becomes hard to split.
-- [`CHANGE-USE-ONE-PURPOSE-PER-CHANGE`](change-use-one-purpose-per-change.md). Use one purpose per
-  change. One-purpose changes let reviewers ask one main question: did this accomplish the stated
-  goal? Helps: Improves review speed, revertability, and historical understanding of why code
-  changed.
+  Fix generated outputs through their source inputs, templates, metadata, or generator configuration
+  whenever those own the result. Hand edits are durable only when the tool workflow explicitly
+  supports curation.
+- [`CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`](change-separate-structure-from-behavior.md). Split
+  refactoring or layout changes from behavior changes when the combined diff obscures intent.
+  Separate review units make meaning preservation and new behavior easier to check.
+- [`CHANGE-SYNC-GENERATED-ARTIFACTS`](change-sync-generated-artifacts.md). Update checked-in
+  generated outputs when their source inputs change and they are part of review. Keeping them
+  aligned prevents consumers from seeing stale artifacts.
+- [`CHANGE-TREAT-AND-AS-SCOPE-WARNING`](change-treat-and-as-scope-warning.md). Use compound change
+  descriptions as a prompt to inspect whether the work has more than one purpose. The word is not a
+  rule, but it catches scope creep while splitting is still cheap.
+- [`CHANGE-USE-ONE-PURPOSE-PER-CHANGE`](change-use-one-purpose-per-change.md). Shape each change
+  around one review question and one reason for existing. Related tests, docs, and generated files
+  can travel with it when they support that same purpose.

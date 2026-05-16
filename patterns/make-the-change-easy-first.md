@@ -4,6 +4,9 @@
 
 - Name: `Make The Change Easy First`
 - ID: `make-the-change-easy-first`
+- Summary: Some changes are risky because the path to make or verify them is unnecessarily hard.
+  First add the smallest harness, boundary, helper, tool, or runbook that makes the real change
+  cheaper to understand and review.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `refactoring, workflow, tooling`

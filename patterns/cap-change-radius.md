@@ -4,6 +4,9 @@
 
 - Name: `Cap Change Radius`
 - ID: `cap-change-radius`
+- Summary: Broad diffs increase review cost and make unrelated regressions harder to isolate. Keep
+  the change radius aligned with the requested behavior, using separate chunks for cleanup or
+  adjacent improvements.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, refactoring, review`

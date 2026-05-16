@@ -4,6 +4,9 @@
 
 - Name: `Preserve Agent Context Coherence`
 - ID: `preserve-agent-context-coherence`
+- Summary: Mixing unrelated work pollutes the session's attention, working-copy state, and handoff
+  narrative. Keep each session and jj change focused on one purpose, splitting work when ownership,
+  validation, or review decisions diverge.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, context, workflow`

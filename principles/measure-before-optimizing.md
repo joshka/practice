@@ -4,6 +4,8 @@
 
 - Name: `Measure Before Optimizing`
 - ID: `measure-before-optimizing`
+- Summary: `Performance work needs a workload, baseline, goal, change, and comparison. Evidence
+  keeps optimization from becoming readability, dependency, or API churn without a proven payoff.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `performance, testing, review`

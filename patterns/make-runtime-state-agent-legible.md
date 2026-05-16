@@ -4,6 +4,9 @@
 
 - Name: `Make Runtime State Agent Legible`
 - ID: `make-runtime-state-agent-legible`
+- Summary: Agents can only validate behavior reliably when the relevant runtime state is observable
+  through their tools. Expose the smallest useful signal first, such as app boot, UI inspection,
+  logs, metrics, screenshots, traces, or generated artifacts.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, observability, validation`

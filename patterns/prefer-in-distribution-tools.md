@@ -4,6 +4,9 @@
 
 - Name: `Prefer In Distribution Tools`
 - ID: `prefer-in-distribution-tools`
+- Summary: Unusual tools, layouts, and formats consume agent attention before domain work begins.
+  Prefer common, stable conventions when they meet the need, and document specialized choices when
+  the domain honestly requires them.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, tooling, architecture`

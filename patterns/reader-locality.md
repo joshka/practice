@@ -4,6 +4,9 @@
 
 - Name: `Reader Locality`
 - ID: `reader-locality`
+- Summary: A change can reduce code size while increasing the number of jumps needed to understand
+  one workflow. Keep related concepts near their meaning, extracting only when the new name and
+  location reduce live context.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `readability, refactoring, organization`

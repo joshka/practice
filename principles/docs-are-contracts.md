@@ -4,6 +4,8 @@
 
 - Name: `Docs Are Contracts`
 - ID: `docs-are-contracts`
+- Summary: `Documentation near code is part of the supported behavior surface. Keep prose,
+  examples, and implementation aligned so humans and agents can rely on the same contract.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, rustdoc, agents, contracts`

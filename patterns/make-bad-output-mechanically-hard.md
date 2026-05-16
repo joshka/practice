@@ -4,6 +4,9 @@
 
 - Name: `Make Bad Output Mechanically Hard`
 - ID: `make-bad-output-mechanically-hard`
+- Summary: Repeated review failures usually belong in a tool, type, schema, template, lint, or
+  checklist instead of another reminder. Encode stable rejection criteria early, but keep escape
+  hatches when legitimate exceptions are common.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, tooling, quality`

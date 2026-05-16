@@ -4,6 +4,9 @@
 
 - Name: `Document Intentional Non Goals`
 - ID: `document-intentional-non-goals`
+- Summary: Readers may treat missing behavior as oversight when the absence was a deliberate scope
+  choice. Record important non-goals where they prevent repeated debate or misuse without turning
+  the document into a defensive catalog.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, scope, rationale`

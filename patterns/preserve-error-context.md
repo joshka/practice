@@ -4,6 +4,9 @@
 
 - Name: `Preserve Error Context`
 - ID: `preserve-error-context`
+- Summary: Errors often lose the facts a caller needs when they cross module, process, support, or
+  user boundaries. Preserve stable kinds and actionable context so callers can retry, report,
+  recover, or correlate the failure without parsing generic text.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `errors, boundaries, review`

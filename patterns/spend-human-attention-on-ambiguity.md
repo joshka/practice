@@ -4,6 +4,9 @@
 
 - Name: `Spend Human Attention On Ambiguity`
 - ID: `spend-human-attention-on-ambiguity`
+- Summary: Agent throughput can exceed the maintainer's ability to review and steer. Delegate
+  execution and inspection, but reserve human attention for ambiguous goals, taste, architecture,
+  risk, and the systems that make future delegation safer.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, prioritization, review`

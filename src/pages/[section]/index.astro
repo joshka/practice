@@ -412,6 +412,11 @@ function visibleTags(tags: string[], title: string, group: GroupConfig): string[
   return [...new Set(visible)].slice(0, 3);
 }
 
+function entryId(item: MarkdownPage): string | undefined {
+  if (sectionKey !== 'patterns' && sectionKey !== 'why') return undefined;
+  return item.metadata.id;
+}
+
 function normalizeForCompare(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '');
 }
@@ -508,6 +513,7 @@ function cardKindForSection(key: string): CardKind | undefined {
                     )}
                     <strong>{item.title}</strong>
                   </span>
+                  {entryId(item) && <span class="index-entry__id">{entryId(item)}</span>}
                   {item.description && <span class="index-entry__description">{item.description}</span>}
                 </span>
               </a>

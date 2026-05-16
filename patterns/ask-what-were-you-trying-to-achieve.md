@@ -4,6 +4,8 @@
 
 - Name: `Ask What Were You Trying To Achieve`
 - ID: `ask-what-were-you-trying-to-achieve`
+- Summary: `Recover the original intent before judging a surprising design. Separating purpose
+  from mechanism makes it easier to preserve useful constraints while replacing stale structure.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `refactoring, legacy-code, collaboration`

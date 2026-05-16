@@ -4,6 +4,9 @@
 
 - Name: `Write Docs As Contracts`
 - ID: `write-docs-as-contracts`
+- Summary: Behavior and obligations become surprising when they are only discoverable by reading
+  implementation details. Treat docs as part of the change surface, updating contracts and rationale
+  alongside the code they describe.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, review, drift`

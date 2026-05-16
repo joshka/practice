@@ -4,6 +4,9 @@
 
 - Name: `Small Reviewable Chunks`
 - ID: `small-reviewable-chunks`
+- Summary: Large mixed changes blur structure, wording, behavior, and workflow decisions until
+  review becomes slow or shallow. Choose one coherent purpose per chunk, validate it, and ask for
+  direction before expanding into preference-sensitive follow-up work.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `workflow, review, version-control`

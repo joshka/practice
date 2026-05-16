@@ -8,14 +8,12 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 
 ## Rules
 
-- [`TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`](test-avoid-opaque-boolean-assertions.md). Avoid boolean
-  assertions for values with multiple failure causes. An assertion like `assert!(items.contains(x))`
-  or `assert!(result.is_ok())` can fail for many reasons while showing little useful state. Helps:
-  Makes CI and agent failures easier to diagnose from the first failure message.
-- [`TEST-OPTIMIZE-FAILURE-OUTPUT`](test-optimize-failure-output.md). Optimize tests for useful
-  failure output. A passing test is useful, but a failing test is where maintainers and agents spend
-  repair time. Helps: Shortens repair loops and makes regression failures actionable in CI logs.
-- [`TEST-SPLIT-UNRELATED-ASSERTIONS`](test-split-unrelated-assertions.md). Keep unrelated assertions
-  separate when failure diagnosis matters. One test that checks parsing, formatting, ordering, error
-  display, and cleanup may stop at the first failure and hide the real scope of the regression.
-  Helps: Makes failures local to one behavior and prevents one broken check from masking another.
+- [`TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`](test-avoid-opaque-boolean-assertions.md). Prefer
+  comparisons or richer assertions when many causes can make a boolean false. The first failure
+  should show the actual state needed to diagnose the regression.
+- [`TEST-OPTIMIZE-FAILURE-OUTPUT`](test-optimize-failure-output.md). Design tests so failures
+  include expected values, actual values, inputs, and contract context where that helps repair.
+  Useful output shortens CI and agent debugging loops.
+- [`TEST-SPLIT-UNRELATED-ASSERTIONS`](test-split-unrelated-assertions.md). Split assertions that
+  diagnose different behaviors when one failure would hide another. Keep checks together only when
+  they express one contract more clearly as a group.

@@ -4,6 +4,9 @@
 
 - Name: `Optimize For Agent Legibility`
 - ID: `optimize-for-agent-legibility`
+- Summary: Repositories that are hard for agents to inspect, search, run, and validate make
+  delegated work slower and less reliable. Prefer structures, commands, names, examples, and
+  runtime signals that help both agents and human maintainers reason locally.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, architecture, documentation`

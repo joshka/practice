@@ -4,6 +4,9 @@
 
 - Name: `Make State Transitions Explicit`
 - ID: `make-state-transitions-explicit`
+- Summary: Lifecycle rules become fragile when status fields, timestamps, events, and validation
+  checks are coordinated by hand. Give meaningful transitions a named owner that holds the
+  preconditions, state update, event, and error behavior together.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api-design, state`

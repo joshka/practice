@@ -4,6 +4,9 @@
 
 - Name: `Prefer Standard Conversions`
 - ID: `prefer-standard-conversions`
+- Summary: Project-specific conversion names make APIs harder to predict when standard traits
+  already describe the relationship. Use standard conversions only when their semantics are honest,
+  and choose explicit domain methods for lossy, contextual, or surprising operations.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `api-design, rust, interoperability`

@@ -4,6 +4,9 @@
 
 - Name: `Keep Automations Repo Owned`
 - ID: `keep-automations-repo-owned`
+- Summary: Critical checks and generation steps become fragile when they live only in personal
+  scripts or local memory. Put repeatable automation in the repository so agents and humans can run
+  the same workflow.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, automation, runbooks`

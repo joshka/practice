@@ -4,6 +4,9 @@
 
 - Name: `Write PR Narrative`
 - ID: `write-pr-narrative`
+- Summary: A correct diff can still waste reviewer attention when it lacks purpose, risk, review
+  order, and verification. Write the PR narrative as a guide to the decision the reviewer needs to
+  make, scaled to the burden of the change.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `review, documentation, collaboration`

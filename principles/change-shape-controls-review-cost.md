@@ -4,6 +4,9 @@
 
 - Name: `Change Shape Controls Review Cost`
 - ID: `change-shape-controls-review-cost`
+- Summary: `Change boundaries determine how much intent, risk, validation, and revert cost a
+  reviewer must reconstruct. Use the smallest coherent unit that preserves trust without splitting
+  one decision into noise.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `change-shape, review, commits, refactoring`

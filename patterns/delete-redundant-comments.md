@@ -4,6 +4,9 @@
 
 - Name: `Delete Redundant Comments`
 - ID: `delete-redundant-comments`
+- Summary: Comments that repeat obvious code add reading burden and become stale faster than the
+  behavior they describe. Remove them or replace them with context that explains intent, invariant,
+  risk, or non-obvious tradeoff.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, comments, readability`

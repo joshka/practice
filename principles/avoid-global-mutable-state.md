@@ -4,6 +4,9 @@
 
 - Name: `Avoid Global Mutable State`
 - ID: `avoid-global-mutable-state`
+- Summary: `Mutable process-wide state hides ownership, lifecycle, reset, ordering, and
+  concurrency policy. Prefer explicit owners or narrow handles unless the global behavior has a
+  documented policy.`
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `state, rust, lifecycle, testing`

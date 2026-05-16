@@ -225,6 +225,7 @@ export function rulesForDomain(domain: string): MarkdownPage[] {
 }
 
 export function allPublicPages(): MarkdownPage[] {
+  if (publicPagesCache) return publicPagesCache;
   const basePages = [renderMarkdown('README.md'), renderMarkdown('rules/README.md')];
   const sectionIndexes = sections.map(sectionIndex);
   const sectionChildren = sections.flatMap(sectionPages);
@@ -233,8 +234,11 @@ export function allPublicPages(): MarkdownPage[] {
     const parts = domain.repoPath.split('/');
     return rulesForDomain(parts[1]);
   });
-  return [...basePages, ...sectionIndexes, ...sectionChildren, ...domains, ...domainRules];
+  publicPagesCache = [...basePages, ...sectionIndexes, ...sectionChildren, ...domains, ...domainRules];
+  return publicPagesCache;
 }
+
+let publicPagesCache: MarkdownPage[] | undefined;
 
 export function routeForRepoPath(repoPath: string): string {
   const normalized = repoPath.replaceAll('\\', '/');

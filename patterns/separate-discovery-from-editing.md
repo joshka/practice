@@ -4,6 +4,9 @@
 
 - Name: `Separate Discovery From Editing`
 - ID: `separate-discovery-from-editing`
+- Summary: Editing while still discovering the system can bake early misunderstandings into the
+  diff. Read enough to find the ownership, constraints, and likely change shape before making
+  scoped edits.
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `workflow, agents, review`

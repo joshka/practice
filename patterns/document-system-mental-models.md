@@ -4,6 +4,9 @@
 
 - Name: `Document System Mental Models`
 - ID: `document-system-mental-models`
+- Summary: Systems with implicit concepts force readers to reconstruct how parts fit together from
+  scattered implementation details. Document the mental model that explains ownership, flow,
+  boundaries, and vocabulary before listing procedures.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, architecture, mental-models`

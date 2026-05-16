@@ -4,6 +4,9 @@
 
 - Name: `Strengthen Cohesion`
 - ID: `strengthen-cohesion`
+- Summary: A concept becomes harder to understand when its data, rules, and behavior are scattered
+  or bundled with unrelated concerns. Move elements that change for the same reason toward one
+  named owner, while separating nearby code that belongs to another concept.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, architecture, readability`
