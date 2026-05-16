@@ -100,7 +100,12 @@ function escapeRegExp(value: string): string {
 >
   <section class="section-hero rule-domain-hero" aria-labelledby="domain-title">
     <p class="eyebrow">Rule area</p>
-    <h1 id="domain-title">{page.title}</h1>
+    <div class="hero-title">
+      <span class="hero-title__icon" aria-hidden="true">
+        <KindIcon kind="rule" />
+      </span>
+      <h1 id="domain-title">{page.title}</h1>
+    </div>
     {page.description && <p>{page.description}</p>}
     <p class="rule-domain-hero__use">{config.use}</p>
   </section>

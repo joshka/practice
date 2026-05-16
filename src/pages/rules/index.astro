@@ -34,7 +34,12 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
   <div class="rules-shell">
     <section class="rules-hero" aria-labelledby="rules-title">
       <p class="eyebrow">Rule catalog</p>
-      <h1 id="rules-title">Rules</h1>
+      <div class="hero-title">
+        <span class="hero-title__icon" aria-hidden="true">
+          <KindIcon kind="rule" />
+        </span>
+        <h1 id="rules-title">Rules</h1>
+      </div>
       <p>
         Compact rules for common engineering decisions, grouped by work area: documentation, Rust
         APIs, testing, review, source control, and agent workflow.

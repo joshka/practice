@@ -1,4 +1,5 @@
 ---
+import KindIcon from './KindIcon.astro';
 import type { MarkdownPage } from '../lib/site';
 
 type Props = {
@@ -10,6 +11,9 @@ const kind = pageKind(page.repoPath);
 const chips = metadataChips(page);
 const showHeaderDescription = kind !== 'rule' && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
+const iconKind = pageIconKind(kind);
+
+type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism';
 
 function pageKind(repoPath: string): string {
   if (repoPath.startsWith('rules/') && !repoPath.endsWith('/README.md')) return 'rule';
@@ -50,12 +54,29 @@ function kindLabel(value: string): string {
     .map((part) => part.charAt(0).toUpperCase() + part.slice(1))
     .join(' ');
 }
+
+function pageIconKind(value: string): IconKind | undefined {
+  if (value === 'agent-snippet') return 'agent';
+  if (value === 'guide') return 'guide';
+  if (value === 'mechanism') return 'mechanism';
+  if (value === 'pattern') return 'pattern';
+  if (value === 'principle') return 'principle';
+  if (value === 'rule') return 'rule';
+  return undefined;
+}
 ---
 
 <article class={`page page--${kind}`}>
   <header class="detail-hero">
     <p class="eyebrow">{kindLabel(kind)}</p>
-    <h1>{page.title}</h1>
+    <div class="hero-title">
+      {iconKind && (
+        <span class="hero-title__icon" aria-hidden="true">
+          <KindIcon kind={iconKind} />
+        </span>
+      )}
+      <h1>{page.title}</h1>
+    </div>
     {showHeaderDescription && page.description && <p>{page.description}</p>}
     {chips.length > 0 && (
       <div class="detail-hero__meta" aria-label="Page topics">

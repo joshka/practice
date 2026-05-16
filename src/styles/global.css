@@ -294,10 +294,6 @@
     box-shadow: var(--panel-raised), var(--primary-glow);
   }
 
-  .home-card__meta {
-    @apply mb-8 flex items-start gap-4;
-  }
-
   .home-card__icon {
     @apply grid size-10 place-items-center rounded font-mono text-sm font-bold text-primary;
     background: var(--color-surface-container-lowest);
@@ -312,8 +308,8 @@
     @apply text-primary;
   }
 
-  .home-card h2 {
-    @apply mb-2 text-2xl font-bold leading-tight text-current;
+  .home-card__title {
+    @apply mb-5 flex items-center gap-4 text-2xl font-bold leading-tight text-current;
   }
 
   .home-card p {
@@ -362,6 +358,18 @@
 
   .rules-hero h1 {
     @apply m-0 text-4xl font-bold leading-tight tracking-normal text-on-background md:text-5xl;
+  }
+
+  .hero-title {
+    @apply flex flex-wrap items-center gap-4;
+  }
+
+  .hero-title__icon {
+    @apply grid size-14 shrink-0 place-items-center text-on-background;
+  }
+
+  .hero-title__icon svg {
+    @apply size-9;
   }
 
   .rules-hero p:not(.eyebrow) {
@@ -439,7 +447,7 @@
   }
 
   .rules-domain-card__tag {
-    @apply rounded px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary;
+    @apply inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
     background: var(--color-surface-container-lowest);
     box-shadow: var(--panel-sunken);
   }
@@ -576,7 +584,7 @@
   }
 
   .index-entry__tag {
-    @apply inline-flex max-w-full break-words rounded px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary;
+    @apply inline-flex h-8 max-w-full items-center break-words rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
     background: var(--color-surface-container-lowest);
     box-shadow: var(--panel-sunken);
   }
@@ -626,7 +634,7 @@
   }
 
   .detail-chip {
-    @apply inline-flex rounded px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary;
+    @apply inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
     background: var(--color-surface-container-lowest);
     box-shadow: var(--panel-sunken);
   }

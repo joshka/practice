@@ -6,41 +6,37 @@ import { practiceTasks, withBase } from '../lib/site';
 const homeCards = [
   {
     title: 'Guides',
-    badge: 'MAP',
+    kind: 'guide' as const,
     route: '/guides/',
     description: 'Connected guidance for broad engineering decisions.',
   },
   {
     title: 'Rules',
-    badge: 'RULE',
     kind: 'rule' as const,
     route: '/rules/',
     description: 'Compact instructions grouped by work area with detail pages for every rule.',
   },
   {
     title: 'Patterns',
-    badge: 'MOVE',
     kind: 'pattern' as const,
     route: '/patterns/',
     description: 'Repeatable situations and moves that can be cited in review.',
   },
   {
     title: 'Principles',
-    badge: 'WHY',
     kind: 'principle' as const,
     route: '/why/',
     description: 'Rationale behind related rules and patterns.',
   },
   {
     title: 'Mechanisms',
-    badge: 'TOOL',
     kind: 'mechanism' as const,
     route: '/mechanisms/',
     description: 'Checks, commands, generators, and workflows that support the guidance.',
   },
   {
     title: 'Agents',
-    badge: 'AI',
+    kind: 'agent' as const,
     route: '/agents/',
     description: 'Copyable instruction packs and rule packs for coding agents.',
   },
@@ -135,13 +131,13 @@ const useCases = [
         </div>
         <div class="home-card-grid" aria-label="Primary sections">
           {homeCards.map((card) => (
-            <a class={`home-card ${card.badge === 'AI' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
-              <div class="home-card__meta">
-                <span class="home-card__icon">
-                  {card.kind ? <KindIcon kind={card.kind} label={`${card.title} icon`} /> : card.badge}
+            <a class={`home-card ${card.kind === 'agent' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
+              <h2 class="home-card__title">
+                <span class="home-card__icon" aria-hidden="true">
+                  <KindIcon kind={card.kind} />
                 </span>
-              </div>
-              <h2>{card.title}</h2>
+                <span>{card.title}</span>
+              </h2>
               <p>{card.description}</p>
             </a>
           ))}

@@ -30,7 +30,7 @@ type GroupedEntry = {
   tags: string[];
 };
 
-type CardKind = 'pattern' | 'principle' | 'mechanism';
+type CardKind = 'agent' | 'guide' | 'pattern' | 'principle' | 'mechanism';
 
 export function getStaticPaths() {
   return sections.map((section) => ({ params: { section: section.key } }));
@@ -431,6 +431,8 @@ function normalizeForCompare(value: string): string {
 }
 
 function cardKindForSection(key: string): CardKind | undefined {
+  if (key === 'agents') return 'agent';
+  if (key === 'guides') return 'guide';
   if (key === 'patterns') return 'pattern';
   if (key === 'why') return 'principle';
   if (key === 'mechanisms') return 'mechanism';
@@ -445,7 +447,14 @@ function cardKindForSection(key: string): CardKind | undefined {
 >
   <section class="section-hero" aria-labelledby="section-title">
     <p class="eyebrow">{config.eyebrow}</p>
-    <h1 id="section-title">{section.title}</h1>
+    <div class="hero-title">
+      {sectionKind && (
+        <span class="hero-title__icon" aria-hidden="true">
+          <KindIcon kind={sectionKind} />
+        </span>
+      )}
+      <h1 id="section-title">{section.title}</h1>
+    </div>
     <p>{config.intro}</p>
   </section>
 

@@ -1,12 +1,14 @@
 ---
 import {
+  faBook,
   faBrain,
   faCompassDrafting,
+  faRobot,
   faRuler,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 
-type GuidanceKind = 'rule' | 'pattern' | 'principle' | 'mechanism';
+type GuidanceKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism';
 
 type Props = {
   kind: GuidanceKind;
@@ -15,6 +17,8 @@ type Props = {
 
 const { kind, label } = Astro.props;
 const icons = {
+  agent: faRobot,
+  guide: faBook,
   rule: faRuler,
   pattern: faCompassDrafting,
   principle: faBrain,
