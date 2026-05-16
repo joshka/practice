@@ -156,25 +156,27 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
   const rawMarkdown = readFileSync(absolute, 'utf8');
   const parsed = parseFrontmatter(rawMarkdown);
   const markdown = stripLegacyMetadata(parsed.body);
+  const metadata = {
+    ...metadataFromMarkdown(parsed.body),
+    ...parsed.metadata,
+  };
   const html = rewriteLinks(marked.parse(markdown) as string, repoPath);
   const sections = markdownSections(markdown, repoPath);
   const route = routeForRepoPath(repoPath);
+  const fallbackTitle = displayTitleForRepoPath(
+    repoPath,
+    pageTitleFromMarkdown(markdown, titleFromSlug(path.basename(repoPath, '.md'))),
+  );
   return {
-    title: displayTitleForRepoPath(
-      repoPath,
-      pageTitleFromMarkdown(markdown, titleFromSlug(path.basename(repoPath, '.md'))),
-    ),
-    description: descriptionFromMarkdown(markdown),
+    title: metadata.name || fallbackTitle,
+    description: metadata.summary || descriptionFromMarkdown(markdown),
     html,
     introHtml: markdownIntro(markdown, repoPath),
     sections,
     route,
     repoPath,
     sourceUrl: sourceUrl(repoPath),
-    metadata: {
-      ...metadataFromMarkdown(parsed.body),
-      ...parsed.metadata,
-    },
+    metadata,
   };
 }
 
@@ -406,11 +408,28 @@ function metadataFromMarkdown(markdown: string): Record<string, string> {
   const match = markdown.match(/^##\s+Metadata\s*\n([\s\S]*?)(?=^##\s+)/m);
   if (!match) return {};
   const metadata: Record<string, string> = {};
+  let currentKey = '';
+  let currentValue: string[] = [];
+
+  const commit = () => {
+    if (!currentKey) return;
+    metadata[currentKey] = cleanMetadataValue(currentValue.join(' '));
+  };
+
   for (const line of match[1].split('\n')) {
     const item = line.match(/^-\s+([^:]+):\s+(.+)$/);
-    if (!item) continue;
-    metadata[item[1].trim().toLowerCase()] = item[2].replaceAll('`', '').trim();
+    if (item) {
+      commit();
+      currentKey = item[1].trim().toLowerCase();
+      currentValue = [item[2].trim()];
+      continue;
+    }
+
+    if (currentKey && /^\s+\S/.test(line)) {
+      currentValue.push(line.trim());
+    }
   }
+  commit();
   return metadata;
 }
 

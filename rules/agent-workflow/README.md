@@ -15,10 +15,8 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`](agent-define-good-before-judgment-heavy-work.md).
   Define good before judgment-heavy work. Agents are weak at guessing taste after the fact. Helps:
   Produces better first-pass output and reduces rewrites caused by hidden taste criteria.
-- [`AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`](agent-distill-from-blessed-artifacts.md). Distill from
-  blessed artifacts. Existing accepted code, docs, tests, PRs, and review comments are often denser
-  than a new prompt. Helps: Preserves local voice and implementation style while reducing repeated
-  human steering.
+- [`AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`](agent-distill-from-blessed-artifacts.md). Study accepted
+  code, docs, tests, and reviews first. Adapt local convention to this task.
 - [`AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`](agent-encode-nonfunctional-requirements.md). Encode
   nonfunctional requirements. Requirements such as latency, accessibility, reviewability, security,
   privacy, determinism, and downstream compatibility are easy for agents to miss because they may

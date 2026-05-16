@@ -8,7 +8,7 @@ and extracted into compressed agent instructions independently.
 
 Each rule file should keep these sections:
 
-- `Metadata`: stable ID, status, domain, and depth.
+- `Metadata`: stable ID, portable name, summary, status, domain, and depth.
 - `Rule`: the direct human-readable instruction.
 - `Why`: rationale when the rule needs justification or tradeoff framing.
 - `Helps`: concrete development outcomes the rule improves.
@@ -99,9 +99,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Define good before judgment-heavy work. Agents are weak at guessing taste after the fact. Helps:
   Produces better first-pass output and reduces rewrites caused by hidden taste criteria.
 - [`AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`](agent-workflow/agent-distill-from-blessed-artifacts.md).
-  Distill from blessed artifacts. Existing accepted code, docs, tests, PRs, and review comments are
-  often denser than a new prompt. Helps: Preserves local voice and implementation style while
-  reducing repeated human steering.
+  Study accepted code, docs, tests, and reviews first. Adapt local convention to this task.
 - [`AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`](agent-workflow/agent-encode-nonfunctional-requirements.md).
   Encode nonfunctional requirements. Requirements such as latency, accessibility, reviewability,
   security, privacy, determinism, and downstream compatibility are easy for agents to miss because

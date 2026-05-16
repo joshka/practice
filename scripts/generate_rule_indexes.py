@@ -74,6 +74,8 @@ DOMAIN_SUMMARIES = {
 @dataclass(frozen=True)
 class Rule:
     id: str
+    name: str
+    summary: str
     status: str
     domain: str
     title: str
@@ -82,9 +84,36 @@ class Rule:
     path: Path
 
 
+def metadata_values(text: str) -> dict[str, str]:
+    match = re.search(r"^## Metadata\n\n(.*?)(?=\n\n## |\Z)", text, re.MULTILINE | re.DOTALL)
+    if not match:
+        return {}
+
+    values: dict[str, str] = {}
+    key = ""
+    parts: list[str] = []
+
+    def commit() -> None:
+        if not key:
+            return
+        values[key] = re.sub(r"^`|`$", "", " ".join(parts).strip())
+
+    for line in match.group(1).splitlines():
+        item = re.match(r"^- ([^:]+):\s+(.+)$", line)
+        if item:
+            commit()
+            key = item.group(1)
+            parts = [item.group(2).strip()]
+            continue
+        if key and re.match(r"^\s+\S", line):
+            parts.append(line.strip())
+
+    commit()
+    return values
+
+
 def metadata(text: str, name: str) -> str:
-    match = re.search(rf"^- {re.escape(name)}: `([^`]+)`$", text, re.MULTILINE)
-    return match.group(1) if match else ""
+    return metadata_values(text).get(name, "")
 
 
 def section(text: str, name: str) -> str:
@@ -120,6 +149,8 @@ def discover_rules() -> list[Rule]:
         text = path.read_text()
         rule = Rule(
             id=metadata(text, "ID"),
+            name=metadata(text, "Name"),
+            summary=metadata(text, "Summary"),
             status=metadata(text, "Status"),
             domain=metadata(text, "Domain"),
             title=section(text, "Rule"),
@@ -158,6 +189,8 @@ def wrap_bullet(link: str, summary: str) -> list[str]:
 
 
 def summary(rule: Rule) -> str:
+    if rule.summary:
+        return rule.summary
     if rule.helps:
         return f"{rule.title} {rule.why} Helps: {rule.helps}"
     return f"{rule.title} {rule.why}"
@@ -205,7 +238,7 @@ def render_root(rules: list[Rule]) -> str:
         "",
         "Each rule file should keep these sections:",
         "",
-        "- `Metadata`: stable ID, status, domain, and depth.",
+        "- `Metadata`: stable ID, portable name, summary, status, domain, and depth.",
         "- `Rule`: the direct human-readable instruction.",
         "- `Why`: rationale when the rule needs justification or tradeoff framing.",
         "- `Helps`: concrete development outcomes the rule improves.",

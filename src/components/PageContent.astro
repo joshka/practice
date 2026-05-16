@@ -14,6 +14,10 @@ const showHeaderDescription = kind !== 'rule' && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
 const reviewNote = reviewCopyMarkdown(page, kind);
+const heroTitle = page.title;
+const heroId = kind === 'rule' && page.metadata.id && page.title !== page.metadata.id
+  ? page.metadata.id
+  : undefined;
 
 type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
@@ -72,10 +76,14 @@ function reviewCopyMarkdown(page: MarkdownPage, kind: string): string | undefine
   if (!summary) return undefined;
 
   const url = new URL(withBase(page.route), 'https://joshka.net').href;
-  return `[${page.title}](${url}): ${summary}`;
+  const linkedLabel = page.metadata.id ? `\`${page.metadata.id}\`` : page.title;
+  const namePrefix = page.metadata.id && page.title ? `${page.title}. ` : '';
+  return `[${linkedLabel}](${url}): ${namePrefix}${summary}`;
 }
 
 function reviewSummary(page: MarkdownPage, kind: string): string {
+  if (page.metadata.summary) return page.metadata.summary;
+
   const preferredSection = {
     rule: 'rule',
     pattern: 'preferred move',
@@ -94,8 +102,9 @@ function reviewSummary(page: MarkdownPage, kind: string): string {
           <KindIcon kind={iconKind} />
         </span>
       )}
-      <h1>{page.title}</h1>
+      <h1>{heroTitle}</h1>
     </div>
+    {heroId && <p class="detail-hero__id">{heroId}</p>}
     {showHeaderDescription && page.description && <p>{page.description}</p>}
     {(chips.length > 0 || reviewNote) && (
       <div class="detail-hero__meta" aria-label="Page topics">

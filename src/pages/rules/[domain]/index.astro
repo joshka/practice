@@ -85,6 +85,14 @@ function displayTitle(rule: (typeof rules)[number]): string {
   return rule.title.replace(new RegExp(`^${escapeRegExp(config.titlePrefix)}\\s+`, 'i'), '');
 }
 
+function ruleId(rule: (typeof rules)[number]): string {
+  return rule.metadata.id || displayTitle(rule);
+}
+
+function cardTitle(rule: (typeof rules)[number]): string {
+  return rule.metadata.name || displayTitle(rule);
+}
+
 function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
@@ -119,8 +127,9 @@ function escapeRegExp(value: string): string {
               <span class="index-entry__kind-icon" aria-hidden="true">
                 <KindIcon kind="rule" />
               </span>
-              <strong>{displayTitle(rule)}</strong>
+              <strong>{cardTitle(rule)}</strong>
             </span>
+            <span class="index-entry__id">{ruleId(rule)}</span>
             {descriptionFor(rule) && (
               <span class="index-entry__description">{descriptionFor(rule)}</span>
             )}

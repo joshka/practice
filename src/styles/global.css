@@ -803,12 +803,17 @@ html[data-theme="light"] .code-block pre code {
   }
 
   .index-entry__body strong,
+  .index-entry__id,
   .index-entry__description {
     @apply block;
   }
 
   .index-entry__body strong {
     @apply text-lg font-bold leading-tight text-on-background;
+  }
+
+  .index-entry__id {
+    @apply mt-3 font-mono text-xs font-bold uppercase leading-relaxed tracking-[0.08em] text-primary;
   }
 
   .index-entry__description {
@@ -863,11 +868,19 @@ html[data-theme="light"] .code-block pre code {
   }
 
   .detail-hero h1 {
-    @apply m-0 max-w-4xl text-4xl font-bold leading-tight tracking-normal text-on-background md:text-5xl;
+    @apply m-0 max-w-4xl text-3xl font-bold leading-tight tracking-normal text-on-background md:text-4xl;
+  }
+
+  .page--rule .detail-hero h1 {
+    @apply max-w-5xl;
   }
 
   .detail-hero p {
     @apply mt-5 mb-0 max-w-[76ch] text-lg leading-relaxed text-on-surface-variant;
+  }
+
+  .detail-hero p.detail-hero__id {
+    @apply mt-4 font-mono text-sm font-bold uppercase tracking-[0.08em] text-primary;
   }
 
   .detail-intro {
