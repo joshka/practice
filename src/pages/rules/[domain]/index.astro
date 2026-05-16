@@ -115,11 +115,13 @@ function escapeRegExp(value: string): string {
     <div class="index-list rule-listing__grid">
       {rules.map((rule) => (
         <a class="index-entry index-entry--with-icon" href={withBase(rule.route)}>
-          <span class="index-entry__kind-icon" aria-hidden="true">
-            <KindIcon kind="rule" />
-          </span>
           <span class="index-entry__body">
-            <strong>{displayTitle(rule)}</strong>
+            <span class="index-entry__title">
+              <span class="index-entry__kind-icon" aria-hidden="true">
+                <KindIcon kind="rule" />
+              </span>
+              <strong>{displayTitle(rule)}</strong>
+            </span>
             {descriptionFor(rule) && (
               <span class="index-entry__description">{descriptionFor(rule)}</span>
             )}

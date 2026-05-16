@@ -30,7 +30,7 @@ type GroupedEntry = {
   tags: string[];
 };
 
-type CardKind = 'agent' | 'guide' | 'pattern' | 'principle' | 'mechanism';
+type CardKind = 'agent' | 'guide' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
 export function getStaticPaths() {
   return sections.map((section) => ({ params: { section: section.key } }));
@@ -433,6 +433,7 @@ function normalizeForCompare(value: string): string {
 function cardKindForSection(key: string): CardKind | undefined {
   if (key === 'agents') return 'agent';
   if (key === 'guides') return 'guide';
+  if (key === 'references') return 'reference';
   if (key === 'patterns') return 'pattern';
   if (key === 'why') return 'principle';
   if (key === 'mechanisms') return 'mechanism';
@@ -503,11 +504,6 @@ function cardKindForSection(key: string): CardKind | undefined {
           <div class="index-list index-list--cards">
             {entries.map(({ item, tags }) => (
               <a class={`index-entry ${sectionKind ? 'index-entry--with-icon' : ''}`} href={withBase(item.route)}>
-                {sectionKind && (
-                  <span class="index-entry__kind-icon" aria-hidden="true">
-                    <KindIcon kind={sectionKind} />
-                  </span>
-                )}
                 <span class="index-entry__body">
                   {tags.length > 0 && (
                     <span class="index-entry__tags">
@@ -516,7 +512,14 @@ function cardKindForSection(key: string): CardKind | undefined {
                       ))}
                     </span>
                   )}
-                  <strong>{item.title}</strong>
+                  <span class="index-entry__title">
+                    {sectionKind && (
+                      <span class="index-entry__kind-icon" aria-hidden="true">
+                        <KindIcon kind={sectionKind} />
+                      </span>
+                    )}
+                    <strong>{item.title}</strong>
+                  </span>
                   {item.description && <span class="index-entry__description">{item.description}</span>}
                 </span>
               </a>

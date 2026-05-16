@@ -3,12 +3,20 @@ import {
   faBook,
   faBrain,
   faCompassDrafting,
+  faGlobe,
   faRobot,
   faRuler,
   faWrench,
 } from '@fortawesome/free-solid-svg-icons';
 
-type GuidanceKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism';
+type GuidanceKind =
+  | 'agent'
+  | 'guide'
+  | 'rule'
+  | 'pattern'
+  | 'principle'
+  | 'mechanism'
+  | 'reference';
 
 type Props = {
   kind: GuidanceKind;
@@ -23,6 +31,7 @@ const icons = {
   pattern: faCompassDrafting,
   principle: faBrain,
   mechanism: faWrench,
+  reference: faGlobe,
 } satisfies Record<GuidanceKind, typeof faRuler>;
 const icon = icons[kind];
 const [width, height, , , path] = icon.icon;

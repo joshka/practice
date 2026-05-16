@@ -76,10 +76,12 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
         {domains.map((domain) => (
           <a class="rules-domain-card" href={withBase(domain.route)}>
             <span class="rules-domain-card__meta">
-              <span class="rules-domain-card__kind-icon" aria-hidden="true">
-                <KindIcon kind="rule" />
+              <span class="rules-domain-card__label">
+                <span class="rules-domain-card__kind-icon" aria-hidden="true">
+                  <KindIcon kind="rule" />
+                </span>
+                <span class="rules-domain-card__tag">{domain.tag}</span>
               </span>
-              <span class="rules-domain-card__tag">{domain.tag}</span>
               <span class="rules-domain-card__count">
                 {domain.count} {domain.count === 1 ? 'rule' : 'rules'}
               </span>

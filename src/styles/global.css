@@ -295,17 +295,11 @@
   }
 
   .home-card__icon {
-    @apply grid size-10 place-items-center rounded font-mono text-sm font-bold text-primary;
-    background: var(--color-surface-container-lowest);
-    box-shadow: var(--panel-sunken);
+    @apply grid size-10 shrink-0 place-items-center text-current;
   }
 
   .home-card__icon svg {
-    @apply size-4;
-  }
-
-  .home-card--agent .home-card__icon {
-    @apply text-primary;
+    @apply size-7;
   }
 
   .home-card__title {
@@ -431,7 +425,11 @@
   }
 
   .rules-domain-card__meta {
-    @apply mb-5 flex flex-wrap items-center gap-3;
+    @apply mb-5 flex items-center justify-between gap-3;
+  }
+
+  .rules-domain-card__label {
+    @apply flex min-w-0 items-center gap-3;
   }
 
   .rules-domain-card__kind-icon,
@@ -453,7 +451,7 @@
   }
 
   .rules-domain-card__count {
-    @apply text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant;
+    @apply ml-auto shrink-0 text-right text-xs font-bold uppercase tracking-[0.08em] text-on-surface-variant;
   }
 
   .rules-domain-card strong,
@@ -563,7 +561,7 @@
   }
 
   .index-entry--with-icon {
-    @apply grid grid-cols-[auto_1fr] gap-3;
+    @apply block;
   }
 
   .index-entry::after {
@@ -581,6 +579,10 @@
 
   .index-entry__tags {
     @apply mb-3 flex flex-wrap gap-2;
+  }
+
+  .index-entry__title {
+    @apply flex items-center gap-3;
   }
 
   .index-entry__tag {

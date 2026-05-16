@@ -13,7 +13,7 @@ const showHeaderDescription = kind !== 'rule' && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
 
-type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism';
+type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
 function pageKind(repoPath: string): string {
   if (repoPath.startsWith('rules/') && !repoPath.endsWith('/README.md')) return 'rule';
@@ -61,6 +61,7 @@ function pageIconKind(value: string): IconKind | undefined {
   if (value === 'mechanism') return 'mechanism';
   if (value === 'pattern') return 'pattern';
   if (value === 'principle') return 'principle';
+  if (value === 'reference') return 'reference';
   if (value === 'rule') return 'rule';
   return undefined;
 }
