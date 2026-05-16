@@ -843,13 +843,23 @@ html[data-theme="light"] .code-block pre code {
   }
 
   .detail-hero__meta {
-    @apply mt-5 flex flex-wrap items-center gap-2;
+    @apply mt-5 flex flex-wrap items-center justify-between gap-3;
+  }
+
+  .detail-hero__chips {
+    @apply flex flex-wrap items-center gap-2;
   }
 
   .detail-chip {
     @apply inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-primary;
     background: var(--color-surface-container-lowest);
     box-shadow: var(--panel-sunken);
+  }
+
+  .detail-copy {
+    @apply ml-auto inline-flex h-8 items-center rounded px-3 font-mono text-xs font-bold uppercase tracking-[0.08em] text-on-primary transition-colors duration-200 hover:text-on-primary-container;
+    background: var(--primary-gradient);
+    box-shadow: var(--primary-glow), var(--panel-raised-soft);
   }
 
   .detail-hero h1 {

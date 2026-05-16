@@ -465,6 +465,20 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
       }
 
       document.addEventListener('click', async (event) => {
+        const markdownButton = event.target instanceof Element ? event.target.closest('[data-copy-markdown]') : null;
+        if (markdownButton instanceof HTMLButtonElement) {
+          const markdown = markdownButton.dataset.copyMarkdown;
+          if (!markdown) return;
+
+          await navigator.clipboard.writeText(markdown);
+          const originalText = markdownButton.textContent;
+          markdownButton.textContent = 'Copied';
+          window.setTimeout(() => {
+            markdownButton.textContent = originalText;
+          }, 1200);
+          return;
+        }
+
         const button = event.target instanceof Element ? event.target.closest('.code-block__copy') : null;
         if (!(button instanceof HTMLButtonElement)) return;
 

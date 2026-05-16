@@ -1,5 +1,6 @@
 ---
 import KindIcon from './KindIcon.astro';
+import { withBase } from '../lib/site';
 import type { MarkdownPage } from '../lib/site';
 
 type Props = {
@@ -12,6 +13,7 @@ const chips = metadataChips(page);
 const showHeaderDescription = kind !== 'rule' && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
+const reviewNote = reviewCopyMarkdown(page, kind);
 
 type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
@@ -62,6 +64,26 @@ function pageIconKind(value: string): IconKind | undefined {
   if (value === 'rule') return 'rule';
   return undefined;
 }
+
+function reviewCopyMarkdown(page: MarkdownPage, kind: string): string | undefined {
+  if (kind !== 'rule' && kind !== 'pattern' && kind !== 'principle') return undefined;
+
+  const summary = reviewSummary(page, kind);
+  if (!summary) return undefined;
+
+  const url = new URL(withBase(page.route), 'https://joshka.net').href;
+  return `[${page.title}](${url}): ${summary}`;
+}
+
+function reviewSummary(page: MarkdownPage, kind: string): string {
+  const preferredSection = {
+    rule: 'rule',
+    pattern: 'preferred move',
+    principle: 'claim',
+  }[kind];
+  const section = page.sections.find((section) => section.title.toLowerCase() === preferredSection);
+  return (section?.markdown || page.description).trim();
+}
 ---
 
 <article class={`page page--${kind}`}>
@@ -75,9 +97,16 @@ function pageIconKind(value: string): IconKind | undefined {
       <h1>{page.title}</h1>
     </div>
     {showHeaderDescription && page.description && <p>{page.description}</p>}
-    {chips.length > 0 && (
+    {(chips.length > 0 || reviewNote) && (
       <div class="detail-hero__meta" aria-label="Page topics">
-        {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
+        <div class="detail-hero__chips">
+          {chips.map((chip) => <span class="detail-chip">{chip}</span>)}
+        </div>
+        {reviewNote && (
+          <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>
+            Copy review note
+          </button>
+        )}
       </div>
     )}
   </header>
