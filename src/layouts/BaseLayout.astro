@@ -181,7 +181,12 @@ function iconPath(icon: (typeof themeIcons)[keyof typeof themeIcons]): string {
       </section>
     </div>
     <footer class="site-footer mx-auto flex w-full max-w-container flex-col gap-4 px-page py-8 text-sm text-on-surface-variant md:flex-row md:items-center md:justify-between md:px-page-lg">
-      <p class="m-0">Durable software practices for code, documentation, tests, review, and coding agents.</p>
+      <div class="site-footer__text">
+        <p>Durable software practices for code, documentation, tests, review, and coding agents.</p>
+        <p>
+          Copyright © 2026 Josh McKinney · <a href="https://joshka.net/practice/">joshka.net/practice</a>
+        </p>
+      </div>
       {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
     </footer>
     <script>
