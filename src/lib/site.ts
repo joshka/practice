@@ -529,7 +529,7 @@ function truncateWords(value: string, maxLength: number): string {
   return `${truncated.slice(0, lastSpace > 80 ? lastSpace : maxLength).trimEnd()}...`;
 }
 
-function plainTextFromMarkdown(markdown: string): string {
+export function plainTextFromMarkdown(markdown: string): string {
   return markdown
     .replace(/^(?: {0,3})\[[^\]\n]+\]:[^\n]*(?:\n[ \t]+[^\n]+)*/gm, '')
     .replace(/!\[([^\]\n]*)\]\([^)]+\)/g, '$1')
