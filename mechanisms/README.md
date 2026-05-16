@@ -8,6 +8,8 @@ replace judgment, but they make preferred behavior cheaper and repeated mistakes
 
 - [`guidance-generation-and-audit`](guidance-generation-and-audit.md): Generators and audits keep
   rule indexes, compressed agent snippets, templates, and Markdown synchronized.
+- [`guidance-content-model-stewardship`](guidance-content-model-stewardship.md): Content-model
+  stewardship keeps guidance families distinct while recording subjective review queues.
 - [`jj-agent-workflow`](jj-agent-workflow.md): Noninteractive jj defaults, topology checks, and
   local override conventions make agent VCS work safer.
 - [`rust-api-and-release-checks`](rust-api-and-release-checks.md): Cargo release, semver, feature,
