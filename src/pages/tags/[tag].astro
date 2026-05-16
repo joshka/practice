@@ -20,6 +20,7 @@ export function getStaticPaths() {
 const tag = tagSlug(Astro.params.tag ?? '');
 const title = tagLabel(tag);
 const pages = taggedPages(tag);
+const guidanceKindOrder: GuidanceKind[] = ['guide', 'rule', 'pattern', 'principle', 'mechanism', 'agent'];
 
 function pageKind(page: MarkdownPage): GuidanceKind {
   if (page.repoPath.startsWith('guides/')) return 'guide';
@@ -33,6 +34,17 @@ function pageKind(page: MarkdownPage): GuidanceKind {
 function pageKindLabel(page: MarkdownPage): string {
   return tagLabel(pageKind(page));
 }
+
+const pageGroups = guidanceKindOrder
+  .map((kind) => {
+    const entries = pages.filter((page) => pageKind(page) === kind);
+    return {
+      kind,
+      entries,
+      label: `${tagLabel(kind)} ${entries.length === 1 ? 'item' : 'items'}`,
+    };
+  })
+  .filter((group) => group.entries.length > 0);
 ---
 
 <BaseLayout
@@ -54,28 +66,37 @@ function pageKindLabel(page: MarkdownPage): string {
 
   <section class="listing tag-results" aria-labelledby="tag-results-title">
     <h2 id="tag-results-title">Tagged guidance</h2>
-    <div class="index-list index-list--cards">
-      {pages.map((page) => (
-        <a class="index-entry index-entry--with-icon" href={withBase(page.route)}>
-          <span class="index-entry__body">
-            <span class="index-entry__tags">
-              <span class="index-entry__tag">
-                <span class="index-entry__kind-icon" aria-hidden="true">
-                  <KindIcon kind={pageKind(page)} />
+    <div class="grouped-index grouped-index--compact">
+      {pageGroups.map((group) => (
+        <section class="index-group" aria-labelledby={`tag-${tag}-${group.kind}`}>
+          <div class="index-group__header">
+            <h3 id={`tag-${tag}-${group.kind}`}>{group.label}</h3>
+          </div>
+          <div class="index-list index-list--cards">
+            {group.entries.map((page) => (
+              <a class="index-entry index-entry--with-icon" href={withBase(page.route)}>
+                <span class="index-entry__body">
+                  <span class="index-entry__tags">
+                    <span class="index-entry__tag">
+                      <span class="index-entry__kind-icon" aria-hidden="true">
+                        <KindIcon kind={pageKind(page)} />
+                      </span>
+                      {pageKindLabel(page)}
+                    </span>
+                    {tagsForPage(page).filter((pageTag) => pageTag !== tag).slice(0, 3).map((pageTag) => (
+                      <span class="index-entry__tag">{tagLabel(pageTag)}</span>
+                    ))}
+                  </span>
+                  <span class="index-entry__title">
+                    <strong>{page.title}</strong>
+                  </span>
+                  {page.metadata.id && <span class="index-entry__id">{page.metadata.id}</span>}
+                  {page.description && <span class="index-entry__description">{page.description}</span>}
                 </span>
-                {pageKindLabel(page)}
-              </span>
-              {tagsForPage(page).filter((pageTag) => pageTag !== tag).slice(0, 3).map((pageTag) => (
-                <span class="index-entry__tag">{tagLabel(pageTag)}</span>
-              ))}
-            </span>
-            <span class="index-entry__title">
-              <strong>{page.title}</strong>
-            </span>
-            {page.metadata.id && <span class="index-entry__id">{page.metadata.id}</span>}
-            {page.description && <span class="index-entry__description">{page.description}</span>}
-          </span>
-        </a>
+              </a>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   </section>

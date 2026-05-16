@@ -75,12 +75,13 @@ These queues are intentionally review-oriented rather than automatic changes:
 - Content overlap and depth. The catalog is mechanically complete, but large clusters such as
   `verification`, `documentation`, `rust`, and `reviewability` should be sampled for duplicate
   phrasing, thin rules, and rules that would be clearer as patterns or principles.
-- Tag information architecture. Broad tags are useful as search facets, but tag pages with dozens
-  of items may need grouping or narrower subclusters before they are ideal browsing surfaces.
+- Tag information architecture. Broad tags are useful as search facets, and tag pages now group
+  results by guidance kind. Large clusters may still need narrower subclusters if kind grouping is
+  not enough for browsing.
 - Rendered site rhythm. The site now has breadcrumbs, mobile navigation, related links, tags,
-  feedback links, copy actions, and search checks. Remaining review should focus on representative
-  page rhythm, tag-page density, search-modal accessibility, and whether large index pages need
-  local grouping.
+  feedback links, copy actions, search checks, search-modal focus handling, and grouped tag pages.
+  Remaining review should focus on representative page rhythm and whether large non-tag index pages
+  need local grouping.
 - Downstream canaries. A temp downstream adoption pass preserves an existing `AGENTS.md` and
   renders the copied rule pack, but a real downstream repo canary is still a publication decision.
 - Publication. Local validated jj changes still need maintainer review before pushing to `main`.
