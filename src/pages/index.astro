@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import KindIcon from '../components/KindIcon.astro';
 import { practiceTasks, withBase } from '../lib/site';
 
 const homeCards = [
@@ -12,24 +13,28 @@ const homeCards = [
   {
     title: 'Rules',
     badge: 'RULE',
+    kind: 'rule' as const,
     route: '/rules/',
     description: 'Compact instructions grouped by work area with detail pages for every rule.',
   },
   {
     title: 'Patterns',
     badge: 'MOVE',
+    kind: 'pattern' as const,
     route: '/patterns/',
     description: 'Repeatable situations and moves that can be cited in review.',
   },
   {
     title: 'Principles',
     badge: 'WHY',
+    kind: 'principle' as const,
     route: '/why/',
     description: 'Rationale behind related rules and patterns.',
   },
   {
     title: 'Mechanisms',
     badge: 'TOOL',
+    kind: 'mechanism' as const,
     route: '/mechanisms/',
     description: 'Checks, commands, generators, and workflows that support the guidance.',
   },
@@ -132,7 +137,9 @@ const useCases = [
           {homeCards.map((card) => (
             <a class={`home-card ${card.badge === 'AI' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
               <div class="home-card__meta">
-                <span class="home-card__icon">{card.badge}</span>
+                <span class="home-card__icon">
+                  {card.kind ? <KindIcon kind={card.kind} label={`${card.title} icon`} /> : card.badge}
+                </span>
               </div>
               <h2>{card.title}</h2>
               <p>{card.description}</p>

@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import KindIcon from '../../components/KindIcon.astro';
 import {
   type MarkdownPage,
   getSection,
@@ -29,6 +30,8 @@ type GroupedEntry = {
   tags: string[];
 };
 
+type CardKind = 'pattern' | 'principle' | 'mechanism';
+
 export function getStaticPaths() {
   return sections.map((section) => ({ params: { section: section.key } }));
 }
@@ -41,6 +44,7 @@ const sectionDescription = section.description;
 const page = sectionIndex(section);
 const pages = sectionPages(section);
 const showGuideTasks = sectionKey === 'guides';
+const sectionKind = cardKindForSection(sectionKey);
 
 const sectionConfig: Record<string, SectionConfig> = {
   guides: {
@@ -425,6 +429,13 @@ function visibleTags(tags: string[], title: string, group: GroupConfig): string[
 function normalizeForCompare(value: string): string {
   return value.toLowerCase().replace(/[^a-z0-9]+/g, '');
 }
+
+function cardKindForSection(key: string): CardKind | undefined {
+  if (key === 'patterns') return 'pattern';
+  if (key === 'why') return 'principle';
+  if (key === 'mechanisms') return 'mechanism';
+  return undefined;
+}
 ---
 
 <BaseLayout
@@ -482,7 +493,12 @@ function normalizeForCompare(value: string): string {
           </div>
           <div class="index-list index-list--cards">
             {entries.map(({ item, tags }) => (
-              <a class="index-entry" href={withBase(item.route)}>
+              <a class={`index-entry ${sectionKind ? 'index-entry--with-icon' : ''}`} href={withBase(item.route)}>
+                {sectionKind && (
+                  <span class="index-entry__kind-icon" aria-hidden="true">
+                    <KindIcon kind={sectionKind} />
+                  </span>
+                )}
                 <span class="index-entry__body">
                   {tags.length > 0 && (
                     <span class="index-entry__tags">

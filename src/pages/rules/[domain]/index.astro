@@ -1,5 +1,6 @@
 ---
 import BaseLayout from '../../../layouts/BaseLayout.astro';
+import KindIcon from '../../../components/KindIcon.astro';
 import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../../lib/site';
 
 type DomainConfig = {
@@ -104,11 +105,14 @@ function escapeRegExp(value: string): string {
     <p class="rule-domain-hero__use">{config.use}</p>
   </section>
 
-  <section class="listing">
+  <section class="listing rule-listing">
     <h2>{rules.length} {rules.length === 1 ? 'rule' : 'rules'}</h2>
-    <div class="index-list">
+    <div class="index-list rule-listing__grid">
       {rules.map((rule) => (
-        <a class="index-entry" href={withBase(rule.route)}>
+        <a class="index-entry index-entry--with-icon" href={withBase(rule.route)}>
+          <span class="index-entry__kind-icon" aria-hidden="true">
+            <KindIcon kind="rule" />
+          </span>
           <span class="index-entry__body">
             <strong>{displayTitle(rule)}</strong>
             {descriptionFor(rule) && (

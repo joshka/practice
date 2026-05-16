@@ -1,0 +1,37 @@
+---
+import {
+  faBrain,
+  faCompassDrafting,
+  faRuler,
+  faWrench,
+} from '@fortawesome/free-solid-svg-icons';
+
+type GuidanceKind = 'rule' | 'pattern' | 'principle' | 'mechanism';
+
+type Props = {
+  kind: GuidanceKind;
+  label?: string;
+};
+
+const { kind, label } = Astro.props;
+const icons = {
+  rule: faRuler,
+  pattern: faCompassDrafting,
+  principle: faBrain,
+  mechanism: faWrench,
+} satisfies Record<GuidanceKind, typeof faRuler>;
+const icon = icons[kind];
+const [width, height, , , path] = icon.icon;
+const accessibleLabel = label ?? `${kind} icon`;
+const pathData = Array.isArray(path) ? path.join(' ') : path;
+---
+
+<svg
+  aria-label={accessibleLabel}
+  role="img"
+  viewBox={`0 0 ${width} ${height}`}
+  fill="currentColor"
+  focusable="false"
+>
+  <path d={pathData} />
+</svg>

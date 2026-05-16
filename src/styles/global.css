@@ -5,29 +5,29 @@
     sans-serif;
   --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --color-background: #131313;
-  --color-surface: #131313;
-  --color-surface-dim: #131313;
-  --color-surface-bright: #393939;
-  --color-surface-container-lowest: #0e0e0e;
-  --color-surface-container-low: #1c1b1b;
-  --color-surface-container: #20201f;
-  --color-surface-container-high: #2a2a2a;
-  --color-surface-container-highest: #353535;
-  --color-on-background: #e5e2e1;
-  --color-on-surface: #e5e2e1;
-  --color-on-surface-variant: #c3c6d7;
-  --color-inverse-surface: #e5e2e1;
-  --color-inverse-on-surface: #313030;
-  --color-outline: #8d90a0;
-  --color-outline-variant: #434655;
-  --color-surface-tint: #b4c5ff;
-  --color-primary: #b4c5ff;
-  --color-on-primary: #002a78;
-  --color-primary-container: #2563eb;
-  --color-on-primary-container: #eeefff;
-  --color-inverse-primary: #0053db;
-  --color-secondary: #b4c5ff;
+  --color-background: #12151b;
+  --color-surface: #12151b;
+  --color-surface-dim: #12151b;
+  --color-surface-bright: #363d4d;
+  --color-surface-container-lowest: #0c1018;
+  --color-surface-container-low: #1a1e28;
+  --color-surface-container: #202634;
+  --color-surface-container-high: #293142;
+  --color-surface-container-highest: #333c50;
+  --color-on-background: #e5e6e6;
+  --color-on-surface: #e5e6e6;
+  --color-on-surface-variant: #c1c8d3;
+  --color-inverse-surface: #e5e6e6;
+  --color-inverse-on-surface: #2f3440;
+  --color-outline: #8792a5;
+  --color-outline-variant: #404a5d;
+  --color-surface-tint: #a8c8ff;
+  --color-primary: #a8c8ff;
+  --color-on-primary: #eef3ff;
+  --color-primary-container: #3468d8;
+  --color-on-primary-container: #eef3ff;
+  --color-inverse-primary: #315fca;
+  --color-secondary: #b8c6dc;
   --color-on-secondary: #182d63;
   --color-secondary-container: #33467e;
   --color-on-secondary-container: #a4b6f5;
@@ -39,7 +39,7 @@
   --color-on-error: #690005;
   --color-error-container: #93000a;
   --color-on-error-container: #ffdad6;
-  --color-code-bg: #0e0e0e;
+  --color-code-bg: #0c1018;
 
   --spacing-page: 1rem;
   --spacing-page-lg: 3rem;
@@ -66,10 +66,10 @@
   --panel-pressed:
     inset 0 2px 7px rgb(0 0 0 / 0.78),
     inset 0 1px 0 rgb(255 255 255 / 0.04);
-  --panel-gradient: linear-gradient(180deg, #262626 0%, #1f1f1e 100%);
-  --panel-gradient-high: linear-gradient(180deg, #303030 0%, #242423 100%);
-  --primary-gradient: linear-gradient(180deg, #3b76ff 0%, #2563eb 100%);
-  --primary-glow: 0 0 0 1px rgb(180 197 255 / 0.28), 0 0 22px rgb(37 99 235 / 0.28);
+  --panel-gradient: linear-gradient(180deg, #252b39 0%, #1f2531 100%);
+  --panel-gradient-high: linear-gradient(180deg, #30384a 0%, #242b39 100%);
+  --primary-gradient: linear-gradient(180deg, #3468d8 0%, #244fbb 100%);
+  --primary-glow: 0 0 0 1px rgb(168 200 255 / 0.28), 0 0 20px rgb(52 104 216 / 0.28);
   --engraved-text: 0 1px 0 rgb(0 0 0 / 0.55);
 }
 
@@ -80,7 +80,7 @@
 
   body {
     background:
-      linear-gradient(180deg, #1b1b1b 0, var(--color-background) 19rem),
+      linear-gradient(180deg, #171c27 0, var(--color-background) 19rem),
       var(--color-background);
     text-rendering: optimizeLegibility;
     text-shadow: var(--engraved-text);
@@ -304,6 +304,10 @@
     box-shadow: var(--panel-sunken);
   }
 
+  .home-card__icon svg {
+    @apply size-4;
+  }
+
   .home-card--agent .home-card__icon {
     @apply text-primary;
   }
@@ -317,7 +321,7 @@
   }
 
   .home-card--agent p {
-    @apply text-on-primary-container/80;
+    @apply text-on-primary-container;
   }
 
   .home-use {
@@ -422,6 +426,18 @@
     @apply mb-5 flex flex-wrap items-center gap-3;
   }
 
+  .rules-domain-card__kind-icon,
+  .index-entry__kind-icon {
+    @apply grid size-8 shrink-0 place-items-center rounded text-primary;
+    background: var(--color-surface-container-lowest);
+    box-shadow: var(--panel-sunken);
+  }
+
+  .rules-domain-card__kind-icon svg,
+  .index-entry__kind-icon svg {
+    @apply size-3.5;
+  }
+
   .rules-domain-card__tag {
     @apply rounded px-2 py-1 font-mono text-[0.68rem] font-bold uppercase tracking-[0.08em] text-primary;
     background: var(--color-surface-container-lowest);
@@ -502,6 +518,10 @@
     @apply grid gap-3;
   }
 
+  .rule-listing__grid {
+    @apply md:grid-cols-2;
+  }
+
   .grouped-index {
     @apply grid gap-10;
   }
@@ -532,6 +552,10 @@
 
   .index-entry {
     @apply relative block rounded-lg p-4 pr-12 text-on-surface no-underline transition-all duration-200 hover:text-on-surface;
+  }
+
+  .index-entry--with-icon {
+    @apply grid grid-cols-[auto_1fr] gap-3;
   }
 
   .index-entry::after {
@@ -778,10 +802,6 @@
     @apply mt-3 mb-5;
   }
 
-  .prose blockquote {
-    @apply ml-0 border-l-4 border-tertiary pl-4 text-on-surface-variant;
-  }
-
   .prose table {
     @apply my-6 block w-full overflow-x-auto border-collapse;
   }
@@ -877,7 +897,7 @@
   }
 
   .prose blockquote {
-    @apply rounded-lg border-l-0 p-4;
+    @apply ml-0 rounded-lg border-l-0 p-4 text-on-surface-variant;
     background: var(--color-surface-container-lowest);
     box-shadow: var(--panel-sunken);
   }
