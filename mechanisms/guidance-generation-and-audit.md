@@ -62,6 +62,13 @@ python3 scripts/generate_downstream_template.py --check
 markdownlint-cli2 "**/*.md"
 ```
 
+- Check important rendered search queries after building the site.
+
+```bash
+pnpm build
+pnpm check:search
+```
+
 ## What It Catches
 
 - Missing required rule sections.
@@ -79,6 +86,7 @@ markdownlint-cli2 "**/*.md"
 - Guide pages that drop their related-guidance or review-question sections.
 - Non-Rust guide review questions that stop using named subgroups.
 - Related-guidance sections that stop linking to a rule artifact.
+- Search index changes that stop important queries from returning expected guidance pages.
 - Core agent instructions that stop pointing to the guide set or reviewed rule pack.
 - Markdown formatting drift that makes review noisier.
 

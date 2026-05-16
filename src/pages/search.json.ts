@@ -6,6 +6,7 @@ export function GET() {
       .map((section) => `${section.title} ${plainTextFromMarkdown(section.markdown)}`)
       .join(' ');
     const metadataText = Object.values(page.metadata).join(' ');
+    const affordanceText = pageAffordanceText(page.repoPath);
 
     return {
       title: page.title,
@@ -15,7 +16,7 @@ export function GET() {
       description: page.description,
       url: withBase(page.route),
       headings: page.sections.map((section) => section.title),
-      text: [page.title, page.description, metadataText, sectionText]
+      text: [page.title, page.description, metadataText, affordanceText, sectionText]
         .join(' ')
         .replace(/\s+/g, ' ')
         .trim(),
@@ -44,4 +45,33 @@ function pageKindLabel(repoPath: string): string {
   if (repoPath.startsWith('rules/') && repoPath.endsWith('/README.md')) return 'Rule Area';
   if (repoPath === 'rules/README.md') return 'Rule Index';
   return pageKind(repoPath).replace(/^\w/, (letter) => letter.toUpperCase());
+}
+
+function pageAffordanceText(repoPath: string): string {
+  const affordances: string[] = [];
+  if (isReviewableGuidance(repoPath)) {
+    affordances.push('Copy review note');
+  }
+  if (isFeedbackableGuidance(repoPath)) {
+    affordances.push('Give feedback');
+  }
+  return affordances.join(' ');
+}
+
+function isReviewableGuidance(repoPath: string): boolean {
+  return (
+    (repoPath.startsWith('rules/') && !repoPath.endsWith('/README.md')) ||
+    repoPath.startsWith('patterns/') ||
+    repoPath.startsWith('principles/')
+  );
+}
+
+function isFeedbackableGuidance(repoPath: string): boolean {
+  return (
+    repoPath.startsWith('guides/') ||
+    (repoPath.startsWith('rules/') && !repoPath.endsWith('/README.md')) ||
+    repoPath.startsWith('patterns/') ||
+    repoPath.startsWith('principles/') ||
+    repoPath.startsWith('mechanisms/')
+  );
 }
