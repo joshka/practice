@@ -31,6 +31,15 @@ EXPECTATIONS = [
         ),
     ),
     SearchExpectation(
+        query="copy citation",
+        expected_top=(
+            "/practice/guides/software-change-preferences/",
+            "/practice/guides/coding-agents/",
+            "/practice/mechanisms/guidance-generation-and-audit/",
+            "/practice/agents/core/",
+        ),
+    ),
+    SearchExpectation(
         query="jj workflow",
         expected_top=(
             "/practice/guides/jj-workflow/",

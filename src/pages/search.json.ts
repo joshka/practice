@@ -52,6 +52,9 @@ function pageAffordanceText(repoPath: string): string {
   if (isReviewableGuidance(repoPath)) {
     affordances.push('Copy review note');
   }
+  if (isCitableGuidance(repoPath)) {
+    affordances.push('Copy citation');
+  }
   if (isFeedbackableGuidance(repoPath)) {
     affordances.push('Give feedback');
   }
@@ -73,5 +76,13 @@ function isFeedbackableGuidance(repoPath: string): boolean {
     repoPath.startsWith('patterns/') ||
     repoPath.startsWith('principles/') ||
     repoPath.startsWith('mechanisms/')
+  );
+}
+
+function isCitableGuidance(repoPath: string): boolean {
+  return (
+    repoPath.startsWith('guides/') ||
+    repoPath.startsWith('mechanisms/') ||
+    repoPath.startsWith('snippets/agents/')
   );
 }

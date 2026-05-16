@@ -15,6 +15,7 @@ const showHeaderDescription = !isReviewable && kind !== 'agent-snippet';
 const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
 const reviewNote = reviewCopyMarkdown(page, kind);
+const citationNote = citationCopyMarkdown(page, kind);
 const feedbackUrl = feedbackIssueUrl(page, kind, Astro.site?.href ?? 'https://joshka.net');
 const heroTitle = page.title;
 const heroId = isReviewable && page.metadata.id && page.title !== page.metadata.id
@@ -110,6 +111,23 @@ function reviewCopyMarkdown(page: MarkdownPage, kind: string): string | undefine
   return `[${linkedLabel}](${url}): ${namePrefix}${summary}`;
 }
 
+function citationCopyMarkdown(page: MarkdownPage, kind: string): string | undefined {
+  if (isReviewableKind(kind)) return undefined;
+  if (!isCitableKind(kind)) return undefined;
+
+  const summary = page.metadata.summary || page.description;
+  if (!summary) return undefined;
+
+  const url = new URL(withBase(page.route), 'https://joshka.net').href;
+  const linkedLabel = page.metadata.id ? `\`${page.metadata.id}\`` : page.title;
+  const namePrefix = page.metadata.id && page.title ? `${page.title}. ` : '';
+  return `[${linkedLabel}](${url}): ${namePrefix}${summary}`;
+}
+
+function isCitableKind(value: string): boolean {
+  return value === 'guide' || value === 'mechanism' || value === 'agent-snippet';
+}
+
 function reviewSummary(page: MarkdownPage, kind: string): string {
   if (page.metadata.summary) return page.metadata.summary;
 
@@ -161,7 +179,7 @@ function relatedLabel(page: MarkdownPage): string {
     </div>
     {heroId && <p class="detail-hero__id">{heroId}</p>}
     {showHeaderDescription && page.description && <p>{page.description}</p>}
-    {(chips.length > 0 || reviewNote || feedbackUrl) && (
+    {(chips.length > 0 || reviewNote || citationNote || feedbackUrl) && (
       <div class="detail-hero__meta" aria-label="Page topics">
         <div class="detail-hero__chips">
           {chips.map((chip) => (
@@ -175,6 +193,11 @@ function relatedLabel(page: MarkdownPage): string {
         {reviewNote && (
           <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>
             Copy review note
+          </button>
+        )}
+        {citationNote && (
+          <button class="detail-copy" type="button" data-copy-markdown={citationNote}>
+            Copy citation
           </button>
         )}
         {feedbackUrl && (
