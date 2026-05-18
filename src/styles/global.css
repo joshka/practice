@@ -1030,6 +1030,19 @@ html[data-theme="light"] .code-block pre code {
     box-shadow: var(--panel-raised), var(--primary-glow);
   }
 
+  .detail-section--personal-standard {
+    background: color-mix(in srgb, var(--color-primary-container) 36%, var(--color-surface-container-high));
+    box-shadow:
+      var(--panel-raised),
+      0 0 0 1px color-mix(in srgb, var(--color-primary) 66%, transparent),
+      0 0 26px color-mix(in srgb, var(--color-primary-container) 30%, transparent),
+      0 18px 48px color-mix(in srgb, var(--color-primary-container) 24%, transparent);
+  }
+
+  .detail-section--personal-standard h2 {
+    @apply text-on-primary-container;
+  }
+
   .page--mechanism .detail-section--checks li,
   .page--mechanism .detail-section--use li {
     @apply max-w-none;

@@ -65,6 +65,9 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](docs-one-dominant-mode-per-page.md). Let each page have one
   primary mode and move competing material behind links. This keeps readers from paying for
   tutorial, reference, explanation, and policy at once.
+- [`DOCS-OWN-AI-ASSISTED-PROSE`](docs-own-ai-assisted-prose.md). AI-generated or AI-assisted docs
+  are reasonable to share when human curation makes them author-owned. The published artifact should
+  carry checked claims, reader-sized scope, relevant evidence, real tradeoffs, and local voice.
 - [`DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`](docs-prose-for-relationships-lists-for-enumeration.md).
   Use prose when causality, contrast, or priority matters, and lists when enumerating parallel
   items. The shape should reveal the relationship instead of hiding it in bullets.

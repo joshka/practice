@@ -69,6 +69,8 @@ Use [Preserve Local Doc Voice][voice] when revising existing prose. Use
 decision the original text was carrying.
 Use [Avoid Generated Prose Tells][generated-tells], [Use Concrete Details][concrete-details], and
 [Write Technical Prose][technical-prose] when revision needs to remove smooth but low-signal prose.
+Use [Own AI-Assisted Prose][own-ai-prose] when docs came from AI generation or AI-assisted
+exploration and need human curation before they become fair to share.
 
 ## Repo Maps and Layers
 
@@ -175,6 +177,7 @@ need mechanical proof.
 [inline-choices]: ../rules/review/review-explain-controversial-choices-inline.md
 [intent]: ../patterns/preserve-intent-over-literalism.md
 [markdown-docs]: markdown-documentation.md
+[own-ai-prose]: ../rules/documentation/docs-own-ai-assisted-prose.md
 [pass-depth]: ../patterns/choose-doc-pass-depth.md
 [pr-narrative]: ../patterns/write-pr-narrative.md
 [review-packets]: ../patterns/produce-review-packets.md
