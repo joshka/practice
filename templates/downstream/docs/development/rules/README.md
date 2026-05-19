@@ -1,6 +1,6 @@
 # Reviewed Rule Domains
 
-These generated files contain every reviewed rule from the `development-preferences` repo,
+These generated files contain every reviewed rule from the `joshka/practice` repo,
 which is the canonical source for this shared rule set. Keep them synchronized from that
 repo instead of editing copied rule text by hand.
 

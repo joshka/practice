@@ -2,7 +2,7 @@
 
 This directory carries repo-local development guidance for agents and maintainers.
 
-The generated rule files are copied from the `development-preferences` repo. The canonical rendered
+The generated rule files are copied from the `joshka/practice` repo. The canonical rendered
 reference is [Software Practices](https://www.joshka.net/practice/). Update local validation
 commands and repo-specific notes in the repo's `AGENTS.md`, but refresh copied shared guidance from
 upstream instead of editing it by hand.
@@ -24,8 +24,7 @@ From this downstream repo, refresh this copy from GitHub with:
 python3 docs/development/update.py
 ```
 
-Set `DEVELOPMENT_PREFERENCES_DIR=/path/to/development-preferences` only when testing against a
-local source checkout.
+Set `PRACTICE_GUIDANCE_DIR=/path/to/practice` only when testing against a local source checkout.
 
 ## Files
 
@@ -47,7 +46,7 @@ site or the canonical source repo.
 
 Update local validation commands, source-control notes, and project-specific boundaries in
 `AGENTS.md` or nearby local docs. If a generated rule is wrong for most projects, open a
-[guidance feedback issue][guidance-feedback], update the canonical `development-preferences` repo,
+[guidance feedback issue][guidance-feedback], update the canonical `joshka/practice` repo,
 and recopy the generated files.
 
 [guidance-feedback]: https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml

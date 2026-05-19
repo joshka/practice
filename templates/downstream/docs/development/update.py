@@ -12,17 +12,18 @@ from pathlib import Path
 
 
 SOURCE_REPO = "https://github.com/joshka/practice.git"
+LOCAL_SOURCE_ENV = "PRACTICE_GUIDANCE_DIR"
 
 
 def explicit_source() -> Path | None:
-    configured = os.environ.get("DEVELOPMENT_PREFERENCES_DIR")
+    configured = os.environ.get(LOCAL_SOURCE_ENV)
     if not configured:
         return None
     source = Path(configured).expanduser().resolve()
     generator = source / "scripts" / "generate_downstream_template.py"
     if not generator.exists():
         raise SystemExit(
-            f"DEVELOPMENT_PREFERENCES_DIR does not contain {generator.relative_to(source)}"
+            f"{LOCAL_SOURCE_ENV} does not contain {generator.relative_to(source)}"
         )
     return source
 
@@ -31,10 +32,10 @@ def clone_source() -> tuple[tempfile.TemporaryDirectory[str], Path]:
     if shutil.which("git") is None:
         raise SystemExit(
             "git is required to refresh guidance from GitHub. Install git or set "
-            "DEVELOPMENT_PREFERENCES_DIR to a local checkout."
+            f"{LOCAL_SOURCE_ENV} to a local checkout."
         )
 
-    temp = tempfile.TemporaryDirectory(prefix="development-preferences-")
+    temp = tempfile.TemporaryDirectory(prefix="practice-guidance-")
     source = Path(temp.name) / "practice"
     subprocess.run(
         ["git", "-c", "commit.gpgsign=false", "clone", "--depth", "1", SOURCE_REPO, str(source)],

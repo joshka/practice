@@ -3,7 +3,7 @@
 Use this file as the repo-local map. Keep the reviewed shared rule pack in
 `docs/development/` so every rule is available without making this file a long manual.
 
-The copied development guidance comes from the `development-preferences` repo. The public reference
+The copied development guidance comes from the `joshka/practice` repo. The public reference
 site is [Software Practices](https://www.joshka.net/practice/). Use the local compact rules first,
 and use the site when a rule, pattern, principle, or guide needs more context.
 

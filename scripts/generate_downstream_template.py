@@ -26,7 +26,7 @@ def render_agents() -> str:
 Use this file as the repo-local map. Keep the reviewed shared rule pack in
 `docs/development/` so every rule is available without making this file a long manual.
 
-The copied development guidance comes from the `development-preferences` repo. The public reference
+The copied development guidance comes from the `joshka/practice` repo. The public reference
 site is [Software Practices](https://www.joshka.net/practice/). Use the local compact rules first,
 and use the site when a rule, pattern, principle, or guide needs more context.
 
@@ -75,7 +75,7 @@ def render_readme() -> str:
 
 This directory carries repo-local development guidance for agents and maintainers.
 
-The generated rule files are copied from the `development-preferences` repo. The canonical rendered
+The generated rule files are copied from the `joshka/practice` repo. The canonical rendered
 reference is [Software Practices](https://www.joshka.net/practice/). Update local validation
 commands and repo-specific notes in the repo's `AGENTS.md`, but refresh copied shared guidance from
 upstream instead of editing it by hand.
@@ -97,8 +97,7 @@ From this downstream repo, refresh this copy from GitHub with:
 python3 docs/development/update.py
 ```
 
-Set `DEVELOPMENT_PREFERENCES_DIR=/path/to/development-preferences` only when testing against a
-local source checkout.
+Set `PRACTICE_GUIDANCE_DIR=/path/to/practice` only when testing against a local source checkout.
 
 ## Files
 
@@ -120,7 +119,7 @@ site or the canonical source repo.
 
 Update local validation commands, source-control notes, and project-specific boundaries in
 `AGENTS.md` or nearby local docs. If a generated rule is wrong for most projects, open a
-[guidance feedback issue][guidance-feedback], update the canonical `development-preferences` repo,
+[guidance feedback issue][guidance-feedback], update the canonical `joshka/practice` repo,
 and recopy the generated files.
 
 [guidance-feedback]: https://github.com/joshka/practice/issues/new?template=guidance-feedback.yml
@@ -257,17 +256,18 @@ from pathlib import Path
 
 
 SOURCE_REPO = "https://github.com/joshka/practice.git"
+LOCAL_SOURCE_ENV = "PRACTICE_GUIDANCE_DIR"
 
 
 def explicit_source() -> Path | None:
-    configured = os.environ.get("DEVELOPMENT_PREFERENCES_DIR")
+    configured = os.environ.get(LOCAL_SOURCE_ENV)
     if not configured:
         return None
     source = Path(configured).expanduser().resolve()
     generator = source / "scripts" / "generate_downstream_template.py"
     if not generator.exists():
         raise SystemExit(
-            f"DEVELOPMENT_PREFERENCES_DIR does not contain {generator.relative_to(source)}"
+            f"{LOCAL_SOURCE_ENV} does not contain {generator.relative_to(source)}"
         )
     return source
 
@@ -276,10 +276,10 @@ def clone_source() -> tuple[tempfile.TemporaryDirectory[str], Path]:
     if shutil.which("git") is None:
         raise SystemExit(
             "git is required to refresh guidance from GitHub. Install git or set "
-            "DEVELOPMENT_PREFERENCES_DIR to a local checkout."
+            f"{LOCAL_SOURCE_ENV} to a local checkout."
         )
 
-    temp = tempfile.TemporaryDirectory(prefix="development-preferences-")
+    temp = tempfile.TemporaryDirectory(prefix="practice-guidance-")
     source = Path(temp.name) / "practice"
     subprocess.run(
         ["git", "-c", "commit.gpgsign=false", "clone", "--depth", "1", SOURCE_REPO, str(source)],
@@ -340,7 +340,7 @@ def render_domain_index(domains: dict[str, list]) -> str:
     lines = [
         "# Reviewed Rule Domains",
         "",
-        "These generated files contain every reviewed rule from the `development-preferences` repo,",
+        "These generated files contain every reviewed rule from the `joshka/practice` repo,",
         "which is the canonical source for this shared rule set. Keep them synchronized from that",
         "repo instead of editing copied rule text by hand.",
         "",
@@ -362,7 +362,7 @@ def render_domain_rules(domain: str, rules: list) -> str:
     lines = [
         f"# {title}",
         "",
-        "Generated from the canonical `development-preferences` rule catalog. Do not edit copied rule",
+        "Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule",
         "text by hand; update the source repo and recopy this file.",
         "",
         "## Instructions",

@@ -1,6 +1,6 @@
 # Measure Before Optimizing
 
-Generated from the canonical `development-preferences` rule catalog. Do not edit copied rule
+Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.
 
 ## Instructions
