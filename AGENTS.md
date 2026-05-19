@@ -46,27 +46,28 @@ reviewed and accepted that pattern. Source links justify, frame, or contrast the
 not supply copy. Write patterns in this repo's own voice and do not copy or closely paraphrase
 upstream text.
 
-Coding-agent workflow guidance lives in `guides/coding-agents.md`. Use that guide as the canonical
-map for agent delegation, context, tooling, workspace, review, and feedback-loop preferences.
+Coding-agent workflow guidance lives in `src/content/guides/coding-agents.md`. Use that guide as
+the canonical map for agent delegation, context, tooling, workspace, review, and feedback-loop
+preferences.
 
-Code-shape guidance lives in `guides/code-shape.md`. Use that guide as the canonical map for
-reader-locality, live context, structure/behavior separation, reversible structure, cohesion,
-coupling, and local expression-shape preferences.
+Code-shape guidance lives in `src/content/guides/code-shape.md`. Use that guide as the canonical
+map for reader-locality, live context, structure/behavior separation, reversible structure,
+cohesion, coupling, and local expression-shape preferences.
 
-Boundary-correctness guidance lives in `guides/boundary-correctness.md`. Use that guide as the
-canonical map for parsing, validation policy, state transitions, explicit inputs, injected
+Boundary-correctness guidance lives in `src/content/guides/boundary-correctness.md`. Use that guide
+as the canonical map for parsing, validation policy, state transitions, explicit inputs, injected
 nondeterminism, side effects, and async-boundary preferences.
 
-Observability and failure guidance lives in `guides/observability-and-failure.md`. Use that guide
-as the canonical map for structured errors, failure visibility, logging ownership, diagnostic
-context, and privacy-safe telemetry.
+Observability and failure guidance lives in `src/content/guides/observability-and-failure.md`. Use
+that guide as the canonical map for structured errors, failure visibility, logging ownership,
+diagnostic context, and privacy-safe telemetry.
 
-Documentation workflow guidance lives in `guides/documentation-workflow.md`. Use that guide as the
-canonical map for documentation pass depth, evidence, voice, PR narrative, repo doc maps, and drift
-remediation.
+Documentation workflow guidance lives in `src/content/guides/documentation-workflow.md`. Use that
+guide as the canonical map for documentation pass depth, evidence, voice, PR narrative, repo doc
+maps, and drift remediation.
 
-Jujutsu workflow guidance lives in `guides/jj-workflow.md`. Use that guide as the canonical source
-for local jj change shape, descriptions, bookmarks, publication, and recovery.
+Jujutsu workflow guidance lives in `src/content/guides/jj-workflow.md`. Use that guide as the
+canonical source for local jj change shape, descriptions, bookmarks, publication, and recovery.
 
 ## Version Control
 

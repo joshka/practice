@@ -12,8 +12,9 @@ from textwrap import wrap
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RULES_DIR = ROOT / "rules"
-OUTPUT = ROOT / "snippets" / "agents" / "rules.md"
+CONTENT_DIR = ROOT / "src" / "content"
+RULES_DIR = CONTENT_DIR / "rules"
+OUTPUT = CONTENT_DIR / "snippets" / "agents" / "rules.md"
 
 
 @dataclass(frozen=True)
@@ -143,7 +144,7 @@ def main() -> int:
     parser.add_argument(
         "--check",
         action="store_true",
-        help="fail if snippets/agents/rules.md is not up to date",
+        help="fail if src/content/snippets/agents/rules.md is not up to date",
     )
     args = parser.parse_args()
 

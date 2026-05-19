@@ -154,6 +154,8 @@ export const guidanceTags = [
 export type GuidanceTag = (typeof guidanceTags)[number];
 
 const root = process.cwd();
+const contentRoot = 'src/content';
+const contentAbsoluteRoot = path.join(root, contentRoot);
 
 marked.use({ gfm: true });
 
@@ -168,6 +170,10 @@ export function withBase(route: string): string {
 export function sourceUrl(repoPath: string): string {
   const view = repoPath.endsWith('.md') ? 'blob' : 'tree';
   return `${repoUrl}/${view}/main/${repoPath}`;
+}
+
+function sourceUrlForRepoPath(repoPath: string): string {
+  return sourceUrl(sourceStoragePath(repoPath));
 }
 
 export function pageTitleFromMarkdown(markdown: string, fallback: string): string {
@@ -190,7 +196,8 @@ export function descriptionFromMarkdown(markdown: string): string {
 }
 
 export function renderMarkdown(repoPath: string): MarkdownPage {
-  const absolute = path.join(root, repoPath);
+  repoPath = logicalRepoPath(repoPath);
+  const absolute = contentStoragePath(repoPath);
   const rawMarkdown = readFileSync(absolute, 'utf8');
   const parsed = parseFrontmatter(rawMarkdown);
   const markdown = stripLegacyMetadata(parsed.body);
@@ -213,7 +220,7 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
     sections,
     route,
     repoPath,
-    sourceUrl: sourceUrl(repoPath),
+    sourceUrl: sourceUrlForRepoPath(repoPath),
     metadata,
   };
 }
@@ -223,7 +230,7 @@ export function getSection(key: string): Section | undefined {
 }
 
 export function sectionPages(section: Section): MarkdownPage[] {
-  const directory = path.join(root, section.sourceDir);
+  const directory = path.join(contentAbsoluteRoot, section.sourceDir);
   return readMarkdownFiles(directory)
     .filter((file) => path.basename(file) !== 'README.md')
     .map((file) => renderMarkdown(toRepoPath(file)))
@@ -232,7 +239,7 @@ export function sectionPages(section: Section): MarkdownPage[] {
 
 export function sectionIndex(section: Section): MarkdownPage {
   const readme = path.join(section.sourceDir, 'README.md');
-  if (existsSync(path.join(root, readme))) {
+  if (existsSync(contentStoragePath(readme))) {
     return renderMarkdown(readme);
   }
   return {
@@ -243,20 +250,24 @@ export function sectionIndex(section: Section): MarkdownPage {
     sections: [],
     route: section.route,
     repoPath: section.sourceDir,
-    sourceUrl: sourceUrl(section.sourceDir),
+    sourceUrl: sourceUrlForRepoPath(section.sourceDir),
     metadata: {},
   };
 }
 
 export function ruleDomains(): MarkdownPage[] {
-  return readMarkdownFiles(path.join(root, 'rules'), 2)
-    .filter((file) => path.basename(file) === 'README.md' && path.dirname(file) !== path.join(root, 'rules'))
+  return readMarkdownFiles(path.join(contentAbsoluteRoot, 'rules'), 2)
+    .filter(
+      (file) =>
+        path.basename(file) === 'README.md' &&
+        path.dirname(file) !== path.join(contentAbsoluteRoot, 'rules'),
+    )
     .map((file) => renderMarkdown(toRepoPath(file)))
     .sort((a, b) => a.title.localeCompare(b.title));
 }
 
 export function rulesForDomain(domain: string): MarkdownPage[] {
-  return readMarkdownFiles(path.join(root, 'rules', domain))
+  return readMarkdownFiles(path.join(contentAbsoluteRoot, 'rules', domain))
     .filter((file) => path.basename(file) !== 'README.md')
     .map((file) => renderMarkdown(toRepoPath(file)))
     .sort((a, b) => a.title.localeCompare(b.title));
@@ -272,7 +283,13 @@ export function allPublicPages(): MarkdownPage[] {
     const parts = domain.repoPath.split('/');
     return rulesForDomain(parts[1]);
   });
-  publicPagesCache = [...basePages, ...sectionIndexes, ...sectionChildren, ...domains, ...domainRules];
+  publicPagesCache = [
+    ...basePages,
+    ...sectionIndexes,
+    ...sectionChildren,
+    ...domains,
+    ...domainRules,
+  ];
   return publicPagesCache;
 }
 
@@ -349,7 +366,7 @@ export function splitMetadataList(value: string | undefined): string[] {
 }
 
 export function routeForRepoPath(repoPath: string): string {
-  const normalized = repoPath.replaceAll('\\', '/');
+  const normalized = logicalRepoPath(repoPath);
   if (normalized === 'README.md') return '/';
   if (normalized === 'rules/README.md') return '/rules/';
   if (normalized.startsWith('rules/') && normalized.endsWith('/README.md')) {
@@ -387,7 +404,7 @@ function rewriteHref(href: string, fromRepoPath: string): string {
   if (!withoutHash.endsWith('.md')) {
     return href;
   }
-  const target = path.normalize(path.join(path.dirname(fromRepoPath), withoutHash)).replaceAll('\\', '/');
+  const target = logicalRepoPath(path.normalize(path.join(path.dirname(fromRepoPath), withoutHash)));
   const route = routeForRepoPath(target);
   const routed = route.startsWith('http') ? route : withBase(route);
   return hash ? `${routed}#${hash}` : routed;
@@ -417,7 +434,37 @@ function readdirSorted(directory: string) {
 }
 
 function toRepoPath(file: string): string {
-  return path.relative(root, file).replaceAll('\\', '/');
+  const absolute = path.resolve(file);
+  const relativeToContent = path.relative(contentAbsoluteRoot, absolute);
+  if (!relativeToContent.startsWith('..') && !path.isAbsolute(relativeToContent)) {
+    return relativeToContent.replaceAll('\\', '/');
+  }
+  return path.relative(root, absolute).replaceAll('\\', '/');
+}
+
+function logicalRepoPath(repoPath: string): string {
+  const normalized = repoPath.replaceAll('\\', '/');
+  if (normalized.startsWith(`${contentRoot}/`)) {
+    return normalized.slice(contentRoot.length + 1);
+  }
+  return normalized;
+}
+
+function contentStoragePath(repoPath: string): string {
+  const logical = logicalRepoPath(repoPath);
+  const rootPath = path.join(root, logical);
+  if (existsSync(rootPath)) {
+    return rootPath;
+  }
+  return path.join(contentAbsoluteRoot, logical);
+}
+
+function sourceStoragePath(repoPath: string): string {
+  const logical = logicalRepoPath(repoPath);
+  if (existsSync(path.join(contentAbsoluteRoot, logical))) {
+    return `${contentRoot}/${logical}`;
+  }
+  return logical;
 }
 
 function titleFromSlug(slug: string): string {

@@ -12,23 +12,24 @@ from pathlib import Path
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RULES_DIR = ROOT / "rules"
-GUIDES_DIR = ROOT / "guides"
-AGENT_RULES = ROOT / "snippets" / "agents" / "rules.md"
-CORE_AGENT_SNIPPET = ROOT / "snippets" / "agents" / "core.md"
+CONTENT_DIR = ROOT / "src" / "content"
+RULES_DIR = CONTENT_DIR / "rules"
+GUIDES_DIR = CONTENT_DIR / "guides"
+AGENT_RULES = CONTENT_DIR / "snippets" / "agents" / "rules.md"
+CORE_AGENT_SNIPPET = CONTENT_DIR / "snippets" / "agents" / "core.md"
 MAX_FLAT_GUIDE_BULLETS = 7
 GUIDE_LONG_LIST_EXCEPTIONS = {
-    "guides/rust-maintainability.md",
+    "src/content/guides/rust-maintainability.md",
 }
 
 REQUIRED_ROOTS = [
     ".github/ISSUE_TEMPLATE/guidance-feedback.yml",
-    "rules/README.md",
-    "principles/README.md",
-    "patterns/README.md",
-    "mechanisms/README.md",
-    "snippets/agents/README.md",
-    "snippets/agents/rules.md",
+    "src/content/rules/README.md",
+    "src/content/principles/README.md",
+    "src/content/patterns/README.md",
+    "src/content/mechanisms/README.md",
+    "src/content/snippets/agents/README.md",
+    "src/content/snippets/agents/rules.md",
     "templates/rule.md",
     "scripts/generate_rule_indexes.py",
     "scripts/generate_downstream_template.py",
@@ -62,11 +63,20 @@ ALLOWED_STATUSES = {"draft", "reviewed", "needs-work"}
 ALLOWED_AUDIENCES = {"humans", "agents", "both"}
 
 STRUCTURED_GUIDANCE_DIRS = {
-    "guides": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
-    "patterns": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
-    "principles": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
-    "mechanisms": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
-    "snippets/agents": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "src/content/guides": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "src/content/patterns": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "src/content/principles": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "src/content/mechanisms": ["Name", "ID", "Summary", "Status", "Audience", "Topics", "Tags", "Related"],
+    "src/content/snippets/agents": [
+        "Name",
+        "ID",
+        "Summary",
+        "Status",
+        "Audience",
+        "Topics",
+        "Tags",
+        "Related",
+    ],
 }
 
 PLACEHOLDER_PATTERNS = [
@@ -100,6 +110,13 @@ class Rule:
 
 def rel(path: Path) -> str:
     return path.relative_to(ROOT).as_posix()
+
+
+def content_rel(path: Path) -> str:
+    relative = path.relative_to(ROOT)
+    if relative.parts[:2] == ("src", "content"):
+        return Path(*relative.parts[2:]).as_posix()
+    return relative.as_posix()
 
 
 def fail(errors: list[str], message: str) -> None:
@@ -297,6 +314,7 @@ def audit_structured_related_metadata(errors: list[str]) -> None:
     for path in public_markdown_files():
         repo_path = rel(path)
         valid_targets.add(repo_path.lower())
+        valid_targets.add(content_rel(path).lower())
         item_id = metadata(path.read_text(), "ID")
         if item_id:
             valid_targets.add(item_id.lower())
@@ -400,7 +418,7 @@ def audit_draft_review_queue(rules: list[Rule], errors: list[str]) -> None:
     if not draft_ids:
         return
 
-    guide_rule_audit = ROOT / "references" / "guide-rule-audit.md"
+    guide_rule_audit = CONTENT_DIR / "references" / "guide-rule-audit.md"
     if not guide_rule_audit.exists():
         fail(errors, f"missing guide rule audit: {rel(guide_rule_audit)}")
         return
@@ -441,7 +459,7 @@ def audit_extracted_draft_rules(rules: list[Rule], errors: list[str]) -> None:
     if not draft_ids:
         return
 
-    guide_rule_audit = ROOT / "references" / "guide-rule-audit.md"
+    guide_rule_audit = CONTENT_DIR / "references" / "guide-rule-audit.md"
     if not guide_rule_audit.exists():
         return
     text = guide_rule_audit.read_text()

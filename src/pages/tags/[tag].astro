@@ -20,7 +20,14 @@ export function getStaticPaths() {
 const tag = tagSlug(Astro.params.tag ?? '');
 const title = tagLabel(tag);
 const pages = taggedPages(tag);
-const guidanceKindOrder: GuidanceKind[] = ['guide', 'rule', 'pattern', 'principle', 'mechanism', 'agent'];
+const guidanceKindOrder: GuidanceKind[] = [
+  'guide',
+  'rule',
+  'pattern',
+  'principle',
+  'mechanism',
+  'agent',
+];
 
 function pageKind(page: MarkdownPage): GuidanceKind {
   if (page.repoPath.startsWith('guides/')) return 'guide';

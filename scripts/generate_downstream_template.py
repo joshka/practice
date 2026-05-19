@@ -14,8 +14,9 @@ from generate_agent_rules import RULES_DIR, discover_rules, domain_name
 
 
 ROOT = Path(__file__).resolve().parents[1]
+CONTENT_DIR = ROOT / "src" / "content"
 DEFAULT_TEMPLATE_DIR = ROOT / "templates" / "downstream"
-AGENT_RULE_PACK = ROOT / "snippets" / "agents" / "rules.md"
+AGENT_RULE_PACK = CONTENT_DIR / "snippets" / "agents" / "rules.md"
 CANONICAL_SITE = "https://www.joshka.net/practice/"
 
 

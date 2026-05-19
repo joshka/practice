@@ -65,12 +65,13 @@ rule that is useful across topics, promote that rule into a named guidance file 
 
 Use these durable layers:
 
-- [Rules](rules/README.md): one-file-per-rule compact instructions grouped by domain.
-- [Principles](principles/README.md): reasoning notes for broad beliefs that justify several rules.
-- [Patterns](patterns/README.md): repeatable situation-and-move guidance.
-- [Mechanisms](mechanisms/README.md): lints, checks, commands, and configuration that support
+- [Rules](src/content/rules/README.md): one-file-per-rule compact instructions grouped by domain.
+- [Principles](src/content/principles/README.md): reasoning notes for broad beliefs that justify
+  several rules.
+- [Patterns](src/content/patterns/README.md): repeatable situation-and-move guidance.
+- [Mechanisms](src/content/mechanisms/README.md): lints, checks, commands, and configuration that support
   rules mechanically.
-- [Agent snippets](snippets/agents/README.md): compressed execution packs and profile-style
+- [Agent snippets](src/content/snippets/agents/README.md): compressed execution packs and profile-style
   guidance for `AGENTS.md` files.
 
 Start new repeatable moves from `templates/pattern.md`. Use the existing principle and mechanism
@@ -91,40 +92,45 @@ implementation.
 
 Task entry points:
 
-| Work area         | Start here                                                            |
-| ----------------- | --------------------------------------------------------------------- |
-| Change shape      | [Software Change Preferences](guides/software-change-preferences.md)  |
-| Rust review       | [Rust Maintainability](guides/rust-maintainability.md)                |
-| Code shape        | [Code Shape](guides/code-shape.md)                                    |
-| Documentation     | [Markdown And Documentation](guides/markdown-documentation.md)        |
-| Coding-agent work | [Coding Agents](guides/coding-agents.md)                              |
-| JJ workflow       | [JJ Workflow](guides/jj-workflow.md)                                  |
+- Change shape:
+  [Software Change Preferences](src/content/guides/software-change-preferences.md)
+- Rust review:
+  [Rust Maintainability](src/content/guides/rust-maintainability.md)
+- Code shape:
+  [Code Shape](src/content/guides/code-shape.md)
+- Documentation:
+  [Markdown And Documentation](src/content/guides/markdown-documentation.md)
+- Coding-agent work:
+  [Coding Agents](src/content/guides/coding-agents.md)
+- JJ workflow:
+  [JJ Workflow](src/content/guides/jj-workflow.md)
 
 Guide entry points by decision area:
 
-- [Software Change Preferences](guides/software-change-preferences.md): broad defaults for change
-  shape, review, and verification.
-- [Rust Maintainability](guides/rust-maintainability.md): Rust reader-locality, APIs, errors,
-  tests, dependencies, and performance.
-- [Code Shape](guides/code-shape.md): source-level moves that reduce reader burden.
-- [Boundary Correctness](guides/boundary-correctness.md): parsing, validation policy, state,
-  explicit inputs, side effects, and async boundaries.
-- [Observability And Failure](guides/observability-and-failure.md): structured errors, logging
-  ownership, telemetry, and privacy-safe diagnostics.
-- [Markdown And Documentation](guides/markdown-documentation.md): Markdown style, Rustdoc,
-  examples, docs-as-contracts, and source-link policy.
-- [Documentation Workflow](guides/documentation-workflow.md): documentation pass depth, evidence,
-  local voice, PR narrative, repo maps, and drift remediation.
-- [Coding Agents](guides/coding-agents.md): objectives, context, tools, workspaces, review, and
-  feedback loops for agent work.
-- [JJ Workflow](guides/jj-workflow.md): local jujutsu change shape, descriptions, bookmarks,
-  remotes, and recovery.
+- [Software Change Preferences](src/content/guides/software-change-preferences.md): broad defaults
+  for change shape, review, and verification.
+- [Rust Maintainability](src/content/guides/rust-maintainability.md): Rust reader-locality, APIs,
+  errors, tests, dependencies, and performance.
+- [Code Shape](src/content/guides/code-shape.md): source-level moves that reduce reader burden.
+- [Boundary Correctness](src/content/guides/boundary-correctness.md): parsing, validation policy,
+  state, explicit inputs, side effects, and async boundaries.
+- [Observability And Failure](src/content/guides/observability-and-failure.md): structured errors,
+  logging ownership, telemetry, and privacy-safe diagnostics.
+- [Markdown And Documentation](src/content/guides/markdown-documentation.md): Markdown style,
+  Rustdoc, examples, docs-as-contracts, and source-link policy.
+- [Documentation Workflow](src/content/guides/documentation-workflow.md): documentation pass depth,
+  evidence, local voice, PR narrative, repo maps, and drift remediation.
+- [Coding Agents](src/content/guides/coding-agents.md): objectives, context, tools, workspaces,
+  review, and feedback loops for agent work.
+- [JJ Workflow](src/content/guides/jj-workflow.md): local jujutsu change shape, descriptions,
+  bookmarks, remotes, and recovery.
 
-Use [rules](rules/README.md) when you need a compact instruction with its own reviewable home. Use
-[principles](principles/README.md) when you need the reasoning behind a rule. Use
-[patterns](patterns/README.md) when you need a stable review term or a compact rule to cite. Use
-[mechanisms](mechanisms/README.md) when you need the lint, command, CI, or configuration support
-behind a rule. Use [agent snippets](snippets/agents/README.md) when you need copyable
+Use [rules](src/content/rules/README.md) when you need a compact instruction with its own
+reviewable home. Use [principles](src/content/principles/README.md) when you need the reasoning
+behind a rule. Use [patterns](src/content/patterns/README.md) when you need a stable review term or
+a compact rule to cite. Use [mechanisms](src/content/mechanisms/README.md) when you need the lint,
+command, CI, or configuration support behind a rule. Use
+[agent snippets](src/content/snippets/agents/README.md) when you need copyable
 `AGENTS.md` sections or a compressed reviewed-rule pack for another repo.
 
 ## Use In Another Project
@@ -193,13 +199,13 @@ The audit checks the guidance architecture directly: rule metadata and reference
 guidance metadata, tag vocabulary, domain indexes, generated agent-pack coverage, stale rule IDs,
 private local context leaks, placeholder text, and internal Markdown links. Regenerate rule indexes
 with `python3 scripts/generate_rule_indexes.py` after changing rule titles, rationale, or
-summaries. Regenerate `snippets/agents/rules.md` with `python3 scripts/generate_agent_rules.py`
-after changing reviewed rule instructions.
-Regenerate `templates/downstream/` with `python3 scripts/generate_downstream_template.py` after
+summaries. Regenerate `src/content/snippets/agents/rules.md` with
+`python3 scripts/generate_agent_rules.py` after changing reviewed rule instructions. Regenerate
+`templates/downstream/` with `python3 scripts/generate_downstream_template.py` after
 changing reviewed rule instructions or downstream adoption shape. Run `pnpm check:search` after
-`pnpm build` to verify important rendered search queries against `dist/search.json`. Run
-`pnpm check:deps` to make dependency freshness explicit before handing off broad repository
-maintenance changes.
+`pnpm build` to verify important rendered search queries against `dist/search.json`. Run `pnpm
+check:deps` to make dependency freshness explicit before handing off broad repository maintenance
+changes.
 
 Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode
 flags rules whose rationale still starts by repeating the rule text, which is a sign that the rule

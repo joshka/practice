@@ -12,7 +12,8 @@ from textwrap import wrap
 
 
 ROOT = Path(__file__).resolve().parents[1]
-RULES_DIR = ROOT / "rules"
+CONTENT_DIR = ROOT / "src" / "content"
+RULES_DIR = CONTENT_DIR / "rules"
 
 DOMAIN_SUMMARIES = {
     "agent-workflow": (

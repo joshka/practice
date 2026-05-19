@@ -57,7 +57,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Change Shape](change-shape/README.md). 13 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 33 rules. Documentation rules cover
+- [Docs Are Contracts](documentation/README.md). 34 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
 - [Observability And Failure](observability/README.md). 5 rules. Observability rules cover owned
@@ -378,6 +378,10 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`DOCS-ONE-DOMINANT-MODE-PER-PAGE`](documentation/docs-one-dominant-mode-per-page.md). Let each
   page have one primary mode and move competing material behind links. This keeps readers from
   paying for tutorial, reference, explanation, and policy at once.
+- [`DOCS-OWN-AI-ASSISTED-PROSE`](documentation/docs-own-ai-assisted-prose.md). AI-generated or
+  AI-assisted docs are reasonable to share when human curation makes them author-owned. The
+  published artifact should carry checked claims, reader-sized scope, relevant evidence, real
+  tradeoffs, and local voice.
 - [`DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`](documentation/docs-prose-for-relationships-lists-for-enumeration.md).
   Use prose when causality, contrast, or priority matters, and lists when enumerating parallel
   items. The shape should reveal the relationship instead of hiding it in bullets.

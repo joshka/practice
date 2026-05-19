@@ -6,13 +6,13 @@ import tailwindcss from '@tailwindcss/vite';
 import { defineConfig } from 'astro/config';
 
 const markdownSourceDirs = [
-  'guides',
-  'mechanisms',
-  'patterns',
-  'principles',
-  'references',
-  'rules',
-  'snippets/agents',
+  'src/content/guides',
+  'src/content/mechanisms',
+  'src/content/patterns',
+  'src/content/principles',
+  'src/content/references',
+  'src/content/rules',
+  'src/content/snippets/agents',
 ];
 
 export default defineConfig({
