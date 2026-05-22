@@ -21,6 +21,9 @@ Use this snippet in `AGENTS.md` files when a repo needs the broad development-pr
 Use small, reviewable changes with one clear purpose. Preserve unrelated work and keep source
 control state clean. Prefer existing project patterns over generic advice.
 
+Keep `AGENTS.md` as a task-start map, not as the full software doctrine. If the repo has a project
+operating manual or equivalent project-owned guidance artifact, read that before substantial work.
+
 Before editing, identify the relevant guide or local convention. During handoff, describe what
 changed, why it changed, and what validation ran. Report skipped checks and remaining risk
 honestly.
@@ -36,6 +39,7 @@ and begin the named next chunk.
 
 Prefer the project guides as the source of truth:
 
+- Project operating manual or applied local doctrine: `docs/development/project-operating-manual.md`
 - Software change shape: `guides/software-change-preferences.md`
 - Rust maintainability: `guides/rust-maintainability.md`
 - Code shape: `guides/code-shape.md`

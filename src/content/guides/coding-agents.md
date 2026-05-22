@@ -67,6 +67,9 @@ static instruction block.
 Use [Use AGENTS.md As Map][agents-map] to keep top-level instructions compact and linked. Use
 [Optimize For Agent Legibility][agent-legibility] when repo structure, docs, commands, and runtime
 signals should help future agents find and validate the right thing.
+For ongoing projects whose software doctrine no longer fits in a short map, use
+[Project Operating Manual][project-operating-manual] as the project-owned interpretation layer
+between the broad catalog and the current repo.
 Use [Agent Keep Durable Context On Disk][agent-disk-context], [Agent Use AGENTS.md As
 Map][agent-agents-map], and [Agent Distill From Blessed Artifacts][agent-blessed-artifacts] when
 context should live in repo-owned artifacts rather than transient prompt memory.
@@ -292,6 +295,7 @@ current.
 [mechanical]: ../patterns/make-bad-output-mechanically-hard.md
 [nonfunctional]: ../patterns/encode-nonfunctional-requirements.md
 [objectives]: ../patterns/give-agents-objectives-with-boundaries.md
+[project-operating-manual]: ../mechanisms/project-operating-manual.md
 [repo-automation]: ../patterns/keep-automations-repo-owned.md
 [review-packets]: ../patterns/produce-review-packets.md
 [review-proof]: ../patterns/review-proof-not-just-code.md

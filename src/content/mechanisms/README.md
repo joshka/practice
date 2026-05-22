@@ -4,6 +4,12 @@ Mechanisms are mechanical supports for the guidance in this repo: lints, formatt
 checks, command recipes, local tool configuration, templates, and generated artifacts. They do not
 replace judgment, but they make preferred behavior cheaper and repeated mistakes harder.
 
+## Draft Mechanisms
+
+- [`project-operating-manual`](project-operating-manual.md): A project-owned operating manual
+  applies the broader guidance catalog to one live codebase so `AGENTS.md` can stay a map instead
+  of becoming the whole doctrine.
+
 ## Reviewed Mechanisms
 
 - [`guidance-generation-and-audit`](guidance-generation-and-audit.md): Generators and audits keep

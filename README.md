@@ -21,6 +21,8 @@ Use it in two ways:
 - As a human-readable explanation of the development beliefs I want to apply consistently.
 - As a canonical source of compact rules that can be copied into other repositories for agents to
   follow.
+- As source material for a project-owned operating manual that applies the total guidance set to one
+  live codebase.
 
 The repo should support two audiences:
 
@@ -83,6 +85,8 @@ The repo has two related surfaces:
 
 - A detailed reasoning surface for humans: guides, principles, patterns, mechanisms, and references.
 - A compact execution surface for agents: reviewed rule files and generated agent snippets.
+- An applied-project surface: project-owned operating manuals built from this catalog plus the
+  target repo's real constraints, boundaries, and proof expectations.
 
 The detailed surface explains why rules exist and where they stop applying. The compact surface is
 what another repo can copy into `AGENTS.md`-style guidance so agents can apply the preferences during
@@ -176,6 +180,13 @@ The intended downstream shape is:
 This squares summary and detail: `AGENTS.md` stays readable, while every reviewed rule remains
 available in the target repo without making agents or maintainers pull information manually from
 this repo.
+
+For projects that need a more thorough ongoing guidance artifact, add a repo-owned
+`docs/development/project-operating-manual.md` and use
+[Project Operating Manual](src/content/mechanisms/project-operating-manual.md) plus
+[templates/project-operating-manual.md](templates/project-operating-manual.md) as the starting
+shape. That manual should interpret this catalog for the target codebase instead of copying every
+rule verbatim into `AGENTS.md`.
 
 ## Maintaining This Repo
 
