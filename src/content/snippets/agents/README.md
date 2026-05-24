@@ -9,6 +9,8 @@ copy every snippet by default; choose the sections that match the repo's work.
 ## Snippets
 
 - [core.md](core.md): A repo needs the broad development-preference baseline.
+- [full-documentation-doctrine.md](full-documentation-doctrine.md): A repo wants one large
+  pasteable documentation doctrine with rules and reasons.
 - [full-software-doctrine.md](full-software-doctrine.md): A repo wants one large pasteable
   doctrine with rules and reasons.
 - [rust.md](rust.md): Rust code, APIs, Rustdoc, or dependency shape matters.
