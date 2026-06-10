@@ -64,6 +64,7 @@ Use `templates/pattern.md` for new entries.
 | `optimize-for-agent-legibility`                | Optimize For Agent Legibility                | reviewed |
 | `parse-dont-validate`                          | Parse Dont Validate                          | reviewed |
 | `practice-agent-workouts`                      | Practice Agent Workouts                      | reviewed |
+| `prefer-100-column-prose-wrap`                 | Prefer 100-Column Prose Wrap                 | draft    |
 | `prefer-durable-summaries`                     | Prefer Durable Summaries                     | reviewed |
 | `prefer-in-distribution-tools`                 | Prefer In Distribution Tools                 | reviewed |
 | `prefer-standard-conversions`                  | Prefer Standard Conversions                  | reviewed |

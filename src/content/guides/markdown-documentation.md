@@ -23,7 +23,8 @@ Use this guide with [Software Change Preferences](software-change-preferences.md
 
 Write Markdown that is easy to read in source form and easy to diff.
 
-- Wrap prose around 100 columns.
+- Wrap prose around 100 columns. Use [Prefer 100-Column Prose Wrap][prose-wrap] for the rationale
+  behind that local preference.
 - Put a blank line after headings.
 - Put a blank line before and after lists, blockquotes, and fenced code blocks.
 - Use fenced code blocks with a language tag.
@@ -465,6 +466,7 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 [one-mode]: ../rules/documentation/docs-one-dominant-mode-per-page.md
 [page-shape]: ../rules/documentation/docs-match-page-shape-to-reader-task.md
 [prose-lists]: ../rules/documentation/docs-prose-for-relationships-lists-for-enumeration.md
+[prose-wrap]: ../patterns/prefer-100-column-prose-wrap.md
 [public-docs]: ../rules/rust/rust-write-public-docs-for-caller-tasks.md
 [readme-entry]: ../rules/documentation/docs-readme-as-entry-point.md
 [readme-rustdoc]: ../rules/documentation/docs-align-readme-and-crate-rustdoc.md

@@ -52,6 +52,7 @@ against. If docs and code disagree, identify which side is intended behavior and
 
 Use Markdown that passes `markdownlint-cli2`: prose around 100 columns, blank lines around headings,
 lists, and code blocks, fenced code blocks with languages, `1.` numbered lists, and aligned tables.
+Use `patterns/prefer-100-column-prose-wrap.md` when the 100-column preference needs rationale.
 
 Canonical guides:
 

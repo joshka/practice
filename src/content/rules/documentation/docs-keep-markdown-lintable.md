@@ -9,7 +9,8 @@
 - Status: `reviewed`
 - Domain: `documentation`
 - Tags: `documentation, tooling, local-conventions, reviewability`
-- Related: `make-bad-output-mechanically-hard, TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
+- Related: `make-bad-output-mechanically-hard, prefer-100-column-prose-wrap,
+  TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
 
 ## Rule
 
@@ -20,6 +21,9 @@ Keep Markdown lintable.
 Formatting drift adds review noise and makes generated or agent-edited docs harder to maintain.
 Lintable Markdown catches line length, heading spacing, fenced code blocks, ordered-list style, and
 table alignment before those details become repeated review comments.
+
+Use the 100-column prose wrap preference when a repo needs the local rationale for line length, not
+just the mechanical lint setting.
 
 ## Helps
 
@@ -43,6 +47,7 @@ review that treats lint failures as fixable mechanics.
 ## References
 
 - [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Pattern: Prefer 100-Column Prose Wrap](../../patterns/prefer-100-column-prose-wrap.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

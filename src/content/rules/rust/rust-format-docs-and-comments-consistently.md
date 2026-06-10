@@ -9,7 +9,8 @@
 - Status: `reviewed`
 - Domain: `rust`
 - Tags: `rust, documentation, rustdoc, local-conventions`
-- Related: `follow-local-conventions, DOCS-KEEP-MARKDOWN-LINTABLE, RUST-VALIDATE-RUST-DOCS-AS-CODE`
+- Related: `follow-local-conventions, prefer-100-column-prose-wrap, DOCS-KEEP-MARKDOWN-LINTABLE,
+  RUST-VALIDATE-RUST-DOCS-AS-CODE`
 
 ## Rule
 
@@ -24,6 +25,9 @@ formatters.
 Use the project's formatter support for doc-comment code blocks and doc attribute normalization
 when it is stable for the project. Wrap prose comments near the repo's prose line length so source
 review remains readable.
+
+Use the 100-column prose wrap preference when Rustdoc or prose comments carry Markdown that is
+reviewed in source form.
 
 ## Helps
 
@@ -48,3 +52,4 @@ and docs builds.
 
 - [rustfmt configuration](https://rust-lang.github.io/rustfmt/)
 - [rustdoc book: Documentation tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)
+- [Pattern: Prefer 100-Column Prose Wrap](../../patterns/prefer-100-column-prose-wrap.md)
