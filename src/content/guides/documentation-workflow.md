@@ -80,7 +80,9 @@ it.
 
 Use [Bootstrap Repo Docs][bootstrap] when creating or reorganizing project docs. Use
 [Use AGENTS.md As Map][agents-map] when agent instructions should point to canonical guides instead
-of becoming a long standalone manual.
+of becoming a long standalone manual. Use [Run Rustdoc Quality Pass][rustdoc-pass] when a Rust
+crate needs README, crate Rustdoc, item Rustdoc, runnable examples, and decision records checked as
+separate but aligned documentation layers.
 
 ## Review Narrative
 
@@ -181,6 +183,7 @@ need mechanical proof.
 [pass-depth]: ../patterns/choose-doc-pass-depth.md
 [pr-narrative]: ../patterns/write-pr-narrative.md
 [review-packets]: ../patterns/produce-review-packets.md
+[rustdoc-pass]: ../patterns/run-rustdoc-quality-pass.md
 [standalone-review]: ../rules/review/review-make-review-artifacts-standalone.md
 [technical-prose]: ../rules/documentation/docs-write-technical-prose.md
 [verification]: ../patterns/report-verification-honestly.md

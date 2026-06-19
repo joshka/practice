@@ -82,6 +82,7 @@ Use `templates/pattern.md` for new entries.
 | `remediate-doc-drift`                          | Remediate Doc Drift                          | reviewed |
 | `return-structured-errors`                     | Return Structured Errors                     | reviewed |
 | `review-proof-not-just-code`                   | Review Proof Not Just Code                   | reviewed |
+| `run-rustdoc-quality-pass`                     | Run Rustdoc Quality Pass                     | draft    |
 | `separate-discovery-from-editing`              | Separate Discovery From Editing              | reviewed |
 | `separate-structure-from-behavior`             | Separate Structure From Behavior             | reviewed |
 | `shape-tool-output-for-agents`                 | Shape Tool Output For Agents                 | reviewed |

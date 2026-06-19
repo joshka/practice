@@ -139,6 +139,8 @@ should stay here until they prove reusable enough to promote.
 - [Cross-link docs when links improve auditability][rule-public-docs].
 - [Document planned behavior as current scope or future work][rule-current-behavior].
 - [Do not describe unimplemented behavior as available API][rule-current-behavior].
+- [Run a bounded Rustdoc quality pass][rustdoc-pass] when crate-root teaching, item contracts,
+  example placement, and README/Rustdoc/example alignment need to be checked together.
 - [Compare nearby crates accurately and charitably][rule-crate-comparisons].
 - [Explain fit, scope, and tradeoffs][rule-crate-comparisons] instead of claiming universal
   superiority.
@@ -674,6 +676,7 @@ Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. 
 [reader-locality]: ../patterns/reader-locality.md
 [reader-locality-principle]: ../principles/reader-locality-reduces-change-cost.md
 [rust-lints]: ../mechanisms/rust-lints-and-formatting.md
+[rustdoc-pass]: ../patterns/run-rustdoc-quality-pass.md
 [rust-rules]: ../rules/rust/README.md
 [rust-snippet]: ../snippets/agents/rust.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md

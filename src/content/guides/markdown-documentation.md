@@ -337,7 +337,9 @@ Use [Write Rustdoc As API Contract][rustdoc-contract], [Document Feature Contrac
 [Keep Rustdoc And README Examples Aligned][rustdoc-readme], [Use Doc Inline For Canonical
 Reexports][doc-inline], [Avoid Glob Reexports][glob-reexports], and [Configure Docs.rs][docs-rs]
 when Rust documentation paths, feature-gated docs, generated README content, or docs.rs metadata are
-part of the public surface.
+part of the public surface. Use [Run Rustdoc Quality Pass][rustdoc-pass] when a crate needs a
+bounded checklist for crate-root teaching, public contracts, examples, layer alignment, experimental
+caveats, and validation commands.
 
 ## Examples
 
@@ -472,6 +474,7 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 [readme-rustdoc]: ../rules/documentation/docs-align-readme-and-crate-rustdoc.md
 [real-examples]: ../rules/documentation/docs-prove-real-use-with-examples.md
 [rustdoc-contract]: ../rules/rust/rust-write-rustdoc-as-api-contract.md
+[rustdoc-pass]: ../patterns/run-rustdoc-quality-pass.md
 [rustdoc-readme]: ../rules/rust/rust-keep-rustdoc-and-readme-examples-aligned.md
 [rustdoc]: https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html
 [side-effects]: ../patterns/make-side-effects-visible.md
