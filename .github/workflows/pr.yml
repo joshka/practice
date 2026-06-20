@@ -1,0 +1,60 @@
+name: Pull request
+
+on:
+  pull_request:
+    branches:
+      - main
+
+permissions:
+  contents: read
+
+jobs:
+  validate:
+    name: Validate
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v6.0.3
+      - name: Set up pnpm
+        uses: pnpm/action-setup@v6
+      - name: Set up Node.js
+        uses: actions/setup-node@v6
+        with:
+          node-version: "24"
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install --frozen-lockfile
+      - name: Lint Markdown
+        run: pnpm exec markdownlint-cli2 "**/*.md"
+      - name: Build site
+        run: pnpm build
+      - name: Check search quality
+        run: pnpm check:search
+
+  dependabot-auto-merge:
+    name: Dependabot auto-merge
+    needs: validate
+    runs-on: ubuntu-latest
+    if: >-
+      github.event.pull_request.user.login == 'dependabot[bot]' &&
+      github.repository == 'joshka/practice' &&
+      !github.event.pull_request.draft
+    permissions:
+      contents: write
+      pull-requests: write
+    steps:
+      - name: Fetch Dependabot metadata
+        id: metadata
+        uses: dependabot/fetch-metadata@d7267f607e9d3fb96fc2fbe83e0af444713e90b7
+        with:
+          github-token: ${{ secrets.GITHUB_TOKEN }}
+      - name: Merge patch and minor updates
+        if: >-
+          contains(
+            fromJSON('["version-update:semver-patch","version-update:semver-minor"]'),
+            steps.metadata.outputs.update-type
+          )
+        env:
+          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          PR_URL: ${{ github.event.pull_request.html_url }}
+        run: gh pr merge --squash --delete-branch "$PR_URL"
