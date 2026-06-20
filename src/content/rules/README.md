@@ -60,7 +60,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Docs Are Contracts](documentation/README.md). 34 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
-- [Observability And Failure](observability/README.md). 5 rules. Observability rules cover owned
+- [Observability And Failure](observability/README.md). 7 rules. Observability rules cover owned
   logging boundaries, durable failure visibility, diagnostic context, failure states, and safe
   telemetry retention.
 - [Measure Before Optimizing](performance/README.md). 7 rules. Performance rules cover measuring
@@ -433,9 +433,17 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`](observability/observability-keep-diagnostics-retention-safe.md).
   Match diagnostic detail to its audience and retention period. Redact or summarize sensitive values
   while preserving enough operation context to debug.
+- [`OBSERVABILITY-KEEP-RECOVERY-ADVICE-SAFE-AND-HONEST`](observability/observability-keep-recovery-advice-safe-and-honest.md).
+  Give recovery advice only when the program knows enough to make it safe. Report observed facts,
+  label uncertainty, and avoid destructive, security-weakening, or policy-bypassing next steps
+  unless the current state proves they are appropriate.
 - [`OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`](observability/observability-log-at-owned-boundaries.md).
   Emit logs where the code still knows the operation, intent, input class, and external boundary.
   That placement gives useful context without duplicating noise through every layer.
+- [`OBSERVABILITY-MATCH-FAILURE-OUTPUT-TO-SURFACE`](observability/observability-match-failure-output-to-surface.md).
+  Choose a failure-output surface that lets the affected user notice, understand, and act on the
+  failure. Inline errors, alerts, toasts, banners, persistent status, CLI stderr, API responses, and
+  support artifacts have different affordances and failure modes.
 - [`OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`](observability/observability-preserve-operation-context-in-errors.md).
   Carry the operation, resource, provider, input class, and policy context that explain a failure.
   Stable identifiers and sanitized summaries shorten debugging without exposing payloads.
@@ -920,7 +928,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   redaction, ordering, and platform formatting can fail even when a local happy path works.
 - [`TEST-PROVE-CONTRACTS-NOT-TRIVIA`](testing/test-prove-contracts-not-trivia.md). Write tests
   around observable contracts instead of private helper trivia. This preserves refactoring freedom
-  unless the detail is itself the promised behavior.
+  unless the detail is itself the promised behavior, such as a stable user-facing output contract.
 - [`TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`](testing/test-run-docs-as-first-class-gate.md). Treat
   documentation checks as real validation for examples, links, commands, and claims. Prose-only
   edits may need less proof, but API-facing docs should fail before stale guidance ships.

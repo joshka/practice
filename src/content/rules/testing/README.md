@@ -58,7 +58,7 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   redaction, ordering, and platform formatting can fail even when a local happy path works.
 - [`TEST-PROVE-CONTRACTS-NOT-TRIVIA`](test-prove-contracts-not-trivia.md). Write tests around
   observable contracts instead of private helper trivia. This preserves refactoring freedom unless
-  the detail is itself the promised behavior.
+  the detail is itself the promised behavior, such as a stable user-facing output contract.
 - [`TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`](test-run-docs-as-first-class-gate.md). Treat documentation
   checks as real validation for examples, links, commands, and claims. Prose-only edits may need
   less proof, but API-facing docs should fail before stale guidance ships.

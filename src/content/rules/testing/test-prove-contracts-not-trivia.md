@@ -5,11 +5,13 @@
 - ID: `TEST-PROVE-CONTRACTS-NOT-TRIVIA`
 - Name: `Prove Contracts Not Trivia`
 - Summary: Write tests around observable contracts instead of private helper trivia.
-  This preserves refactoring freedom unless the detail is itself the promised behavior.
+  This preserves refactoring freedom unless the detail is itself the promised behavior, such as a
+  stable user-facing output contract.
 - Status: `reviewed`
 - Domain: `testing`
 - Tags: `testing, public-api, verification`
-- Related: `test-observable-behavior, tests-should-explain-failures`
+- Related: `test-observable-behavior, tests-should-explain-failures,
+  write-actionable-error-messages`
 
 ## Rule
 
@@ -21,6 +23,10 @@ Tests that lock down private helper order, incidental formatting, or intermediat
 refactoring expensive without proving user-visible behavior. Tests should protect contracts:
 outputs, errors, invariants, side effects, and compatibility promises.
 
+For user-facing error messages, test the stable facts users and callers rely on: operation, affected
+item, impact classification, recovery affordance, diagnostic handle, and machine-readable contract.
+Avoid freezing full prose unless exact wording is the public contract.
+
 ## Helps
 
 - Keeps tests useful through refactoring and focused on behavior that matters.
@@ -28,7 +34,8 @@ outputs, errors, invariants, side effects, and compatibility promises.
 ## Limits
 
 Implementation-detail tests are useful when the implementation detail is the contract, such as a
-wire format, sort order, allocation guarantee, or documented algorithm property.
+wire format, sort order, allocation guarantee, documented algorithm property, exact CLI output, or
+localized UI copy that must not drift.
 
 ## Agent Instruction
 
@@ -37,8 +44,8 @@ proving user-visible behavior.
 
 ## Mechanisms
 
-Supported by public-surface tests, invariant tests, snapshot review, API examples, and review that
-asks what contract each test protects.
+Supported by public-surface tests, invariant tests, targeted message assertions, snapshot review,
+API examples, and review that asks what contract each test protects.
 
 ## References
 

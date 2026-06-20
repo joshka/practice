@@ -22,6 +22,13 @@ Failure handling is not only about returning the right type. A good failure path
 caller can act on and records enough safe context for the owner of the operation to diagnose what
 happened.
 
+When a failure reaches a user, operator, support person, or reviewer, the visible output is part of
+the product surface. Use [Write Actionable Error Messages][actionable-errors] when an error,
+warning, or diagnostic needs to name the attempted operation, affected item, impact, next step, and
+support handle without becoming verbose prose. Use [Match Failure Output To Surface][surface-output]
+when the decision is where and how the failure should appear. Use [Keep Recovery Advice Safe and
+Honest][safe-recovery] when the cause, retry path, or suggested next step could be guessed or risky.
+
 ## Core Preference
 
 Prefer failure paths that preserve structure for callers and produce useful diagnostic signals at
@@ -53,7 +60,9 @@ headers, source snippets, tokens, connection strings, user data, or proprietary 
 identifiers, classifications, counts, and correlation fields.
 
 Use [Keep Diagnostics Retention Safe][retention-safe] when logs, traces, metrics, crash reports, CI
-artifacts, support bundles, or agent transcripts cross access or retention boundaries.
+artifacts, support bundles, or agent transcripts cross access or retention boundaries. This includes
+deciding whether raw detail belongs inline, behind a details disclosure, in a support bundle, or only
+in redacted diagnostic records.
 
 ## Rust API Shape
 
@@ -104,6 +113,8 @@ when diagnostics need proof from integration tests, fixtures, or replay cases.
 
 - Are logs, metrics, traces, and error reports safe for their retention and access rules?
 - Could a caller recover, retry, branch, or show a useful message without parsing prose?
+- Does the visible failure output appear on the right surface for that audience and consequence?
+- Is the suggested recovery step based on observed state rather than a guessed cause?
 - Does documentation name important failure, panic, safety, or recovery contracts?
 - Are partial, aborted, timed-out, denied, failed, and completed states distinguishable?
 - Are diagnostics durable enough for replay, support, or future debugging without exposing secrets?
@@ -111,6 +122,7 @@ when diagnostics need proof from integration tests, fixtures, or replay cases.
 [boundary]: boundary-correctness.md
 [boundary-rules]: ../rules/boundary/README.md
 [change]: software-change-preferences.md
+[actionable-errors]: ../patterns/write-actionable-error-messages.md
 [docs]: markdown-documentation.md
 [durable-failures]: ../rules/observability/observability-surface-durable-failures.md
 [failure-states]: ../rules/observability/observability-distinguish-failure-states.md
@@ -121,5 +133,7 @@ when diagnostics need proof from integration tests, fixtures, or replay cases.
 [owned-logs]: ../patterns/log-at-owned-boundaries.md
 [private-log-context]: ../patterns/avoid-secret-or-private-log-context.md
 [retention-safe]: ../rules/observability/observability-keep-diagnostics-retention-safe.md
+[safe-recovery]: ../rules/observability/observability-keep-recovery-advice-safe-and-honest.md
 [structured-errors]: ../patterns/return-structured-errors.md
+[surface-output]: ../rules/observability/observability-match-failure-output-to-surface.md
 [test-mechanism]: ../mechanisms/testing-and-benchmarking.md

@@ -7,7 +7,7 @@
 - Summary: Match diagnostic detail to its audience and retention period. Redact or summarize
   sensitive values while preserving enough operation context to debug.
 - Related: `avoid-secret-or-private-log-context, keep-secrets-out-of-context,
-  contain-observability-policy`
+  contain-observability-policy, write-actionable-error-messages`
 - Status: `reviewed`
 - Domain: `observability`
 - Tags: `observability, security-privacy, failure-output`
@@ -21,6 +21,9 @@ Keep diagnostics safe for their retention boundary.
 Diagnostics that are safe in a local debug log may be unsafe in long-lived telemetry, CI artifacts,
 PR comments, or user-visible error reports. Retention and audience determine what values,
 identifiers, paths, and payloads can be recorded.
+
+When a visible failure message needs raw detail, prefer a safe diagnostic handle, details
+disclosure, support bundle, or redacted summary over exposing sensitive payloads inline.
 
 ## Helps
 

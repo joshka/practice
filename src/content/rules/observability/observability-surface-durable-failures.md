@@ -7,7 +7,8 @@
 - Summary: Give persistent failures a stable status, error surface, or retry path instead of only an
   ephemeral UI log. Users and maintainers need something actionable after the moment passes.
 - Related: `make-failures-observable, make-runtime-state-agent-legible,
-  make-state-transitions-explicit`
+  make-state-transitions-explicit, write-actionable-error-messages,
+  observability-match-failure-output-to-surface`
 - Status: `reviewed`
 - Domain: `observability`
 - Tags: `observability, failure-output, errors, state-transitions`
@@ -18,9 +19,10 @@ Do not hide durable failures only in UI logs.
 
 ## Why
 
-A durable failure that only appears in an ephemeral UI log can disappear before a maintainer or user
-can act. Persistent problems such as failed syncs, denied permissions, invalid config, or
-background-task failures need a stable status, error surface, or retry path.
+A durable failure that only appears in an ephemeral UI log, toast, status line, or console message
+can disappear before a maintainer or user can act. Persistent problems such as failed syncs, denied
+permissions, invalid config, or background-task failures need a stable status, error surface, or
+retry path.
 
 ## Helps
 
