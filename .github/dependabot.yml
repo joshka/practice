@@ -6,9 +6,18 @@ updates:
       interval: weekly
     cooldown:
       default-days: 7
+    open-pull-requests-limit: 3
     versioning-strategy: increase-if-necessary
     groups:
       node-site-tooling:
+        update-types:
+          - patch
+          - minor
+        patterns:
+          - "*"
+      node-site-tooling-major:
+        update-types:
+          - major
         patterns:
           - "*"
 
@@ -18,7 +27,16 @@ updates:
       interval: weekly
     cooldown:
       default-days: 7
+    open-pull-requests-limit: 3
     groups:
       github-actions:
+        update-types:
+          - patch
+          - minor
+        patterns:
+          - "*"
+      github-actions-major:
+        update-types:
+          - major
         patterns:
           - "*"
