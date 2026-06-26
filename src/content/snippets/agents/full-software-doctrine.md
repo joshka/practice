@@ -16,9 +16,15 @@
   guides/rust-maintainability.md, guides/code-shape.md, guides/boundary-correctness.md,
   agent-reviewed-rule-pack, project-operating-manual`
 
+## Usage
+
 Use this snippet when a project wants one large, coherent prompt or `AGENTS.md` section instead of a
 short map plus many linked docs. This pack is intentionally large. It is meant for ongoing
 maintenance and refactoring work where preserving coherence matters more than token efficiency.
+
+For ordinary agent sessions, prefer `core.md`, `apply-practice-guidance.md`, one task-specific
+snippet, and one generated rule domain. Use this pack when a broad audit, refactor, or applied
+project doctrine pass needs one coherent context more than low latency.
 
 ```markdown
 ## Software Refactoring Doctrine

@@ -17,6 +17,7 @@ ROOT = Path(__file__).resolve().parents[1]
 CONTENT_DIR = ROOT / "src" / "content"
 DEFAULT_TEMPLATE_DIR = ROOT / "templates" / "downstream"
 AGENT_RULE_PACK = CONTENT_DIR / "snippets" / "agents" / "rules.md"
+APPLY_GUIDANCE_SNIPPET = CONTENT_DIR / "snippets" / "agents" / "apply-practice-guidance.md"
 CANONICAL_SITE = "https://www.joshka.net/practice/"
 
 
@@ -37,6 +38,8 @@ and use the site when a rule, pattern, principle, or guide needs more context.
 - Keep changes small, atomic, and reviewable.
 - Report validation evidence in handoffs instead of confidence language.
 - Use the validation commands listed below before handoff.
+- Read `docs/development/snippets/agents/apply-practice-guidance.md` before using shared guidance
+  to shape a non-trivial change.
 - Read `docs/development/snippets/agents/rules.md` for the single-file reviewed rule pack.
 - Read `docs/development/rules/README.md` when a task needs only one rule domain.
 - Preserve and prioritize repo-specific instructions in this file. Merge shared guidance into the
@@ -59,6 +62,8 @@ markdownlint-cli2 "**/*.md"
 ## Deeper Guidance
 
 - `docs/development/snippets/agents/rules.md`: generated single-file reviewed rule pack.
+- `docs/development/snippets/agents/apply-practice-guidance.md`: how to use shared rules during
+  implementation without creating preference churn.
 - `docs/development/rules/README.md`: generated index for reviewed rule domains.
 - `docs/development/bootstrap-downstream.md`: instructions for refreshing and merging this guidance
   into a downstream repo.
@@ -103,6 +108,8 @@ Set `PRACTICE_GUIDANCE_DIR=/path/to/practice` only when testing against a local 
 
 - `bootstrap-downstream.md`: instructions for an agent bootstrapping this guidance into a repo.
 - `snippets/agents/rules.md`: generated single-file reviewed-rule pack.
+- `snippets/agents/apply-practice-guidance.md`: instructions for applying shared practice guidance
+  during downstream work.
 - `rules/README.md`: generated index for the full compressed reviewed-rule pack.
 - `rules/*.md`: generated domain files containing every reviewed rule.
 - `update.py`: helper that refreshes this directory from the canonical source repository.
@@ -190,6 +197,7 @@ Install or refresh:
 - docs/development/README.md
 - docs/development/update.py
 - docs/development/snippets/agents/rules.md
+- docs/development/snippets/agents/apply-practice-guidance.md
 - docs/development/rules/*.md
 
 Add a short "Shared Development Preferences" section to AGENTS.md that points agents to the copied
@@ -217,6 +225,8 @@ fallback.
 Entry points:
 
 - `docs/development/snippets/agents/rules.md`: compact reviewed rule pack.
+- `docs/development/snippets/agents/apply-practice-guidance.md`: how to use shared rules during
+  implementation without creating preference churn.
 - `docs/development/rules/README.md`: rule domains for targeted loading.
 - `docs/development/bootstrap-downstream.md`: how to refresh and merge the guidance.
 - https://www.joshka.net/practice/: rendered reference with deeper guide, rule, pattern, principle,
@@ -388,6 +398,7 @@ def outputs(template_dir: Path) -> dict[Path, str]:
         readme: render_readme(),
         update_script: render_update_script(),
         snippets / "rules.md": AGENT_RULE_PACK.read_text(),
+        snippets / "apply-practice-guidance.md": APPLY_GUIDANCE_SNIPPET.read_text(),
         rules / "README.md": render_domain_index(domains),
     }
     for domain, domain_rules in domains.items():
