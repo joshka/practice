@@ -8,7 +8,9 @@ text by hand; update the source repo and recopy this file.
 - `DOCS-ALIGN-README-AND-CRATE-RUSTDOC`: Keep crate README and crate-level Rustdoc aligned because
   crate users often meet the README on GitHub and the crate-level Rustdoc on docs.rs.
 - `DOCS-AVOID-GENERATED-PROSE-TELLS`: Avoid generated-prose tells, including component-centered
-  navigation copy, that replace concrete behavior, evidence, tradeoffs, or direct labels.
+  navigation copy, that replace concrete behavior, evidence, tradeoffs, or direct labels. During
+  prose review, check word choice, sentence templates, paragraph shape, tone, formatting, and
+  repeated composition patterns.
 - `DOCS-AVOID-UNEARNED-PRAISE`: Avoid unearned ranking and vague praise because words such as
   "simple," "powerful," "best," and "easy" are often unearned unless the doc states the comparison
   or tradeoff.

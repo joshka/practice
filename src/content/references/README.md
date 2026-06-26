@@ -19,6 +19,8 @@ This page records durable external sources that inform the guidance in this repo
 - [rustdoc docs](https://doc.rust-lang.org/rustdoc/). Rustdoc, doctests, and docs.rs-style builds.
 - [Jujutsu docs](https://docs.jj-vcs.dev/). jj commands, revsets, bookmarks, remotes, and recovery.
 - [Diataxis](https://diataxis.fr/). Documentation type distinctions.
+- [tropes.md](https://tropes.fyi/tropes-md). AI writing tropes and generated-prose
+  tells to watch for during prose review.
 - [OpenTelemetry](https://opentelemetry.io/docs/). Logs, traces, metrics, and observability
   concepts.
 - [OWASP Cheat Sheets](https://cheatsheetseries.owasp.org/). Secret handling, logging safety, and

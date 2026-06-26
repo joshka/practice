@@ -41,9 +41,11 @@ Use prose for relationships, causality, and tradeoffs. Use lists for steps, fiel
 enumerations. Do not atomize explanation into one-sentence fragments by default.
 
 Cut page narration, interface narration, teaching-order commentary, throat-clearing, unearned
-ranking words, vague praise, AI contrast templates, repeated summaries, and link-hub prose. If a
-draft is smooth but low-signal, merge sections, cut repetition, restore prose continuity, and add
-concrete detail.
+ranking words, vague praise, stock AI word choice, contrast templates, self-answered questions,
+false suspense, forced analogies, vague attribution, invented labels, repeated summaries, bold-first
+bullets, unsupported precision, hedged neutrality, apology phrasing, permission phrasing, vague
+action verbs, and link-hub prose. If a draft is smooth but low-signal, merge sections, cut
+repetition, restore prose continuity, and add concrete detail.
 
 When changing behavior, search nearby docs, examples, Rustdoc, and agent instructions for drift.
 Update them in the same review unit or report explicit follow-up.

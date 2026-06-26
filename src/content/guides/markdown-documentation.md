@@ -172,6 +172,10 @@ types, examples, or tradeoffs instead of generic wording.
 - Avoid idioms when plain language is available.
 - Cut filler and signposting.
 
+Replace inflated word choice with the concrete actor, action, contract, evidence, or tradeoff. When
+verbs such as `ensure`, `handle`, `support`, or `manage` hide the real behavior, name the command,
+validation, ownership boundary, or visible outcome instead.
+
 #### Page Narration
 
 - Do not narrate the page.
@@ -185,6 +189,11 @@ types, examples, or tradeoffs instead of generic wording.
 - Avoid contrast templates such as `not X, but Y`.
 - Avoid punctuation as style signaling.
 - Do not lean on repeated dashes or colon scaffolding.
+- Avoid self-answered rhetorical questions, false suspense transitions, forced analogies, vague
+  attribution, inflated stakes, and invented concept labels unless the page proves why that shape
+  is useful.
+- Avoid hedged neutrality, apology phrasing, and permission phrasing when the page needs a concrete
+  position, instruction, or constraint.
 
 Use [Avoid Unearned Praise][unearned-praise] and [Avoid Generated Prose Tells][generated-tells] when
 voice, ranking words, page narration, or interface narration weakens technical clarity.
@@ -198,6 +207,10 @@ voice, ranking words, page narration, or interface narration weakens technical c
 - Do not over-summarize sections.
 - Avoid mini-intros before every list.
 - Avoid mini-summaries after every section unless they add meaning.
+- Watch for disguised listicles, repeated sentence openings, duplicated sections, and one argument
+  restated through multiple framings.
+- Cut "comprehensive" padding and unsupported precision that make a draft look more complete than
+  its evidence supports.
 
 #### Evidence Links
 
