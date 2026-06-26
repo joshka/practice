@@ -336,19 +336,20 @@ Explain the system, command, workflow, or contract directly.
 
 Watch for generated-prose tells such as:
 
-- not just X, but Y
-- it is not X, it is Y
-- the real issue is
-- in practice
-- to be clear
-- it is worth noting
-- key point
-- that said
-- smooth but low-evidence transitions
-- mini-intros before every list
-- mini-summaries after every section
-- repeated em-dash pivots
-- colon scaffolding like `Why:` and `Key point:`
+- stock AI verbs and adjectives such as `delve`, `leverage`, `robust`, and `streamline`
+- ornate domain nouns such as `landscape`, `ecosystem`, `framework`, and `paradigm`
+- contrast templates such as `not X, but Y`, countdown negation, and self-answered questions
+- repeated sentence openings, rule-of-three padding, and empty transitions
+- shallow `-ing` analysis that attaches importance, legacy, or broader meaning without evidence
+- false ranges that list unrelated ideas as if they were a spectrum
+- punchy fragments, disguised listicles, mini-intros, and mini-summaries
+- false suspense, forced analogies, imagined futures, performative candor, and teacher voice
+- claims of obviousness, inflated stakes, vague attribution, and invented concept labels
+- repeated dash pivots, bold-first bullets, and decorative Unicode
+- repeated summaries, exhausted metaphors, analogy stacks, duplicated sections, and signposted
+  endings
+- hedged neutrality, comprehensive padding, unsupported precision, apology phrasing, permission
+  phrasing, and vague action verbs
 
 When in doubt, cut the sentence and ask whether any meaning was lost. Often none was.
 
@@ -683,7 +684,8 @@ When editing docs in this project:
 - front-load the useful point
 - prefer direct technical prose over coaching or marketing tone
 - use prose for relationships and lists for enumeration
-- cut page narration, teaching-order narration, and AI contrast templates
+- cut page narration, teaching-order narration, AI contrast templates, vague action verbs,
+  unsupported precision, and comprehensive padding
 - replace abstract praise with concrete specifics
 - verify commands, paths, examples, defaults, and links
 - treat active docs as current contracts
