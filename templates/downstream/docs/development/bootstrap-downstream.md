@@ -61,6 +61,7 @@ Install or refresh:
 - docs/development/README.md
 - docs/development/update.py
 - docs/development/snippets/agents/rules.md
+- docs/development/snippets/agents/apply-practice-guidance.md
 - docs/development/rules/*.md
 
 Add a short "Shared Development Preferences" section to AGENTS.md that points agents to the copied
@@ -88,6 +89,8 @@ fallback.
 Entry points:
 
 - `docs/development/snippets/agents/rules.md`: compact reviewed rule pack.
+- `docs/development/snippets/agents/apply-practice-guidance.md`: how to use shared rules during
+  implementation without creating preference churn.
 - `docs/development/rules/README.md`: rule domains for targeted loading.
 - `docs/development/bootstrap-downstream.md`: how to refresh and merge the guidance.
 - https://www.joshka.net/practice/: rendered reference with deeper guide, rule, pattern, principle,

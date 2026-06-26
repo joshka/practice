@@ -30,6 +30,8 @@ Set `PRACTICE_GUIDANCE_DIR=/path/to/practice` only when testing against a local 
 
 - `bootstrap-downstream.md`: instructions for an agent bootstrapping this guidance into a repo.
 - `snippets/agents/rules.md`: generated single-file reviewed-rule pack.
+- `snippets/agents/apply-practice-guidance.md`: instructions for applying shared practice guidance
+  during downstream work.
 - `rules/README.md`: generated index for the full compressed reviewed-rule pack.
 - `rules/*.md`: generated domain files containing every reviewed rule.
 - `update.py`: helper that refreshes this directory from the canonical source repository.

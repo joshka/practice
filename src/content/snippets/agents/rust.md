@@ -12,7 +12,9 @@
 - Audience: `agents`
 - Topics: `rust, api-design, maintainability, validation`
 - Tags: `rust, public-api, reader-locality, verification`
-- Related: `guides/rust-maintainability.md, guides/code-shape.md, guides/boundary-correctness.md, mechanisms/rust-tooling-profile.md`
+- Related: `guides/rust-maintainability.md, guides/code-shape.md,
+  guides/boundary-correctness.md, patterns/run-rustdoc-quality-pass.md,
+  mechanisms/rust-tooling-profile.md`
 
 Use this snippet in Rust repos where maintainability, API shape, and reviewability matter.
 
@@ -22,6 +24,11 @@ Use this snippet in Rust repos where maintainability, API shape, and reviewabili
 Follow the repo's Rust maintainability guide before introducing new abstractions. Optimize for
 reader locality, clear ownership, explicit side effects, precise boundaries, and small meaningful
 types and functions.
+
+For agent efficiency, load the Rust guide or Rust rule domain first. Add `code-shape`,
+`boundary-correctness`, `observability-and-failure`, or the Rustdoc quality pass only when the
+change touches that concern. Do not load the full software doctrine for a routine localized Rust
+edit.
 
 Prefer boring, idiomatic Rust. Use types, constructors, enums, `FromStr`, `TryFrom`, `From`,
 `AsRef`, `Borrow`, and iterator traits when they honestly express the contract. Keep visibility
@@ -52,6 +59,9 @@ that touch runtime, terminal, filesystem, network, global, background-task, or U
 Public errors should implement `Debug`, `Display`, and `std::error::Error` when they cross a public
 or reusable boundary. Public types should implement `Debug` unless that is unsafe or leaks
 confidential material. Public panics should be contract violations with documented preconditions.
+For crate-level or public API documentation work, run a Rustdoc quality pass: check the crate root,
+module docs, public contracts, examples, feature notes, and README/Rustdoc alignment instead of
+only smoothing prose.
 
 For async or concurrent APIs, document runtime assumptions, cancellation, backpressure, capacity,
 ordering, cloneability, and producer/consumer lifetime behavior.
@@ -108,6 +118,7 @@ Canonical guides:
 - `guides/code-shape.md`
 - `guides/boundary-correctness.md`
 - `guides/observability-and-failure.md`
+- `patterns/run-rustdoc-quality-pass.md`
 - `principles/public-api-changes-have-downstream-cost.md`
 - `principles/avoid-global-mutable-state.md`
 - `principles/tests-should-explain-failures.md`

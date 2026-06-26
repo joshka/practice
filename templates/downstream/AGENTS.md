@@ -14,6 +14,8 @@ and use the site when a rule, pattern, principle, or guide needs more context.
 - Keep changes small, atomic, and reviewable.
 - Report validation evidence in handoffs instead of confidence language.
 - Use the validation commands listed below before handoff.
+- Read `docs/development/snippets/agents/apply-practice-guidance.md` before using shared guidance
+  to shape a non-trivial change.
 - Read `docs/development/snippets/agents/rules.md` for the single-file reviewed rule pack.
 - Read `docs/development/rules/README.md` when a task needs only one rule domain.
 - Preserve and prioritize repo-specific instructions in this file. Merge shared guidance into the
@@ -36,6 +38,8 @@ markdownlint-cli2 "**/*.md"
 ## Deeper Guidance
 
 - `docs/development/snippets/agents/rules.md`: generated single-file reviewed rule pack.
+- `docs/development/snippets/agents/apply-practice-guidance.md`: how to use shared rules during
+  implementation without creating preference churn.
 - `docs/development/rules/README.md`: generated index for reviewed rule domains.
 - `docs/development/bootstrap-downstream.md`: instructions for refreshing and merging this guidance
   into a downstream repo.

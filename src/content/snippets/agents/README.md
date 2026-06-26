@@ -6,9 +6,16 @@ to the canonical guides for detail.
 Use snippets as a starting point, then adapt paths and commands to the target repository. Do not
 copy every snippet by default; choose the sections that match the repo's work.
 
+For agentic workflows, prefer the smallest useful surface. A good default is `core.md` plus
+`apply-practice-guidance.md`, then one task-specific snippet or generated rule domain. Use full
+doctrine prompt packs only when a broad review, rewrite, or operating-manual pass is worth the
+extra tokens and round trips.
+
 ## Snippets
 
 - [core.md](core.md): A repo needs the broad development-preference baseline.
+- [apply-practice-guidance.md](apply-practice-guidance.md): A repo wants future Codex sessions to
+  apply the shared practice catalog without loading everything or creating preference churn.
 - [full-documentation-doctrine.md](full-documentation-doctrine.md): A repo wants one large
   pasteable documentation doctrine with rules and reasons.
 - [full-software-doctrine.md](full-software-doctrine.md): A repo wants one large pasteable
@@ -23,8 +30,10 @@ copy every snippet by default; choose the sections that match the repo's work.
 
 - Use `templates/downstream/` when the downstream repo should carry every reviewed rule.
 - Keep only snippets that apply to the repo when copying small profile snippets directly.
-- Use `full-software-doctrine.md` when one coherent pasteable prompt is more important than token
-  efficiency or modular loading.
+- Use `apply-practice-guidance.md` when a repo wants agents to choose a small context path before
+  escalating to deeper guidance.
+- Use `full-software-doctrine.md` or `full-documentation-doctrine.md` when one coherent pasteable
+  prompt is more important than token efficiency, latency, or modular loading.
 - Rewrite guide paths when the target repo stores guidance elsewhere.
 - Replace validation commands with the repo's actual commands.
 - Keep source-control instructions aligned with the repo's real workflow.

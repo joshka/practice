@@ -11,7 +11,8 @@
 - Audience: `agents`
 - Topics: `agent-workflow, development-preferences, handoff, validation`
 - Tags: `agent-workflow, agent-context, review-handoff, verification`
-- Related: `guides/software-change-preferences.md, guides/coding-agents.md, snippets/agents/rules.md`
+- Related: `guides/software-change-preferences.md, guides/coding-agents.md,
+  snippets/agents/apply-practice-guidance.md, snippets/agents/rules.md`
 
 Use this snippet in `AGENTS.md` files when a repo needs the broad development-preference baseline.
 
@@ -23,10 +24,13 @@ control state clean. Prefer existing project patterns over generic advice.
 
 Keep `AGENTS.md` as a task-start map, not as the full software doctrine. If the repo has a project
 operating manual or equivalent project-owned guidance artifact, read that before substantial work.
+For ordinary implementation, optimize for a small context load: local instructions, one relevant
+snippet or rule domain, and the files needed for the task. Escalate to full guides or prompt packs
+only when the extra rationale will change the decision.
 
-Before editing, identify the relevant guide or local convention. During handoff, describe what
-changed, why it changed, and what validation ran. Report skipped checks and remaining risk
-honestly.
+Before editing, identify the relevant guide, snippet, rule domain, or local convention. During
+handoff, describe what changed, why it changed, and what validation ran. Report skipped checks and
+remaining risk honestly.
 
 Treat private session context as private. Shared issues, PRs, commits, docs, and review packets
 must restate the problem, rationale, choices made, evidence, validation, and remaining risk for
@@ -40,6 +44,8 @@ and begin the named next chunk.
 Prefer the project guides as the source of truth:
 
 - Project operating manual or applied local doctrine: `docs/development/project-operating-manual.md`
+- How to apply shared guidance efficiently:
+  `snippets/agents/apply-practice-guidance.md`
 - Software change shape: `guides/software-change-preferences.md`
 - Rust maintainability: `guides/rust-maintainability.md`
 - Code shape: `guides/code-shape.md`
@@ -55,4 +61,5 @@ Prefer the project guides as the source of truth:
 For compact execution rules, use the reviewed rule pack:
 
 - Reviewed rules: `snippets/agents/rules.md`
+- Targeted rule domains: `rules/README.md`
 ```
