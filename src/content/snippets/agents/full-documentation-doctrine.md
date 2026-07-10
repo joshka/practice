@@ -10,7 +10,7 @@
 - Status: `draft`
 - Audience: `agents`
 - Topics: `documentation, writing, review, maintenance, ai-assisted-prose, information-architecture`
-- Tags: `documentation, agent-context, source-truth, reviewability`
+- Tags: `documentation, agent-context, source-truth, reviewability, ai`
 - Related: `guides/markdown-documentation.md, guides/documentation-workflow.md,
   principles/docs-are-contracts.md, agent-markdown-docs-instructions,
   agent-full-software-doctrine-prompt-pack`

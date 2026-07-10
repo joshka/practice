@@ -8,7 +8,7 @@
   helpers. Narrow boundaries reduce dependency fan-out, feature pressure, and hidden coupling.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, ownership, public-api, change-shape`
+- Tags: `rust, ownership, public-api, change-shape, module-layout`
 - Related: `cap-change-radius, RUST-KEEP-CONCEPTS-COHERENT, RUST-AVOID-PUBLIC-DEPENDENCY-COUPLING`
 
 ## Rule

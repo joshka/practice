@@ -8,7 +8,7 @@
   `#[path]`. Predictable file paths make navigation and ownership easier to infer.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, reader-locality, local-conventions, generated-artifacts`
+- Tags: `rust, reader-locality, local-conventions, module-layout`
 - Related: `reader-locality, RUST-AVOID-INLINE-MODULES`
 
 ## Rule

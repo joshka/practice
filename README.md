@@ -212,11 +212,17 @@ private local context leaks, placeholder text, and internal Markdown links. Rege
 with `python3 scripts/generate_rule_indexes.py` after changing rule titles, rationale, or
 summaries. Regenerate `src/content/snippets/agents/rules.md` with
 `python3 scripts/generate_agent_rules.py` after changing reviewed rule instructions. Regenerate
-`templates/downstream/` with `python3 scripts/generate_downstream_template.py` after
-changing reviewed rule instructions or downstream adoption shape. Run `pnpm check:search` after
+`templates/downstream/` with `python3 scripts/generate_downstream_template.py` after changing
+reviewed rule instructions or downstream adoption shape. Run `pnpm check:search` after
 `pnpm build` to verify important rendered search queries against `dist/search.json`. Run `pnpm
 check:deps` to make dependency freshness explicit before handing off broad repository maintenance
 changes.
+
+Use `python3 scripts/report_guidance_tags.py` to print every tag followed by the names of its
+catalog items. Pass one or more exact tag names, such as
+`python3 scripts/report_guidance_tags.py async testing`, to inspect a smaller set.
+Add `--details` to distinguish same-named items and show each item's kind, source path, and whether
+the tag is explicit or inferred from its rule domain.
 
 Use `python3 scripts/audit_guidance.py --quality` during rule-deepening passes. That stricter mode
 flags rules whose rationale still starts by repeating the rule text, which is a sign that the rule

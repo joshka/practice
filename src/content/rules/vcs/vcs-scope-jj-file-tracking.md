@@ -8,7 +8,7 @@
   Scoped tracking keeps local-only, generated, or unrelated files out of publication state.
 - Status: `reviewed`
 - Domain: `vcs`
-- Tags: `vcs-jj, ownership, source-truth, generated-artifacts`
+- Tags: `vcs-jj, ownership, source-truth`
 - Related: `preserve-unowned-work, vcs-inspect-sparse-state, vcs-name-exact-jj-mutation-targets`
 
 ## Rule

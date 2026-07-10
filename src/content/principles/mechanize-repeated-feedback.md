@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `automation, agents, review, tooling`
-- Tags: `automation, tooling, agent-workflow, reviewability`
+- Tags: `automation, tooling, agent-workflow, reviewability, feedback-loops`
 - Related: `agent-instructions-are-operational-controls`
 
 ## Claim

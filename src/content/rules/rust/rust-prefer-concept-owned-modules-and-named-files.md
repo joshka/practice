@@ -9,7 +9,7 @@
   concept is real and bounded.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, reader-locality, ownership`
+- Tags: `rust, reader-locality, ownership, module-layout`
 - Related: `strengthen-cohesion, rust-keep-concepts-coherent`
 
 ## Rule

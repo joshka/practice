@@ -9,7 +9,7 @@
   evidence, real tradeoffs, and local voice.`
 - Status: `draft`
 - Domain: `documentation`
-- Tags: `documentation, ai-assistance, reviewability, reader-locality`
+- Tags: `documentation, ai, reviewability, reader-locality`
 - Related: `private-context-is-not-shared-context, DOCS-AVOID-GENERATED-PROSE-TELLS,
   DOCS-WRITE-TECHNICAL-PROSE`
 

@@ -10,7 +10,7 @@
   mechanize-repeated-feedback`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Tags: `agent-workflow, documentation, automation, reviewability`
+- Tags: `agent-workflow, documentation, automation, reviewability, feedback-loops`
 
 ## Rule
 

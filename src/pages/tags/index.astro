@@ -1,9 +1,26 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import KindIcon from '../../components/KindIcon.astro';
-import { tagCounts, tagLabel, withBase } from '../../lib/site';
+import {
+  guidanceTagDefinitions,
+  guidanceTagGroups,
+  tagCounts,
+  tagLabel,
+  withBase,
+} from '../../lib/site';
 
 const tags = tagCounts();
+const tagGroups = guidanceTagGroups.map((group) => ({
+  ...group,
+  tags: guidanceTagDefinitions
+    .filter(({ family }) => family === group.family)
+    .map((definition) => ({
+      ...definition,
+      count: tags.find(({ tag }) => tag === definition.tag)?.count ?? 0,
+    }))
+    .filter(({ count }) => count > 0)
+    .sort((left, right) => tagLabel(left.tag).localeCompare(tagLabel(right.tag))),
+}));
 ---
 
 <BaseLayout
@@ -25,15 +42,26 @@ const tags = tagCounts();
 
   <section class="listing tag-index" aria-labelledby="tag-index-title">
     <h2 id="tag-index-title">Guidance tags</h2>
-    <div class="tag-grid">
-      {tags.map(({ tag, count }) => (
-        <a class="tag-card" href={withBase(`/tags/${tag}/`)}>
-          <span class="tag-card__heading">
-            <span class="tag-card__label">{tagLabel(tag)}</span>
-            <span class="card-arrow" aria-hidden="true">→</span>
-          </span>
-          <span class="tag-card__count">{count} {count === 1 ? 'item' : 'items'}</span>
-        </a>
+    <div class="grouped-index tag-index__groups">
+      {tagGroups.map((group) => (
+        <section class="index-group" aria-labelledby={`tag-group-${group.family}`}>
+          <div class="index-group__header">
+            <h3 id={`tag-group-${group.family}`}>{group.title}</h3>
+            <p>{group.description}</p>
+          </div>
+          <div class="tag-grid">
+            {group.tags.map(({ tag, count, description }) => (
+              <a class="tag-card" href={withBase(`/tags/${tag}/`)}>
+                <span class="tag-card__heading">
+                  <span class="tag-card__label">{tagLabel(tag)}</span>
+                  <span class="card-arrow" aria-hidden="true">→</span>
+                </span>
+                <span class="tag-card__description">{description}</span>
+                <span class="tag-card__count">{count} {count === 1 ? 'item' : 'items'}</span>
+              </a>
+            ))}
+          </div>
+        </section>
       ))}
     </div>
   </section>

@@ -8,7 +8,7 @@
   Keep the local voice trustworthy without cutting useful explanation.`
 - Status: `reviewed`
 - Domain: `documentation`
-- Tags: `documentation, generated-artifacts, reader-locality`
+- Tags: `documentation, ai, reader-locality`
 - Related: `preserve-local-doc-voice, DOCS-HIDE-CATALOG-MECHANICS`
 
 ## Rule

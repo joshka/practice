@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `documentation, markdown, rustdoc, review-handoff`
-- Tags: `documentation, rustdoc, review-handoff, source-truth`
+- Tags: `documentation, rustdoc, review-handoff, source-truth, ai`
 - Related: `guides/markdown-documentation.md, guides/documentation-workflow.md,
   rules/documentation/docs-own-ai-assisted-prose.md, principles/docs-are-contracts.md`
 

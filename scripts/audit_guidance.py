@@ -271,11 +271,22 @@ def guidance_tag_vocabulary(errors: list[str]) -> set[str]:
     if not source.exists():
         fail(errors, f"missing tag vocabulary source: {rel(source)}")
         return set()
-    match = re.search(r"export const guidanceTags = \[(.*?)\] as const;", source.read_text(), re.DOTALL)
+    match = re.search(
+        r"export const guidanceTagDefinitions = \[(.*?)\] as const satisfies",
+        source.read_text(),
+        re.DOTALL,
+    )
     if not match:
-        fail(errors, f"{rel(source)} does not expose guidanceTags")
+        fail(errors, f"{rel(source)} does not expose guidanceTagDefinitions")
         return set()
-    return set(re.findall(r"'([^']+)'", match.group(1)))
+    configured_tags = re.findall(r'''tag:\s*["']([^"']+)["']''', match.group(1))
+    tags = set(configured_tags)
+    if not tags:
+        fail(errors, f"{rel(source)} guidanceTagDefinitions does not contain any tags")
+    if len(tags) != len(configured_tags):
+        duplicates = sorted(tag for tag in tags if configured_tags.count(tag) > 1)
+        fail(errors, f"{rel(source)} declares duplicate guidance tags: {', '.join(duplicates)}")
+    return tags
 
 
 def tagged_guidance_files() -> list[Path]:
@@ -295,6 +306,7 @@ def audit_guidance_tags(errors: list[str]) -> None:
     if not allowed_tags:
         return
 
+    used_tags: set[str] = set()
     for path in tagged_guidance_files():
         values = metadata_values(path.read_text())
         tags = split_metadata_list(values.get("Tags", ""))
@@ -307,6 +319,11 @@ def audit_guidance_tags(errors: list[str]) -> None:
                 fail(errors, f"{rel(path)} has non-canonical tag spelling: {tag}")
             if normalized not in allowed_tags:
                 fail(errors, f"{rel(path)} uses tag outside guidanceTags: {tag}")
+            else:
+                used_tags.add(normalized)
+
+    for tag in sorted(allowed_tags - used_tags):
+        fail(errors, f"src/lib/site.ts declares unused guidance tag: {tag}")
 
 
 def audit_structured_related_metadata(errors: list[str]) -> None:

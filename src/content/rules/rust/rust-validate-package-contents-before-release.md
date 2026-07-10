@@ -9,7 +9,7 @@
   publication.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, release, verification, generated-artifacts`
+- Tags: `rust, release, verification`
 - Related: `rust-release-only-after-artifact-validation, docs-align-readme-and-crate-rustdoc`
 
 ## Rule

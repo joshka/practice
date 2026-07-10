@@ -8,7 +8,7 @@
   Reserve `mod.rs` for cases where local convention or layout makes it the better signal.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, reader-locality, local-conventions, ownership`
+- Tags: `rust, reader-locality, local-conventions, ownership, module-layout`
 - Related: `follow-local-conventions, RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`
 
 ## Rule

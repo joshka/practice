@@ -9,7 +9,7 @@
   competing homes.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, public-api, reader-locality`
+- Tags: `rust, public-api, reader-locality, module-layout`
 - Related: `rust-use-doc-inline-for-canonical-reexports, rust-keep-preludes-reexport-only`
 
 ## Rule

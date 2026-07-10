@@ -11,7 +11,7 @@
   observability-keep-diagnostics-retention-safe, test-prove-command-construction-and-display`
 - Status: `draft`
 - Domain: `observability`
-- Tags: `observability, errors, failure-output, accessibility`
+- Tags: `observability, errors, failure-output`
 
 ## Rule
 

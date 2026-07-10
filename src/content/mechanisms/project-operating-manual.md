@@ -12,7 +12,7 @@
 - Status: `draft`
 - Audience: `both`
 - Topics: `guidance, agent-workflow, review, source-truth, project-context`
-- Tags: `documentation, agent-context, source-truth, reviewability, generated-artifacts`
+- Tags: `documentation, agent-context, source-truth, reviewability`
 - Related: `coding-agents, software-change-preferences, guidance-generation-and-audit,
   guidance-content-model-stewardship`
 
