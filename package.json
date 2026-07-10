@@ -18,13 +18,13 @@
   "dependencies": {
     "@astrojs/check": "^0.9.9",
     "@fortawesome/free-solid-svg-icons": "^7.2.0",
-    "astro": "^6.3.3",
+    "astro": "^7.0.6",
     "marked": "^18.0.3",
     "typescript": "^6.0.3"
   },
   "devDependencies": {
     "@tailwindcss/vite": "^4.3.0",
-    "@types/node": "^25.8.0",
+    "@types/node": "^26.1.0",
     "markdownlint-cli2": "^0.22.1",
     "tailwindcss": "^4.3.0"
   }
