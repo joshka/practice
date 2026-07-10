@@ -148,6 +148,7 @@ function visibleRuleTags(rule: (typeof rules)[number]): string[] {
                 <KindIcon kind="rule" />
               </span>
               <strong>{cardTitle(rule)}</strong>
+              <span class="card-arrow" aria-hidden="true">→</span>
             </span>
             <span class="index-entry__id">{ruleId(rule)}</span>
             {descriptionFor(rule) && (

@@ -1,56 +1,57 @@
 @import "tailwindcss" source("../");
 
 @theme {
-  --font-sans: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
+  --font-sans: "IBM Plex Sans", ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI",
     sans-serif;
-  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  --font-mono: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
 
-  --color-background: #12151b;
-  --color-surface: #12151b;
-  --color-surface-dim: #12151b;
-  --color-surface-bright: #373c49;
-  --color-surface-container-lowest: #0c1018;
-  --color-surface-container-low: #1b1e26;
-  --color-surface-container: #212631;
-  --color-surface-container-high: #2a303d;
-  --color-surface-container-highest: #333b4a;
-  --color-on-background: #e5e6e6;
-  --color-on-surface: #e5e6e6;
-  --color-on-surface-variant: #c1c8d3;
-  --color-inverse-surface: #e5e6e6;
-  --color-inverse-on-surface: #2f3440;
-  --color-outline: #88909f;
-  --color-outline-variant: #424955;
-  --color-surface-tint: #adc8f3;
-  --color-primary: #adc8f3;
-  --color-on-primary: #eef3ff;
-  --color-primary-container: #3d66c8;
-  --color-on-primary-container: #eef3ff;
-  --color-inverse-primary: #3b61bd;
-  --color-secondary: #bcc6d4;
-  --color-on-secondary: #182d63;
-  --color-secondary-container: #39466f;
-  --color-on-secondary-container: #aab8e6;
-  --color-tertiary: #ffb596;
-  --color-on-tertiary: #581e00;
-  --color-tertiary-container: #bc4800;
-  --color-on-tertiary-container: #ffede6;
+  --color-background: #171814;
+  --color-surface: #171814;
+  --color-surface-dim: #12130f;
+  --color-surface-bright: #292b24;
+  --color-surface-container-lowest: #10110e;
+  --color-surface-container-low: #1d1f1a;
+  --color-surface-container: #23251f;
+  --color-surface-container-high: #2b2e26;
+  --color-surface-container-highest: #34372e;
+  --color-on-background: #f3f0e6;
+  --color-on-surface: #e6e2d7;
+  --color-on-surface-variant: #aaa99d;
+  --color-inverse-surface: #f3f0e6;
+  --color-inverse-on-surface: #24261f;
+  --color-outline: #77796d;
+  --color-outline-variant: #3d4036;
+  --color-surface-tint: #f0b574;
+  --color-primary: #f0b574;
+  --color-on-primary: #2f1707;
+  --color-primary-container: #dc713b;
+  --color-on-primary-container: #fff4e9;
+  --color-inverse-primary: #9d451f;
+  --color-secondary: #c5d1a4;
+  --color-on-secondary: #273017;
+  --color-secondary-container: #46542e;
+  --color-on-secondary-container: #edf5d8;
+  --color-tertiary: #9fbac3;
+  --color-on-tertiary: #102a32;
+  --color-tertiary-container: #315966;
+  --color-on-tertiary-container: #e2f5fb;
   --color-error: #ffb4ab;
   --color-on-error: #690005;
   --color-error-container: #93000a;
   --color-on-error-container: #ffdad6;
-  --color-code-bg: #0c1018;
+  --color-code-bg: #11120f;
 
   --spacing-page: 1rem;
   --spacing-page-lg: 3rem;
   --spacing-gutter: 1rem;
-  --container-container: 1120px;
-  --shadow-soft: 0 18px 42px rgb(0 0 0 / 0.38);
+  --container-container: 1180px;
+  --shadow-soft: 0 18px 42px rgb(0 0 0 / 0.28);
 }
 
 :root {
   color-scheme: dark;
-  --body-gradient-start: #181c25;
+  --font-display: "IBM Plex Serif", Georgia, Cambria, "Times New Roman", serif;
+  --body-gradient-start: #1c1e18;
   --panel-raised:
     inset 0 1px 0 rgb(255 255 255 / 0.09),
     inset 0 -1px 0 rgb(0 0 0 / 0.55),
@@ -78,28 +79,28 @@
 
 html[data-theme="light"] {
   color-scheme: light;
-  --color-background: #f4f6f9;
-  --color-surface: #f4f6f9;
-  --color-surface-dim: #e7ebf1;
-  --color-surface-bright: #ffffff;
-  --color-surface-container-lowest: #ffffff;
-  --color-surface-container-low: #eef2f7;
-  --color-surface-container: #e7edf5;
-  --color-surface-container-high: #dfe7f1;
-  --color-surface-container-highest: #d6e0ec;
-  --color-on-background: #20242c;
-  --color-on-surface: #20242c;
-  --color-on-surface-variant: #596273;
-  --color-inverse-surface: #20242c;
-  --color-inverse-on-surface: #f4f6f9;
-  --color-outline: #737d8f;
-  --color-outline-variant: #c2cad8;
-  --color-surface-tint: #315fba;
-  --color-primary: #315fba;
+  --color-background: #f3f0e7;
+  --color-surface: #f3f0e7;
+  --color-surface-dim: #e6e1d5;
+  --color-surface-bright: #fffdf7;
+  --color-surface-container-lowest: #fffdf7;
+  --color-surface-container-low: #ece8dd;
+  --color-surface-container: #e4dfd2;
+  --color-surface-container-high: #dad4c6;
+  --color-surface-container-highest: #cec7b7;
+  --color-on-background: #25271f;
+  --color-on-surface: #303229;
+  --color-on-surface-variant: #626458;
+  --color-inverse-surface: #25271f;
+  --color-inverse-on-surface: #f3f0e7;
+  --color-outline: #7e8073;
+  --color-outline-variant: #cbc5b7;
+  --color-surface-tint: #9d451f;
+  --color-primary: #9d451f;
   --color-on-primary: #ffffff;
-  --color-primary-container: #d7e4ff;
-  --color-on-primary-container: #183e87;
-  --color-inverse-primary: #adc8f3;
+  --color-primary-container: #ffd9c4;
+  --color-on-primary-container: #6a260e;
+  --color-inverse-primary: #f0b574;
   --color-secondary: #59677f;
   --color-on-secondary: #ffffff;
   --color-secondary-container: #dbe4f4;
@@ -112,8 +113,8 @@ html[data-theme="light"] {
   --color-on-error: #ffffff;
   --color-error-container: #ffdad6;
   --color-on-error-container: #410002;
-  --color-code-bg: #eef3f9;
-  --body-gradient-start: #e8eef7;
+  --color-code-bg: #e9e4d8;
+  --body-gradient-start: #eae5d9;
   --panel-raised:
     inset 0 1px 0 rgb(255 255 255 / 0.92),
     inset 0 -1px 0 rgb(70 83 103 / 0.16),
@@ -1264,50 +1265,18 @@ html[data-theme="light"] .code-block pre code {
 
   .intent-panel,
   .status-panel,
-  .task-card,
-  .home-card,
-  .home-use,
-  .use-case,
-  .rules-stats span,
-  .rules-use,
-  .rules-domain-card,
   .card,
-  .row,
-  .index-entry {
+  .row {
     background: var(--panel-gradient);
     border-color: transparent;
     box-shadow: var(--panel-raised-soft);
   }
 
-  .task-card:hover,
-  .home-card:hover,
-  .use-case:hover,
-  .rules-domain-card:hover,
   .card:hover,
-  .row:hover,
-  .index-entry:hover {
+  .row:hover {
     transform: translateY(-1px);
     background: var(--panel-gradient-high);
     box-shadow: var(--panel-raised), 0 0 0 1px rgb(180 197 255 / 0.18);
-  }
-
-  .home-card--agent,
-  .home-card--agent:hover {
-    background: var(--primary-gradient);
-    box-shadow: var(--panel-raised), var(--primary-glow);
-  }
-
-  .task-card:active,
-  .home-card:active,
-  .use-case:active,
-  .rules-domain-card:active,
-  .card:active,
-  .row:active,
-  .index-entry:active,
-  .inline-action:active,
-  .footer-source:active {
-    transform: translateY(1px);
-    box-shadow: var(--panel-pressed);
   }
 
   .breadcrumbs,
@@ -1347,11 +1316,6 @@ html[data-theme="light"] .code-block pre code {
     box-shadow: var(--panel-sunken);
   }
 
-  a:focus-visible,
-  button:focus-visible {
-    outline: 2px solid var(--color-primary-container);
-    outline-offset: 3px;
-  }
 }
 
 @media (min-width: 1120px) {
@@ -1361,7 +1325,7 @@ html[data-theme="light"] .code-block pre code {
   }
 }
 
-@media (min-width: 900px) {
+@media (min-width: 73.51rem) {
   .primary-nav {
     display: flex;
   }

@@ -52,7 +52,7 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
 
     <section class="rules-use" aria-labelledby="rules-use-title">
       <div>
-        <h2 id="rules-use-title">Rule work areas</h2>
+        <h2 id="rules-use-title">Using the rules</h2>
       </div>
       <div class="rules-use__steps">
         <p>
@@ -84,7 +84,10 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
                 {domain.count} {domain.count === 1 ? 'rule' : 'rules'}
               </span>
             </span>
-            <strong>{domain.title}</strong>
+            <span class="rules-domain-card__title">
+              <strong>{domain.title}</strong>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </span>
             {domain.description && <span>{domain.description}</span>}
           </a>
         ))}

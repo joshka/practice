@@ -1,5 +1,6 @@
 ---
 import '../styles/global.css';
+import '../styles/system.css';
 import {
   faBook,
   faBrain,
@@ -33,6 +34,19 @@ const isHomePage = title === 'Practice' || title === 'Software Practices';
 const breadcrumbsIncludeCurrent = breadcrumbs.at(-1)?.href === undefined && breadcrumbs.length > 0;
 const currentBreadcrumb = breadcrumbsIncludeCurrent ? undefined : title;
 const showBreadcrumbs = !isHomePage || breadcrumbs.length > 0;
+const currentPath = Astro.url.pathname;
+const basePath = import.meta.env.BASE_URL.replace(/\/$/, '');
+const routeSegments = currentPath
+  .slice(basePath.length)
+  .split('/')
+  .filter(Boolean);
+const pageLevel = routeSegments.length === 0
+  ? 'site-root'
+  : routeSegments.length === 1
+    ? 'category-root'
+    : routeSegments.length === 2 && (routeSegments[0] === 'rules' || routeSegments[0] === 'tags')
+      ? 'group'
+      : 'leaf';
 const themeIcons = {
   system: faDesktop,
   light: faSun,
@@ -40,18 +54,29 @@ const themeIcons = {
 };
 const menuIcon = faBars;
 const searchIcon = faMagnifyingGlass;
-const primaryLinks = [
+const areaLinks = [
   { label: 'Guides', href: '/guides/' },
   { label: 'Rules', href: '/rules/' },
   { label: 'Patterns', href: '/patterns/' },
   { label: 'Principles', href: '/why/' },
   { label: 'Mechanisms', href: '/mechanisms/' },
   { label: 'Agents', href: '/agents/' },
+  { label: 'Tags', href: '/tags/' },
   { label: 'References', href: '/references/' },
 ];
+const primaryLinks = areaLinks.filter((link) => !['/tags/', '/references/'].includes(link.href));
+const currentArea = areaLinks.find((link) => currentPath.startsWith(withBase(link.href)))
+  ?.href.split('/')[1]
+  ?? (currentPath.startsWith(withBase('/about/')) ? 'about' : undefined)
+  ?? 'home';
+const currentAreaLabel = areaLinks.find((link) => link.href.split('/')[1] === currentArea)?.label
+  ?? (currentArea === 'about' ? 'About' : undefined)
+  ?? 'Software Practices';
 const footerLinks = [
   { label: 'About this reference', href: '/about/' },
+  { label: 'Design system', href: '/about/design-system/' },
   { label: 'Tags', href: '/tags/' },
+  { label: 'References', href: '/references/' },
 ];
 const searchKindIcons = {
   agent: iconData(faRobot),
@@ -86,7 +111,7 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
-      href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;family=JetBrains+Mono:wght@500;600&amp;display=swap"
+      href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:wght@500;600&amp;family=IBM+Plex+Sans:wght@400;500;600;700&amp;family=Source+Serif+4:opsz,wght@8..60,400;8..60,500;8..60,600&amp;display=swap"
       rel="stylesheet"
     />
     <script is:inline>
@@ -96,35 +121,33 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
       document.documentElement.dataset.theme = themePreference === 'system' ? systemTheme : themePreference;
       document.documentElement.dataset.themePreference = themePreference;
     </script>
-    <title>{title === 'Practice' ? title : `${title} | Practice`}</title>
+    <title>{title === 'Software Practices' ? title : `${title} | Software Practices`}</title>
   </head>
   <body
     class="min-h-screen bg-background text-on-background font-sans text-base antialiased"
+    data-area={currentArea}
+    data-area-label={currentAreaLabel}
+    data-page-level={pageLevel}
     data-search-index={withBase('/search.json')}
     data-search-kind-icons={JSON.stringify(searchKindIcons)}
   >
     <header class="site-header sticky top-0 z-50">
       <div class="site-header__inner">
-        <a class="flex min-w-max items-center gap-3 text-on-background no-underline" href={withBase('/')}>
-          <img
-            class="size-8 rounded-lg"
-            src="https://github.com/joshka.png?size=64"
-            alt="Joshka"
-            width="32"
-            height="32"
-            decoding="async"
-          />
-          <span class="min-w-0">
-            <span class="block text-base font-bold leading-tight">Software Practices</span>
-            <span class="block text-xs leading-tight text-on-surface-variant">
-              Code, docs, tests, review, and coding agents
-            </span>
-          </span>
+        <a class="site-brand" href={withBase('/')} aria-label="Software Practices home">
+          <span class="site-brand__mark" aria-hidden="true">SP.</span>
+          <span class="site-brand__name">Software Practices</span>
         </a>
+        <nav class="primary-nav" aria-label="Primary">
+          {primaryLinks.map((link) => (
+            <a
+              class={`nav-link ${currentPath.startsWith(withBase(link.href)) ? 'nav-link--active' : ''}`}
+              href={withBase(link.href)}
+            >
+              {link.label}
+            </a>
+          ))}
+        </nav>
         <div class="site-header__actions">
-          <nav class="primary-nav" aria-label="Primary">
-            {primaryLinks.map((link) => <a class="nav-link" href={withBase(link.href)}>{link.label}</a>)}
-          </nav>
           <div class="mobile-nav">
             <button
               class="mobile-nav__trigger"
@@ -152,6 +175,8 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
             <svg aria-hidden="true" viewBox={`0 0 ${searchIcon.icon[0]} ${searchIcon.icon[1]}`}>
               <path d={iconPath(searchIcon)} />
             </svg>
+            <span>Search</span>
+            <kbd>⌘K</kbd>
           </button>
           <div class="theme-switcher">
             <button
@@ -192,24 +217,27 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
         </div>
       </div>
     </header>
-    <main class="main-shell mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12">
+    <main
+      class="main-shell mx-auto w-full max-w-container px-page py-8 md:px-page-lg md:py-12"
+      data-area-label={currentAreaLabel}
+    >
       {showBreadcrumbs && (
         <nav class="breadcrumbs" aria-label="Breadcrumb">
           <a href={withBase('/')}>Home</a>
           {breadcrumbs.map((crumb) => (
             <>
-              <span aria-hidden="true">/</span>
+              <span class={crumb.href ? undefined : 'breadcrumbs__current-separator'} aria-hidden="true">/</span>
               {crumb.href ? (
                 <a href={withBase(crumb.href)}>{crumb.label}</a>
               ) : (
-                <span aria-current="page">{crumb.label}</span>
+                <span class="breadcrumbs__current" aria-current="page">{crumb.label}</span>
               )}
             </>
           ))}
           {currentBreadcrumb && (
             <>
-              <span aria-hidden="true">/</span>
-              <span aria-current="page">{currentBreadcrumb}</span>
+              <span class="breadcrumbs__current-separator" aria-hidden="true">/</span>
+              <span class="breadcrumbs__current" aria-current="page">{currentBreadcrumb}</span>
             </>
           )}
         </nav>
@@ -238,14 +266,16 @@ function iconData(icon: typeof faRuler): { path: string; viewBox: string } {
     </div>
     <footer class="site-footer mx-auto flex w-full max-w-container flex-col gap-4 px-page py-8 text-sm text-on-surface-variant md:flex-row md:items-center md:justify-between md:px-page-lg">
       <div class="site-footer__text">
-        <p>Durable software practices for code, documentation, tests, review, and coding agents.</p>
+        <p><strong>Software Practices</strong> · Rules and guides for software development and review.</p>
         <p>
           Copyright © 2026 Josh McKinney · <a href="https://joshka.net/practice/">joshka.net/practice</a>
         </p>
       </div>
       <div class="site-footer__links">
-        {footerLinks.map((link) => <a class="footer-source" href={withBase(link.href)}>{link.label}</a>)}
-        {sourceUrl && <a class="footer-source" href={sourceUrl}>Edit source</a>}
+        <div class="site-footer__utility-links">
+          {footerLinks.map((link) => <a class="footer-source" href={withBase(link.href)}>{link.label}</a>)}
+        </div>
+        {sourceUrl && <a class="footer-source footer-source--edit" href={sourceUrl}>Edit source</a>}
       </div>
     </footer>
     <script>

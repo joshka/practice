@@ -28,7 +28,10 @@ const tags = tagCounts();
     <div class="tag-grid">
       {tags.map(({ tag, count }) => (
         <a class="tag-card" href={withBase(`/tags/${tag}/`)}>
-          <span class="tag-card__label">{tagLabel(tag)}</span>
+          <span class="tag-card__heading">
+            <span class="tag-card__label">{tagLabel(tag)}</span>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </span>
           <span class="tag-card__count">{count} {count === 1 ? 'item' : 'items'}</span>
         </a>
       ))}
