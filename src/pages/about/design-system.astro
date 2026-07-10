@@ -25,6 +25,12 @@ const spacing = [
   ['7', '3rem'],
   ['8', '4rem'],
 ];
+const pageFamilies = [
+  ['Root', 'Editorial overview and primary paths'],
+  ['Category', 'Family identity and work-area entry'],
+  ['Group', 'Scoped index with a label column'],
+  ['Leaf', 'Reading flow with stable section labels'],
+];
 ---
 
 <BaseLayout
@@ -48,14 +54,28 @@ const spacing = [
         <h2 id="design-color-title">Color</h2>
         <p>Hue identifies a content family. Every family uses the same solid, heading, and field roles.</p>
       </div>
-      <div class="design-color-grid">
-        {colorFamilies.map((family) => (
-          <div class={`design-color ${family.className}`}>
-            <span class="design-color__field"></span>
-            <strong>{family.name}</strong>
-            <small>{family.use}</small>
+      <div class="design-color-stack">
+        <div class="design-theme-pair" aria-label="Theme neutral comparison">
+          <div class="design-theme-frame design-theme-frame--dark">
+            <strong>Dark reading field</strong>
+            <span>Warm green-black with soft neutral text</span>
+            <a href={withBase('/references/')}>Persistent link cue</a>
           </div>
-        ))}
+          <div class="design-theme-frame design-theme-frame--light">
+            <strong>Light reading field</strong>
+            <span>Warm paper with dark neutral text</span>
+            <a href={withBase('/references/')}>Persistent link cue</a>
+          </div>
+        </div>
+        <div class="design-color-grid">
+          {colorFamilies.map((family) => (
+            <div class={`design-color ${family.className}`}>
+              <span class="design-color__field"></span>
+              <strong>{family.name}</strong>
+              <small>{family.use}</small>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
 
@@ -65,11 +85,24 @@ const spacing = [
         <p>Serif names things. Sans explains them. Mono carries metadata and compact controls.</p>
       </div>
       <div class="design-type-stack">
-        <p class="design-type design-type--display">Reader locality</p>
-        <p class="design-type design-type--body">
-          Keep the facts a reader needs close to the code or decision they affect.
+        <div>
+          <small class="design-type__label">Display / Source Serif 4</small>
+          <p class="design-type design-type--display">Reader locality</p>
+        </div>
+        <div>
+          <small class="design-type__label">Reading / IBM Plex Sans</small>
+          <p class="design-type design-type--body">
+            Keep the facts a reader needs close to the code or decision they affect.
+          </p>
+        </div>
+        <div>
+          <small class="design-type__label">Metadata / IBM Plex Mono</small>
+          <p class="design-type design-type--meta">READER-LOCALITY / REVIEWABILITY</p>
+        </div>
+        <p class="design-type-link-example">
+          A heading names the idea; an <a href={withBase('/why/reader-locality-reduces-change-cost/')}>inline link</a>
+          keeps a persistent interaction cue.
         </p>
-        <p class="design-type design-type--meta">READER-LOCALITY / REVIEWABILITY</p>
       </div>
     </section>
 
@@ -103,6 +136,11 @@ const spacing = [
             <small>{kind}</small>
           </div>
         ))}
+        <div class="design-icon-lockup">
+          <span class="design-icon-lockup__icon" aria-hidden="true"><KindIcon kind="guide" /></span>
+          <strong>First-line alignment</strong>
+          <small>The optical box follows the title, not a multiline block.</small>
+        </div>
       </div>
     </section>
 
@@ -111,10 +149,31 @@ const spacing = [
         <h2 id="design-controls-title">Controls</h2>
         <p>Metadata is quiet, navigation is tinted, and actions use a filled field.</p>
       </div>
-      <div class="design-controls">
-        <span class="index-entry__tag">Metadata</span>
-        <a class="detail-chip" href={withBase('/tags/reader-locality/')}>Navigation</a>
-        <a class="inline-action" href={withBase('/guides/')}>Action</a>
+      <div class="design-state-grid">
+        <div class="design-state">
+          <small>Rest</small>
+          <a class="detail-chip" href={withBase('/tags/reader-locality/')}>Navigation</a>
+        </div>
+        <div class="design-state design-state--hover">
+          <small>Hover</small>
+          <a class="detail-chip" href={withBase('/tags/reader-locality/')}>Navigation</a>
+        </div>
+        <div class="design-state design-state--focus">
+          <small>Focus visible</small>
+          <button class="inline-action" type="button">Copy instruction</button>
+        </div>
+        <div class="design-state design-state--current">
+          <small>Current</small>
+          <a class="detail-chip" href={withBase('/about/design-system/')} aria-current="page">Design system</a>
+        </div>
+        <div class="design-state">
+          <small>Disabled</small>
+          <button class="inline-action" type="button" disabled>Unavailable</button>
+        </div>
+        <div class="design-state">
+          <small>Metadata</small>
+          <span class="index-entry__tag">REVIEWABILITY</span>
+        </div>
       </div>
     </section>
 
@@ -123,14 +182,77 @@ const spacing = [
         <h2 id="design-layout-title">Layout</h2>
         <p>A stable label column orients the reader; the content column carries the reading flow.</p>
       </div>
-      <a class="design-link-panel" href={withBase('/guides/code-shape/')}>
-        <span class="design-link-panel__meta">GUIDE / READER LOCALITY</span>
-        <span class="design-link-panel__title">
-          <strong>Code Shape</strong>
-          <span class="card-arrow" aria-hidden="true">→</span>
-        </span>
-        <span>Local structure, reviewable changes, and manageable live context.</span>
-      </a>
+      <div class="design-navigation-grid">
+        <a class="design-link-panel" href={withBase('/guides/code-shape/')}>
+          <span class="design-link-panel__meta">WHOLE-CARD DESTINATION</span>
+          <span class="design-link-panel__title">
+            <strong>Code Shape</strong>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </span>
+          <span>One persistent title-row affordance.</span>
+        </a>
+        <div class="design-info-panel">
+          <span class="design-link-panel__meta">INFORMATION PANEL</span>
+          <strong>Reader context</strong>
+          <span>No arrow because the surface is not interactive.</span>
+        </div>
+        <p class="design-inline-link-panel">
+          Inline destinations stay in prose, such as
+          <a href={withBase('/patterns/')}>review patterns</a>, and use an underline rather than a card arrow.
+        </p>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-content-title">
+      <div class="design-specimen__label">
+        <h2 id="design-content-title">Content structures</h2>
+        <p>Contained fields are reserved for artifacts; explanatory prose remains on the page.</p>
+      </div>
+      <div class="design-content-grid">
+        <div class="code-block design-code-sample">
+          <button class="code-block__copy" type="button">Copy</button>
+          <pre><code>Prefer the smallest coherent change.</code></pre>
+        </div>
+        <blockquote>Use a left rule for a quotation or callout, not another floating card.</blockquote>
+        <table>
+          <thead><tr><th>Structure</th><th>Primary cue</th></tr></thead>
+          <tbody>
+            <tr><td>Code</td><td>Raised field</td></tr>
+            <tr><td>Callout</td><td>Accent rule</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-pages-title">
+      <div class="design-specimen__label">
+        <h2 id="design-pages-title">Page families</h2>
+        <p>Shared alignments carry through four information levels and collapse by fit condition.</p>
+      </div>
+      <div class="design-page-grid">
+        {pageFamilies.map(([name, description], index) => (
+          <div class={`design-page-frame design-page-frame--${index + 1}`}>
+            <span class="design-page-frame__header"></span>
+            <span class="design-page-frame__label"></span>
+            <span class="design-page-frame__content"></span>
+            <strong>{name}</strong>
+            <small>{description}</small>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-motion-title">
+      <div class="design-specimen__label">
+        <h2 id="design-motion-title">Motion and access</h2>
+        <p>Movement confirms an action; it never carries information that cannot be paused or read statically.</p>
+      </div>
+      <div class="design-access-list">
+        <p><strong>Arrow:</strong> 0.2rem confirmation movement on hover or keyboard focus.</p>
+        <p><strong>Editorial word:</strong> stable accessible heading, reserved width, and a pause control.</p>
+        <p><strong>Reduced motion:</strong> freeze editorial changes and collapse ordinary feedback transitions.</p>
+        <p><strong>Focus:</strong> 3px visible ring that survives tinted fields and forced colors.</p>
+      </div>
     </section>
   </div>
 </BaseLayout>

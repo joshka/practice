@@ -38,13 +38,15 @@ const icons = {
 } satisfies Record<GuidanceKind, typeof faRuler>;
 const icon = icons[kind];
 const [width, height, , , path] = icon.icon;
-const accessibleLabel = label ?? `${kind} icon`;
+const isMeaningful = Boolean(label);
 const pathData = Array.isArray(path) ? path.join(' ') : path;
 ---
 
 <svg
-  aria-label={accessibleLabel}
-  role="img"
+  class={`kind-icon kind-icon--${kind}`}
+  aria-hidden={isMeaningful ? undefined : 'true'}
+  aria-label={isMeaningful ? label : undefined}
+  role={isMeaningful ? 'img' : undefined}
   viewBox={`0 0 ${width} ${height}`}
   fill="currentColor"
   focusable="false"

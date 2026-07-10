@@ -85,7 +85,10 @@ const useCases = [
       <section class="home-hero">
         <div class="home-hero__main">
           <div class="home-version">Josh McKinney</div>
-          <h1>How I <em class="home-hero__verb" data-home-verb aria-live="off">design</em> software.</h1>
+          <h1>
+            <span class="visually-hidden">How I design software.</span>
+            <span aria-hidden="true">How I <em class="home-hero__verb" data-home-verb>design</em> software.</span>
+          </h1>
           <p>
             Software-change guidance for humans and coding agents: scope, code structure, Rust
             APIs, documentation, tests, review, and source control.
@@ -96,6 +99,20 @@ const useCases = [
             </a>
             <button class="home-search-action" type="button" data-search-trigger>
               Search rules and patterns <kbd>⌘K</kbd>
+            </button>
+            <button
+              class="home-motion-control"
+              type="button"
+              aria-label="Pause changing word"
+              title="Pause changing word"
+              data-home-verb-toggle
+            >
+              <span aria-hidden="true" data-home-verb-pause-icon>
+                <svg viewBox="0 0 16 16"><path d="M3 2h3v12H3zM10 2h3v12h-3z" /></svg>
+              </span>
+              <span aria-hidden="true" data-home-verb-play-icon hidden>
+                <svg viewBox="0 0 16 16"><path d="m4 2 10 6-10 6z" /></svg>
+              </span>
             </button>
           </div>
         </div>
@@ -155,7 +172,10 @@ const useCases = [
         <div class="home-use__cases">
           {useCases.map((item) => (
             <a class="use-case" href={withBase(item.route)}>
-              <h3>{item.title}</h3>
+              <h3>
+                <span>{item.title}</span>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </h3>
               <p>{item.description}</p>
             </a>
           ))}
@@ -167,9 +187,12 @@ const useCases = [
 
 <script>
   const rotatingVerb = document.querySelector<HTMLElement>('[data-home-verb]');
+  const verbToggle = document.querySelector<HTMLButtonElement>('[data-home-verb-toggle]');
+  const pauseIcon = document.querySelector<HTMLElement>('[data-home-verb-pause-icon]');
+  const playIcon = document.querySelector<HTMLElement>('[data-home-verb-play-icon]');
   const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
 
-  if (rotatingVerb && !reducedMotion.matches) {
+  if (rotatingVerb && verbToggle) {
     const verbs = [
       'design',
       'write',
@@ -186,9 +209,11 @@ const useCases = [
     ];
     let verbIndex = 0;
     let changingVerb = false;
+    let verbPaused = false;
+    let verbTimer: number | undefined;
 
-    window.setInterval(async () => {
-      if (document.hidden || changingVerb) return;
+    const rotateVerb = async () => {
+      if (document.hidden || changingVerb || verbPaused) return;
       changingVerb = true;
 
       const exit = rotatingVerb.animate(
@@ -200,6 +225,13 @@ const useCases = [
       );
       await exit.finished;
       exit.cancel();
+
+      if (reducedMotion.matches) {
+        rotatingVerb.textContent = verbs[0];
+        verbIndex = 0;
+        changingVerb = false;
+        return;
+      }
 
       verbIndex = (verbIndex + 1) % verbs.length;
       rotatingVerb.textContent = verbs[verbIndex];
@@ -214,6 +246,45 @@ const useCases = [
       await enter.finished;
       enter.cancel();
       changingVerb = false;
-    }, 4600);
+    };
+
+    const stopVerbRotation = () => {
+      if (verbTimer === undefined) return;
+      window.clearInterval(verbTimer);
+      verbTimer = undefined;
+    };
+
+    const startVerbRotation = () => {
+      if (reducedMotion.matches || verbPaused || verbTimer !== undefined) return;
+      verbTimer = window.setInterval(rotateVerb, 4600);
+    };
+
+    const syncMotionPreference = () => {
+      if (reducedMotion.matches) {
+        stopVerbRotation();
+        rotatingVerb.textContent = verbs[0];
+        verbIndex = 0;
+        verbToggle.hidden = true;
+        return;
+      }
+
+      verbToggle.hidden = false;
+      startVerbRotation();
+    };
+
+    verbToggle.addEventListener('click', () => {
+      verbPaused = !verbPaused;
+      verbToggle.dataset.paused = String(verbPaused);
+      const actionLabel = verbPaused ? 'Resume changing word' : 'Pause changing word';
+      verbToggle.setAttribute('aria-label', actionLabel);
+      verbToggle.title = actionLabel;
+      if (pauseIcon) pauseIcon.hidden = verbPaused;
+      if (playIcon) playIcon.hidden = !verbPaused;
+      if (verbPaused) stopVerbRotation();
+      else startVerbRotation();
+    });
+
+    reducedMotion.addEventListener('change', syncMotionPreference);
+    syncMotionPreference();
   }
 </script>

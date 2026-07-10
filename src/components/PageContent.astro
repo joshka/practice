@@ -228,7 +228,10 @@ function relatedLabel(page: MarkdownPage): string {
       <div class="detail-related__links">
         {relatedPages.map((related) => (
           <a href={withBase(related.route)}>
-            <strong>{relatedLabel(related)}</strong>
+            <strong class="detail-related__title">
+              <span>{relatedLabel(related)}</span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </strong>
             <span>{related.title}</span>
           </a>
         ))}

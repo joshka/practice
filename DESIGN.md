@@ -1,9 +1,9 @@
 # Software Practices Design System
 
 This document records the visual and interaction decisions behind the Software Practices site. It
-is repository documentation, not site content. The rendered site and its CSS remain the source of
-truth for current values; this file explains why those values exist and how new work should use
-them.
+is repository documentation, not site content. This document owns the design intent and component
+contracts. The rendered site demonstrates those contracts, while CSS owns their current numerical
+implementation.
 
 The system developed through repeated review of the homepage, category roots, grouped indexes, and
 leaf pages at wide, compact, and narrow widths. It should continue to be reviewed as a system rather
@@ -25,20 +25,25 @@ The intended character is a well-designed older software reference manual:
 - Comfortable for sustained reading in both dark and light themes.
 - Distinct from a terminal theme. Monospace type is metadata, not the default reading face.
 
-## Sources of Truth
+## Authority and Decision Types
 
-Use these files in this order when implementation and this document disagree:
+Use four kinds of design decision:
 
-1. `src/styles/system.css` contains the current design tokens and system-level component rules.
-1. `src/layouts/BaseLayout.astro` defines the site frame, header, breadcrumbs, search, and footer.
-1. `src/components/PageContent.astro` defines shared leaf-page structure.
-1. `src/pages/index.astro` and the section, rule, and tag index pages define navigation layouts.
-1. `src/pages/about/design-system.astro` is a compact rendered specimen, not the full rationale.
-1. This document records intent, relationships, rejected directions, and review expectations.
+- **Principle:** durable intent that should survive a redesign.
+- **Contract:** testable behavior or relationship shared by implementations.
+- **Recipe:** the current implementation of a contract, including token values and breakpoints.
+- **Exception:** a named, scoped departure with a rationale and a condition for review.
 
-`src/styles/global.css` still contains the older structural layer. `system.css` intentionally
-overrides it. New design decisions should normally be expressed in `system.css` rather than by
-adding another independent visual layer.
+`DESIGN.md` owns principles and contracts. `src/styles/system.css` owns current recipes and token
+values. `src/pages/about/design-system.astro` demonstrates the implemented system. Shared layouts
+and components apply it to real page families.
+
+When CSS conflicts with a contract, treat that as a defect or record a deliberate exception. Do
+not let an accidental implementation detail silently redefine the system.
+
+`src/styles/global.css` still contains an older structural layer that `system.css` overrides. This
+is migration debt rather than a design principle. Consolidate ownership when touching an affected
+component; do not create a third visual layer.
 
 ## System Principles
 
@@ -88,16 +93,27 @@ microtext. When space is tight, change layout before reducing important text.
 
 ### Tonal recipe
 
-Every content hue has four roles:
+Every content hue has four family roles:
 
 - `solid`: the strongest accent, used for rules, borders, and active indicators.
-- `heading`: a brighter or darker same-hue value with enough contrast for titles and links.
+- `heading`: a brighter or darker same-hue value for titles and object identity.
 - `field`: a dark or light same-hue surface for cards and primary controls.
 - `on-field`: readable text for the field surface.
 
 This same-hue pairing is intentional. A bright red heading on a dark red field feels richer and
 more specific than placing every category on a neutral card. The recipe stays the same across hues,
-which keeps the expanded palette coherent.
+which keeps the expanded palette coherent. The palette is optically balanced rather than merely
+assigned equal numerical saturation. Yellow should not glare, indigo should not disappear, and red
+may remain deliberately strongest without overwhelming neighboring families. Review lightness,
+chroma, and occupied surface area together when adjusting a hue.
+
+Interaction roles sit above the family palette:
+
+- `link`: interactive text that retains the family hue and a persistent non-color cue.
+- `focus-ring`: a high-contrast outline visible against neutral and family fields.
+- `current`: the active location, paired with `aria-current` and a structural marker.
+- Semantic status colors such as success, warning, critical, or informational are independent of
+  content families and always include a label or icon.
 
 ### Content-family assignments
 
@@ -171,7 +187,9 @@ by applying a filter to dark-mode colors.
 
 ### Color-use rules
 
-- Use the current family heading color for page titles, section labels, links, and type icons.
+- Use the current family heading color for page titles, section labels, and type icons.
+- Use the family hue for links, but distinguish prose links from headings with a persistent
+  underline. Whole-card links use their surface, focus treatment, and affordance instead.
 - Use the family solid for the 3px family rule and active borders.
 - Use the family field for deliberate interactive surfaces and emphasized instructions.
 - Keep body text neutral even inside a colored page family.
@@ -179,6 +197,8 @@ by applying a filter to dark-mode colors.
   distinction.
 - Do not introduce a new hue for a one-off component. First decide whether it belongs to an
   existing content or semantic role.
+- Use one dominant family cue and at most one supporting family cue on a component. Interaction
+  affordances do not need to repeat category identity.
 - Verify contrast in both themes. The current card titles and reference links meet WCAG AA for
   normal text.
 
@@ -207,6 +227,14 @@ kept out of primary titles; using sans everywhere made the homepage and guidance
 
 The root font size uses `clamp(16px, 15.25px + 0.18vw, 17px)`. Leaf titles are capped at 64px in
 the compact layout and 48px on narrow screens so long rule names do not consume the whole viewport.
+
+Size tokens are only half the type system. Current line-height recipes are `1.62` for ordinary
+reading, `1.7` for long prose, approximately `1.5` for supporting card copy, and `0.9` through `1.2`
+for display text according to size. Display letter-spacing may tighten slightly; body copy remains
+at normal tracking. Reading measure stays near 66 to 72 characters.
+
+Metadata normally uses `type-xs` rather than a smaller private scale. The `SP.` monogram is an
+optical brand exception, not a precedent for undersized controls or keyboard hints.
 
 ### Heading rules
 
@@ -289,25 +317,33 @@ Icons provide the exact object type; color provides the broader family context. 
 `currentColor` and inherit the family heading color.
 
 Hero icons should be close enough to title size to read as part of the title lockup, but they should
-not dominate it. Card icons match the title line and share its vertical center. Do not use icons as
-generic decoration when the object type is already clear.
+not dominate it. Card icons match the first title line rather than the full height of a multiline
+title. Do not use icons as generic decoration when the object type is already clear.
+
+Every icon sits in a fixed square box. The glyph is optically sized inside that box: card glyphs are
+approximately `0.9em` of the title, while hero glyphs are approximately `0.72em` to `0.85em` of the
+title cap height. Font Awesome glyphs have unequal apparent mass, so centralized per-glyph scale or
+vertical corrections are allowed. Judge the visible shape rather than the raw SVG bounds, and
+never allow an icon box to overlap a structural rule.
 
 ## Arrows and Navigation Affordance
 
-An arrow means the entire surrounding surface navigates to another page.
+An arrow means the entire surrounding surface navigates to another page. A whole-surface
+destination uses one persistent navigational affordance: either a title-row arrow or an explicit
+destination action, never both.
 
-- Every navigational card has exactly one right arrow.
-- The arrow sits on the card's title row, aligned to the title baseline.
-- It uses the card or page accent color and the same visual scale as the title.
-- Its resting opacity is `0.72`.
+- Compact rows and cards without another visible action use one right arrow.
+- The arrow sits in a fixed `1em` box on the title row, aligned optically with the first title line.
+- It uses the card or page accent color and the visual scale of the title.
+- Its resting opacity is `0.8`.
 - Hover and keyboard focus raise the opacity and move it `0.2rem` to the right.
 - The arrow remains visible without hover. Hover is confirmation, not discovery.
-- Dense index entries, homepage cards, work-area cards, rule-domain cards, tag cards, related links,
-  and use-case panels all follow this grammar.
+- Current recipes use arrows for dense index entries, homepage cards, work-area cards, rule-domain
+  cards, tag cards, related links, and use-case panels.
 
 Chips, metadata labels, breadcrumb segments, and ordinary inline links do not receive card arrows.
-A destination-oriented action button may contain an arrow in its label, but it is not part of the
-card grammar.
+A destination-oriented action button may contain an arrow in its label. Informational panels,
+current-location panels, and cards with an explicit destination action omit the card arrow.
 
 ## Layout
 
@@ -345,9 +381,12 @@ decorative reference-book cover.
 
 - The title uses “How I [verb] software.” The verb changes slowly among real software-work verbs.
 - The animation runs every 4.6 seconds and uses a short vertical fade.
-- `prefers-reduced-motion` disables the verb animation.
+- A visible pause control stops and resumes the changing word without changing layout.
+- The accessible heading remains stable; visual changes are not repeatedly announced.
+- `prefers-reduced-motion` freezes the default verb and stops the timer.
+- The longest supported verb determines the reserved width so changes do not shift the layout.
 - The book is a 4:5 cover, right-aligned, and sized by the height of the left hero content.
-- The book is hidden at 70rem rather than wrapping beneath the hero.
+- The book is hidden at 73.5rem rather than wrapping beneath the hero.
 - The book is decorative. Its labels stay short and do not repeat edition information.
 
 The homepage then uses a label column plus content grid for Work areas, Guidance types, and use
@@ -395,14 +434,16 @@ to scan, but not so large that a short page becomes mostly empty space.
 
 ### Work-area cards
 
-Work-area cards carry a short accent bar, serif title, title-row arrow, and concise sans
-description. They use three columns on wide homepage layouts, two columns at compact widths, and one
-column below 38rem.
+Work-area cards use a light family wash as their dominant cue, with the family title as support.
+Their number, serif title, title-row arrow, and concise sans description establish hierarchy
+without another accent bar or colored edge. They use three columns on wide homepage layouts, two
+columns at compact widths, and one column below 38rem.
 
 ### Guidance-type cards
 
-Guidance-type cards use the full family field, a 2px tinted left border, type icon, serif title,
-title-row arrow, and short description. The grid uses four columns wide, two compact, and one narrow.
+Guidance-type cards use the full family field as their dominant cue. A same-color title and type
+icon form one supporting lockup; the arrow communicates navigation rather than category. Avoid an
+additional accent bar or colored edge. The grid uses four columns wide, two compact, and one narrow.
 
 The field tint may fill the entire card because category identity is the content of this section.
 Avoid using the same saturated treatment for every ordinary index entry.
@@ -410,14 +451,16 @@ Avoid using the same saturated treatment for every ordinary index entry.
 ### Dense index entries
 
 Index entries use a light family wash rather than a full field. Tags appear above the title, while
-the type icon, title, and arrow share one row. Stable IDs and descriptions follow beneath.
+one family edge provides the supporting cue. Tags appear above the title, while the type icon,
+title, and arrow share one row. Stable IDs and descriptions follow beneath.
 
 The title is the dominant line. Tags and IDs should not become larger or brighter than it.
 
 ### Related links
 
 Related links use a compact tinted field with a left border. The stable ID and human title remain
-distinct. Their arrow follows the same scale and movement as other navigational cards.
+distinct. Because the field is intentionally quiet, the edge remains its supporting family cue.
+Their arrow follows the same scale and movement as other navigational cards.
 
 ### Chips and tags
 
@@ -432,8 +475,10 @@ ordinary prose.
 
 ## Controls
 
-Controls use a small radius, clear border, and a minimum height of 40px. Compact labels use mono,
-but should normally remain at least 13px to 14px.
+Primary controls, navigational chips, and stand-alone actions use a small radius, clear border,
+and a minimum height of 40px. Compact labels use mono, but should normally remain at least 13px to
+14px. Noninteractive metadata labels may be shorter because adjacent card or row spacing supplies
+the reading separation without implying a touch target.
 
 The hierarchy is:
 
@@ -443,6 +488,25 @@ The hierarchy is:
 
 Search, theme, menu, copy, and feedback controls need visible focus outlines. Do not make a whole
 text container look like a button unless the whole surface is interactive.
+
+### Interaction states
+
+Every interactive component defines the states that apply to it. State changes must not move
+surrounding layout.
+
+- **Rest:** The action or destination is recognizable without hover.
+- **Hover:** Tone or border strengthens; the surface does not lift.
+- **Focus visible:** A 3px high-contrast ring appears with enough offset.
+- **Pressed:** Feedback remains within the existing footprint.
+- **Current or open:** `aria-current`, `aria-expanded`, or checked semantics accompany styling.
+- **Visited:** Prose and reference links may change tone without losing contrast.
+- **Disabled:** Semantics and more than opacity communicate unavailability.
+- **Loading:** The control retains its dimensions and accessible name.
+- **Invalid:** A semantic status, text explanation, and programmatic state agree.
+
+Not every component uses every state. A link is never disabled; a static specimen is never made to
+look focusable. Menus return focus to their trigger when they close and support expected keyboard
+navigation.
 
 ## Code, Tables, and Prose Structures
 
@@ -460,7 +524,10 @@ colors unless the semantic state requires them.
 
 ## Responsive Behavior
 
-### Below 73.5rem
+### Navigation collapse
+
+This transition occurs when the primary navigation, brand, search, and theme controls no longer fit
+with balanced spacing. The current recipe maps it to `73.5rem`.
 
 - Hide the full primary navigation and show the menu control.
 - Change homepage guidance cards from four columns to two.
@@ -468,19 +535,28 @@ colors unless the semantic state requires them.
 - Cap leaf titles at 64px.
 - Put leaf metadata actions on a separate row from chips.
 
-### Below 70rem
+### Hero decoration hide
+
+This transition occurs before the book forces hero text or actions to wrap. The current recipe maps
+it to `73.5rem`, alongside the navigation collapse.
 
 - Hide the homepage book before hero buttons or text begin to wrap around it.
 - Keep the hero as one content column.
 
-### Below 52rem
+### Layout stack
+
+This transition occurs when the label and reading columns can no longer preserve useful measure.
+The current recipe maps it to `52rem`.
 
 - Collapse label/content layouts to one column.
 - Stop sticky group labels.
 - Reduce major hero and section gaps.
 - Use two columns for ordinary task grids where space permits.
 
-### Below 38rem
+### Single column
+
+This transition occurs when cards can no longer preserve title and body measure side by side. The
+current recipe maps it to `38rem`.
 
 - Hide the text site name and show the `SP.` mark.
 - Reduce search to its icon control.
@@ -489,8 +565,9 @@ colors unless the semantic state requires them.
 - Hide redundant category and current-page breadcrumbs.
 - Group footer source links deliberately rather than letting one link orphan by accident.
 
-These breakpoints are content decisions. Change them when a specific relationship stops fitting,
-not to match a generic device list.
+These are content decisions, not device classes. The numerical mappings are recipes and may differ
+by component when their fit conditions diverge. Change a mapping when its named relationship stops
+fitting, not to match a generic device list.
 
 ## Motion
 
@@ -501,8 +578,10 @@ Motion is brief and functional:
 - The homepage verb changes slowly and is the only editorial animation.
 - Menus and dialogs may use ordinary control transitions.
 
-All transitions collapse to near-zero duration under `prefers-reduced-motion`. Avoid parallax,
-shimmer, texture animation, card lift, and attention-seeking page entrances.
+Ordinary feedback transitions collapse to near-zero duration under `prefers-reduced-motion`.
+Editorial animation is disabled completely rather than continuing to swap content at near-zero
+duration. Avoid parallax, shimmer, texture animation, card lift, and attention-seeking page
+entrances.
 
 ## Content and Interface Voice
 
@@ -524,12 +603,35 @@ Review new copy against `DOCS-AVOID-GENERATED-PROSE-TELLS`,
 - Meet WCAG AA contrast for normal text in both themes.
 - Pair category color with labels, icons, or position.
 - Keep focus outlines at 3px with enough offset to remain visible against tinted fields.
-- Preserve a 40px target for primary header and leaf controls.
+- Preserve a 40px target for primary controls, navigational chips, and stand-alone actions.
+  Compact inline metadata is not a control.
 - Use semantic links for navigational cards and buttons for actions.
 - Keep decorative icons hidden from assistive technology; label meaningful icons.
 - Do not depend on hover to reveal that a card is clickable.
 - Respect `prefers-reduced-motion`.
+- Preserve structure, current state, and focus visibility in forced-colors mode.
+- Reflow without horizontal scrolling at 320 CSS pixels except for intrinsically two-dimensional
+  content such as large tables.
+- Give auto-updating content a pause mechanism and prevent repeated assistive-technology
+  announcements when the update is decorative.
 - Check keyboard navigation through the header, search dialog, cards, leaf actions, and footer.
+
+## Named Exceptions
+
+Exceptions stay local and include a review trigger. They do not establish a new default.
+
+- **Homepage hero:** Uses more editorial scale and decorative art to establish identity. Review
+  when the hero delays access to useful content.
+- **Homepage book:** Uses one shadow and a simulated printed object as a memorable, nonessential
+  brand element. Review when it wraps, distorts, or dominates.
+- **`SP.` monogram:** Uses a slightly smaller optical mono label because it reads as a symbol, not
+  body text. Review when it becomes difficult to distinguish.
+- **Large catalogs:** Use denser cards and metadata to support scanning. Review when important
+  labels become microtext.
+- **Catalog metadata:** Noninteractive tags may use a 28px label height inside already-spaced rows.
+  Review if the label becomes interactive or is mistaken for a control.
+- **Agent instruction and code:** Use a stronger contained field because the entire block is a
+  copyable artifact. Review when ordinary explanatory prose adopts the treatment.
 
 ## Directions Intentionally Rejected
 
@@ -583,6 +685,10 @@ Broad design changes should be checked against a representative set of at least 
 Check each at approximately 1440px, 1024px, and 390px. The exact viewport may move when a real
 breakpoint needs investigation, but the audit must include wide, compact, and narrow compositions.
 
+Keep a small evidence set for major revisions, but store routine review captures outside the source
+tree and surface them in the review session. Do not commit screenshots unless they are an explicit
+project artifact.
+
 ### What to inspect
 
 - Horizontal overflow and unexpectedly clipped content.
@@ -625,7 +731,7 @@ Before merging a design-system change:
 - Add a rounded container because a section feels empty.
 - Introduce a hue or font for one page.
 - Use two adjacent rules without distinct structural meanings.
-- Let arrows float at arbitrary positions or vary by card family.
+- Float arrows at arbitrary positions or pair an arrow with a competing destination action.
 - Shrink body or control text to rescue a layout.
 - Turn the reference-manual influence into terminal or hardware skeuomorphism.
 - Treat the desktop layout as the mobile layout with narrower columns.
