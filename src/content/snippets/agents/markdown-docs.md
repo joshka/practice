@@ -11,7 +11,8 @@
 - Audience: `agents`
 - Topics: `documentation, markdown, rustdoc, review-handoff`
 - Tags: `documentation, rustdoc, review-handoff, source-truth`
-- Related: `guides/markdown-documentation.md, guides/documentation-workflow.md, principles/docs-are-contracts.md`
+- Related: `guides/markdown-documentation.md, guides/documentation-workflow.md,
+  rules/documentation/docs-own-ai-assisted-prose.md, principles/docs-are-contracts.md`
 
 Use this snippet in repos where agents edit Markdown, Rustdoc, README files, or review narrative.
 
@@ -21,6 +22,11 @@ Use this snippet in repos where agents edit Markdown, Rustdoc, README files, or 
 Write docs that state current behavior, explain contracts and tradeoffs, and preserve local voice.
 Choose the documentation job before editing: local correction, page coherence, repo map, reference
 contract, or review handoff.
+
+For agent efficiency, load this snippet for ordinary docs edits. Add the documentation rule domain
+or documentation workflow guide when choosing pass depth, repairing drift, or reviewing risk. Use
+the full documentation doctrine only for broad rewrites, de-AI-ification passes, or documentation
+audits where the extra context is worth the token cost.
 
 Keep user docs task-first. Put maintainer context, reference detail, and decision records behind the
 first reading path. Do not create placeholder docs without durable content.
@@ -46,6 +52,8 @@ false suspense, forced analogies, vague attribution, invented labels, repeated s
 bullets, unsupported precision, hedged neutrality, apology phrasing, permission phrasing, vague
 action verbs, and link-hub prose. If a draft is smooth but low-signal, merge sections, cut
 repetition, restore prose continuity, and add concrete detail.
+Treat AI-assisted drafts as raw material: verify claims, restore local voice, keep useful detail,
+and cut generated-sounding prose instead of merely disclosing provenance.
 
 When changing behavior, search nearby docs, examples, Rustdoc, and agent instructions for drift.
 Update them in the same review unit or report explicit follow-up.
@@ -60,5 +68,6 @@ Canonical guides:
 
 - `guides/markdown-documentation.md`
 - `guides/documentation-workflow.md`
+- `rules/documentation/docs-own-ai-assisted-prose.md`
 - `principles/docs-are-contracts.md`
 ```

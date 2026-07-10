@@ -10,15 +10,22 @@
 - Status: `draft`
 - Audience: `agents`
 - Topics: `documentation, writing, review, maintenance, ai-assisted-prose, information-architecture`
-- Tags: `documentation, agent-context, source-truth, reviewability, voice, anti-slop`
+- Tags: `documentation, agent-context, source-truth, reviewability`
 - Related: `guides/markdown-documentation.md, guides/documentation-workflow.md,
   principles/docs-are-contracts.md, agent-markdown-docs-instructions,
   agent-full-software-doctrine-prompt-pack`
+
+## Usage
 
 Use this snippet when a project wants one large, coherent prompt or `AGENTS.md` section focused on
 documentation quality, maintenance, and de-AI-ification rather than software refactoring. It is
 intentionally large. It is meant for ongoing documentation work where long-term readability,
 truthfulness, and drift resistance matter more than token efficiency.
+
+For ordinary agent sessions, prefer `markdown-docs.md`,
+`apply-practice-guidance.md`, and the generated documentation rule domain. Use this pack when a
+single large context is cheaper than repeated steering across a broad documentation rewrite, audit,
+or operating-manual pass.
 
 ```markdown
 ## Documentation Doctrine

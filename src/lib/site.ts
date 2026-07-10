@@ -142,13 +142,17 @@ export const guidanceTags = [
   'ownership',
   'agent-workflow',
   'agent-context',
+  'ai-assistance',
   'tooling',
   'automation',
+  'accessibility',
   'vcs-jj',
   'release',
   'generated-artifacts',
   'review-handoff',
   'refactoring',
+  'voice',
+  'anti-slop',
 ] as const;
 
 export type GuidanceTag = (typeof guidanceTags)[number];
