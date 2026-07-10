@@ -190,20 +190,24 @@ function relatedLabel(page: MarkdownPage): string {
             )
           ))}
         </div>
-        {reviewNote && (
-          <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>
-            Copy review note
-          </button>
-        )}
-        {citationNote && (
-          <button class="detail-copy" type="button" data-copy-markdown={citationNote}>
-            Copy citation
-          </button>
-        )}
-        {feedbackUrl && (
-          <a class="detail-action detail-action--secondary" href={feedbackUrl}>
-            Give feedback
-          </a>
+        {(reviewNote || citationNote || feedbackUrl) && (
+          <div class="detail-hero__actions">
+            {reviewNote && (
+              <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>
+                Copy review note
+              </button>
+            )}
+            {citationNote && (
+              <button class="detail-copy" type="button" data-copy-markdown={citationNote}>
+                Copy citation
+              </button>
+            )}
+            {feedbackUrl && (
+              <a class="detail-action detail-action--secondary" href={feedbackUrl}>
+                Give feedback
+              </a>
+            )}
+          </div>
         )}
       </div>
     )}
@@ -224,7 +228,10 @@ function relatedLabel(page: MarkdownPage): string {
       <div class="detail-related__links">
         {relatedPages.map((related) => (
           <a href={withBase(related.route)}>
-            <strong>{relatedLabel(related)}</strong>
+            <strong class="detail-related__title">
+              <span>{relatedLabel(related)}</span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </strong>
             <span>{related.title}</span>
           </a>
         ))}

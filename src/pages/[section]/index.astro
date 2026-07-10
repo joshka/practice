@@ -52,38 +52,33 @@ const showSinglePage = sectionKey === 'references';
 
 const sectionConfig: Record<string, SectionConfig> = {
   guides: {
-    intro:
-      'Guides cover broad decisions that span rules, patterns, principles, and mechanisms.',
+    intro: 'Change scope, code shape, Rust API review, documentation, agent work, and jj workflow.',
     listingTitle: 'Available guides',
     density: 'standard',
   },
   patterns: {
     intro:
-      'Patterns name repeatable development situations and the preferred moves that fit them. They work as review terms, guide links, and compact agent instructions.',
+      'Repeated problems and preferred moves for code, documentation, testing, review, agents, and source control.',
     listingTitle: 'Pattern areas',
     density: 'dense',
   },
   why: {
-    intro:
-      'Principles capture the rationale, tradeoffs, and limits behind related rules and patterns.',
+    intro: 'Rationale, tradeoffs, and limits behind related rules and patterns.',
     listingTitle: 'Principle areas',
     density: 'dense',
   },
   mechanisms: {
-    intro:
-      'Mechanisms are checks, commands, generators, and workflows that make preferences easier to follow and harder to forget.',
+    intro: 'Checks, commands, generators, and workflows used by the rules and guides.',
     listingTitle: 'Mechanism areas',
     density: 'compact',
   },
   agents: {
-    intro:
-      'Agent snippets are copyable instruction packs for downstream repositories, grouped by the work they affect.',
+    intro: 'Copyable instructions for Rust, documentation, source control, task setup, and review.',
     listingTitle: 'Snippet areas',
     density: 'compact',
   },
   references: {
-    intro:
-      'References collect durable sources and planning records that support, contrast, or frame the guidance.',
+    intro: 'Official documentation, engineering guidelines, design sources, and planning records.',
     listingTitle: 'Reference areas',
     density: 'compact',
   },
@@ -452,7 +447,10 @@ function cardKindForSection(key: string): CardKind | undefined {
       <div class="task-grid task-grid--compact">
         {practiceTasks.map((task) => (
           <a class="task-card" href={withBase(task.route)}>
-            <strong>{task.title}</strong>
+            <strong class="task-card__title">
+              <span>{task.title}</span>
+              <span class="card-arrow" aria-hidden="true">→</span>
+            </strong>
             <span>{task.description}</span>
           </a>
         ))}
@@ -501,6 +499,7 @@ function cardKindForSection(key: string): CardKind | undefined {
                       </span>
                     )}
                     <strong>{item.title}</strong>
+                    <span class="card-arrow" aria-hidden="true">→</span>
                   </span>
                   {entryId(item) && <span class="index-entry__id">{entryId(item)}</span>}
                   {item.description && <span class="index-entry__description">{item.description}</span>}

@@ -73,6 +73,16 @@ const pageGroups = guidanceKindOrder
 
   <section class="listing tag-results" aria-labelledby="tag-results-title">
     <h2 id="tag-results-title">Tagged guidance</h2>
+    {pageGroups.length > 1 && (
+      <nav class="group-nav tag-group-nav" aria-label={`${title} guidance groups`}>
+        {pageGroups.map((group) => (
+          <a href={`#tag-${tag}-${group.kind}`}>
+            <span>{tagLabel(group.kind)}</span>
+            <small>{group.entries.length}</small>
+          </a>
+        ))}
+      </nav>
+    )}
     <div class="grouped-index grouped-index--compact">
       {pageGroups.map((group) => (
         <section class="index-group" aria-labelledby={`tag-${tag}-${group.kind}`}>
@@ -96,6 +106,7 @@ const pageGroups = guidanceKindOrder
                   </span>
                   <span class="index-entry__title">
                     <strong>{page.title}</strong>
+                    <span class="card-arrow" aria-hidden="true">→</span>
                   </span>
                   {page.metadata.id && <span class="index-entry__id">{page.metadata.id}</span>}
                   {page.description && <span class="index-entry__description">{page.description}</span>}

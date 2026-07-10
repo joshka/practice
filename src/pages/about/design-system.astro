@@ -1,0 +1,258 @@
+---
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import KindIcon from '../../components/KindIcon.astro';
+import { withBase } from '../../lib/site';
+
+const colorFamilies = [
+  { name: 'Site', className: 'design-color--site', use: 'Brand and site structure' },
+  { name: 'Guides', className: 'design-color--guide', use: 'Broad work-area guidance' },
+  { name: 'Rules', className: 'design-color--rule', use: 'Compact instructions' },
+  { name: 'Patterns', className: 'design-color--pattern', use: 'Repeatable review moves' },
+  { name: 'Principles', className: 'design-color--principle', use: 'Rationale and tradeoffs' },
+  { name: 'Mechanisms', className: 'design-color--mechanism', use: 'Operational tools' },
+  { name: 'Agents', className: 'design-color--agent', use: 'Agent instruction packs' },
+  { name: 'Indexes', className: 'design-color--index', use: 'Tags and references' },
+];
+
+const kinds = ['guide', 'rule', 'pattern', 'principle', 'mechanism', 'agent', 'tag', 'reference'] as const;
+const spacing = [
+  ['1', '0.25rem'],
+  ['2', '0.5rem'],
+  ['3', '0.75rem'],
+  ['4', '1rem'],
+  ['5', '1.5rem'],
+  ['6', '2rem'],
+  ['7', '3rem'],
+  ['8', '4rem'],
+];
+const pageFamilies = [
+  ['Root', 'Editorial overview and primary paths'],
+  ['Category', 'Family identity and work-area entry'],
+  ['Group', 'Scoped index with a label column'],
+  ['Leaf', 'Reading flow with stable section labels'],
+];
+---
+
+<BaseLayout
+  title="Design System"
+  description="The color, typography, spacing, line, icon, control, and layout system used by Software Practices."
+  breadcrumbs={[{ label: 'About', href: '/about/' }]}
+>
+  <section class="section-hero design-system-hero" aria-labelledby="design-system-title">
+    <div class="hero-title">
+      <h1 id="design-system-title">Design System</h1>
+    </div>
+    <p>
+      A compact reference for the visual rules used across Software Practices. The system borrows
+      the clarity of an older reference manual without turning the site into a terminal interface.
+    </p>
+  </section>
+
+  <div class="design-specimens">
+    <section class="design-specimen" aria-labelledby="design-color-title">
+      <div class="design-specimen__label">
+        <h2 id="design-color-title">Color</h2>
+        <p>Hue identifies a content family. Every family uses the same solid, heading, and field roles.</p>
+      </div>
+      <div class="design-color-stack">
+        <div class="design-theme-pair" aria-label="Theme neutral comparison">
+          <div class="design-theme-frame design-theme-frame--dark">
+            <strong>Dark reading field</strong>
+            <span>Warm green-black with soft neutral text</span>
+            <a href={withBase('/references/')}>Persistent link cue</a>
+          </div>
+          <div class="design-theme-frame design-theme-frame--light">
+            <strong>Light reading field</strong>
+            <span>Warm paper with dark neutral text</span>
+            <a href={withBase('/references/')}>Persistent link cue</a>
+          </div>
+        </div>
+        <div class="design-color-grid">
+          {colorFamilies.map((family) => (
+            <div class={`design-color ${family.className}`}>
+              <span class="design-color__field"></span>
+              <strong>{family.name}</strong>
+              <small>{family.use}</small>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-type-title">
+      <div class="design-specimen__label">
+        <h2 id="design-type-title">Typography</h2>
+        <p>Serif names things. Sans explains them. Mono carries metadata and compact controls.</p>
+      </div>
+      <div class="design-type-stack">
+        <div>
+          <small class="design-type__label">Display / Source Serif 4</small>
+          <p class="design-type design-type--display">Reader locality</p>
+        </div>
+        <div>
+          <small class="design-type__label">Reading / IBM Plex Sans</small>
+          <p class="design-type design-type--body">
+            Keep the facts a reader needs close to the code or decision they affect.
+          </p>
+        </div>
+        <div>
+          <small class="design-type__label">Metadata / IBM Plex Mono</small>
+          <p class="design-type design-type--meta">READER-LOCALITY / REVIEWABILITY</p>
+        </div>
+        <p class="design-type-link-example">
+          A heading names the idea; an <a href={withBase('/why/reader-locality-reduces-change-cost/')}>inline link</a>
+          keeps a persistent interaction cue.
+        </p>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-spacing-title">
+      <div class="design-specimen__label">
+        <h2 id="design-spacing-title">Spacing and lines</h2>
+        <p>Spacing follows a short scale. Thin rules separate peers; a thicker rule marks family context.</p>
+      </div>
+      <div class="design-spacing-scale">
+        {spacing.map(([token, value]) => (
+          <div class="design-spacing-row">
+            <code>{token}</code>
+            <span class="design-spacing-bar" style={`--design-space: var(--space-${token})`}></span>
+            <small>{value}</small>
+          </div>
+        ))}
+        <div class="design-line design-line--peer"><span>Peer boundary</span></div>
+        <div class="design-line design-line--family"><span>Family boundary</span></div>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-icons-title">
+      <div class="design-specimen__label">
+        <h2 id="design-icons-title">Icons</h2>
+        <p>Icons identify artifact type. Color carries the larger family and hierarchy.</p>
+      </div>
+      <div class="design-icon-grid">
+        {kinds.map((kind) => (
+          <div class="design-icon">
+            <span aria-hidden="true"><KindIcon kind={kind} /></span>
+            <small>{kind}</small>
+          </div>
+        ))}
+        <div class="design-icon-lockup">
+          <span class="design-icon-lockup__icon" aria-hidden="true"><KindIcon kind="guide" /></span>
+          <strong>First-line alignment</strong>
+          <small>The optical box follows the title, not a multiline block.</small>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-controls-title">
+      <div class="design-specimen__label">
+        <h2 id="design-controls-title">Controls</h2>
+        <p>Metadata is quiet, navigation is tinted, and actions use a filled field.</p>
+      </div>
+      <div class="design-state-grid">
+        <div class="design-state">
+          <small>Rest</small>
+          <a class="detail-chip" href={withBase('/tags/reader-locality/')}>Navigation</a>
+        </div>
+        <div class="design-state design-state--hover">
+          <small>Hover</small>
+          <a class="detail-chip" href={withBase('/tags/reader-locality/')}>Navigation</a>
+        </div>
+        <div class="design-state design-state--focus">
+          <small>Focus visible</small>
+          <button class="inline-action" type="button">Copy instruction</button>
+        </div>
+        <div class="design-state design-state--current">
+          <small>Current</small>
+          <a class="detail-chip" href={withBase('/about/design-system/')} aria-current="page">Design system</a>
+        </div>
+        <div class="design-state">
+          <small>Disabled</small>
+          <button class="inline-action" type="button" disabled>Unavailable</button>
+        </div>
+        <div class="design-state">
+          <small>Metadata</small>
+          <span class="index-entry__tag">REVIEWABILITY</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-layout-title">
+      <div class="design-specimen__label">
+        <h2 id="design-layout-title">Layout</h2>
+        <p>A stable label column orients the reader; the content column carries the reading flow.</p>
+      </div>
+      <div class="design-navigation-grid">
+        <a class="design-link-panel" href={withBase('/guides/code-shape/')}>
+          <span class="design-link-panel__meta">WHOLE-CARD DESTINATION</span>
+          <span class="design-link-panel__title">
+            <strong>Code Shape</strong>
+            <span class="card-arrow" aria-hidden="true">→</span>
+          </span>
+          <span>One persistent title-row affordance.</span>
+        </a>
+        <div class="design-info-panel">
+          <span class="design-link-panel__meta">INFORMATION PANEL</span>
+          <strong>Reader context</strong>
+          <span>No arrow because the surface is not interactive.</span>
+        </div>
+        <p class="design-inline-link-panel">
+          Inline destinations stay in prose, such as
+          <a href={withBase('/patterns/')}>review patterns</a>, and use an underline rather than a card arrow.
+        </p>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-content-title">
+      <div class="design-specimen__label">
+        <h2 id="design-content-title">Content structures</h2>
+        <p>Contained fields are reserved for artifacts; explanatory prose remains on the page.</p>
+      </div>
+      <div class="design-content-grid">
+        <div class="code-block design-code-sample">
+          <button class="code-block__copy" type="button">Copy</button>
+          <pre><code>Prefer the smallest coherent change.</code></pre>
+        </div>
+        <blockquote>Use a left rule for a quotation or callout, not another floating card.</blockquote>
+        <table>
+          <thead><tr><th>Structure</th><th>Primary cue</th></tr></thead>
+          <tbody>
+            <tr><td>Code</td><td>Raised field</td></tr>
+            <tr><td>Callout</td><td>Accent rule</td></tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-pages-title">
+      <div class="design-specimen__label">
+        <h2 id="design-pages-title">Page families</h2>
+        <p>Shared alignments carry through four information levels and collapse by fit condition.</p>
+      </div>
+      <div class="design-page-grid">
+        {pageFamilies.map(([name, description], index) => (
+          <div class={`design-page-frame design-page-frame--${index + 1}`}>
+            <span class="design-page-frame__header"></span>
+            <span class="design-page-frame__label"></span>
+            <span class="design-page-frame__content"></span>
+            <strong>{name}</strong>
+            <small>{description}</small>
+          </div>
+        ))}
+      </div>
+    </section>
+
+    <section class="design-specimen" aria-labelledby="design-motion-title">
+      <div class="design-specimen__label">
+        <h2 id="design-motion-title">Motion and access</h2>
+        <p>Movement confirms an action; it never carries information that cannot be paused or read statically.</p>
+      </div>
+      <div class="design-access-list">
+        <p><strong>Arrow:</strong> 0.2rem confirmation movement on hover or keyboard focus.</p>
+        <p><strong>Editorial word:</strong> stable accessible heading, reserved width, and a pause control.</p>
+        <p><strong>Reduced motion:</strong> freeze editorial changes and collapse ordinary feedback transitions.</p>
+        <p><strong>Focus:</strong> 3px visible ring that survives tinted fields and forced colors.</p>
+      </div>
+    </section>
+  </div>
+</BaseLayout>

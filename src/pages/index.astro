@@ -8,13 +8,13 @@ const homeCards = [
     title: 'Guides',
     kind: 'guide' as const,
     route: '/guides/',
-    description: 'Connected guidance for broad engineering decisions.',
+    description: 'Change scope, code shape, Rust review, documentation, agent work, and jj.',
   },
   {
     title: 'Rules',
     kind: 'rule' as const,
     route: '/rules/',
-    description: 'Compact instructions grouped by work area with detail pages for every rule.',
+    description: 'Short instructions for documentation, Rust, testing, review, source control, and agents.',
   },
   {
     title: 'Patterns',
@@ -32,13 +32,7 @@ const homeCards = [
     title: 'Mechanisms',
     kind: 'mechanism' as const,
     route: '/mechanisms/',
-    description: 'Checks, commands, generators, and workflows that support the guidance.',
-  },
-  {
-    title: 'Tags',
-    kind: 'tag' as const,
-    route: '/tags/',
-    description: 'Cross-cutting clusters across rules, patterns, principles, and mechanisms.',
+    description: 'Commands, checks, generators, and workflows used by the rules and guides.',
   },
   {
     title: 'Agents',
@@ -47,10 +41,16 @@ const homeCards = [
     description: 'Copyable instruction packs and rule packs for coding agents.',
   },
   {
+    title: 'Tags',
+    kind: 'tag' as const,
+    route: '/tags/',
+    description: 'Documentation, Rust, testing, review, jj, and other topic indexes.',
+  },
+  {
     title: 'References',
     kind: 'reference' as const,
     route: '/references/',
-    description: 'Durable external sources that support, frame, or contrast the guidance.',
+    description: 'Official documentation, engineering guidelines, design sources, and planning records.',
   },
 ];
 
@@ -83,47 +83,61 @@ const useCases = [
   <div class="home-shell">
     <div class="home-content">
       <section class="home-hero">
-        <div class="home-version">Reference site</div>
-        <h1>Software Practices</h1>
-        <p>
-          Rules, patterns, checks, and agent instructions for code, docs, tests, review, and source
-          control.
-        </p>
-        <div class="hero-rule" aria-hidden="true"></div>
-      </section>
-
-      <section class="intent-grid" aria-label="Site intent">
-        <div class="intent-panel">
+        <div class="home-hero__main">
+          <div class="home-version">Josh McKinney</div>
+          <h1>
+            <span class="visually-hidden">How I design software.</span>
+            <span aria-hidden="true">How I <em class="home-hero__verb" data-home-verb>design</em> software.</span>
+          </h1>
           <p>
-            This site collects repeatable preferences for reviews, repo setup, documentation,
-            source control, and coding-agent work.
+            Software-change guidance for humans and coding agents: scope, code structure, Rust
+            APIs, documentation, tests, review, and source control.
           </p>
+          <div class="home-hero__actions">
+            <a class="home-primary-action" href={withBase('/guides/')}>
+              Guides by work area <span aria-hidden="true">→</span>
+            </a>
+            <button class="home-search-action" type="button" data-search-trigger>
+              Search rules and patterns <kbd>⌘K</kbd>
+            </button>
+            <button
+              class="home-motion-control"
+              type="button"
+              aria-label="Pause changing word"
+              title="Pause changing word"
+              data-home-verb-toggle
+            >
+              <span aria-hidden="true" data-home-verb-pause-icon>
+                <svg viewBox="0 0 16 16"><path d="M3 2h3v12H3zM10 2h3v12h-3z" /></svg>
+              </span>
+              <span aria-hidden="true" data-home-verb-play-icon hidden>
+                <svg viewBox="0 0 16 16"><path d="m4 2 10 6-10 6z" /></svg>
+              </span>
+            </button>
+          </div>
         </div>
-        <div class="status-panel">
-          <span class="status-dot" aria-hidden="true"></span>
-          <strong>Canonical source</strong>
-          <span>
-            The repo contains <a href={withBase('/guides/')}>guides</a>,
-            <a href={withBase('/rules/')}>rules</a>,
-            <a href={withBase('/agents/')}>agent snippets</a>,
-            <a href={withBase('/agents/core/')}>templates</a>, and
-            <a href={withBase('/mechanisms/')}>generated indexes</a> together.
+        <div class="home-hero__folio" aria-hidden="true">
+          <span class="home-hero__folio-label">Development Reference</span>
+          <strong>SP.</strong>
+          <span class="home-hero__folio-topics">
+            Code<br />Docs<br />Rust<br />Review<br />Agents<br />Source Control
           </span>
         </div>
       </section>
 
       <section class="home-tasks" aria-labelledby="home-tasks-title">
         <div class="home-section-heading">
+          <span class="section-kicker">Guides</span>
           <h2 id="home-tasks-title">Work areas</h2>
-          <p>
-            Change shape, Rust review, documentation, coding-agent work, and jj workflow each have
-            a guide entry.
-          </p>
         </div>
         <div class="task-grid">
-          {practiceTasks.map((task) => (
+          {practiceTasks.map((task, index) => (
             <a class="task-card" href={withBase(task.route)}>
-              <strong>{task.title}</strong>
+              <span class="task-card__number">0{index + 1}</span>
+              <strong class="task-card__title">
+                <span>{task.title}</span>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </strong>
               <span>{task.description}</span>
             </a>
           ))}
@@ -132,22 +146,18 @@ const useCases = [
 
       <section class="home-library" aria-labelledby="home-library-title">
         <div class="home-section-heading">
-          <h2 id="home-library-title">Reference sections</h2>
-          <p>
-            The reference sections separate guides, rules, patterns, principles, mechanisms, tags,
-            agent snippets, and source references.
-            <a class="inline-text-link" href={withBase('/about/')}>About this reference</a>
-            explains how those kinds differ.
-          </p>
+          <span class="section-kicker">Reference</span>
+          <h2 id="home-library-title">Guidance types</h2>
         </div>
         <div class="home-card-grid" aria-label="Primary sections">
           {homeCards.map((card) => (
-            <a class={`home-card ${card.kind === 'agent' ? 'home-card--agent' : ''}`} href={withBase(card.route)}>
+            <a class={`home-card home-card--${card.kind}`} href={withBase(card.route)}>
               <h2 class="home-card__title">
                 <span class="home-card__icon" aria-hidden="true">
                   <KindIcon kind={card.kind} />
                 </span>
                 <span>{card.title}</span>
+                <span class="card-arrow" aria-hidden="true">→</span>
               </h2>
               <p>{card.description}</p>
             </a>
@@ -157,19 +167,15 @@ const useCases = [
 
       <section class="home-use" aria-labelledby="how-to-use">
         <div class="home-use__intro">
-          <h2 id="how-to-use">Review comments, setup, and agent instructions</h2>
-          <p>
-            <a href={withBase('/guides/')}>Guides</a> cover broader decisions,
-            <a href={withBase('/rules/')}>rules</a> provide compact instructions,
-            <a href={withBase('/patterns/')}>patterns</a> name repeatable review moves, and
-            <a href={withBase('/mechanisms/')}>mechanisms</a> collect checks, generators,
-            and commands.
-          </p>
+          <h2 id="how-to-use">Review comments and repository setup</h2>
         </div>
         <div class="home-use__cases">
           {useCases.map((item) => (
             <a class="use-case" href={withBase(item.route)}>
-              <h3>{item.title}</h3>
+              <h3>
+                <span>{item.title}</span>
+                <span class="card-arrow" aria-hidden="true">→</span>
+              </h3>
               <p>{item.description}</p>
             </a>
           ))}
@@ -178,3 +184,107 @@ const useCases = [
     </div>
   </div>
 </BaseLayout>
+
+<script>
+  const rotatingVerb = document.querySelector<HTMLElement>('[data-home-verb]');
+  const verbToggle = document.querySelector<HTMLButtonElement>('[data-home-verb-toggle]');
+  const pauseIcon = document.querySelector<HTMLElement>('[data-home-verb-pause-icon]');
+  const playIcon = document.querySelector<HTMLElement>('[data-home-verb-play-icon]');
+  const reducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)');
+
+  if (rotatingVerb && verbToggle) {
+    const verbs = [
+      'design',
+      'write',
+      'understand',
+      'change',
+      'refactor',
+      'review',
+      'test',
+      'document',
+      'debug',
+      'verify',
+      'ship',
+      'maintain',
+    ];
+    let verbIndex = 0;
+    let changingVerb = false;
+    let verbPaused = false;
+    let verbTimer: number | undefined;
+
+    const rotateVerb = async () => {
+      if (document.hidden || changingVerb || verbPaused) return;
+      changingVerb = true;
+
+      const exit = rotatingVerb.animate(
+        [
+          { opacity: 1, transform: 'translateY(0)' },
+          { opacity: 0, transform: 'translateY(0.1em)' },
+        ],
+        { duration: 420, easing: 'ease-in', fill: 'forwards' },
+      );
+      await exit.finished;
+      exit.cancel();
+
+      if (reducedMotion.matches) {
+        rotatingVerb.textContent = verbs[0];
+        verbIndex = 0;
+        changingVerb = false;
+        return;
+      }
+
+      verbIndex = (verbIndex + 1) % verbs.length;
+      rotatingVerb.textContent = verbs[verbIndex];
+
+      const enter = rotatingVerb.animate(
+        [
+          { opacity: 0, transform: 'translateY(-0.1em)' },
+          { opacity: 1, transform: 'translateY(0)' },
+        ],
+        { duration: 460, easing: 'ease-out', fill: 'both' },
+      );
+      await enter.finished;
+      enter.cancel();
+      changingVerb = false;
+    };
+
+    const stopVerbRotation = () => {
+      if (verbTimer === undefined) return;
+      window.clearInterval(verbTimer);
+      verbTimer = undefined;
+    };
+
+    const startVerbRotation = () => {
+      if (reducedMotion.matches || verbPaused || verbTimer !== undefined) return;
+      verbTimer = window.setInterval(rotateVerb, 4600);
+    };
+
+    const syncMotionPreference = () => {
+      if (reducedMotion.matches) {
+        stopVerbRotation();
+        rotatingVerb.textContent = verbs[0];
+        verbIndex = 0;
+        verbToggle.hidden = true;
+        return;
+      }
+
+      verbToggle.hidden = false;
+      startVerbRotation();
+    };
+
+    verbToggle.addEventListener('click', () => {
+      verbPaused = !verbPaused;
+      verbToggle.dataset.paused = String(verbPaused);
+      const actionLabel = verbPaused ? 'Resume changing word' : 'Pause changing word';
+      verbToggle.setAttribute('aria-label', actionLabel);
+      verbToggle.title = actionLabel;
+      if (pauseIcon) pauseIcon.hidden = verbPaused;
+      if (playIcon) playIcon.hidden = !verbPaused;
+      if (verbPaused) stopVerbRotation();
+      else startVerbRotation();
+    });
+
+    reducedMotion.addEventListener('change', syncMotionPreference);
+    syncMotionPreference();
+  }
+</script>

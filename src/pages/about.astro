@@ -8,7 +8,7 @@ const kinds = [
     title: 'Guides',
     kind: 'guide' as const,
     route: '/guides/',
-    question: 'Where do I start for this work area?',
+    purpose: 'Work-area orientation',
     description:
       'Guides map broad work areas and route readers to the rules, patterns, principles, mechanisms, and references that matter for that kind of work.',
   },
@@ -16,7 +16,7 @@ const kinds = [
     title: 'Rules',
     kind: 'rule' as const,
     route: '/rules/',
-    question: 'What should I do?',
+    purpose: 'Compact instruction',
     description:
       'Rules are compact, reviewable instructions. They carry enough rationale and limits to apply safely, and they can be compressed into agent-facing rule packs.',
   },
@@ -24,7 +24,7 @@ const kinds = [
     title: 'Patterns',
     kind: 'pattern' as const,
     route: '/patterns/',
-    question: 'What situation am I seeing, and what move fits?',
+    purpose: 'Repeated situation and preferred move',
     description:
       'Patterns name repeated situations and preferred moves. They are useful as review vocabulary when the same shape appears in more than one domain.',
   },
@@ -32,7 +32,7 @@ const kinds = [
     title: 'Principles',
     kind: 'principle' as const,
     route: '/why/',
-    question: 'Why does this judgment hold, and where does it stop?',
+    purpose: 'Rationale, tradeoffs, and limits',
     description:
       'Principles explain the tradeoffs behind related rules and patterns. They help maintainers decide whether a rule belongs and when it should bend.',
   },
@@ -40,7 +40,7 @@ const kinds = [
     title: 'Mechanisms',
     kind: 'mechanism' as const,
     route: '/mechanisms/',
-    question: 'What tool, check, command, or workflow supports this?',
+    purpose: 'Checks, commands, generators, and workflows',
     description:
       'Mechanisms make guidance operational through checks, generators, commands, configuration, and workflows. They reduce repeated drift without replacing judgment.',
   },
@@ -48,7 +48,7 @@ const kinds = [
     title: 'Agents',
     kind: 'agent' as const,
     route: '/agents/',
-    question: 'What should a coding agent load?',
+    purpose: 'Copyable repository instructions',
     description:
       'Agent snippets are compact execution surfaces for downstream repositories. They point to deeper guidance instead of carrying every argument inline.',
   },
@@ -56,7 +56,7 @@ const kinds = [
     title: 'References',
     kind: 'reference' as const,
     route: '/references/',
-    question: 'What source supports, frames, or contrasts the claim?',
+    purpose: 'External sources and planning records',
     description:
       'References collect durable external sources. They support local judgment, but they do not replace this repo\'s own guidance or voice.',
   },
@@ -64,7 +64,7 @@ const kinds = [
     title: 'Tags',
     kind: 'tag' as const,
     route: '/tags/',
-    question: 'What cross-cutting cluster am I browsing?',
+    purpose: 'Topic indexes',
     description:
       'Tags connect related ideas across kinds. They are facets for discovery, not guidance artifacts by themselves.',
   },
@@ -113,14 +113,14 @@ const kinds = [
       </div>
       <div class="home-card-grid" aria-label="Guidance kinds">
         {kinds.map((item) => (
-          <a class="home-card" href={withBase(item.route)}>
+          <a class={`home-card home-card--${item.kind}`} href={withBase(item.route)}>
             <h2 class="home-card__title">
               <span class="home-card__icon" aria-hidden="true">
                 <KindIcon kind={item.kind} />
               </span>
               <span>{item.title}</span>
             </h2>
-            <p><strong>{item.question}</strong></p>
+            <p><strong>{item.purpose}</strong></p>
             <p>{item.description}</p>
           </a>
         ))}
