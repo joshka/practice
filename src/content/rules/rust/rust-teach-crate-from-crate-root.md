@@ -9,7 +9,7 @@
   contract.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, rustdoc, documentation, public-api`
+- Tags: `rust, rustdoc, documentation, public-api, module-layout`
 - Related: `docs-readme-as-entry-point, rust-expose-primary-path-from-crate-root`
 
 ## Rule

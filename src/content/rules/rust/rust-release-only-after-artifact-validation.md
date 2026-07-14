@@ -9,7 +9,7 @@
   release can still be fixed.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, release, verification, generated-artifacts`
+- Tags: `rust, release, verification`
 - Related: `rust-validate-package-contents-before-release, report-verification-honestly`
 
 ## Rule

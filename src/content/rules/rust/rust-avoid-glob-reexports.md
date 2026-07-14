@@ -8,7 +8,7 @@
   accidental API expansion and makes exported names visible during review.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, public-api, reviewability`
+- Tags: `rust, public-api, reviewability, module-layout`
 - Related: `public-api-changes-have-downstream-cost, RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
 
 ## Rule

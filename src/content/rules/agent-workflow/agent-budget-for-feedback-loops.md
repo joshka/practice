@@ -10,7 +10,7 @@
   report-verification-honestly`
 - Status: `reviewed`
 - Domain: `agent-workflow`
-- Tags: `agent-workflow, verification, review-handoff`
+- Tags: `agent-workflow, verification, review-handoff, feedback-loops`
 
 ## Rule
 

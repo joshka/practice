@@ -1660,12 +1660,17 @@ body[data-area="home"] .home-use__intro h2 {
 }
 
 .index-entry__description,
+.tag-card__description,
 .rules-domain-card > span:not(.rules-domain-card__meta) {
   max-width: 70ch;
   margin-top: var(--space-2);
   color: var(--ds-muted);
   font-size: var(--type-sm);
   line-height: 1.55;
+}
+
+.tag-card__description {
+  margin-top: 0;
 }
 
 .rules-domain-card > span:not(.rules-domain-card__meta) {

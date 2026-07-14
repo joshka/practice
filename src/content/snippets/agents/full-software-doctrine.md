@@ -11,7 +11,7 @@
 - Status: `draft`
 - Audience: `agents`
 - Topics: `agent-workflow, software-doctrine, rust, refactoring, review, validation, architecture`
-- Tags: `agent-workflow, agent-context, source-truth, reviewability, documentation, rust`
+- Tags: `agent-workflow, agent-context, source-truth, reviewability, documentation, rust, module-layout`
 - Related: `guides/software-change-preferences.md, guides/coding-agents.md,
   guides/rust-maintainability.md, guides/code-shape.md, guides/boundary-correctness.md,
   agent-reviewed-rule-pack, project-operating-manual`

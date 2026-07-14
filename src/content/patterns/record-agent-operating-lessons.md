@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, observability, handoff`
-- Tags: `agent-workflow, source-truth, documentation`
+- Tags: `agent-workflow, source-truth, documentation, feedback-loops`
 - Related: `turn-feedback-into-guidance, report-verification-honestly`
 
 ## Problem

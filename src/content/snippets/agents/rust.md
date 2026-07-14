@@ -11,7 +11,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `rust, api-design, maintainability, validation`
-- Tags: `rust, public-api, reader-locality, verification`
+- Tags: `rust, public-api, reader-locality, verification, module-layout`
 - Related: `guides/rust-maintainability.md, guides/code-shape.md,
   guides/boundary-correctness.md, patterns/run-rustdoc-quality-pass.md,
   mechanisms/rust-tooling-profile.md`

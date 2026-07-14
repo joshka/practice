@@ -8,7 +8,7 @@
   inline layout. Stable paths make search, review, and ownership clearer.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, reader-locality, ownership, local-conventions`
+- Tags: `rust, reader-locality, ownership, local-conventions, module-layout`
 - Related: `reader-locality, RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`
 
 ## Rule

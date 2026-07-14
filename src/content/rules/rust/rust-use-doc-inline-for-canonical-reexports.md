@@ -9,7 +9,7 @@
   documentation.
 - Status: `reviewed`
 - Domain: `rust`
-- Tags: `rust, rustdoc, public-api, reader-locality`
+- Tags: `rust, rustdoc, public-api, reader-locality, module-layout`
 - Related: `rust-reexport-for-discovery, rust-teach-crate-from-crate-root`
 
 ## Rule

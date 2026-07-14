@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `agents`
 - Topics: `agents, workflow, context, tools, validation, review`
-- Tags: `agent-workflow, agent-context, tooling, verification, review-handoff`
+- Tags: `agent-workflow, agent-context, tooling, verification, review-handoff, feedback-loops`
 - Related: `agent-instructions-are-operational-controls, mechanize-repeated-feedback,
   give-agents-objectives-with-boundaries`
 

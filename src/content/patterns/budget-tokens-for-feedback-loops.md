@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `agents, evaluation, budgeting`
-- Tags: `agent-workflow, agent-context, verification`
+- Tags: `agent-workflow, agent-context, verification, feedback-loops`
 - Related: `close-the-agent-loop, spend-human-attention-on-ambiguity`
 
 ## Problem

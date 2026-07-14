@@ -3,6 +3,7 @@ import BaseLayout from '../../layouts/BaseLayout.astro';
 import KindIcon from '../../components/KindIcon.astro';
 import {
   guidanceTags,
+  guidanceTagDefinition,
   taggedPages,
   tagLabel,
   tagSlug,
@@ -13,12 +14,21 @@ import type { MarkdownPage } from '../../lib/site';
 
 type GuidanceKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism';
 
+type PageGroup = {
+  id: string;
+  entries: MarkdownPage[];
+  kind: GuidanceKind;
+  label: string;
+  navLabel: string;
+};
+
 export function getStaticPaths() {
   return guidanceTags.map((tag) => ({ params: { tag } }));
 }
 
 const tag = tagSlug(Astro.params.tag ?? '');
 const title = tagLabel(tag);
+const tagDefinition = guidanceTagDefinition(tag);
 const pages = taggedPages(tag);
 const guidanceKindOrder: GuidanceKind[] = [
   'guide',
@@ -42,21 +52,40 @@ function pageKindLabel(page: MarkdownPage): string {
   return tagLabel(pageKind(page));
 }
 
-const pageGroups = guidanceKindOrder
-  .map((kind) => {
-    const entries = pages.filter((page) => pageKind(page) === kind);
-    return {
-      kind,
-      entries,
-      label: `${tagLabel(kind)} ${entries.length === 1 ? 'item' : 'items'}`,
-    };
-  })
-  .filter((group) => group.entries.length > 0);
+function ruleDomain(page: MarkdownPage): string {
+  return tagSlug(page.metadata.domain ?? page.repoPath.split('/')[1] ?? 'other');
+}
+
+function groupsForKind(kind: GuidanceKind): PageGroup[] {
+  const entries = pages.filter((page) => pageKind(page) === kind);
+  if (kind !== 'rule') {
+    return entries.length === 0
+      ? []
+      : [{
+          id: kind,
+          entries,
+          kind,
+          label: `${tagLabel(kind)} ${entries.length === 1 ? 'item' : 'items'}`,
+          navLabel: tagLabel(kind),
+        }];
+  }
+
+  const domains = [...new Set(entries.map(ruleDomain))];
+  return domains.map((domain) => ({
+    id: `rule-${domain}`,
+    entries: entries.filter((page) => ruleDomain(page) === domain),
+    kind,
+    label: `${tagLabel(domain)} rules`,
+    navLabel: `${tagLabel(domain)} rules`,
+  }));
+}
+
+const pageGroups = guidanceKindOrder.flatMap(groupsForKind);
 ---
 
 <BaseLayout
   title={title}
-  description={`Guidance tagged ${title}.`}
+  description={tagDefinition?.description ?? `Guidance tagged ${title}.`}
   breadcrumbs={[
     { label: 'Tags', href: '/tags/' },
   ]}
@@ -68,7 +97,10 @@ const pageGroups = guidanceKindOrder
       </span>
       <h1 id="tag-title">{title}</h1>
     </div>
-    <p>{pages.length} {pages.length === 1 ? 'item' : 'items'} in this guidance cluster.</p>
+    <p>{tagDefinition?.description}</p>
+    <p class="tag-hero__count">
+      {pages.length} {pages.length === 1 ? 'item' : 'items'} in this guidance cluster.
+    </p>
   </section>
 
   <section class="listing tag-results" aria-labelledby="tag-results-title">
@@ -76,8 +108,8 @@ const pageGroups = guidanceKindOrder
     {pageGroups.length > 1 && (
       <nav class="group-nav tag-group-nav" aria-label={`${title} guidance groups`}>
         {pageGroups.map((group) => (
-          <a href={`#tag-${tag}-${group.kind}`}>
-            <span>{tagLabel(group.kind)}</span>
+          <a href={`#tag-${tag}-${group.id}`}>
+            <span>{group.navLabel}</span>
             <small>{group.entries.length}</small>
           </a>
         ))}
@@ -85,9 +117,9 @@ const pageGroups = guidanceKindOrder
     )}
     <div class="grouped-index grouped-index--compact">
       {pageGroups.map((group) => (
-        <section class="index-group" aria-labelledby={`tag-${tag}-${group.kind}`}>
+        <section class="index-group" aria-labelledby={`tag-${tag}-${group.id}`}>
           <div class="index-group__header">
-            <h3 id={`tag-${tag}-${group.kind}`}>{group.label}</h3>
+            <h3 id={`tag-${tag}-${group.id}`}>{group.label}</h3>
           </div>
           <div class="index-list index-list--cards">
             {group.entries.map((page) => (

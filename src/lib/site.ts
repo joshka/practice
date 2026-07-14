@@ -115,47 +115,280 @@ export const sections: Section[] = [
   },
 ];
 
-export const guidanceTags = [
-  'reader-locality',
-  'change-shape',
-  'reviewability',
-  'verification',
-  'testing',
-  'failure-output',
-  'boundary-correctness',
-  'validation-policy',
-  'state-transitions',
-  'side-effects',
-  'async',
-  'observability',
-  'errors',
-  'security-privacy',
-  'public-api',
-  'rust',
-  'rustdoc',
-  'dependencies',
-  'performance',
-  'documentation',
-  'examples',
-  'source-truth',
-  'local-conventions',
-  'ownership',
-  'agent-workflow',
-  'agent-context',
-  'ai-assistance',
-  'tooling',
-  'automation',
-  'accessibility',
-  'vcs-jj',
-  'release',
-  'generated-artifacts',
-  'review-handoff',
-  'refactoring',
-  'voice',
-  'anti-slop',
-] as const;
+export type GuidanceTagFamily =
+  | "code-api-maintenance"
+  | "boundaries-reliability"
+  | "verification-performance"
+  | "documentation-knowledge"
+  | "agent-repository-workflow";
 
-export type GuidanceTag = (typeof guidanceTags)[number];
+export const guidanceTagDefinitions = [
+  {
+    tag: "reader-locality",
+    family: "code-api-maintenance",
+    description:
+      "Definitions, decisions, and use sites kept near enough that a change does not require a repository tour.",
+  },
+  {
+    tag: "change-shape",
+    family: "code-api-maintenance",
+    description:
+      "Change boundaries: what belongs together, what should split, and how much work one review should carry.",
+  },
+  {
+    tag: "reviewability",
+    family: "code-api-maintenance",
+    description:
+      "Code, prose, and proof arranged so a reviewer can find the decision and check it.",
+  },
+  {
+    tag: "public-api",
+    family: "code-api-maintenance",
+    description:
+      "Interfaces and behavior that callers may depend on across a crate or system boundary.",
+  },
+  {
+    tag: "rust",
+    family: "code-api-maintenance",
+    description:
+      "Rust library and application practice, including idioms that do not transfer directly to other languages.",
+  },
+  {
+    tag: "dependencies",
+    family: "code-api-maintenance",
+    description:
+      "Third-party code: selection, version bounds, updates, and downstream exposure.",
+  },
+  {
+    tag: "ownership",
+    family: "code-api-maintenance",
+    description:
+      "Where behavior and state belong, and which module or layer should make the decision.",
+  },
+  {
+    tag: "release",
+    family: "code-api-maintenance",
+    description:
+      "Versioning, package contents, support claims, and checks required before publication.",
+  },
+  {
+    tag: "refactoring",
+    family: "code-api-maintenance",
+    description:
+      "Internal structural changes that should leave externally relevant behavior intact.",
+  },
+  {
+    tag: "module-layout",
+    family: "code-api-maintenance",
+    description:
+      "Module and file placement, ownership, crate-root navigation, and public re-export paths.",
+  },
+  {
+    tag: "boundary-correctness",
+    family: "boundaries-reliability",
+    description:
+      "Parsing, normalization, adapters, and policy where representations or systems meet.",
+  },
+  {
+    tag: "validation-policy",
+    family: "boundaries-reliability",
+    description:
+      "Which inputs are accepted, rejected, normalized, or allowed to fall back.",
+  },
+  {
+    tag: "side-effects",
+    family: "boundaries-reliability",
+    description:
+      "Writes, network calls, process launches, and other work outside a pure computation.",
+  },
+  {
+    tag: "failure-output",
+    family: "boundaries-reliability",
+    description:
+      "What a user, test, or operator sees when work fails.",
+  },
+  {
+    tag: "errors",
+    family: "boundaries-reliability",
+    description:
+      "Error types and context carried between callers, layers, and user-facing surfaces.",
+  },
+  {
+    tag: "security-privacy",
+    family: "boundaries-reliability",
+    description:
+      "Secrets, capabilities, unsafe code, diagnostic data, and other trust-boundary concerns.",
+  },
+  {
+    tag: "state-transitions",
+    family: "boundaries-reliability",
+    description:
+      "Valid states and the named transitions that move a system between them.",
+  },
+  {
+    tag: "observability",
+    family: "boundaries-reliability",
+    description:
+      "Logs, diagnostics, and durable failure signals at the boundary that owns them.",
+  },
+  {
+    tag: "async",
+    family: "boundaries-reliability",
+    description:
+      "Task spawning, scheduling, partial results, and failure behavior across asynchronous boundaries.",
+  },
+  {
+    tag: "verification",
+    family: "verification-performance",
+    description:
+      "Evidence for a claim: checks, inspection, measurements, or comparison with a trusted source.",
+  },
+  {
+    tag: "testing",
+    family: "verification-performance",
+    description:
+      "Executable checks for contracts, edge cases, regressions, and useful failure messages.",
+  },
+  {
+    tag: "performance",
+    family: "verification-performance",
+    description:
+      "Measured cost and latency, plus the benchmark discipline needed to justify an optimization.",
+  },
+  {
+    tag: "documentation",
+    family: "documentation-knowledge",
+    description:
+      "README, guide, reference, and contract prose used to understand current behavior.",
+  },
+  {
+    tag: "rustdoc",
+    family: "documentation-knowledge",
+    description:
+      "Rust API documentation as rendered and navigated by a crate user.",
+  },
+  {
+    tag: "examples",
+    family: "documentation-knowledge",
+    description: "Small uses that teach an API or prove an integration path.",
+  },
+  {
+    tag: "source-truth",
+    family: "documentation-knowledge",
+    description:
+      "The implementation, primary source, or maintained artifact that settles a disputed claim.",
+  },
+  {
+    tag: "local-conventions",
+    family: "documentation-knowledge",
+    description:
+      "Established repository rules and language idioms, followed consistently unless the work changes them.",
+  },
+  {
+    tag: "ai",
+    family: "documentation-knowledge",
+    description:
+      "Writing shaped with AI: generated-prose tells, checked claims, curation, and author ownership.",
+  },
+  {
+    tag: "agent-workflow",
+    family: "agent-repository-workflow",
+    description:
+      "How coding-agent work is scoped, executed, checked, and handed back.",
+  },
+  {
+    tag: "tooling",
+    family: "agent-repository-workflow",
+    description:
+      "Commands and interfaces that make a preferred workflow repeatable.",
+  },
+  {
+    tag: "review-handoff",
+    family: "agent-repository-workflow",
+    description:
+      "The context and evidence another person needs to continue or judge the work.",
+  },
+  {
+    tag: "agent-context",
+    family: "agent-repository-workflow",
+    description:
+      "Instructions and durable project facts loaded for an agent's current task.",
+  },
+  {
+    tag: "automation",
+    family: "agent-repository-workflow",
+    description:
+      "Checks and maintenance run mechanically instead of being remembered each time.",
+  },
+  {
+    tag: "vcs-jj",
+    family: "agent-repository-workflow",
+    description:
+      "Jujutsu working-copy, change, workspace, bookmark, remote, and recovery practice.",
+  },
+  {
+    tag: "generated-artifacts",
+    family: "agent-repository-workflow",
+    description:
+      "Files or behavior produced from another source: ownership, regeneration, validation, and promotion.",
+  },
+  {
+    tag: "feedback-loops",
+    family: "agent-repository-workflow",
+    description:
+      "Fast checks, review cycles, and ways to turn repeated feedback into durable guidance.",
+  },
+] as const satisfies readonly {
+  tag: string;
+  family: GuidanceTagFamily;
+  description: string;
+}[];
+
+export type GuidanceTag = (typeof guidanceTagDefinitions)[number]["tag"];
+
+export const guidanceTags: GuidanceTag[] = guidanceTagDefinitions.map(
+  ({ tag }) => tag,
+);
+
+export function guidanceTagDefinition(tag: string) {
+  return guidanceTagDefinitions.find((definition) => definition.tag === tag);
+}
+
+export const guidanceTagGroups = [
+  {
+    family: "code-api-maintenance",
+    title: "Code and API maintenance",
+    description:
+      "Code shape, public contracts, dependencies, and reviewable change.",
+  },
+  {
+    family: "boundaries-reliability",
+    title: "Boundaries and reliability",
+    description: "Inputs, state, effects, failures, and runtime behavior.",
+  },
+  {
+    family: "verification-performance",
+    title: "Verification and performance",
+    description:
+      "Evidence that behavior, compatibility, and performance claims hold.",
+  },
+  {
+    family: "documentation-knowledge",
+    title: "Documentation and conventions",
+    description:
+      "Docs and examples, plus the sources and conventions used to check them.",
+  },
+  {
+    family: "agent-repository-workflow",
+    title: "Agent and repository workflow",
+    description:
+      "Context, tooling, automation, handoff, and version-control practice.",
+  },
+] as const satisfies readonly {
+  family: GuidanceTagFamily;
+  title: string;
+  description: string;
+}[];
 
 const root = process.cwd();
 const contentRoot = 'src/content';
@@ -305,6 +538,7 @@ export function tagSlug(value: string): string {
 
 export function tagLabel(value: string): string {
   const acronyms: Record<string, string> = {
+    ai: 'AI',
     api: 'API',
     async: 'Async',
     rustdoc: 'Rustdoc',
@@ -334,7 +568,7 @@ export function taggedPages(tag: string): MarkdownPage[] {
     .sort((a, b) => pageKindSort(a).localeCompare(pageKindSort(b)) || a.title.localeCompare(b.title));
 }
 
-export function tagCounts(): { tag: string; count: number }[] {
+export function tagCounts(): { tag: GuidanceTag; count: number }[] {
   return guidanceTags
     .map((tag) => ({ tag, count: taggedPages(tag).length }))
     .filter((entry) => entry.count > 0);

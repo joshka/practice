@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, api, modules, errors, testing, dependencies, release`
-- Tags: `rust, public-api, reader-locality, testing, dependencies, release`
+- Tags: `rust, public-api, reader-locality, testing, dependencies, release, module-layout`
 - Related: `reader-locality-reduces-change-cost, public-api-changes-have-downstream-cost,
   rust-api-and-release-checks`
 

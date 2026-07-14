@@ -11,7 +11,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, review, evidence, drift, handoff`
-- Tags: `documentation, reviewability, source-truth, review-handoff`
+- Tags: `documentation, reviewability, source-truth, review-handoff, ai`
 - Related: `docs-are-contracts, choose-doc-pass-depth, write-pr-narrative`
 
 This guide collects preferences for deciding what documentation work belongs in a change, how deep

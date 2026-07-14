@@ -10,7 +10,7 @@
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `guidance, rules, agents, generated-artifacts, markdown`
-- Tags: `tooling, automation, documentation, source-truth, generated-artifacts`
+- Tags: `tooling, automation, documentation, source-truth, generated-artifacts, feedback-loops`
 - Related: `agent-instructions-are-operational-controls, mechanize-repeated-feedback`
 
 ## Purpose

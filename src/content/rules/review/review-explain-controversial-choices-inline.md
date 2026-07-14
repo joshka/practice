@@ -9,7 +9,7 @@
   readers from rediscovering the same concern.
 - Status: `reviewed`
 - Domain: `review`
-- Tags: `reviewability, reader-locality, dependencies, generated-artifacts`
+- Tags: `reviewability, reader-locality`
 - Related: `reader-locality, document-intentional-non-goals, preserve-error-context`
 
 ## Rule
