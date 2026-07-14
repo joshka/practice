@@ -540,10 +540,17 @@ facts somewhere else.
 
 ### 27. Prefer explicit parameters over boolean flags and magic context
 
-Boolean flags often hide a choice the caller should name:
+First distinguish boolean domain data from a flag that selects behavior. Inspect call sites:
+literals, multiple booleans, and meaningful names lost at the boundary are strong signals that the
+caller should name the choice.
 
 - `render(true)` is weak
 - `render_compact()` or `render(RenderMode::Compact)` is clearer
+
+Split distinct commands, use an enum for a mode that travels through layers, use struct-literal
+options for independent choices, and use a no-argument builder method for a default-off capability.
+A hidden private boolean helper is reasonable when named operations are its only callers. Do not
+replace a one-off boolean with an enum unless the type creates a durable concept.
 
 Likewise, avoid function behavior that silently depends on:
 
