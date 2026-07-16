@@ -40,8 +40,10 @@ Keep Rust helpers near their use unless splitting a file gives a real concept it
 
 ## Mechanisms
 
-Supported by module review, search/navigation checks, and refactors that merge helper-only modules
-back into the owning file.
+Supported by [Source Coherence Review](../../mechanisms/source-coherence-review.md),
+search/navigation checks, and refactors that merge helper-only modules back into the owning file.
+The outline pass distinguishes implementation from focused docs and colocated tests before treating
+line count as a split signal.
 
 ## References
 

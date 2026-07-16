@@ -9,6 +9,8 @@ replace judgment, but they make preferred behavior cheaper and repeated mistakes
 - [`project-operating-manual`](project-operating-manual.md): A project-owned operating manual
   applies the broader guidance catalog to one live codebase so `AGENTS.md` can stay a map instead
   of becoming the whole doctrine.
+- [`source-coherence-review`](source-coherence-review.md): A two-inventory review maps named source
+  declarations and behavior in both directions before proposing ownership or module changes.
 
 ## Reviewed Mechanisms
 

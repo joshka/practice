@@ -11,7 +11,7 @@
 - Audience: `both`
 - Topics: `agents, maintainability, design`
 - Tags: `change-shape, reader-locality, source-truth`
-- Related: `reader-locality, small-reviewable-chunks`
+- Related: `reader-locality, small-reviewable-chunks, source-coherence-review`
 
 ## Problem
 

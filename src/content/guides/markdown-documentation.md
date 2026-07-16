@@ -11,7 +11,8 @@
 - Audience: `both`
 - Topics: `markdown, documentation, rustdoc, examples, references`
 - Tags: `documentation, rustdoc, examples, source-truth`
-- Related: `docs-are-contracts, preserve-local-doc-voice, rust-docs-validation`
+- Related: `docs-are-contracts, preserve-local-doc-voice, rust-docs-validation,
+  DOCS-SEPARATE-TECHNIQUE-FROM-EXAMPLE-POLICY`
 
 This guide captures how documentation should be shaped in this repo and in downstream project
 guidance. Prefer docs that reduce rediscovery, carry contracts clearly, and stay easy to lint,
@@ -49,11 +50,8 @@ Treat docs, comments, and Rustdoc as part of the behavioral surface. If behavior
 nearby docs in the same review unit. If a doc is wrong, fix the doc or the behavior intentionally;
 do not leave drift for the next reader.
 
-Good docs explain purpose, constraints, invariants, edge cases, side effects, and recovery paths;
-weak docs repeat names, signatures, or ordinary control flow.
-
-Docs should explain purpose, assumptions, edge cases, and relationships instead of merely restating
-names or signatures.
+Good docs explain purpose, assumptions, constraints, invariants, relationships, edge cases, side
+effects, and recovery paths. Weak docs repeat names, signatures, or ordinary control flow.
 
 Prefer documentation that helps a human form the right mental model without reading every method in
 the system. Code can be locally obvious and still hide behavior that matters at a larger scale:
@@ -253,6 +251,12 @@ Use [README As Entry Point][readme-entry], [Align README And Crate Rustdoc][read
 Purposeful][markdown-outside-rustdoc] when deciding which documentation surface owns a usage model,
 API contract, or maintainer-only explanation.
 
+Let shared rationale rise to its nearest stable owner. Rationale shared by methods belongs on the
+type, rationale shared by variants belongs on the enum, rationale shared by types belongs on the
+module, and cross-module flow belongs at the crate root or in a focused guide. Item docs still state
+their local contract, difference, edge case, side effect, or override. Use [Keep Docs Near Their
+Subject][doc-locality] for the placement rule and its non-linear-reader limit.
+
 ### Links And Examples
 
 - Link to runnable examples for interactive flows.
@@ -372,6 +376,12 @@ Different example roles should be visibly different in the source:
 - Large examples need a specific teaching reason.
 - Example inventories distinguish canonical examples from sketches.
 
+Within a substantial training example, separate the library or framework technique from the
+application policy chosen to make the example complete. Explain the policy's rationale, tradeoffs,
+and meaningful edge cases, then state what readers should reuse and what they should reconsider.
+Use [Separate Technique From Example Policy][technique-policy] when retry limits, buffering,
+scheduling, persistence, recovery, or other sample decisions could be mistaken for framework rules.
+
 Omit examples when the problem cannot be made obvious from the snippet itself. For API or
 implementation-shape guidance, show the definition being introduced or changed. For review-unit
 guidance, use `diff` blocks when the change itself is the point.
@@ -436,6 +446,12 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 - Did behavior changes update nearby docs?
 - Do source links point to the relevant upstream section?
 
+### Training Examples
+
+- Is the example's primary role clear without unnecessary taxonomy?
+- Can readers distinguish reusable library technique from application policy?
+- Are policy rationale, meaningful edge cases, and reuse-versus-reconsider guidance visible?
+
 ## References
 
 | Source                 | Use      | Note                                                  |
@@ -495,6 +511,7 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 [source-links]: ../rules/documentation/docs-use-source-links-as-support.md
 [system-models]: ../patterns/document-system-mental-models.md
 [technical-prose]: ../rules/documentation/docs-write-technical-prose.md
+[technique-policy]: ../rules/documentation/docs-separate-technique-from-example-policy.md
 [test-behavior]: ../patterns/test-observable-behavior.md
 [tracked-uncertainty]: ../rules/documentation/docs-put-uncertainty-in-tracked-places.md
 [unearned-praise]: ../rules/documentation/docs-avoid-unearned-praise.md

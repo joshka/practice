@@ -11,7 +11,8 @@
 - Audience: `both`
 - Topics: `rust, architecture, readability`
 - Tags: `reader-locality, change-shape, ownership`
-- Related: `reader-locality, cap-change-radius`
+- Related: `reader-locality, cap-change-radius, source-coherence-review,
+  BOUNDARY-KEEP-ONE-AUTHORITATIVE-OWNER-PER-FACT`
 
 ## Problem
 
@@ -30,6 +31,12 @@ When several functions, fields, or modules repeatedly change for the same reason
 relationship visible as a smaller containing element. When nearby code does not change for that
 reason, move it toward the concept it actually belongs to.
 
+Treat repeated explanatory vocabulary as evidence. If a review keeps referring to a domain noun
+that has no corresponding local, function, enum, type, or module, test whether that missing name
+would give an invariant, transition, or policy a definite owner. A group of fields earns a type when
+the type protects their relationship through construction or behavior, not merely by containing
+them.
+
 ## Tradeoff
 
 Cohesion is not a license to build a large mixed module. Split responsibilities that do not change
@@ -37,11 +44,14 @@ together, and preserve framework layout where it carries useful convention.
 Move one element at a time when the evidence is incomplete. Large reorganizations can hide the
 specific coupling that made the change valuable.
 
+A noun in an explanation is a signal, not a requirement to add a type. Keep one-off intermediates,
+linear transformations, and small private helpers direct when they own no reusable contract and are
+easiest to understand beside their use.
+
 ## Agent Instruction
 
-When facts and behavior always change together, move them toward one named concept instead of
-scattering them by technical category. Report what concept now owns the rule and what expected
-change made that grouping valuable.
+When facts and behavior always change together, move them toward the smallest named concept that
+owns their invariant. Report the new owner and the change pressure that earns the added name.
 
 ## Examples
 

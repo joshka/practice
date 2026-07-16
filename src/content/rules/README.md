@@ -51,13 +51,13 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [Agent Workflow](agent-workflow/README.md). 26 rules. Agent workflow rules cover objectives,
   scoped capabilities, durable context, review packets, security proof, feedback loops, and concrete
   next choices.
-- [Explicit Boundaries Preserve Correctness](boundary/README.md). 26 rules. Boundary rules cover
+- [Explicit Boundaries Preserve Correctness](boundary/README.md). 27 rules. Boundary rules cover
   parsing, validation policy, explicit inputs, state transitions, provider diagnostics, effect
   boundaries, and external reconciliation.
 - [Change Shape](change-shape/README.md). 13 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 34 rules. Documentation rules cover
+- [Docs Are Contracts](documentation/README.md). 35 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
 - [Observability And Failure](observability/README.md). 7 rules. Observability rules cover owned
@@ -211,6 +211,10 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Keep provider-specific terminal, storage, network, and runtime APIs in adapter layers at the
   boundary. Core logic stays stable and testable while real backend differences remain modeled
   instead of hidden behind a false common API.
+- [`BOUNDARY-KEEP-ONE-AUTHORITATIVE-OWNER-PER-FACT`](boundary/boundary-keep-one-authoritative-owner-per-fact.md).
+  Give each state fact one definite authority and derive other views from it where practical.
+  Cached, persisted, or adapter-specific projections may duplicate a fact only when their source and
+  invalidation or reconciliation contract are explicit.
 - [`BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`](boundary/boundary-make-ambient-inputs-explicit.md). Pass
   time, randomness, environment, locale, terminal size, network clients, and process state through
   visible inputs when they affect behavior. Injecting only the relevant ambient values improves
@@ -397,6 +401,10 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 - [`DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`](documentation/docs-review-correctness-and-risk-first.md).
   Lead documentation review with false contracts, drift, operability, and unsupported claims before
   style polish. This separates blocking risk from wording cleanup.
+- [`DOCS-SEPARATE-TECHNIQUE-FROM-EXAMPLE-POLICY`](documentation/docs-separate-technique-from-example-policy.md).
+  Training examples should distinguish the library or framework technique being taught from
+  application-specific policy. Explain the policy's rationale, tradeoffs, and meaningful edge cases,
+  then tell readers what to reuse and what to reconsider.
 - [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](documentation/docs-show-side-effects-in-live-examples.md).
   Show setup, visible effects, and cleanup when examples touch live resources or persistent state.
   Gate costly or externally visible actions so examples stay honest and safe to adapt.

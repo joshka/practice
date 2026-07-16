@@ -12,7 +12,7 @@
 - Topics: `rust, api, modules, errors, testing, dependencies, release`
 - Tags: `rust, public-api, reader-locality, testing, dependencies, release, module-layout`
 - Related: `reader-locality-reduces-change-cost, public-api-changes-have-downstream-cost,
-  rust-api-and-release-checks`
+  rust-api-and-release-checks, source-coherence-review`
 
 This guide applies the repo's software-change preferences to Rust code. Prefer Rust that is easy to
 read locally, hard to misuse, and honest about behavior, performance, and error boundaries.
@@ -480,6 +480,11 @@ Prefer types that make invalid states hard to express when the invariant is repe
 and useful across a boundary. Keep a guard clause or local validation when the rule is one-off and a
 new type would add ceremony without reducing risk.
 
+When a design explanation repeatedly uses a domain noun that has no source name, test whether a
+concept is missing. Extract only when the new local, function, enum, type, or module owns policy,
+protects an invariant, or removes details the reader can safely forget. Temporary nouns in a linear
+parser or transformation do not require durable types.
+
 Prefer concrete structs and enums before traits when the concept is still local. Introduce traits,
 generic layers, callbacks, or framework-shaped abstractions only after a real variation point earns
 the extra concept a reader must understand.
@@ -505,6 +510,11 @@ formatting pass can be reviewed independently from a behavior change.
 
 Modules should represent concepts, not arbitrary file-size cuts. Put the central type, trait, or
 workflow near the top, keep inherent impls close to their type, and make re-exports deliberate.
+
+For a substantial structure review, scan the declaration outline before every implementation and
+inventory behavior separately. [Source Coherence Review][source-coherence] maps behaviors to owners
+and declarations back to the behavior that justifies them. It also distinguishes implementation
+length from focused docs and colocated tests.
 
 Arrange modules in the order a reader needs the concepts: public or central types first, core
 methods near their type, helpers near their callers, and tests near the behavior they prove. Split a
@@ -639,6 +649,7 @@ Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. 
 ## Review Questions
 
 - [Does this name a real Rust concept][rule-coherent-concepts] or just move code?
+- Does each important behavior have a named owner, and does each durable name earn its place?
 - [Are ownership and borrowing relationships visible at the call site][rule-standard-types]?
 - [Does the type make invalid states harder to express][rule-small-shapes]?
 - [Did the change improve locality or fragment understanding][rule-tiny-module-mazes]?
@@ -680,6 +691,7 @@ Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. 
 [rust-rules]: ../rules/rust/README.md
 [rust-snippet]: ../snippets/agents/rust.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md
+[source-coherence]: ../mechanisms/source-coherence-review.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md
 [test-behavior]: ../patterns/test-observable-behavior.md
 [validate]: https://rust-lang.github.io/api-guidelines/dependability.html#c-validate

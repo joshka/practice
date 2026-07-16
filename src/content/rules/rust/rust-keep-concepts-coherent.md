@@ -9,7 +9,8 @@
 - Status: `reviewed`
 - Domain: `rust`
 - Tags: `rust, reader-locality, ownership`
-- Related: `strengthen-cohesion, reader-locality, RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`
+- Related: `strengthen-cohesion, reader-locality, source-coherence-review,
+  RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`
 
 ## Rule
 
@@ -44,8 +45,8 @@ owner of behavior.
 
 ## Mechanisms
 
-Supported by module review, file naming, crate docs, and refactors that move unrelated helpers back
-to their owning concept.
+Supported by [Source Coherence Review](../../mechanisms/source-coherence-review.md), file naming,
+crate docs, and refactors that move unrelated helpers back to their owning concept.
 
 ## References
 

@@ -9,7 +9,8 @@
 - Status: `reviewed`
 - Domain: `documentation`
 - Tags: `documentation, examples, verification`
-- Related: `DOCS-PROVE-REAL-USE-WITH-EXAMPLES, DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`
+- Related: `DOCS-PROVE-REAL-USE-WITH-EXAMPLES, DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY,
+  DOCS-SEPARATE-TECHNIQUE-FROM-EXAMPLE-POLICY`
 
 ## Rule
 
@@ -44,7 +45,9 @@ and showcase examples from collapsing into one generic snippet.
 ## Mechanisms
 
 Supported by example inventories, README review, docs.rs example review, doctest coverage for
-copyable public examples, and labels that separate canonical examples from illustrative sketches.
+copyable public examples, labels that separate canonical examples from illustrative sketches, and
+[Separate Technique From Example Policy](docs-separate-technique-from-example-policy.md) for the
+internal teaching shape of a substantial example.
 
 ## References
 
