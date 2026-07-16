@@ -10,7 +10,8 @@
 - Audience: `both`
 - Topics: `rust, naming, maintenance`
 - Tags: `reader-locality, documentation, source-truth`
-- Related: `reader-locality, separate-structure-from-behavior`
+- Related: `reader-locality, separate-structure-from-behavior,
+  RUST-MAKE-SIDE-EFFECTS-EXPLICIT`
 
 ## Problem
 

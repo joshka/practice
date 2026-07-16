@@ -4,8 +4,9 @@
 
 - Name: `Keep Docs Near Their Subject`
 - ID: `keep-docs-near-their-subject`
-- Summary: Documentation drifts when it is far from the code, policy, or workflow it explains. Put
-  guidance close enough that maintainers naturally update it with the thing it describes.
+- Summary: Documentation drifts when it is far from the code, policy, or workflow it explains. Let
+  shared rationale rise to the nearest stable owner while item docs retain their local contracts,
+  differences, edge cases, and side effects.
 - Status: `reviewed`
 - Audience: `both`
 - Topics: `documentation, locality, maintenance`
@@ -25,16 +26,31 @@ public API contracts, module or crate docs for component models, guide pages for
 policies, and pattern entries for reusable review language. Link outward instead of duplicating a
 large explanation in multiple places.
 
+Apply documentation gravity to shared rationale:
+
+- Rationale shared by a type's methods belongs on the type.
+- Rationale shared by enum variants belongs on the enum; variant docs explain their differences.
+- Rationale shared by several types belongs on the module.
+- Cross-module flow and design rationale belong at the crate root or in a focused guide.
+- Item docs explain the local contract, exception, edge case, side effect, or override.
+
+Move an explanation upward only as far as its audience and subject remain the same. Leave a concise
+local statement and link when non-linear readers still need the contract at the item they reached.
+
 ## Tradeoff
 
 Do not force every idea into the smallest possible scope. Cross-cutting principles belong in a guide
 or pattern when duplicating them near every call site would create drift. Choose the location that
 keeps the owning source clear.
 
+Do not hoist item-specific obligations into broad prose that callers may never find. Shared rationale
+can have one canonical owner while local contracts repeat the small fact needed to use an item
+safely.
+
 ## Agent Instruction
 
-When adding docs, choose the nearest stable owner for the information. Avoid duplicating long
-guidance; link to the canonical guide or pattern when the detail already exists.
+When adding docs, move shared rationale to the nearest stable type, enum, module, crate, or guide;
+keep local contracts and differences on the affected item and link to canonical detail.
 
 ## Examples
 

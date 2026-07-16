@@ -48,6 +48,10 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   provider-specific terminal, storage, network, and runtime APIs in adapter layers at the boundary.
   Core logic stays stable and testable while real backend differences remain modeled instead of
   hidden behind a false common API.
+- [`BOUNDARY-KEEP-ONE-AUTHORITATIVE-OWNER-PER-FACT`](boundary-keep-one-authoritative-owner-per-fact.md).
+  Give each state fact one definite authority and derive other views from it where practical.
+  Cached, persisted, or adapter-specific projections may duplicate a fact only when their source and
+  invalidation or reconciliation contract are explicit.
 - [`BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`](boundary-make-ambient-inputs-explicit.md). Pass time,
   randomness, environment, locale, terminal size, network clients, and process state through visible
   inputs when they affect behavior. Injecting only the relevant ambient values improves tests and

@@ -11,7 +11,8 @@
 - Audience: `both`
 - Topics: `rust, refactoring, reader-locality, cohesion, review`
 - Tags: `reader-locality, refactoring, change-shape, reviewability`
-- Related: `reader-locality-reduces-change-cost, reader-locality, separate-structure-from-behavior`
+- Related: `reader-locality-reduces-change-cost, reader-locality, separate-structure-from-behavior,
+  source-coherence-review`
 
 This guide collects preferences for small source-level moves that make Rust and Rust-adjacent code
 easier to read, review, and change. Use it with [Rust Maintainability][rust], not instead of it.
@@ -87,6 +88,10 @@ the same reason and need a clear owner. Use [Align Seams With Real Variation][re
 risk. Use [Keep Linear Story Visible][linear-story] when extraction would hide the flow a reader
 needs to audit.
 
+Use [Source Coherence Review][source-coherence] when the ownership problem spans a module or feature.
+Inventory named declarations separately from behavior, then map both lists in both directions. The
+pass distinguishes missing owners from names that add navigation without owning behavior.
+
 ## Local Expression Shape
 
 Small local moves should reduce what the reader must remember right now. They should not become a
@@ -133,6 +138,11 @@ Explicit][edge-cases] when boundary values should be visible in the local contro
 Prefer code shape that carries the ordinary meaning, and comments that preserve the context code
 cannot express. After reshaping code, remove comments that only compensate for the old shape.
 
+If an explanation repeatedly depends on a domain noun that cannot be pointed to in the source, test
+whether the source is missing a concept. The smallest useful name may be a local, function, enum,
+type, or module. Keep one-off intermediates direct when naming them more durably would not protect an
+invariant, own policy, or reduce the reader's live context.
+
 Use [Delete Redundant Comments][delete-comments] when a comment repeats the current code. Keep
 comments that explain constraints, compatibility, safety, performance, side effects, or non-obvious
 ordering.
@@ -143,7 +153,8 @@ Use [Local Reasoning And Refactoring Rules][refactoring-rules] for compact sourc
 instructions. Use [Reader Locality Reduces Change Cost][reader-locality-principle] for the deeper
 reasoning behind live context, helper extraction, and local reasoning. Use
 [Change Shape Rules][change-rules] when a source move affects review boundaries or should be split
-from behavior.
+from behavior. Use [Source Coherence Review][source-coherence] for the declaration-outline and
+behavior-mapping workflow behind a substantial ownership review.
 
 ## Review Questions
 
@@ -160,6 +171,13 @@ from behavior.
 - Is the whole story still visible when the work is linear?
 - Which future edit would make this coupling expensive?
 - Did names, comments, and scopes stay current with the new shape?
+
+### Source Model
+
+- Can each important behavior point to one named owner or deliberate coordinator?
+- Can each durable source name point back to behavior, an invariant, or reader burden it removes?
+- Does repeated explanatory vocabulary reveal a missing concept or only one-off linear work?
+- Does apparent module size come from mixed implementation or from focused docs and colocated tests?
 
 ### Local Behavior
 
@@ -193,6 +211,7 @@ from behavior.
 [rust]: rust-maintainability.md
 [side-effect-loops]: ../rules/refactoring/refactoring-prefer-loops-for-side-effects.md
 [small-chunks]: ../patterns/small-reviewable-chunks.md
+[source-coherence]: ../mechanisms/source-coherence-review.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md
 [untangle]: ../patterns/untangle-before-changing.md
 [weak-abstractions]: ../rules/refactoring/refactoring-keep-weak-abstractions-close-to-their-use.md

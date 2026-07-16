@@ -83,6 +83,10 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
 - [`DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`](docs-review-correctness-and-risk-first.md). Lead
   documentation review with false contracts, drift, operability, and unsupported claims before style
   polish. This separates blocking risk from wording cleanup.
+- [`DOCS-SEPARATE-TECHNIQUE-FROM-EXAMPLE-POLICY`](docs-separate-technique-from-example-policy.md).
+  Training examples should distinguish the library or framework technique being taught from
+  application-specific policy. Explain the policy's rationale, tradeoffs, and meaningful edge cases,
+  then tell readers what to reuse and what to reconsider.
 - [`DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`](docs-show-side-effects-in-live-examples.md). Show
   setup, visible effects, and cleanup when examples touch live resources or persistent state. Gate
   costly or externally visible actions so examples stay honest and safe to adapt.

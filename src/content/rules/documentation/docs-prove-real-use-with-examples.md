@@ -9,7 +9,8 @@
 - Status: `reviewed`
 - Domain: `documentation`
 - Tags: `documentation, examples, verification, public-api`
-- Related: `test-observable-behavior, DOCS-DISTINGUISH-EXAMPLE-ROLES`
+- Related: `test-observable-behavior, DOCS-DISTINGUISH-EXAMPLE-ROLES,
+  DOCS-SEPARATE-TECHNIQUE-FROM-EXAMPLE-POLICY`
 
 ## Rule
 
@@ -39,7 +40,9 @@ function do not prove that the API works in the way users need.
 ## Mechanisms
 
 Supported by doctests, integration examples, example binaries, fixtures, snapshots, and review that
-asks what real user question the example answers.
+asks what real user question the example answers. Use
+[Separate Technique From Example Policy](docs-separate-technique-from-example-policy.md) when a
+realistic example adds application decisions that readers could mistake for library requirements.
 
 ## References
 

@@ -13,7 +13,7 @@
 - Topics: `rust, api, validation, state, side-effects, async`
 - Tags: `boundary-correctness, validation-policy, state-transitions, side-effects, async`
 - Related: `explicit-boundaries-preserve-correctness, parse-dont-validate,
-  make-validation-policy-explicit`
+  make-validation-policy-explicit, BOUNDARY-KEEP-ONE-AUTHORITATIVE-OWNER-PER-FACT`
 
 This guide collects preferences for Rust APIs and internal boundaries where uncertain input becomes
 trusted data, domain state changes, ambient inputs enter the system, or async work crosses an
@@ -89,6 +89,14 @@ anemic state machine; name the machine before adding more cases.
 
 Use [Identify Anemic State Machines][anemic-state] when lifecycle facts are scattered across helper
 functions, flags, or callbacks.
+
+Give each fact one authoritative owner. Derive cheap state from that source, route runtime mutation
+through one owner, and treat UI, adapters, snapshots, and caches as projections rather than
+independent authorities. Duplicate a fact only with an explicit refresh, invalidation, staleness, or
+reconciliation contract.
+
+Use [Keep One Authoritative Owner Per Fact][authoritative-owner] when a flag, timer, status variant,
+cache, adapter, or stored derivative can answer the same question in conflicting ways.
 
 For session-like systems, use an append-only event or entry model with stable IDs, parent links,
 schema versions, provenance, explicit active leaves, and visible terminal states. Reject or repair
@@ -217,7 +225,7 @@ Use [Boundary Rules][boundary-rules] for compact instructions about parsing, val
 inputs, state transitions, side effects, async boundaries, and provider diagnostics. Use
 [Explicit Boundaries Preserve Correctness][boundary-principle] for the deeper design reason. Use
 [Rust API And Release Checks][api-release] when boundary changes affect public Rust APIs or release
-surfaces.
+surfaces. Use [Source Coherence Review][source-coherence] when ownership gaps span types or modules.
 
 ## Review Questions
 
@@ -230,6 +238,8 @@ surfaces.
 ### State And Ownership
 
 - Is this lifecycle change represented as a named transition?
+- Which representation is authoritative for each fact, and do duplicate views have a visible
+  refresh, invalidation, or reconciliation rule?
 - Is a set of helpers acting like a state machine without an owner?
 - Are compaction, reload, retry, abort, and tool execution represented as transitions with safe cut
   points?
@@ -259,6 +269,7 @@ surfaces.
 [async]: ../patterns/keep-async-boundaries-explicit.md
 [api-release]: ../mechanisms/rust-api-and-release-checks.md
 [anemic-state]: ../rules/boundary/boundary-identify-anemic-state-machines.md
+[authoritative-owner]: ../rules/boundary/boundary-keep-one-authoritative-owner-per-fact.md
 [backend-edge]: ../rules/boundary/boundary-keep-backend-adapters-at-edge.md
 [boundary-principle]: ../principles/explicit-boundaries-preserve-correctness.md
 [boundary-rules]: ../rules/boundary/README.md
@@ -282,6 +293,7 @@ surfaces.
 [resource-identity]: ../rules/boundary/boundary-choose-resource-identity-model.md
 [rust]: rust-maintainability.md
 [side-effects]: ../patterns/make-side-effects-visible.md
+[source-coherence]: ../mechanisms/source-coherence-review.md
 [stage-generated]: ../rules/boundary/boundary-stage-generated-behavior.md
 [standard-conversions]: ../patterns/prefer-standard-conversions.md
 [state-transitions]: ../patterns/make-state-transitions-explicit.md

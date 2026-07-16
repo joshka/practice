@@ -44,8 +44,8 @@ execution or conceptual dependency.
 
 ## Mechanisms
 
-Supported by source review, file moves, and module-level documentation that names the central
-concept.
+Supported by [Source Coherence Review](../../mechanisms/source-coherence-review.md), file moves, and
+module-level documentation that names the central concept.
 
 ## References
 

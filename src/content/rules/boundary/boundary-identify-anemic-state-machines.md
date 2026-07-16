@@ -10,7 +10,8 @@
 - Status: `reviewed`
 - Domain: `boundary`
 - Tags: `boundary-correctness, state-transitions, reader-locality`
-- Related: `make-state-transitions-explicit, make-invalid-states-hard-to-express`
+- Related: `make-state-transitions-explicit, make-invalid-states-hard-to-express,
+  BOUNDARY-KEEP-ONE-AUTHORITATIVE-OWNER-PER-FACT`
 
 ## Rule
 
