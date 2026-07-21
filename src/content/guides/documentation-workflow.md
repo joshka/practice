@@ -12,7 +12,8 @@
 - Audience: `both`
 - Topics: `documentation, review, evidence, drift, handoff`
 - Tags: `documentation, reviewability, source-truth, review-handoff, ai`
-- Related: `docs-are-contracts, choose-doc-pass-depth, write-pr-narrative`
+- Related: `docs-are-contracts, choose-doc-pass-depth, reconstruct-rationale-before-writing,
+  run-source-explanation-pass, write-pr-narrative`
 
 This guide collects preferences for deciding what documentation work belongs in a change, how deep
 the edit should go, and how review-facing prose should carry evidence. Use it with
@@ -31,6 +32,13 @@ Use [Choose Doc Pass Depth][pass-depth] when an edit could expand from local cor
 coherence or documentation architecture. Use [Choose Doc Type][doc-type] when the page is mixing
 task, reference, explanation, or decision-record work.
 
+Source-explanation work is a separate deep pass. Use [Run Source Explanation Pass][source-pass]
+when the goal is to make an undocumented or historically evolved implementation understandable
+across modules, items, helpers, formulas, and edge paths. Define what a new reader should be able to
+learn from the checkout, establish the end-to-end system map and domain fundamentals before item
+detail, and use external references as support rather than required context. Comment count can
+describe the initial gap, but explanatory coverage and reader comprehension decide completion.
+
 ## Evidence And Claims
 
 Docs should state current behavior and match their certainty to the evidence. Contracts, tests,
@@ -39,6 +47,12 @@ measurements, observations, project preferences, and external sources should not
 Use [Label Doc Claims By Evidence][evidence] when prose uses strong claims, ranking words, or broad
 guarantees. Use [Report Verification Honestly][verification] when handoff notes must distinguish
 run checks, skipped checks, assumptions, and remaining risk.
+
+When code alone does not establish why a choice exists, use [Reconstruct Rationale Before
+Writing][rationale-research]. Research from present behavior through introducing and corrective
+history before drafting. The published explanation should still lead with the current mechanism or
+tradeoff; history supplies evidence, failed alternatives, and regression warnings rather than the
+reader's required chronology.
 
 ## Voice And Shape
 
@@ -71,6 +85,22 @@ Use [Avoid Generated Prose Tells][generated-tells], [Use Concrete Details][concr
 [Write Technical Prose][technical-prose] when revision needs to remove smooth but low-signal prose.
 Use [Own AI-Assisted Prose][own-ai-prose] when docs came from AI generation or AI-assisted
 exploration and need human curation before they become fair to share.
+
+## Review Convergence
+
+Classify review findings as local or systematic. Fix a local error at its source. When one finding
+reveals a repeated failure in research, coverage, terminology, evidence, safety reasoning, or prose
+shape, add that failure to the pass checklist and repeat the check across completed scope.
+
+Keep review cycles evidence-producing. Each broad pass should have a named purpose, such as contract
+correctness, context, rationale depth, path tracing, or generated prose. After a cycle, ask whether
+the next pass is likely to find a new class of reader error or only alternate wording. Stop when the
+remaining findings are isolated preferences, repeats of already-fixed patterns, or changes that do
+not improve a reader's decision enough to justify more churn.
+
+Do not use diminishing returns to excuse an unverified completion claim. Finish declared gates and
+resolve systematic misses first; use convergence to avoid an endless sequence of undirected
+review-and-rewrite passes afterward.
 
 ## Repo Maps and Layers
 
@@ -152,6 +182,8 @@ need mechanical proof.
 - Is the pass depth explicit and small enough for the review unit?
 - Does the prose state current behavior instead of aspiration?
 - Are strong claims backed by contracts, tests, measurements, or sources?
+- Was non-obvious rationale reconstructed before drafting rather than inferred and decorated later?
+- Does history support the current explanation without forcing readers to reconstruct the present?
 
 ### Shape And Review
 
@@ -159,6 +191,12 @@ need mechanical proof.
 - Are user, maintainer, reference, and decision docs in the right layer?
 - Does the review narrative explain purpose, surface, validation, and follow-up?
 - Did behavior changes update nearby docs, examples, and agent instructions?
+- For broad source passes, were small helpers, formulas, producers, return paths, and edge branches
+  audited rather than sampled?
+- Did a systematic review miss become a repeated corpus-wide check?
+- Did each review pass have a distinct purpose and produce new evidence or a new class of finding?
+- Have declared gates and systematic misses been resolved before calling further review diminishing
+  returns?
 
 [agents]: coding-agents.md
 [agents-map]: ../patterns/use-agents-md-as-map.md
@@ -183,7 +221,9 @@ need mechanical proof.
 [pass-depth]: ../patterns/choose-doc-pass-depth.md
 [pr-narrative]: ../patterns/write-pr-narrative.md
 [review-packets]: ../patterns/produce-review-packets.md
+[rationale-research]: ../patterns/reconstruct-rationale-before-writing.md
 [rustdoc-pass]: ../patterns/run-rustdoc-quality-pass.md
+[source-pass]: ../patterns/run-source-explanation-pass.md
 [standalone-review]: ../rules/review/review-make-review-artifacts-standalone.md
 [technical-prose]: ../rules/documentation/docs-write-technical-prose.md
 [verification]: ../patterns/report-verification-honestly.md

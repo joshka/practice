@@ -26,15 +26,30 @@ Document `# Errors`, `# Panics`, and `# Safety` when those behaviors are part of
 Explain the condition, consequence, and caller obligation in the section where Rust readers expect
 to find it.
 
+Keep the safety surfaces distinct:
+
+- An unsafe function's `# Safety` section states every precondition the caller must establish.
+- A comment on an unsafe operation explains why facts available at that operation satisfy the
+  language or library contract, or links to the precise invariant owned by the surrounding type or
+  module.
+- A safe wrapper explains the invariant it enforces. It cannot shift an unexpressed validity or
+  lifetime obligation onto safe callers.
+- If a safe signature permits use that violates the proposed safety argument, document the
+  unresolved soundness boundary and the narrower current-use discipline instead of presenting the
+  discipline as proof.
+
 ## Tradeoff
 
 Do not add boilerplate sections that say nothing. Omit a section when the behavior is impossible or
-irrelevant, unless explicitly saying that prevents a common misunderstanding.
+irrelevant, unless explicitly saying that prevents a common misunderstanding. Consolidate a safety
+argument shared by many low-level helpers at the nearest stable owner; keep a local section only when
+the helper adds a caller obligation or operation-specific proof.
 
 ## Agent Instruction
 
-When touching a public Rust API, check whether its error, panic, or safety contract changed. Update
-the corresponding Rustdoc section in the same change.
+When touching a Rust API or unsafe operation, check whether its error, panic, caller-safety, wrapper,
+or operation-level proof changed. Update the narrowest owning Rustdoc or safety comment in the same
+change, and do not use current caller behavior as proof that a broader safe signature is sound.
 
 ## Examples
 

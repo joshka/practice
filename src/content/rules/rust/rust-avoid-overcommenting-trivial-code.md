@@ -33,7 +33,12 @@ external contract forces it, which invariant a block relies on, or why a safety 
 
 Keep comments that explain why a shape exists, what invariant must hold, or what external behavior
 requires a surprising implementation. Keep all `SAFETY:` comments required for unsafe code even
-when the surrounding code looks straightforward.
+when the surrounding code looks straightforward. Consolidate repeated safety reasoning at the
+abstraction that owns the invariant instead of duplicating empty boilerplate on every helper.
+
+Do not equate familiar syntax with familiar meaning. For an audience new to the domain, a small
+accessor or helper may deserve a short explanation of the convention it encodes even when the Rust
+expression is self-evident. The comment should add that context rather than translate the expression.
 
 ## Agent Instruction
 

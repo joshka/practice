@@ -141,6 +141,8 @@ should stay here until they prove reusable enough to promote.
 - [Do not describe unimplemented behavior as available API][rule-current-behavior].
 - [Run a bounded Rustdoc quality pass][rustdoc-pass] when crate-root teaching, item contracts,
   example placement, and README/Rustdoc/example alignment need to be checked together.
+- [Run a source-explanation pass][source-explanation-pass] when internal Rust code also needs to
+  teach its system map, domain fundamentals, implementation rationale, invariants, and edge paths.
 - [Compare nearby crates accurately and charitably][rule-crate-comparisons].
 - [Explain fit, scope, and tradeoffs][rule-crate-comparisons] instead of claiming universal
   superiority.
@@ -692,6 +694,7 @@ Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. 
 [rust-snippet]: ../snippets/agents/rust.md
 [smallest-check]: ../patterns/smallest-trustworthy-verification.md
 [source-coherence]: ../mechanisms/source-coherence-review.md
+[source-explanation-pass]: ../patterns/run-source-explanation-pass.md
 [structure-behavior]: ../patterns/separate-structure-from-behavior.md
 [test-behavior]: ../patterns/test-observable-behavior.md
 [validate]: https://rust-lang.github.io/api-guidelines/dependability.html#c-validate

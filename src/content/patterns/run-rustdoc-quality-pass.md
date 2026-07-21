@@ -7,7 +7,7 @@
 - Summary: Use a bounded checklist when raising a Rust crate's public documentation. The pass
   should teach the crate model, document public contracts, place examples where they prove real use,
   keep documentation layers aligned, and validate Rustdoc as code.
-- Status: `draft`
+- Status: `reviewed`
 - Audience: `both`
 - Topics: `rust, rustdoc, documentation, examples, validation`
 - Tags: `rust, rustdoc, documentation, public-api, examples`
@@ -56,6 +56,13 @@ Use this checklist for the Rustdoc pass:
 - Public state-machine types, builder-style structs, and other method-heavy types group related
   methods by caller task: lifecycle, inspection, mutation, rendering, dispatch, or integration.
 - Public enums document each variant's caller-facing meaning.
+- Unsafe functions state complete caller obligations in `# Safety`. Unsafe operations explain why
+  those obligations hold locally or link to the precise invariant owned by the surrounding type or
+  module.
+- Safe wrappers describe the invariant they enforce. If safe callers can violate the safety
+  argument, the docs identify the soundness boundary rather than turning current use into proof.
+- Repeated low-level safety contracts are consolidated at their nearest stable owner; local sections
+  remain only for additional obligations or operation-specific reasoning.
 - Items link to the canonical module, type, trait, or method when another page owns the fuller
   explanation; adapters, renderers, event variants, and helpers should not duplicate the shared
   module contract.
@@ -70,6 +77,8 @@ Use this checklist for the Rustdoc pass:
 - README, crate Rustdoc, item Rustdoc, examples, and doctests use the same import paths, feature
   assumptions, and lifecycle.
 - Experimental crates say what is experimental, what may change, and what users can rely on today.
+- `cargo doc --document-private-items` is used when the pass also claims maintainer-facing coverage
+  of private helpers and internal contracts; public Rustdoc alone does not prove that scope.
 - `RUSTDOCFLAGS='-D warnings -D rustdoc::broken_intra_doc_links' cargo doc --workspace --no-deps`
   passes for workspace docs when the crate is in a workspace.
 - `rustdoc::redundant_explicit_links` warnings are addressed by simplifying links whose labels
@@ -96,8 +105,9 @@ contracts.
 
 When improving Rust crate docs, run a bounded Rustdoc quality pass across crate root, module maps,
 public item contracts, method groups, canonical links, example placement, README/Rustdoc/example
-alignment, experimental caveats, and doc validation; prefer grouped or linked examples for simple
-accessors and report which checks ran.
+alignment, experimental caveats, safety-contract ownership, and doc validation. Include private
+items when the requested coverage extends to internal source, prefer grouped or linked examples for
+simple accessors, and report which checks ran.
 
 ## Examples
 

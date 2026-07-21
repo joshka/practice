@@ -21,6 +21,10 @@ External sources should help a reader verify a claim or compare judgment, not su
 Copying source-like wording weakens this repo's own voice and can accidentally import assumptions
 that do not match the local preference.
 
+The local explanation should remain usable when a reader cannot open the source. Link directly to a
+stable section, change, test, or discussion when it materially supports the claim. Do not expose the
+search tool, archive layout, or private research process merely to prove that research happened.
+
 ## Helps
 
 - Keeps guidance original, source-backed where useful, and free of accidental paraphrase or citation
@@ -29,12 +33,15 @@ that do not match the local preference.
 ## Limits
 
 Directly quote only when the exact wording matters and the quote is short. Most guidance should
-summarize the local rule, then cite sources as support, contrast, or adaptation.
+summarize the local rule, then cite sources as support, contrast, or adaptation. Private or unstable
+sources can inform the explanation, but they should not become required context for readers who
+cannot access them.
 
 ## Agent Instruction
 
-Use source links as support, not wording supply, so references help readers verify or compare
-judgment.
+Write a locally sufficient explanation, then use direct stable links to help readers verify or
+compare judgment. Do not make discovery tools, private archives, or inaccessible discussion part of
+the reader's required path.
 
 ## Mechanisms
 

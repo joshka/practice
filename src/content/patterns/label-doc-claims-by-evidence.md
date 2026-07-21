@@ -26,6 +26,10 @@ observations as observations, and preferences as preferences. If the evidence is
 claim or name the uncertainty. Replace ranking words with the concrete property that earns the
 claim.
 
+Name the unit of evidence when scope matters: the tested configuration, benchmark environment,
+changed system, observed path, or quoted decision. A passing combined change does not isolate every
+constant or branch, and an explanation proposed beside a benchmark is not itself a measured cause.
+
 ## Tradeoff
 
 Do not turn every sentence into an academic citation exercise. Stable project rules and obvious code
@@ -36,7 +40,9 @@ performance, security, compatibility, or future maintenance.
 
 When writing or revising docs, inspect strong words such as `always`, `never`, `guarantees`,
 `secure`, `fast`, `safe`, `best`, and `easiest`. Keep them only when the doc points to the
-contract, test, measurement, or source that supports them.
+contract, test, measurement, or source that supports them. Name the tested configuration or observed
+path when scope matters, and do not attribute the result of a combined change to each part without
+isolating evidence.
 
 ## Examples
 
