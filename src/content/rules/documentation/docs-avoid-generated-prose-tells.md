@@ -58,6 +58,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
   legacy, importance, or broader meaning to a fact.
 - False ranges. Avoid `from X to Y` constructions unless the endpoints sit on a real scale with a
   meaningful middle.
+- Evidence-disclaimer cadence. Replace repeated phrases such as "supports," "does not independently
+  establish," and "therefore" with the exact tested configuration, missing comparison, or remaining
+  uncertainty. Repeating one caveat template makes distinct evidence look mechanically identical.
 
 ### Paragraph Structure
 
@@ -65,6 +68,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
   manufacture emphasis.
 - Disguised listicles. If the paragraph sequence is really "first, second, third," either make it a
   list or rewrite the structure around the actual relationship.
+- Blurred paragraph roles. Start a new paragraph when the subject, explanatory level, evidence type,
+  or maintainer warning changes. A continuous block can hide that the prose moved from mechanism to
+  history or from contract to speculation.
 
 ### Tone
 
@@ -125,6 +131,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
   softeners unless the page is intentionally interpersonal.
 - Vague action verbs. Replace "ensure," "handle," "support," "manage," and similar verbs with the
   concrete behavior, command, validation, or ownership boundary.
+- Empty state scaffolding. Remove words such as "current," "complete," and "combined" when the named
+  code, change, or test already supplies the subject and scope. Keep them when they distinguish a
+  real version, completion state, or multi-part experiment.
 
 ## Helps
 
@@ -140,7 +149,8 @@ navigation label.
 
 Avoid generated-prose tells, including component-centered navigation copy, that replace concrete
 behavior, evidence, tradeoffs, or direct labels. During prose review, check word choice, sentence
-templates, paragraph shape, tone, formatting, and repeated composition patterns.
+templates, evidence-disclaimer cadence, empty state scaffolding, paragraph roles, tone, formatting,
+and repeated composition patterns.
 
 ## Mechanisms
 

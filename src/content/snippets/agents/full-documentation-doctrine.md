@@ -12,6 +12,7 @@
 - Topics: `documentation, writing, review, maintenance, ai-assisted-prose, information-architecture`
 - Tags: `documentation, agent-context, source-truth, reviewability, ai`
 - Related: `guides/markdown-documentation.md, guides/documentation-workflow.md,
+  reconstruct-rationale-before-writing, run-source-explanation-pass,
   principles/docs-are-contracts.md, agent-markdown-docs-instructions,
   agent-full-software-doctrine-prompt-pack`
 
@@ -251,6 +252,8 @@ Common failure modes:
 - every sentence becoming a fresh sub-point
 - three adjacent paragraphs restating the same thing at different temperatures
 - a paragraph that mixes explanation, caveat, recommendation, navigation, and apology
+- a source comment that moves from mechanism to historical evidence or from contract to maintainer
+  warning without a paragraph break
 
 The fix is usually:
 
@@ -357,6 +360,10 @@ Watch for generated-prose tells such as:
   endings
 - hedged neutrality, comprehensive padding, unsupported precision, apology phrasing, permission
   phrasing, and vague action verbs
+- repeated evidence caveats such as `supports`, `does not independently establish`, and `therefore`
+  that avoid naming the tested configuration or missing comparison
+- `current`, `complete`, and `combined` used as empty scaffolding when the subject already supplies
+  the version, completion state, or scope
 
 When in doubt, cut the sentence and ask whether any meaning was lost. Often none was.
 
@@ -633,6 +640,10 @@ Assume AI drafts may contain:
 
 The human editor's job is to cut, verify, restructure, and restore local voice.
 
+When describing the process, distinguish model generation from human prompting, source selection,
+steering, evaluation, correction, and endorsement. Human ownership after curation does not require
+claiming that the human drafted every sentence.
+
 ### 29. Do not mistake smoothness for quality
 
 A page can feel polished while being low-signal.
@@ -667,6 +678,76 @@ A good review artifact names:
 - what docs were updated
 - what remains intentionally deferred
 
+### 31. Reconstruct rationale before writing it
+
+Code often proves what happens without proving why this design was chosen. Do not draft a plausible
+intent from the implementation and use history only to fill holes in that story.
+
+For decisions that affect correctness, performance, safety, compatibility, architecture, or likely
+future changes:
+
+- establish current behavior from code and tests
+- find the introducing change
+- follow corrections, restrictions, reversions, replacements, and later tuning
+- inspect the evidence attached to those changes
+- use maintainer discussion when it materially clarifies the decision
+- separate surviving rationale, measured behavior, convention, drift, and inference
+
+Use scoped history as an index, not as a vote. Include introducing changes, recent structural
+changes, regression fixes, reverts, removals, and deleted guards. Line attribution favors the last
+rewrite, folder history can miss decisions in callers, and a combined test does not isolate every
+term. Keep a claim-labeled evidence ledger and summarize one bounded packet before opening another.
+
+Research may proceed chronologically. The final explanation usually should not. Lead with the
+current mechanism and tradeoff, then use history to support it, explain a rejected alternative, or
+warn about a regression path. Do not make readers reconstruct the present from a list of changes.
+
+### 32. Audit source explanations for coverage, not comment count
+
+A broad source-documentation pass should make the checkout a self-contained reading environment for
+its stated audience. Establish the end-to-end system map, ownership boundaries, vocabulary, and
+required domain fundamentals before detailed comments depend on them. A reader may be encountering
+the domain for the first time, so a familiar technique name or external link does not replace the
+local explanation. Use external sources for evidence, formal detail, and optional depth.
+
+The pass is complete when readers can reason about the system, not when every file contains comments.
+Audit modules, types, fields, constants, private helpers, trait implementations, formulas, important
+branches, producers, return paths, and low-level contracts. Small code can carry a large convention.
+
+Trace what values actually mean. Follow every producer and wrapper before claiming an invariant;
+distinguish counters from weighted or saturating statistics, direct mutation from effects through
+time or shared state, cached results from associated hints, exact conditions from the risks they
+approximate, and textbook guarantees from the work the implementation actually performs. Include
+feature-gated, FFI, platform-specific, interrupted, and failure paths.
+
+Challenge comments that restate syntax, name consumers without explaining the relationship, call a
+choice tuned or efficient without establishing its effect, or start with representation detail
+before giving a first-time reader the concept. Put shared rationale at its owning module or type and
+keep local exceptions and warnings beside the operation that needs them.
+
+Work in scoped waves for large repositories. Track both file coverage and a size-weighted measure,
+report progress without waiting to be asked, and repeat a check across completed areas when review
+reveals a systematic miss. Finish with comprehension questions that require readers to trace the
+main flow, explain ownership, follow a nontrivial algorithm, and identify risky change boundaries
+using only the checkout.
+
+Keep temporary plans, coverage records, and research notes outside the published change unless the
+process is itself durable project documentation. For a documentation-only pass, verify that
+executable tokens, configuration, generated artifacts, and unrelated formatting remain unchanged;
+use a language-aware comparison when practical rather than relying only on visual diff review.
+
+### 33. Make review cycles converge
+
+Give each broad review pass a distinct purpose, such as contract correctness, reader context,
+rationale depth, behavior tracing, safety, or generated prose. Fix local findings locally. When one
+finding exposes a repeated failure, add it to the checklist and repeat that check across completed
+scope.
+
+Complete declared gates and systematic checks before invoking diminishing returns. After that,
+another pass should earn its churn by finding a new class of reader error or materially improving a
+decision. Stop when it produces only repeated findings, isolated wording preferences, or equivalent
+phrasing.
+
 ## Part VI: Repo-Specific Steering Questions
 
 When applying this doctrine to a specific repository, answer these before editing:
@@ -699,6 +780,11 @@ When editing docs in this project:
 - keep historical records separate from active guidance
 - update nearby drifted docs in the same wave when practical
 - report validation honestly
+- state the exact scope of tests, measurements, intent, and inference
+- separate unsafe caller contracts, operation proofs, and safe-wrapper invariants
+- keep temporary process notes outside published documentation and verify documentation-only scope
+- promote systematic review findings into repeated checks and stop undirected review loops once the
+  declared gates converge
 - if a draft feels polished but low-signal, cut, merge, and concretize it
 
 ## Part VIII: What To Avoid

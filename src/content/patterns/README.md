@@ -77,12 +77,14 @@ Use `templates/pattern.md` for new entries.
 | `produce-review-packets`                       | Produce Review Packets                       | reviewed |
 | `prove-security-impact`                        | Prove Security Impact                        | reviewed |
 | `reader-locality`                              | Reader Locality                              | reviewed |
+| `reconstruct-rationale-before-writing`         | Reconstruct Rationale Before Writing         | reviewed |
 | `record-agent-operating-lessons`               | Record Agent Operating Lessons               | reviewed |
 | `report-verification-honestly`                 | Report Verification Honestly                 | reviewed |
 | `remediate-doc-drift`                          | Remediate Doc Drift                          | reviewed |
 | `return-structured-errors`                     | Return Structured Errors                     | reviewed |
 | `review-proof-not-just-code`                   | Review Proof Not Just Code                   | reviewed |
-| `run-rustdoc-quality-pass`                     | Run Rustdoc Quality Pass                     | draft    |
+| `run-rustdoc-quality-pass`                     | Run Rustdoc Quality Pass                     | reviewed |
+| `run-source-explanation-pass`                  | Run Source Explanation Pass                  | reviewed |
 | `separate-discovery-from-editing`              | Separate Discovery From Editing              | reviewed |
 | `separate-structure-from-behavior`             | Separate Structure From Behavior             | reviewed |
 | `shape-tool-output-for-agents`                 | Shape Tool Output For Agents                 | reviewed |

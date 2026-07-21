@@ -49,6 +49,12 @@ removed detail that only exists because generation was cheap, named the evidence
 matter, and restored the local voice. Disclosure can explain provenance, but it does not replace
 curation.
 
+When the process itself is relevant, describe the division of work accurately. Distinguish model
+generation from human prompting, source selection, steering, evaluation, correction, and final
+endorsement. Human ownership after curation does not require implying that the human drafted or
+researched every sentence, and model generation does not erase the human decisions that shaped the
+artifact.
+
 ## Helps
 
 - Keeps AI-generated and AI-assisted writing useful without treating all model involvement as
@@ -80,7 +86,9 @@ pointing back to the model.
 ## Agent Instruction
 
 Share AI-generated or AI-assisted prose only after reading and curating it into author-owned prose
-with checked claims, reader-sized scope, relevant evidence, real tradeoffs, and local voice.
+with checked claims, reader-sized scope, relevant evidence, real tradeoffs, and local voice. If
+process attribution matters, describe model generation and human steering, evaluation, correction, and
+endorsement accurately.
 
 ## Mechanisms
 

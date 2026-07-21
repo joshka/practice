@@ -66,6 +66,11 @@ Documentation workflow guidance lives in `src/content/guides/documentation-workf
 guide as the canonical map for documentation pass depth, evidence, voice, PR narrative, repo doc
 maps, and drift remediation.
 
+Broad source-explanation guidance lives in
+`src/content/patterns/run-source-explanation-pass.md`. Use
+`src/content/patterns/reconstruct-rationale-before-writing.md` when current code does not establish
+the reason for a design choice and history, tests, measurements, or discussion may supply it.
+
 Jujutsu workflow guidance lives in `src/content/guides/jj-workflow.md`. Use that guide as the
 canonical source for local jj change shape, descriptions, bookmarks, publication, and recovery.
 

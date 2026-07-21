@@ -21,6 +21,11 @@ Many readers do not read documentation front to back. They arrive from search, R
 comments, or agent retrieval into the middle of a page. Each section needs enough local context to
 make sense without replaying the entire document.
 
+For source documentation, establish the local subject and required general concept before descending
+into a project-specific representation, formula, or optimization. Link to the nearest owning
+explanation for shared context, while keeping the local contract, exception, or warning usable at the
+entry point the reader reached.
+
 ## Helps
 
 - Makes sections useful when linked directly and improves agent retrieval quality.
@@ -32,7 +37,8 @@ prerequisite to make the section stand alone.
 
 ## Agent Instruction
 
-Write docs for non-linear readers because many readers do not read documentation front to back.
+Write docs for non-linear readers. Give each likely entry point enough subject and prerequisite
+context to stand alone, then link to the nearest owning explanation instead of repeating it.
 
 ## Mechanisms
 

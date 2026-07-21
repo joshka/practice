@@ -32,10 +32,16 @@ A simple-looking line can still deserve a comment when it encodes a compatibilit
 constraint, performance tradeoff, or surprising ordering requirement. Do not delete intent just
 because the syntax is obvious.
 
+Judge obviousness against the stated audience and the surrounding domain, not only an experienced
+maintainer's familiarity. A small helper or accessor can encode a project convention whose mechanics
+are obvious while its role, representation, or consequence is not. Keep the explanation when it
+reduces that inference; remove it when it merely paraphrases the expression.
+
 ## Agent Instruction
 
-When editing comments, remove line-by-line narration and preserve comments that explain why the code
-has this shape. If intent is unclear, do not invent it.
+When editing comments, remove line-by-line narration for the intended audience. Preserve comments
+that explain domain meaning, local conventions, or why the code has this shape, including comments
+on deceptively small helpers. If intent is unclear, do not invent it.
 
 ## Examples
 

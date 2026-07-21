@@ -64,6 +64,18 @@ context from code when rationale is missing. Capture stable rationale, constrain
 behavior once during production so future work can start from a durable summary instead of
 repeating the same scan.
 
+When rationale was not recorded beside the change, do not infer it from code and consult history
+only to support the resulting story. Use [Reconstruct Rationale Before Writing][rationale-research]
+to inspect current behavior, introducing and corrective changes, tests, measurements, and relevant
+discussion before drafting. Write the durable explanation around what is true now; retain history
+when it supports the current choice, explains a rejected alternative, or warns about a regression.
+
+Use [Run Source Explanation Pass][source-pass] when the task is broader than ordinary Rustdoc or a
+local contract repair. It treats the source tree as a reading environment: first establish the
+system map and domain fundamentals, then audit context, helpers, formulas, branches, producer and
+return paths, evidence limits, and systematic review sweeps. External sources provide provenance and
+optional depth; the explanation needed to understand this implementation stays with the source.
+
 Reusable guidance should [make its review state visible][guidance-status]. Start new patterns as
 `draft`, and mark them `reviewed` only after the maintainer explicitly accepts the rule. Source
 links justify, frame, or contrast the guidance; they do not supply the wording. Write durable
@@ -143,6 +155,9 @@ the reader's scan path depends on headings, first sentences, labels, or generate
 - Give each sentence one main burden.
 - Do not combine explanation, qualification, anticipated confusion, and navigation in one sentence
   unless the page needs it.
+- In comments and Rustdoc, use a blank comment line when the subject, explanatory level, evidence
+  type, or maintainer warning changes. Do not hide a move from mechanism to history or contract to
+  uncertainty inside one continuous block.
 
 Use [Write Technical Prose][technical-prose] and [Prose For Relationships, Lists For
 Enumeration][prose-lists] when prose shape is hiding relationships, tradeoffs, or the main point.
@@ -215,6 +230,10 @@ voice, ranking words, page narration, or interface narration weakens technical c
 - Link cleanly to deeper pages.
 - Do not add bridge prose that explains the link more than the concept.
 - Verify claims, defaults, recommendations, and examples against source and behavior.
+- State the exact configuration, path, or comparison that evidence covers. A combined test does not
+  explain every term independently, and a historical intent does not override current behavior.
+- Lead historical explanations with the present mechanism or tradeoff. Keep chronology only when it
+  supports that model, explains a rejected alternative, or warns about a regression.
 - If a draft is smooth but low-signal, merge sections, cut repetition, restore prose continuity, and
   add specifics.
 
@@ -329,6 +348,11 @@ For public items, include the first-sentence summary plus relevant sections:
 - `# Safety`
 - `# Performance`
 
+An unsafe function's `# Safety` section states caller obligations. An unsafe operation's comment
+explains why the local facts satisfy its contract. A safe wrapper must enforce those obligations; if
+its signature permits invalid use, document the soundness boundary instead of treating current
+callers as proof. Use [Document Errors Panics Safety][errors-panics-safety] for the full distinction.
+
 Also document lifecycle, ownership, side effects, feature flags, platform assumptions, and
 compatibility when callers need that contract. Public fields deserve the same standard as public
 functions: meaning, valid values, defaults, invariants, and interactions with neighboring fields.
@@ -419,6 +443,10 @@ this repo's voice and avoid copying or closely paraphrasing upstream text.
 Use direct links to the relevant upstream section instead of broad root links. Omit the references
 section when no durable source is useful.
 
+Keep the local explanation usable without opening the reference. Do not expose private archive or
+discovery-tool mechanics merely to show that research occurred; link the stable source itself when
+readers can use it and it materially supports the claim.
+
 ## Agent Snippet
 
 For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
@@ -445,6 +473,9 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 - Are Markdown tables aligned?
 - Did behavior changes update nearby docs?
 - Do source links point to the relevant upstream section?
+- Does each evidence claim name what was tested, measured, stated, or inferred without repeating a
+  generic disclaimer template?
+- Can a reader follow the current explanation without reconstructing it from historical links?
 
 ### Training Examples
 
@@ -480,6 +511,7 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 [doc-locality]: ../patterns/keep-docs-near-their-subject.md
 [durable-summaries]: ../patterns/prefer-durable-summaries.md
 [error-context]: ../patterns/preserve-error-context.md
+[errors-panics-safety]: ../patterns/document-errors-panics-safety.md
 [example-doctests]: ../rules/testing/test-cover-public-examples-with-doctests.md
 [example-effects]: ../rules/documentation/docs-show-side-effects-in-live-examples.md
 [example-roles]: ../rules/documentation/docs-distinguish-example-roles.md
@@ -500,10 +532,12 @@ for the reasoning behind treating docs as behavior-bearing artifacts. Use
 [prose-wrap]: ../patterns/prefer-100-column-prose-wrap.md
 [public-docs]: ../rules/rust/rust-write-public-docs-for-caller-tasks.md
 [readme-entry]: ../rules/documentation/docs-readme-as-entry-point.md
+[rationale-research]: ../patterns/reconstruct-rationale-before-writing.md
 [readme-rustdoc]: ../rules/documentation/docs-align-readme-and-crate-rustdoc.md
 [real-examples]: ../rules/documentation/docs-prove-real-use-with-examples.md
 [rustdoc-contract]: ../rules/rust/rust-write-rustdoc-as-api-contract.md
 [rustdoc-pass]: ../patterns/run-rustdoc-quality-pass.md
+[source-pass]: ../patterns/run-source-explanation-pass.md
 [rustdoc-readme]: ../rules/rust/rust-keep-rustdoc-and-readme-examples-aligned.md
 [rustdoc]: https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html
 [side-effects]: ../patterns/make-side-effects-visible.md
