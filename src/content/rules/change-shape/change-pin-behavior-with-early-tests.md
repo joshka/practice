@@ -43,6 +43,7 @@ changes that separate test characterization from behavior edits.
 
 ## References
 
+- [Pattern: Characterize Then Fix](../../patterns/characterize-then-fix.md)
 - [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
 - [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)
