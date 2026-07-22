@@ -118,5 +118,11 @@ markdownlint-cli2 "**/*.md"
 pnpm build
 ```
 
+For rendered inspection, run `pnpm preview:open -- <source-path-or-route>`. This command derives the
+configured Astro base path, verifies the route as an HTML navigation, and opens it in Firefox. Do not
+report preview success from a plain `curl` request because its default `Accept: */*` can behave
+differently from a browser navigation. Run `pnpm check:links` after adding or changing internal
+Markdown links.
+
 If a command is unavailable, report that it was not run. Also report the relevant `jj` status and
 diff summary.
