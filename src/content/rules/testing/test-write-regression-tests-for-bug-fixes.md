@@ -42,6 +42,7 @@ integration tests, and handoff notes when reproduction is impractical.
 
 ## References
 
+- [Pattern: Characterize Then Fix](../../patterns/characterize-then-fix.md)
 - [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation

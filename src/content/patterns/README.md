@@ -15,6 +15,7 @@ Use `templates/pattern.md` for new entries.
 | `bootstrap-repo-docs`                          | Bootstrap Repo Docs                          | reviewed |
 | `budget-tokens-for-feedback-loops`             | Budget Tokens For Feedback Loops             | reviewed |
 | `cap-change-radius`                            | Cap Change Radius                            | reviewed |
+| `characterize-then-fix`                        | Characterize Then Fix                        | draft    |
 | `choose-doc-pass-depth`                        | Choose Doc Pass Depth                        | reviewed |
 | `choose-doc-type`                              | Choose Doc Type                              | reviewed |
 | `choose-good-enough-tools`                     | Choose Good Enough Tools                     | reviewed |
