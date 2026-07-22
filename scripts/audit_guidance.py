@@ -689,6 +689,11 @@ def audit_rule_quality(rules: list[Rule], errors: list[str]) -> None:
 def main() -> int:
     parser = argparse.ArgumentParser(description=__doc__)
     parser.add_argument(
+        "--links-only",
+        action="store_true",
+        help="check internal Markdown link targets without running the broader guidance audit",
+    )
+    parser.add_argument(
         "--quality",
         action="store_true",
         help="also fail on explanation-quality smells such as repeated rule rationales",
@@ -696,6 +701,16 @@ def main() -> int:
     args = parser.parse_args()
 
     errors: list[str] = []
+    if args.links_only:
+        audit_markdown_links(errors)
+        if errors:
+            print("Markdown link check failed:")
+            for error in errors:
+                print(f"- {error}")
+            return 1
+        print("Markdown link check passed")
+        return 0
+
     audit_required_roots(errors)
     audit_feedback_flow(errors)
     audit_structured_guidance_metadata(errors)

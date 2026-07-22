@@ -193,6 +193,18 @@ rule verbatim into `AGENTS.md`.
 Keep changes small, reviewable, and tied to one clear purpose. Add new files only when they contain
 durable content that is ready for review; do not create placeholders to satisfy a planned tree.
 
+Preview a rendered Markdown page in Firefox by passing either its source path or rendered route:
+
+```bash
+pnpm preview:open -- src/content/patterns/characterize-then-fix.md
+pnpm preview:open -- patterns/characterize-then-fix/
+```
+
+The command starts the Astro development server in the background, reads the configured site base
+path, verifies the page with an HTML request, and opens it only after the route succeeds. Run
+`pnpm check:links` to check internal Markdown link targets without running the broader guidance
+audit.
+
 Before handing off broad guidance changes, run:
 
 ```bash
@@ -202,6 +214,7 @@ python3 scripts/generate_agent_rules.py --check
 python3 scripts/generate_downstream_template.py --check
 markdownlint-cli2 "**/*.md"
 pnpm build
+pnpm check:links
 pnpm check:search
 pnpm check:deps
 ```

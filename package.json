@@ -12,8 +12,10 @@
     "check": "astro check",
     "build": "astro check && astro build",
     "check:deps": "python3 scripts/check_dependency_health.py",
+    "check:links": "python3 scripts/audit_guidance.py --links-only",
     "check:search": "python3 scripts/check_search_quality.py",
-    "preview": "astro preview"
+    "preview": "astro preview",
+    "preview:open": "node scripts/open_preview.mjs"
   },
   "dependencies": {
     "@astrojs/check": "^0.9.9",
