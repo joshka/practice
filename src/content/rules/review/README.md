@@ -18,9 +18,9 @@ for orientation; the rule files hold the rationale, limits, mechanisms, and refe
   review-sized slices with clear outcomes. Coherent slices reduce scope creep and give maintainers
   or agents a practical unit of work without losing the larger purpose.
 - [`REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`](review-explain-controversial-choices-inline.md).
-  Put short rationale near surprising dependencies, unsafe blocks, generated artifacts, policy
-  exceptions, or compatibility choices. Local explanation prevents reviewers and future readers from
-  rediscovering the same concern.
+  Treat capable reviewer questions about non-obvious code as documentation signals. Preserve the
+  durable answer at the closest appropriate source boundary so future readers do not have to
+  rediscover it.
 - [`REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`](review-explain-pr-problem-model-and-proof.md). Use
   PR descriptions to explain the problem, mental model, tradeoffs, validation, and documentation
   impact. Reviewers can then evaluate the diff against stated intent instead of reverse-engineering

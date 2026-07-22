@@ -131,8 +131,8 @@ should say what lacks automated coverage and what manual testing covered; docume
 say what changed, what stayed accurate, and what still needs a follow-up.
 
 Use inline comments when a decision is best understood next to the relevant code. Use
-[Explain Controversial Choices Inline][inline-choices] when a surprising decision should be visible
-before reviewers have to rediscover it.
+[Preserve Durable Answers Near Source][inline-choices] when a reviewer question exposes stable
+knowledge that future readers should not have to rediscover.
 Remember future readers of reviews: users reading changelogs, contributors tracing motivation, and
 maintainers root-causing behavior.
 

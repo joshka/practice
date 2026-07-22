@@ -229,8 +229,8 @@ behavior and intent rather than walking through the diff line by line.
 Label speculation as inferred or unknown. Link critical claims to evidence such as tests, call
 sites, runtime behavior, source documentation, or generated artifacts.
 
-Use [Explain PR Problem Model And Proof][pr-proof], [Explain Controversial Choices
-Inline][inline-choices], [Label Speculation As Inferred Or Unknown][label-speculation], and
+Use [Explain PR Problem Model And Proof][pr-proof], [Preserve Durable Answers Near
+Source][inline-choices], [Label Speculation As Inferred Or Unknown][label-speculation], and
 [Make Review Artifacts Standalone][standalone-review] when review narrative needs to preserve
 reasoning for readers who did not see the discussion.
 

@@ -11,9 +11,9 @@ text by hand; update the source repo and recopy this file.
   shape, or load-bearing boundary before changing the boundary.
 - `REVIEW-DEFINE-SLICES-IN-ISSUES`: Define review-sized slices in issues because issues are often
   the first place a future PR gets shaped.
-- `REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`: Place short inline notes beside surprising review
-  decisions so reviewers see the rationale at the line, file, generated artifact, or config boundary
-  where the concern appears.
+- `REVIEW-EXPLAIN-CONTROVERSIAL-CHOICES-INLINE`: Use capable reviewer questions about non-obvious
+  code as documentation signals. Prefer clearer code; otherwise preserve the durable answer in the
+  nearest comment, test, Rustdoc, module docs, or change narrative that owns it.
 - `REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`: Explain the problem, mental model, tradeoffs,
   validation, and docs impact so reviewers do not reverse-engineer intent from the diff.
 - `REVIEW-LABEL-SPECULATION-AS-INFERRED-OR-UNKNOWN`: Label speculation as inferred or unknown
