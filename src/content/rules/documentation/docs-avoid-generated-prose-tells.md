@@ -39,6 +39,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
   "framework" when a simpler domain word is accurate.
 - Inflated copulas. Prefer "is" or "are" when grander substitutes like "represents," "marks,"
   "stands as," or "serves as" do not add precision.
+- Terminology churn. Keep the project's canonical term when it still names the same concept. Do not
+  rotate through near-synonyms merely to avoid repetition; lexical variety can hide that several
+  phrases refer to one type, command, state, or boundary.
 
 ### Sentence Structure
 
@@ -101,6 +104,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
   the list is genuinely a field list or glossary-like structure.
 - Decorative Unicode. Avoid arrows, smart quotes, and special symbols when project style expects
   plain typed characters or ASCII examples.
+- Generation residue. Remove unintended chat framing, fill-in-the-blank prompts, source
+  placeholders, internal citation tokens, and instructions addressed to the person who requested
+  the draft. Preserve them only when the document intentionally demonstrates that syntax.
 
 ### Composition
 
@@ -134,6 +140,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
 - Empty state scaffolding. Remove words such as "current," "complete," and "combined" when the named
   code, change, or test already supplies the subject and scope. Keep them when they distinguish a
   real version, completion state, or multi-part experiment.
+- Local style discontinuity. Compare new prose with the surrounding project docs. Investigate abrupt
+  changes in terminology, English variety, heading style, formality, or formatting, then restore
+  consistency unless the document has a reason to differ.
 
 ## Helps
 
@@ -145,12 +154,17 @@ Do not remove useful friendliness or explanation just because a sentence is smoo
 generated tell when it replaces concrete behavior, evidence, tradeoff language, or a direct
 navigation label.
 
+Use these tells as revision signals, not as proof of who or what wrote the text. Fix the concrete
+problem whether the draft came from a person, a model, or both; polished grammar, formal language,
+or one stock phrase does not establish authorship.
+
 ## Agent Instruction
 
 Avoid generated-prose tells, including component-centered navigation copy, that replace concrete
 behavior, evidence, tradeoffs, or direct labels. During prose review, check word choice, sentence
-templates, evidence-disclaimer cadence, empty state scaffolding, paragraph roles, tone, formatting,
-and repeated composition patterns.
+templates, terminology consistency, evidence-disclaimer cadence, empty state scaffolding, paragraph
+roles, generation residue, local style continuity, tone, formatting, and repeated composition
+patterns. Treat findings as reasons to revise the prose, not as authorship evidence.
 
 ## Mechanisms
 
@@ -162,6 +176,7 @@ checklists that call out vague or templated wording.
 - [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
 - [Docs Hide Catalog Mechanics](docs-hide-catalog-mechanics.md)
 - [tropes.md: AI Writing Tropes to Avoid](https://tropes.fyi/tropes-md)
+- [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)
