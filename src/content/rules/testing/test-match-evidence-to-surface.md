@@ -21,6 +21,15 @@ A change to rendered docs, terminal layout, parser output, public API, or perfor
 from that surface. A unit test may prove local logic while failing to show that the actual
 user-facing page, screen, byte output, or API still works.
 
+For UI changes, exercise a complete user task in the built application. Check the relevant loading,
+success, empty, failure, cancellation, and recovery states. Inspect layout with realistic content,
+window sizes, appearances, selection, and keyboard focus where those affect the changed workflow.
+Screenshots show appearance; interaction and state transitions need their own checks. A source
+field for a progress value does not prove that users can see it while work is running.
+
+For release artifacts, inspect and exercise the packaged output when packaging is in scope.
+Checkout tests cannot establish that fixtures, assets, or linked documentation reached the archive.
+
 ## Helps
 
 - Makes validation persuasive because the proof matches what changed.
@@ -32,8 +41,9 @@ the likely failure.
 
 ## Agent Instruction
 
-Match validation evidence to the changed surface because a change to rendered docs, terminal layout,
-parser output, public API, or performance needs evidence from that surface.
+Validate the changed surface directly: exercise UI workflows in the built app, check consumer
+configurations for API changes, and inspect packaged output for release changes. State what each
+check proves; passing local tests does not establish product acceptance.
 
 ## Mechanisms
 

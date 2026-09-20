@@ -21,6 +21,12 @@ Code shape is about the amount of context a maintainer must hold while changing 
 does not merely reduce line count or add layers; it makes the relevant facts, relationships, and
 change boundaries easier to see.
 
+Separate implementation complexity from product scope. Replacing a language, framework, or set of
+names does not remove the workflows and decisions the product must support. When proposing a
+simpler replacement, name the responsibilities it omits and compare the user's decisions and
+explanation burden for the retained workflow. Treat a narrower product as a scope choice, not
+evidence that an equivalent rewrite will be simple.
+
 ## Core Preference
 
 Prefer code that keeps the active context small. A reader should be able to inspect a block, helper,

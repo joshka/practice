@@ -5,8 +5,9 @@ text by hand; update the source repo and recopy this file.
 
 ## Instructions
 
-- `AGENT-BUDGET-FOR-FEEDBACK-LOOPS`: Budget tokens and time for reading, editing, checks, failure
-  inspection, and proof reporting.
+- `AGENT-BUDGET-FOR-FEEDBACK-LOOPS`: Reserve time and tokens for validation and handoff. Give each
+  extra pass a distinct question. Stop after required gates pass unless new evidence warrants
+  another pass; budgets are ceilings.
 - `AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`: Before naming, grouping, documentation voice, API
   shape, or rule IDs, define the quality bar so the agent has concrete goalposts.
 - `AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`: Distill conventions, principles, and review expectations
@@ -32,8 +33,9 @@ text by hand; update the source repo and recopy this file.
   trained and tested tool paths tend to be more reliable.
 - `AGENT-PREFER-TOOLS-OVER-PROMPTS`: Prefer tools and checks over repeated prompting; put repeated
   instructions in a tool, check, template, or guide.
-- `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`: After a validated chunk, name the next concrete chunk and
-  why to choose it so the maintainer controls scope cheaply.
+- `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`: At an unresolved review or scope boundary, offer concrete
+  next chunks and their tradeoffs. Continue already-authorized work without another permission
+  question; mark guidance reviewed only after explicit acceptance.
 - `AGENT-PRESERVE-HUMAN-WORK`: Preserve unrelated human work because agents share a working tree
   with human edits and sometimes other agents.
 - `AGENT-PRESERVE-INTENT`: Preserve intent over literalism because literal execution can satisfy the
@@ -53,9 +55,10 @@ text by hand; update the source repo and recopy this file.
   spend a lot of effort executing through an unresolved decision.
 - `AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`: Suggest ignored override files for checkout-only facts such
   as local jj topology, plan directories, machine paths, or temporary repo notes.
-- `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`: Turn repeated feedback into durable guidance because repeated
-  corrections such as "show why," "name the next thing," or "do not use abstract rule names" are
-  process bugs.
+- `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`: Trace repeated feedback through the instruction, action,
+  correction, and outcome. Distinguish missing, unclear, unreached, and ignored guidance; repair its
+  owner or delivery mechanism instead of adding a duplicate rule. Keep private task evidence outside
+  published guidance.
 - `AGENT-USE-AGENTS-MD-AS-MAP`: Use `AGENTS.md` to route agents to deeper guides because a full rule
   set would make the file hard to scan.
 - `AGENT-VERIFY-RISKY-CHANGES-WITH-CANARIES`: Use canaries for changes that can pass local tests but

@@ -31,10 +31,15 @@ from needing the same steering.
 Do not encode one-off taste or situational feedback as a global rule. Generalize the repeated
 failure mode before promotion.
 
+Check whether the task read and applied the relevant guidance. Missing or unclear instructions need
+content changes; unreached instructions need a routing fix; ignored instructions may need a check.
+Do not infer effectiveness merely from the presence of a guide or a successful final response.
+
 ## Agent Instruction
 
-Turn repeated feedback into durable guidance because repeated corrections such as "show why,"
-"name the next thing," or "do not use abstract rule names" are process bugs.
+Trace repeated feedback through the instruction, action, correction, and outcome. Distinguish
+missing, unclear, unreached, and ignored guidance; repair its owner or delivery mechanism instead
+of adding a duplicate rule. Keep private task evidence outside published guidance.
 
 ## Mechanisms
 

@@ -15,20 +15,26 @@
 
 ## Problem
 
-Token spend is easy to treat as waste when it is measured like a software bill instead of as part of
-the cost of doing work. Under-spending on review agents, cleanup loops, evals, and verification can
-leave human attention as the bottleneck.
+Agent work can spend its budget on implementation and repeated narration, leaving too little for
+validation and handoff. It can also spend more on repeated reviews than their findings justify.
+Both failures increase maintainer work.
 
 ## Preferred Move
 
 Budget agent tokens for feedback loops that improve outcomes: validation, review, security scans,
 garbage collection, documentation checks, and harness evals. Measure the value of the loop by
-quality, throughput, and reduced human attention, not by raw token volume.
+quality, throughput, and reduced human attention, alongside the user's time and token limits.
+
+Give each pass a distinct question and stopping condition. Continue after a new defect, changed
+artifact, or uncovered contract warrants another check. Once the agreed gates pass, stop repeating
+unchanged checks or collecting equivalent reviews. Keep detailed evidence in one place and report
+only decisions, meaningful changes, and unresolved limits in coordination updates.
 
 ## Tradeoff
 
-Do not Goodhart token consumption. A token floor is useful only when it funds a loop with a clear
-purpose and evidence of value. If the loop stops improving outcomes, change or remove it.
+Treat a budget as a ceiling, not a target to consume. Extra capacity can fund a useful check, but
+does not justify another pass without an expected finding or decision. Do not skip required gates
+to save tokens; if a hard limit prevents completion, report the unfinished checks explicitly.
 
 ## Agent Instruction
 

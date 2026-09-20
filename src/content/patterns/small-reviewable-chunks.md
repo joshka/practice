@@ -26,6 +26,11 @@ direction.
 For structural preparation, include only the cleanup needed for the next behavior change or review
 decision. Integrate that chunk before expanding the scope.
 
+Match review timing to the authorization. An approved implementation batch can contain several
+small validated changes for later review. Do not turn each internal change boundary into a new
+permission request. Pause at the decision points the maintainer requested or when a new choice
+would materially change the agreed scope.
+
 ## Tradeoff
 
 Splitting too aggressively can create process overhead. Keep tiny follow-ups together when they are

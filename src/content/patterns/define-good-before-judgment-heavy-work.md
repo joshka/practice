@@ -33,6 +33,16 @@ the output against it.
 Name the observable output, the checks that should pass, the evidence the handoff should include,
 and the remaining judgment that requires human review.
 
+Translate adjectives such as "polished," "native," or "production-ready" into a few observable
+user tasks and quality dimensions. For an interactive tool, include discovering the primary action,
+seeing progress, inspecting results, recovering from failure, and retaining work after reopening
+where relevant. Add reading comfort, alignment, contrast, and realistic content sizes to a visual
+pass. Platform conventions help choose controls; they do not replace checking the complete flow.
+
+Use examples and constraints already supplied by the user to set this bar. Ask only where a
+missing decision materially affects the result. A time limit narrows what can be established; it
+does not lower the evidence needed for a broad readiness claim.
+
 ## Tradeoff
 
 Do not over-specify exploratory work before the shape is known. For discovery, define good as a
@@ -66,3 +76,8 @@ Rule IDs should be stable handles: short enough to cite, specific enough to pres
 careful about connector words when removing them would change the concept. I will rename against
 that bar and then check for stale references.
 ```
+
+## References
+
+- [W3C preliminary accessibility checks](https://www.w3.org/WAI/test-evaluate/preliminary/): concrete
+  checks for contrast, focus, and interaction, with explicit limits on what they establish.

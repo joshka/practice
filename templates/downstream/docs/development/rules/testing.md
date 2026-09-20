@@ -35,9 +35,10 @@ text by hand; update the source repo and recopy this file.
   examples, and public API paths aligned.
 - `TEST-KEEP-SLOW-CHECKS-OUT-OF-PR-CI`: Keep slow fuzzing, long benchmarks, and exhaustive
   compatibility checks outside required PR CI unless they are fast and deterministic.
-- `TEST-MATCH-EVIDENCE-TO-SURFACE`: Match validation evidence to the changed surface because a
-  change to rendered docs, terminal layout, parser output, public API, or performance needs evidence
-  from that surface.
+- `TEST-MATCH-EVIDENCE-TO-SURFACE`: Validate the changed surface directly: exercise UI workflows in
+  the built app, check consumer configurations for API changes, and inspect packaged output for
+  release changes. State what each check proves; passing local tests does not establish product
+  acceptance.
 - `TEST-PREFER-DETERMINISTIC-TESTS`: Prefer deterministic tests over timing or external-state tests
   because tests that depend on timing, network state, random ordering, real clocks, or external
   services fail for reasons unrelated to the code under review.
