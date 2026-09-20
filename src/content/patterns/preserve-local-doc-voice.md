@@ -26,6 +26,12 @@ terms, heading style, example shape, section density, and level of formality unl
 voice is unclear, inaccessible, or inconsistent with the audience. Put the useful point before
 background and use lists only when enumeration helps.
 
+Use title-case headings in this repository and follow the established heading convention elsewhere.
+Keep useful qualifications, examples, and explanations of cause and effect. Compare the meaning
+before and after an edit: readers should still know why the behavior exists and where it applies.
+Repair vague wording before deleting the thought, and leave good sentences alone even if a style
+checker flags them.
+
 ## Tradeoff
 
 Do not preserve local voice when it hides meaning, insults readers, relies on private jokes, or uses

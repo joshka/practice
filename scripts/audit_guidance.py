@@ -658,17 +658,13 @@ def audit_rule_quality(rules: list[Rule], errors: list[str]) -> None:
             fail(errors, f"{rel(rule.path)} repeats the rule text as its agent instruction")
         if len(agent_text.split()) > 45:
             fail(errors, f"{rel(rule.path)} has an overlong agent instruction")
-        if agent_text.startswith("When "):
-            fail(errors, f"{rel(rule.path)} starts its agent instruction with 'When'")
-        if re.search(r"\bwhen\b", agent_text, re.IGNORECASE):
-            fail(errors, f"{rel(rule.path)} uses stilted 'when' phrasing in its agent instruction")
+        # Conditions often explain where an instruction applies. Neither a leading
+        # "when" nor several occurrences establish that the prose is stilted.
         if re.search(r"\bbecause\b.+\bbecause\b", agent_text, re.IGNORECASE):
             fail(errors, f"{rel(rule.path)} repeats 'because' in its agent instruction")
         first_word = agent_text.split(" ", 1)[0] if agent_text else ""
         if first_word in {"And", "Or", "Not", "Then", "In"}:
             fail(errors, f"{rel(rule.path)} has a broken action-first agent instruction")
-        if re.search(r"\bwhen\b.+\bwhen\b", agent_text, re.IGNORECASE):
-            fail(errors, f"{rel(rule.path)} has a nested 'when' agent instruction")
         for name, values in repeated_sections.items():
             value = " ".join(section(text, name).split())
             if value:
