@@ -2,3 +2,4 @@ node_modules/
 dist/
 .astro/
 .plans/
+__pycache__/

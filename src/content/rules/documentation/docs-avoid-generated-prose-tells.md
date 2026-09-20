@@ -29,6 +29,26 @@ the UI instead of naming the reader's destination, decision, artifact, or work a
 Use the detailed checklist below during prose review. A single occurrence may be fine; repeated
 patterns, clustered patterns, or patterns that replace evidence are the problem.
 
+Familiar phrases can make readers suspect the writing is generated. Read the surrounding explanation
+before changing them: does the wording obscure the point, exaggerate it, or leave readers wondering
+what actually happens? Keep wording that explains the subject well.
+
+### Editing Without Losing Meaning
+
+Read for meaning before cutting. Keep the reasons, conditions, qualifications, examples, and
+connections readers need to understand the subject. A shorter paragraph can make more work for
+readers if they have to reconstruct what the edit removed.
+
+Try repairing a weak sentence first. Replace vague praise with the behavior that deserves it, or
+explain the consequence behind an importance claim. Delete a sentence if it adds nothing useful;
+do not delete it merely because its explanation also applies to other projects. Never invent a
+mechanism, number, or source to make a sentence sound more specific.
+
+After editing, compare the explanations. Can readers still tell why the behavior exists, where it
+applies, what can go wrong, and what they should do? Restore any needed detail. Keep ordinary warmth
+and varied sentence lengths; splitting every relationship into short statements can make prose
+choppy and harder to follow.
+
 ### Word Choice
 
 - Magic adverbs. Cut adverbs that make ordinary facts sound secretly important, such as claims that
@@ -42,6 +62,9 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
 - Terminology churn. Keep the project's canonical term when it still names the same concept. Do not
   rotate through near-synonyms merely to avoid repetition; lexical variety can hide that several
   phrases refer to one type, command, state, or boundary.
+- Abstract review language. Explain what readers notice, misunderstand, or need to decide. Phrases
+  such as "a matched phrase prompts inspection" can sound procedural while hiding why anyone would
+  care. Name the person and consequence if that makes the explanation easier to understand.
 
 ### Sentence Structure
 
@@ -98,8 +121,13 @@ patterns, clustered patterns, or patterns that replace evidence are the problem.
 
 ### Formatting
 
+- Heading case. Use title-case headings in this repository. In other projects, preserve their
+  established convention. Capitalization alone says nothing about the quality of the explanation.
+
 - Dash pivots. Avoid repeated dash asides, dramatic pauses, and pivot clauses when commas,
   parentheses, semicolons, or shorter sentences would be clearer.
+  Keep punctuation that helps readers follow a qualification or connection; do not apply a blanket
+  ban on dashes, parentheses, colons, or semicolons.
 - Bold-first bullets. Do not default every list item to a bold lead-in. Use bold labels only when
   the list is genuinely a field list or glossary-like structure.
 - Decorative Unicode. Avoid arrows, smart quotes, and special symbols when project style expects
@@ -160,16 +188,47 @@ or one stock phrase does not establish authorship.
 
 ## Agent Instruction
 
-Avoid generated-prose tells, including component-centered navigation copy, that replace concrete
-behavior, evidence, tradeoffs, or direct labels. During prose review, check word choice, sentence
-templates, terminology consistency, evidence-disclaimer cadence, empty state scaffolding, paragraph
-roles, generation residue, local style continuity, tone, formatting, and repeated composition
-patterns. Treat findings as reasons to revise the prose, not as authorship evidence.
+Explain what readers need to understand or do. Repair vague wording before cutting; preserve reasons,
+conditions, examples, terminology, and local heading style. Compare meaning before and after editing.
+Use title case here. Treat familiar phrasing as a reason to read carefully, without assuming authorship.
+
+## Examples
+
+This edit loses the condition that prevents a duplicate payment:
+
+```diff
+- Retry only after confirming the previous request failed; otherwise the payment may be duplicated.
++ Retry failed payments.
+```
+
+This edit removes vague praise while preserving the useful behavior:
+
+```diff
+- The preview provides robust recovery by keeping the last successful build available after a failure.
++ If a build fails, the preview continues serving the last successful build.
+```
+
+This revision explains why the wording bothers readers:
+
+```diff
+- A matched phrase prompts inspection; it doesn't mandate an edit.
++ Familiar phrases can make readers suspect the writing is generated. Check whether the wording
++ feels lazy or obscures the point before changing it.
+```
 
 ## Mechanisms
 
 Supported by prose review passes, local style guides, examples from accepted docs, and review
 checklists that call out vague or templated wording.
+
+For automated checks, prefer findings that name the rule, location, and offending text. Keep examples
+of good prose that each check must accept alongside examples it should flag. Try new checks on a
+small sample before making them required, and review false positives. Stop once the explanation
+works; rewriting until every stylistic warning disappears can damage accurate prose.
+
+Keep heading case, punctuation preferences, readability scores, and word-frequency limits separate
+from checks for empty claims. Technical terms may need repetition, and precise explanations may need
+longer sentences. No prose linter establishes factual accuracy or who wrote the text.
 
 ## References
 
@@ -177,6 +236,11 @@ checklists that call out vague or templated wording.
 - [Docs Hide Catalog Mechanics](docs-hide-catalog-mechanics.md)
 - [tropes.md: AI Writing Tropes to Avoid](https://tropes.fyi/tropes-md)
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
+- [Slopless](https://github.com/berelevant-ai/slopless): useful for reproducible findings and
+  false-positive examples; its heading and metric policies are not this repository's style.
+- [Cursor Unslop](https://github.com/cursor/plugins/blob/main/pstack/skills/unslop/SKILL.md): overlaps
+  with the wording checks here. We retain title case, useful punctuation, and explanations that
+  would be lost through aggressive deletion.
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)
