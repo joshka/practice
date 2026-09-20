@@ -14,13 +14,27 @@
 
 ## Rule
 
-Validate semver-breaking changes against real external use.
+Classify compatibility against supported external use before recommending a release increment.
 
 ## Why
 
 Semver tools can detect many API breaks, but real downstream code shows how the public surface is
 actually used. Validate breaking changes against external examples or known users before assuming
 migration cost is acceptable.
+
+Name the baseline release, affected crate, target, enabled features, and downstream use before
+calling a change breaking. Compare the same consumer on both versions. Public trait guarantees,
+including auto-traits arising from private fields, belong in this comparison.
+
+A target that already fails to compile on the baseline does not by itself demonstrate a new
+regression. Check earlier supported releases in the same compatibility line when a recent
+regression may have hidden an established contract. Distinguish a proven break from a preference
+for consistent APIs on newly supported targets.
+
+Every library PR review should state breaking, non-breaking, or uncertain, the affected crates,
+and the release consequence under repository policy. Explain uncertainty with the missing baseline
+or consumer check. For pre-1.0 crates, use the project's compatibility policy and Cargo's version
+resolution conventions rather than assuming that all changes require a major-version increment.
 
 ## Helps
 
@@ -32,10 +46,14 @@ crates with examples, tutorials, and external dependents.
 External usage searches are evidence, not veto power. Security, soundness, correctness, or strategic
 API repair can justify a break with clear release notes.
 
+A minimal legal downstream example can demonstrate a contract break; finding a named production
+consumer is not required. Conversely, a search that finds no consumers does not prove compatibility.
+
 ## Agent Instruction
 
-Validate semver-breaking changes against real external use because semver tools can detect many API
-breaks, but real downstream code shows how the public surface is actually used.
+State breaking, non-breaking, or uncertain, affected crates, and release impact under project policy.
+Compare supported baseline and candidate consumer configurations, including target, features, and
+auto-traits; separate demonstrated regressions from design preferences and missing evidence.
 
 ## Mechanisms
 

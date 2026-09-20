@@ -33,9 +33,14 @@ notes.
 Do not reserve heavy feedback loops for tiny edits that can be verified directly. Match the loop to
 the risk, surface area, and cost of being wrong.
 
+Respect the user's budget. Stop after the required checks pass unless a new finding, changed
+artifact, or unresolved contract justifies more work. Repeated equivalent reviews and status
+narration consume capacity without adding evidence.
+
 ## Agent Instruction
 
-Budget tokens and time for reading, editing, checks, failure inspection, and proof reporting.
+Reserve time and tokens for validation and handoff. Give each extra pass a distinct question. Stop
+after required gates pass unless new evidence warrants another pass; budgets are ceilings.
 
 ## Mechanisms
 

@@ -53,6 +53,11 @@ For ambiguous work, spend human attention at the ambiguity boundary. Use
 [Spend Human Attention On Ambiguity][human-attention] before asking an agent to bury product,
 architecture, security, or public API decisions inside a large diff.
 
+Carry existing authorization through the task. Resolve routine implementation and validation
+details within it, and ask only about unresolved choices that materially change the result or
+scope. Define acceptance from the user's goal and examples without making every criterion another
+permission gate.
+
 ## Context And Knowledge
 
 Agents work best when the repo is legible and the relevant context arrives at the point of use. Keep
@@ -144,6 +149,12 @@ follow-up.
 Handoff notes should say what changed, where the important files are, what validation ran, what did
 not run, and what risk remains. Avoid long implementation diaries.
 
+Keep implementation, observed behavior, and product acceptance separate. For UI work, inspect and
+exercise complete workflows in the built app; test counts and screenshots alone do not establish
+that the result is usable. For library reviews, state compatibility and release impact against a
+named baseline and consumer configuration. Use [Match Evidence To Surface][surface-evidence] for
+choosing direct checks.
+
 Use [Review Proof Not Just Code][review-proof], [Produce Review Packets][review-packets], and
 [Report Verification Honestly][honest-verification] when handing work to a maintainer. Use [Review
 Agent Output As Future Maintainer][future-maintainer-review] when evaluating whether agent output is
@@ -160,6 +171,10 @@ separate.
 Every repeated correction is a chance to improve the system. Capture reusable feedback in patterns,
 guides, tools, tests, templates, or runbooks so future sessions do not need the same steering.
 
+First establish whether the guidance was missing, unclear, unreached, or ignored. Inspect the
+instruction, action, correction, and result together, including successful counterexamples. Adding
+another rule does not repair a routing failure or prove that an existing rule was followed.
+
 Use [Turn Feedback Into Guidance][feedback-guidance], [Record Agent Operating Lessons][lessons],
 [Close The Agent Loop][close-loop], and [Garbage Collect Agent Drift][drift] when agent work exposes
 a repeated failure mode.
@@ -173,11 +188,14 @@ automation.
 
 ## Maintainer Review Loop
 
-After a validated chunk, present concrete next chunks instead of vague continuation prompts. Put
-`I've reviewed, do the next thing` first when the expected path is for the maintainer to accept the
-current chunk and continue. Name the actual next thing in that option, and do the appropriate
-workflow work behind it: mark reviewed material, update the jj description, start a fresh jj change
-when the next unit is separate, and then begin that named next chunk.
+Match the loop to the user's requested mode. In an interactive review session, present concrete
+next chunks at the agreed decision points. In an authorized implementation batch, keep changes
+reviewable and validate them while continuing through the agreed scope. A small change boundary
+does not require another permission question.
+
+When a choice is needed, name the actual next chunk and recommend a path. Start a fresh jj change
+when the next unit is separate. Mark new guidance reviewed only after the maintainer explicitly
+accepts it; permission to continue implementing is not acceptance of its contents.
 
 Explain why each offered path is worth choosing. Include the tradeoff that matters for review:
 scope, risk, latency, validation depth, naming, structure, or follow-up cost. If the maintainer gives
@@ -236,8 +254,10 @@ current.
 
 - Does the handoff include proof instead of confidence language?
 - Did feedback become a reusable improvement where appropriate?
-- Does the next-option list include a reviewed-and-continue path when that is the normal flow?
+- Did the agent continue already-authorized work and pause only at a real decision boundary?
 - Does each option explain why that path would be chosen?
+- Does the evidence establish the claimed outcome on the relevant user or consumer surface?
+- Did the retrospective distinguish a guidance defect from a routing or execution failure?
 
 ### Coherence
 
@@ -303,6 +323,7 @@ current.
 [scoped-capabilities]: ../patterns/grant-scoped-agent-capabilities.md
 [secrets]: ../patterns/keep-secrets-out-of-context.md
 [security-impact]: ../patterns/prove-security-impact.md
+[surface-evidence]: ../rules/testing/test-match-evidence-to-surface.md
 [teach-tools]: ../patterns/teach-agents-through-tools.md
 [token-budget]: ../patterns/budget-tokens-for-feedback-loops.md
 [tools-over-prompts]: ../patterns/prefer-tools-over-prompts.md

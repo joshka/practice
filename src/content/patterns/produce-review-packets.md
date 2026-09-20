@@ -24,10 +24,22 @@ Package the work for review. Include the change summary, acceptance evidence, co
 risks, and the artifact that best proves user-facing behavior: tests, logs, screenshots, recordings,
 benchmarks, specialist review, or deployment notes.
 
+Lead with the disposition and decision the maintainer needs. For library changes, include the
+compatibility verdict, affected packages, and release consequence with its uncertainty. Link
+detailed evidence once instead of copying it into every coordinator update.
+
+Separate blocking defects, design tradeoffs, and optional polish. A technically accurate observation
+is useful review feedback only when its consequence warrants the author's attention. Explain when
+and how often a cost occurs before suggesting optimization; an unmeasured construction-time
+allocation should not sound like a demonstrated hot-path regression.
+
 ## Tradeoff
 
 Do not turn every tiny edit into a release dossier. The packet should be proportional to the risk
 and should reduce review work, not bury the reviewer in generic ceremony.
+
+Use a short disposition update when nothing else is needed. Reserve tables for comparing choices
+or tracking several items, and keep full investigation in the linked review artifact.
 
 ## Agent Instruction
 
@@ -66,3 +78,8 @@ Risk: did not exercise Apple Pay because the local browser cannot provision that
 [autonomy]: https://openai.com/index/harness-engineering/#increasing-levels-of-autonomy
 [symphony-blog]: https://openai.com/index/open-source-codex-orchestration-symphony/
 [symphony-readme]: https://github.com/openai/symphony#readme
+
+The [Google code review standard][review-standard] supports distinguishing engineering concerns
+from personal preferences and avoiding unnecessary barriers to useful changes.
+
+[review-standard]: https://google.github.io/eng-practices/review/reviewer/standard.html

@@ -14,7 +14,7 @@
 
 ## Rule
 
-Present concrete next options after validated chunks.
+Present concrete next options at unresolved review or scope boundaries.
 
 ## Why
 
@@ -32,10 +32,16 @@ cheap and keeps scope under human control.
 Do not ask for a choice when there is only one safe or obvious next action. Continue directly when
 the user has already approved that path.
 
+Small changes are review units, not automatic permission gates. In an authorized implementation
+batch, validate each unit and continue through the agreed scope. In an interactive review session,
+pause where the maintainer requested a decision. A request to proceed does not by itself mean that
+new guidance has been reviewed and accepted.
+
 ## Agent Instruction
 
-After a validated chunk, name the next concrete chunk and why to choose it so the maintainer
-controls scope cheaply.
+At an unresolved review or scope boundary, offer concrete next chunks and their tradeoffs. Continue
+already-authorized work without another permission question; mark guidance reviewed only after
+explicit acceptance.
 
 ## Mechanisms
 

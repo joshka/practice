@@ -186,9 +186,10 @@ text by hand; update the source repo and recopy this file.
   the crate package is what users receive, not the working tree.
 - `RUST-VALIDATE-RUST-DOCS-AS-CODE`: After Rust documentation changes, run the relevant docs build,
   doctests, feature-gated checks, and Markdown lint for the changed surface.
-- `RUST-VALIDATE-SEMVER-BREAKS-AGAINST-EXTERNAL-USE`: Validate semver-breaking changes against real
-  external use because semver tools can detect many API breaks, but real downstream code shows how
-  the public surface is actually used.
+- `RUST-VALIDATE-SEMVER-BREAKS-AGAINST-EXTERNAL-USE`: State breaking, non-breaking, or uncertain,
+  affected crates, and release impact under project policy. Compare supported baseline and candidate
+  consumer configurations, including target, features, and auto-traits; separate demonstrated
+  regressions from design preferences and missing evidence.
 - `RUST-VALIDATE-UNSAFE-THROUGH-SAFE-API`: Validate Rust unsafe code through its safe API wrapper,
   with internal tests only as supporting evidence.
 - `RUST-WORKING-RUST-CODE-NOT-ENOUGH`: Working Rust code is not enough because rust code can compile

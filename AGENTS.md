@@ -97,6 +97,10 @@ repo workflow matures.
 
 Optimize for small chunks and easy maintainer confirmation.
 
+Use the decision loop below for interactive review or unresolved scope choices. When the maintainer
+authorizes a batch of implementation work, keep its changes reviewable and validate them while
+continuing through that scope; do not require another choice at every internal chunk boundary.
+
 - After each validated chunk, offer a numbered list of concrete next chunks.
 - Put the recommended next chunk first and explain the tradeoff behind each option.
 - Treat a numbered choice as approval to move forward with that chunk.
