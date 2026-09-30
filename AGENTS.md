@@ -90,8 +90,9 @@ Use jujutsu (`jj`) for local version-control workflow.
 - Use Conventional Commits only when the repository already follows that spec; otherwise use the
   canonical unprefixed Chris Beams and Tim Pope style.
 
-Current publication policy: validate locally and ask before pushing. This policy may change as the
-repo workflow matures.
+Current publication policy: ask before pushing unless publication is already authorized. Present a
+reviewable change and the available validation evidence; exhaustive local validation is not a
+prerequisite for that request or for authorized PR publication.
 
 ## Local Review Loop
 
@@ -110,17 +111,19 @@ continuing through that scope; do not require another choice at every internal c
   feedback before moving on.
 - Implement only the confirmed chunk.
 - Keep each change small enough to review locally before moving on.
-- After validation, ask whether to push before publishing remote state.
+- Once the change is reviewable, ask whether to push unless publication is already authorized.
+  State completed and pending validation without waiting for exhaustive local checks.
 - If the maintainer redirects the sequence, update the next chunk instead of defending the old plan.
 
 ## Validation
 
-Before handing off documentation changes, run:
+Apply the validation-throughput guidance in the personal agent instructions. Select checks for the
+changed surface and inspect current CI coverage before delegating expensive checks.
 
-```bash
-markdownlint-cli2 "**/*.md"
-pnpm build
-```
+Lint changed Markdown before handoff. Changes confined to agent instructions need no site build.
+For rendered content, site configuration, or code changes, use focused checks where useful and
+complete the relevant `pnpm build` validation locally or in CI; it need not precede authorized PR
+publication. Report pending checks and follow through on failures.
 
 For rendered inspection, run `pnpm preview:open -- <source-path-or-route>`. This command derives the
 configured Astro base path, verifies the route as an HTML navigation, and opens it in Firefox. Do not
