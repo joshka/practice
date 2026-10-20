@@ -640,9 +640,26 @@ export function routeForRepoPath(repoPath: string): string {
 }
 
 function rewriteLinks(html: string, fromRepoPath: string): string {
-  return html.replace(/href="([^"]+)"/g, (_match, href: string) => {
-    return `href="${escapeHtml(rewriteHref(href, fromRepoPath))}"`;
-  });
+  return linkContentPathCode(
+    html.replace(/href="([^"]+)"/g, (_match, href: string) => {
+      return `href="${escapeHtml(rewriteHref(href, fromRepoPath))}"`;
+    }),
+  );
+}
+
+// Inline code that names another content page reads like a link, so make it one. Code inside
+// existing links or code blocks is left alone.
+function linkContentPathCode(html: string): string {
+  return html.replace(
+    /(?<!<a\b[^>]*>)(?<!<pre>)<code>((?:guides|patterns|principles|rules|mechanisms|references|snippets)\/[\w\/.-]+\.md)<\/code>/g,
+    (match, repoPath: string) => {
+      const target = logicalRepoPath(repoPath);
+      if (!existsSync(contentStoragePath(target))) return match;
+      const route = routeForRepoPath(target);
+      const href = route.startsWith('http') ? route : withBase(route);
+      return `<a href="${escapeHtml(href)}">${match}</a>`;
+    },
+  );
 }
 
 function rewriteHref(href: string, fromRepoPath: string): string {
