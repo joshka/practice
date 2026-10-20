@@ -98,8 +98,8 @@ to state the argument in their own words.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Docs avoid generated prose tells](docs-avoid-generated-prose-tells.md)
 - [Rust Forge PR 1040: Policy on LLM-generated
   text](https://github.com/rust-lang/rust-forge/pull/1040)

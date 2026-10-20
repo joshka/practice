@@ -47,6 +47,6 @@ line count as a split signal.
 
 ## References
 
-- [Pattern: Limit Live Context](../../patterns/limit-live-context.md)
+- [Pattern: Limit live context](../../patterns/limit-live-context.md)
 - [Ed Page Rust Style: Principles](https://epage.github.io/dev/rust-style/#principles)
 - [Rule: RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES](rust-prefer-concept-owned-modules-and-named-files.md)

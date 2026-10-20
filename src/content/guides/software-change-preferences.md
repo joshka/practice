@@ -31,7 +31,7 @@ Optimize for:
 - Explicit tradeoffs over unspoken cleverness.
 - Honest verification over implied confidence.
 
-## Change Shape
+## Change shape
 
 Start by identifying the smallest coherent unit that can be reviewed on its own. A chunk can be a
 structure-preserving refactor, a behavior change, a documentation update, or a pattern entry, but it
@@ -51,11 +51,11 @@ whole branch:
 - Do not add speculative public API for future features.
 
 Use
-[Avoid Speculative Public API][speculative-api] when a change wants to expose names, types, or
+[Avoid speculative public API][speculative-api] when a change wants to expose names, types, or
 extension points before the current need is real.
 
-Use [Use One Purpose Per Change][one-purpose], [Avoid Unnecessary Dependency
-Churn][dependency-churn], and [Keep Binaries Out Of Source Control][binary-artifacts] when scope
+Use [Use One Purpose Per Change][one-purpose], [Avoid unnecessary dependency
+churn][dependency-churn], and [Keep Binaries Out Of Source Control][binary-artifacts] when scope
 pressure would mix unrelated work or opaque artifacts into the same review.
 
 ### Follow-Ups And Generated Output
@@ -63,16 +63,16 @@ pressure would mix unrelated work or opaque artifacts into the same review.
 When a change reveals separate cleanup, note it or put it in a separate change rather than widening
 the current diff. Keep generated artifacts in sync when they are part of the review surface, but edit
 the durable source instead of generated output when release tooling owns the generated artifact. Use
-[Respect Generated Artifact Ownership][generated-ownership] when the durable fix belongs in the
+[Respect generated artifact ownership][generated-ownership] when the durable fix belongs in the
 source input, template, generator config, or release metadata.
 
-Use [Small Reviewable Chunks][small-chunks] when a change could grow into multiple review concerns.
+Use [Small reviewable chunks][small-chunks] when a change could grow into multiple review concerns.
 When structure and behavior can be separated cleanly, land the structure change first and verify it
 before changing behavior.
-Use [Code Shape][code-shape] when the main decision is how to reduce live context, limit change
+Use [Code shape][code-shape] when the main decision is how to reduce live context, limit change
 radius, preserve reversibility, or clarify cohesion and coupling.
-Use [Prefer Small Follow Ups][small-follow-ups], [Sync Generated Artifacts][sync-generated], and
-[Separate Structure From Behavior][structure-behavior] when follow-up work, generated output, or
+Use [Prefer Small Follow Ups][small-follow-ups], [Sync generated artifacts][sync-generated], and
+[Separate structure from behavior][structure-behavior] when follow-up work, generated output, or
 refactoring boundaries affect review shape.
 
 ## Local Context
@@ -87,7 +87,7 @@ Before editing, identify the owning module, the adjacent modules it depends on, 
 already used for the behavior. That local map keeps a general preference from overriding the shape
 the codebase already uses.
 
-Use [Identify Owning Module Before Editing][owning-module] before changing code whose local owner,
+Use [Identify owning module before editing][owning-module] before changing code whose local owner,
 neighbors, or test style are not yet clear.
 
 ### Local Fit
@@ -96,8 +96,8 @@ Prefer the existing style when it is coherent. If the existing shape is actively
 harder to understand, improve the local structure, but keep that improvement scoped to the same
 concept.
 
-Use [Follow Local Conventions][local-conventions] when general guidance and project shape might
-conflict. Use [Separate Discovery From Editing][discovery-editing] when the local shape is not clear
+Use [Follow local conventions][local-conventions] when general guidance and project shape might
+conflict. Use [Separate discovery from editing][discovery-editing] when the local shape is not clear
 enough to edit confidently.
 
 ## Working Copy Care
@@ -105,9 +105,9 @@ enough to edit confidently.
 Assume unowned edits belong to someone. Do not revert, rewrite, or absorb work just because it makes
 the current diff look cleaner.
 
-Use [Preserve Unowned Work][preserve-work] when a shared working copy has pre-existing edits or
+Use [Preserve unowned work][preserve-work] when a shared working copy has pre-existing edits or
 changes appear while work is in progress.
-Use [Change Preserve Unowned Work][change-preserve-work] when this needs compact change-shape rule
+Use [Change preserve unowned work][change-preserve-work] when this needs compact change-shape rule
 wording.
 
 ## Verification
@@ -142,8 +142,8 @@ Validate changes against the surface users receive, not only the source that gen
 
 Use [Match Evidence To Surface][evidence-surface] when template, generated-project, CLI, TUI,
 rendered, parser, public API, or performance changes need proof from the surface users receive.
-Use [Prove Command Construction And Display][command-proof], [Cover Navigation
-Boundaries][navigation-tests], and [Run Docs As First Class Gate][docs-gate] when command output,
+Use [Prove Command Construction And Display][command-proof], [Cover navigation
+boundaries][navigation-tests], and [Run Docs As First Class Gate][docs-gate] when command output,
 terminal navigation, or docs are the user-visible surface.
 
 For optimization work, use one change per optimization idea. Record the hypothesis and expected
@@ -158,12 +158,12 @@ environment, corpus, raw samples, and interpretation for benchmark results worth
 Never run benchmarks in parallel when timing data matters.
 
 Use [Measure Goal Change Compare][perf-measure], [Run Correctness First][perf-correctness],
-[Avoid Single Run Conclusions][perf-single-run], [Record Benchmark Provenance][perf-provenance],
-and [Run Timing Benchmarks Sequentially][perf-sequential] when optimization work affects review
+[Avoid Single Run Conclusions][perf-single-run], [Record benchmark provenance][perf-provenance],
+and [Run timing benchmarks sequentially][perf-sequential] when optimization work affects review
 shape or validation cost.
 
-Use [Smallest Trustworthy Verification][smallest-check] to choose the cheapest credible check. Use
-[Report Verification Honestly][honest-verification] to distinguish what ran, what failed, and what
+Use [Smallest trustworthy verification][smallest-check] to choose the cheapest credible check. Use
+[Report verification honestly][honest-verification] to distinguish what ran, what failed, and what
 was not checked.
 
 ## Review Artifacts
@@ -189,15 +189,15 @@ checklist, or handoff should own the current state.
 
 Treat review as a two-way discussion. When a reviewer asks about intent, tradeoffs, risk, behavior,
 API shape, or alternatives, answer the question instead of only pushing new code; use
-[Answer Questions Before Code][review-answer-questions] for that review pattern. Leave review
+[Answer questions before code][review-answer-questions] for that review pattern. Leave review
 threads unresolved for the reviewer unless the resolution is unambiguous, and use
-[Let Reviewers Resolve Threads][review-threads] when comment ownership affects review clarity.
+[Let reviewers resolve threads][review-threads] when comment ownership affects review clarity.
 
 ### Plans
 
 Use implementation plans for multi-phase work. A useful plan records current state, desired end
 state, non-goals, approach, phases, automated verification, and manual verification. Use
-[Make Plans Versioned Artifacts][versioned-plans] when a plan needs review, history, or resumption
+[Make plans versioned artifacts][versioned-plans] when a plan needs review, history, or resumption
 outside the chat thread.
 
 ### Prototype Rebuilds
@@ -214,7 +214,7 @@ better if it centralizes an open-ended domain or removes room for independent gr
 Record prototype boundary review in the issue, PR notes, or ADR when the implementation depends on
 earlier work.
 
-Use [Classify Prototype Reuse][prototype-reuse] when a rebuild depends on behavior, evidence, or
+Use [Classify prototype reuse][prototype-reuse] when a rebuild depends on behavior, evidence, or
 boundaries discovered in a prototype.
 
 ### PR Narrative
@@ -229,9 +229,9 @@ behavior and intent rather than walking through the diff line by line.
 Label speculation as inferred or unknown. Link critical claims to evidence such as tests, call
 sites, runtime behavior, source documentation, or generated artifacts.
 
-Use [Explain PR Problem Model And Proof][pr-proof], [Preserve Durable Answers Near
-Source][inline-choices], [Label Speculation As Inferred Or Unknown][label-speculation], and
-[Make Review Artifacts Standalone][standalone-review] when review narrative needs to preserve
+Use [Explain PR Problem Model And Proof][pr-proof], [Preserve durable answers near
+source][inline-choices], [Label Speculation As Inferred Or Unknown][label-speculation], and
+[Make review artifacts standalone][standalone-review] when review narrative needs to preserve
 reasoning for readers who did not see the discussion.
 
 PR descriptions should name the generated surface that changed: generated samples should state which
@@ -273,28 +273,28 @@ force reviewers to reverse engineer what changed, make each change's intent visi
 and isolate controversial changes so review attention does not starve unrelated work. Avoid
 dependency changes that only make sense if a later controversial change lands.
 
-Use [Commit Messages For History][commit-history] when setting jj descriptions or preparing
+Use [Commit messages for history][commit-history] when setting jj descriptions or preparing
 published commits. Follow the repository's commit convention; use Conventional Commits only where
 the repo has already adopted that spec.
-Use [Pin Behavior With Early Tests][early-tests] and [Isolate Controversial
-Changes][controversial-changes] when the review path needs guidepost tests or a separate lane for a
+Use [Pin behavior with early tests][early-tests] and [Isolate controversial
+changes][controversial-changes] when the review path needs guidepost tests or a separate lane for a
 risky decision.
 
 ## Related Guidance
 
-Use [Change Shape Rules][change-rules] for compact instructions about change size, generated
+Use [Change shape Rules][change-rules] for compact instructions about change size, generated
 artifacts, dependency churn, ownership, and structure-versus-behavior boundaries. The deeper reason
-is [Change Shape Controls Review Cost][review-cost]: small coherent changes keep review effort tied
+is [Change shape controls review cost][review-cost]: small coherent changes keep review effort tied
 to the decision being made.
 
-Use [Testing And Verification Rules][testing-rules] and
-[Tests Should Explain Failures][test-proof] when choosing proof for behavior changes. Use
+Use [Testing and verification Rules][testing-rules] and
+[Tests should explain failures][test-proof] when choosing proof for behavior changes. Use
 [Keep Binaries Out Of Source Control][binary-artifacts] before adding opaque artifacts to history,
 and use [Mechanisms][mechanisms] when the change needs tooling, CI, lint, jj, or release support.
 
 ## Review Questions
 
-### Review Change Shape
+### Review Change shape
 
 - Does this change have one coherent purpose?
 - Did it reduce what a reader must remember?

@@ -50,6 +50,6 @@ state changes or cleanup.
 
 ## References
 
-- [Pattern: Make Side Effects Visible](../../patterns/make-side-effects-visible.md)
+- [Pattern: Make side effects visible](../../patterns/make-side-effects-visible.md)
 - [Rust API Guidelines: Function docs include error, panic, and safety
   considerations](https://rust-lang.github.io/api-guidelines/documentation.html#c-failure)

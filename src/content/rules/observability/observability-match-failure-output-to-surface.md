@@ -52,8 +52,8 @@ review that names the surface where the failure appears.
 
 ## References
 
-- [Pattern: Write Actionable Error
-  Messages](../../patterns/write-actionable-error-messages.md)
+- [Pattern: Write actionable error
+  messages](../../patterns/write-actionable-error-messages.md)
 - [NN/g: 10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
 - [NN/g: 10 Design Guidelines for Reporting Errors in
   Forms](https://www.nngroup.com/articles/errors-forms-design-guidelines/)

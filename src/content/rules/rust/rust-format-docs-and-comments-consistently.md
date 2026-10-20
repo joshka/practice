@@ -52,4 +52,4 @@ and docs builds.
 
 - [rustfmt configuration](https://rust-lang.github.io/rustfmt/)
 - [rustdoc book: Documentation tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)
-- [Pattern: Prefer 100-Column Prose Wrap](../../patterns/prefer-100-column-prose-wrap.md)
+- [Pattern: Prefer 100-column prose wrap](../../patterns/prefer-100-column-prose-wrap.md)

@@ -15,7 +15,7 @@
   source-coherence-review`
 
 This guide collects preferences for small source-level moves that make Rust and Rust-adjacent code
-easier to read, review, and change. Use it with [Rust Maintainability][rust], not instead of it.
+easier to read, review, and change. Use it with [Rust maintainability][rust], not instead of it.
 
 Code shape is about the amount of context a maintainer must hold while changing code. Good shape
 does not merely reduce line count or add layers; it makes the relevant facts, relationships, and
@@ -32,9 +32,9 @@ evidence that an equivalent rewrite will be simple.
 Prefer code that keeps the active context small. A reader should be able to inspect a block, helper,
 type, or module and know which earlier facts can still affect it.
 
-Use [Limit Live Context][live-context] when a long method or module makes every earlier variable,
+Use [Limit live context][live-context] when a long method or module makes every earlier variable,
 flag, calculation, or side effect feel potentially relevant to later code. Use
-[Reader Locality][reader-locality] when movement or extraction would force more jumps instead of
+[Reader locality][reader-locality] when movement or extraction would force more jumps instead of
 reducing the reader's working set.
 
 ## Reviewable Structure
@@ -42,9 +42,9 @@ reducing the reader's working set.
 Separate preparation from behavior when mixing them would blur review. Structural work is easiest to
 trust when it is behavior-preserving, small enough to verify, and clearly aimed at the next change.
 
-Use [Separate Structure From Behavior][structure-behavior] when renames, moves, formatting, or
-extractions can be reviewed independently. Use [Cap Change Radius][change-radius] when one rule
-starts spreading across files that do not own it. Use [Small Reviewable Chunks][small-chunks] when
+Use [Separate structure from behavior][structure-behavior] when renames, moves, formatting, or
+extractions can be reviewed independently. Use [Cap change radius][change-radius] when one rule
+starts spreading across files that do not own it. Use [Small reviewable chunks][small-chunks] when
 the change needs to be split around review decisions.
 
 ## Reversible Moves
@@ -53,8 +53,8 @@ Prefer reversible structure while evidence is forming. A private helper, local r
 scope, or grouped block can be backed out cheaply; a public API, serialization shape, or service
 boundary usually cannot.
 
-Use [Keep Structure Reversible][reversible] before creating a durable contract. Use
-[Untangle Before Changing][untangle] when the first exploratory pass discovers the structure the
+Use [Keep structure reversible][reversible] before creating a durable contract. Use
+[Untangle before changing][untangle] when the first exploratory pass discovers the structure the
 behavior change needed, but leaves a tangled diff behind.
 
 ## Cohesion And Coupling
@@ -86,15 +86,15 @@ file is long, a module is small, or an abstraction looks tidy.
 - Preserve the reader's mental stack.
 - Keep the whole story visible when work is linear.
 
-Use [Name Coupling][coupling] before adding a boundary: name the future edit that would force pieces
-to move together. Use [Strengthen Cohesion][cohesion] when facts and behavior repeatedly change for
+Use [Name coupling][coupling] before adding a boundary: name the future edit that would force pieces
+to move together. Use [Strengthen cohesion][cohesion] when facts and behavior repeatedly change for
 the same reason and need a clear owner. Use [Align Seams With Real Variation][real-variation],
-[Do Not Over Apply DRY][dry], [Keep Weak Abstractions Close To Their Use][weak-abstractions], and
-[Prefer Local Reasoning][local-reasoning] when abstraction pressure is the main source of shape
-risk. Use [Keep Linear Story Visible][linear-story] when extraction would hide the flow a reader
+[Do Not Over Apply DRY][dry], [Keep weak abstractions close To Their Use][weak-abstractions], and
+[Prefer local reasoning][local-reasoning] when abstraction pressure is the main source of shape
+risk. Use [Keep linear story visible][linear-story] when extraction would hide the flow a reader
 needs to audit.
 
-Use [Source Coherence Review][source-coherence] when the ownership problem spans a module or feature.
+Use [Source coherence review][source-coherence] when the ownership problem spans a module or feature.
 Inventory named declarations separately from behavior, then map both lists in both directions. The
 pass distinguishes missing owners from names that add navigation without owning behavior.
 
@@ -128,16 +128,16 @@ or early exits harder to audit.
 - Make edge-case behavior explicit for zero-sized, empty, overflow, underflow, and already-complete
   states.
 
-Use [Use Guard Clause][guard] when a precondition encloses the main path. Use
-[Use Explaining Variable][explaining-variable] when a local name exposes a domain fact hidden inside
-an expression. Use [Chunk Statements][chunk-statements] when whitespace can reveal real phases in a
+Use [Use guard clause][guard] when a precondition encloses the main path. Use
+[Use explaining variable][explaining-variable] when a local name exposes a domain fact hidden inside
+an expression. Use [Chunk statements][chunk-statements] when whitespace can reveal real phases in a
 function.
 
-Use [Move Declaration And Initialization Together][declaration-init] when a name is introduced
-before it has a meaningful value. Use [Keep Name Current][name-current] when a stale name would make
-future readers trust the wrong concept. Use [Separate Pure Core From Effects][pure-core] when
-rendering, I/O, or mutation hides the rule being tested, and use [Make Edge Cases
-Explicit][edge-cases] when boundary values should be visible in the local control flow.
+Use [Move declaration and initialization together][declaration-init] when a name is introduced
+before it has a meaningful value. Use [Keep name current][name-current] when a stale name would make
+future readers trust the wrong concept. Use [Separate pure core from effects][pure-core] when
+rendering, I/O, or mutation hides the rule being tested, and use [Make edge cases
+explicit][edge-cases] when boundary values should be visible in the local control flow.
 
 ## Comments And Names
 
@@ -149,22 +149,22 @@ whether the source is missing a concept. The smallest useful name may be a local
 type, or module. Keep one-off intermediates direct when naming them more durably would not protect an
 invariant, own policy, or reduce the reader's live context.
 
-Use [Delete Redundant Comments][delete-comments] when a comment repeats the current code. Keep
+Use [Delete redundant comments][delete-comments] when a comment repeats the current code. Keep
 comments that explain constraints, compatibility, safety, performance, side effects, or non-obvious
 ordering.
 
 ## Related Guidance
 
-Use [Local Reasoning And Refactoring Rules][refactoring-rules] for compact source-shape
-instructions. Use [Reader Locality Reduces Change Cost][reader-locality-principle] for the deeper
+Use [Local reasoning and refactoring Rules][refactoring-rules] for compact source-shape
+instructions. Use [Reader locality reduces change cost][reader-locality-principle] for the deeper
 reasoning behind live context, helper extraction, and local reasoning. Use
-[Change Shape Rules][change-rules] when a source move affects review boundaries or should be split
-from behavior. Use [Source Coherence Review][source-coherence] for the declaration-outline and
+[Change shape Rules][change-rules] when a source move affects review boundaries or should be split
+from behavior. Use [Source coherence review][source-coherence] for the declaration-outline and
 behavior-mapping workflow behind a substantial ownership review.
 
 ## Review Questions
 
-### Change Shape
+### Change shape
 
 - Does this move reduce the live context a reader must hold?
 - Is this structure change separate from behavior where review needs that separation?

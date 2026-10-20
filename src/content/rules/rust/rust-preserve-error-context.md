@@ -51,4 +51,4 @@ review for visible messages.
 - [Rust standard library: Error](https://doc.rust-lang.org/std/error/trait.Error.html)
 - [Rust API Guidelines: Function docs include error, panic, and safety
   considerations](https://rust-lang.github.io/api-guidelines/documentation.html#c-failure)
-- [Pattern: Preserve Error Context](../../patterns/preserve-error-context.md)
+- [Pattern: Preserve error context](../../patterns/preserve-error-context.md)

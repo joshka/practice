@@ -46,10 +46,10 @@ field-level helper text, a notification body, action labels, a details disclosur
 structured API fields, or a support bundle. The guidance is about which information should be
 available, not the prose shape used to present it.
 
-Use [Match Failure Output To Surface][surface] for where and how the message should appear. Use
-[Surface Durable Failures][durable] when a transient message is not enough. Use [Keep Recovery
-Advice Safe and Honest][safe-recovery] when the cause or next step is uncertain or risky. Use [Keep
-Diagnostics Retention Safe][retention] when raw details, logs, support artifacts, or telemetry may
+Use [Match failure output to surface][surface] for where and how the message should appear. Use
+[Surface durable failures][durable] when a transient message is not enough. Use [Keep recovery
+advice safe and honest][safe-recovery] when the cause or next step is uncertain or risky. Use [Keep
+diagnostics retention safe][retention] when raw details, logs, support artifacts, or telemetry may
 cross access boundaries.
 
 ## Tradeoff

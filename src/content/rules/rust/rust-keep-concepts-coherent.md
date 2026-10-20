@@ -52,4 +52,4 @@ crate docs, and refactors that move unrelated helpers back to their owning conce
 
 - [Ed Page Rust Style: Principles](https://epage.github.io/dev/rust-style/#principles)
 - [Rust API Guidelines: Predictability](https://rust-lang.github.io/api-guidelines/predictability.html)
-- [Pattern: Strengthen Cohesion](../../patterns/strengthen-cohesion.md)
+- [Pattern: Strengthen cohesion](../../patterns/strengthen-cohesion.md)

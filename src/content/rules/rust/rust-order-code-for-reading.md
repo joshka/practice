@@ -49,6 +49,6 @@ module-level documentation that names the central concept.
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
 - [Ed Page Rust Style: File structure](https://epage.github.io/dev/rust-style/#file-structure)
 - [Rule: RUST-CENTRAL-ITEM-FIRST](rust-central-item-first.md)

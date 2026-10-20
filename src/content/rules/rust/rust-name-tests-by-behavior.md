@@ -48,5 +48,5 @@ contract.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rule: TEST-OPTIMIZE-FAILURE-OUTPUT](../test-failures/test-optimize-failure-output.md)

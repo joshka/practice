@@ -57,7 +57,7 @@ contextual assertion messages that include useful actual values.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Clippy PR #17149: Add `assert_is_empty`
   lint](https://github.com/rust-lang/rust-clippy/pull/17149)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)

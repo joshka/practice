@@ -51,8 +51,8 @@ message observed or guessed the cause.
 
 ## References
 
-- [Pattern: Write Actionable Error
-  Messages](../../patterns/write-actionable-error-messages.md)
+- [Pattern: Write actionable error
+  messages](../../patterns/write-actionable-error-messages.md)
 - [NN/g: User Control and
   Freedom](https://www.nngroup.com/articles/user-control-and-freedom/)
 - [Microsoft: Error Message

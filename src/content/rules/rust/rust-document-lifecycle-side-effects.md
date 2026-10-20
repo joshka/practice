@@ -47,7 +47,7 @@ Supported by Rustdoc, lifecycle examples, integration tests, and drop/cancellati
 
 ## References
 
-- [Pattern: Make Side Effects Visible](../../patterns/make-side-effects-visible.md)
+- [Pattern: Make side effects visible](../../patterns/make-side-effects-visible.md)
 - [Rust API Guidelines: Function docs include error, panic, and safety
   considerations](https://rust-lang.github.io/api-guidelines/documentation.html#c-failure)
 - [Rule: RUST-DOCUMENT-SCHEDULING-FOR-LONG-ASYNC](rust-document-scheduling-for-long-async.md)

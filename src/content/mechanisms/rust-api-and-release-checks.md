@@ -77,7 +77,7 @@ feature configuration with the result, including prerequisites supplied by the c
 
 For a compatibility claim, run the same legal consumer against the baseline and candidate. A
 candidate-only failure establishes a defect, but does not alone establish that the PR introduced it.
-Use [Validate Semver Breaks Against External Use][semver] to separate release consequences from
+Use [Validate semver breaks against external use][semver] to separate release consequences from
 design preferences.
 
 ## Packaged Artifact

@@ -232,7 +232,7 @@ longer sentences. No prose linter establishes factual accuracy or who wrote the 
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Docs hide catalog mechanics](docs-hide-catalog-mechanics.md)
 - [tropes.md: AI Writing Tropes to Avoid](https://tropes.fyi/tropes-md)
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)

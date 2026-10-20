@@ -41,7 +41,7 @@ actor, action, contract, evidence, or tradeoff.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Docs hide catalog mechanics](docs-hide-catalog-mechanics.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write

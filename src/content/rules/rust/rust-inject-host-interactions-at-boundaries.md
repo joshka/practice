@@ -50,7 +50,7 @@ clocks, and seeded random sources.
 
 ## References
 
-- [Pattern: Inject Time And Randomness](../../patterns/inject-time-and-randomness.md)
+- [Pattern: Inject time and randomness](../../patterns/inject-time-and-randomness.md)
 - [Microsoft Pragmatic Rust Guidelines:
   Checklist](https://microsoft.github.io/rust-guidelines/guidelines/checklist/index.html)
 - [Rule: BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT](../boundary/boundary-make-ambient-inputs-explicit.md)

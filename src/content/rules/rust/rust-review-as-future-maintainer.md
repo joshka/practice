@@ -51,4 +51,4 @@ residual-risk handoffs.
 
 - [Rule: REVIEW-MAKE-REVIEW-ARTIFACTS-STANDALONE](../review/review-make-review-artifacts-standalone.md)
 - [Ed Page Rust Style: Principles](https://epage.github.io/dev/rust-style/#principles)
-- [Pattern: Review Proof Not Just Code](../../patterns/review-proof-not-just-code.md)
+- [Pattern: Review proof not just code](../../patterns/review-proof-not-just-code.md)

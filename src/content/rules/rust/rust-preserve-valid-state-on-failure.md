@@ -51,4 +51,4 @@ review.
 - [Rule: BOUNDARY-READ-NORMALIZE-COMPARE-MUTATE](../boundary/boundary-read-normalize-compare-mutate.md)
 - [Rust API Guidelines: Function docs include error, panic, and safety
   considerations](https://rust-lang.github.io/api-guidelines/documentation.html#c-failure)
-- [Pattern: Make State Transitions Explicit](../../patterns/make-state-transitions-explicit.md)
+- [Pattern: Make state transitions explicit](../../patterns/make-state-transitions-explicit.md)

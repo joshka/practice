@@ -46,8 +46,8 @@ review that treats lint failures as fixable mechanics.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
-- [Pattern: Prefer 100-Column Prose Wrap](../../patterns/prefer-100-column-prose-wrap.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
+- [Pattern: Prefer 100-column prose wrap](../../patterns/prefer-100-column-prose-wrap.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

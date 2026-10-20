@@ -52,7 +52,7 @@ non-goals, and PR narratives that link to the accepted direction.
 
 ## References
 
-- [Pattern: Separate Discovery From Editing](../../patterns/separate-discovery-from-editing.md)
+- [Pattern: Separate discovery from editing](../../patterns/separate-discovery-from-editing.md)
 - [Review explain PR problem model and proof](review-explain-pr-problem-model-and-proof.md)
 - [GitHub Docs: Helping others review your changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)
 - [Ed Page: PR style](https://epage.github.io/dev/pr-style/)

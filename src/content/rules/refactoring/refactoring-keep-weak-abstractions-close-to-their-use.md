@@ -41,6 +41,6 @@ review that asks whether the abstraction has earned a wider home.
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)
 - [Refactoring catalog](https://refactoring.com/catalog/)

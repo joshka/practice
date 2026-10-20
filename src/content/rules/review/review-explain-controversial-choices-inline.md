@@ -75,7 +75,7 @@ comments, behavior tests, Rustdoc, module docs, review packets, and PR or commit
 - [Google Engineering Practices: What to look for in a code
   review](https://google.github.io/eng-practices/review/reviewer/looking-for.html)
 - [Keep docs near their subject](../../patterns/keep-docs-near-their-subject.md)
-- [Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
-- [Rust Avoid Overcommenting Trivial
-  Code](../rust/rust-avoid-overcommenting-trivial-code.md)
+- [Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
+- [Rust avoid overcommenting trivial
+  code](../rust/rust-avoid-overcommenting-trivial-code.md)

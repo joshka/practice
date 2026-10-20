@@ -17,8 +17,8 @@
 
 This guide collects preferences for deciding what documentation work belongs in a change, how deep
 the edit should go, and how review-facing prose should carry evidence. Use it with
-[Markdown And Documentation][markdown-docs], [Coding Agents][agents], and
-[Software Change Preferences][change].
+[Markdown and documentation][markdown-docs], [Coding agents][agents], and
+[Software change preferences][change].
 
 Documentation workflow is about scope control. Good docs should explain the current system, preserve
 useful reasoning, and help reviewers decide without turning every edit into a full rewrite.
@@ -28,11 +28,11 @@ useful reasoning, and help reviewers decide without turning every edit into a fu
 Choose the documentation job before editing. A typo fix, API contract repair, page rewrite, repo map,
 and PR handoff all have different review costs.
 
-Use [Choose Doc Pass Depth][pass-depth] when an edit could expand from local correctness into page
-coherence or documentation architecture. Use [Choose Doc Type][doc-type] when the page is mixing
+Use [Choose doc pass depth][pass-depth] when an edit could expand from local correctness into page
+coherence or documentation architecture. Use [Choose doc type][doc-type] when the page is mixing
 task, reference, explanation, or decision-record work.
 
-Source-explanation work is a separate deep pass. Use [Run Source Explanation Pass][source-pass]
+Source-explanation work is a separate deep pass. Use [Run source explanation pass][source-pass]
 when the goal is to make an undocumented or historically evolved implementation understandable
 across modules, items, helpers, formulas, and edge paths. Define what a new reader should be able to
 learn from the checkout, establish the end-to-end system map and domain fundamentals before item
@@ -44,12 +44,12 @@ describe the initial gap, but explanatory coverage and reader comprehension deci
 Docs should state current behavior and match their certainty to the evidence. Contracts, tests,
 measurements, observations, project preferences, and external sources should not sound identical.
 
-Use [Label Doc Claims By Evidence][evidence] when prose uses strong claims, ranking words, or broad
-guarantees. Use [Report Verification Honestly][verification] when handoff notes must distinguish
+Use [Label doc claims by evidence][evidence] when prose uses strong claims, ranking words, or broad
+guarantees. Use [Report verification honestly][verification] when handoff notes must distinguish
 run checks, skipped checks, assumptions, and remaining risk.
 
-When code alone does not establish why a choice exists, use [Reconstruct Rationale Before
-Writing][rationale-research]. Research from present behavior through introducing and corrective
+When code alone does not establish why a choice exists, use [Reconstruct rationale before
+writing][rationale-research]. Research from present behavior through introducing and corrective
 history before drafting. The published explanation should still lead with the current mechanism or
 tradeoff; history supplies evidence, failed alternatives, and regression warnings rather than the
 reader's required chronology.
@@ -78,12 +78,12 @@ Replace vague abstraction with the concrete host, file, command, resource, type,
 soft recommendation language hides the real decision, state the tradeoff directly instead of adding
 another abstract label.
 
-Use [Preserve Local Doc Voice][voice] when revising existing prose. Use
-[Preserve Intent Over Literalism][intent] when a requested rewrite would keep words but lose the
+Use [Preserve local doc voice][voice] when revising existing prose. Use
+[Preserve intent over literalism][intent] when a requested rewrite would keep words but lose the
 decision the original text was carrying.
-Use [Avoid Generated Prose Tells][generated-tells], [Use Concrete Details][concrete-details], and
-[Write Technical Prose][technical-prose] when revision needs to remove smooth but low-signal prose.
-Use [Own AI-Assisted Prose][own-ai-prose] when docs came from AI generation or AI-assisted
+Use [Avoid generated prose tells][generated-tells], [Use concrete details][concrete-details], and
+[Write technical prose][technical-prose] when revision needs to remove smooth but low-signal prose.
+Use [Own AI-assisted prose][own-ai-prose] when docs came from AI generation or AI-assisted
 exploration and need human curation before they become fair to share.
 
 ## Review Convergence
@@ -108,9 +108,9 @@ Repository docs need a small reliable map before they need a large tree. Separat
 maintainer details, reference material, and durable decisions so readers meet depth when they need
 it.
 
-Use [Bootstrap Repo Docs][bootstrap] when creating or reorganizing project docs. Use
-[Use AGENTS.md As Map][agents-map] when agent instructions should point to canonical guides instead
-of becoming a long standalone manual. Use [Run Rustdoc Quality Pass][rustdoc-pass] when a Rust
+Use [Bootstrap repo docs][bootstrap] when creating or reorganizing project docs. Use
+[Use AGENTS.md as map][agents-map] when agent instructions should point to canonical guides instead
+of becoming a long standalone manual. Use [Run rustdoc quality pass][rustdoc-pass] when a Rust
 crate needs README, crate Rustdoc, item Rustdoc, runnable examples, and decision records checked as
 separate but aligned documentation layers.
 
@@ -131,21 +131,21 @@ should say what lacks automated coverage and what manual testing covered; docume
 say what changed, what stayed accurate, and what still needs a follow-up.
 
 Use inline comments when a decision is best understood next to the relevant code. Use
-[Preserve Durable Answers Near Source][inline-choices] when a reviewer question exposes stable
+[Preserve durable answers near source][inline-choices] when a reviewer question exposes stable
 knowledge that future readers should not have to rediscover.
 Remember future readers of reviews: users reading changelogs, contributors tracing motivation, and
 maintainers root-causing behavior.
 
-Use [Write PR Narrative][pr-narrative] when a change needs a review guide. Use
-[Produce Review Packets][review-packets] when the handoff should bundle summary, proof, artifacts,
+Use [Write PR narrative][pr-narrative] when a change needs a review guide. Use
+[Produce review packets][review-packets] when the handoff should bundle summary, proof, artifacts,
 and known risks.
-Use [Make Review Artifacts Standalone][standalone-review] when issues, PRs, commit messages, or
+Use [Make review artifacts standalone][standalone-review] when issues, PRs, commit messages, or
 agent handoffs need to make sense without private session context.
 
 When a change touches support status, keep docs, examples, tests, fixtures, and user-facing claims
 aligned. A support matrix or coverage table is only useful when it stays tied to evidence.
 
-Use [Keep Drift Claims Aligned][drift-claims] when support matrices, fixtures, docs, examples, or
+Use [Keep drift claims aligned][drift-claims] when support matrices, fixtures, docs, examples, or
 public API paths need a shared validation source.
 
 When reviewing docs, lead with correctness, contract ambiguity, risk, drift, and operability. Use
@@ -158,20 +158,20 @@ contract problems from prose polish.
 Docs drift when behavior changes without nearby explanation changing with it. Treat stale docs as
 broken contracts: fix them, remove them, or explicitly record the follow-up.
 
-Use [Remediate Doc Drift][doc-drift] when behavior, examples, command output, public API, or agent
-instructions no longer match reality. Use [Keep Docs Near Their Subject][doc-locality] when drift
+Use [Remediate doc drift][doc-drift] when behavior, examples, command output, public API, or agent
+instructions no longer match reality. Use [Keep docs near their subject][doc-locality] when drift
 keeps recurring because the doc is too far from the thing it describes.
 
 ## Agent Snippet
 
-For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
+For copyable `AGENTS.md` guidance, use [Markdown and docs agent instructions][docs-snippet].
 
 ## Related Guidance
 
 Use [Documentation Rules][doc-rules] for compact instructions about docs-as-contracts, examples,
-review narratives, source links, and drift. Use [Docs Are Contracts][docs-contracts] for the deeper
+review narratives, source links, and drift. Use [Docs are contracts][docs-contracts] for the deeper
 principle behind writing behavior in English near the code or API. Use
-[Rust Docs Validation][docs-validation] when Rustdoc, doctests, docs.rs rendering, or generated docs
+[Rust docs validation][docs-validation] when Rustdoc, doctests, docs.rs rendering, or generated docs
 need mechanical proof.
 
 ## Review Questions
