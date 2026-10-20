@@ -23,6 +23,8 @@ const heroId = isReviewable && page.metadata.id && page.title !== page.metadata.
   : undefined;
 const summary = isReviewable ? page.metadata.summary : undefined;
 const relatedPages = relatedGuidancePages(page);
+const snippetMarkdown = page.snippetMarkdown;
+const copyIcon = '<svg class="detail-action__icon" aria-hidden="true" viewBox="0 0 448 512"><path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"></path></svg>';
 
 type IconKind = 'agent' | 'guide' | 'rule' | 'pattern' | 'principle' | 'mechanism' | 'reference';
 
@@ -205,7 +207,7 @@ function relatedKindLabel(page: MarkdownPage): string {
     </div>
     {heroId && <p class="detail-hero__id">{heroId}</p>}
     {showHeaderDescription && page.description && <p>{page.description}</p>}
-    {(chips.length > 0 || reviewNote || citationNote || feedbackUrl) && (
+    {(chips.length > 0 || snippetMarkdown || reviewNote || citationNote || feedbackUrl) && (
       <div class="detail-hero__meta" aria-label="Page topics">
         <div class="detail-hero__chips">
           {chips.map((chip) => (
@@ -216,17 +218,23 @@ function relatedKindLabel(page: MarkdownPage): string {
             )
           ))}
         </div>
-        {(reviewNote || citationNote || feedbackUrl) && (
+        {(snippetMarkdown || reviewNote || citationNote || feedbackUrl) && (
           <div class="detail-hero__actions">
             {reviewNote && (
               <button class="detail-copy" type="button" data-copy-markdown={reviewNote}>
-                <svg class="detail-action__icon" aria-hidden="true" viewBox="0 0 448 512"><path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"></path></svg>
+                <Fragment set:html={copyIcon} />
                 Copy review note
+              </button>
+            )}
+            {snippetMarkdown && (
+              <button class="detail-copy" type="button" data-copy-markdown={snippetMarkdown}>
+                <Fragment set:html={copyIcon} />
+                Copy snippet
               </button>
             )}
             {citationNote && (
               <button class="detail-copy" type="button" data-copy-markdown={citationNote}>
-                <svg class="detail-action__icon" aria-hidden="true" viewBox="0 0 448 512"><path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"></path></svg>
+                <Fragment set:html={copyIcon} />
                 Copy citation
               </button>
             )}
@@ -275,7 +283,7 @@ function relatedKindLabel(page: MarkdownPage): string {
         {isAgentInstruction(section.title) ? (
           <div class="prose detail-section__body detail-section__body--code">
             <div class="code-block">
-              <button class="code-block__copy" type="button"><svg class="detail-action__icon" aria-hidden="true" viewBox="0 0 448 512"><path d="M208 0L332.1 0c12.7 0 24.9 5.1 33.9 14.1l67.9 67.9c9 9 14.1 21.2 14.1 33.9L448 336c0 26.5-21.5 48-48 48l-192 0c-26.5 0-48-21.5-48-48l0-288c0-26.5 21.5-48 48-48zM48 128l80 0 0 64-64 0 0 256 192 0 0-32 64 0 0 48c0 26.5-21.5 48-48 48L48 512c-26.5 0-48-21.5-48-48L0 176c0-26.5 21.5-48 48-48z"></path></svg>Copy</button>
+              <button class="code-block__copy" type="button"><Fragment set:html={copyIcon} />Copy</button>
               <pre><code>{section.markdown.replace(/([^\n])\n(?=[^\n])/g, '$1 ')}</code></pre>
             </div>
           </div>

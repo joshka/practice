@@ -12,6 +12,7 @@ export type MarkdownPage = {
   repoPath: string;
   sourceUrl: string;
   metadata: Record<string, string>;
+  snippetMarkdown?: string;
 };
 
 export type MarkdownSection = {
@@ -437,7 +438,8 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
   const absolute = contentStoragePath(repoPath);
   const rawMarkdown = readFileSync(absolute, 'utf8');
   const parsed = parseFrontmatter(rawMarkdown);
-  const markdown = stripLegacyMetadata(parsed.body);
+  const snippet = unwrapSnippetFence(repoPath, stripLegacyMetadata(parsed.body));
+  const markdown = snippet.markdown;
   const metadata = {
     ...metadataFromMarkdown(parsed.body),
     ...parsed.metadata,
@@ -459,7 +461,22 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
     repoPath,
     sourceUrl: sourceUrlForRepoPath(repoPath),
     metadata,
+    snippetMarkdown: snippet.snippetMarkdown,
   };
+}
+
+// Agent snippets wrap their copyable instructions in one fenced Markdown block. Render the
+// instructions as page sections and keep the raw text for the copy button.
+function unwrapSnippetFence(
+  repoPath: string,
+  markdown: string,
+): { markdown: string; snippetMarkdown?: string } {
+  if (!repoPath.startsWith('snippets/agents/')) return { markdown };
+  const fence = markdown.match(/^```markdown\n([\s\S]*?)\n```[ \t]*$/m);
+  if (!fence || fence.index === undefined) return { markdown };
+  const before = markdown.slice(0, fence.index);
+  const after = markdown.slice(fence.index + fence[0].length);
+  return { markdown: `${before}${fence[1]}${after}`, snippetMarkdown: fence[1].trim() };
 }
 
 export function getSection(key: string): Section | undefined {
@@ -923,7 +940,7 @@ function parseFrontmatter(markdown: string): { body: string; metadata: Record<st
 }
 
 function stripLegacyMetadata(markdown: string): string {
-  return markdown.replace(/^##\s+Metadata\s*\n[\s\S]*?(?=^##\s+)/m, '').trim();
+  return markdown.replace(/^##\s+Metadata[ \t]*\n(?:(?:- |[ \t]+\S).*\n|[ \t]*\n)*/m, '').trim();
 }
 
 function cleanMetadataValue(value: string): string {
