@@ -253,13 +253,27 @@ p {
 .home-hero h1,
 .section-hero h1,
 .rules-hero h1,
+.detail-hero h1 {
+  color: var(--ds-heading);
+}
+
+.home-section-heading h2,
+.rules-use h2,
+.listing h2,
+.section-task-panel__intro h2,
+.home-use__intro h2 {
+  color: var(--ds-ink);
+}
+
+.home-hero h1,
+.section-hero h1,
+.rules-hero h1,
 .detail-hero h1,
 .home-section-heading h2,
 .rules-use h2,
 .listing h2,
 .section-task-panel__intro h2,
 .home-use__intro h2 {
-  color: var(--ds-heading);
   font-family: var(--font-display);
   font-weight: 600;
   letter-spacing: -0.025em;
@@ -1460,7 +1474,7 @@ body[data-area="home"] .home-use__intro h2 {
 .detail-related h2,
 .detail-summary h2 {
   margin: 0;
-  color: var(--ds-accent);
+  color: var(--ds-ink);
   font-family: var(--font-display);
   font-size: clamp(1.35rem, 1.15rem + 0.55vw, 1.7rem);
   font-weight: 600;
@@ -2249,24 +2263,25 @@ body[data-area="home"] .home-use__intro h2 {
 .detail-action {
   min-height: var(--control-height);
   padding: 0 var(--space-3);
-  border: 1px solid var(--ds-accent);
+  border: var(--rule);
   border-radius: var(--radius-control);
-  background: var(--ds-accent-field);
+  background: transparent;
   box-shadow: none;
-  color: var(--ds-on-accent-field);
+  color: var(--ds-ink-soft);
   font-size: var(--type-xs);
+}
+
+.detail-copy:hover,
+.detail-action:hover,
+.code-block__copy:hover {
+  border-color: var(--ds-accent);
+  color: var(--ds-ink);
 }
 
 .detail-copy,
 .detail-action,
 .detail-copy + .detail-action {
   margin-left: 0;
-}
-
-.detail-action--secondary {
-  border-color: var(--ds-line);
-  background: transparent;
-  color: var(--ds-accent);
 }
 
 .detail-summary,
@@ -2456,6 +2471,7 @@ html[data-theme="light"] pre {
   border-radius: var(--radius-control);
   background: var(--ds-bg);
   box-shadow: none;
+  color: var(--ds-ink-soft);
   font-size: var(--type-xs);
 }
 
