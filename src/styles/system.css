@@ -485,9 +485,12 @@ kbd {
   border-bottom: 2px solid transparent;
   border-radius: 0;
   color: var(--ds-muted);
-  font-size: var(--type-xs);
+  font-family: var(--font-ui);
+  font-size: var(--type-sm);
+  font-weight: 500;
   line-height: 1;
-  letter-spacing: 0.075em;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .nav-link:hover,
@@ -1409,8 +1412,7 @@ body[data-area="home"] .home-use__intro h2 {
   color: var(--ds-muted);
 }
 
-.group-nav a,
-.detail-chip {
+.group-nav a {
   border-color: color-mix(in srgb, var(--ds-accent) 45%, var(--ds-line));
   background: color-mix(in srgb, var(--ds-accent) 4%, transparent);
   color: var(--ds-heading);
@@ -1418,10 +1420,26 @@ body[data-area="home"] .home-use__intro h2 {
   transition: border-color 120ms ease, background-color 120ms ease;
 }
 
-.group-nav a:hover,
-.group-nav a:focus-visible,
+.detail-chip {
+  border-color: var(--ds-line);
+  color: var(--ds-ink-soft);
+  font-family: var(--font-ui);
+  font-size: var(--type-sm);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-decoration: none;
+  text-transform: none;
+  transition: border-color 120ms ease, color 120ms ease;
+}
+
 .detail-chip:hover,
 .detail-chip:focus-visible {
+  border-color: var(--ds-accent);
+  color: var(--ds-ink);
+}
+
+.group-nav a:hover,
+.group-nav a:focus-visible {
   border-color: var(--ds-accent);
   background: color-mix(in srgb, var(--ds-accent) 10%, transparent);
 }
@@ -2250,6 +2268,16 @@ body[data-area="home"] .home-use__intro h2 {
 
 .detail-hero__chips {
   gap: var(--space-2);
+}
+
+.theme-switcher__option,
+.detail-copy,
+.detail-action,
+.code-block__copy {
+  font-family: var(--font-ui);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .detail-hero__actions {
