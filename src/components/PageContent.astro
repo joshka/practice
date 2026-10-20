@@ -162,8 +162,17 @@ function relatedGuidancePages(page: MarkdownPage): MarkdownPage[] {
     .filter((candidate): candidate is MarkdownPage => Boolean(candidate));
 }
 
-function relatedLabel(page: MarkdownPage): string {
-  return page.metadata.id || page.title;
+function relatedKindLabel(page: MarkdownPage): string {
+  const labels: Record<string, string> = {
+    rule: 'Rule',
+    pattern: 'Pattern',
+    principle: 'Principle',
+    mechanism: 'Mechanism',
+    reference: 'Reference',
+    'agent-snippet': 'Agent snippet',
+    guide: 'Guide',
+  };
+  return labels[pageKind(page.repoPath)] ?? 'Page';
 }
 ---
 
@@ -229,10 +238,10 @@ function relatedLabel(page: MarkdownPage): string {
         {relatedPages.map((related) => (
           <a href={withBase(related.route)}>
             <strong class="detail-related__title">
-              <span>{relatedLabel(related)}</span>
+              <span>{related.title}</span>
               <span class="card-arrow" aria-hidden="true">→</span>
             </strong>
-            <span>{related.title}</span>
+            <span class="detail-related__kind">{relatedKindLabel(related)}</span>
           </a>
         ))}
       </div>

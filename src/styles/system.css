@@ -2359,6 +2359,12 @@ body[data-area="home"] .home-use__intro h2 {
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
   gap: var(--space-3);
+  color: var(--ds-ink);
+  font-family: var(--font-ui);
+  font-size: var(--type-body);
+  font-weight: 600;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .detail-related__title > .card-arrow {
@@ -2367,6 +2373,21 @@ body[data-area="home"] .home-use__intro h2 {
 
 .detail-related__links span {
   color: var(--ds-ink-soft);
+}
+
+.detail-related__links .detail-related__kind {
+  color: var(--ds-muted);
+  font-size: var(--type-xs);
+}
+
+.detail-hero p.detail-hero__id {
+  margin-top: var(--space-3);
+  color: var(--ds-muted);
+  font-family: var(--font-code);
+  font-size: var(--type-xs);
+  font-weight: 500;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .detail-sections {
