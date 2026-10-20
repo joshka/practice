@@ -49,13 +49,14 @@
   --accent-rule: 3px solid var(--ds-accent);
   --radius-control: 0.2rem;
 
-  --ds-bg: #171914;
-  --ds-bg-raised: #1e211b;
-  --ds-bg-strong: #272b22;
+  --ds-bg: #181817;
+  --ds-bg-raised: #1f1e1d;
+  --ds-bg-strong: #292826;
   --ds-ink: #f1eee2;
   --ds-ink-soft: #d8d4c7;
   --ds-muted: #aaa99a;
-  --ds-line: #3b3f34;
+  --ds-line: #353431;
+  --ds-glow: 0%;
 
   --brown-solid: #b48755;
   --brown-heading: #d0a874;
@@ -106,6 +107,7 @@ html {
 }
 
 html[data-theme="light"] {
+  --ds-glow: 8%;
   --ds-bg: #f2eee3;
   --ds-bg-raised: #faf7ee;
   --ds-bg-strong: #e5dfd1;
@@ -224,7 +226,7 @@ body {
   --color-on-primary-container: var(--ds-on-accent-field);
   min-width: 20rem;
   background:
-    radial-gradient(circle at 82% 0, color-mix(in srgb, var(--ds-accent) 8%, transparent), transparent 31rem),
+    radial-gradient(circle at 82% 0, color-mix(in srgb, var(--ds-accent) var(--ds-glow), transparent), transparent 31rem),
     var(--ds-bg);
   color: var(--ds-ink-soft);
   font-family: var(--font-reading);
