@@ -546,7 +546,7 @@ kbd {
 .site-search__panel {
   border: var(--rule);
   border-top: var(--accent-rule);
-  border-radius: var(--radius-control);
+  border-radius: 0;
   background: var(--ds-bg-raised);
   box-shadow: 0 1.5rem 4rem rgb(0 0 0 / 0.34);
 }
@@ -2435,7 +2435,7 @@ body[data-area="home"] .home-use__intro h2 {
 pre {
   border: var(--rule);
   border-top: var(--accent-rule);
-  border-radius: var(--radius-control);
+  border-radius: 0;
   background: color-mix(in srgb, var(--ds-bg-raised) 86%, #000);
   box-shadow: none;
 }
