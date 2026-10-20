@@ -1535,11 +1535,12 @@ body[data-area="home"] .home-use__intro h2 {
 }
 
 .index-entry {
-  padding: var(--space-5);
+  min-height: 0;
+  padding: var(--space-3) var(--space-3) var(--space-3) 0;
   border: 0;
-  border-left: 2px solid color-mix(in srgb, var(--ds-accent) 48%, var(--ds-line));
-  background: color-mix(in srgb, var(--ds-accent) 4%, transparent);
-  transition: border-color 120ms ease, background-color 120ms ease;
+  border-bottom: var(--rule);
+  background: transparent;
+  transition: background-color 120ms ease;
 }
 
 .index-entry:hover,
@@ -1555,9 +1556,21 @@ body[data-area="home"] .home-use__intro h2 {
 
 .index-entry:hover,
 .index-entry:focus-visible {
-  padding-left: var(--space-5);
-  border-left-color: var(--ds-accent);
-  background: color-mix(in srgb, var(--ds-accent) 10%, transparent);
+  padding-left: 0;
+  background: color-mix(in srgb, var(--ds-accent) 6%, transparent);
+}
+
+.index-group > .index-list--cards {
+  gap: 0;
+  border-top: var(--rule);
+}
+
+.index-entry .index-entry__body strong {
+  font-size: 1.1rem;
+}
+
+.index-entry .index-entry__description {
+  margin-top: var(--space-1);
 }
 
 .index-entry::after {
