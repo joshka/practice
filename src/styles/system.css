@@ -1561,6 +1561,7 @@ body[data-area="home"] .home-use__intro h2 {
   background: color-mix(in srgb, var(--ds-accent) 6%, transparent);
 }
 
+.index-list--cards,
 .index-group > .index-list--cards {
   gap: 0;
   border-top: var(--rule);
@@ -1703,8 +1704,12 @@ body[data-area="home"] .home-use__intro h2 {
 .rules-domain-card__count,
 .tag-card__count {
   margin-top: var(--space-2);
-  color: var(--ds-accent);
+  color: var(--ds-muted);
+  font-family: var(--font-ui);
   font-size: var(--type-xs);
+  font-weight: 400;
+  letter-spacing: 0;
+  text-transform: none;
 }
 
 .index-entry__description,
