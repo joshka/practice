@@ -1,8 +1,8 @@
-# Log At Owned Boundaries
+# Log at owned boundaries
 
 ## Metadata
 
-- Name: `Log At Owned Boundaries`
+- Name: `Log at owned boundaries`
 - ID: `log-at-owned-boundaries`
 - Summary: Logs become noisy and inconsistent when every helper records the same failure from a
   partial viewpoint. Log where the code owns the operation and can attach useful, safe diagnostic

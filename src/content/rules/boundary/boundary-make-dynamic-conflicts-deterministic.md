@@ -1,8 +1,8 @@
-# Boundary Make Dynamic Conflicts Deterministic
+# Boundary make dynamic conflicts deterministic
 
 ## Metadata
 
-- Name: `Make Dynamic Conflicts Deterministic`
+- Name: `Make dynamic conflicts deterministic`
 - ID: `BOUNDARY-MAKE-DYNAMIC-CONFLICTS-DETERMINISTIC`
 - Summary: Define stable ordering, duplicate handling, priority, or override policy for dynamic
   registrations. Deterministic conflict behavior prevents hash order or load timing from changing
@@ -44,8 +44,8 @@ conflict tests, and startup diagnostics.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

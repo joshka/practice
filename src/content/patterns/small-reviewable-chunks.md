@@ -1,8 +1,8 @@
-# Small Reviewable Chunks
+# Small reviewable chunks
 
 ## Metadata
 
-- Name: `Small Reviewable Chunks`
+- Name: `Small reviewable chunks`
 - ID: `small-reviewable-chunks`
 - Summary: Large mixed changes blur structure, wording, behavior, and workflow decisions until
   review becomes slow or shallow. Choose one coherent purpose per chunk, validate it, and ask for

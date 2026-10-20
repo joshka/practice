@@ -1,8 +1,8 @@
-# Docs Prove Real Use With Examples
+# Docs prove real use with examples
 
 ## Metadata
 
-- Name: `Prove Real Use With Examples`
+- Name: `Prove real use with examples`
 - ID: `DOCS-PROVE-REAL-USE-WITH-EXAMPLES`
 - Summary: `Use examples that show realistic ownership, errors, lifecycle, configuration, or
   integration shape. Keep them focused, but make them strong enough to prove the contract.`
@@ -41,12 +41,12 @@ function do not prove that the API works in the way users need.
 
 Supported by doctests, integration examples, example binaries, fixtures, snapshots, and review that
 asks what real user question the example answers. Use
-[Separate Technique From Example Policy](docs-separate-technique-from-example-policy.md) when a
+[Separate technique from example policy](docs-separate-technique-from-example-policy.md) when a
 realistic example adds application decisions that readers could mistake for library requirements.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

@@ -1,8 +1,8 @@
-# Give Agents Objectives With Boundaries
+# Give agents objectives with boundaries
 
 ## Metadata
 
-- Name: `Give Agents Objectives With Boundaries`
+- Name: `Give agents objectives with boundaries`
 - ID: `give-agents-objectives-with-boundaries`
 - Summary: Agents perform better when they know both the desired outcome and the limits around
   scope, authority, and risk. State objectives with concrete boundaries so the agent can act

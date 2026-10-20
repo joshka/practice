@@ -1,8 +1,8 @@
-# Docs Front Load Useful Point
+# Docs front load useful point
 
 ## Metadata
 
-- Name: `Front-Load Useful Point`
+- Name: `Front-Load useful point`
 - ID: `DOCS-FRONT-LOAD-USEFUL-POINT`
 - Summary: `Put the decision, command, invariant, or warning before broad setup. Readers and agents
   can then use the page without hunting through introductory prose.`
@@ -42,7 +42,7 @@ that asks what the reader should learn first.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

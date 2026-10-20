@@ -1,8 +1,8 @@
-# Rust Deny Accidental Unsafe
+# Rust deny accidental unsafe
 
 ## Metadata
 
-- Name: `Deny Accidental Unsafe`
+- Name: `Deny accidental unsafe`
 - ID: `RUST-DENY-ACCIDENTAL-UNSAFE`
 - Summary: Use a crate-level lint when a crate intends to avoid unsafe code entirely. Executable
   policy catches accidental unsafe before it becomes normal implementation detail.

@@ -1,9 +1,9 @@
-# VCS Avoid Interactive JJ In Agent Work
+# VCS avoid interactive JJ in agent work
 
 ## Metadata
 
 - ID: `VCS-AVOID-INTERACTIVE-JJ-IN-AGENT-WORK`
-- Name: `Avoid Interactive JJ in Agent Work`
+- Name: `Avoid interactive JJ in agent work`
 - Summary: Use noninteractive jj commands with explicit messages, targets, and files in agent work.
   Interactive editors, prompts, merge tools, and pagers can hang unattended sessions.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ reading `jj help` before unfamiliar commands.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

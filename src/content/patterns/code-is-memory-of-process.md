@@ -1,8 +1,8 @@
-# Code Is Memory Of Process
+# Code is memory of process
 
 ## Metadata
 
-- Name: `Code Is Memory Of Process`
+- Name: `Code is memory of process`
 - ID: `code-is-memory-of-process`
 - Summary: Code accumulates the history of decisions, shortcuts, and workflows that produced it.
   When changing it, preserve useful operational memory while removing obsolete process scars that no

@@ -1,9 +1,9 @@
-# Test Write Regression Tests For Bug Fixes
+# Test write regression tests for bug fixes
 
 ## Metadata
 
 - ID: `TEST-WRITE-REGRESSION-TESTS-FOR-BUG-FIXES`
-- Name: `Write Regression Tests for Bug Fixes`
+- Name: `Write regression tests for bug fixes`
 - Summary: Add a test that fails before the bug fix and protects the repaired contract.
   Skip only when reproduction is impractical, and then record the closest trustworthy validation.
 - Status: `reviewed`
@@ -42,8 +42,8 @@ integration tests, and handoff notes when reproduction is impractical.
 
 ## References
 
-- [Pattern: Characterize Then Fix](../../patterns/characterize-then-fix.md)
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Pattern: Characterize then fix](../../patterns/characterize-then-fix.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

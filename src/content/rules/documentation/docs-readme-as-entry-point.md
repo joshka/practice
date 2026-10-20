@@ -1,8 +1,8 @@
-# Docs Readme As Entry Point
+# Docs readme as entry point
 
 ## Metadata
 
-- Name: `README as Entry Point`
+- Name: `README as entry point`
 - ID: `DOCS-README-AS-ENTRY-POINT`
 - Summary: `Use README files to orient readers to purpose, setup, first useful use, and deeper docs.
   Split out manual-level detail when it hides the starting path.`
@@ -41,7 +41,7 @@ whether the first screen helps a new reader begin.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

@@ -1,8 +1,8 @@
-# Boundary Ground Integrations In Primary Sources
+# Boundary ground integrations in primary sources
 
 ## Metadata
 
-- Name: `Ground Integrations In Primary Sources`
+- Name: `Ground integrations in primary sources`
 - ID: `BOUNDARY-GROUND-INTEGRATIONS-IN-PRIMARY-SOURCES`
 - Summary: Base adapter behavior on provider docs, specs, or captured API responses before encoding
   local assumptions. When primary sources are incomplete, label observations and inferences so
@@ -43,8 +43,8 @@ assert documented provider behavior.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

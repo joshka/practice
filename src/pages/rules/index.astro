@@ -1,9 +1,17 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import KindIcon from '../../components/KindIcon.astro';
-import { renderMarkdown, ruleDomains, rulesForDomain, withBase } from '../../lib/site';
+import {
+  renderMarkdown,
+  ruleDomains,
+  rulesForDomain,
+  sectionReadmeExtras,
+  sentenceCase,
+  withBase,
+} from '../../lib/site';
 
 const page = renderMarkdown('rules/README.md');
+const readmeExtras = sectionReadmeExtras(page);
 const domainTags: Record<string, string> = {
   'agent-workflow': 'AGENT',
   boundary: 'BOUNDARY',
@@ -50,6 +58,8 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
       </div>
     </section>
 
+    {page.introHtml && <div class="prose section-intro" set:html={page.introHtml} />}
+
     <section class="rules-use" aria-labelledby="rules-use-title">
       <div>
         <h2 id="rules-use-title">Using the rules</h2>
@@ -93,5 +103,16 @@ const ruleCount = domains.reduce((sum, domain) => sum + domain.count, 0);
         ))}
       </div>
     </section>
+
+    {readmeExtras.length > 0 && (
+      <div class="detail-sections section-extras">
+        {readmeExtras.map((extra) => (
+          <section class="detail-section">
+            <h2>{sentenceCase(extra.title)}</h2>
+            <div class="prose detail-section__body" set:html={extra.html} />
+          </section>
+        ))}
+      </div>
+    )}
   </div>
 </BaseLayout>

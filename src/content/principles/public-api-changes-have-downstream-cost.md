@@ -1,8 +1,8 @@
-# Public API Changes Have Downstream Cost
+# Public API changes have downstream cost
 
 ## Metadata
 
-- Name: `Public API Changes Have Downstream Cost`
+- Name: `Public API changes have downstream cost`
 - ID: `public-api-changes-have-downstream-cost`
 - Summary: `Public API edits impose migration, semver, documentation, and integration costs beyond
   the local diff. Prefer additive paths and explicit migration proof when a break is justified.`

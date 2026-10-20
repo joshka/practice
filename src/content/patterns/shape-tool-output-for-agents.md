@@ -1,8 +1,8 @@
-# Shape Tool Output For Agents
+# Shape tool output for agents
 
 ## Metadata
 
-- Name: `Shape Tool Output For Agents`
+- Name: `Shape tool output for agents`
 - ID: `shape-tool-output-for-agents`
 - Summary: Human-oriented tool output can bury the failure signal an agent needs to act. Prefer
   quiet summaries, structured output, and saved full logs so agents see the actionable slice first

@@ -1,4 +1,4 @@
-# Rust Configure Docs rs
+# Rust configure docs rs
 
 ## Metadata
 

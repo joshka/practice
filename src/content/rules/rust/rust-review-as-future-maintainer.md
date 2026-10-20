@@ -1,8 +1,8 @@
-# Rust Review As Future Maintainer
+# Rust review as future maintainer
 
 ## Metadata
 
-- Name: `Review As Future Maintainer`
+- Name: `Review as future maintainer`
 - ID: `RUST-REVIEW-AS-FUTURE-MAINTAINER`
 - Summary: Review Rust changes for the reader who will debug, extend, or release the code later, not
   only for immediate correctness. Favor maintainable API shape, docs, tests, and error behavior over
@@ -51,4 +51,4 @@ residual-risk handoffs.
 
 - [Rule: REVIEW-MAKE-REVIEW-ARTIFACTS-STANDALONE](../review/review-make-review-artifacts-standalone.md)
 - [Ed Page Rust Style: Principles](https://epage.github.io/dev/rust-style/#principles)
-- [Pattern: Review Proof Not Just Code](../../patterns/review-proof-not-just-code.md)
+- [Pattern: Review proof not just code](../../patterns/review-proof-not-just-code.md)

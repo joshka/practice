@@ -1,8 +1,8 @@
-# Boundary Model Real Upstream Surface
+# Boundary model real upstream surface
 
 ## Metadata
 
-- Name: `Model Real Upstream Surface`
+- Name: `Model real upstream surface`
 - ID: `BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`
 - Summary: Shape local integration APIs around the provider's actual records, pages, permissions,
   rate limits, and consistency behavior. Wrappers may simplify common paths, but they should not
@@ -43,8 +43,8 @@ integration tests against real or recorded upstream behavior.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

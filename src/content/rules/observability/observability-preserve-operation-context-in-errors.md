@@ -1,8 +1,8 @@
-# Observability Preserve Operation Context In Errors
+# Observability preserve operation context in errors
 
 ## Metadata
 
-- Name: `Preserve Operation Context in Errors`
+- Name: `Preserve operation context in errors`
 - ID: `OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`
 - Summary: Carry the operation, resource, provider, input class, and policy context that explain a
   failure. Stable identifiers and sanitized summaries shorten debugging without exposing payloads.
@@ -43,7 +43,7 @@ regression tests for error messages where callers rely on them.
 
 ## References
 
-- [Pattern: Log At Owned Boundaries](../../patterns/log-at-owned-boundaries.md)
+- [Pattern: Log at owned boundaries](../../patterns/log-at-owned-boundaries.md)
 - [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 - [OWASP Logging Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)

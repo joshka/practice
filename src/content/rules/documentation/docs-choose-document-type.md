@@ -1,8 +1,8 @@
-# Docs Choose Document Type
+# Docs choose document type
 
 ## Metadata
 
-- Name: `Choose Document Type`
+- Name: `Choose document type`
 - ID: `DOCS-CHOOSE-DOCUMENT-TYPE`
 - Summary: `Pick the dominant document mode before editing so the page serves one reader task well.
   Link out to secondary modes instead of blending tutorial, reference, decisions, and changelog.`
@@ -42,7 +42,7 @@ secondary modes to the right layer.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

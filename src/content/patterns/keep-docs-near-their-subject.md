@@ -1,8 +1,8 @@
-# Keep Docs Near Their Subject
+# Keep docs near their subject
 
 ## Metadata
 
-- Name: `Keep Docs Near Their Subject`
+- Name: `Keep docs near their subject`
 - ID: `keep-docs-near-their-subject`
 - Summary: Documentation drifts when it is far from the code, policy, or workflow it explains. Let
   shared rationale rise to the nearest stable owner while item docs retain their local contracts,

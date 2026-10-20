@@ -1,8 +1,8 @@
-# Rust Use Meaningful Standard Types
+# Rust use meaningful standard types
 
 ## Metadata
 
-- Name: `Use Meaningful Standard Types`
+- Name: `Use meaningful standard types`
 - ID: `RUST-USE-MEANINGFUL-STANDARD-TYPES`
 - Summary: Prefer standard or ecosystem types that encode ownership, units, paths, durations,
   optionality, and invariants better than raw strings or integers. Use domain newtypes when the

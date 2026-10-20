@@ -1,8 +1,8 @@
-# Smallest Trustworthy Verification
+# Smallest trustworthy verification
 
 ## Metadata
 
-- Name: `Smallest Trustworthy Verification`
+- Name: `Smallest trustworthy verification`
 - ID: `smallest-trustworthy-verification`
 - Summary: Verification is weak when it is either skipped or broad without covering the likely
   failure. Run the cheapest check that could catch the risk introduced by the change, broadening

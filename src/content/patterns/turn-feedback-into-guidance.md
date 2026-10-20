@@ -1,8 +1,8 @@
-# Turn Feedback Into Guidance
+# Turn feedback into guidance
 
 ## Metadata
 
-- Name: `Turn Feedback Into Guidance`
+- Name: `Turn feedback into guidance`
 - ID: `turn-feedback-into-guidance`
 - Summary: Repeated steering can expose missing, unclear, unreached, or ignored guidance. Diagnose
   the failure, fix the current artifact, and repair the instruction or delivery mechanism that

@@ -1,8 +1,8 @@
-# Boundary Use Conservative Terminal Defaults
+# Boundary use conservative terminal defaults
 
 ## Metadata
 
-- Name: `Use Conservative Terminal Defaults`
+- Name: `Use conservative terminal defaults`
 - ID: `BOUNDARY-USE-CONSERVATIVE-TERMINAL-DEFAULTS`
 - Summary: Choose first-run terminal behavior that works with limited color, small viewports,
   ordinary keyboard input, and varied fonts or accessibility settings. Advanced styling can remain
@@ -43,8 +43,8 @@ saturating layout arithmetic, and manual checks in common terminals.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

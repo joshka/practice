@@ -1,8 +1,8 @@
-# Docs Own AI-Assisted Prose
+# Docs own AI-assisted prose
 
 ## Metadata
 
-- Name: `Own AI-Assisted Prose`
+- Name: `Own AI-assisted prose`
 - ID: `DOCS-OWN-AI-ASSISTED-PROSE`
 - Summary: `AI-generated or AI-assisted docs are reasonable to share when human curation makes them
   author-owned. The published artifact should carry checked claims, reader-sized scope, relevant
@@ -98,9 +98,9 @@ to state the argument in their own words.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
-- [Docs Avoid Generated Prose Tells](docs-avoid-generated-prose-tells.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
+- [Docs avoid generated prose tells](docs-avoid-generated-prose-tells.md)
 - [Rust Forge PR 1040: Policy on LLM-generated
   text](https://github.com/rust-lang/rust-forge/pull/1040)
 - [Rust Forge PR 1040 comment

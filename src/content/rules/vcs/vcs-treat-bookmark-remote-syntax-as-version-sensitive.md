@@ -1,9 +1,9 @@
-# VCS Treat Bookmark Remote Syntax As Version Sensitive
+# VCS treat bookmark remote syntax as version sensitive
 
 ## Metadata
 
 - ID: `VCS-TREAT-BOOKMARK-REMOTE-SYNTAX-AS-VERSION-SENSITIVE`
-- Name: `Treat Bookmark Remote Syntax as Version Sensitive`
+- Name: `Treat bookmark remote syntax as version sensitive`
 - Summary: Verify `bookmark@remote` and remote-bookmark syntax against the installed jj version.
   Durable guidance should avoid assuming one spelling works across commands and releases.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ unverified shorthand.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

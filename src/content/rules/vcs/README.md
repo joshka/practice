@@ -1,4 +1,4 @@
-# JJ Topology And Source Control
+# JJ topology and source control
 
 VCS rules cover jj-first source-control work, remote topology, operation-log recovery, workspaces,
 publication safety, and file-tracking decisions.

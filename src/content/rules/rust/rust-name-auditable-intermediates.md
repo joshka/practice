@@ -1,8 +1,8 @@
-# Rust Name Auditable Intermediates
+# Rust name auditable intermediates
 
 ## Metadata
 
-- Name: `Name Auditable Intermediates`
+- Name: `Name auditable intermediates`
 - ID: `RUST-NAME-AUDITABLE-INTERMEDIATES`
 - Summary: Introduce named locals where parsing, validation, rendering, ownership, or side-effect
   decisions need review. Avoid naming every trivial expression when it would add ceremony without

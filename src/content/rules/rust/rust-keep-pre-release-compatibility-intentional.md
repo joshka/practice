@@ -1,8 +1,8 @@
-# Rust Keep Pre Release Compatibility Intentional
+# Rust keep pre release compatibility intentional
 
 ## Metadata
 
-- Name: `Keep Pre-Release Compatibility Intentional`
+- Name: `Keep pre-release compatibility intentional`
 - ID: `RUST-KEEP-PRE-RELEASE-COMPATIBILITY-INTENTIONAL`
 - Summary: Preserve pre-release compatibility only when it reflects a chosen contract. Early cleanup
   is often cheaper than freezing accidental names, re-exports, features, or variants.

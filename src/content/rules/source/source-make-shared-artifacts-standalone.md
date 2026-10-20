@@ -1,8 +1,8 @@
-# Source Make Shared Artifacts Standalone
+# Source make shared artifacts standalone
 
 ## Metadata
 
-- Name: `Make Shared Artifacts Standalone`
+- Name: `Make shared artifacts standalone`
 - ID: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`
 - Summary: Restate the problem, rationale, evidence, and tradeoffs in shared docs, templates,
   generated packs, or reusable guidance. Future readers should not need private notes or
@@ -49,7 +49,7 @@ provenance notes where they help.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Rust API Guidelines: public APIs are stable](https://rust-lang.github.io/api-guidelines/necessities.html#c-stable)
 - [Microsoft Pragmatic Rust Guidelines: prefer simple abstractions](https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS)

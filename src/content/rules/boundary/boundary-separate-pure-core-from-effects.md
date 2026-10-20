@@ -1,8 +1,8 @@
-# Boundary Separate Pure Core From Effects
+# Boundary separate pure core from effects
 
 ## Metadata
 
-- Name: `Separate Pure Core From Effects`
+- Name: `Separate pure core from effects`
 - ID: `BOUNDARY-SEPARATE-PURE-CORE-FROM-EFFECTS`
 - Summary: Move domain computation away from rendering, I/O, mutation, and global state when effects
   obscure the decision being tested. The split gives tests a stable surface, but should be skipped
@@ -43,8 +43,8 @@ integration tests for the effect boundary.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

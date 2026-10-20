@@ -1,4 +1,4 @@
-# Rust API And Crate Shape
+# Rust API and crate shape
 
 Rust rules cover public API shape, crate layout, dependency policy, docs.rs behavior, feature flags,
 public errors, unsafe boundaries, and release checks.

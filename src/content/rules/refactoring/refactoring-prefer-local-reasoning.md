@@ -1,8 +1,8 @@
-# Refactoring Prefer Local Reasoning
+# Refactoring prefer local reasoning
 
 ## Metadata
 
-- Name: `Prefer Local Reasoning`
+- Name: `Prefer local reasoning`
 - ID: `REFACTORING-PREFER-LOCAL-REASONING`
 - Summary: Shape code so relevant state, invariants, and effects are visible near the change.
   Centralize only when it reduces total reasoning, because distant reconstruction raises cognitive
@@ -43,6 +43,6 @@ hidden state, and tests at the owning boundary.
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)
 - [Refactoring catalog](https://refactoring.com/catalog/)

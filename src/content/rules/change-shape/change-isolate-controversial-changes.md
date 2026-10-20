@@ -1,8 +1,8 @@
-# Change Isolate Controversial Changes
+# Change isolate controversial changes
 
 ## Metadata
 
-- Name: `Isolate Controversial Changes`
+- Name: `Isolate controversial changes`
 - ID: `CHANGE-ISOLATE-CONTROVERSIAL-CHANGES`
 - Summary: Put risky or contentious moves in their own review unit when they can stand alone. This
   lets reviewers approve, reject, or revise the decision without incidental cleanup attached.
@@ -42,6 +42,6 @@ review notes that name the controversial part.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

@@ -1,8 +1,8 @@
-# Rust Prefer Constructors And Conversion Traits
+# Rust prefer constructors and conversion traits
 
 ## Metadata
 
-- Name: `Prefer Constructors And Conversion Traits`
+- Name: `Prefer constructors and conversion traits`
 - ID: `RUST-PREFER-CONSTRUCTORS-AND-CONVERSION-TRAITS`
 - Summary: Use inherent constructors and standard conversion traits to show whether construction
   builds, validates, converts, borrows, allocates, or can fail. Prefer public fields only when direct

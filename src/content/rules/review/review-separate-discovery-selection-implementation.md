@@ -1,8 +1,8 @@
-# Review Separate Discovery Selection Implementation
+# Review separate discovery selection implementation
 
 ## Metadata
 
-- Name: `Separate Discovery, Selection, and Implementation`
+- Name: `Separate discovery, selection, and implementation`
 - ID: `REVIEW-SEPARATE-DISCOVERY-SELECTION-IMPLEMENTATION`
 - Summary: Split problem discovery, solution selection, and implementation review when they require
   different decisions. This keeps design debate out of patch correctness review once scope or
@@ -52,7 +52,7 @@ non-goals, and PR narratives that link to the accepted direction.
 
 ## References
 
-- [Pattern: Separate Discovery From Editing](../../patterns/separate-discovery-from-editing.md)
-- [Review Explain PR Problem Model And Proof](review-explain-pr-problem-model-and-proof.md)
+- [Pattern: Separate discovery from editing](../../patterns/separate-discovery-from-editing.md)
+- [Review explain PR problem model and proof](review-explain-pr-problem-model-and-proof.md)
 - [GitHub Docs: Helping others review your changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)
 - [Ed Page: PR style](https://epage.github.io/dev/pr-style/)

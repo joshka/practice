@@ -1,8 +1,8 @@
-# Rust Document Public Panic Contracts
+# Rust document public panic contracts
 
 ## Metadata
 
-- Name: `Document Public Panic Contracts`
+- Name: `Document public panic contracts`
 - ID: `RUST-DOCUMENT-PUBLIC-PANIC-CONTRACTS`
 - Summary: Document when public APIs can panic and what callers can do to avoid it. Panic contracts
   keep recoverable errors, invariants, and misuse boundaries explicit.

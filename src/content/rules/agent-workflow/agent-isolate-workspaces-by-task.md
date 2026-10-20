@@ -1,8 +1,8 @@
-# Agent Isolate Workspaces By Task
+# Agent isolate workspaces by task
 
 ## Metadata
 
-- Name: `Isolate Workspaces by Task`
+- Name: `Isolate workspaces by task`
 - ID: `AGENT-ISOLATE-WORKSPACES-BY-TASK`
 - Summary: Put separable or parallel agent work in its own workspace or source-control lane.
   Isolation keeps diffs, validation, and ownership clear when multiple changes are in flight.
@@ -42,8 +42,8 @@ ownership, and cleanup notes after integration.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

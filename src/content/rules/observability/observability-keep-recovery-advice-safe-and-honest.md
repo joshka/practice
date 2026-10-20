@@ -1,8 +1,8 @@
-# Observability Keep Recovery Advice Safe And Honest
+# Observability keep recovery advice safe and honest
 
 ## Metadata
 
-- Name: `Keep Recovery Advice Safe and Honest`
+- Name: `Keep recovery advice safe and honest`
 - ID: `OBSERVABILITY-KEEP-RECOVERY-ADVICE-SAFE-AND-HONEST`
 - Summary: Give recovery advice only when the program knows enough to make it safe. Report observed
   facts, label uncertainty, and avoid destructive, security-weakening, or policy-bypassing next
@@ -51,8 +51,8 @@ message observed or guessed the cause.
 
 ## References
 
-- [Pattern: Write Actionable Error
-  Messages](../../patterns/write-actionable-error-messages.md)
+- [Pattern: Write actionable error
+  messages](../../patterns/write-actionable-error-messages.md)
 - [NN/g: User Control and
   Freedom](https://www.nngroup.com/articles/user-control-and-freedom/)
 - [Microsoft: Error Message

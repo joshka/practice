@@ -1,9 +1,9 @@
-# VCS Confirm GitHub Remote Topology
+# VCS confirm GitHub remote topology
 
 ## Metadata
 
 - ID: `VCS-CONFIRM-GITHUB-REMOTE-TOPOLOGY`
-- Name: `Confirm GitHub Remote Topology`
+- Name: `Confirm GitHub remote topology`
 - Summary: Inspect `origin`, `upstream`, push remote, PR base, and PR head before publication.
   Fork and owned-repo layouts differ, so defaults can push or target the wrong repository.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ Supported by `jj git remote list`, `jj bookmark list`, `gh repo view`, explicit 
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

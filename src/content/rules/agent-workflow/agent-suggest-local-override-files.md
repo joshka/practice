@@ -1,8 +1,8 @@
-# Agent Suggest Local Override Files
+# Agent suggest local override files
 
 ## Metadata
 
-- Name: `Suggest Local Override Files`
+- Name: `Suggest local override files`
 - ID: `AGENT-SUGGEST-LOCAL-OVERRIDE-FILES`
 - Summary: Put checkout-only facts in ignored override files instead of shared guidance. Local
   overrides keep machine-specific steering useful without leaking it to every contributor.
@@ -44,8 +44,8 @@ instructions that mention local overrides, and audits for private path leaks.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

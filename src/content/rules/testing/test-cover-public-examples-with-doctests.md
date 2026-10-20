@@ -1,9 +1,9 @@
-# Test Cover Public Examples With Doctests
+# Test cover public examples with doctests
 
 ## Metadata
 
 - ID: `TEST-COVER-PUBLIC-EXAMPLES-WITH-DOCTESTS`
-- Name: `Cover Public Examples with Doctests`
+- Name: `Cover public examples with doctests`
 - Summary: Compile public documentation examples as doctests when they do not need fragile state.
   Executable examples catch stale guidance, reserving no-run or ignored examples for real limits.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ jobs that treat doctest failures as documentation drift.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

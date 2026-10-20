@@ -1,8 +1,8 @@
-# Rust Maintainability
+# Rust maintainability
 
 ## Metadata
 
-- Name: `Rust Maintainability`
+- Name: `Rust maintainability`
 - ID: `rust-maintainability`
 - Summary: Rust maintainability guidance applies the repo's software-change preferences to Rust
   code, APIs, modules, errors, tests, dependencies, documentation, and release risk. It favors Rust
@@ -17,8 +17,8 @@
 This guide applies the repo's software-change preferences to Rust code. Prefer Rust that is easy to
 read locally, hard to misuse, and honest about behavior, performance, and error boundaries.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md) and
-[Code Shape](code-shape.md), not instead of them.
+Use this guide with [Software change preferences](software-change-preferences.md) and
+[Code shape](code-shape.md), not instead of them.
 
 ## Core Preference
 
@@ -26,9 +26,9 @@ Prefer reader-first Rust that still respects ownership, performance, and API com
 change is better when it reduces the number of concepts, fields, lifetimes, jumps, and hidden
 invariants a maintainer must hold at once.
 
-Use [Reader Locality][reader-locality] when extraction, module movement, or helper placement affects
+Use [Reader locality][reader-locality] when extraction, module movement, or helper placement affects
 how much context a reader must reconstruct.
-Use [Code Shape][code-shape] when the change is primarily about live context, extraction,
+Use [Code shape][code-shape] when the change is primarily about live context, extraction,
 structure/behavior separation, reversible structure, cohesion, coupling, naming, or local
 expression shape.
 
@@ -36,7 +36,7 @@ expression shape.
 
 Use this checklist to review Rust changes without flattening every preference into a separate
 reviewed rule file. Some checklist items already have durable rule pages in
-[Rust API And Crate Shape Rules](../rules/rust/README.md); other items are narrower prompts that
+[Rust API and crate shape Rules](../rules/rust/README.md); other items are narrower prompts that
 should stay here until they prove reusable enough to promote.
 
 ### Core Maintainability
@@ -491,7 +491,7 @@ Prefer concrete structs and enums before traits when the concept is still local.
 generic layers, callbacks, or framework-shaped abstractions only after a real variation point earns
 the extra concept a reader must understand.
 
-Use [Test Observable Behavior][test-behavior] before trusting a refactor that moves concepts around.
+Use [Test observable behavior][test-behavior] before trusting a refactor that moves concepts around.
 
 ## Functions And Control Flow
 
@@ -505,7 +505,7 @@ important side effects.
 Do not compress navigation, parsing, rendering, or stateful control flow into dense iterator chains
 when named locals would make edge cases easier to audit.
 
-Use [Separate Structure From Behavior][structure-behavior] when a rename, move, extraction, or
+Use [Separate structure from behavior][structure-behavior] when a rename, move, extraction, or
 formatting pass can be reviewed independently from a behavior change.
 
 ## Modules And Visibility
@@ -514,7 +514,7 @@ Modules should represent concepts, not arbitrary file-size cuts. Put the central
 workflow near the top, keep inherent impls close to their type, and make re-exports deliberate.
 
 For a substantial structure review, scan the declaration outline before every implementation and
-inventory behavior separately. [Source Coherence Review][source-coherence] maps behaviors to owners
+inventory behavior separately. [Source coherence review][source-coherence] maps behaviors to owners
 and declarations back to the behavior that justifies them. It also distinguishes implementation
 length from focused docs and colocated tests.
 
@@ -572,7 +572,7 @@ build toggle.
 
 Use Conventional Commits only when the repo already follows that spec; otherwise keep jj
 descriptions and commits in the canonical Chris Beams and Tim Pope style from
-[Commit Messages For History][commit-history].
+[Commit messages for history][commit-history].
 
 ## Errors
 
@@ -586,8 +586,8 @@ failures unless the ignored failure is intentional and obvious.
 Keep partial-state updates conservative. Preserve the current usable state when refresh, parsing,
 I/O, or rendering preparation fails and the previous state is still valid.
 
-Use [Preserve Error Context][error-context] when wrapping or mapping errors. Use
-[Write Actionable Error Messages][actionable-errors] when the visible message needs to help a user,
+Use [Preserve error context][error-context] when wrapping or mapping errors. Use
+[Write actionable error messages][actionable-errors] when the visible message needs to help a user,
 operator, caller, or support person make progress.
 
 ## Testing
@@ -615,8 +615,8 @@ and very small viewports.
 When interactive behavior lacks automated coverage, document the manual verification that exercised
 it.
 
-Use [Smallest Trustworthy Verification][smallest-check] to pick the cheapest credible check and
-[Report Verification Honestly][honest-verification] in the handoff.
+Use [Smallest trustworthy verification][smallest-check] to pick the cheapest credible check and
+[Report verification honestly][honest-verification] in the handoff.
 
 ## Performance
 
@@ -638,15 +638,15 @@ behavior, MSRV, feature behavior, or public API semantics.
 
 ## Agent Snippet
 
-For copyable `AGENTS.md` guidance, use [Rust Agent Instructions][rust-snippet].
+For copyable `AGENTS.md` guidance, use [Rust agent instructions][rust-snippet].
 
 ## Related Guidance
 
-Use [Rust API And Crate Shape Rules][rust-rules] for compact Rust instructions. Use
-[Public API Changes Have Downstream Cost][api-cost] for API compatibility reasoning and
-[Reader Locality Reduces Change Cost][reader-locality-principle] for source-shape reasoning. Use
-[Rust API And Release Checks][api-release], [Rust Docs Validation][docs-validation], and
-[Rust Lints And Formatting][rust-lints] when the guidance should be backed by tooling.
+Use [Rust API and crate shape Rules][rust-rules] for compact Rust instructions. Use
+[Public API changes have downstream cost][api-cost] for API compatibility reasoning and
+[Reader locality reduces change cost][reader-locality-principle] for source-shape reasoning. Use
+[Rust API and release checks][api-release], [Rust docs validation][docs-validation], and
+[Rust lints and formatting][rust-lints] when the guidance should be backed by tooling.
 
 ## Review Questions
 

@@ -1,8 +1,8 @@
-# Inject Time And Randomness
+# Inject time and randomness
 
 ## Metadata
 
-- Name: `Inject Time And Randomness`
+- Name: `Inject time and randomness`
 - ID: `inject-time-and-randomness`
 - Summary: Direct reads of clocks and random sources make behavior hard to reproduce, test, and
   explain. Pass time and randomness through explicit seams at the boundary where nondeterminism is

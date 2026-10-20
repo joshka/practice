@@ -1,8 +1,8 @@
-# Prefer Standard Conversions
+# Prefer standard conversions
 
 ## Metadata
 
-- Name: `Prefer Standard Conversions`
+- Name: `Prefer standard conversions`
 - ID: `prefer-standard-conversions`
 - Summary: Project-specific conversion names make APIs harder to predict when standard traits
   already describe the relationship. Use standard conversions only when their semantics are honest,

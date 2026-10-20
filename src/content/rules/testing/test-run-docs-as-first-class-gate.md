@@ -1,9 +1,9 @@
-# Test Run Docs As First Class Gate
+# Test run docs as first class gate
 
 ## Metadata
 
 - ID: `TEST-RUN-DOCS-AS-FIRST-CLASS-GATE`
-- Name: `Run Docs as a First-Class Gate`
+- Name: `Run docs as a first-class gate`
 - Summary: Treat documentation checks as real validation for examples, links, commands, and claims.
   Prose-only edits may need less proof, but API-facing docs should fail before stale guidance ships.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ link checks, and rendered-doc review.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

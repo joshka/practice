@@ -1,8 +1,8 @@
-# Docs Distinguish Example Roles
+# Docs distinguish example roles
 
 ## Metadata
 
-- Name: `Distinguish Example Roles`
+- Name: `Distinguish example roles`
 - ID: `DOCS-DISTINGUISH-EXAMPLE-ROLES`
 - Summary: `Name whether an example is focused, canonical, survey, integration, or showcase work.
   That role controls how complete, copyable, and validated the example must be.`
@@ -46,12 +46,12 @@ and showcase examples from collapsing into one generic snippet.
 
 Supported by example inventories, README review, docs.rs example review, doctest coverage for
 copyable public examples, labels that separate canonical examples from illustrative sketches, and
-[Separate Technique From Example Policy](docs-separate-technique-from-example-policy.md) for the
+[Separate technique from example policy](docs-separate-technique-from-example-policy.md) for the
 internal teaching shape of a substantial example.
 
 ## References
 
 - [Diataxis: the map](https://diataxis.fr/map/)
 - [Rust API Guidelines: Documentation](https://rust-lang.github.io/api-guidelines/documentation.html)
-- [Docs Prove Real Use With Examples](docs-prove-real-use-with-examples.md)
-- [Docs Show Side Effects In Live Examples](docs-show-side-effects-in-live-examples.md)
+- [Docs prove real use with examples](docs-prove-real-use-with-examples.md)
+- [Docs show side effects in live examples](docs-show-side-effects-in-live-examples.md)

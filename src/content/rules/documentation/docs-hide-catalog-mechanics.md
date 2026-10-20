@@ -1,8 +1,8 @@
-# Docs Hide Catalog Mechanics
+# Docs hide catalog mechanics
 
 ## Metadata
 
-- Name: `Hide Catalog Mechanics`
+- Name: `Hide catalog mechanics`
 - ID: `DOCS-HIDE-CATALOG-MECHANICS`
 - Summary: `Lead user-facing copy with work areas, artifacts, and destinations instead of IDs or
   generated structure. Mention catalog mechanics only when citation or contribution work needs
@@ -50,6 +50,6 @@ navigation prose.
 
 ## References
 
-- [Docs Match Page Shape To Reader Task](docs-match-page-shape-to-reader-task.md)
-- [Docs Use Concrete Details](docs-use-concrete-details.md)
+- [Docs match page shape to reader task](docs-match-page-shape-to-reader-task.md)
+- [Docs use concrete details](docs-use-concrete-details.md)
 - [Diataxis: reference](https://diataxis.fr/reference/)

@@ -1,9 +1,9 @@
-# VCS Do Not Fall Back To Git For JJ Issues
+# VCS do not fall back to Git for JJ issues
 
 ## Metadata
 
 - ID: `VCS-DO-NOT-FALL-BACK-TO-GIT-FOR-JJ-ISSUES`
-- Name: `Do Not Fall Back to Git for JJ Issues`
+- Name: `Do not fall back to Git for JJ issues`
 - Summary: Diagnose jj locks, pager issues, and state problems through jj before switching tools.
   Git bypasses jj change-graph semantics, so use it only for transport after jj state is coherent.
 - Status: `reviewed`
@@ -40,7 +40,7 @@ jj help or config before switching tools.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

@@ -1,8 +1,8 @@
-# Coding Agents
+# Coding agents
 
 ## Metadata
 
-- Name: `Coding Agents`
+- Name: `Coding agents`
 - ID: `coding-agents`
 - Summary: Coding-agent guidance covers task setup, repo-owned context, tools, workspaces,
   verification, handoff proof, feedback loops, and maintainer review flow. It treats agents as
@@ -17,7 +17,7 @@
 This guide covers agent-task setup, `AGENTS.md` guidance, agent-output review, and decisions that
 should become tooling instead of another prompt.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md). Agent work still
+Use this guide with [Software change preferences](software-change-preferences.md). Agent work still
 needs small reviewable chunks, honest verification, and careful working-copy ownership.
 
 ## Core Preference
@@ -42,15 +42,15 @@ proof at handoff. For naming, grouping, review-shape, public API, or other taste
 establish the quality bar before changing the artifact, then leave room for the agent to choose a
 better route inside safe boundaries.
 
-Use [Give Agents Objectives With Boundaries][objectives] when a task should preserve the user's
+Use [Give agents objectives with boundaries][objectives] when a task should preserve the user's
 goal without freezing the implementation route. Use
-[Define Good Before Judgment-Heavy Work][define-good] when the acceptance criteria, evidence, or
+[Define good before judgment-heavy work][define-good] when the acceptance criteria, evidence, or
 remaining human judgment need to be explicit.
-Use [Agent Give Objectives With Boundaries][agent-objectives] and [Agent Define Good Before
+Use [Agent give objectives with boundaries][agent-objectives] and [Agent Define Good Before
 Judgment-Heavy Work][agent-define-good] when this guidance needs compact agent-execution wording.
 
 For ambiguous work, spend human attention at the ambiguity boundary. Use
-[Spend Human Attention On Ambiguity][human-attention] before asking an agent to bury product,
+[Spend human attention on ambiguity][human-attention] before asking an agent to bury product,
 architecture, security, or public API decisions inside a large diff.
 
 Carry existing authorization through the task. Resolve routine implementation and validation
@@ -64,19 +64,19 @@ Agents work best when the repo is legible and the relevant context arrives at th
 large or reusable context on disk, keep `AGENTS.md` as a map, and make accepted artifacts part of
 the discovery path.
 
-Use [Distill From Blessed Artifacts][blessed-artifacts] when existing code, tests, docs, or reviews
-are denser than the prompt. Use [Deliver Context Just In Time][jit-context] and
-[Use Disk As Context Sink][disk-context] when the context is too large or too specialized for one
+Use [Distill from blessed artifacts][blessed-artifacts] when existing code, tests, docs, or reviews
+are denser than the prompt. Use [Deliver context just in time][jit-context] and
+[Use disk as context sink][disk-context] when the context is too large or too specialized for one
 static instruction block.
 
-Use [Use AGENTS.md As Map][agents-map] to keep top-level instructions compact and linked. Use
-[Optimize For Agent Legibility][agent-legibility] when repo structure, docs, commands, and runtime
+Use [Use AGENTS.md as map][agents-map] to keep top-level instructions compact and linked. Use
+[Optimize for agent legibility][agent-legibility] when repo structure, docs, commands, and runtime
 signals should help future agents find and validate the right thing.
 For ongoing projects whose software doctrine no longer fits in a short map, use
-[Project Operating Manual][project-operating-manual] as the project-owned interpretation layer
+[Project operating manual][project-operating-manual] as the project-owned interpretation layer
 between the broad catalog and the current repo.
-Use [Agent Keep Durable Context On Disk][agent-disk-context], [Agent Use AGENTS.md As
-Map][agent-agents-map], and [Agent Distill From Blessed Artifacts][agent-blessed-artifacts] when
+Use [Agent keep durable context on disk][agent-disk-context], [Agent Use AGENTS.md As
+Map][agent-agents-map], and [Agent distill from blessed artifacts][agent-blessed-artifacts] when
 context should live in repo-owned artifacts rather than transient prompt memory.
 
 ## Tools And Guardrails
@@ -85,23 +85,23 @@ Prefer tools and checks over heroic prompting. If a mistake is repeatable, move 
 enforcement layer: type shape, API design, lint, test, formatter, schema, template, runbook, or
 review checklist.
 
-Use [Prefer Tools Over Prompts][tools-over-prompts], [Make Bad Output Mechanically Hard][mechanical],
-and [Teach Agents Through Tools][teach-tools] when feedback points to a missing guardrail or
+Use [Prefer tools over prompts][tools-over-prompts], [Make bad output mechanically hard][mechanical],
+and [Teach agents through tools][teach-tools] when feedback points to a missing guardrail or
 capability.
-Use [Agent Prefer Tools Over Prompts][agent-tools-prompts] and [Agent Make Bad Output
-Hard][agent-bad-output] when repeated prompt steering should become a tool, check, template, or
+Use [Agent prefer tools over prompts][agent-tools-prompts] and [Agent make bad output
+hard][agent-bad-output] when repeated prompt steering should become a tool, check, template, or
 schema.
 
-Use [Make The Change Easy First][easy-first] when the requested change is risky because the repo
+Use [Make the change easy first][easy-first] when the requested change is risky because the repo
 lacks a harness, test, boundary, or workflow that would make the behavior change straightforward.
-Use [Code Is Memory Of Process][code-memory] and [Keep Automations Repo Owned][repo-automation] when
+Use [Code is memory of process][code-memory] and [Keep automations repo owned][repo-automation] when
 stable process knowledge should become a checked artifact.
 
 For systems that agents can reload, extend, or self-modify, prefer staged changes with validation
 and rollback over direct mutation of the live runtime. Generated or guest code should be inspectable
 after failure without replacing the last known good behavior.
 
-Use [Agent Prefer Build Preserving Edits][agent-build-preserving] when a long broken state would
+Use [Agent prefer build preserving edits][agent-build-preserving] when a long broken state would
 make recovery and review harder.
 
 ## Workspaces And Capabilities
@@ -110,17 +110,17 @@ Keep agent work isolated by task. Each independent edit should have a clear work
 change, ownership boundary, logs, and cleanup policy. Do not make a human track five interactive
 sessions when the work can be represented as durable tasks.
 
-Use [Manage Agent Work Not Sessions][manage-work], [Isolate Agent Workspaces][workspaces], and
-[Preserve Agent Context Coherence][context-coherence] when parallel or long-running work would
+Use [Manage agent work not sessions][manage-work], [Isolate agent workspaces][workspaces], and
+[Preserve agent context coherence][context-coherence] when parallel or long-running work would
 otherwise smear state across threads and checkouts.
-Use [Agent Isolate Workspaces By Task][agent-workspaces] and [Agent Preserve Human
-Work][agent-preserve-work] when multiple edits, agents, or human changes share source-control state.
+Use [Agent isolate workspaces by task][agent-workspaces] and [Agent preserve human
+work][agent-preserve-work] when multiple edits, agents, or human changes share source-control state.
 
-Grant only the authority the task needs. Use [Grant Scoped Agent Capabilities][scoped-capabilities]
-and [Keep Secrets Out Of Context][secrets] when credentials, external systems, or privileged tools
+Grant only the authority the task needs. Use [Grant scoped agent capabilities][scoped-capabilities]
+and [Keep secrets out of context][secrets] when credentials, external systems, or privileged tools
 are involved.
-Use [Agent Grant Scoped Capabilities][agent-capabilities] and [Agent Keep Secrets Out Of
-Context][agent-secrets] when task authority, credentials, or external systems need explicit limits.
+Use [Agent grant scoped capabilities][agent-capabilities] and [Agent keep secrets out of
+context][agent-secrets] when task authority, credentials, or external systems need explicit limits.
 
 ## Verification And Review
 
@@ -155,15 +155,15 @@ that the result is usable. For library reviews, state compatibility and release 
 named baseline and consumer configuration. Use [Match Evidence To Surface][surface-evidence] for
 choosing direct checks.
 
-Use [Review Proof Not Just Code][review-proof], [Produce Review Packets][review-packets], and
-[Report Verification Honestly][honest-verification] when handing work to a maintainer. Use [Review
+Use [Review proof not just code][review-proof], [Produce review packets][review-packets], and
+[Report verification honestly][honest-verification] when handing work to a maintainer. Use [Review
 Agent Output As Future Maintainer][future-maintainer-review] when evaluating whether agent output is
 maintainable after the session context disappears.
-Use [Agent Produce Review Packets][agent-review-packets] and [Agent Report Proof In
-Handoffs][agent-proof] when a handoff needs compact proof-focused wording.
+Use [Agent produce review packets][agent-review-packets] and [Agent report proof in
+handoffs][agent-proof] when a handoff needs compact proof-focused wording.
 
-For risky operations, use [Verify With Canaries Before Cutover][canaries]. For security work, use
-[Prove Security Impact][security-impact] so hypotheses, reachability, and concrete impact stay
+For risky operations, use [Verify with canaries before cutover][canaries]. For security work, use
+[Prove security impact][security-impact] so hypotheses, reachability, and concrete impact stay
 separate.
 
 ## Feedback Loops
@@ -175,15 +175,15 @@ First establish whether the guidance was missing, unclear, unreached, or ignored
 instruction, action, correction, and result together, including successful counterexamples. Adding
 another rule does not repair a routing failure or prove that an existing rule was followed.
 
-Use [Turn Feedback Into Guidance][feedback-guidance], [Record Agent Operating Lessons][lessons],
-[Close The Agent Loop][close-loop], and [Garbage Collect Agent Drift][drift] when agent work exposes
+Use [Turn feedback into guidance][feedback-guidance], [Record agent operating lessons][lessons],
+[Close the agent loop][close-loop], and [Garbage collect agent drift][drift] when agent work exposes
 a repeated failure mode.
 
 Budget time and tokens for loops that reduce human attention and improve outcomes. Use
-[Budget Tokens For Feedback Loops][token-budget] when evaluating review agents, cleanup loops,
+[Budget tokens for feedback loops][token-budget] when evaluating review agents, cleanup loops,
 security scans, docs checks, or harness evals.
-Use [Agent Budget For Feedback Loops][agent-loop-budget] and [Agent Turn Feedback Into
-Guidance][agent-feedback-guidance] when repeated corrections should become durable guidance or
+Use [Agent budget for feedback loops][agent-loop-budget] and [Agent turn feedback into
+guidance][agent-feedback-guidance] when repeated corrections should become durable guidance or
 automation.
 
 ## Maintainer Review Loop
@@ -205,8 +205,8 @@ For fast manual review sessions, separate note capture from correction. Capture 
 durable queue without applying corrections unless asked, then apply corrections later in scoped
 batches such as one content type, one page, or one ownership area.
 
-Use [Agent Present Concrete Next Options][agent-next-options] and [Agent Separate Notes From
-Corrections][agent-notes-corrections] when maintainer review needs clear next choices or a separate
+Use [Agent present concrete next options][agent-next-options] and [Agent separate notes from
+corrections][agent-notes-corrections] when maintainer review needs clear next choices or a separate
 review-note queue.
 
 ## Long-Term Coherence
@@ -215,30 +215,30 @@ Agent work should scale to the next many changes. A correct-looking patch can st
 system if it adds parallel concepts, hides side effects, weakens tests, or loses the repository's
 shape.
 
-Use [Optimize For Long Term Coherence][long-term], [Preserve Intent Over Literalism][intent], and
-[Encode Nonfunctional Requirements][nonfunctional] when the prompt is narrower than the actual
+Use [Optimize for long term coherence][long-term], [Preserve intent over literalism][intent], and
+[Encode nonfunctional requirements][nonfunctional] when the prompt is narrower than the actual
 quality bar.
-Use [Agent Encode Nonfunctional Requirements][agent-nonfunctional] and [Agent Preserve
-Intent][agent-preserve-intent] when acceptance depends on compatibility, privacy, performance,
+Use [Agent encode nonfunctional requirements][agent-nonfunctional] and [Agent preserve
+intent][agent-preserve-intent] when acceptance depends on compatibility, privacy, performance,
 determinism, or the user's real goal.
 
-Use [Ask What Were You Trying To Achieve][achieve] when surprising legacy code may be preserving an
-old intent. Use [Choose Good Enough Tools][good-enough-tools] and
-[Prefer In Distribution Tools][in-distribution] when selecting tooling for agent-friendly work.
+Use [Ask what were you trying to achieve][achieve] when surprising legacy code may be preserving an
+old intent. Use [Choose good enough tools][good-enough-tools] and
+[Prefer in distribution tools][in-distribution] when selecting tooling for agent-friendly work.
 
 ## Agent Snippet
 
-For copyable `AGENTS.md` guidance, use [Coding Agent Workflow Instructions][agent-snippet]. For a
-broader repo baseline, use [Core Agent Instructions][core-snippet]. For a compressed execution pack
-generated from reviewed rules, use [Reviewed Rule Agent Pack][rule-pack].
+For copyable `AGENTS.md` guidance, use [Coding agent workflow instructions][agent-snippet]. For a
+broader repo baseline, use [Core agent instructions][core-snippet]. For a compressed execution pack
+generated from reviewed rules, use [Reviewed rule agent pack][rule-pack].
 
 ## Related Guidance
 
-Use [Agent Workflow Rules][agent-rules] for compact reviewed instructions, and use
-[Agent Instructions Are Operational Controls][agent-controls] when deciding how much context belongs
+Use [Agent workflow Rules][agent-rules] for compact reviewed instructions, and use
+[Agent instructions are operational controls][agent-controls] when deciding how much context belongs
 in compressed agent wording. Repeated corrections should move toward scripts, lints, templates, or
-generators; use [Mechanize Repeated Feedback][mechanize-feedback] and
-[Guidance Generation And Audit][guidance-audit] when agent guidance needs generated surfaces to stay
+generators; use [Mechanize repeated feedback][mechanize-feedback] and
+[Guidance generation and audit][guidance-audit] when agent guidance needs generated surfaces to stay
 current.
 
 ## Review Questions

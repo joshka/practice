@@ -1,8 +1,8 @@
-# Rust Use Honest Minimum Dependencies
+# Rust use honest minimum dependencies
 
 ## Metadata
 
-- Name: `Use Honest Minimum Dependencies`
+- Name: `Use honest minimum dependencies`
 - ID: `RUST-USE-HONEST-MINIMUM-DEPENDENCIES`
 - Summary: Set dependency requirements to the lowest compatible versions the crate actually supports.
   Raise minimums only for required APIs, fixes, features, security needs, or MSRV interactions.

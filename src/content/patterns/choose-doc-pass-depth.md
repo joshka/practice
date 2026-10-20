@@ -1,8 +1,8 @@
-# Choose Doc Pass Depth
+# Choose doc pass depth
 
 ## Metadata
 
-- Name: `Choose Doc Pass Depth`
+- Name: `Choose doc pass depth`
 - ID: `choose-doc-pass-depth`
 - Summary: Documentation work ranges from quick polish to structural repair, and using the wrong
   pass depth wastes attention. Match the edit depth to the evidence, risk, and review need before

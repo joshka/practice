@@ -1,8 +1,8 @@
-# Rust Central Item First
+# Rust central item first
 
 ## Metadata
 
-- Name: `Central Item First`
+- Name: `Central item first`
 - ID: `RUST-CENTRAL-ITEM-FIRST`
 - Summary: Put the main type, trait, enum, or function before supporting details. Readers can learn
   the module's purpose before chasing helpers and adapters.

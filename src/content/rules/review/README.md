@@ -1,4 +1,4 @@
-# Private Context And Review Artifacts
+# Private context and review artifacts
 
 Review artifact rules cover issue slices, PR narratives, ADRs, speculation labels, thread ownership,
 and artifacts that stand alone without private session context.

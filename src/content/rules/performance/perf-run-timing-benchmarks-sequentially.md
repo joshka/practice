@@ -1,8 +1,8 @@
-# Perf Run Timing Benchmarks Sequentially
+# Perf run timing benchmarks sequentially
 
 ## Metadata
 
-- Name: `Run Timing Benchmarks Sequentially`
+- Name: `Run timing benchmarks sequentially`
 - ID: `PERF-RUN-TIMING-BENCHMARKS-SEQUENTIALLY`
 - Summary: Serialize timing-sensitive benchmarks when their numbers will be used as evidence.
   Concurrent runs compete for shared resources and can make the comparison describe the runner more
@@ -44,7 +44,7 @@ benchmark documentation that names runner conditions.
 
 ## References
 
-- [Principle: Measure Before Optimizing](../../principles/measure-before-optimizing.md)
+- [Principle: Measure before optimizing](../../principles/measure-before-optimizing.md)
 - [Microsoft Pragmatic Rust Guidelines: hot path
   performance](https://microsoft.github.io/rust-guidelines/agents/all.txt#M-HOTPATH)
 - [Microsoft Pragmatic Rust Guidelines: throughput

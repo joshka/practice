@@ -1,8 +1,8 @@
-# Prove Security Impact
+# Prove security impact
 
 ## Metadata
 
-- Name: `Prove Security Impact`
+- Name: `Prove security impact`
 - ID: `prove-security-impact`
 - Summary: Security reports create noise when they imply exploitability without showing reachability
   or consequence. Prove the attacker path and impact, or clearly label the finding as an unproven

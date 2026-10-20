@@ -1,8 +1,8 @@
-# Rust Teach Crate From Crate Root
+# Rust teach crate from crate root
 
 ## Metadata
 
-- Name: `Teach Crate From Crate Root`
+- Name: `Teach crate from crate root`
 - ID: `RUST-TEACH-CRATE-FROM-CRATE-ROOT`
 - Summary: Use crate-root docs and exports to teach the crate's main concepts, entry points, and
   common paths. Keep the root focused enough to orient readers without duplicating every item-level

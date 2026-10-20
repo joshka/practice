@@ -1,8 +1,8 @@
-# Close The Agent Loop
+# Close the agent loop
 
 ## Metadata
 
-- Name: `Close The Agent Loop`
+- Name: `Close the agent loop`
 - ID: `close-the-agent-loop`
 - Summary: Agent work is incomplete when it stops at edits without checking the result or explaining
   residual risk. Finish the loop by validating, reporting evidence, and making the next human

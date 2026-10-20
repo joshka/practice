@@ -1,8 +1,8 @@
-# Rust Group Private Imports Before Public Re Exports
+# Rust group private imports before public re exports
 
 ## Metadata
 
-- Name: `Group Private Imports Before Public Re-Exports`
+- Name: `Group private imports before public re-exports`
 - ID: `RUST-GROUP-PRIVATE-IMPORTS-BEFORE-PUBLIC-RE-EXPORTS`
 - Summary: Separate implementation imports from public re-exports in module prologues. The grouping
   lets readers distinguish internal dependencies from the API surface being presented.

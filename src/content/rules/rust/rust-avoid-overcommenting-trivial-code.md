@@ -1,8 +1,8 @@
-# Rust Avoid Overcommenting Trivial Code
+# Rust avoid overcommenting trivial code
 
 ## Metadata
 
-- Name: `Avoid Overcommenting Trivial Code`
+- Name: `Avoid overcommenting trivial code`
 - ID: `RUST-AVOID-OVERCOMMENTING-TRIVIAL-CODE`
 - Summary: Comment Rust code for invariants, contracts, and surprising tradeoffs rather than
   restating obvious operations. This keeps comments useful and less prone to drift.
@@ -51,5 +51,5 @@ Supported by review, clippy where applicable, and targeted cleanup during refact
 
 ## References
 
-- [Pattern: Delete Redundant Comments](../../patterns/delete-redundant-comments.md)
+- [Pattern: Delete redundant comments](../../patterns/delete-redundant-comments.md)
 - [Rust API Guidelines: Documentation](https://rust-lang.github.io/api-guidelines/documentation.html)

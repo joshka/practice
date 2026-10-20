@@ -1,8 +1,8 @@
-# Document Errors Panics Safety
+# Document errors panics safety
 
 ## Metadata
 
-- Name: `Document Errors Panics Safety`
+- Name: `Document errors panics safety`
 - ID: `document-errors-panics-safety`
 - Summary: Callers need to know which failures are recoverable, which conditions panic, and what
   safety obligations an API imposes. Document those contracts at the public boundary so users can

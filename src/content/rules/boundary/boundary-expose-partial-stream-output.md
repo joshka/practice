@@ -1,8 +1,8 @@
-# Boundary Expose Partial Stream Output
+# Boundary expose partial stream output
 
 ## Metadata
 
-- Name: `Expose Partial Stream Output`
+- Name: `Expose partial stream output`
 - ID: `BOUNDARY-EXPOSE-PARTIAL-STREAM-OUTPUT`
 - Summary: Surface streaming tokens, chunks, or events as provisional output until completion
   promotes a final result. Callers get progress and diagnostics without corrupting authoritative
@@ -43,8 +43,8 @@ states that distinguish partial from final output.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

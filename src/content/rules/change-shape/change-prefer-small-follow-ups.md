@@ -1,8 +1,8 @@
-# Change Prefer Small Follow Ups
+# Change prefer small follow ups
 
 ## Metadata
 
-- Name: `Prefer Small Follow-Ups`
+- Name: `Prefer small follow-ups`
 - ID: `CHANGE-PREFER-SMALL-FOLLOW-UPS`
 - Summary: Move adjacent cleanup or broader improvements into focused follow-up changes when the
   current diff can stand alone. This preserves review focus while still capturing useful work.
@@ -42,6 +42,6 @@ the next slice explicitly.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

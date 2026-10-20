@@ -1,8 +1,8 @@
-# Rust Lints And Formatting
+# Rust lints and formatting
 
 ## Metadata
 
-- Name: `Rust Lints And Formatting`
+- Name: `Rust lints and formatting`
 - ID: `rust-lints-and-formatting`
 - Summary: Rust and Markdown formatting plus targeted project lints encode stable mechanical
   preferences. The mechanism removes repeat style debate from review while leaving design judgment
@@ -21,9 +21,9 @@ that makes code harder to read.
 
 ## Supported Principles
 
-- [Explicit Boundaries Preserve Correctness](../principles/explicit-boundaries-preserve-correctness.md)
-- [Docs Are Contracts](../principles/docs-are-contracts.md)
-- [Agent Instructions Are Operational Controls](../principles/agent-instructions-are-operational-controls.md)
+- [Explicit boundaries preserve correctness](../principles/explicit-boundaries-preserve-correctness.md)
+- [Docs are contracts](../principles/docs-are-contracts.md)
+- [Agent instructions are operational controls](../principles/agent-instructions-are-operational-controls.md)
 
 ## Rust Lints
 

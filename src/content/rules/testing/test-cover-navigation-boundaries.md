@@ -1,9 +1,9 @@
-# Test Cover Navigation Boundaries
+# Test cover navigation boundaries
 
 ## Metadata
 
 - ID: `TEST-COVER-NAVIGATION-BOUNDARIES`
-- Name: `Cover Navigation Boundaries`
+- Name: `Cover navigation boundaries`
 - Summary: Exercise first, last, empty, oversized, and repeated-navigation states in tests.
   Boundary cases catch cursor and scrolling bugs that polished manual demos often miss.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ checks, and event-sequence tests.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

@@ -1,8 +1,8 @@
-# Measure Before Optimizing
+# Measure before optimizing
 
 ## Metadata
 
-- Name: `Measure Before Optimizing`
+- Name: `Measure before optimizing`
 - ID: `measure-before-optimizing`
 - Summary: `Performance work needs a workload, baseline, goal, change, and comparison. Evidence
   keeps optimization from becoming readability, dependency, or API churn without a proven payoff.`

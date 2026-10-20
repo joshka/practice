@@ -1,8 +1,8 @@
-# Boundary Make Exec Tools Noninteractive
+# Boundary make exec tools noninteractive
 
 ## Metadata
 
-- Name: `Make Exec Tools Noninteractive`
+- Name: `Make exec tools noninteractive`
 - ID: `BOUNDARY-MAKE-EXEC-TOOLS-NONINTERACTIVE`
 - Summary: Default agent, CI, and background exec paths away from prompts, editors, pagers, and
   credential UI. Commands then fail or complete predictably, while human interactive modes remain
@@ -43,8 +43,8 @@ environment overrides, and tests for unattended execution.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

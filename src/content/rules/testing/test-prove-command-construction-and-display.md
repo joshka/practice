@@ -1,9 +1,9 @@
-# Test Prove Command Construction And Display
+# Test prove command construction and display
 
 ## Metadata
 
 - ID: `TEST-PROVE-COMMAND-CONSTRUCTION-AND-DISPLAY`
-- Name: `Prove Command Construction and Display`
+- Name: `Prove command construction and display`
 - Summary: Test both executable command shape and displayed command text when users rely on them.
   Quoting, redaction, ordering, and platform formatting can fail even when a local happy path works.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ redaction tests, and no-shell argument-vector tests.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

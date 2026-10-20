@@ -1,9 +1,9 @@
-# VCS Scope JJ File Tracking
+# VCS scope JJ file tracking
 
 ## Metadata
 
 - ID: `VCS-SCOPE-JJ-FILE-TRACKING`
-- Name: `Scope JJ File Tracking`
+- Name: `Scope JJ file tracking`
 - Summary: Pass intended paths to `jj file track` and `jj file untrack`.
   Scoped tracking keeps local-only, generated, or unrelated files out of publication state.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ track or untrack commands.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

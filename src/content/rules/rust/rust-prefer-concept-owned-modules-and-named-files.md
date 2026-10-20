@@ -1,8 +1,8 @@
-# Rust Prefer Concept Owned Modules And Named Files
+# Rust prefer concept owned modules and named files
 
 ## Metadata
 
-- Name: `Prefer Concept Owned Modules And Named Files`
+- Name: `Prefer concept owned modules and named files`
 - ID: `RUST-PREFER-CONCEPT-OWNED-MODULES-AND-NAMED-FILES`
 - Summary: Organize modules around domain concepts and give important concepts named files that own
   their types, invariants, tests, and docs. Use infrastructure modules only when the cross-cutting

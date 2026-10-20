@@ -1,8 +1,8 @@
-# Prefer Durable Summaries
+# Prefer durable summaries
 
 ## Metadata
 
-- Name: `Prefer Durable Summaries`
+- Name: `Prefer durable summaries`
 - ID: `prefer-durable-summaries`
 - Summary: Important context is costly when every reader must rediscover it from implementation
   details, but exhaustive narration becomes stale. Capture stable invariants, rationale, boundaries,

@@ -1,9 +1,9 @@
-# VCS JJ New For Review Lanes
+# VCS JJ new for review lanes
 
 ## Metadata
 
 - ID: `VCS-JJ-NEW-FOR-REVIEW-LANES`
-- Name: `JJ New for Review Lanes`
+- Name: `JJ new for review lanes`
 - Summary: Start unrelated review units with `jj new` before edits accumulate.
   Separate changes keep review atomic while leaving later squash or absorb decisions easy.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ absorb` when follow-up belongs with its parent.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

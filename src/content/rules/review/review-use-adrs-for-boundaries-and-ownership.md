@@ -1,8 +1,8 @@
-# Review Use Adrs For Boundaries And Ownership
+# Review use adrs for boundaries and ownership
 
 ## Metadata
 
-- Name: `Use ADRs for Boundaries and Ownership`
+- Name: `Use ADRs for boundaries and ownership`
 - ID: `REVIEW-USE-ADRS-FOR-BOUNDARIES-AND-OWNERSHIP`
 - Summary: Record durable ownership, API, storage, topology, runtime, or service-boundary decisions
   in ADRs. A decision record gives later contributors a stable tradeoff to affirm, revise, or
@@ -46,8 +46,8 @@ when the project deliberately reverses or narrows a previous choice.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Ed Page: PR style](https://epage.github.io/dev/pr-style/)
 - [GitHub Docs: helping others review your
   changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)

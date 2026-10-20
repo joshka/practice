@@ -1,8 +1,8 @@
-# Agent Produce Review Packets
+# Agent produce review packets
 
 ## Metadata
 
-- Name: `Produce Review Packets`
+- Name: `Produce review packets`
 - ID: `AGENT-PRODUCE-REVIEW-PACKETS`
 - Summary: Hand off agent work with purpose, changed files, evidence, skipped checks, risks, and
   follow-ups. A review packet lets maintainers inspect the output without replaying the session.
@@ -41,8 +41,8 @@ screenshots, command output, and links to generated artifacts.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

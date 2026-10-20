@@ -1,8 +1,8 @@
-# Rust API And Release Checks
+# Rust API and release checks
 
 ## Metadata
 
-- Name: `Rust API And Release Checks`
+- Name: `Rust API and release checks`
 - ID: `rust-api-and-release-checks`
 - Summary: Cargo release, semver, feature, packaging, and minimum-version checks protect downstream
   users from accidental compatibility changes. Use these checks when public API, crate metadata, or
@@ -22,9 +22,9 @@ minimums, and docs.rs failures can all be real compatibility problems.
 
 ## Supported Principles
 
-- [Public API Changes Have Downstream Cost](../principles/public-api-changes-have-downstream-cost.md)
-- [Docs Are Contracts](../principles/docs-are-contracts.md)
-- [Tests Should Explain Failures](../principles/tests-should-explain-failures.md)
+- [Public API changes have downstream cost](../principles/public-api-changes-have-downstream-cost.md)
+- [Docs are contracts](../principles/docs-are-contracts.md)
+- [Tests should explain failures](../principles/tests-should-explain-failures.md)
 
 ## Checks
 
@@ -77,7 +77,7 @@ feature configuration with the result, including prerequisites supplied by the c
 
 For a compatibility claim, run the same legal consumer against the baseline and candidate. A
 candidate-only failure establishes a defect, but does not alone establish that the PR introduced it.
-Use [Validate Semver Breaks Against External Use][semver] to separate release consequences from
+Use [Validate semver breaks against external use][semver] to separate release consequences from
 design preferences.
 
 ## Packaged Artifact

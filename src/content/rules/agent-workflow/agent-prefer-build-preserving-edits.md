@@ -1,8 +1,8 @@
-# Agent Prefer Build Preserving Edits
+# Agent prefer build preserving edits
 
 ## Metadata
 
-- Name: `Prefer Build-Preserving Edits`
+- Name: `Prefer build-preserving edits`
 - ID: `AGENT-PREFER-BUILD-PRESERVING-EDITS`
 - Summary: Make multi-step edits in slices that keep compilation or tests close to green when the
   route allows it. Build-preserving work keeps failures close to the edit that caused them.
@@ -42,8 +42,8 @@ compatibility shims, and temporary adapters that can be removed later.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

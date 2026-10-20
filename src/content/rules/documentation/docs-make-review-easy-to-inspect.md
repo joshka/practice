@@ -1,8 +1,8 @@
-# Docs Make Review Easy To Inspect
+# Docs make review easy to inspect
 
 ## Metadata
 
-- Name: `Make Review Easy to Inspect`
+- Name: `Make review easy to inspect`
 - ID: `DOCS-MAKE-REVIEW-EASY-TO-INSPECT`
 - Summary: `Package documentation changes so reviewers can see scope, evidence, and rendered impact
   quickly. Small inspectable changes reduce hidden drift and style-only review loops.`
@@ -42,7 +42,7 @@ links to changed docs, and explicit validation notes.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

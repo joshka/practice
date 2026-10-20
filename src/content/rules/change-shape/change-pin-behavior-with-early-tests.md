@@ -1,8 +1,8 @@
-# Change Pin Behavior With Early Tests
+# Change pin behavior with early tests
 
 ## Metadata
 
-- Name: `Pin Behavior With Early Tests`
+- Name: `Pin behavior with early tests`
 - ID: `CHANGE-PIN-BEHAVIOR-WITH-EARLY-TESTS`
 - Summary: Add characterization tests before changing messy behavior when the existing contract is
   unclear. The baseline separates intentional behavior changes from accidental drift.
@@ -43,7 +43,7 @@ changes that separate test characterization from behavior edits.
 
 ## References
 
-- [Pattern: Characterize Then Fix](../../patterns/characterize-then-fix.md)
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Characterize then fix](../../patterns/characterize-then-fix.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

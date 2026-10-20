@@ -1,8 +1,8 @@
-# Keep Async Boundaries Explicit
+# Keep async boundaries explicit
 
 ## Metadata
 
-- Name: `Keep Async Boundaries Explicit`
+- Name: `Keep async boundaries explicit`
 - ID: `keep-async-boundaries-explicit`
 - Summary: Hidden async work obscures cancellation, ordering, resource ownership, and failure
   behavior. Make task spawning, awaiting, retries, and background ownership visible at the boundary

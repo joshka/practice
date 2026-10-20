@@ -1,8 +1,8 @@
-# Record Agent Operating Lessons
+# Record agent operating lessons
 
 ## Metadata
 
-- Name: `Record Agent Operating Lessons`
+- Name: `Record agent operating lessons`
 - ID: `record-agent-operating-lessons`
 - Summary: Agent work produces useful operational knowledge that is easy to lose after the task
   succeeds or fails. Record reusable lessons in the right durable place so future runs inherit the

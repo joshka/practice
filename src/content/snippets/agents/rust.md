@@ -1,8 +1,8 @@
-# Rust Agent Instructions
+# Rust agent instructions
 
 ## Metadata
 
-- Name: `Rust Agent Instructions`
+- Name: `Rust agent instructions`
 - ID: `agent-rust-instructions`
 - Summary: `Compact Rust maintainability instructions for agents working on APIs, Rustdoc, tests,
   dependencies, and reviewable implementation changes. The snippet routes agents toward reader

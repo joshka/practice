@@ -1,8 +1,8 @@
-# Agent Present Concrete Next Options
+# Agent present concrete next options
 
 ## Metadata
 
-- Name: `Present Concrete Next Options`
+- Name: `Present concrete next options`
 - ID: `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`
 - Summary: After a validated chunk, offer specific follow-up chunks with their tradeoffs. Concrete
   options let the maintainer steer scope without decoding vague requests to continue.
@@ -50,8 +50,8 @@ and task plans that name the next concrete chunk.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

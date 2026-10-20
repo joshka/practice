@@ -1,8 +1,8 @@
-# Agent Report Proof In Handoffs
+# Agent report proof in handoffs
 
 ## Metadata
 
-- Name: `Report Proof in Handoffs`
+- Name: `Report proof in handoffs`
 - ID: `AGENT-REPORT-PROOF-IN-HANDOFFS`
 - Summary: Replace confidence language with the exact checks, inspection, screenshots, and skipped
   validation behind a handoff. Proof lets reviewers decide what to trust and what remains risky.
@@ -41,8 +41,8 @@ artifact checks, and final summaries that separate run, skipped, and failed chec
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

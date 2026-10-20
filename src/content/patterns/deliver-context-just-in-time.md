@@ -1,8 +1,8 @@
-# Deliver Context Just In Time
+# Deliver context just in time
 
 ## Metadata
 
-- Name: `Deliver Context Just In Time`
+- Name: `Deliver context just in time`
 - ID: `deliver-context-just-in-time`
 - Summary: Too much context up front overloads the reader, while too little context forces
   rediscovery. Provide the next useful fact at the point of decision, linking outward when deeper

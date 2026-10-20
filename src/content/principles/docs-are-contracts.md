@@ -1,8 +1,8 @@
-# Docs Are Contracts
+# Docs are contracts
 
 ## Metadata
 
-- Name: `Docs Are Contracts`
+- Name: `Docs are contracts`
 - ID: `docs-are-contracts`
 - Summary: `Documentation near code is part of the supported behavior surface. Keep prose,
   examples, and implementation aligned so humans and agents can rely on the same contract.`

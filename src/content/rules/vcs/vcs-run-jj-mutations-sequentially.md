@@ -1,9 +1,9 @@
-# VCS Run JJ Mutations Sequentially
+# VCS run JJ mutations sequentially
 
 ## Metadata
 
 - ID: `VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`
-- Name: `Run JJ Mutations Sequentially`
+- Name: `Run JJ mutations sequentially`
 - Summary: Do not overlap jj commands that write repo, working-copy, bookmark, or config state.
   Sequential mutations avoid locks, stale reads, and confusing operation order.
 - Status: `reviewed`
@@ -40,7 +40,7 @@ inspection, and `jj op log` after unexpected state.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

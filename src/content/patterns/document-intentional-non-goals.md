@@ -1,8 +1,8 @@
-# Document Intentional Non Goals
+# Document intentional non goals
 
 ## Metadata
 
-- Name: `Document Intentional Non Goals`
+- Name: `Document intentional non goals`
 - ID: `document-intentional-non-goals`
 - Summary: Readers may treat missing behavior as oversight when the absence was a deliberate scope
   choice. Record important non-goals where they prevent repeated debate or misuse without turning

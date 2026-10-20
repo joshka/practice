@@ -1,9 +1,9 @@
-# VCS Track Remotes Explicitly
+# VCS track remotes explicitly
 
 ## Metadata
 
 - ID: `VCS-TRACK-REMOTES-EXPLICITLY`
-- Name: `Track Remotes Explicitly`
+- Name: `Track remotes explicitly`
 - Summary: Set explicit remote tracking when the same bookmark name exists on multiple remotes.
   This prevents fetch, rebase, and publication ambiguity in fork and upstream workflows.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ base/head checks.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

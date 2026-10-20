@@ -1,9 +1,9 @@
-# Test Keep Drift Claims Aligned
+# Test keep drift claims aligned
 
 ## Metadata
 
 - ID: `TEST-KEEP-DRIFT-CLAIMS-ALIGNED`
-- Name: `Keep Drift Claims Aligned`
+- Name: `Keep drift claims aligned`
 - Summary: Tie support claims, fixtures, examples, docs, and API paths to executable drift checks.
   Stable claims need evidence, but wording-only changes should not break broad tests.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ and link or example checks in CI.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

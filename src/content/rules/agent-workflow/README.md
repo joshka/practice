@@ -1,4 +1,4 @@
-# Agent Workflow
+# Agent workflow
 
 Agent workflow rules cover objectives, scoped capabilities, durable context, review packets,
 security proof, feedback loops, and concrete next choices.

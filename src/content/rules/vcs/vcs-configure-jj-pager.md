@@ -1,9 +1,9 @@
-# VCS Configure JJ Pager
+# VCS configure JJ pager
 
 ## Metadata
 
 - ID: `VCS-CONFIGURE-JJ-PAGER`
-- Name: `Configure JJ Pager`
+- Name: `Configure JJ pager`
 - Summary: Scope pager control with `--no-pager`, `JJ_PAGER=cat`, or session configuration.
   Direct output keeps source-control evidence visible without changing the user's global pager.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ that require non-paged jj output.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

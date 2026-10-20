@@ -1,8 +1,8 @@
-# Refactoring Make Edge Cases Explicit
+# Refactoring make edge cases explicit
 
 ## Metadata
 
-- Name: `Make Edge Cases Explicit`
+- Name: `Make edge cases explicit`
 - ID: `REFACTORING-MAKE-EDGE-CASES-EXPLICIT`
 - Summary: Name boundary behavior near the branch, calculation, or return that depends on it. This
   makes policy reviewable and shows when stronger types should prevent invalid states instead.
@@ -50,7 +50,7 @@ values, and types or constructors that prevent invalid states from entering trus
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
-- [Pattern: Make Invalid States Hard To Express](../../patterns/make-invalid-states-hard-to-express.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
+- [Pattern: Make invalid states hard to express](../../patterns/make-invalid-states-hard-to-express.md)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

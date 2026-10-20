@@ -1,8 +1,8 @@
-# Boundary Correctness
+# Boundary correctness
 
 ## Metadata
 
-- Name: `Boundary Correctness`
+- Name: `Boundary correctness`
 - ID: `boundary-correctness`
 - Summary: Boundary-correctness guidance covers APIs and internal boundaries where uncertain input
   becomes trusted data, state changes, ambient inputs enter the system, or async work crosses an
@@ -17,8 +17,8 @@
 
 This guide collects preferences for Rust APIs and internal boundaries where uncertain input becomes
 trusted data, domain state changes, ambient inputs enter the system, or async work crosses an
-ownership boundary. Use it with [Rust Maintainability][rust], [Code Shape][code-shape], and
-[Software Change Preferences][change].
+ownership boundary. Use it with [Rust maintainability][rust], [Code shape][code-shape], and
+[Software change preferences][change].
 
 Boundary correctness is about making caller obligations visible. A good boundary lets downstream
 code rely on types, constructors, function signatures, and named transitions instead of remembering
@@ -29,8 +29,8 @@ process rules from surrounding code.
 Prefer APIs that make the correct path natural and the invalid path hard to express. Push uncertainty
 to the boundary, then pass trusted values inward.
 
-Use [Make Invalid States Hard To Express][invalid-states] when repeated checks protect the same
-invariant. Use [Parse Dont Validate][parse] when validation would otherwise discard what it learned
+Use [Make invalid states hard to express][invalid-states] when repeated checks protect the same
+invariant. Use [Parse dont validate][parse] when validation would otherwise discard what it learned
 and leave raw input in circulation.
 
 ## Validation And Policy
@@ -46,7 +46,7 @@ has broader semantics. Prefer conservative support over guessed capability, and 
 inputs, operations, modes, resources, or protocol shapes early at the adapter boundary with clear
 errors.
 
-Use [Model Real Upstream Surface][real-upstream] and [Reject Unsupported Shapes][unsupported]
+Use [Model real upstream surface][real-upstream] and [Reject unsupported shapes][unsupported]
 when an adapter is tempted to smooth over provider limits.
 
 ### Resource Identity
@@ -58,8 +58,8 @@ For external state reconciliation, read the current state, normalize it into the
 desired state to actual state, and mutate by a stable upstream identity when the upstream system does
 not provide a safer atomic operation.
 
-Use [Choose Resource Identity Model][resource-identity] before designing reconciliation behavior,
-and use [Read Normalize Compare Mutate][read-normalize] when external state updates need
+Use [Choose resource identity model][resource-identity] before designing reconciliation behavior,
+and use [Read normalize compare mutate][read-normalize] when external state updates need
 idempotency.
 
 ### Dynamic Behavior
@@ -72,12 +72,12 @@ planning, and declared capabilities behind a narrow contract.
 Do not let reloadable code mutate host registries directly. Registrations should be declarative,
 host-validated, provenance-carrying, conflict-checked, and revocable.
 
-Use [Stage Generated Behavior][stage-generated], [Track Dynamic Registration
-Provenance][registration-provenance], and [Make Dynamic Conflicts Deterministic][dynamic-conflicts]
+Use [Stage generated behavior][stage-generated], [Track dynamic registration
+provenance][registration-provenance], and [Make dynamic conflicts deterministic][dynamic-conflicts]
 when generated, plugin, or reloadable behavior crosses into host-owned state.
 
-Use [Make Validation Policy Explicit][validation-policy] when the same field has different rules in
-different workflows. Use [Prefer Standard Conversions][standard-conversions] when `FromStr`,
+Use [Make validation policy explicit][validation-policy] when the same field has different rules in
+different workflows. Use [Prefer standard conversions][standard-conversions] when `FromStr`,
 `TryFrom`, `From`, `AsRef`, `Borrow`, or iterator traits honestly express the relationship.
 
 ## Lifecycle State
@@ -87,7 +87,7 @@ events, writes persistence, or has invalid predecessor states, the transition de
 Scattered functions that collectively encode states, events, guards, and transitions may be an
 anemic state machine; name the machine before adding more cases.
 
-Use [Identify Anemic State Machines][anemic-state] when lifecycle facts are scattered across helper
+Use [Identify anemic state machines][anemic-state] when lifecycle facts are scattered across helper
 functions, flags, or callbacks.
 
 Give each fact one authoritative owner. Derive cheap state from that source, route runtime mutation
@@ -95,7 +95,7 @@ through one owner, and treat UI, adapters, snapshots, and caches as projections 
 independent authorities. Duplicate a fact only with an explicit refresh, invalidation, staleness, or
 reconciliation contract.
 
-Use [Keep One Authoritative Owner Per Fact][authoritative-owner] when a flag, timer, status variant,
+Use [Keep one authoritative owner per fact][authoritative-owner] when a flag, timer, status variant,
 cache, adapter, or stored derivative can answer the same question in conflicting ways.
 
 For session-like systems, use an append-only event or entry model with stable IDs, parent links,
@@ -112,7 +112,7 @@ Keep application-owned state separate from rendering state. A widget, parser, ad
 should not store stale caller-owned geometry, offsets, handles, or configuration when the caller can
 pass the current values at the boundary.
 
-Use [Separate UI And App State][ui-state] when rendering state starts owning application state or
+Use [Separate UI and app state][ui-state] when rendering state starts owning application state or
 stale caller-owned context.
 
 Make state updates visible by returning explicit commands, new values, or transition results when
@@ -121,8 +121,8 @@ that is clearer than mutating hidden internal state.
 Keep interaction state minimal. Store only the capture, drag, cursor, subscription, or lifecycle
 facts the component truly owns.
 
-Use [Make State Transitions Explicit][state-transitions] when callers currently mutate lifecycle
-fields directly. Use [Strengthen Cohesion][cohesion] when the state, rule, event, and error should
+Use [Make state transitions explicit][state-transitions] when callers currently mutate lifecycle
+fields directly. Use [Strengthen cohesion][cohesion] when the state, rule, event, and error should
 move toward one concept.
 
 ## Explicit Inputs
@@ -138,8 +138,8 @@ Builders are useful at boundaries when many optional fields, defaults, or cross-
 make a direct constructor hard to read. Keep builder defaults visible, and validate cross-field
 rules in `build` instead of letting partially valid values circulate.
 
-Use [Make Parameters Explicit][parameters] when behavior depends on ambient inputs. Use
-[Inject Time And Randomness][time-randomness] when deterministic decision logic should receive the
+Use [Make parameters explicit][parameters] when behavior depends on ambient inputs. Use
+[Inject time and randomness][time-randomness] when deterministic decision logic should receive the
 time, generated ID, random choice, or nonce-like value it uses.
 
 ## Side Effects And Async
@@ -155,7 +155,7 @@ authority for an adapter contract. Keep upstream documentation links near the ad
 docs so behavior can be validated later; when the upstream docs are weak or ambiguous, leave
 unsupported behavior unsupported and document why.
 
-Use [Ground Integrations In Primary Sources][primary-sources] before treating provider behavior as a
+Use [Ground integrations in primary sources][primary-sources] before treating provider behavior as a
 contract.
 
 ### Adapters And Pure Core
@@ -166,7 +166,7 @@ when integration crates, event backends, terminals, networks, or runtimes vary.
 Separate pure computation from rendering, I/O, or mutation when the separation gives tests a stable
 surface and callers a clearer contract.
 
-Use [Keep Backend Adapters At Edge][backend-edge] and [Separate Pure Core From Effects][pure-core]
+Use [Keep backend adapters at edge][backend-edge] and [Separate pure core from effects][pure-core]
 when integration details are spreading into core logic.
 
 Policy-sensitive side effects should pass through an explicit policy boundary.
@@ -188,8 +188,8 @@ decision when that helps callers recover.
 Unknown, unsupported, denied, and preserved inputs are different states; model or document the
 difference when callers need to reason about compatibility.
 
-Use [Give Tools Identity Policy And Limits][tool-identity], [Make Exec Tools
-Noninteractive][exec-tools], and [Distinguish Input Classes][input-classes] when tool calls cross
+Use [Give tools identity policy and limits][tool-identity], [Make exec tools
+noninteractive][exec-tools], and [Distinguish input classes][input-classes] when tool calls cross
 permission, compatibility, or execution boundaries.
 
 ### Provider Streams And Promotion
@@ -198,8 +198,8 @@ Provider adapters should normalize streams into typed events with partial and te
 Preserve provider-specific diagnostics, but keep provider wire formats out of durable session state
 unless wire compatibility is the contract being tested.
 
-Use [Expose Partial Stream Output][partial-stream] and [Report Provider
-Diagnostics][provider-diagnostics] when streams, freshness, permissions, budget, or load affect how
+Use [Expose partial stream output][partial-stream] and [Report provider
+diagnostics][provider-diagnostics] when streams, freshness, permissions, budget, or load affect how
 callers should interpret provider output.
 
 Replay and rollback tests should use fake providers, fake tools, staged artifacts, snapshots, and
@@ -210,22 +210,22 @@ UI should be a client of events, not the source of truth. A TUI, JSON mode, brow
 or worker loop should reconstruct state from the same core events without owning durable session
 state.
 
-Use [Separate UI And App State][ui-state] when presentation layers begin owning durable session
+Use [Separate UI and app state][ui-state] when presentation layers begin owning durable session
 truth.
 
-Use [Make Side Effects Visible][side-effects] when a public or internal API reads, writes, retries,
-persists, emits, spawns, or calls outside memory. Use [Keep Async Boundaries Explicit][async] when
-locks, borrows, owned data, retries, or side effects cross `await` points. Use [Make Policy
-Boundaries Explicit][policy-boundaries] when side effects need allow, deny, redact, fallback, or
+Use [Make side effects visible][side-effects] when a public or internal API reads, writes, retries,
+persists, emits, spawns, or calls outside memory. Use [Keep async boundaries explicit][async] when
+locks, borrows, owned data, retries, or side effects cross `await` points. Use [Make policy
+boundaries explicit][policy-boundaries] when side effects need allow, deny, redact, fallback, or
 approval decisions before execution.
 
 ## Related Guidance
 
 Use [Boundary Rules][boundary-rules] for compact instructions about parsing, validation, explicit
 inputs, state transitions, side effects, async boundaries, and provider diagnostics. Use
-[Explicit Boundaries Preserve Correctness][boundary-principle] for the deeper design reason. Use
-[Rust API And Release Checks][api-release] when boundary changes affect public Rust APIs or release
-surfaces. Use [Source Coherence Review][source-coherence] when ownership gaps span types or modules.
+[Explicit boundaries preserve correctness][boundary-principle] for the deeper design reason. Use
+[Rust API and release checks][api-release] when boundary changes affect public Rust APIs or release
+surfaces. Use [Source coherence review][source-coherence] when ownership gaps span types or modules.
 
 ## Review Questions
 

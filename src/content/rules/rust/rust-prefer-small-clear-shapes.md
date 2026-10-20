@@ -1,8 +1,8 @@
-# Rust Prefer Small Clear Shapes
+# Rust prefer small clear shapes
 
 ## Metadata
 
-- Name: `Prefer Small Clear Shapes`
+- Name: `Prefer small clear shapes`
 - ID: `RUST-PREFER-SMALL-CLEAR-SHAPES`
 - Summary: Favor small functions, narrow structs, and simple enums that keep live facts local for
   readers. Do not split cohesive logic into fragments that force more navigation than understanding.

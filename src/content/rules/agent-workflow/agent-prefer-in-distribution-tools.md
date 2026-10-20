@@ -1,8 +1,8 @@
-# Agent Prefer In Distribution Tools
+# Agent prefer in distribution tools
 
 ## Metadata
 
-- Name: `Prefer In-Distribution Tools`
+- Name: `Prefer in-distribution tools`
 - ID: `AGENT-PREFER-IN-DISTRIBUTION-TOOLS`
 - Summary: Use standard project commands, supported CLIs, and documented workflows before inventing
   ad hoc tool paths. Familiar tools reduce misuse and make agent output easier to rerun.
@@ -42,8 +42,8 @@ markdownlint, and generated checks.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

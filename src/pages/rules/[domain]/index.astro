@@ -5,9 +5,6 @@ import {
   renderMarkdown,
   ruleDomains,
   rulesForDomain,
-  tagLabel,
-  tagSlug,
-  tagsForPage,
   withBase,
 } from '../../../lib/site';
 
@@ -93,10 +90,6 @@ function displayTitle(rule: (typeof rules)[number]): string {
   return rule.title.replace(new RegExp(`^${escapeRegExp(config.titlePrefix)}\\s+`, 'i'), '');
 }
 
-function ruleId(rule: (typeof rules)[number]): string {
-  return rule.metadata.id || displayTitle(rule);
-}
-
 function cardTitle(rule: (typeof rules)[number]): string {
   return rule.metadata.name || displayTitle(rule);
 }
@@ -105,10 +98,6 @@ function escapeRegExp(value: string): string {
   return value.replace(/[.*+?^${}()|[\]\\]/g, '\\$&');
 }
 
-function visibleRuleTags(rule: (typeof rules)[number]): string[] {
-  const domainTag = tagSlug(domain);
-  return tagsForPage(rule).filter((tag) => tag !== domainTag).slice(0, 3);
-}
 ---
 
 <BaseLayout
@@ -132,17 +121,10 @@ function visibleRuleTags(rule: (typeof rules)[number]): string[] {
 
   <section class="listing rule-listing">
     <h2>{rules.length} {rules.length === 1 ? 'rule' : 'rules'}</h2>
-    <div class="index-list rule-listing__grid">
+    <div class="index-list index-list--cards rule-listing__grid">
       {rules.map((rule) => (
         <a class="index-entry index-entry--with-icon" href={withBase(rule.route)}>
           <span class="index-entry__body">
-            {visibleRuleTags(rule).length > 0 && (
-              <span class="index-entry__tags">
-                {visibleRuleTags(rule).map((tag) => (
-                  <span class="index-entry__tag">{tagLabel(tag)}</span>
-                ))}
-              </span>
-            )}
             <span class="index-entry__title">
               <span class="index-entry__kind-icon" aria-hidden="true">
                 <KindIcon kind="rule" />
@@ -150,7 +132,6 @@ function visibleRuleTags(rule: (typeof rules)[number]): string[] {
               <strong>{cardTitle(rule)}</strong>
               <span class="card-arrow" aria-hidden="true">→</span>
             </span>
-            <span class="index-entry__id">{ruleId(rule)}</span>
             {descriptionFor(rule) && (
               <span class="index-entry__description">{descriptionFor(rule)}</span>
             )}

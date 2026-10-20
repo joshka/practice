@@ -1,8 +1,8 @@
-# Agent Preserve Human Work
+# Agent preserve human work
 
 ## Metadata
 
-- Name: `Preserve Human Work`
+- Name: `Preserve human work`
 - ID: `AGENT-PRESERVE-HUMAN-WORK`
 - Summary: Inspect and protect unrelated local edits before changing files. Preserving human work
   keeps the task diff focused and avoids destroying unfinished or intentional changes.
@@ -42,8 +42,8 @@ and handoffs that identify files touched.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

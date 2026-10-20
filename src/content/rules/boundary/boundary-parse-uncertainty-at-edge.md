@@ -1,8 +1,8 @@
-# Boundary Parse Uncertainty At Edge
+# Boundary parse uncertainty at edge
 
 ## Metadata
 
-- Name: `Parse Uncertainty At Edge`
+- Name: `Parse uncertainty at edge`
 - ID: `BOUNDARY-PARSE-UNCERTAINTY-AT-EDGE`
 - Summary: Parse and validate raw strings, JSON, CLI args, provider responses, and user input at
   the boundary before passing values inward. Core logic receives typed invariants, while
@@ -43,8 +43,8 @@ tests for accepted and rejected inputs.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

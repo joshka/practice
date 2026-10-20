@@ -1,8 +1,8 @@
-# Boundary Keep Backend Adapters At Edge
+# Boundary keep backend adapters at edge
 
 ## Metadata
 
-- Name: `Keep Backend Adapters At Edge`
+- Name: `Keep backend adapters at edge`
 - ID: `BOUNDARY-KEEP-BACKEND-ADAPTERS-AT-EDGE`
 - Summary: Keep provider-specific terminal, storage, network, and runtime APIs in adapter layers at
   the boundary. Core logic stays stable and testable while real backend differences remain modeled
@@ -43,8 +43,8 @@ tests that exercise translation at the edge.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

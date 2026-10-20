@@ -1,8 +1,8 @@
-# Apply Practice Guidance
+# Apply practice guidance
 
 ## Metadata
 
-- Name: `Apply Practice Guidance`
+- Name: `Apply practice guidance`
 - ID: `agent-apply-practice-guidance`
 - Summary: `Compact instructions for Codex sessions that need to use the shared practice catalog
   from another repository. The snippet turns broad standards into a task-local application loop

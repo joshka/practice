@@ -1,9 +1,9 @@
-# VCS Use Evolog And Operation Log
+# VCS use evolog and operation log
 
 ## Metadata
 
 - ID: `VCS-USE-EVOLOG-AND-OPERATION-LOG`
-- Name: `Use Evolog and Operation Log`
+- Name: `Use evolog and operation log`
 - Summary: Use `jj evolog` for a change's evolution and `jj op log` for repository operations.
   Picking the right log distinguishes rewrite history from workspace, bookmark, and import events.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ history was inspected.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

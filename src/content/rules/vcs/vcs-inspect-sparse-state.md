@@ -1,9 +1,9 @@
-# VCS Inspect Sparse State
+# VCS inspect sparse state
 
 ## Metadata
 
 - ID: `VCS-INSPECT-SPARSE-STATE`
-- Name: `Inspect Sparse State`
+- Name: `Inspect sparse state`
 - Summary: Check sparse checkout state before treating a missing path as absent from history.
   Sparse patterns can hide files, so inspection prevents recreating or editing the wrong path.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ deliberately, and handoffs that note sparse limitations.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

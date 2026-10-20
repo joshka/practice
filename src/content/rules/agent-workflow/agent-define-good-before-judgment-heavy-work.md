@@ -1,8 +1,8 @@
-# Agent Define Good Before Judgment Heavy Work
+# Agent define good before judgment heavy work
 
 ## Metadata
 
-- Name: `Define Good Before Judgment-Heavy Work`
+- Name: `Define good before judgment-heavy work`
 - ID: `AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`
 - Summary: State the quality bar before work where taste, naming, API shape, or review expectations
   matter. Clear criteria give the agent goalposts before it creates a large speculative diff.
@@ -43,8 +43,8 @@ and task prompts that ask what “good” means before execution.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

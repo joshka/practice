@@ -1,8 +1,8 @@
-# Agent Budget For Feedback Loops
+# Agent budget for feedback loops
 
 ## Metadata
 
-- Name: `Budget for Feedback Loops`
+- Name: `Budget for feedback loops`
 - ID: `AGENT-BUDGET-FOR-FEEDBACK-LOOPS`
 - Summary: Reserve enough time and tokens for checks, failure inspection, and handoff proof.
   Planning for the feedback loop keeps validation from being squeezed out after the first edit.
@@ -49,8 +49,8 @@ timeouts, and handoffs that separate run checks from skipped checks.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

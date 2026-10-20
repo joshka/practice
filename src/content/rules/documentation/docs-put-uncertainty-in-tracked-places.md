@@ -1,8 +1,8 @@
-# Docs Put Uncertainty In Tracked Places
+# Docs put uncertainty in tracked places
 
 ## Metadata
 
-- Name: `Put Uncertainty in Tracked Places`
+- Name: `Put uncertainty in tracked places`
 - ID: `DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`
 - Summary: `Keep user docs focused on current truth and move unresolved direction to issues, ADRs,
   or roadmaps. Track speculation where it can be decided instead of implying a promise.`
@@ -43,7 +43,7 @@ distinguishes current limitations from future plans.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

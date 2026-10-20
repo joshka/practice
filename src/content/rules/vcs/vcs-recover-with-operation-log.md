@@ -1,9 +1,9 @@
-# VCS Recover With Operation Log
+# VCS recover with operation log
 
 ## Metadata
 
 - ID: `VCS-RECOVER-WITH-OPERATION-LOG`
-- Name: `Recover with Operation Log`
+- Name: `Recover with operation log`
 - Summary: Use jj operation-log recovery before destructive cleanup habits.
   The operation log preserves recoverable graph states, but inspect the target before restoring.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ before broad repair.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

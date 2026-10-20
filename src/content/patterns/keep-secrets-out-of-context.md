@@ -1,8 +1,8 @@
-# Keep Secrets Out Of Context
+# Keep secrets out of context
 
 ## Metadata
 
-- Name: `Keep Secrets Out Of Context`
+- Name: `Keep secrets out of context`
 - ID: `keep-secrets-out-of-context`
 - Summary: Secrets and private data can leak through prompts, transcripts, logs, and generated
   artifacts even when the code change is harmless. Redact or replace sensitive values before they

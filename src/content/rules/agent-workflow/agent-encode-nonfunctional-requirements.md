@@ -1,8 +1,8 @@
-# Agent Encode Nonfunctional Requirements
+# Agent encode nonfunctional requirements
 
 ## Metadata
 
-- Name: `Encode Nonfunctional Requirements`
+- Name: `Encode nonfunctional requirements`
 - ID: `AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`
 - Summary: Put invisible constraints such as security, accessibility, latency, and compatibility
   near the task. Encoding them upfront makes those requirements part of the implementation target.
@@ -43,8 +43,8 @@ notes, and PR templates with explicit risk sections.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

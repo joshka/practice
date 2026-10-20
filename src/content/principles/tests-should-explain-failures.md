@@ -1,8 +1,8 @@
-# Tests Should Explain Failures
+# Tests should explain failures
 
 ## Metadata
 
-- Name: `Tests Should Explain Failures`
+- Name: `Tests should explain failures`
 - ID: `tests-should-explain-failures`
 - Summary: `A failing test should point at the broken contract, not merely report that a predicate
   was false. Choose assertion shapes that expose the relevant value, variant, order, or case name.`

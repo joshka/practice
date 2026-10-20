@@ -1,8 +1,8 @@
-# Rust Document Performance Contracts
+# Rust document performance contracts
 
 ## Metadata
 
-- Name: `Document Performance Contracts`
+- Name: `Document performance contracts`
 - ID: `RUST-DOCUMENT-PERFORMANCE-CONTRACTS`
 - Summary: State meaningful performance expectations when callers may design around them. Clear
   limits keep complexity and optimization claims tied to supported behavior.

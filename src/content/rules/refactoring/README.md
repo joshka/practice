@@ -1,4 +1,4 @@
-# Local Reasoning And Refactoring
+# Local reasoning and refactoring
 
 Refactoring rules cover local reasoning, concept helpers, visible linear stories, side-effect loops,
 whitespace paragraphs, DRY pressure, and weak abstractions.

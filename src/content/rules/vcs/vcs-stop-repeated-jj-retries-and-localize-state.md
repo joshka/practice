@@ -1,9 +1,9 @@
-# VCS Stop Repeated JJ Retries And Localize State
+# VCS stop repeated JJ retries and localize state
 
 ## Metadata
 
 - ID: `VCS-STOP-REPEATED-JJ-RETRIES-AND-LOCALIZE-STATE`
-- Name: `Stop Repeated JJ Retries And Localize State`
+- Name: `Stop repeated JJ retries and localize state`
 - Summary: Stop repeating a failing jj command after a transient retry and inspect relevant state.
   Diagnosis beats command spam when locks, sparse paths, bookmarks, or remotes disagree.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ inspection, and explicit notes about the localized failure.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

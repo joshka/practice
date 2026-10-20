@@ -1,8 +1,8 @@
-# Agent Grant Scoped Capabilities
+# Agent grant scoped capabilities
 
 ## Metadata
 
-- Name: `Grant Scoped Capabilities`
+- Name: `Grant scoped capabilities`
 - ID: `AGENT-GRANT-SCOPED-CAPABILITIES`
 - Summary: Give agents only the permissions and external authority the task actually needs. Scoped
   capability keeps progress possible while reducing accidental mutation, publication, or exposure.
@@ -43,8 +43,8 @@ gates, and tool-specific allowlists.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

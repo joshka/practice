@@ -1,8 +1,8 @@
-# Change Separate Structure From Behavior
+# Change separate structure from behavior
 
 ## Metadata
 
-- Name: `Separate Structure From Behavior`
+- Name: `Separate structure from behavior`
 - ID: `CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`
 - Summary: Split refactoring or layout changes from behavior changes when the combined diff obscures
   intent. Separate review units make meaning preservation and new behavior easier to check.
@@ -42,6 +42,6 @@ handoffs that label structure versus behavior work.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

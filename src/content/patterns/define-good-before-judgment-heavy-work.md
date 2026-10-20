@@ -1,8 +1,8 @@
-# Define Good Before Judgment-Heavy Work
+# Define good before judgment-heavy work
 
 ## Metadata
 
-- Name: `Define Good Before Judgment-Heavy Work`
+- Name: `Define good before judgment-heavy work`
 - ID: `define-good-before-judgment-heavy-work`
 - Summary: Work that depends on taste or judgment drifts when success is not defined up front.
   Establish acceptance criteria, examples, and review dimensions before spending effort on

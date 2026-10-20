@@ -1,8 +1,8 @@
-# Observability Match Failure Output To Surface
+# Observability match failure output to surface
 
 ## Metadata
 
-- Name: `Match Failure Output To Surface`
+- Name: `Match failure output to surface`
 - ID: `OBSERVABILITY-MATCH-FAILURE-OUTPUT-TO-SURFACE`
 - Summary: Choose a failure-output surface that lets the affected user notice, understand, and act
   on the failure. Inline errors, alerts, toasts, banners, persistent status, CLI stderr, API
@@ -52,8 +52,8 @@ review that names the surface where the failure appears.
 
 ## References
 
-- [Pattern: Write Actionable Error
-  Messages](../../patterns/write-actionable-error-messages.md)
+- [Pattern: Write actionable error
+  messages](../../patterns/write-actionable-error-messages.md)
 - [NN/g: 10 Usability Heuristics](https://www.nngroup.com/articles/ten-usability-heuristics/)
 - [NN/g: 10 Design Guidelines for Reporting Errors in
   Forms](https://www.nngroup.com/articles/errors-forms-design-guidelines/)

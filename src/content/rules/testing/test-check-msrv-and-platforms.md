@@ -1,9 +1,9 @@
-# Test Check MSRV And Platforms
+# Test check MSRV and platforms
 
 ## Metadata
 
 - ID: `TEST-CHECK-MSRV-AND-PLATFORMS`
-- Name: `Check MSRV and Platforms`
+- Name: `Check MSRV and platforms`
 - Summary: Run checks for declared Rust versions and supported platforms when they are promised.
   Compatibility claims are public contracts, so skip matrices only when no such claim exists.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ and release-support documentation.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

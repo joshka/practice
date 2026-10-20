@@ -1,8 +1,8 @@
-# Rust Keep Lints Actionable
+# Rust keep lints actionable
 
 ## Metadata
 
-- Name: `Keep Lints Actionable`
+- Name: `Keep lints actionable`
 - ID: `RUST-KEEP-LINTS-ACTIONABLE`
 - Summary: Enforce lints that improve correctness, API quality, docs, portability, or maintenance
   in ways reviewers want automated. Scope suppressions tightly so exceptions stay visible.

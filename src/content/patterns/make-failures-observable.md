@@ -1,8 +1,8 @@
-# Make Failures Observable
+# Make failures observable
 
 ## Metadata
 
-- Name: `Make Failures Observable`
+- Name: `Make failures observable`
 - ID: `make-failures-observable`
 - Summary: Errors without diagnostic context force future readers and operators to rediscover what
   failed. Preserve typed errors while adding operation context, correlation, metrics, or logs at the

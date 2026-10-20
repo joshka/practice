@@ -1,8 +1,8 @@
-# Perf Record Benchmark Provenance
+# Perf record benchmark provenance
 
 ## Metadata
 
-- Name: `Record Benchmark Provenance`
+- Name: `Record benchmark provenance`
 - ID: `PERF-RECORD-BENCHMARK-PROVENANCE`
 - Summary: Record the commands, inputs, tool versions, build profile, and runner conditions behind
   benchmark numbers. Provenance makes future comparisons meaningful and helps separate real changes
@@ -42,7 +42,7 @@ Supported by checked benchmark scripts, saved fixture data, Criterion reports, `
 
 ## References
 
-- [Principle: Measure Before Optimizing](../../principles/measure-before-optimizing.md)
+- [Principle: Measure before optimizing](../../principles/measure-before-optimizing.md)
 - [Microsoft Pragmatic Rust Guidelines: hot path
   performance](https://microsoft.github.io/rust-guidelines/agents/all.txt#M-HOTPATH)
 - [Microsoft Pragmatic Rust Guidelines: throughput

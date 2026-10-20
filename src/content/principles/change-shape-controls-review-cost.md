@@ -1,8 +1,8 @@
-# Change Shape Controls Review Cost
+# Change shape controls review cost
 
 ## Metadata
 
-- Name: `Change Shape Controls Review Cost`
+- Name: `Change shape controls review cost`
 - ID: `change-shape-controls-review-cost`
 - Summary: `Change boundaries determine how much intent, risk, validation, and revert cost a
   reviewer must reconstruct. Use the smallest coherent unit that preserves trust without splitting

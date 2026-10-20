@@ -1,8 +1,8 @@
-# Observability And Failure
+# Observability and failure
 
 ## Metadata
 
-- Name: `Observability And Failure`
+- Name: `Observability and failure`
 - ID: `observability-and-failure`
 - Summary: Observability and failure guidance covers Rust and service boundaries where failures
   need to be understandable after the fact. It favors structured errors, owned logging boundaries,
@@ -15,19 +15,19 @@
   contain-observability-policy`
 
 This guide collects preferences for Rust and service boundaries where failures need to be
-understandable after the fact. Use it with [Boundary Correctness][boundary],
-[Markdown And Documentation][docs], and [Software Change Preferences][change].
+understandable after the fact. Use it with [Boundary correctness][boundary],
+[Markdown and documentation][docs], and [Software change preferences][change].
 
 Failure handling is not only about returning the right type. A good failure path preserves what the
 caller can act on and records enough safe context for the owner of the operation to diagnose what
 happened.
 
 When a failure reaches a user, operator, support person, or reviewer, the visible output is part of
-the product surface. Use [Write Actionable Error Messages][actionable-errors] when an error,
+the product surface. Use [Write actionable error messages][actionable-errors] when an error,
 warning, or diagnostic needs to name the attempted operation, affected item, impact, next step, and
-support handle without becoming verbose prose. Use [Match Failure Output To Surface][surface-output]
-when the decision is where and how the failure should appear. Use [Keep Recovery Advice Safe and
-Honest][safe-recovery] when the cause, retry path, or suggested next step could be guessed or risky.
+support handle without becoming verbose prose. Use [Match failure output to surface][surface-output]
+when the decision is where and how the failure should appear. Use [Keep recovery advice safe and
+honest][safe-recovery] when the cause, retry path, or suggested next step could be guessed or risky.
 
 ## Core Preference
 
@@ -35,8 +35,8 @@ Prefer failure paths that preserve structure for callers and produce useful diag
 owned boundaries. Do not make people reconstruct the operation, input class, source error, or
 correlation trail from a generic message.
 
-Use [Return Structured Errors][structured-errors] when callers need stable error kinds, fields,
-source chains, or problem details. Use [Make Failures Observable][observable-failures] when a
+Use [Return structured errors][structured-errors] when callers need stable error kinds, fields,
+source chains, or problem details. Use [Make failures observable][observable-failures] when a
 failure crosses a caller, operator, support, or production boundary and needs a diagnostic trail.
 
 ## Boundary Ownership
@@ -45,9 +45,9 @@ Observability policy belongs where the operation is owned. Request handlers, job
 commands, persistence adapters, and domain services often know the useful operation name, retry
 context, correlation ID, tenant or resource identity, and redaction rules.
 
-Use [Contain Observability Policy][observability-policy] when helpers are deciding log severity,
+Use [Contain observability policy][observability-policy] when helpers are deciding log severity,
 metrics names, tracing shape, sampling, or redaction without owning the workflow. Use
-[Log At Owned Boundaries][owned-logs] when the same failure would otherwise be logged by multiple
+[Log at owned boundaries][owned-logs] when the same failure would otherwise be logged by multiple
 layers.
 
 ## Privacy And Diagnostic Context
@@ -55,11 +55,11 @@ layers.
 Diagnostics move farther than the request that created them. Logs, traces, metrics, crash reports,
 support bundles, CI artifacts, and agent transcripts can all cross access boundaries.
 
-Use [Avoid Secret Or Private Log Context][private-log-context] before recording raw payloads,
+Use [Avoid secret or private log context][private-log-context] before recording raw payloads,
 headers, source snippets, tokens, connection strings, user data, or proprietary context. Prefer safe
 identifiers, classifications, counts, and correlation fields.
 
-Use [Keep Diagnostics Retention Safe][retention-safe] when logs, traces, metrics, crash reports, CI
+Use [Keep diagnostics retention safe][retention-safe] when logs, traces, metrics, crash reports, CI
 artifacts, support bundles, or agent transcripts cross access or retention boundaries. This includes
 deciding whether raw detail belongs inline, behind a details disclosure, in a support bundle, or only
 in redacted diagnostic records.
@@ -89,15 +89,15 @@ explicitly when downstream code, replay, support, or UI rendering must distingui
 Do not hide failures only in UI logs. If a UI, worker, or extension observes a failure that changes
 durable system state, the core event or diagnostic stream should carry that fact.
 
-Use [Distinguish Failure States][failure-states] and [Surface Durable
-Failures][durable-failures] when retry, support, replay, UI, or background-task behavior depends on
+Use [Distinguish failure states][failure-states] and [Surface durable
+failures][durable-failures] when retry, support, replay, UI, or background-task behavior depends on
 the exact failure state.
 
 ## Related Guidance
 
 Use [Observability Rules][observability-rules] for compact failure, logging, diagnostic context, and
 retention instructions. Use [Boundary Rules][boundary-rules] when failure state crosses parsing,
-provider, async, tool, or state-transition boundaries. Use [Testing And Benchmarking][test-mechanism]
+provider, async, tool, or state-transition boundaries. Use [Testing and benchmarking][test-mechanism]
 when diagnostics need proof from integration tests, fixtures, or replay cases.
 
 ## Review Questions

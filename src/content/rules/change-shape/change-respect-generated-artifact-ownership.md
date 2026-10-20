@@ -1,8 +1,8 @@
-# Change Respect Generated Artifact Ownership
+# Change respect generated artifact ownership
 
 ## Metadata
 
-- Name: `Respect Generated Artifact Ownership`
+- Name: `Respect generated artifact ownership`
 - ID: `CHANGE-RESPECT-GENERATED-ARTIFACT-OWNERSHIP`
 - Summary: Fix generated outputs through their source inputs, templates, metadata, or generator
   configuration whenever those own the result. Hand edits are durable only when the tool workflow
@@ -51,6 +51,6 @@ tests, generated-output diffs, and checks that compare generated artifacts to th
 
 ## References
 
-- [Change Sync Generated Artifacts](change-sync-generated-artifacts.md)
+- [Change sync generated artifacts](change-sync-generated-artifacts.md)
 - [IBM: Manual editing of generated artifacts](https://www.ibm.com/docs/en/imdm/11.6?topic=model-manual-editing-generated-artifacts)
 - [Release Please: release PRs update changelog files](https://github.com/googleapis/release-please)

@@ -1,8 +1,8 @@
-# Docs Avoid Unearned Praise
+# Docs avoid unearned praise
 
 ## Metadata
 
-- Name: `Avoid Unearned Praise`
+- Name: `Avoid unearned praise`
 - ID: `DOCS-AVOID-UNEARNED-PRAISE`
 - Summary: `Replace vague ranking words with observable behavior, evidence, or tradeoffs. Use
   evaluative claims only when the basis is explicit enough for readers to verify.`
@@ -42,7 +42,7 @@ asks broad claims to name their basis.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

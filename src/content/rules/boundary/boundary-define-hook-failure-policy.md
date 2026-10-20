@@ -1,8 +1,8 @@
-# Boundary Define Hook Failure Policy
+# Boundary define hook failure policy
 
 ## Metadata
 
-- Name: `Define Hook Failure Policy`
+- Name: `Define hook failure policy`
 - ID: `BOUNDARY-DEFINE-HOOK-FAILURE-POLICY`
 - Summary: Specify whether each hook class blocks, retries, logs and continues, rolls back, or
   leaves partial state. This gives extension points predictable failure behavior without forcing one
@@ -42,8 +42,8 @@ whether hooks are advisory or blocking.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

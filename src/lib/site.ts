@@ -12,6 +12,7 @@ export type MarkdownPage = {
   repoPath: string;
   sourceUrl: string;
   metadata: Record<string, string>;
+  snippetMarkdown?: string;
 };
 
 export type MarkdownSection = {
@@ -437,7 +438,8 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
   const absolute = contentStoragePath(repoPath);
   const rawMarkdown = readFileSync(absolute, 'utf8');
   const parsed = parseFrontmatter(rawMarkdown);
-  const markdown = stripLegacyMetadata(parsed.body);
+  const snippet = unwrapSnippetFence(repoPath, stripLegacyMetadata(parsed.body));
+  const markdown = snippet.markdown;
   const metadata = {
     ...metadataFromMarkdown(parsed.body),
     ...parsed.metadata,
@@ -459,7 +461,53 @@ export function renderMarkdown(repoPath: string): MarkdownPage {
     repoPath,
     sourceUrl: sourceUrlForRepoPath(repoPath),
     metadata,
+    snippetMarkdown: snippet.snippetMarkdown,
   };
+}
+
+// Agent snippets wrap their copyable instructions in one fenced Markdown block. Render the
+// instructions as page sections and keep the raw text for the copy button.
+function unwrapSnippetFence(
+  repoPath: string,
+  markdown: string,
+): { markdown: string; snippetMarkdown?: string } {
+  if (!repoPath.startsWith('snippets/agents/')) return { markdown };
+  const fence = markdown.match(/^```markdown\n([\s\S]*?)\n```[ \t]*$/m);
+  if (!fence || fence.index === undefined) return { markdown };
+  const before = markdown.slice(0, fence.index);
+  const after = markdown.slice(fence.index + fence[0].length);
+  return { markdown: `${before}${fence[1]}${after}`, snippetMarkdown: fence[1].trim() };
+}
+
+const properNouns = new Set(['Git', 'Jujutsu', 'Markdown', 'Rust']);
+
+export function sentenceCase(title: string): string {
+  return title
+    .split(' ')
+    .map((word, index) => word
+      .split('-')
+      .map((part, partIndex) => (
+        (index > 0 || partIndex > 0) && /^[A-Z][a-z]+$/.test(part) && !properNouns.has(part)
+          ? part.toLowerCase()
+          : part
+      ))
+      .join('-'))
+    .join(' ');
+}
+
+// README sections that a section index already replaces with its own listing.
+const listingSectionTitles = new Set([
+  'all rules',
+  'domains',
+  'draft mechanisms',
+  'reviewed mechanisms',
+  'reviewed principles',
+  'seed patterns',
+  'snippets',
+]);
+
+export function sectionReadmeExtras(page: MarkdownPage): MarkdownSection[] {
+  return page.sections.filter((section) => !listingSectionTitles.has(section.title.toLowerCase()));
 }
 
 export function getSection(key: string): Section | undefined {
@@ -540,7 +588,6 @@ export function tagLabel(value: string): string {
   const acronyms: Record<string, string> = {
     ai: 'AI',
     api: 'API',
-    async: 'Async',
     rustdoc: 'Rustdoc',
     rust: 'Rust',
     vcs: 'VCS',
@@ -548,7 +595,7 @@ export function tagLabel(value: string): string {
   };
   return tagSlug(value)
     .split('-')
-    .map((part) => acronyms[part] ?? part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part, index) => acronyms[part] ?? (index === 0 ? part.charAt(0).toUpperCase() + part.slice(1) : part))
     .join(' ');
 }
 
@@ -624,9 +671,26 @@ export function routeForRepoPath(repoPath: string): string {
 }
 
 function rewriteLinks(html: string, fromRepoPath: string): string {
-  return html.replace(/href="([^"]+)"/g, (_match, href: string) => {
-    return `href="${escapeHtml(rewriteHref(href, fromRepoPath))}"`;
-  });
+  return linkContentPathCode(
+    html.replace(/href="([^"]+)"/g, (_match, href: string) => {
+      return `href="${escapeHtml(rewriteHref(href, fromRepoPath))}"`;
+    }),
+  );
+}
+
+// Inline code that names another content page reads like a link, so make it one. Code inside
+// existing links or code blocks is left alone.
+function linkContentPathCode(html: string): string {
+  return html.replace(
+    /(?<!<a\b[^>]*>)(?<!<pre>)<code>((?:guides|patterns|principles|rules|mechanisms|references|snippets)\/[\w\/.-]+\.md)<\/code>/g,
+    (match, repoPath: string) => {
+      const target = logicalRepoPath(repoPath);
+      if (!existsSync(contentStoragePath(target))) return match;
+      const route = routeForRepoPath(target);
+      const href = route.startsWith('http') ? route : withBase(route);
+      return `<a href="${escapeHtml(href)}">${match}</a>`;
+    },
+  );
 }
 
 function rewriteHref(href: string, fromRepoPath: string): string {
@@ -738,7 +802,7 @@ function displayTitleForRepoPath(repoPath: string, title: string): string {
   for (const prefix of rulePrefixes[parts[1]] ?? []) {
     displayTitle = displayTitle.replace(new RegExp(`^${escapeRegExp(prefix)}\\s+`, 'i'), '');
   }
-  return displayTitle;
+  return displayTitle.charAt(0).toUpperCase() + displayTitle.slice(1);
 }
 
 function formatDisplayTitle(title: string): string {
@@ -924,7 +988,7 @@ function parseFrontmatter(markdown: string): { body: string; metadata: Record<st
 }
 
 function stripLegacyMetadata(markdown: string): string {
-  return markdown.replace(/^##\s+Metadata\s*\n[\s\S]*?(?=^##\s+)/m, '').trim();
+  return markdown.replace(/^##\s+Metadata[ \t]*\n(?:(?:- |[ \t]+\S).*\n|[ \t]*\n)*/m, '').trim();
 }
 
 function cleanMetadataValue(value: string): string {

@@ -1,8 +1,8 @@
-# Review Label Speculation As Inferred Or Unknown
+# Review label speculation as inferred or unknown
 
 ## Metadata
 
-- Name: `Label Speculation as Inferred or Unknown`
+- Name: `Label speculation as inferred or unknown`
 - ID: `REVIEW-LABEL-SPECULATION-AS-INFERRED-OR-UNKNOWN`
 - Summary: Mark review claims as observed, inferred, assumed, or unknown when the evidence level
   matters. Clear labels keep guesses from hardening into false project knowledge.
@@ -44,8 +44,8 @@ for proof, and validation sections that name skipped or unresolved checks.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Ed Page: PR style](https://epage.github.io/dev/pr-style/)
 - [GitHub Docs: helping others review your
   changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)

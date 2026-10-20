@@ -1,8 +1,8 @@
-# Strengthen Cohesion
+# Strengthen cohesion
 
 ## Metadata
 
-- Name: `Strengthen Cohesion`
+- Name: `Strengthen cohesion`
 - ID: `strengthen-cohesion`
 - Summary: A concept becomes harder to understand when its data, rules, and behavior are scattered
   or bundled with unrelated concerns. Move elements that change for the same reason toward one

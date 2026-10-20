@@ -1,9 +1,9 @@
-# VCS JJ As Source Of Truth
+# VCS JJ as source of truth
 
 ## Metadata
 
 - ID: `VCS-JJ-AS-SOURCE-OF-TRUTH`
-- Name: `JJ as Source of Truth`
+- Name: `JJ as source of truth`
 - Summary: Use jj for local workflow in repositories with `.jj` state.
   This preserves descriptions, stack shape, operation-log recovery, and bookmark semantics.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ translate Git-centric advice into jj operations.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

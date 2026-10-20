@@ -1,8 +1,8 @@
-# Docs Build Docs Like Users Read Them
+# Docs build docs like users read them
 
 ## Metadata
 
-- Name: `Build Docs Like Users Read Them`
+- Name: `Build docs like users read them`
 - ID: `DOCS-BUILD-DOCS-LIKE-USERS-READ-THEM`
 - Summary: `Review rendered Rust documentation, links, cfg behavior, and examples in the modes users
   see. Match validation depth to the risk of feature, metadata, or public example changes.`
@@ -42,7 +42,7 @@ warnings"`, docs.rs cfg builds, and rendered-output review.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

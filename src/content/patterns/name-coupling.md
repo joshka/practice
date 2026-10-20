@@ -1,8 +1,8 @@
-# Name Coupling
+# Name coupling
 
 ## Metadata
 
-- Name: `Name Coupling`
+- Name: `Name coupling`
 - ID: `name-coupling`
 - Summary: Relationships between pieces are hard to judge when the reason they change together is
   unnamed. Describe the change pressure first, then decide whether the coupling belongs directly,

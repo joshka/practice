@@ -1,8 +1,8 @@
-# Make Validation Policy Explicit
+# Make validation policy explicit
 
 ## Metadata
 
-- Name: `Make Validation Policy Explicit`
+- Name: `Make validation policy explicit`
 - ID: `make-validation-policy-explicit`
 - Summary: Validation rules often differ by workflow even when they touch the same field. Name the
   policy at the boundary with distinct constructors, modes, policy types, or parsed values once

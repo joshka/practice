@@ -1,9 +1,9 @@
-# VCS Ask Before Repairing JJ Aliases
+# VCS ask before repairing JJ aliases
 
 ## Metadata
 
 - ID: `VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`
-- Name: `Ask Before Repairing JJ Aliases`
+- Name: `Ask before repairing JJ aliases`
 - Summary: Ask before changing jj aliases when they disagree with the observed repository topology.
   Aliases encode workflow policy, so silent repairs can alter future user commands.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ approval before alias repair.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

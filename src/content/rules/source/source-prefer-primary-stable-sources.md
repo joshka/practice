@@ -1,8 +1,8 @@
-# Source Prefer Primary Stable Sources
+# Source prefer primary stable sources
 
 ## Metadata
 
-- Name: `Prefer Primary Stable Sources`
+- Name: `Prefer primary stable sources`
 - ID: `SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
 - Summary: Anchor durable guidance in sources readers can inspect, compare, and challenge. Use links
   to clarify judgment, not to decorate rules or depend on private memory.
@@ -43,7 +43,7 @@ tables that state whether this repo supports, adapts, or intentionally differs f
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Rust API Guidelines: public APIs are stable](https://rust-lang.github.io/api-guidelines/necessities.html#c-stable)
 - [Microsoft Pragmatic Rust Guidelines: prefer simple abstractions](https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS)

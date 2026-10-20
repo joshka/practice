@@ -1,8 +1,8 @@
-# Produce Review Packets
+# Produce review packets
 
 ## Metadata
 
-- Name: `Produce Review Packets`
+- Name: `Produce review packets`
 - ID: `produce-review-packets`
 - Summary: Reviewers lose time when a handoff contains only a diff and no acceptance evidence.
   Package the goal, validation, risks, and proof artifact in proportion to the review burden.

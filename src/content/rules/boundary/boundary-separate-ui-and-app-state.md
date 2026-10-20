@@ -1,8 +1,8 @@
-# Boundary Separate Ui And App State
+# Boundary separate ui and app state
 
 ## Metadata
 
-- Name: `Separate UI And App State`
+- Name: `Separate UI and app state`
 - ID: `BOUNDARY-SEPARATE-UI-AND-APP-STATE`
 - Summary: Keep selection, focus, scroll, expansion, and transient input mode separate from
   application-owned data when they change under different rules. The separation prevents rendering
@@ -45,8 +45,8 @@ handlers that translate UI events into app commands.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

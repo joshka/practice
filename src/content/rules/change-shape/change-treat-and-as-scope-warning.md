@@ -1,8 +1,8 @@
-# Change Treat And As Scope Warning
+# Change treat and as scope warning
 
 ## Metadata
 
-- Name: `Treat And as Scope Warning`
+- Name: `Treat and as scope warning`
 - ID: `CHANGE-TREAT-AND-AS-SCOPE-WARNING`
 - Summary: Use compound change descriptions as a prompt to inspect whether the work has more than
   one purpose. The word is not a rule, but it catches scope creep while splitting is still cheap.
@@ -42,6 +42,6 @@ the next independent chunk.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

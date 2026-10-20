@@ -1,8 +1,8 @@
-# Rust Consider Downstream API Impact
+# Rust consider downstream API impact
 
 ## Metadata
 
-- Name: `Consider Downstream API Impact`
+- Name: `Consider downstream API impact`
 - ID: `RUST-CONSIDER-DOWNSTREAM-API-IMPACT`
 - Summary: Check public API changes against downstream imports, traits, inference, and examples
   before reshaping them. Additive paths and deprecations often avoid unnecessary breakage.

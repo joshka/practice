@@ -1,8 +1,8 @@
-# Docs Mark Noncompiling Examples Honestly
+# Docs mark noncompiling examples honestly
 
 ## Metadata
 
-- Name: `Mark Noncompiling Examples Honestly`
+- Name: `Mark noncompiling examples honestly`
 - ID: `DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`
 - Summary: `Label examples that are sketches, partial snippets, or intentionally not run. Honest
   labels keep readers from treating illustrative code as a supported copy-paste contract.`
@@ -42,7 +42,7 @@ Supported by doctests, Rustdoc code-block attributes such as `no_run` or `ignore
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

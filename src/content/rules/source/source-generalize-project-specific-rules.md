@@ -1,8 +1,8 @@
-# Source Generalize Project Specific Rules
+# Source generalize project specific rules
 
 ## Metadata
 
-- Name: `Generalize Project-Specific Rules`
+- Name: `Generalize project-specific rules`
 - ID: `SOURCE-GENERALIZE-PROJECT-SPECIFIC-RULES`
 - Summary: Extract the portable failure mode before promoting local lessons into shared guidance.
   Provider, repo, or tool details should stay local unless they clarify the durable rule.
@@ -45,7 +45,7 @@ promotion passes that ask whether the rule applies outside the original reposito
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Rust API Guidelines: public APIs are stable](https://rust-lang.github.io/api-guidelines/necessities.html#c-stable)
 - [Microsoft Pragmatic Rust Guidelines: prefer simple abstractions](https://microsoft.github.io/rust-guidelines/guidelines/libs/ux/#M-SIMPLE-ABSTRACTIONS)

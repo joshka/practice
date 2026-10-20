@@ -1,8 +1,8 @@
-# JJ Agent Workflow
+# JJ agent workflow
 
 ## Metadata
 
-- Name: `JJ Agent Workflow`
+- Name: `JJ agent workflow`
 - ID: `jj-agent-workflow`
 - Summary: Noninteractive jj defaults, topology checks, and local override conventions make agent
   source-control work safer. The mechanism keeps local workflow state explicit without leaking
@@ -26,9 +26,9 @@ private session context.
 
 ## Supported Principles
 
-- [JJ Topology Is Repo Role Dependent](../principles/jj-topology-is-repo-role-dependent.md)
-- [Private Context Is Not Shared Context](../principles/private-context-is-not-shared-context.md)
-- [Change Shape Controls Review Cost](../principles/change-shape-controls-review-cost.md)
+- [JJ topology is repo role dependent](../principles/jj-topology-is-repo-role-dependent.md)
+- [Private context is not shared context](../principles/private-context-is-not-shared-context.md)
+- [Change shape controls review cost](../principles/change-shape-controls-review-cost.md)
 
 ## Local Configuration
 

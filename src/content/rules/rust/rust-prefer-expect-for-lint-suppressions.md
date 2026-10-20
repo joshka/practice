@@ -1,8 +1,8 @@
-# Rust Prefer Expect For Lint Suppressions
+# Rust prefer expect for lint suppressions
 
 ## Metadata
 
-- Name: `Prefer Expect For Lint Suppressions`
+- Name: `Prefer expect for lint suppressions`
 - ID: `RUST-PREFER-EXPECT-FOR-LINT-SUPPRESSIONS`
 - Summary: Use `#[expect]` for targeted lint suppressions that should disappear when the warning is
   fixed. Reserve broad `allow` attributes for deliberate policy choices that are not expected to

@@ -1,8 +1,8 @@
-# Agent Separate Notes From Corrections
+# Agent separate notes from corrections
 
 ## Metadata
 
-- Name: `Separate Notes From Corrections`
+- Name: `Separate notes from corrections`
 - ID: `AGENT-SEPARATE-NOTES-FROM-CORRECTIONS`
 - Summary: Capture fast-review notes before fixing them when there are multiple comments or unclear
   patterns. Separating capture from correction preserves signal and supports coherent follow-up.
@@ -43,8 +43,8 @@ and follow-up rules when feedback repeats.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

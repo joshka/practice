@@ -1,8 +1,8 @@
-# Boundary Give Tools Identity Policy And Limits
+# Boundary give tools identity policy and limits
 
 ## Metadata
 
-- Name: `Give Tools Identity Policy And Limits`
+- Name: `Give tools identity policy and limits`
 - ID: `BOUNDARY-GIVE-TOOLS-IDENTITY-POLICY-AND-LIMITS`
 - Summary: Give effectful callable units typed identity, authorization policy, cancellation, and
   bounded output. The added ceremony is reserved for real tool boundaries where auditability,
@@ -43,8 +43,8 @@ tokens, structured errors, and audit logs.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

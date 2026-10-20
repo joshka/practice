@@ -1,8 +1,8 @@
-# Observability Keep Diagnostics Retention Safe
+# Observability keep diagnostics retention safe
 
 ## Metadata
 
-- Name: `Keep Diagnostics Retention Safe`
+- Name: `Keep diagnostics retention safe`
 - ID: `OBSERVABILITY-KEEP-DIAGNOSTICS-RETENTION-SAFE`
 - Summary: Match diagnostic detail to its audience and retention period. Redact or summarize
   sensitive values while preserving enough operation context to debug.
@@ -46,7 +46,7 @@ review, and tests for secret or PII leaks.
 
 ## References
 
-- [Pattern: Log At Owned Boundaries](../../patterns/log-at-owned-boundaries.md)
+- [Pattern: Log at owned boundaries](../../patterns/log-at-owned-boundaries.md)
 - [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 - [OWASP Logging Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)

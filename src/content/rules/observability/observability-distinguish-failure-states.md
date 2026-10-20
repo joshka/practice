@@ -1,8 +1,8 @@
-# Observability Distinguish Failure States
+# Observability distinguish failure states
 
 ## Metadata
 
-- Name: `Distinguish Failure States`
+- Name: `Distinguish failure states`
 - ID: `OBSERVABILITY-DISTINGUISH-FAILURE-STATES`
 - Summary: Preserve status distinctions that change recovery, messaging, metrics, or debugging.
   Collapsing timeouts, denials, aborts, partial work, and failures makes callers guess.
@@ -43,7 +43,7 @@ that keep terminal states distinct.
 
 ## References
 
-- [Pattern: Log At Owned Boundaries](../../patterns/log-at-owned-boundaries.md)
+- [Pattern: Log at owned boundaries](../../patterns/log-at-owned-boundaries.md)
 - [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 - [OWASP Logging Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)

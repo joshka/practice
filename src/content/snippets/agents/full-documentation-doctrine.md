@@ -1,8 +1,8 @@
-# Full Documentation Doctrine Prompt Pack
+# Full documentation doctrine prompt pack
 
 ## Metadata
 
-- Name: `Full Documentation Doctrine Prompt Pack`
+- Name: `Full documentation doctrine prompt pack`
 - ID: `agent-full-documentation-doctrine-prompt-pack`
 - Summary: `Large single-file prompt pack for long-term documentation maintenance. It combines the
   repo's docs rules with writing, review, anti-drift, and anti-AI-slop lessons drawn from this

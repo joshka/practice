@@ -1,8 +1,8 @@
-# Perf Avoid Single Run Conclusions
+# Perf avoid single run conclusions
 
 ## Metadata
 
-- Name: `Avoid Single-Run Performance Conclusions`
+- Name: `Avoid single-run performance conclusions`
 - ID: `PERF-AVOID-SINGLE-RUN-CONCLUSIONS`
 - Summary: Do not land performance conclusions from one short benchmark run. Repeat and
   contextualize timing evidence because warmup, scheduling, cache state, and background load can
@@ -44,7 +44,7 @@ PR notes that include baseline and changed results.
 
 ## References
 
-- [Principle: Measure Before Optimizing](../../principles/measure-before-optimizing.md)
+- [Principle: Measure before optimizing](../../principles/measure-before-optimizing.md)
 - [Microsoft Pragmatic Rust Guidelines: hot path
   performance](https://microsoft.github.io/rust-guidelines/agents/all.txt#M-HOTPATH)
 - [Microsoft Pragmatic Rust Guidelines: throughput

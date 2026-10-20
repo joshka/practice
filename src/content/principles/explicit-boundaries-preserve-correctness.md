@@ -1,8 +1,8 @@
-# Explicit Boundaries Preserve Correctness
+# Explicit boundaries preserve correctness
 
 ## Metadata
 
-- Name: `Explicit Boundaries Preserve Correctness`
+- Name: `Explicit boundaries preserve correctness`
 - ID: `explicit-boundaries-preserve-correctness`
 - Summary: `Move uncertainty into named boundary policy before core logic uses the data. Parsed
   inputs, explicit side effects, and visible lifecycle transitions reduce repeated downstream

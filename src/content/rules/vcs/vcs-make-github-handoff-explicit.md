@@ -1,9 +1,9 @@
-# VCS Make GitHub Handoff Explicit
+# VCS make GitHub handoff explicit
 
 ## Metadata
 
 - ID: `VCS-MAKE-GITHUB-HANDOFF-EXPLICIT`
-- Name: `Make GitHub Handoff Explicit`
+- Name: `Make GitHub handoff explicit`
 - Summary: Name bookmark, remote, base, head, and repo when handing coherent jj state to GitHub.
   Explicit publication avoids host-tool inference mistakes in forks, stacks, and multi-remote repos.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ notes that name local and remote refs.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

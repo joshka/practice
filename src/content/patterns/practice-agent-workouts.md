@@ -1,8 +1,8 @@
-# Practice Agent Workouts
+# Practice agent workouts
 
 ## Metadata
 
-- Name: `Practice Agent Workouts`
+- Name: `Practice agent workouts`
 - ID: `practice-agent-workouts`
 - Summary: High-risk or repeated agent workflows are unreliable when first exercised during real
   work. Build safe practice tasks with explicit win conditions so the workflow, skill, or runbook

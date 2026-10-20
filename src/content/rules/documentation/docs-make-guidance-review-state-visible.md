@@ -1,8 +1,8 @@
-# Docs Make Guidance Review State Visible
+# Docs make guidance review state visible
 
 ## Metadata
 
-- Name: `Make Guidance Review State Visible`
+- Name: `Make guidance review state visible`
 - ID: `DOCS-MAKE-GUIDANCE-REVIEW-STATE-VISIBLE`
 - Summary: `Mark guidance maturity so readers know whether a rule is draft, reviewed, or ready for
   reuse. Visible state prevents tentative advice from becoming an accidental standard.`
@@ -48,5 +48,5 @@ reviewed rules into agent packs, and audits that reject unknown or missing statu
 
 - [GitHub Docs: About pull request
   reviews](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/reviewing-changes-in-pull-requests/about-pull-request-reviews)
-- [Guidance Generation And Audit](../../mechanisms/guidance-generation-and-audit.md)
-- [Docs Use Source Links As Support](docs-use-source-links-as-support.md)
+- [Guidance generation and audit](../../mechanisms/guidance-generation-and-audit.md)
+- [Docs use source links as support](docs-use-source-links-as-support.md)

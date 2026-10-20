@@ -1,8 +1,8 @@
-# JJ Workflow
+# JJ workflow
 
 ## Metadata
 
-- Name: `JJ Workflow`
+- Name: `JJ workflow`
 - ID: `jj-workflow`
 - Summary: JJ workflow guidance covers source-control inspection, reviewable changes, descriptions,
   bookmarks, publication, and recovery in jujutsu repositories. It keeps agents and maintainers
@@ -16,7 +16,7 @@
 This guide covers jujutsu workflow preferences for source-control inspection, reviewable changes,
 commit descriptions, and publication.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md). The goal is not
+Use this guide with [Software change preferences](software-change-preferences.md). The goal is not
 to teach all of jj; it is to keep local work reviewable, recoverable, and aligned with jj's change
 model.
 
@@ -55,10 +55,10 @@ For agent tooling, prefer configuring `JJ_PAGER=cat` once so jj output is never 
 Use `--no-pager` as the per-command fallback when the environment is not configured or when
 supporting older jj versions. Do not run jj mutations in parallel.
 
-Use [Preserve Unowned Work][preserve-work] when the working copy contains changes you did not make,
+Use [Preserve unowned work][preserve-work] when the working copy contains changes you did not make,
 and read `--help` before mutating the repo when command shape is unfamiliar.
-Use [Inspect State Before Mutating][inspect-state], [Configure JJ Pager][jj-pager-rule], and
-[Run JJ Mutations Sequentially][sequential-mutations] when setting up agent-safe jj inspection.
+Use [Inspect state before mutating][inspect-state], [Configure JJ pager][jj-pager-rule], and
+[Run JJ mutations sequentially][sequential-mutations] when setting up agent-safe jj inspection.
 
 Most jj commands snapshot local file changes into the current change before they run. This is useful
 for agents because ordinary inspection and workflow commands create operation-log points without
@@ -117,7 +117,7 @@ parallel or follow-up work.
 ## Describe The Change
 
 Set a description early for real edits, and keep it aligned with the final scope. Use
-[Commit Messages For History][commit-history] for both jj descriptions and published commits.
+[Commit messages for history][commit-history] for both jj descriptions and published commits.
 
 For multi-line descriptions, use real newlines:
 
@@ -207,9 +207,9 @@ For file state, scope commands to the intended paths. Do not run broad `jj file 
 all untracked files. Add ignore rules before `jj file untrack`, keep the file on disk when that is
 the intended outcome, and verify final tracked state instead of trusting one warning line.
 
-Use [Avoid Interactive JJ In Agent Work][avoid-interactive], [Name Exact JJ Mutation
-Targets][exact-targets], [Stop Repeated JJ Retries And Localize State][stop-retries], and [Scope JJ
-File Tracking][scope-files] when command shape or file state could surprise the working copy.
+Use [Avoid Interactive JJ In Agent Work][avoid-interactive], [Name exact JJ mutation
+targets][exact-targets], [Stop repeated JJ retries and localize state][stop-retries], and [Scope JJ
+file tracking][scope-files] when command shape or file state could surprise the working copy.
 
 ## Publish With Bookmarks
 
@@ -234,10 +234,10 @@ For GitHub CLI handoff, keep jj as the source of truth first. Inspect bookmarks 
 only the intended bookmark, then pass explicit `gh` parameters such as `--repo`, `--head`, and
 `--base` when topology is non-trivial.
 
-Use [Dry Run Surprising Publication][dry-run], [Confirm GitHub Remote Topology][github-topology],
-and [Make GitHub Handoff Explicit][github-handoff] before moving public review state.
+Use [Dry run surprising publication][dry-run], [Confirm GitHub remote topology][github-topology],
+and [Make GitHub handoff explicit][github-handoff] before moving public review state.
 
-## Track Remotes Explicitly
+## Track remotes explicitly
 
 Jujutsu stores last-seen remote bookmark positions, such as `main@origin`, and a local bookmark can
 track one or more remote bookmarks with the same name. Tracking metadata helps jj reconcile local
@@ -280,9 +280,9 @@ Repair remotes, fetch configuration, push configuration, `trunk()`, and tracked 
 when a host tool has changed repo topology. Do not let a forge command infer targets from stale jj
 topology.
 
-Use [Track Remotes Explicitly][track-remotes], [Treat Bookmark Remote Syntax As Version
-Sensitive][bookmark-syntax], [Match JJ Topology To Repo Role][match-topology], and [Repair Remote
-Topology Coherently][repair-topology] when remote names, tracked bookmarks, or host-tool defaults
+Use [Track remotes explicitly][track-remotes], [Treat Bookmark Remote Syntax As Version
+Sensitive][bookmark-syntax], [Match JJ Topology To Repo Role][match-topology], and [Repair remote
+topology coherently][repair-topology] when remote names, tracked bookmarks, or host-tool defaults
 shape publication.
 
 ## Git Transport Boundary
@@ -317,7 +317,7 @@ When a risky sequence is about to start, note the current operation or create a 
 harmless command such as `jj status`. That gives `jj op restore` a clear target if the reshape goes
 wrong.
 
-Use [Preserve Unowned Work][preserve-work] before undoing, abandoning, restoring, or squashing
+Use [Preserve unowned work][preserve-work] before undoing, abandoning, restoring, or squashing
 anything that might contain someone else's edits.
 
 Use `jj evolog` when the question is about the evolution of one rewritten change. Use `jj op log`
@@ -337,13 +337,13 @@ when recovery needs jj history instead of destructive cleanup.
 
 ## Agent Snippet
 
-For copyable `AGENTS.md` guidance, use [Jujutsu Agent Instructions][jj-snippet].
+For copyable `AGENTS.md` guidance, use [Jujutsu agent instructions][jj-snippet].
 
 ## Related Guidance
 
-Use [JJ Topology And Source Control Rules][vcs-rules] for compact jj and publication instructions.
-Use [JJ Topology Is Repo Role Dependent][jj-topology] for the reasoning behind owned, maintainer,
-and forked remote layouts. Use [JJ Agent Workflow][jj-agent-workflow] for noninteractive jj
+Use [JJ topology and source control Rules][vcs-rules] for compact jj and publication instructions.
+Use [JJ topology is repo role dependent][jj-topology] for the reasoning behind owned, maintainer,
+and forked remote layouts. Use [JJ agent workflow][jj-agent-workflow] for noninteractive jj
 configuration and agent-safe command shapes.
 
 ## Review Questions

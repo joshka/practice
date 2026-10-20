@@ -1,8 +1,8 @@
-# Rust Make Side Effects Explicit
+# Rust make side effects explicit
 
 ## Metadata
 
-- Name: `Make Side Effects Explicit`
+- Name: `Make side effects explicit`
 - ID: `RUST-MAKE-SIDE-EFFECTS-EXPLICIT`
 - Summary: Put mutation, I/O, registration, cleanup, and background work in names, call sites, or
   docs when callers must account for them. Keep tiny private helpers plain when the surrounding code
@@ -50,6 +50,6 @@ state changes or cleanup.
 
 ## References
 
-- [Pattern: Make Side Effects Visible](../../patterns/make-side-effects-visible.md)
+- [Pattern: Make side effects visible](../../patterns/make-side-effects-visible.md)
 - [Rust API Guidelines: Function docs include error, panic, and safety
   considerations](https://rust-lang.github.io/api-guidelines/documentation.html#c-failure)

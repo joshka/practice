@@ -1,9 +1,9 @@
-# Test Use Realistic Parser Samples
+# Test use realistic parser samples
 
 ## Metadata
 
 - ID: `TEST-USE-REALISTIC-PARSER-SAMPLES`
-- Name: `Use Realistic Parser Samples`
+- Name: `Use realistic parser samples`
 - Summary: Test parsers with representative input, malformed cases, and safe degradation examples.
   Real samples catch compatibility failures, but fixtures should be minimized and scrubbed.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ samples, and compatibility fixture inventories.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

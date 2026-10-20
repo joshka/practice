@@ -1,8 +1,8 @@
-# Rust Document Feature Contracts
+# Rust document feature contracts
 
 ## Metadata
 
-- Name: `Document Feature Contracts`
+- Name: `Document feature contracts`
 - ID: `RUST-DOCUMENT-FEATURE-CONTRACTS`
 - Summary: Explain what each feature flag enables, requires, and promises. Feature contracts help
   users choose combinations without guessing from dependency names.

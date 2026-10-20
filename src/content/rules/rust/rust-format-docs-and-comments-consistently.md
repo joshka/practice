@@ -1,8 +1,8 @@
-# Rust Format Docs And Comments Consistently
+# Rust format docs and comments consistently
 
 ## Metadata
 
-- Name: `Format Docs and Comments Consistently`
+- Name: `Format docs and comments consistently`
 - ID: `RUST-FORMAT-DOCS-AND-COMMENTS-CONSISTENTLY`
 - Summary: Apply stable formatting to Rustdoc, examples, attributes, and prose comments. Consistent
   source formatting keeps docs readable and prevents noisy future diffs.
@@ -52,4 +52,4 @@ and docs builds.
 
 - [rustfmt configuration](https://rust-lang.github.io/rustfmt/)
 - [rustdoc book: Documentation tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)
-- [Pattern: Prefer 100-Column Prose Wrap](../../patterns/prefer-100-column-prose-wrap.md)
+- [Pattern: Prefer 100-column prose wrap](../../patterns/prefer-100-column-prose-wrap.md)

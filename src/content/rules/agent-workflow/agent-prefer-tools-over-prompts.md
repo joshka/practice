@@ -1,8 +1,8 @@
-# Agent Prefer Tools Over Prompts
+# Agent prefer tools over prompts
 
 ## Metadata
 
-- Name: `Prefer Tools Over Prompts`
+- Name: `Prefer tools over prompts`
 - ID: `AGENT-PREFER-TOOLS-OVER-PROMPTS`
 - Summary: Move repeated instructions into tools, checks, templates, or durable guides. Tooling
   catches failures even when prompts are short, compacted, or interpreted differently.
@@ -44,8 +44,8 @@ and audit commands.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

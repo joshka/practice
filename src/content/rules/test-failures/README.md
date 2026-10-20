@@ -1,4 +1,4 @@
-# Tests Should Explain Failures
+# Tests should explain failures
 
 Test-failure rules cover assertion shape and failure output that help humans and agents diagnose the
 failing case quickly.

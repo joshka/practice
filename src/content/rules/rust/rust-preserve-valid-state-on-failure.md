@@ -1,8 +1,8 @@
-# Rust Preserve Valid State On Failure
+# Rust preserve valid state on failure
 
 ## Metadata
 
-- Name: `Preserve Valid State On Failure`
+- Name: `Preserve valid state on failure`
 - ID: `RUST-PRESERVE-VALID-STATE-ON-FAILURE`
 - Summary: Keep values valid when fallible operations return errors so callers can retry, inspect, or
   drop them predictably. Use transactional updates or staging when partial mutation would expose a
@@ -51,4 +51,4 @@ review.
 - [Rule: BOUNDARY-READ-NORMALIZE-COMPARE-MUTATE](../boundary/boundary-read-normalize-compare-mutate.md)
 - [Rust API Guidelines: Function docs include error, panic, and safety
   considerations](https://rust-lang.github.io/api-guidelines/documentation.html#c-failure)
-- [Pattern: Make State Transitions Explicit](../../patterns/make-state-transitions-explicit.md)
+- [Pattern: Make state transitions explicit](../../patterns/make-state-transitions-explicit.md)

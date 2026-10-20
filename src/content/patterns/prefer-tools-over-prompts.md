@@ -1,8 +1,8 @@
-# Prefer Tools Over Prompts
+# Prefer tools over prompts
 
 ## Metadata
 
-- Name: `Prefer Tools Over Prompts`
+- Name: `Prefer tools over prompts`
 - ID: `prefer-tools-over-prompts`
 - Summary: Prose instructions are weak guardrails for repeatable constraints because agents can
   forget or apply them too late. Use tools, tests, templates, and checks for mechanical preferences,

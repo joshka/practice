@@ -1,8 +1,8 @@
-# Rust Keep Rustdoc And Readme Examples Aligned
+# Rust keep rustdoc and readme examples aligned
 
 ## Metadata
 
-- Name: `Keep Rustdoc and README Examples Aligned`
+- Name: `Keep rustdoc and README examples aligned`
 - ID: `RUST-KEEP-RUSTDOC-AND-README-EXAMPLES-ALIGNED`
 - Summary: Keep README, Rustdoc, generated docs, and example directories teaching the same current
   usage contract. Aligned examples prevent users from guessing which import path or lifecycle is

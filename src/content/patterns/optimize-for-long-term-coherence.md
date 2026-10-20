@@ -1,8 +1,8 @@
-# Optimize For Long Term Coherence
+# Optimize for long term coherence
 
 ## Metadata
 
-- Name: `Optimize For Long Term Coherence`
+- Name: `Optimize for long term coherence`
 - ID: `optimize-for-long-term-coherence`
 - Summary: Agent-produced work can satisfy a prompt while weakening the system's future concepts,
   names, boundaries, and tests. Choose the smallest change that preserves long-term direction

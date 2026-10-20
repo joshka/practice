@@ -1,8 +1,8 @@
-# Perf Justify Complexity Churn And Dependencies
+# Perf justify complexity churn and dependencies
 
 ## Metadata
 
-- Name: `Justify Complexity, Churn, and Dependencies`
+- Name: `Justify complexity, churn, and dependencies`
 - ID: `PERF-JUSTIFY-COMPLEXITY-CHURN-AND-DEPENDENCIES`
 - Summary: Explain why a performance win justifies added complexity, churn, unsafe code, caching,
   or dependencies. Measured speedups still need to pay for the maintenance cost every future reader
@@ -43,7 +43,7 @@ comments for non-obvious optimizations, and follow-up cleanup tasks.
 
 ## References
 
-- [Principle: Measure Before Optimizing](../../principles/measure-before-optimizing.md)
+- [Principle: Measure before optimizing](../../principles/measure-before-optimizing.md)
 - [Microsoft Pragmatic Rust Guidelines: hot path
   performance](https://microsoft.github.io/rust-guidelines/agents/all.txt#M-HOTPATH)
 - [Microsoft Pragmatic Rust Guidelines: throughput

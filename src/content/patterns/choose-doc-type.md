@@ -1,8 +1,8 @@
-# Choose Doc Type
+# Choose doc type
 
 ## Metadata
 
-- Name: `Choose Doc Type`
+- Name: `Choose doc type`
 - ID: `choose-doc-type`
 - Summary: A documentation need can call for a guide, reference, tutorial, decision record, or
   checklist, and mixing those jobs makes docs harder to use. Pick the type that fits the reader's

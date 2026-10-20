@@ -1,8 +1,8 @@
-# Perf Optimize Measured Hotspots
+# Perf optimize measured hotspots
 
 ## Metadata
 
-- Name: `Optimize Measured Hotspots`
+- Name: `Optimize measured hotspots`
 - ID: `PERF-OPTIMIZE-MEASURED-HOTSPOTS`
 - Summary: Optimize code that measurement shows is on the important runtime path. This keeps review
   attention on changes whose user-visible impact justifies altering the code shape.
@@ -42,7 +42,7 @@ that identify why the target is hot.
 
 ## References
 
-- [Principle: Measure Before Optimizing](../../principles/measure-before-optimizing.md)
+- [Principle: Measure before optimizing](../../principles/measure-before-optimizing.md)
 - [Microsoft Pragmatic Rust Guidelines: hot path
   performance](https://microsoft.github.io/rust-guidelines/agents/all.txt#M-HOTPATH)
 - [Microsoft Pragmatic Rust Guidelines: throughput

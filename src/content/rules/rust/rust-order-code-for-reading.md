@@ -1,8 +1,8 @@
-# Rust Order Code For Reading
+# Rust order code for reading
 
 ## Metadata
 
-- Name: `Order Code For Reading`
+- Name: `Order code for reading`
 - ID: `RUST-ORDER-CODE-FOR-READING`
 - Summary: Arrange code so central items, callers, or public API appear before supporting helpers
   when that makes the file readable top to bottom. Prefer the order that reduces reader jumping over
@@ -44,11 +44,11 @@ execution or conceptual dependency.
 
 ## Mechanisms
 
-Supported by [Source Coherence Review](../../mechanisms/source-coherence-review.md), file moves, and
+Supported by [Source coherence review](../../mechanisms/source-coherence-review.md), file moves, and
 module-level documentation that names the central concept.
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
 - [Ed Page Rust Style: File structure](https://epage.github.io/dev/rust-style/#file-structure)
 - [Rule: RUST-CENTRAL-ITEM-FIRST](rust-central-item-first.md)

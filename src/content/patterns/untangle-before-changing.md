@@ -1,8 +1,8 @@
-# Untangle Before Changing
+# Untangle before changing
 
 ## Metadata
 
-- Name: `Untangle Before Changing`
+- Name: `Untangle before changing`
 - ID: `untangle-before-changing`
 - Summary: Behavior changes become risky when policy, formatting, validation, persistence, and side
   effects are braided together. Untangle only enough structure to give the new behavior a clear

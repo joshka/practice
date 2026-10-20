@@ -1,8 +1,8 @@
-# Agent Prove Security Impact
+# Agent prove security impact
 
 ## Metadata
 
-- Name: `Prove Security Impact`
+- Name: `Prove security impact`
 - ID: `AGENT-PROVE-SECURITY-IMPACT`
 - Summary: Separate security hypotheses from proof of reachability, exploitability, assets, and
   user impact. This keeps prioritization and mitigation tied to demonstrated risk.
@@ -42,8 +42,8 @@ checks, and security review packets that separate hypothesis from evidence.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

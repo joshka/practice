@@ -1,8 +1,8 @@
-# Use AGENTS.md As Map
+# Use AGENTS.md as map
 
 ## Metadata
 
-- Name: `Use AGENTS.md As Map`
+- Name: `Use AGENTS.md as map`
 - ID: `use-agents-md-as-map`
 - Summary: A giant `AGENTS.md` grows stale and crowds out the context the agent actually needs.
   Keep it as a compact map to canonical guides, patterns, commands, and safety rules, with details

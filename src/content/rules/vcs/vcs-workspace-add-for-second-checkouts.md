@@ -1,9 +1,9 @@
-# VCS Workspace Add For Second Checkouts
+# VCS workspace add for second checkouts
 
 ## Metadata
 
 - ID: `VCS-WORKSPACE-ADD-FOR-SECOND-CHECKOUTS`
-- Name: `Workspace Add for Second Checkouts`
+- Name: `Workspace add for second checkouts`
 - Summary: Use `jj workspace add` only when a task needs another filesystem checkout.
   Ordinary review separation should use `jj new`; workspaces fit clean validation or parallelism.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ task ownership documentation.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

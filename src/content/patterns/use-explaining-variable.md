@@ -1,8 +1,8 @@
-# Use Explaining Variable
+# Use explaining variable
 
 ## Metadata
 
-- Name: `Use Explaining Variable`
+- Name: `Use explaining variable`
 - ID: `use-explaining-variable`
 - Summary: Important decisions disappear when nested expressions or repeated conditions expose
   syntax before domain meaning. Introduce a local name when it makes the next branch, call, or

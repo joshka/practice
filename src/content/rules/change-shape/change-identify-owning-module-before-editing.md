@@ -1,8 +1,8 @@
-# Change Identify Owning Module Before Editing
+# Change identify owning module before editing
 
 ## Metadata
 
-- Name: `Identify Owning Module Before Editing`
+- Name: `Identify owning module before editing`
 - ID: `CHANGE-IDENTIFY-OWNING-MODULE-BEFORE-EDITING`
 - Summary: Find the component that owns the concept before adding or moving logic. That keeps
   invariants, tests, and future maintenance close to the responsible code.
@@ -42,6 +42,6 @@ comments, and review that asks where the concept belongs.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

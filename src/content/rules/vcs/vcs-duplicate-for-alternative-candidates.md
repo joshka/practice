@@ -1,9 +1,9 @@
-# VCS Duplicate For Alternative Candidates
+# VCS duplicate for alternative candidates
 
 ## Metadata
 
 - ID: `VCS-DUPLICATE-FOR-ALTERNATIVE-CANDIDATES`
-- Name: `Duplicate for Alternative Candidates`
+- Name: `Duplicate for alternative candidates`
 - Summary: Use `jj duplicate` when two plausible fixes or refactors need independent validation.
   Separate candidate changes preserve comparison and recovery without mutating the only option.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ abandon or squash of the losing candidate.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

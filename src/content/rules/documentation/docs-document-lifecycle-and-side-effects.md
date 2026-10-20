@@ -1,8 +1,8 @@
-# Docs Document Lifecycle And Side Effects
+# Docs document lifecycle and side effects
 
 ## Metadata
 
-- Name: `Document Lifecycle and Side Effects`
+- Name: `Document lifecycle and side effects`
 - ID: `DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`
 - Summary: `Document caller-visible lifecycle, ownership, platform, feature, and side-effect
   obligations. Skip internal narration, but make operational responsibilities clear.`
@@ -45,7 +45,7 @@ doctests, and integration tests that exercise the documented lifecycle.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

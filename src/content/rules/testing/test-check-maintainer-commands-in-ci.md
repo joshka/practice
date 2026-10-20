@@ -1,9 +1,9 @@
-# Test Check Maintainer Commands In CI
+# Test check maintainer commands in CI
 
 ## Metadata
 
 - ID: `TEST-CHECK-MAINTAINER-COMMANDS-IN-CI`
-- Name: `Check Maintainer Commands in CI`
+- Name: `Check maintainer commands in CI`
 - Summary: Put documented maintainer commands, or intentionally stronger equivalents, in CI.
   This keeps local instructions honest while leaving slow or credentialed checks to special jobs.
 - Status: `reviewed`
@@ -44,7 +44,7 @@ and README validation sections.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

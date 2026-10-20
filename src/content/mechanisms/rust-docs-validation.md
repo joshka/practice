@@ -1,8 +1,8 @@
-# Rust Docs Validation
+# Rust docs validation
 
 ## Metadata
 
-- Name: `Rust Docs Validation`
+- Name: `Rust docs validation`
 - ID: `rust-docs-validation`
 - Summary: Doctests, Rustdoc warnings, rendered docs, and docs.rs-style builds prove documentation
   surfaces the way users will see them. Use this mechanism when examples, public API docs, feature
@@ -21,8 +21,8 @@ release-facing pages can be inspected before publication.
 
 ## Supported Principles
 
-- [Docs Are Contracts](../principles/docs-are-contracts.md)
-- [Public API Changes Have Downstream Cost](../principles/public-api-changes-have-downstream-cost.md)
+- [Docs are contracts](../principles/docs-are-contracts.md)
+- [Public API changes have downstream cost](../principles/public-api-changes-have-downstream-cost.md)
 
 ## Checks
 

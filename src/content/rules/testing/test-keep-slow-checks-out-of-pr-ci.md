@@ -1,9 +1,9 @@
-# Test Keep Slow Checks Out Of PR CI
+# Test keep slow checks out of PR CI
 
 ## Metadata
 
 - ID: `TEST-KEEP-SLOW-CHECKS-OUT-OF-PR-CI`
-- Name: `Keep Slow Checks out of PR CI`
+- Name: `Keep slow checks out of PR CI`
 - Summary: Keep long fuzzing, exhaustive matrices, and noisy benchmarks out of required PR CI.
   Fast gates preserve review flow, while heavier checks belong in release or scheduled validation.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ summaries that report which heavy checks did or did not run.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

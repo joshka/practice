@@ -1,8 +1,8 @@
-# Keep Automations Repo Owned
+# Keep automations repo owned
 
 ## Metadata
 
-- Name: `Keep Automations Repo Owned`
+- Name: `Keep automations repo owned`
 - ID: `keep-automations-repo-owned`
 - Summary: Critical checks and generation steps become fragile when they live only in personal
   scripts or local memory. Put repeatable automation in the repository so agents and humans can run

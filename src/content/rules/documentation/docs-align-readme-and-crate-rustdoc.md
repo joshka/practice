@@ -1,8 +1,8 @@
-# Docs Align Readme And Crate Rustdoc
+# Docs align readme and crate rustdoc
 
 ## Metadata
 
-- Name: `Align README and Crate Rustdoc`
+- Name: `Align README and crate rustdoc`
 - ID: `DOCS-ALIGN-README-AND-CRATE-RUSTDOC`
 - Summary: `Keep README and crate-level Rustdoc consistent where users learn setup and supported
   behavior. Let the pages serve different tasks, but prevent conflicting contracts.`
@@ -44,7 +44,7 @@ and release checks that inspect rendered crate documentation.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

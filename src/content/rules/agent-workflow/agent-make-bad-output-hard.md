@@ -1,8 +1,8 @@
-# Agent Make Bad Output Hard
+# Agent make bad output hard
 
 ## Metadata
 
-- Name: `Make Bad Output Hard`
+- Name: `Make bad output hard`
 - ID: `AGENT-MAKE-BAD-OUTPUT-HARD`
 - Summary: Turn recurring bad agent output into scripts, templates, lint, or checks that fail fast.
   Mechanical enforcement lowers review cost more reliably than repeated prompt reminders.
@@ -43,8 +43,8 @@ commands such as `scripts/audit_guidance.py`.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

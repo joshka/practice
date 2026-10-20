@@ -1,8 +1,8 @@
-# Docs Match Page Shape To Reader Task
+# Docs match page shape to reader task
 
 ## Metadata
 
-- Name: `Match Page Shape to Reader Task`
+- Name: `Match page shape to reader task`
 - ID: `DOCS-MATCH-PAGE-SHAPE-TO-READER-TASK`
 - Summary: `Shape pages around the reader's task, such as learning, choosing, reference, or review.
   The right structure lowers scan cost without forcing one page to do every job.`
@@ -56,5 +56,5 @@ screenshots, and review checklists for hierarchy, spacing, tags, links, and resp
 ## References
 
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
-- [Docs Use Descriptive Headings](docs-use-descriptive-headings.md)
-- [Docs One Dominant Mode Per Page](docs-one-dominant-mode-per-page.md)
+- [Docs use descriptive headings](docs-use-descriptive-headings.md)
+- [Docs one dominant mode per page](docs-one-dominant-mode-per-page.md)

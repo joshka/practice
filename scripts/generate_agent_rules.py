@@ -102,11 +102,11 @@ def render(rules: list[Rule]) -> str:
         domain_rules.sort(key=lambda rule: rule.id)
 
     lines = [
-        "# Reviewed Rule Agent Pack",
+        "# Reviewed rule agent pack",
         "",
         "## Metadata",
         "",
-        "- Name: `Reviewed Rule Agent Pack`",
+        "- Name: `Reviewed rule agent pack`",
         "- ID: `agent-reviewed-rule-pack`",
         "- Summary: `Generated compact execution surface for every reviewed rule. The pack gives agents",
         "  stable rule IDs and instructions while leaving rationale, examples, and deeper context in the",

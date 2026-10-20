@@ -1,8 +1,8 @@
-# Change Avoid Unnecessary Dependency Churn
+# Change avoid unnecessary dependency churn
 
 ## Metadata
 
-- Name: `Avoid Unnecessary Dependency Churn`
+- Name: `Avoid unnecessary dependency churn`
 - ID: `CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`
 - Summary: Keep package, manifest, and lockfile movement out of unrelated work. Separate dependency
   changes make build, compatibility, and downstream risk reviewable on their own.
@@ -42,6 +42,6 @@ diff review that separates manifest, lockfile, and source changes.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

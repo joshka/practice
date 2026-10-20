@@ -1,4 +1,4 @@
-# Agent Snippets
+# Agent snippets
 
 These snippets are copyable `AGENTS.md` sections. They provide compact instructions and point back
 to the canonical guides for detail.

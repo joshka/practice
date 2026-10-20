@@ -1,9 +1,9 @@
-# VCS Create Operation Log Point Before Reshaping
+# VCS create operation log point before reshaping
 
 ## Metadata
 
 - ID: `VCS-CREATE-OPERATION-LOG-POINT-BEFORE-RESHAPING`
-- Name: `Create an Operation Log Point Before Reshaping`
+- Name: `Create an operation log point before reshaping`
 - Summary: Create a recent jj operation boundary before risky stack reshaping.
   Recovery is easier when there is a known point before rebases, splits, squashes, or repairs.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ the operation before reshaping.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

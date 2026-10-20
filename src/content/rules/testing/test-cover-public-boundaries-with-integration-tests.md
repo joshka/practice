@@ -1,9 +1,9 @@
-# Test Cover Public Boundaries With Integration Tests
+# Test cover public boundaries with integration tests
 
 ## Metadata
 
 - ID: `TEST-COVER-PUBLIC-BOUNDARIES-WITH-INTEGRATION-TESTS`
-- Name: `Cover Public Boundaries with Integration Tests`
+- Name: `Cover public boundaries with integration tests`
 - Summary: Use integration tests to prove public module, crate, or adapter boundaries.
   They catch composition failures unit tests miss, while local logic can stay unit-tested.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ API fixtures, and end-to-end command tests where appropriate.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

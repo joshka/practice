@@ -1,8 +1,8 @@
-# Keep One Authoritative Owner Per Fact
+# Keep one authoritative owner per fact
 
 ## Metadata
 
-- Name: `Keep One Authoritative Owner Per Fact`
+- Name: `Keep one authoritative owner per fact`
 - ID: `BOUNDARY-KEEP-ONE-AUTHORITATIVE-OWNER-PER-FACT`
 - Summary: Give each state fact one definite authority and derive other views from it where
   practical. Cached, persisted, or adapter-specific projections may duplicate a fact only when
@@ -67,7 +67,7 @@ staleness, and reconciliation contract before keeping writable projections.
 
 ## Mechanisms
 
-Supported by [Source Coherence Review](../../mechanisms/source-coherence-review.md), constructor and
+Supported by [Source coherence review](../../mechanisms/source-coherence-review.md), constructor and
 transition review, cache-key or version tests, stale-read tests, and assertions that projections are
 updated or invalidated at the authoritative mutation boundary.
 

@@ -1,8 +1,8 @@
-# Budget Tokens For Feedback Loops
+# Budget tokens for feedback loops
 
 ## Metadata
 
-- Name: `Budget Tokens For Feedback Loops`
+- Name: `Budget tokens for feedback loops`
 - ID: `budget-tokens-for-feedback-loops`
 - Summary: Long-running agent work can exhaust context before validation, review, or handoff
   happens. Reserve space for feedback loops by summarizing durable state and avoiding unnecessary

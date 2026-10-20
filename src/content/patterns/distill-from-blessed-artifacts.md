@@ -1,8 +1,8 @@
-# Distill From Blessed Artifacts
+# Distill from blessed artifacts
 
 ## Metadata
 
-- Name: `Distill From Blessed Artifacts`
+- Name: `Distill from blessed artifacts`
 - ID: `distill-from-blessed-artifacts`
 - Summary: Durable guidance should come from accepted examples, reviewed decisions, and working
   artifacts rather than transient preferences. Distill stable lessons from blessed sources and keep

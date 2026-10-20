@@ -1,8 +1,8 @@
-# Review Explain PR Problem Model And Proof
+# Review explain PR problem model and proof
 
 ## Metadata
 
-- Name: `Explain PR Problem Model and Proof`
+- Name: `Explain PR problem model and proof`
 - ID: `REVIEW-EXPLAIN-PR-PROBLEM-MODEL-AND-PROOF`
 - Summary: Use PR descriptions to explain the problem, mental model, tradeoffs, validation, and
   documentation impact. Reviewers can then evaluate the diff against stated intent instead of
@@ -45,8 +45,8 @@ comments for decisions that are easiest to understand next to the changed code.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Ed Page: PR style](https://epage.github.io/dev/pr-style/)
 - [GitHub Docs: helping others review your
   changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)

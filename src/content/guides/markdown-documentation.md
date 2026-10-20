@@ -1,8 +1,8 @@
-# Markdown And Documentation
+# Markdown and documentation
 
 ## Metadata
 
-- Name: `Markdown And Documentation`
+- Name: `Markdown and documentation`
 - ID: `markdown-documentation`
 - Summary: Markdown and documentation guidance covers lintable Markdown, reader paths, page modes,
   Rustdoc, examples, references, and reusable guidance style. It favors current behavior,
@@ -18,13 +18,13 @@ This guide captures how documentation should be shaped in this repo and in downs
 guidance. Prefer docs that reduce rediscovery, carry contracts clearly, and stay easy to lint,
 review, and reuse.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md).
+Use this guide with [Software change preferences](software-change-preferences.md).
 
 ## Markdown Style
 
 Write Markdown that is easy to read in source form and easy to diff.
 
-- Wrap prose around 100 columns. Use [Prefer 100-Column Prose Wrap][prose-wrap] for the rationale
+- Wrap prose around 100 columns. Use [Prefer 100-column prose wrap][prose-wrap] for the rationale
   behind that local preference.
 - Put a blank line after headings.
 - Put a blank line before and after lists, blockquotes, and fenced code blocks.
@@ -41,7 +41,7 @@ markdownlint-cli2 "**/*.md"
 
 The repo config links directly to the upstream lint rules it customizes.
 
-Use [Keep Markdown Lintable][markdown-lintable] when Markdown source format, table alignment, code
+Use [Keep Markdown lintable][markdown-lintable] when Markdown source format, table alignment, code
 fences, or line wrapping affects review quality.
 
 ## Docs As Contracts
@@ -65,12 +65,12 @@ behavior once during production so future work can start from a durable summary 
 repeating the same scan.
 
 When rationale was not recorded beside the change, do not infer it from code and consult history
-only to support the resulting story. Use [Reconstruct Rationale Before Writing][rationale-research]
+only to support the resulting story. Use [Reconstruct rationale before writing][rationale-research]
 to inspect current behavior, introducing and corrective changes, tests, measurements, and relevant
 discussion before drafting. Write the durable explanation around what is true now; retain history
 when it supports the current choice, explains a rejected alternative, or warns about a regression.
 
-Use [Run Source Explanation Pass][source-pass] when the task is broader than ordinary Rustdoc or a
+Use [Run source explanation pass][source-pass] when the task is broader than ordinary Rustdoc or a
 local contract repair. It treats the source tree as a reading environment: first establish the
 system map and domain fundamentals, then audit context, helpers, formulas, branches, producer and
 return paths, evidence limits, and systematic review sweeps. External sources provide provenance and
@@ -86,12 +86,12 @@ Pattern-style guidance should expose the main decision quickly: the symptom, the
 risk or limit, the example, and the agent instruction. Keep the compact form visible, then add only
 the prose needed to make the tradeoff judgeable.
 
-Use [Document System Mental Models][system-models], [Document Intentional Non Goals][non-goals],
-[Make Side Effects Visible][side-effects], [Keep Docs Near Their Subject][doc-locality], and
-[Prefer Durable Summaries][durable-summaries] when code needs durable context beyond a single API
+Use [Document system mental models][system-models], [Document intentional non goals][non-goals],
+[Make side effects visible][side-effects], [Keep docs near their subject][doc-locality], and
+[Prefer durable summaries][durable-summaries] when code needs durable context beyond a single API
 contract.
 
-Use [Preserve Error Context][error-context] and [Write Actionable Error Messages][actionable-errors]
+Use [Preserve error context][error-context] and [Write actionable error messages][actionable-errors]
 when documenting failures that cross user, caller, operator, or support boundaries.
 
 ## Document Types
@@ -106,7 +106,7 @@ Separate documentation jobs instead of mixing every reader need into one page.
 Use Diátaxis as a framing tool, not as a rigid taxonomy. The point is to keep the document's primary
 job obvious.
 
-Use [Choose Document Type][doc-type], [One Dominant Mode Per Page][one-mode], and [Match Page Shape
+Use [Choose document type][doc-type], [One Dominant Mode Per Page][one-mode], and [Match Page Shape
 To Reader Task][page-shape] when a document is mixing tutorial, how-to, reference, explanation, or
 decision-record jobs.
 
@@ -114,7 +114,7 @@ decision-record jobs.
 
 Use grouped, named lists when a checklist or rule cluster grows past easy scanning. A long flat
 list can hide whether the page is about document mode, scan path, sentence shape, claim quality,
-style limits, or evidence. Use [Group Related List Items][group-lists] when a list needs internal
+style limits, or evidence. Use [Group related list items][group-lists] when a list needs internal
 structure, and use [Prose For Relationships, Lists For Enumeration][prose-lists] when bullets are
 carrying explanation that belongs in paragraphs.
 
@@ -141,8 +141,8 @@ carrying explanation that belongs in paragraphs.
 - Hide catalog mechanics such as rule prefixes, generated indexes, card behavior, and source layout
   unless citation, automation, or contribution workflow depends on them.
 
-Use [Front Load Useful Point][front-load], [Use Descriptive Headings][descriptive-headings], [Name
-Destination Not Direction][destination-names], and [Hide Catalog Mechanics][catalog-mechanics] when
+Use [Front Load Useful Point][front-load], [Use descriptive headings][descriptive-headings], [Name
+Destination Not Direction][destination-names], and [Hide catalog mechanics][catalog-mechanics] when
 the reader's scan path depends on headings, first sentences, labels, or generated structure.
 
 ### Prose And Lists
@@ -159,7 +159,7 @@ the reader's scan path depends on headings, first sentences, labels, or generate
   type, or maintainer warning changes. Do not hide a move from mechanism to history or contract to
   uncertainty inside one continuous block.
 
-Use [Write Technical Prose][technical-prose] and [Prose For Relationships, Lists For
+Use [Write technical prose][technical-prose] and [Prose For Relationships, Lists For
 Enumeration][prose-lists] when prose shape is hiding relationships, tradeoffs, or the main point.
 
 ### Concrete Claims
@@ -170,7 +170,7 @@ Enumeration][prose-lists] when prose shape is hiding relationships, tradeoffs, o
 - Prefer real examples.
 - Prefer explicit tradeoffs.
 
-Use [Use Concrete Details][concrete-details] when a doc could name real paths, defaults, commands,
+Use [Use concrete details][concrete-details] when a doc could name real paths, defaults, commands,
 types, examples, or tradeoffs instead of generic wording.
 
 ### Voice And Style
@@ -208,7 +208,7 @@ validation, ownership boundary, or visible outcome instead.
 - Avoid hedged neutrality, apology phrasing, and permission phrasing when the page needs a concrete
   position, instruction, or constraint.
 
-Use [Avoid Unearned Praise][unearned-praise] and [Avoid Generated Prose Tells][generated-tells] when
+Use [Avoid unearned praise][unearned-praise] and [Avoid generated prose tells][generated-tells] when
 voice, ranking words, page narration, or interface narration weakens technical clarity.
 
 ### Revision And Evidence
@@ -266,15 +266,15 @@ when a documentation change depends on source claims, commands, paths, defaults,
   workspace inventory.
 
 Use [README As Entry Point][readme-entry], [Align README And Crate Rustdoc][readme-rustdoc],
-[Teach Crate From Crate Root][crate-root], and [Keep Markdown Outside Rustdoc
-Purposeful][markdown-outside-rustdoc] when deciding which documentation surface owns a usage model,
+[Teach crate from crate root][crate-root], and [Keep Markdown outside rustdoc
+purposeful][markdown-outside-rustdoc] when deciding which documentation surface owns a usage model,
 API contract, or maintainer-only explanation.
 
 Let shared rationale rise to its nearest stable owner. Rationale shared by methods belongs on the
 type, rationale shared by variants belongs on the enum, rationale shared by types belongs on the
 module, and cross-module flow belongs at the crate root or in a focused guide. Item docs still state
-their local contract, difference, edge case, side effect, or override. Use [Keep Docs Near Their
-Subject][doc-locality] for the placement rule and its non-linear-reader limit.
+their local contract, difference, edge case, side effect, or override. Use [Keep docs near their
+subject][doc-locality] for the placement rule and its non-linear-reader limit.
 
 ### Links And Examples
 
@@ -305,7 +305,7 @@ questions.
 - Explain fit, scope, and tradeoffs instead of implying the local project is universally better.
 - Prefer direct ownership and boundary statements over apologetic design justifications.
 
-Use [Compare Libraries Accurately][compare-libraries] when documentation positions a project,
+Use [Compare libraries accurately][compare-libraries] when documentation positions a project,
 crate, or tool against nearby alternatives.
 
 ### Rustdoc Items And Validation
@@ -318,9 +318,9 @@ crate, or tool against nearby alternatives.
 - When updating downstream agent instructions, include the local lint command, line length, docs as
   contracts, and the canonical skill or guide for documentation work.
 
-Use [Write Public Docs For Caller Tasks][public-docs], [Build Docs Like Users Read Them][build-docs],
-[Mark Noncompiling Examples Honestly][noncompiling-examples], and [Validate Rust Docs As
-Code][validate-rust-docs] when Rustdoc, examples, feature flags, or generated docs are part of the
+Use [Write public docs for caller tasks][public-docs], [Build docs like users read them][build-docs],
+[Mark noncompiling examples honestly][noncompiling-examples], and [Validate Rust docs as
+code][validate-rust-docs] when Rustdoc, examples, feature flags, or generated docs are part of the
 review surface.
 
 ## Rustdoc
@@ -351,7 +351,7 @@ For public items, include the first-sentence summary plus relevant sections:
 An unsafe function's `# Safety` section states caller obligations. An unsafe operation's comment
 explains why the local facts satisfy its contract. A safe wrapper must enforce those obligations; if
 its signature permits invalid use, document the soundness boundary instead of treating current
-callers as proof. Use [Document Errors Panics Safety][errors-panics-safety] for the full distinction.
+callers as proof. Use [Document errors panics safety][errors-panics-safety] for the full distinction.
 
 Also document lifecycle, ownership, side effects, feature flags, platform assumptions, and
 compatibility when callers need that contract. Public fields deserve the same standard as public
@@ -374,11 +374,11 @@ Rustdoc, treat the crate root as the source of truth and regenerate the README a
 changes. Keep Rustdoc citation style consistent when adding RFCs, specifications, or protocol
 references.
 
-Use [Write Rustdoc As API Contract][rustdoc-contract], [Document Feature Contracts][feature-docs],
-[Keep Rustdoc And README Examples Aligned][rustdoc-readme], [Use Doc Inline For Canonical
-Reexports][doc-inline], [Avoid Glob Reexports][glob-reexports], and [Configure Docs.rs][docs-rs]
+Use [Write rustdoc as API contract][rustdoc-contract], [Document feature contracts][feature-docs],
+[Keep Rustdoc And README Examples Aligned][rustdoc-readme], [Use doc inline for canonical
+reexports][doc-inline], [Avoid Glob Reexports][glob-reexports], and [Configure Docs.rs][docs-rs]
 when Rust documentation paths, feature-gated docs, generated README content, or docs.rs metadata are
-part of the public surface. Use [Run Rustdoc Quality Pass][rustdoc-pass] when a crate needs a
+part of the public surface. Use [Run rustdoc quality pass][rustdoc-pass] when a crate needs a
 bounded checklist for crate-root teaching, public contracts, examples, layer alignment, experimental
 caveats, and validation commands.
 
@@ -403,7 +403,7 @@ Different example roles should be visibly different in the source:
 Within a substantial training example, separate the library or framework technique from the
 application policy chosen to make the example complete. Explain the policy's rationale, tradeoffs,
 and meaningful edge cases, then state what readers should reuse and what they should reconsider.
-Use [Separate Technique From Example Policy][technique-policy] when retry limits, buffering,
+Use [Separate technique from example policy][technique-policy] when retry limits, buffering,
 scheduling, persistence, recovery, or other sample decisions could be mistaken for framework rules.
 
 Omit examples when the problem cannot be made obvious from the snippet itself. For API or
@@ -427,10 +427,10 @@ Keep public examples small, deterministic, and copy-paste friendly. They should 
 undeclared transitive dependencies or a specific local repository unless the example is explicitly
 illustrative. Use relative names unless the section is about absolute-name semantics.
 
-Use [Test Observable Behavior][test-behavior] when examples imply behavior that should be protected
+Use [Test observable behavior][test-behavior] when examples imply behavior that should be protected
 by tests.
 
-Use [Distinguish Example Roles][example-roles], [Prove Real Use With Examples][real-examples],
+Use [Distinguish example roles][example-roles], [Prove real use with examples][real-examples],
 [Show Side Effects In Live Examples][example-effects], and [Cover Public Examples With
 Doctests][example-doctests] when examples need a clear role, need to prove a contract, show cleanup,
 or stay executable.
@@ -449,13 +449,13 @@ readers can use it and it materially supports the claim.
 
 ## Agent Snippet
 
-For copyable `AGENTS.md` guidance, use [Markdown And Docs Agent Instructions][docs-snippet].
+For copyable `AGENTS.md` guidance, use [Markdown and docs agent instructions][docs-snippet].
 
 ## Related Guidance
 
-Use [Documentation Rules][doc-rules] for compact docs guidance and [Docs Are Contracts][docs-contracts]
+Use [Documentation Rules][doc-rules] for compact docs guidance and [Docs are contracts][docs-contracts]
 for the reasoning behind treating docs as behavior-bearing artifacts. Use
-[Rust Docs Validation][docs-validation] for Rustdoc, doctest, and docs.rs proof. Use
+[Rust docs validation][docs-validation] for Rustdoc, doctest, and docs.rs proof. Use
 [External Source Ledger][source-ledger] when adding or evaluating recurring source families.
 
 ## Review Questions

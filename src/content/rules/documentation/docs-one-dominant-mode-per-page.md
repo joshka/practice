@@ -1,8 +1,8 @@
-# Docs One Dominant Mode Per Page
+# Docs one dominant mode per page
 
 ## Metadata
 
-- Name: `One Dominant Mode per Page`
+- Name: `One dominant mode per page`
 - ID: `DOCS-ONE-DOMINANT-MODE-PER-PAGE`
 - Summary: `Let each page have one primary mode and move competing material behind links. This keeps
   readers from paying for tutorial, reference, explanation, and policy at once.`
@@ -42,7 +42,7 @@ decision material into linked pages.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

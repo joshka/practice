@@ -1,9 +1,9 @@
-# Test Cover Async Routing Edge Cases
+# Test cover async routing edge cases
 
 ## Metadata
 
 - ID: `TEST-COVER-ASYNC-ROUTING-EDGE-CASES`
-- Name: `Cover Async Routing Edge Cases`
+- Name: `Cover async routing edge cases`
 - Summary: Test late replies, unrelated input, timeouts, and unmatched async responses.
   These cases protect request correlation and cleanup without relying on wall-clock luck.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ unmatched-response fixtures, and state assertions after cancellation.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

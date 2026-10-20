@@ -1,9 +1,9 @@
-# VCS Confirm Broad JJ Operations
+# VCS confirm broad JJ operations
 
 ## Metadata
 
 - ID: `VCS-CONFIRM-BROAD-JJ-OPERATIONS`
-- Name: `Confirm Broad JJ Operations`
+- Name: `Confirm broad JJ operations`
 - Summary: Confirm jj operations that abandon, rebase, squash, split, restore, publish, or go broad.
   Confirmation protects unrelated work when a command can reshape history or public state.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ confirmation before broad mutation.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

@@ -1,8 +1,8 @@
-# Rust Avoid Empty Wrapper Types
+# Rust avoid empty wrapper types
 
 ## Metadata
 
-- Name: `Avoid Empty Wrapper Types`
+- Name: `Avoid empty wrapper types`
 - ID: `RUST-AVOID-EMPTY-WRAPPER-TYPES`
 - Summary: Add a wrapper type only when it carries an invariant, behavior, or ownership boundary.
   Otherwise it adds conversions and concepts without improving correctness.

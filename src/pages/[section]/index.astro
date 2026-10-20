@@ -8,9 +8,9 @@ import {
   practiceTasks,
   sectionIndex,
   sectionPages,
+  sectionReadmeExtras,
+  sentenceCase,
   sections,
-  tagLabel,
-  tagSlug,
   tagsForPage,
   withBase,
 } from '../../lib/site';
@@ -25,12 +25,10 @@ type GroupConfig = {
   key: string;
   title: string;
   description: string;
-  hideTags?: string[];
 };
 
 type GroupedEntry = {
   item: MarkdownPage;
-  tags: string[];
 };
 
 type CardKind = 'agent' | 'guide' | 'pattern' | 'principle' | 'mechanism' | 'reference';
@@ -46,6 +44,7 @@ const sectionTitle = section.title;
 const sectionDescription = section.description;
 const page = sectionIndex(section);
 const pages = sectionPages(section);
+const readmeExtras = sectionReadmeExtras(page);
 const showGuideTasks = sectionKey === 'guides';
 const sectionKind = cardKindForSection(sectionKey);
 const showSinglePage = sectionKey === 'references';
@@ -95,19 +94,16 @@ const guideGroups: Record<string, GroupConfig> = {
     key: 'core',
     title: 'Change, code, and Rust',
     description: 'Change scope, code structure, and Rust maintainability.',
-    hideTags: ['change', 'code', 'rust'],
   },
   boundaries: {
     key: 'boundaries',
     title: 'Boundaries and feedback',
     description: 'Input, state, failure, diagnostics, and review evidence.',
-    hideTags: ['api', 'failure'],
   },
   collaboration: {
     key: 'collaboration',
     title: 'Documentation, agents, and source control',
     description: 'Documentation, agent handoff, jj workflow, and review-facing context.',
-    hideTags: ['docs', 'agents', 'vcs'],
   },
 };
 
@@ -116,37 +112,31 @@ const patternGroups: Record<string, GroupConfig> = {
     key: 'agents',
     title: 'Agent work',
     description: 'Agent steering, constraints, review, and feedback loops.',
-    hideTags: ['agents'],
   },
   docs: {
     key: 'docs',
     title: 'Documentation and shared context',
     description: 'Docs as contracts, source prose, examples, summaries, and review context.',
-    hideTags: ['documentation', 'docs', 'markdown'],
   },
   code: {
     key: 'code',
     title: 'Code shape and APIs',
     description: 'Reader-local code, Rust APIs, naming, state shape, and refactoring.',
-    hideTags: ['rust', 'readability', 'api-design'],
   },
   correctness: {
     key: 'correctness',
     title: 'Boundaries, failure, and verification',
     description: 'Parsing, validation, errors, observability, tests, and runtime proof.',
-    hideTags: ['testing', 'errors', 'observability', 'validation'],
   },
   workflow: {
     key: 'workflow',
     title: 'Change and review workflow',
     description: 'Review size, source control, sequencing, and collaboration.',
-    hideTags: ['workflow', 'review', 'version-control'],
   },
   tooling: {
     key: 'tooling',
     title: 'Tooling and automation',
     description: 'Repeated feedback made mechanical without hiding judgment.',
-    hideTags: ['tooling', 'automation'],
   },
 };
 
@@ -155,31 +145,26 @@ const principleGroups: Record<string, GroupConfig> = {
     key: 'agents',
     title: 'Agents and shared context',
     description: 'Agent instructions, public rationale, and repeated feedback.',
-    hideTags: ['agents'],
   },
   change: {
     key: 'change',
     title: 'Change, review, and locality',
     description: 'Change shape, reader locality, and review cost.',
-    hideTags: ['change-shape', 'review'],
   },
   boundaries: {
     key: 'boundaries',
     title: 'Boundaries, APIs, and state',
     description: 'Explicit boundaries, public API cost, and mutable state.',
-    hideTags: ['boundaries', 'api', 'state'],
   },
   verification: {
     key: 'verification',
     title: 'Testing and performance',
     description: 'Useful test failures and evidence-backed optimization.',
-    hideTags: ['testing', 'performance'],
   },
   vcs: {
     key: 'vcs',
     title: 'Version-control topology',
     description: 'JJ, remotes, bookmarks, and publication shape.',
-    hideTags: ['jj', 'vcs'],
   },
 };
 
@@ -188,25 +173,21 @@ const mechanismGroups: Record<string, GroupConfig> = {
     key: 'guidance',
     title: 'Guidance system',
     description: 'Generated snippets, templates, indexes, and rule synchronization.',
-    hideTags: ['guidance', 'rules'],
   },
   vcs: {
     key: 'vcs',
     title: 'JJ workflow',
     description: 'Source-control state, noninteractive jj commands, and agent-safe workflow.',
-    hideTags: ['jj', 'git', 'vcs'],
   },
   rust: {
     key: 'rust',
     title: 'Rust checks',
     description: 'Rust API, release, docs, lint, formatting, and tooling checks.',
-    hideTags: ['rust', 'cargo'],
   },
   testing: {
     key: 'testing',
     title: 'Testing and benchmarking',
     description: 'Validation cost, risk, and expected feedback value.',
-    hideTags: ['tests', 'testing', 'benchmarks'],
   },
 };
 
@@ -215,19 +196,16 @@ const agentGroups: Record<string, GroupConfig> = {
     key: 'baseline',
     title: 'Baseline packs',
     description: 'Core instructions and rule packs for downstream projects.',
-    hideTags: ['baseline'],
   },
   domain: {
     key: 'domain',
     title: 'Project areas',
     description: 'Snippets for Rust, docs, and source control.',
-    hideTags: ['rust', 'docs', 'vcs'],
   },
   workflow: {
     key: 'workflow',
     title: 'Workflow guidance',
     description: 'Task setup, review, and handoff guidance for coding agents.',
-    hideTags: ['workflow'],
   },
 };
 
@@ -236,20 +214,7 @@ const referenceGroups: Record<string, GroupConfig> = {
     key: 'sources',
     title: 'External sources',
     description: 'Durable sources that support, adapt, or contrast guidance in this repo.',
-    hideTags: ['sources'],
   },
-};
-
-const snippetTags: Record<string, string[]> = {
-  'Coding Agents': ['WORKFLOW'],
-  Core: ['BASELINE'],
-  JJ: ['VCS'],
-  'Markdown Docs': ['DOCS'],
-  Rules: ['RULE PACK'],
-  Rust: ['RUST'],
-};
-
-const referenceTags: Record<string, string[]> = {
 };
 
 const groupedEntries = groupEntries(pages);
@@ -264,11 +229,7 @@ function groupEntries(items: MarkdownPage[]) {
 
   for (const item of items) {
     const group = groupFor(item);
-    const rawTags = tagsFor(item);
-    entries.get(group.key)?.push({
-      item,
-      tags: visibleTags(rawTags, item.title, group),
-    });
+    entries.get(group.key)?.push({ item });
   }
 
   return Object.values(groups)
@@ -361,13 +322,6 @@ function agentGroupFor(item: MarkdownPage): GroupConfig {
   return agentGroups.domain;
 }
 
-function tagsFor(item: MarkdownPage): string[] {
-  if (sectionKey === 'guides') return tagsForPage(item).slice(0, 4);
-  if (sectionKey === 'agents') return snippetTags[item.title] ?? [];
-  if (sectionKey === 'references') return referenceTags[item.title] ?? [];
-  return tagsForPage(item).slice(0, 4);
-}
-
 function topicsFor(item: MarkdownPage): string[] {
   return [...new Set([...tagsForPage(item), ...normalizeTopics(item.metadata.topics)])];
 }
@@ -382,25 +336,6 @@ function normalizeTopics(topics: string | undefined): string[] {
 
 function hasAny(topics: string[], values: string[]): boolean {
   return values.some((value) => topics.includes(value));
-}
-
-function visibleTags(tags: string[], title: string, group: GroupConfig): string[] {
-  const hidden = new Set((group.hideTags ?? []).map((tag) => tag.toLowerCase()));
-  const normalizedTitle = normalizeForCompare(title);
-  const visible = tags.filter((tag) => {
-    const normalized = normalizeForCompare(tag);
-    return normalized && !hidden.has(tag.toLowerCase()) && !normalizedTitle.includes(normalized);
-  });
-  return [...new Set(visible)].slice(0, 3);
-}
-
-function entryId(item: MarkdownPage): string | undefined {
-  if (sectionKey !== 'patterns' && sectionKey !== 'why') return undefined;
-  return item.metadata.id;
-}
-
-function normalizeForCompare(value: string): string {
-  return value.toLowerCase().replace(/[^a-z0-9]+/g, '');
 }
 
 function cardKindForSection(key: string): CardKind | undefined {
@@ -434,6 +369,8 @@ function cardKindForSection(key: string): CardKind | undefined {
     </div>
     <p>{config.intro}</p>
   </section>
+
+  {page.introHtml && <div class="prose section-intro" set:html={page.introHtml} />}
 
   {showGuideTasks && (
     <section class="section-task-panel" aria-labelledby="guide-task-title">
@@ -480,18 +417,9 @@ function cardKindForSection(key: string): CardKind | undefined {
             <p>{group.description}</p>
           </div>
           <div class="index-list index-list--cards">
-            {entries.map(({ item, tags }) => (
+            {entries.map(({ item }) => (
               <a class={`index-entry ${sectionKind ? 'index-entry--with-icon' : ''}`} href={withBase(item.route)}>
                 <span class="index-entry__body">
-                  {tags.length > 0 && (
-                    <span class="index-entry__tags">
-                      {tags.map((tag) => (
-                        <span class="index-entry__tag">
-                          {tagsForPage(item).includes(tagSlug(tag)) ? tagLabel(tag) : tag}
-                        </span>
-                      ))}
-                    </span>
-                  )}
                   <span class="index-entry__title">
                     {sectionKind && (
                       <span class="index-entry__kind-icon" aria-hidden="true">
@@ -501,7 +429,6 @@ function cardKindForSection(key: string): CardKind | undefined {
                     <strong>{item.title}</strong>
                     <span class="card-arrow" aria-hidden="true">→</span>
                   </span>
-                  {entryId(item) && <span class="index-entry__id">{entryId(item)}</span>}
                   {item.description && <span class="index-entry__description">{item.description}</span>}
                 </span>
               </a>
@@ -511,6 +438,17 @@ function cardKindForSection(key: string): CardKind | undefined {
       ))}
     </div>
   </section>
+
+  {readmeExtras.length > 0 && (
+    <div class="detail-sections section-extras">
+      {readmeExtras.map((extra) => (
+        <section class="detail-section">
+          <h2>{sentenceCase(extra.title)}</h2>
+          <div class="prose detail-section__body" set:html={extra.html} />
+        </section>
+      ))}
+    </div>
+  )}
     </>
   )}
 </BaseLayout>

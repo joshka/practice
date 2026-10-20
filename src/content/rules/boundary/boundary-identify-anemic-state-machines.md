@@ -1,8 +1,8 @@
-# Boundary Identify Anemic State Machines
+# Boundary identify anemic state machines
 
 ## Metadata
 
-- Name: `Identify Anemic State Machines`
+- Name: `Identify anemic state machines`
 - ID: `BOUNDARY-IDENTIFY-ANEMIC-STATE-MACHINES`
 - Summary: Replace scattered booleans and conditionals with named states and transitions when
   lifecycle behavior is already complex. The move exposes illegal transitions and missing recovery
@@ -44,8 +44,8 @@ for invalid transitions.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

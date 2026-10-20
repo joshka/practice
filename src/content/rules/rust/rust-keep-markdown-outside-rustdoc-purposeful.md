@@ -1,8 +1,8 @@
-# Rust Keep Markdown Outside Rustdoc Purposeful
+# Rust keep Markdown outside rustdoc purposeful
 
 ## Metadata
 
-- Name: `Keep Markdown Outside Rustdoc Purposeful`
+- Name: `Keep Markdown outside rustdoc purposeful`
 - ID: `RUST-KEEP-MARKDOWN-OUTSIDE-RUSTDOC-PURPOSEFUL`
 - Summary: Use standalone Markdown for architecture, workflow, release, or operational guidance
   that would make API docs noisy. Choosing the right surface keeps contracts and long-form context

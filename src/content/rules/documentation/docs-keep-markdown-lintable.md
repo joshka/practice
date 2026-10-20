@@ -1,8 +1,8 @@
-# Docs Keep Markdown Lintable
+# Docs keep Markdown lintable
 
 ## Metadata
 
-- Name: `Keep Markdown Lintable`
+- Name: `Keep Markdown lintable`
 - ID: `DOCS-KEEP-MARKDOWN-LINTABLE`
 - Summary: `Use project Markdown style so formatting stays enforceable and review noise stays low.
   Treat lint exceptions as intentional local choices, not accumulated drift.`
@@ -46,8 +46,8 @@ review that treats lint failures as fixable mechanics.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
-- [Pattern: Prefer 100-Column Prose Wrap](../../patterns/prefer-100-column-prose-wrap.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
+- [Pattern: Prefer 100-column prose wrap](../../patterns/prefer-100-column-prose-wrap.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

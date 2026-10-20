@@ -1,8 +1,8 @@
-# Boundary Treat Terminal Ui As Product Surface
+# Boundary treat terminal ui as product surface
 
 ## Metadata
 
-- Name: `Treat Terminal UI As Product Surface`
+- Name: `Treat terminal UI as product surface`
 - ID: `BOUNDARY-TREAT-TERMINAL-UI-AS-PRODUCT-SURFACE`
 - Summary: Treat terminal layout, input, scroll behavior, color, viewport size, and platform
   differences as a user-facing contract when people rely on the interface. This makes regressions
@@ -43,8 +43,8 @@ tests, and rendered-output review.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

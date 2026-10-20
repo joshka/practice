@@ -1,4 +1,4 @@
-# Change Shape
+# Change shape
 
 Change-shape rules cover one-purpose changes, small follow-ups, generated artifacts, dependency
 churn, ownership, and structure-versus-behavior review boundaries.

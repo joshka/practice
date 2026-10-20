@@ -1,8 +1,8 @@
-# Rust Reexport For Discovery
+# Rust reexport for discovery
 
 ## Metadata
 
-- Name: `Reexport For Discovery`
+- Name: `Reexport for discovery`
 - ID: `RUST-REEXPORT-FOR-DISCOVERY`
 - Summary: Re-export public items where callers naturally look so the crate surface is discoverable
   without hiding ownership. Keep canonical definitions and docs clear so re-exports do not become

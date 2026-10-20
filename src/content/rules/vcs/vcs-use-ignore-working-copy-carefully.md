@@ -1,9 +1,9 @@
-# VCS Use Ignore Working Copy Carefully
+# VCS use ignore working copy carefully
 
 ## Metadata
 
 - ID: `VCS-USE-IGNORE-WORKING-COPY-CAREFULLY`
-- Name: `Use Ignore Working Copy Carefully`
+- Name: `Use ignore working copy carefully`
 - Summary: Use `--ignore-working-copy` only for understood lock-safe inspection or metadata work.
   It may read stale file state, so do not use it to bypass normal synchronization before edits.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ follow-up status checks once the working copy is available.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

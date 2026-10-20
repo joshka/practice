@@ -1,9 +1,9 @@
-# VCS Name Exact JJ Mutation Targets
+# VCS name exact JJ mutation targets
 
 ## Metadata
 
 - ID: `VCS-NAME-EXACT-JJ-MUTATION-TARGETS`
-- Name: `Name Exact JJ Mutation Targets`
+- Name: `Name exact JJ mutation targets`
 - Summary: Specify revisions, filesets, bookmarks, and destinations for mutating jj commands.
   Explicit targets make intent reviewable and prevent defaults from acting on surprising state.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ pre-command `jj log` or `jj status` inspection.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

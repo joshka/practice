@@ -1,8 +1,8 @@
-# Agent Use Agents Md As Map
+# Agent use agents md as map
 
 ## Metadata
 
-- Name: `Use AGENTS.md as Map`
+- Name: `Use AGENTS.md as map`
 - ID: `AGENT-USE-AGENTS-MD-AS-MAP`
 - Summary: Keep `AGENTS.md` compact by using it to route agents to deeper guides and mechanisms.
   Treating it as a map preserves startup context without losing durable project guidance.
@@ -42,8 +42,8 @@ packs generated from reviewed rules.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

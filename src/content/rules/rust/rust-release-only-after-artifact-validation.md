@@ -1,8 +1,8 @@
-# Rust Release Only After Artifact Validation
+# Rust release only after artifact validation
 
 ## Metadata
 
-- Name: `Release Only After Artifact Validation`
+- Name: `Release only after artifact validation`
 - ID: `RUST-RELEASE-ONLY-AFTER-ARTIFACT-VALIDATION`
 - Summary: Validate the actual release artifact before publishing instead of trusting the working
   tree. This catches missing files, stale generated content, and packaging mistakes while the

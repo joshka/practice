@@ -1,9 +1,9 @@
-# Test Prefer Deterministic Tests
+# Test prefer deterministic tests
 
 ## Metadata
 
 - ID: `TEST-PREFER-DETERMINISTIC-TESTS`
-- Name: `Prefer Deterministic Tests`
+- Name: `Prefer deterministic tests`
 - Summary: Prefer tests controlled by fixed inputs, clocks, ordering, and local state.
   Deterministic failures are reproducible, while real integration checks should be isolated by cost.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ retry-free assertions, and quarantined live integration jobs.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

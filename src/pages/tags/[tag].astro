@@ -7,7 +7,6 @@ import {
   taggedPages,
   tagLabel,
   tagSlug,
-  tagsForPage,
   withBase,
 } from '../../lib/site';
 import type { MarkdownPage } from '../../lib/site';
@@ -46,10 +45,6 @@ function pageKind(page: MarkdownPage): GuidanceKind {
   if (page.repoPath.startsWith('mechanisms/')) return 'mechanism';
   if (page.repoPath.startsWith('snippets/agents/')) return 'agent';
   return 'rule';
-}
-
-function pageKindLabel(page: MarkdownPage): string {
-  return tagLabel(pageKind(page));
 }
 
 function ruleDomain(page: MarkdownPage): string {
@@ -125,22 +120,13 @@ const pageGroups = guidanceKindOrder.flatMap(groupsForKind);
             {group.entries.map((page) => (
               <a class="index-entry index-entry--with-icon" href={withBase(page.route)}>
                 <span class="index-entry__body">
-                  <span class="index-entry__tags">
-                    <span class="index-entry__tag">
-                      <span class="index-entry__kind-icon" aria-hidden="true">
-                        <KindIcon kind={pageKind(page)} />
-                      </span>
-                      {pageKindLabel(page)}
-                    </span>
-                    {tagsForPage(page).filter((pageTag) => pageTag !== tag).slice(0, 3).map((pageTag) => (
-                      <span class="index-entry__tag">{tagLabel(pageTag)}</span>
-                    ))}
-                  </span>
                   <span class="index-entry__title">
+                    <span class="index-entry__kind-icon" aria-hidden="true">
+                      <KindIcon kind={pageKind(page)} />
+                    </span>
                     <strong>{page.title}</strong>
                     <span class="card-arrow" aria-hidden="true">→</span>
                   </span>
-                  {page.metadata.id && <span class="index-entry__id">{page.metadata.id}</span>}
                   {page.description && <span class="index-entry__description">{page.description}</span>}
                 </span>
               </a>

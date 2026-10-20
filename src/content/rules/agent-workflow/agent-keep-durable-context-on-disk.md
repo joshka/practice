@@ -1,8 +1,8 @@
-# Agent Keep Durable Context On Disk
+# Agent keep durable context on disk
 
 ## Metadata
 
-- Name: `Keep Durable Context on Disk`
+- Name: `Keep durable context on disk`
 - ID: `AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`
 - Summary: Store project facts, accepted decisions, and long-lived operating notes in files instead
   of relying on chat context. Durable context makes future sessions and reviews resumable.
@@ -43,8 +43,8 @@ work, ADRs, and generated snippets.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

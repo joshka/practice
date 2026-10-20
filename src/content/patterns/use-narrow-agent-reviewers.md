@@ -1,8 +1,8 @@
-# Use Narrow Agent Reviewers
+# Use narrow agent reviewers
 
 ## Metadata
 
-- Name: `Use Narrow Agent Reviewers`
+- Name: `Use narrow agent reviewers`
 - ID: `use-narrow-agent-reviewers`
 - Summary: Broad review prompts often miss specific risks or return vague feedback. Add focused
   agent reviewers for important, repeatable concerns when narrow context will produce more useful

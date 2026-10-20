@@ -1,8 +1,8 @@
-# Rust Make Feature Flags Additive Where Possible
+# Rust make feature flags additive where possible
 
 ## Metadata
 
-- Name: `Make Feature Flags Additive Where Possible`
+- Name: `Make feature flags additive where possible`
 - ID: `RUST-MAKE-FEATURE-FLAGS-ADDITIVE-WHERE-POSSIBLE`
 - Summary: Design feature flags as additive capabilities whenever possible so Cargo feature
   unification does not surprise downstream builds. Make incompatible combinations explicit when

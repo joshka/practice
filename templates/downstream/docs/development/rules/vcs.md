@@ -1,4 +1,4 @@
-# JJ Topology And Source Control
+# JJ topology and source control
 
 Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.

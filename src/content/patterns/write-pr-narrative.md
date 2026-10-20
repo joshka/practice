@@ -1,8 +1,8 @@
-# Write PR Narrative
+# Write PR narrative
 
 ## Metadata
 
-- Name: `Write PR Narrative`
+- Name: `Write PR narrative`
 - ID: `write-pr-narrative`
 - Summary: A correct diff can still waste reviewer attention when it lacks purpose, risk, review
   order, and verification. Write the PR narrative as a guide to the decision the reviewer needs to

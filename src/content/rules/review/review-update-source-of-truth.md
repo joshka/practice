@@ -1,8 +1,8 @@
-# Review Update Source Of Truth
+# Review update source of truth
 
 ## Metadata
 
-- Name: `Update Source of Truth`
+- Name: `Update source of truth`
 - ID: `REVIEW-UPDATE-SOURCE-OF-TRUTH`
 - Summary: Put durable status changes in the owning issue, PR description, checklist, plan, or
   handoff instead of posting low-signal comments. Updating the source of truth reduces notification
@@ -50,7 +50,7 @@ packets, and handoffs that name the current blocker, next action, and acceptance
 
 ## References
 
-- [Review Make Review Artifacts Standalone](review-make-review-artifacts-standalone.md)
+- [Review make review artifacts standalone](review-make-review-artifacts-standalone.md)
 - [GitHub Docs: About issues](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-issues)
 - [GitHub Docs: About task lists](https://docs.github.com/en/issues/tracking-your-work-with-issues/about-tasklists)
 - [GitHub Docs: Helping others review your changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)

@@ -1,9 +1,9 @@
-# Test Choose Validation By Risk
+# Test choose validation by risk
 
 ## Metadata
 
 - ID: `TEST-CHOOSE-VALIDATION-BY-RISK`
-- Name: `Choose Validation by Risk`
+- Name: `Choose validation by risk`
 - Summary: Match the amount and kind of validation to the changed surface and failure cost.
   Cheap checks come first, but risky or uncertain behavior needs targeted evidence.
 - Status: `reviewed`
@@ -41,7 +41,7 @@ and rule-specific mechanisms.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

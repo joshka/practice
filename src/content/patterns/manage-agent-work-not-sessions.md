@@ -1,8 +1,8 @@
-# Manage Agent Work Not Sessions
+# Manage agent work not sessions
 
 ## Metadata
 
-- Name: `Manage Agent Work Not Sessions`
+- Name: `Manage agent work not sessions`
 - ID: `manage-agent-work-not-sessions`
 - Summary: Interactive sessions do not scale when the maintainer must remember every thread,
   terminal, and handoff. Represent agent work as durable tasks with states, owners, validation,

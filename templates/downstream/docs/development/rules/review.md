@@ -1,4 +1,4 @@
-# Private Context And Review Artifacts
+# Private context and review artifacts
 
 Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.

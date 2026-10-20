@@ -1,9 +1,9 @@
-# Test Check Important Feature Combinations
+# Test check important feature combinations
 
 ## Metadata
 
 - ID: `TEST-CHECK-IMPORTANT-FEATURE-COMBINATIONS`
-- Name: `Check Important Feature Combinations`
+- Name: `Check important feature combinations`
 - Summary: Exercise default, disabled-default, all-feature, and important feature-pair builds.
   Feature flags change APIs and compile paths, so use a risk-based matrix instead of every combo.
 - Status: `reviewed`
@@ -43,7 +43,7 @@ features`, and documented feature support policy.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

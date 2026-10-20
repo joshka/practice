@@ -1,8 +1,8 @@
-# Coding Agent Workflow Instructions
+# Coding agent workflow instructions
 
 ## Metadata
 
-- Name: `Coding Agent Workflow Instructions`
+- Name: `Coding agent workflow instructions`
 - ID: `agent-coding-workflow-instructions`
 - Summary: `Compact workflow instructions for repositories that delegate implementation or review
   work to coding agents. The snippet emphasizes objectives, boundaries, durable handoff, repo-owned

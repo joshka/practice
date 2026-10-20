@@ -1,8 +1,8 @@
-# Agent Spend Human Attention On Ambiguity
+# Agent spend human attention on ambiguity
 
 ## Metadata
 
-- Name: `Spend Human Attention on Ambiguity`
+- Name: `Spend human attention on ambiguity`
 - ID: `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
 - Summary: Ask for human judgment where product behavior, API compatibility, naming, or security
   posture is still ambiguous. Resolving direction early prevents large speculative diffs.
@@ -44,8 +44,8 @@ review notes that identify the exact ambiguity boundary.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

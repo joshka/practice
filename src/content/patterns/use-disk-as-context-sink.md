@@ -1,8 +1,8 @@
-# Use Disk As Context Sink
+# Use disk as context sink
 
 ## Metadata
 
-- Name: `Use Disk As Context Sink`
+- Name: `Use disk as context sink`
 - ID: `use-disk-as-context-sink`
 - Summary: Large pasted context is difficult to search, diff, summarize, and revisit. Put bulky or
   reusable context on disk so agents can pull the relevant slice while the thread stays focused on

@@ -1,8 +1,8 @@
-# Parse Dont Validate
+# Parse dont validate
 
 ## Metadata
 
-- Name: `Parse Dont Validate`
+- Name: `Parse dont validate`
 - ID: `parse-dont-validate`
 - Summary: Validation that returns raw values forces callers to remember which invariants already
   hold. Parse uncertain input into types that carry those invariants, using constructors or standard

@@ -1,8 +1,8 @@
-# Observability Log At Owned Boundaries
+# Observability log at owned boundaries
 
 ## Metadata
 
-- Name: `Log at Owned Boundaries`
+- Name: `Log at owned boundaries`
 - ID: `OBSERVABILITY-LOG-AT-OWNED-BOUNDARIES`
 - Summary: Emit logs where the code still knows the operation, intent, input class, and external
   boundary. That placement gives useful context without duplicating noise through every layer.
@@ -42,7 +42,7 @@ tests that assert important diagnostic fields.
 
 ## References
 
-- [Pattern: Log At Owned Boundaries](../../patterns/log-at-owned-boundaries.md)
+- [Pattern: Log at owned boundaries](../../patterns/log-at-owned-boundaries.md)
 - [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 - [OWASP Logging Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)

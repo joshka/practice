@@ -1,8 +1,8 @@
-# Make Parameters Explicit
+# Make parameters explicit
 
 ## Metadata
 
-- Name: `Make Parameters Explicit`
+- Name: `Make parameters explicit`
 - ID: `make-parameters-explicit`
 - Summary: Hidden configuration, time, randomness, globals, or environment reads make behavior hard
   to reason about and test. Gather ambient data at the outer boundary, then pass typed inputs or a

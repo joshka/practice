@@ -1,8 +1,8 @@
-# Isolate Agent Workspaces
+# Isolate agent workspaces
 
 ## Metadata
 
-- Name: `Isolate Agent Workspaces`
+- Name: `Isolate agent workspaces`
 - ID: `isolate-agent-workspaces`
 - Summary: Shared worktrees make it easy for agent edits, generated files, or validation steps to
   collide with unrelated work. Use isolated workspaces when concurrent tasks or uncertain changes

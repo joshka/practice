@@ -1,8 +1,8 @@
-# Make Side Effects Visible
+# Make side effects visible
 
 ## Metadata
 
-- Name: `Make Side Effects Visible`
+- Name: `Make side effects visible`
 - ID: `make-side-effects-visible`
 - Summary: Callers need to know when an operation touches persistence, networks, time, global state,
   caches, metrics, processes, or other external systems. Make caller-relevant effects visible in

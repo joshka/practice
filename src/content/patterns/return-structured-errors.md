@@ -1,8 +1,8 @@
-# Return Structured Errors
+# Return structured errors
 
 ## Metadata
 
-- Name: `Return Structured Errors`
+- Name: `Return structured errors`
 - ID: `return-structured-errors`
 - Summary: String-only errors hide the stable facts callers need for branching, retrying, logging,
   and support. Return structured error values with machine-readable kinds and context, then render

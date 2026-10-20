@@ -1,8 +1,8 @@
-# Change Preserve Unowned Work
+# Change preserve unowned work
 
 ## Metadata
 
-- Name: `Preserve Unowned Work`
+- Name: `Preserve unowned work`
 - ID: `CHANGE-PRESERVE-UNOWNED-WORK`
 - Summary: Treat nearby edits from users, agents, generators, or earlier changes as outside your
   ownership unless the task says otherwise. Adapting around them protects parallel work and context.
@@ -42,6 +42,6 @@ handoffs, and review of touched files before finalizing.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

@@ -1,8 +1,8 @@
-# Rust Contain Unsafe
+# Rust contain unsafe
 
 ## Metadata
 
-- Name: `Contain Unsafe`
+- Name: `Contain unsafe`
 - ID: `RUST-CONTAIN-UNSAFE`
 - Summary: Keep unsafe blocks small, wrapped by safe APIs, documented, and tested through safe
   behavior. Localized obligations make the safety argument auditable.

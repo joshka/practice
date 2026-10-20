@@ -1,8 +1,8 @@
-# Change Use One Purpose Per Change
+# Change use one purpose per change
 
 ## Metadata
 
-- Name: `Use One Purpose per Change`
+- Name: `Use one purpose per change`
 - ID: `CHANGE-USE-ONE-PURPOSE-PER-CHANGE`
 - Summary: Shape each change around one review question and one reason for existing. Related tests,
   docs, and generated files can travel with it when they support that same purpose.
@@ -42,6 +42,6 @@ that asks whether each file supports the same goal.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

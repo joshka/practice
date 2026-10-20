@@ -1,8 +1,8 @@
-# Docs Verify Commands Paths And Links
+# Docs verify commands paths and links
 
 ## Metadata
 
-- Name: `Verify Commands, Paths, and Links`
+- Name: `Verify commands, paths, and links`
 - ID: `DOCS-VERIFY-COMMANDS-PATHS-AND-LINKS`
 - Summary: `Check commands, file paths, and linked references because readers treat them as
   executable instructions. Note assumptions when credentials, services, or platforms prevent a full
@@ -43,7 +43,7 @@ explicit skipped-check notes when a command cannot be run.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

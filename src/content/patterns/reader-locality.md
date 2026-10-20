@@ -1,8 +1,8 @@
-# Reader Locality
+# Reader locality
 
 ## Metadata
 
-- Name: `Reader Locality`
+- Name: `Reader locality`
 - ID: `reader-locality`
 - Summary: A change can reduce code size while increasing the number of jumps needed to understand
   one workflow. Keep related concepts near their meaning, extracting only when the new name and

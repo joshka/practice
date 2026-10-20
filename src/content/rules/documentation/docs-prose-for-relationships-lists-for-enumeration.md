@@ -1,8 +1,8 @@
-# Docs Prose For Relationships Lists For Enumeration
+# Docs prose for relationships lists for enumeration
 
 ## Metadata
 
-- Name: `Prose for Relationships, Lists for Enumeration`
+- Name: `Prose for relationships, lists for enumeration`
 - ID: `DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`
 - Summary: `Use prose when causality, contrast, or priority matters, and lists when enumerating
   parallel items. The shape should reveal the relationship instead of hiding it in bullets.`
@@ -42,7 +42,7 @@ paragraphs when the bullets are really one explanation.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

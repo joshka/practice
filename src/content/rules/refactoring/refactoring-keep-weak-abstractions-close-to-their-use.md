@@ -1,8 +1,8 @@
-# Refactoring Keep Weak Abstractions Close To Their Use
+# Refactoring keep weak abstractions close to their use
 
 ## Metadata
 
-- Name: `Keep Weak Abstractions Close`
+- Name: `Keep weak abstractions close`
 - ID: `REFACTORING-KEEP-WEAK-ABSTRACTIONS-CLOSE-TO-THEIR-USE`
 - Summary: Keep tentative helpers, types, or traits near their first use until the boundary proves
   itself. Local placement makes weak abstractions easier to revise, inline, or delete before other
@@ -41,6 +41,6 @@ review that asks whether the abstraction has earned a wider home.
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)
 - [Refactoring catalog](https://refactoring.com/catalog/)

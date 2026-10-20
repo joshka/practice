@@ -1,8 +1,8 @@
-# Observability Surface Durable Failures
+# Observability surface durable failures
 
 ## Metadata
 
-- Name: `Surface Durable Failures`
+- Name: `Surface durable failures`
 - ID: `OBSERVABILITY-SURFACE-DURABLE-FAILURES`
 - Summary: Give persistent failures a stable status, error surface, or retry path instead of only an
   ephemeral UI log. Users and maintainers need something actionable after the moment passes.
@@ -45,7 +45,7 @@ queues, and logs linked to durable error records.
 
 ## References
 
-- [Pattern: Log At Owned Boundaries](../../patterns/log-at-owned-boundaries.md)
+- [Pattern: Log at owned boundaries](../../patterns/log-at-owned-boundaries.md)
 - [OpenTelemetry Logs Data Model](https://opentelemetry.io/docs/specs/otel/logs/data-model/)
 - [OWASP Logging Cheat
   Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Logging_Cheat_Sheet.html)

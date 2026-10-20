@@ -1,9 +1,9 @@
-# VCS Quote Revsets And Shell Syntax
+# VCS quote revsets and shell syntax
 
 ## Metadata
 
 - ID: `VCS-QUOTE-REVSETS-AND-SHELL-SYNTAX`
-- Name: `Quote Revsets and Shell Syntax`
+- Name: `Quote revsets and shell syntax`
 - Summary: Quote jj revsets, bookmark syntax, and other shell-sensitive command fragments.
   Shell metacharacters can alter commands, so examples should prefer simple safe quoting.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ revset syntax before publishing commands.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

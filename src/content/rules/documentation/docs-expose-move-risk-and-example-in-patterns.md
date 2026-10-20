@@ -1,8 +1,8 @@
-# Docs Expose Move Risk And Example In Patterns
+# Docs expose move risk and example in patterns
 
 ## Metadata
 
-- Name: `Expose Move, Risk, and Example in Patterns`
+- Name: `Expose move, risk, and example in patterns`
 - ID: `DOCS-EXPOSE-MOVE-RISK-AND-EXAMPLE-IN-PATTERNS`
 - Summary: `Give pattern guidance a recognizable trigger, preferred move, risk, example, and agent
   instruction. The extra structure makes repeatable advice easier to cite and apply.`
@@ -42,7 +42,7 @@ trigger and risk are concrete enough to act on.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

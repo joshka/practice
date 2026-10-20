@@ -1,8 +1,8 @@
-# Refactoring Keep Linear Story Visible
+# Refactoring keep linear story visible
 
 ## Metadata
 
-- Name: `Keep Linear Story Visible`
+- Name: `Keep linear story visible`
 - ID: `REFACTORING-KEEP-LINEAR-STORY-VISIBLE`
 - Summary: Keep simple ordered workflows inline when the sequence is the clearest explanation.
   Extract only the substeps that carry their own concept, policy, reuse, or test surface.
@@ -42,6 +42,6 @@ compares jump cost with local readability.
 
 ## References
 
-- [Pattern: Reader Locality](../../patterns/reader-locality.md)
+- [Pattern: Reader locality](../../patterns/reader-locality.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)
 - [Refactoring catalog](https://refactoring.com/catalog/)

@@ -1,8 +1,8 @@
-# Rust Document Visibility Ownership
+# Rust document visibility ownership
 
 ## Metadata
 
-- Name: `Document Visibility Ownership`
+- Name: `Document visibility ownership`
 - ID: `RUST-DOCUMENT-VISIBILITY-OWNERSHIP`
 - Summary: Pair widened visibility with names and docs that identify the owning concept. This
   prevents shared internals from looking like accidental stable API.

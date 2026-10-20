@@ -1,8 +1,8 @@
-# Change Minimal But Complete
+# Change minimal but complete
 
 ## Metadata
 
-- Name: `Minimal but Complete`
+- Name: `Minimal but complete`
 - ID: `CHANGE-MINIMAL-BUT-COMPLETE`
 - Summary: Keep the diff as small as the purpose allows while including the evidence that purpose
   needs. Reviewers should see one coherent unit they can understand, validate, and revert.
@@ -42,6 +42,6 @@ review checklists that ask whether the change can stand alone.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

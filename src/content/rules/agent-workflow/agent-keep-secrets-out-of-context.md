@@ -1,8 +1,8 @@
-# Agent Keep Secrets Out Of Context
+# Agent keep secrets out of context
 
 ## Metadata
 
-- Name: `Keep Secrets Out of Context`
+- Name: `Keep secrets out of context`
 - ID: `AGENT-KEEP-SECRETS-OUT-OF-CONTEXT`
 - Summary: Avoid putting real credentials or sensitive values into prompts, docs, logs, and tests.
   Keeping secrets out of context reduces leakage through retained, repeated, or committed text.
@@ -43,8 +43,8 @@ fixtures with fake values, and review for accidental secret exposure.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

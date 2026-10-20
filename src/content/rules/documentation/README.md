@@ -1,4 +1,4 @@
-# Docs Are Contracts
+# Docs are contracts
 
 Documentation rules cover docs-as-contracts, rendered docs, examples, reviewability, source links,
 concrete prose, and drift checks.

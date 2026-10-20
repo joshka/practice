@@ -1,8 +1,8 @@
-# Boundary Avoid Global Mutable State
+# Boundary avoid global mutable state
 
 ## Metadata
 
-- Name: `Avoid Global Mutable State`
+- Name: `Avoid global mutable state`
 - ID: `BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`
 - Summary: Keep shared process state behind explicit owners, handles, synchronization, and reset
   policy. This preserves test isolation and lifecycle reasoning while still allowing deliberate
@@ -43,8 +43,8 @@ narrow visibility, and concurrency tests.
 
 ## References
 
-- [Principle: Explicit Boundaries Preserve
-  Correctness](../../principles/explicit-boundaries-preserve-correctness.md)
+- [Principle: Explicit boundaries preserve
+  correctness](../../principles/explicit-boundaries-preserve-correctness.md)
 - [Parse, don't validate](https://lexi-lambda.github.io/blog/2019/11/05/parse-don-t-validate/)
 - [Rust API Guidelines: validate arguments and return
   errors](https://rust-lang.github.io/api-guidelines/dependability.html#c-validate)

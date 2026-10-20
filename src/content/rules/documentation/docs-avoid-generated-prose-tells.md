@@ -1,8 +1,8 @@
-# Docs Avoid Generated Prose Tells
+# Docs avoid generated prose tells
 
 ## Metadata
 
-- Name: `Avoid Generated Prose Tells`
+- Name: `Avoid generated prose tells`
 - ID: `DOCS-AVOID-GENERATED-PROSE-TELLS`
 - Summary: `Replace templated, UI-centered, or polished-but-vague phrasing with concrete behavior.
   Keep the local voice trustworthy without cutting useful explanation.`
@@ -232,8 +232,8 @@ longer sentences. No prose linter establishes factual accuracy or who wrote the 
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
-- [Docs Hide Catalog Mechanics](docs-hide-catalog-mechanics.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
+- [Docs hide catalog mechanics](docs-hide-catalog-mechanics.md)
 - [tropes.md: AI Writing Tropes to Avoid](https://tropes.fyi/tropes-md)
 - [Wikipedia: Signs of AI writing](https://en.wikipedia.org/wiki/Wikipedia:Signs_of_AI_writing)
 - [Slopless](https://github.com/berelevant-ai/slopless): useful for reproducible findings and

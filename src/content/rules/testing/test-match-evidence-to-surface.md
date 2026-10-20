@@ -1,9 +1,9 @@
-# Test Match Evidence To Surface
+# Test match evidence to surface
 
 ## Metadata
 
 - ID: `TEST-MATCH-EVIDENCE-TO-SURFACE`
-- Name: `Match Evidence to Surface`
+- Name: `Match evidence to surface`
 - Summary: Validate the actual changed surface, such as rendered docs, API behavior, or byte output.
   The narrowest relevant proof is more persuasive than unrelated broad test success.
 - Status: `reviewed`
@@ -52,7 +52,7 @@ output, rendered docs, and command-output fixtures.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

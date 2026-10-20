@@ -1,8 +1,8 @@
-# Rust Working Rust Code Not Enough
+# Rust working Rust code not enough
 
 ## Metadata
 
-- Name: `Working Rust Code Not Enough`
+- Name: `Working Rust code not enough`
 - ID: `RUST-WORKING-RUST-CODE-NOT-ENOUGH`
 - Summary: Treat compilation as necessary but insufficient evidence for long-lived Rust code. Review
   API shape, docs, errors, tests, features, dependencies, and module organization because users and

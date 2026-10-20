@@ -1,8 +1,8 @@
-# Change Sync Generated Artifacts
+# Change sync generated artifacts
 
 ## Metadata
 
-- Name: `Sync Generated Artifacts`
+- Name: `Sync generated artifacts`
 - ID: `CHANGE-SYNC-GENERATED-ARTIFACTS`
 - Summary: Update checked-in generated outputs when their source inputs change and they are part of
   review. Keeping them aligned prevents consumers from seeing stale artifacts.
@@ -42,6 +42,6 @@ and PR validation that reports regenerated files.
 
 ## References
 
-- [Pattern: Small Reviewable Chunks](../../patterns/small-reviewable-chunks.md)
-- [Pattern: Separate Structure From Behavior](../../patterns/separate-structure-from-behavior.md)
+- [Pattern: Small reviewable chunks](../../patterns/small-reviewable-chunks.md)
+- [Pattern: Separate structure from behavior](../../patterns/separate-structure-from-behavior.md)
 - [Fowler: Definition of Refactoring](https://martinfowler.com/bliki/DefinitionOfRefactoring.html)

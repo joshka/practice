@@ -1,8 +1,8 @@
-# Move Declaration And Initialization Together
+# Move declaration and initialization together
 
 ## Metadata
 
-- Name: `Move Declaration And Initialization Together`
+- Name: `Move declaration and initialization together`
 - ID: `move-declaration-and-initialization-together`
 - Summary: A value declared before it is valid makes readers track an empty slot and its future
   assignment. Declare values where they become meaningful, using immutable locals and narrow scopes

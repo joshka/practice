@@ -1,8 +1,8 @@
-# Docs Show Side Effects In Live Examples
+# Docs show side effects in live examples
 
 ## Metadata
 
-- Name: `Show Side Effects in Live Examples`
+- Name: `Show side effects in live examples`
 - ID: `DOCS-SHOW-SIDE-EFFECTS-IN-LIVE-EXAMPLES`
 - Summary: `Show setup, visible effects, and cleanup when examples touch live resources or
   persistent state. Gate costly or externally visible actions so examples stay honest and safe to
@@ -43,7 +43,7 @@ environment-variable gates, and integration tests for live-example helpers.
 
 ## References
 
-- [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
+- [Principle: Docs are contracts](../../principles/docs-are-contracts.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

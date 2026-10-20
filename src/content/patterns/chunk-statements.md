@@ -1,8 +1,8 @@
-# Chunk Statements
+# Chunk statements
 
 ## Metadata
 
-- Name: `Chunk Statements`
+- Name: `Chunk statements`
 - ID: `chunk-statements`
 - Summary: Dense prose asks readers to hold too many claims at once and hides which idea needs
   review. Split statements into coherent chunks so each paragraph, bullet, or sentence carries one

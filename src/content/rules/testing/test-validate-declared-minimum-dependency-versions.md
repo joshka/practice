@@ -1,9 +1,9 @@
-# Test Validate Declared Minimum Dependency Versions
+# Test validate declared minimum dependency versions
 
 ## Metadata
 
 - ID: `TEST-VALIDATE-DECLARED-MINIMUM-DEPENDENCY-VERSIONS`
-- Name: `Validate Declared Minimum Dependency Versions`
+- Name: `Validate declared minimum dependency versions`
 - Summary: Check that declared minimum dependency versions still build the supported behavior.
   Lockfile tests can hide newer API usage, so use targeted minimal-version checks when needed.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ review, dependency automation configured with `increase-if-necessary`, and lockf
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

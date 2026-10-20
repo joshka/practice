@@ -1,9 +1,9 @@
-# Test Cover Local Logic With Unit Tests
+# Test cover local logic with unit tests
 
 ## Metadata
 
 - ID: `TEST-COVER-LOCAL-LOGIC-WITH-UNIT-TESTS`
-- Name: `Cover Local Logic with Unit Tests`
+- Name: `Cover local logic with unit tests`
 - Summary: Use unit tests for small local logic such as parsing helpers and policy branches.
   They give fast precise feedback, while boundary behavior still needs higher-level tests.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ that compare meaningful values rather than implementation details.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

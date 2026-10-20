@@ -1,9 +1,9 @@
-# VCS Repair Remote Topology Coherently
+# VCS repair remote topology coherently
 
 ## Metadata
 
 - ID: `VCS-REPAIR-REMOTE-TOPOLOGY-COHERENTLY`
-- Name: `Repair Remote Topology Coherently`
+- Name: `Repair remote topology coherently`
 - Summary: Repair fetch, push, tracking, trunk alias, PR base, and PR head assumptions together.
   Remote topology is coupled, so partial fixes can leave publication commands half-correct.
 - Status: `reviewed`
@@ -42,7 +42,7 @@ dry-run publication, and documented repair steps.
 
 ## References
 
-- [Principle: JJ Topology Is Repo Role
-  Dependent](../../principles/jj-topology-is-repo-role-dependent.md)
+- [Principle: JJ topology is repo role
+  dependent](../../principles/jj-topology-is-repo-role-dependent.md)
 - [Jujutsu docs: working copy](https://docs.jj-vcs.dev/latest/working-copy/)
 - [Jujutsu docs: bookmarks](https://docs.jj-vcs.dev/latest/bookmarks/)

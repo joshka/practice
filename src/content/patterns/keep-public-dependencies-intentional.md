@@ -1,8 +1,8 @@
-# Keep Public Dependencies Intentional
+# Keep public dependencies intentional
 
 ## Metadata
 
-- Name: `Keep Public Dependencies Intentional`
+- Name: `Keep public dependencies intentional`
 - ID: `keep-public-dependencies-intentional`
 - Summary: Public dependencies shape downstream compatibility, API expectations, and maintenance
   cost. Add or raise them only when the public behavior needs that requirement, using lockfile

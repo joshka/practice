@@ -1,8 +1,8 @@
-# Rust Validate Semver Breaks Against External Use
+# Rust validate semver breaks against external use
 
 ## Metadata
 
-- Name: `Validate Semver Breaks Against External Use`
+- Name: `Validate semver breaks against external use`
 - ID: `RUST-VALIDATE-SEMVER-BREAKS-AGAINST-EXTERNAL-USE`
 - Summary: Check semver-breaking changes against real examples, dependents, or migration paths
   before treating an API cleanup as cheap. External evidence informs the cost even when security,

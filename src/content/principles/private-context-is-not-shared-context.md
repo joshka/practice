@@ -1,8 +1,8 @@
-# Private Context Is Not Shared Context
+# Private context is not shared context
 
 ## Metadata
 
-- Name: `Private Context Is Not Shared Context`
+- Name: `Private context is not shared context`
 - ID: `private-context-is-not-shared-context`
 - Summary: `Shared artifacts must carry the reasoning that downstream readers did not see in the
   private session. Issues, PRs, commits, guides, and review packets should restate the decision

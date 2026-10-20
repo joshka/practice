@@ -1,8 +1,8 @@
-# Review Let Reviewers Resolve Threads
+# Review let reviewers resolve threads
 
 ## Metadata
 
-- Name: `Let Reviewers Resolve Threads`
+- Name: `Let reviewers resolve threads`
 - ID: `REVIEW-LET-REVIEWERS-RESOLVE-THREADS`
 - Summary: Leave nontrivial review threads for the reviewer to resolve after they confirm the
   concern was addressed. Authors should only close unambiguous mechanical threads, because
@@ -46,8 +46,8 @@ name the concern, and PR summaries that call out remaining reviewer-owned thread
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [Ed Page: PR style](https://epage.github.io/dev/pr-style/)
 - [GitHub Docs: helping others review your
   changes](https://docs.github.com/en/pull-requests/collaborating-with-pull-requests/getting-started/helping-others-review-your-changes)

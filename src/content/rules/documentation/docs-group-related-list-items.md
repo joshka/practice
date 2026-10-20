@@ -1,8 +1,8 @@
-# Docs Group Related List Items
+# Docs group related list items
 
 ## Metadata
 
-- Name: `Group Related List Items`
+- Name: `Group related list items`
 - ID: `DOCS-GROUP-RELATED-LIST-ITEMS`
 - Summary: `Cluster long lists under useful names when the relationships matter. Keep short or
   causal material flat or in prose so structure does not add noise.`
@@ -44,7 +44,7 @@ for long runs of bullets without internal topic names.
 
 ## References
 
-- [Docs Prose For Relationships Lists For Enumeration](docs-prose-for-relationships-lists-for-enumeration.md)
+- [Docs prose for relationships lists for enumeration](docs-prose-for-relationships-lists-for-enumeration.md)
 - [Google developer documentation style guide: Lists](https://developers.google.com/style/lists)
 - [Google developer documentation style guide: Headings and titles](https://developers.google.com/style/headings)
 - [Microsoft Style Guide: Scannable content](https://learn.microsoft.com/en-us/style-guide/scannable-content/)

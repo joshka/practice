@@ -1,8 +1,8 @@
-# Agent Turn Feedback Into Guidance
+# Agent turn feedback into guidance
 
 ## Metadata
 
-- Name: `Turn Feedback Into Guidance`
+- Name: `Turn feedback into guidance`
 - ID: `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`
 - Summary: Convert repeated review corrections into rules, templates, snippets, or checks. Durable
   guidance fixes the workflow problem instead of requiring the same steering again.
@@ -48,8 +48,8 @@ identify repeated corrections.
 
 ## References
 
-- [Principle: Private Context Is Not Shared
-  Context](../../principles/private-context-is-not-shared-context.md)
+- [Principle: Private context is not shared
+  context](../../principles/private-context-is-not-shared-context.md)
 - [OpenAI Harness Engineering: agent legibility is the
   goal](https://openai.com/index/harness-engineering/#agent-legibility-is-the-goal)
 - [OpenAI Symphony README](https://github.com/openai/symphony#readme)

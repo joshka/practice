@@ -1,8 +1,8 @@
-# Test Split Unrelated Assertions
+# Test split unrelated assertions
 
 ## Metadata
 
-- Name: `Split Unrelated Assertions`
+- Name: `Split unrelated assertions`
 - ID: `TEST-SPLIT-UNRELATED-ASSERTIONS`
 - Summary: Split assertions that diagnose different behaviors when one failure would hide another.
   Keep checks together only when they express one contract more clearly as a group.
@@ -42,7 +42,7 @@ assertion helpers that report the behavior under test.
 
 ## References
 
-- [Principle: Tests Should Explain Failures](../../principles/tests-should-explain-failures.md)
+- [Principle: Tests should explain failures](../../principles/tests-should-explain-failures.md)
 - [Rust Book: writing automated tests](https://doc.rust-lang.org/book/ch11-00-testing.html)
 - [Rustdoc: documentation
   tests](https://doc.rust-lang.org/rustdoc/write-documentation/documentation-tests.html)

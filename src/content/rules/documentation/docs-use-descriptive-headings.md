@@ -1,8 +1,8 @@
-# Docs Use Descriptive Headings
+# Docs use descriptive headings
 
 ## Metadata
 
-- Name: `Use Descriptive Headings`
+- Name: `Use descriptive headings`
 - ID: `DOCS-USE-DESCRIPTIVE-HEADINGS`
 - Summary: `Write headings that name the section content, destination, or decision area. Reserve
   imperative headings for procedures where the section is truly a step.`
@@ -46,5 +46,5 @@ asks what a reader can learn from the heading alone.
 ## References
 
 - [Diataxis: reference](https://diataxis.fr/reference/)
-- [Docs Name Destination Not Direction](docs-name-destination-not-direction.md)
+- [Docs name destination not direction](docs-name-destination-not-direction.md)
 - [Rustdoc: how to write documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

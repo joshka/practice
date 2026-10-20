@@ -1,8 +1,8 @@
-# Separate Technique From Example Policy
+# Separate technique from example policy
 
 ## Metadata
 
-- Name: `Separate Technique From Example Policy`
+- Name: `Separate technique from example policy`
 - ID: `DOCS-SEPARATE-TECHNIQUE-FROM-EXAMPLE-POLICY`
 - Summary: Training examples should distinguish the library or framework technique being taught
   from application-specific policy. Explain the policy's rationale, tradeoffs, and meaningful edge
