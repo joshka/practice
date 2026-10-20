@@ -2313,6 +2313,22 @@ body[data-area="home"] .home-use__intro h2 {
   font-size: var(--type-xs);
 }
 
+.detail-copy,
+.detail-action,
+.code-block__copy {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+.detail-action__icon {
+  width: 0.95em;
+  height: 0.95em;
+  flex: none;
+  fill: currentColor;
+  opacity: 0.8;
+}
+
 .detail-copy:hover,
 .detail-action:hover,
 .code-block__copy:hover {
