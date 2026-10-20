@@ -479,6 +479,37 @@ function unwrapSnippetFence(
   return { markdown: `${before}${fence[1]}${after}`, snippetMarkdown: fence[1].trim() };
 }
 
+const properNouns = new Set(['Git', 'Jujutsu', 'Markdown', 'Rust']);
+
+export function sentenceCase(title: string): string {
+  return title
+    .split(' ')
+    .map((word, index) => word
+      .split('-')
+      .map((part, partIndex) => (
+        (index > 0 || partIndex > 0) && /^[A-Z][a-z]+$/.test(part) && !properNouns.has(part)
+          ? part.toLowerCase()
+          : part
+      ))
+      .join('-'))
+    .join(' ');
+}
+
+// README sections that a section index already replaces with its own listing.
+const listingSectionTitles = new Set([
+  'all rules',
+  'domains',
+  'draft mechanisms',
+  'reviewed mechanisms',
+  'reviewed principles',
+  'seed patterns',
+  'snippets',
+]);
+
+export function sectionReadmeExtras(page: MarkdownPage): MarkdownSection[] {
+  return page.sections.filter((section) => !listingSectionTitles.has(section.title.toLowerCase()));
+}
+
 export function getSection(key: string): Section | undefined {
   return sections.find((section) => section.key === key);
 }

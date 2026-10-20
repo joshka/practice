@@ -1,6 +1,6 @@
 ---
 import KindIcon from './KindIcon.astro';
-import { allPublicPages, repoUrl, tagLabel, tagSlug, tagsForPage, withBase } from '../lib/site';
+import { allPublicPages, repoUrl, sentenceCase, tagLabel, tagSlug, tagsForPage, withBase } from '../lib/site';
 import type { MarkdownPage } from '../lib/site';
 
 type Props = {
@@ -12,7 +12,7 @@ const kind = pageKind(page.repoPath);
 const chips = metadataChips(page);
 const isReviewable = isReviewableKind(kind);
 const showHeaderDescription = !isReviewable && kind !== 'agent-snippet';
-const showIntro = kind === 'agent-snippet' || (page.sections.length === 0 && kind === 'default');
+const showIntro = kind === 'agent-snippet' || kind === 'guide' || (page.sections.length === 0 && kind === 'default');
 const iconKind = pageIconKind(kind);
 const reviewNote = reviewCopyMarkdown(page, kind);
 const citationNote = citationCopyMarkdown(page, kind);
@@ -52,22 +52,6 @@ function metadataChips(page: MarkdownPage): string[] {
 function formatChip(value: string): string {
   const words = value.replace(/[-_]+/g, ' ');
   return words.charAt(0).toUpperCase() + words.slice(1);
-}
-
-const properNouns = new Set(['Git', 'Jujutsu', 'Markdown', 'Rust']);
-
-function sentenceCase(title: string): string {
-  return title
-    .split(' ')
-    .map((word, index) => word
-      .split('-')
-      .map((part, partIndex) => (
-        (index > 0 || partIndex > 0) && /^[A-Z][a-z]+$/.test(part) && !properNouns.has(part)
-          ? part.toLowerCase()
-          : part
-      ))
-      .join('-'))
-    .join(' ');
 }
 
 function sectionClass(title: string): string {

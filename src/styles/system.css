@@ -626,10 +626,16 @@ kbd {
 
 .section-hero,
 .rules-hero,
-.detail-hero {
+.detail-hero,
+.section-intro,
+.detail-intro {
   --hero-icon-size: clamp(2.25rem, 1.85rem + 1.3vw, 3.25rem);
   --hero-icon-offset: clamp(0.35rem, 0.04rem + 1.05vw, 1.3rem);
+}
 
+.section-hero,
+.rules-hero,
+.detail-hero {
   max-width: 68rem;
   margin: 0 0 var(--space-8);
   padding: var(--space-3) 0;
@@ -696,7 +702,10 @@ kbd {
 .rules-hero:has(.hero-title__icon) > p,
 .detail-hero:has(.hero-title__icon) > p,
 .rules-hero:has(.hero-title__icon) > .rules-stats,
-.detail-hero:has(.hero-title__icon) > .detail-hero__meta {
+.detail-hero:has(.hero-title__icon) > .detail-hero__meta,
+.section-hero:has(.hero-title__icon) ~ .section-intro,
+.rules-hero:has(.hero-title__icon) ~ .section-intro,
+.detail-hero:has(.hero-title__icon) ~ .detail-intro {
   margin-left: calc(var(--hero-icon-size) + var(--space-4));
 }
 
@@ -2461,6 +2470,15 @@ body[data-area="home"] .home-use__intro h2 {
   gap: 0;
 }
 
+.section-intro {
+  max-width: var(--reading-max);
+  margin-top: var(--space-6);
+}
+
+.section-extras {
+  margin-top: var(--space-8);
+}
+
 .detail-section h2 {
   padding-top: 0.08em;
 }
@@ -2867,7 +2885,10 @@ html[data-theme="light"] pre {
   .rules-hero:has(.hero-title__icon) > p,
   .detail-hero:has(.hero-title__icon) > p,
   .rules-hero:has(.hero-title__icon) > .rules-stats,
-  .detail-hero:has(.hero-title__icon) > .detail-hero__meta {
+  .detail-hero:has(.hero-title__icon) > .detail-hero__meta,
+  .section-hero:has(.hero-title__icon) ~ .section-intro,
+  .rules-hero:has(.hero-title__icon) ~ .section-intro,
+  .detail-hero:has(.hero-title__icon) ~ .detail-intro {
     margin-left: 0;
   }
 

@@ -8,6 +8,8 @@ import {
   practiceTasks,
   sectionIndex,
   sectionPages,
+  sectionReadmeExtras,
+  sentenceCase,
   sections,
   tagsForPage,
   withBase,
@@ -42,6 +44,7 @@ const sectionTitle = section.title;
 const sectionDescription = section.description;
 const page = sectionIndex(section);
 const pages = sectionPages(section);
+const readmeExtras = sectionReadmeExtras(page);
 const showGuideTasks = sectionKey === 'guides';
 const sectionKind = cardKindForSection(sectionKey);
 const showSinglePage = sectionKey === 'references';
@@ -367,6 +370,8 @@ function cardKindForSection(key: string): CardKind | undefined {
     <p>{config.intro}</p>
   </section>
 
+  {page.introHtml && <div class="prose section-intro" set:html={page.introHtml} />}
+
   {showGuideTasks && (
     <section class="section-task-panel" aria-labelledby="guide-task-title">
       <div class="section-task-panel__intro">
@@ -433,6 +438,17 @@ function cardKindForSection(key: string): CardKind | undefined {
       ))}
     </div>
   </section>
+
+  {readmeExtras.length > 0 && (
+    <div class="detail-sections section-extras">
+      {readmeExtras.map((extra) => (
+        <section class="detail-section">
+          <h2>{sentenceCase(extra.title)}</h2>
+          <div class="prose detail-section__body" set:html={extra.html} />
+        </section>
+      ))}
+    </div>
+  )}
     </>
   )}
 </BaseLayout>
