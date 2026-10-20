@@ -22,10 +22,10 @@
   --type-xs: 0.875rem;
   --type-sm: 0.92rem;
   --type-body: 1rem;
-  --type-lead: clamp(1.12rem, 1rem + 0.45vw, 1.35rem);
+  --type-lead: clamp(1.08rem, 1rem + 0.3vw, 1.2rem);
   --type-h3: clamp(1.25rem, 1.1rem + 0.55vw, 1.55rem);
   --type-h2: clamp(2rem, 1.55rem + 1.8vw, 3.25rem);
-  --type-h1: clamp(3rem, 2.05rem + 4vw, 6rem);
+  --type-h1: clamp(2.6rem, 1.9rem + 3vw, 4.5rem);
 
   --font-ui: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
   --font-reading: "IBM Plex Sans", ui-sans-serif, system-ui, sans-serif;
@@ -444,9 +444,10 @@ kbd {
   width: 2.45rem;
   height: 1.9rem;
   place-items: center;
+  border: 1px solid var(--ds-line);
   border-radius: var(--radius-control);
-  background: var(--ds-accent-field);
-  color: var(--ds-on-accent-field);
+  background: transparent;
+  color: var(--ds-ink);
   font-family: var(--font-code);
   font-size: 0.78rem;
   font-weight: 600;
