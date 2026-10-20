@@ -1,9 +1,9 @@
-# VCS Name Exact JJ Mutation Targets
+# VCS name exact JJ mutation targets
 
 ## Metadata
 
 - ID: `VCS-NAME-EXACT-JJ-MUTATION-TARGETS`
-- Name: `Name Exact JJ Mutation Targets`
+- Name: `Name exact JJ mutation targets`
 - Summary: Specify revisions, filesets, bookmarks, and destinations for mutating jj commands.
   Explicit targets make intent reviewable and prevent defaults from acting on surprising state.
 - Status: `reviewed`

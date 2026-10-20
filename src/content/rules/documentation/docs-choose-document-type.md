@@ -1,8 +1,8 @@
-# Docs Choose Document Type
+# Docs choose document type
 
 ## Metadata
 
-- Name: `Choose Document Type`
+- Name: `Choose document type`
 - ID: `DOCS-CHOOSE-DOCUMENT-TYPE`
 - Summary: `Pick the dominant document mode before editing so the page serves one reader task well.
   Link out to secondary modes instead of blending tutorial, reference, decisions, and changelog.`

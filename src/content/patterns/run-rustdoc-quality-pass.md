@@ -1,8 +1,8 @@
-# Run Rustdoc Quality Pass
+# Run rustdoc quality pass
 
 ## Metadata
 
-- Name: `Run Rustdoc Quality Pass`
+- Name: `Run rustdoc quality pass`
 - ID: `run-rustdoc-quality-pass`
 - Summary: Use a bounded checklist when raising a Rust crate's public documentation. The pass
   should teach the crate model, document public contracts, place examples where they prove real use,

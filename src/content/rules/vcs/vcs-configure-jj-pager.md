@@ -1,9 +1,9 @@
-# VCS Configure JJ Pager
+# VCS configure JJ pager
 
 ## Metadata
 
 - ID: `VCS-CONFIGURE-JJ-PAGER`
-- Name: `Configure JJ Pager`
+- Name: `Configure JJ pager`
 - Summary: Scope pager control with `--no-pager`, `JJ_PAGER=cat`, or session configuration.
   Direct output keeps source-control evidence visible without changing the user's global pager.
 - Status: `reviewed`

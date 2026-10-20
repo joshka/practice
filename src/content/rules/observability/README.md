@@ -1,4 +1,4 @@
-# Observability And Failure
+# Observability and failure
 
 Observability rules cover owned logging boundaries, durable failure visibility, diagnostic context,
 failure states, and safe telemetry retention.

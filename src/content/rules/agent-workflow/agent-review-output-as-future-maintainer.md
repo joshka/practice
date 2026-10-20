@@ -1,8 +1,8 @@
-# Agent Review Output As Future Maintainer
+# Agent review output as future maintainer
 
 ## Metadata
 
-- Name: `Review Output as Future Maintainer`
+- Name: `Review output as future maintainer`
 - ID: `AGENT-REVIEW-OUTPUT-AS-FUTURE-MAINTAINER`
 - Summary: Review agent output as someone who will not have the chat transcript. This keeps attention
   on durable code, docs, tests, validation proof, and residual risk.
@@ -52,6 +52,6 @@ proof from residual risk.
 
 ## References
 
-- [Agent Produce Review Packets](agent-produce-review-packets.md)
-- [Agent Report Proof In Handoffs](agent-report-proof-in-handoffs.md)
+- [Agent produce review packets](agent-produce-review-packets.md)
+- [Agent report proof in handoffs](agent-report-proof-in-handoffs.md)
 - [Google Engineering Practices: What to look for in a code review](https://google.github.io/eng-practices/review/reviewer/looking-for.html)

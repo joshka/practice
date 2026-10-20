@@ -1,8 +1,8 @@
-# Observability Keep Recovery Advice Safe And Honest
+# Observability keep recovery advice safe and honest
 
 ## Metadata
 
-- Name: `Keep Recovery Advice Safe and Honest`
+- Name: `Keep recovery advice safe and honest`
 - ID: `OBSERVABILITY-KEEP-RECOVERY-ADVICE-SAFE-AND-HONEST`
 - Summary: Give recovery advice only when the program knows enough to make it safe. Report observed
   facts, label uncertainty, and avoid destructive, security-weakening, or policy-bypassing next

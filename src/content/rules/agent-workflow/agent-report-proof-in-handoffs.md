@@ -1,8 +1,8 @@
-# Agent Report Proof In Handoffs
+# Agent report proof in handoffs
 
 ## Metadata
 
-- Name: `Report Proof in Handoffs`
+- Name: `Report proof in handoffs`
 - ID: `AGENT-REPORT-PROOF-IN-HANDOFFS`
 - Summary: Replace confidence language with the exact checks, inspection, screenshots, and skipped
   validation behind a handoff. Proof lets reviewers decide what to trust and what remains risky.

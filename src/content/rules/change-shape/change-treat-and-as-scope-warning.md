@@ -1,8 +1,8 @@
-# Change Treat And As Scope Warning
+# Change treat and as scope warning
 
 ## Metadata
 
-- Name: `Treat And as Scope Warning`
+- Name: `Treat and as scope warning`
 - ID: `CHANGE-TREAT-AND-AS-SCOPE-WARNING`
 - Summary: Use compound change descriptions as a prompt to inspect whether the work has more than
   one purpose. The word is not a rule, but it catches scope creep while splitting is still cheap.

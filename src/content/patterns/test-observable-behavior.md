@@ -1,8 +1,8 @@
-# Test Observable Behavior
+# Test observable behavior
 
 ## Metadata
 
-- Name: `Test Observable Behavior`
+- Name: `Test observable behavior`
 - ID: `test-observable-behavior`
 - Summary: Tests that pin private structure can block useful refactors while missing broken user
   outcomes. Test observable outputs, errors, side effects, state, events, and boundaries, reserving

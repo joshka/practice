@@ -1,4 +1,4 @@
-# Explicit Boundaries Preserve Correctness
+# Explicit boundaries preserve correctness
 
 Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.

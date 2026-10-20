@@ -1,8 +1,8 @@
-# Docs State Current Behavior Not Aspiration
+# Docs state current behavior not aspiration
 
 ## Metadata
 
-- Name: `State Current Behavior, Not Aspiration`
+- Name: `State current behavior, not aspiration`
 - ID: `DOCS-STATE-CURRENT-BEHAVIOR-NOT-ASPIRATION`
 - Summary: `Describe what the system does now and label limitations or future plans separately.
   Otherwise roadmap language becomes a false contract for readers and agents.`

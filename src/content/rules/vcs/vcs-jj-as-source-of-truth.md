@@ -1,9 +1,9 @@
-# VCS JJ As Source Of Truth
+# VCS JJ as source of truth
 
 ## Metadata
 
 - ID: `VCS-JJ-AS-SOURCE-OF-TRUTH`
-- Name: `JJ as Source of Truth`
+- Name: `JJ as source of truth`
 - Summary: Use jj for local workflow in repositories with `.jj` state.
   This preserves descriptions, stack shape, operation-log recovery, and bookmark semantics.
 - Status: `reviewed`

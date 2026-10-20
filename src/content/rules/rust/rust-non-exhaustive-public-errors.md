@@ -1,8 +1,8 @@
-# Rust Non Exhaustive Public Errors
+# Rust non exhaustive public errors
 
 ## Metadata
 
-- Name: `Non Exhaustive Public Errors`
+- Name: `Non exhaustive public errors`
 - ID: `RUST-NON-EXHAUSTIVE-PUBLIC-ERRORS`
 - Summary: Mark public error enums non-exhaustive unless exhaustive matching is part of the contract.
   This preserves room for future integration, validation, or provider failures without needless

@@ -1,8 +1,8 @@
-# Contain Observability Policy
+# Contain observability policy
 
 ## Metadata
 
-- Name: `Contain Observability Policy`
+- Name: `Contain observability policy`
 - ID: `contain-observability-policy`
 - Summary: Logging, metrics, tracing, and privacy choices become inconsistent when every call site
   invents its own policy. Put observability decisions at owned boundaries so lower layers expose

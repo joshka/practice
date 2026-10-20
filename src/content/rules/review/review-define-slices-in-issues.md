@@ -1,8 +1,8 @@
-# Review Define Slices In Issues
+# Review define slices in issues
 
 ## Metadata
 
-- Name: `Define Slices in Issues`
+- Name: `Define slices in issues`
 - ID: `REVIEW-DEFINE-SLICES-IN-ISSUES`
 - Summary: Shape issues around review-sized slices with clear outcomes. Coherent slices reduce scope
   creep and give maintainers or agents a practical unit of work without losing the larger purpose.

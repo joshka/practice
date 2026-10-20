@@ -1,8 +1,8 @@
-# Avoid Boolean Flag Parameters
+# Avoid boolean flag parameters
 
 ## Metadata
 
-- Name: `Avoid Boolean Flag Parameters`
+- Name: `Avoid boolean flag parameters`
 - ID: `avoid-boolean-flag-parameters`
 - Summary: Behavioral boolean flags make call sites depend on hidden ordering and branch semantics.
   Distinguish them from boolean domain data, then prefer named operations, enums, options types, or

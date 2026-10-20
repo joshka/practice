@@ -1,8 +1,8 @@
-# Boundary Report Provider Diagnostics
+# Boundary report provider diagnostics
 
 ## Metadata
 
-- Name: `Report Provider Diagnostics`
+- Name: `Report provider diagnostics`
 - ID: `BOUNDARY-REPORT-PROVIDER-DIAGNOSTICS`
 - Summary: Return freshness, permission, budget, load, cache, partial-result, and degradation
   signals with provider-backed data. These diagnostics help callers decide trust, retry, display,

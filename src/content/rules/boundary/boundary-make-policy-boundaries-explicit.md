@@ -1,8 +1,8 @@
-# Boundary Make Policy Boundaries Explicit
+# Boundary make policy boundaries explicit
 
 ## Metadata
 
-- Name: `Make Policy Boundaries Explicit`
+- Name: `Make policy boundaries explicit`
 - ID: `BOUNDARY-MAKE-POLICY-BOUNDARIES-EXPLICIT`
 - Summary: Route writes, network calls, shell execution, publication, telemetry, redaction, and
   credential use through a visible policy decision before effects run. Callers can then understand
@@ -51,7 +51,7 @@ typed denial errors, audit logs, and policy-outcome tests.
 
 ## References
 
-- [Boundary Give Tools Identity Policy And Limits](boundary-give-tools-identity-policy-and-limits.md)
-- [Test Cover Policy Outcomes](../testing/test-cover-policy-outcomes.md)
+- [Boundary give tools identity policy and limits](boundary-give-tools-identity-policy-and-limits.md)
+- [Test cover policy outcomes](../testing/test-cover-policy-outcomes.md)
 - [OWASP Authorization Cheat Sheet](https://cheatsheetseries.owasp.org/cheatsheets/Authorization_Cheat_Sheet.html)
 - [OWASP Developer Guide: Enforce Access Controls](https://devguide.owasp.org/en/04-design/02-web-app-checklist/07-access-controls/)

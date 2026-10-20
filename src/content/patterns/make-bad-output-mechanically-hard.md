@@ -1,8 +1,8 @@
-# Make Bad Output Mechanically Hard
+# Make bad output mechanically hard
 
 ## Metadata
 
-- Name: `Make Bad Output Mechanically Hard`
+- Name: `Make bad output mechanically hard`
 - ID: `make-bad-output-mechanically-hard`
 - Summary: Repeated review failures usually belong in a tool, type, schema, template, lint, or
   checklist instead of another reminder. Encode stable rejection criteria early, but keep escape

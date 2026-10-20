@@ -1,8 +1,8 @@
-# Preserve Error Context
+# Preserve error context
 
 ## Metadata
 
-- Name: `Preserve Error Context`
+- Name: `Preserve error context`
 - ID: `preserve-error-context`
 - Summary: Errors often lose the facts a caller needs when they cross module, process, support, or
   user boundaries. Preserve stable kinds and actionable context so callers can retry, report,
@@ -26,7 +26,7 @@ Carry the stable error kind and recoverable context across the boundary. Preserv
 field name, resource ID, upstream status, retry hint, correlation ID, or source error when those
 facts help someone act.
 
-Pair this with [Write Actionable Error Messages](write-actionable-error-messages.md) when the
+Pair this with [Write actionable error messages](write-actionable-error-messages.md) when the
 visible message itself needs user, operator, or support guidance.
 
 ## Tradeoff

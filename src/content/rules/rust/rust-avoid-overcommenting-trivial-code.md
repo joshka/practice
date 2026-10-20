@@ -1,8 +1,8 @@
-# Rust Avoid Overcommenting Trivial Code
+# Rust avoid overcommenting trivial code
 
 ## Metadata
 
-- Name: `Avoid Overcommenting Trivial Code`
+- Name: `Avoid overcommenting trivial code`
 - ID: `RUST-AVOID-OVERCOMMENTING-TRIVIAL-CODE`
 - Summary: Comment Rust code for invariants, contracts, and surprising tradeoffs rather than
   restating obvious operations. This keeps comments useful and less prone to drift.

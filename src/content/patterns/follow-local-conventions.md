@@ -1,8 +1,8 @@
-# Follow Local Conventions
+# Follow local conventions
 
 ## Metadata
 
-- Name: `Follow Local Conventions`
+- Name: `Follow local conventions`
 - ID: `follow-local-conventions`
 - Summary: Inconsistent style and structure make each change feel like a new design decision. Start
   from nearby patterns and only diverge when the local convention cannot support the current need.

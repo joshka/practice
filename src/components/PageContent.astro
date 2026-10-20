@@ -51,6 +51,17 @@ function formatChip(value: string): string {
   return value.replace(/[-_]+/g, ' ').toUpperCase();
 }
 
+const properNouns = new Set(['Git', 'Jujutsu', 'Markdown', 'Rust']);
+
+function sentenceCase(title: string): string {
+  return title
+    .split(' ')
+    .map((word, index) => (
+      index > 0 && /^[A-Z][a-z]+$/.test(word) && !properNouns.has(word) ? word.toLowerCase() : word
+    ))
+    .join(' ');
+}
+
 function sectionClass(title: string): string {
   return title.toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '');
 }
@@ -251,7 +262,7 @@ function relatedKindLabel(page: MarkdownPage): string {
   <div class="detail-sections">
     {page.sections.map((section) => (
       <section class={`detail-section detail-section--${sectionClass(section.title)}`}>
-        <h2>{section.title}</h2>
+        <h2>{sentenceCase(section.title)}</h2>
         {isAgentInstruction(section.title) ? (
           <div class="prose detail-section__body detail-section__body--code">
             <div class="code-block">

@@ -1,9 +1,9 @@
-# Test Use Realistic Parser Samples
+# Test use realistic parser samples
 
 ## Metadata
 
 - ID: `TEST-USE-REALISTIC-PARSER-SAMPLES`
-- Name: `Use Realistic Parser Samples`
+- Name: `Use realistic parser samples`
 - Summary: Test parsers with representative input, malformed cases, and safe degradation examples.
   Real samples catch compatibility failures, but fixtures should be minimized and scrubbed.
 - Status: `reviewed`

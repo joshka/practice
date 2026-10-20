@@ -1,8 +1,8 @@
-# Docs Write For Non Linear Readers
+# Docs write for non linear readers
 
 ## Metadata
 
-- Name: `Write for Non-Linear Readers`
+- Name: `Write for non-linear readers`
 - ID: `DOCS-WRITE-FOR-NON-LINEAR-READERS`
 - Summary: `Give sections enough local context to work when reached from search, links, review, or
   retrieval. Avoid repeating the whole introduction; add only the subject and prerequisite needed.`

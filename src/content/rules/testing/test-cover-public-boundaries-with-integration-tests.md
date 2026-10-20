@@ -1,9 +1,9 @@
-# Test Cover Public Boundaries With Integration Tests
+# Test cover public boundaries with integration tests
 
 ## Metadata
 
 - ID: `TEST-COVER-PUBLIC-BOUNDARIES-WITH-INTEGRATION-TESTS`
-- Name: `Cover Public Boundaries with Integration Tests`
+- Name: `Cover public boundaries with integration tests`
 - Summary: Use integration tests to prove public module, crate, or adapter boundaries.
   They catch composition failures unit tests miss, while local logic can stay unit-tested.
 - Status: `reviewed`

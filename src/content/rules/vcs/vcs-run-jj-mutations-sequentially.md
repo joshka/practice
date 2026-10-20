@@ -1,9 +1,9 @@
-# VCS Run JJ Mutations Sequentially
+# VCS run JJ mutations sequentially
 
 ## Metadata
 
 - ID: `VCS-RUN-JJ-MUTATIONS-SEQUENTIALLY`
-- Name: `Run JJ Mutations Sequentially`
+- Name: `Run JJ mutations sequentially`
 - Summary: Do not overlap jj commands that write repo, working-copy, bookmark, or config state.
   Sequential mutations avoid locks, stale reads, and confusing operation order.
 - Status: `reviewed`

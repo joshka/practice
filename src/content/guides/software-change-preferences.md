@@ -1,8 +1,8 @@
-# Software Change Preferences
+# Software change preferences
 
 ## Metadata
 
-- Name: `Software Change Preferences`
+- Name: `Software change preferences`
 - ID: `software-change-preferences`
 - Summary: Software-change guidance covers broad preferences for change size, structure,
   validation, review artifacts, commit history, and handoff. It favors small coherent changes,

@@ -1,8 +1,8 @@
-# Rust Add Benchmarks For Performance Claims
+# Rust add benchmarks for performance claims
 
 ## Metadata
 
-- Name: `Add Benchmarks for Performance Claims`
+- Name: `Add benchmarks for performance claims`
 - ID: `RUST-ADD-BENCHMARKS-FOR-PERFORMANCE-CLAIMS`
 - Summary: Use benchmarks when Rust changes rely on speed, allocation, or hot-path claims. The
   evidence makes performance tradeoffs reviewable instead of relying on intuition.

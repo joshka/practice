@@ -1,8 +1,8 @@
-# Avoid Global Mutable State
+# Avoid global mutable state
 
 ## Metadata
 
-- Name: `Avoid Global Mutable State`
+- Name: `Avoid global mutable state`
 - ID: `avoid-global-mutable-state`
 - Summary: `Mutable process-wide state hides ownership, lifecycle, reset, ordering, and
   concurrency policy. Prefer explicit owners or narrow handles unless the global behavior has a

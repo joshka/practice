@@ -1,8 +1,8 @@
-# Agent Preserve Human Work
+# Agent preserve human work
 
 ## Metadata
 
-- Name: `Preserve Human Work`
+- Name: `Preserve human work`
 - ID: `AGENT-PRESERVE-HUMAN-WORK`
 - Summary: Inspect and protect unrelated local edits before changing files. Preserving human work
   keeps the task diff focused and avoids destroying unfinished or intentional changes.

@@ -540,7 +540,6 @@ export function tagLabel(value: string): string {
   const acronyms: Record<string, string> = {
     ai: 'AI',
     api: 'API',
-    async: 'Async',
     rustdoc: 'Rustdoc',
     rust: 'Rust',
     vcs: 'VCS',
@@ -548,7 +547,7 @@ export function tagLabel(value: string): string {
   };
   return tagSlug(value)
     .split('-')
-    .map((part) => acronyms[part] ?? part.charAt(0).toUpperCase() + part.slice(1))
+    .map((part, index) => acronyms[part] ?? (index === 0 ? part.charAt(0).toUpperCase() + part.slice(1) : part))
     .join(' ');
 }
 
@@ -738,7 +737,7 @@ function displayTitleForRepoPath(repoPath: string, title: string): string {
   for (const prefix of rulePrefixes[parts[1]] ?? []) {
     displayTitle = displayTitle.replace(new RegExp(`^${escapeRegExp(prefix)}\\s+`, 'i'), '');
   }
-  return displayTitle;
+  return displayTitle.charAt(0).toUpperCase() + displayTitle.slice(1);
 }
 
 function formatDisplayTitle(title: string): string {

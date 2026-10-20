@@ -1,8 +1,8 @@
-# Agent Prefer Tools Over Prompts
+# Agent prefer tools over prompts
 
 ## Metadata
 
-- Name: `Prefer Tools Over Prompts`
+- Name: `Prefer tools over prompts`
 - ID: `AGENT-PREFER-TOOLS-OVER-PROMPTS`
 - Summary: Move repeated instructions into tools, checks, templates, or durable guides. Tooling
   catches failures even when prompts are short, compacted, or interpreted differently.

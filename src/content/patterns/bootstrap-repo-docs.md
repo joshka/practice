@@ -1,8 +1,8 @@
-# Bootstrap Repo Docs
+# Bootstrap repo docs
 
 ## Metadata
 
-- Name: `Bootstrap Repo Docs`
+- Name: `Bootstrap repo docs`
 - ID: `bootstrap-repo-docs`
 - Summary: Repositories without a documentation map make newcomers infer structure from scattered
   files and conventions. Add the smallest durable entry points that explain purpose, layout,

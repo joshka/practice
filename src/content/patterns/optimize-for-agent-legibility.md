@@ -1,8 +1,8 @@
-# Optimize For Agent Legibility
+# Optimize for agent legibility
 
 ## Metadata
 
-- Name: `Optimize For Agent Legibility`
+- Name: `Optimize for agent legibility`
 - ID: `optimize-for-agent-legibility`
 - Summary: Repositories that are hard for agents to inspect, search, run, and validate make
   delegated work slower and less reliable. Prefer structures, commands, names, examples, and

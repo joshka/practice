@@ -1,8 +1,8 @@
-# Change Pin Behavior With Early Tests
+# Change pin behavior with early tests
 
 ## Metadata
 
-- Name: `Pin Behavior With Early Tests`
+- Name: `Pin behavior with early tests`
 - ID: `CHANGE-PIN-BEHAVIOR-WITH-EARLY-TESTS`
 - Summary: Add characterization tests before changing messy behavior when the existing contract is
   unclear. The baseline separates intentional behavior changes from accidental drift.

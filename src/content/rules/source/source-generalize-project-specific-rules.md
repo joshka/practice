@@ -1,8 +1,8 @@
-# Source Generalize Project Specific Rules
+# Source generalize project specific rules
 
 ## Metadata
 
-- Name: `Generalize Project-Specific Rules`
+- Name: `Generalize project-specific rules`
 - ID: `SOURCE-GENERALIZE-PROJECT-SPECIFIC-RULES`
 - Summary: Extract the portable failure mode before promoting local lessons into shared guidance.
   Provider, repo, or tool details should stay local unless they clarify the durable rule.

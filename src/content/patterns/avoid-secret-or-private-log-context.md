@@ -1,8 +1,8 @@
-# Avoid Secret Or Private Log Context
+# Avoid secret or private log context
 
 ## Metadata
 
-- Name: `Avoid Secret Or Private Log Context`
+- Name: `Avoid secret or private log context`
 - ID: `avoid-secret-or-private-log-context`
 - Summary: Diagnostics can outlive their request and move through systems with different access
   rules. Record safe identifiers and classifications at the boundary that understands data

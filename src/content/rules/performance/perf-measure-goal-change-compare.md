@@ -1,8 +1,8 @@
-# Perf Measure Goal Change Compare
+# Perf measure goal change compare
 
 ## Metadata
 
-- Name: `Measure Goal, Change, and Comparison`
+- Name: `Measure goal, change, and comparison`
 - ID: `PERF-MEASURE-GOAL-CHANGE-COMPARE`
 - Summary: State the performance goal, baseline measurement, implementation change, and comparison
   result together. Those pieces let reviewers judge whether the patch improved the relevant

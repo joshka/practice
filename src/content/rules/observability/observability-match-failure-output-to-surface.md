@@ -1,8 +1,8 @@
-# Observability Match Failure Output To Surface
+# Observability match failure output to surface
 
 ## Metadata
 
-- Name: `Match Failure Output To Surface`
+- Name: `Match failure output to surface`
 - ID: `OBSERVABILITY-MATCH-FAILURE-OUTPUT-TO-SURFACE`
 - Summary: Choose a failure-output surface that lets the affected user notice, understand, and act
   on the failure. Inline errors, alerts, toasts, banners, persistent status, CLI stderr, API

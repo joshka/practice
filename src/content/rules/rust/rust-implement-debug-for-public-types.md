@@ -1,8 +1,8 @@
-# Rust Implement Debug For Public Types
+# Rust implement debug for public types
 
 ## Metadata
 
-- Name: `Implement Debug for Public Types`
+- Name: `Implement debug for public types`
 - ID: `RUST-IMPLEMENT-DEBUG-FOR-PUBLIC-TYPES`
 - Summary: Provide `Debug` for public types unless it would expose secrets or mislead callers. The
   trait is baseline support for tests, assertions, logs, and downstream diagnostics.

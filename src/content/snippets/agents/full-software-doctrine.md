@@ -1,8 +1,8 @@
-# Full Software Doctrine Prompt Pack
+# Full software doctrine prompt pack
 
 ## Metadata
 
-- Name: `Full Software Doctrine Prompt Pack`
+- Name: `Full software doctrine prompt pack`
 - ID: `agent-full-software-doctrine-prompt-pack`
 - Summary: `Large single-file prompt pack that combines the repo's software rules and the reasons
   behind them into one coherent artifact. This version is tuned for Rust-heavy maintenance and

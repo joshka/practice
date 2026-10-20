@@ -1,8 +1,8 @@
-# Docs Readme As Entry Point
+# Docs readme as entry point
 
 ## Metadata
 
-- Name: `README as Entry Point`
+- Name: `README as entry point`
 - ID: `DOCS-README-AS-ENTRY-POINT`
 - Summary: `Use README files to orient readers to purpose, setup, first useful use, and deeper docs.
   Split out manual-level detail when it hides the starting path.`

@@ -1,8 +1,8 @@
-# Rust Inject Host Interactions At Boundaries
+# Rust inject host interactions at boundaries
 
 ## Metadata
 
-- Name: `Inject Host Interactions at Boundaries`
+- Name: `Inject host interactions at boundaries`
 - ID: `RUST-INJECT-HOST-INTERACTIONS-AT-BOUNDARIES`
 - Summary: Pass filesystem, network, time, randomness, and process behavior through boundaries when
   tests or alternate environments need control. This keeps the core deterministic and effects

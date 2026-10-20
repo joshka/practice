@@ -1,8 +1,8 @@
-# Rust Run Feature Gated Validation
+# Rust run feature gated validation
 
 ## Metadata
 
-- Name: `Run Feature Gated Validation`
+- Name: `Run feature gated validation`
 - ID: `RUST-RUN-FEATURE-GATED-VALIDATION`
 - Summary: Exercise the feature combinations touched by a Rust change so gated code, docs, and
   integrations actually build. Choose representative combinations when exhaustive feature matrices

@@ -1,8 +1,8 @@
-# Refactoring Use Whitespace As Function Paragraphs
+# Refactoring use whitespace as function paragraphs
 
 ## Metadata
 
-- Name: `Use Whitespace as Function Paragraphs`
+- Name: `Use whitespace as function paragraphs`
 - ID: `REFACTORING-USE-WHITESPACE-AS-FUNCTION-PARAGRAPHS`
 - Summary: Use blank lines to group related statements inside a function before extracting more
   names. Paragraph-like spacing can reveal the local story while avoiding unnecessary helper jumps.

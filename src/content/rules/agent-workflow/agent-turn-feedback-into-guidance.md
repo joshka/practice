@@ -1,8 +1,8 @@
-# Agent Turn Feedback Into Guidance
+# Agent turn feedback into guidance
 
 ## Metadata
 
-- Name: `Turn Feedback Into Guidance`
+- Name: `Turn feedback into guidance`
 - ID: `AGENT-TURN-FEEDBACK-INTO-GUIDANCE`
 - Summary: Convert repeated review corrections into rules, templates, snippets, or checks. Durable
   guidance fixes the workflow problem instead of requiring the same steering again.

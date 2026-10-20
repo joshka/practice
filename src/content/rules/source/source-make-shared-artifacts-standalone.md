@@ -1,8 +1,8 @@
-# Source Make Shared Artifacts Standalone
+# Source make shared artifacts standalone
 
 ## Metadata
 
-- Name: `Make Shared Artifacts Standalone`
+- Name: `Make shared artifacts standalone`
 - ID: `SOURCE-MAKE-SHARED-ARTIFACTS-STANDALONE`
 - Summary: Restate the problem, rationale, evidence, and tradeoffs in shared docs, templates,
   generated packs, or reusable guidance. Future readers should not need private notes or

@@ -1,8 +1,8 @@
-# Boundary Make Exec Tools Noninteractive
+# Boundary make exec tools noninteractive
 
 ## Metadata
 
-- Name: `Make Exec Tools Noninteractive`
+- Name: `Make exec tools noninteractive`
 - ID: `BOUNDARY-MAKE-EXEC-TOOLS-NONINTERACTIVE`
 - Summary: Default agent, CI, and background exec paths away from prompts, editors, pagers, and
   credential UI. Commands then fail or complete predictably, while human interactive modes remain

@@ -1,8 +1,8 @@
-# Rust Preserve Valid State On Failure
+# Rust preserve valid state on failure
 
 ## Metadata
 
-- Name: `Preserve Valid State On Failure`
+- Name: `Preserve valid state on failure`
 - ID: `RUST-PRESERVE-VALID-STATE-ON-FAILURE`
 - Summary: Keep values valid when fallible operations return errors so callers can retry, inspect, or
   drop them predictably. Use transactional updates or staging when partial mutation would expose a

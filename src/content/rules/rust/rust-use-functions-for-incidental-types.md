@@ -1,8 +1,8 @@
-# Rust Use Functions For Incidental Types
+# Rust use functions for incidental types
 
 ## Metadata
 
-- Name: `Use Functions For Incidental Types`
+- Name: `Use functions for incidental types`
 - ID: `RUST-USE-FUNCTIONS-FOR-INCIDENTAL-TYPES`
 - Summary: Prefer free or module functions when a type does not own the operation or invariant.
   Move behavior onto a type when the method relationship clarifies state, policy, or trait design.

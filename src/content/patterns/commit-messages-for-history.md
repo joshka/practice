@@ -1,8 +1,8 @@
-# Commit Messages For History
+# Commit messages for history
 
 ## Metadata
 
-- Name: `Commit Messages For History`
+- Name: `Commit messages for history`
 - ID: `commit-messages-for-history`
 - Summary: Commit messages become future debugging and review aids, not just publication labels.
   Write them to explain the reason and effect of the change, with enough context to survive outside

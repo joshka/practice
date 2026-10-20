@@ -1,8 +1,8 @@
-# Boundary Expose Partial Stream Output
+# Boundary expose partial stream output
 
 ## Metadata
 
-- Name: `Expose Partial Stream Output`
+- Name: `Expose partial stream output`
 - ID: `BOUNDARY-EXPOSE-PARTIAL-STREAM-OUTPUT`
 - Summary: Surface streaming tokens, chunks, or events as provisional output until completion
   promotes a final result. Callers get progress and diagnostics without corrupting authoritative

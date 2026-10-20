@@ -1,8 +1,8 @@
-# Agent Prove Security Impact
+# Agent prove security impact
 
 ## Metadata
 
-- Name: `Prove Security Impact`
+- Name: `Prove security impact`
 - ID: `AGENT-PROVE-SECURITY-IMPACT`
 - Summary: Separate security hypotheses from proof of reachability, exploitability, assets, and
   user impact. This keeps prioritization and mitigation tied to demonstrated risk.

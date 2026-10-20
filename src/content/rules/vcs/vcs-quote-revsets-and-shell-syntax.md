@@ -1,9 +1,9 @@
-# VCS Quote Revsets And Shell Syntax
+# VCS quote revsets and shell syntax
 
 ## Metadata
 
 - ID: `VCS-QUOTE-REVSETS-AND-SHELL-SYNTAX`
-- Name: `Quote Revsets and Shell Syntax`
+- Name: `Quote revsets and shell syntax`
 - Summary: Quote jj revsets, bookmark syntax, and other shell-sensitive command fragments.
   Shell metacharacters can alter commands, so examples should prefer simple safe quoting.
 - Status: `reviewed`

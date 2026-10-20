@@ -1,8 +1,8 @@
-# Agent Present Concrete Next Options
+# Agent present concrete next options
 
 ## Metadata
 
-- Name: `Present Concrete Next Options`
+- Name: `Present concrete next options`
 - ID: `AGENT-PRESENT-CONCRETE-NEXT-OPTIONS`
 - Summary: After a validated chunk, offer specific follow-up chunks with their tradeoffs. Concrete
   options let the maintainer steer scope without decoding vague requests to continue.

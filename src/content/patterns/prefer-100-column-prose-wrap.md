@@ -1,8 +1,8 @@
-# Prefer 100-Column Prose Wrap
+# Prefer 100-column prose wrap
 
 ## Metadata
 
-- Name: `Prefer 100-Column Prose Wrap`
+- Name: `Prefer 100-column prose wrap`
 - ID: `prefer-100-column-prose-wrap`
 - Summary: Wrap Markdown prose and Markdown-bearing doc comments around 100 columns as a
   maintainer readability preference. The exact number is subjective, but it balances source

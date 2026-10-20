@@ -1,8 +1,8 @@
-# JJ Workflow
+# JJ workflow
 
 ## Metadata
 
-- Name: `JJ Workflow`
+- Name: `JJ workflow`
 - ID: `jj-workflow`
 - Summary: JJ workflow guidance covers source-control inspection, reviewable changes, descriptions,
   bookmarks, publication, and recovery in jujutsu repositories. It keeps agents and maintainers
@@ -16,7 +16,7 @@
 This guide covers jujutsu workflow preferences for source-control inspection, reviewable changes,
 commit descriptions, and publication.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md). The goal is not
+Use this guide with [Software change preferences](software-change-preferences.md). The goal is not
 to teach all of jj; it is to keep local work reviewable, recoverable, and aligned with jj's change
 model.
 

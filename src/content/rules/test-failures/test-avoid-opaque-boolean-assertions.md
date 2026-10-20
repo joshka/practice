@@ -1,8 +1,8 @@
-# Test Avoid Opaque Boolean Assertions
+# Test avoid opaque boolean assertions
 
 ## Metadata
 
-- Name: `Avoid Opaque Boolean Assertions`
+- Name: `Avoid opaque boolean assertions`
 - ID: `TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`
 - Summary: Prefer comparisons or richer assertions when a predicate hides state needed to diagnose
   the failure. The first failure should show the useful actual value.

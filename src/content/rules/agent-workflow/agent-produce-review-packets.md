@@ -1,8 +1,8 @@
-# Agent Produce Review Packets
+# Agent produce review packets
 
 ## Metadata
 
-- Name: `Produce Review Packets`
+- Name: `Produce review packets`
 - ID: `AGENT-PRODUCE-REVIEW-PACKETS`
 - Summary: Hand off agent work with purpose, changed files, evidence, skipped checks, risks, and
   follow-ups. A review packet lets maintainers inspect the output without replaying the session.

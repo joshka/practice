@@ -1,8 +1,8 @@
-# Boundary Define Hook Failure Policy
+# Boundary define hook failure policy
 
 ## Metadata
 
-- Name: `Define Hook Failure Policy`
+- Name: `Define hook failure policy`
 - ID: `BOUNDARY-DEFINE-HOOK-FAILURE-POLICY`
 - Summary: Specify whether each hook class blocks, retries, logs and continues, rolls back, or
   leaves partial state. This gives extension points predictable failure behavior without forcing one

@@ -1,8 +1,8 @@
-# Agent Use Agents Md As Map
+# Agent use agents md as map
 
 ## Metadata
 
-- Name: `Use AGENTS.md as Map`
+- Name: `Use AGENTS.md as map`
 - ID: `AGENT-USE-AGENTS-MD-AS-MAP`
 - Summary: Keep `AGENTS.md` compact by using it to route agents to deeper guides and mechanisms.
   Treating it as a map preserves startup context without losing durable project guidance.

@@ -1,8 +1,8 @@
-# Change Identify Owning Module Before Editing
+# Change identify owning module before editing
 
 ## Metadata
 
-- Name: `Identify Owning Module Before Editing`
+- Name: `Identify owning module before editing`
 - ID: `CHANGE-IDENTIFY-OWNING-MODULE-BEFORE-EDITING`
 - Summary: Find the component that owns the concept before adding or moving logic. That keeps
   invariants, tests, and future maintenance close to the responsible code.

@@ -1,4 +1,4 @@
-# Explicit Boundaries Preserve Correctness
+# Explicit boundaries preserve correctness
 
 Boundary rules cover parsing, validation policy, explicit inputs, state transitions, provider
 diagnostics, effect boundaries, and external reconciliation.

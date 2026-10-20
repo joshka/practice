@@ -1,9 +1,9 @@
-# VCS Scope JJ File Tracking
+# VCS scope JJ file tracking
 
 ## Metadata
 
 - ID: `VCS-SCOPE-JJ-FILE-TRACKING`
-- Name: `Scope JJ File Tracking`
+- Name: `Scope JJ file tracking`
 - Summary: Pass intended paths to `jj file track` and `jj file untrack`.
   Scoped tracking keeps local-only, generated, or unrelated files out of publication state.
 - Status: `reviewed`

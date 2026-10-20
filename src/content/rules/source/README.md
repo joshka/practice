@@ -1,4 +1,4 @@
-# Source And Context Hygiene
+# Source and context hygiene
 
 Source hygiene rules cover turning mined lessons into public guidance, preferring stable sources,
 keeping binary artifacts out of history, and keeping local or private context out of shared

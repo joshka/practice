@@ -1,9 +1,9 @@
-# VCS Duplicate For Alternative Candidates
+# VCS duplicate for alternative candidates
 
 ## Metadata
 
 - ID: `VCS-DUPLICATE-FOR-ALTERNATIVE-CANDIDATES`
-- Name: `Duplicate for Alternative Candidates`
+- Name: `Duplicate for alternative candidates`
 - Summary: Use `jj duplicate` when two plausible fixes or refactors need independent validation.
   Separate candidate changes preserve comparison and recovery without mutating the only option.
 - Status: `reviewed`

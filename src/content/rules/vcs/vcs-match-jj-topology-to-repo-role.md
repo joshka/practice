@@ -1,9 +1,9 @@
-# VCS Match JJ Topology To Repo Role
+# VCS match JJ topology to repo role
 
 ## Metadata
 
 - ID: `VCS-MATCH-JJ-TOPOLOGY-TO-REPO-ROLE`
-- Name: `Match JJ Topology to Repo Role`
+- Name: `Match JJ topology to repo role`
 - Summary: Align fetch remotes, push remotes, tracked bookmarks, aliases, and PR bases to repo role.
   Owned, maintainer, and fork-only workflows need different topology assumptions.
 - Status: `reviewed`

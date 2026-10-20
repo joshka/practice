@@ -1,9 +1,9 @@
-# VCS Stop Repeated JJ Retries And Localize State
+# VCS stop repeated JJ retries and localize state
 
 ## Metadata
 
 - ID: `VCS-STOP-REPEATED-JJ-RETRIES-AND-LOCALIZE-STATE`
-- Name: `Stop Repeated JJ Retries And Localize State`
+- Name: `Stop repeated JJ retries and localize state`
 - Summary: Stop repeating a failing jj command after a transient retry and inspect relevant state.
   Diagnosis beats command spam when locks, sparse paths, bookmarks, or remotes disagree.
 - Status: `reviewed`

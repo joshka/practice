@@ -1,8 +1,8 @@
-# Prefer In Distribution Tools
+# Prefer in distribution tools
 
 ## Metadata
 
-- Name: `Prefer In Distribution Tools`
+- Name: `Prefer in distribution tools`
 - ID: `prefer-in-distribution-tools`
 - Summary: Unusual tools, layouts, and formats consume agent attention before domain work begins.
   Prefer common, stable conventions when they meet the need, and document specialized choices when

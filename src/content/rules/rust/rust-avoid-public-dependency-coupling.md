@@ -1,8 +1,8 @@
-# Rust Avoid Public Dependency Coupling
+# Rust avoid public dependency coupling
 
 ## Metadata
 
-- Name: `Avoid Public Dependency Coupling`
+- Name: `Avoid public dependency coupling`
 - ID: `RUST-AVOID-PUBLIC-DEPENDENCY-COUPLING`
 - Summary: Keep dependency types out of public APIs unless interoperability is the purpose. This
   preserves semver freedom and avoids forcing downstream users onto implementation choices.

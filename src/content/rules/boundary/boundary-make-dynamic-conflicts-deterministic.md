@@ -1,8 +1,8 @@
-# Boundary Make Dynamic Conflicts Deterministic
+# Boundary make dynamic conflicts deterministic
 
 ## Metadata
 
-- Name: `Make Dynamic Conflicts Deterministic`
+- Name: `Make dynamic conflicts deterministic`
 - ID: `BOUNDARY-MAKE-DYNAMIC-CONFLICTS-DETERMINISTIC`
 - Summary: Define stable ordering, duplicate handling, priority, or override policy for dynamic
   registrations. Deterministic conflict behavior prevents hash order or load timing from changing

@@ -1,8 +1,8 @@
-# Rust Avoid Glob Reexports
+# Rust avoid glob reexports
 
 ## Metadata
 
-- Name: `Avoid Glob Re-Exports`
+- Name: `Avoid glob re-exports`
 - ID: `RUST-AVOID-GLOB-REEXPORTS`
 - Summary: Re-export public facade names explicitly instead of using globs. This prevents
   accidental API expansion and makes exported names visible during review.

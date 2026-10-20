@@ -1,8 +1,8 @@
-# Refactoring Prefer Loops For Side Effects
+# Refactoring prefer loops for side effects
 
 ## Metadata
 
-- Name: `Prefer Loops for Side Effects`
+- Name: `Prefer loops for side effects`
 - ID: `REFACTORING-PREFER-LOOPS-FOR-SIDE-EFFECTS`
 - Summary: Use ordinary loops when the main purpose is mutation, I/O, logging, or other side
   effects. Iterator chains are better for value transformation; using them for effects can hide

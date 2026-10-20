@@ -1,8 +1,8 @@
-# Rust Document Lifecycle Side Effects
+# Rust document lifecycle side effects
 
 ## Metadata
 
-- Name: `Document Lifecycle Side Effects`
+- Name: `Document lifecycle side effects`
 - ID: `RUST-DOCUMENT-LIFECYCLE-SIDE-EFFECTS`
 - Summary: Document construction, start, stop, drop, and cleanup behavior when side effects matter.
   Callers need to know when resources are acquired, released, spawned, or blocked.

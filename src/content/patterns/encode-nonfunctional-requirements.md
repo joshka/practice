@@ -1,8 +1,8 @@
-# Encode Nonfunctional Requirements
+# Encode nonfunctional requirements
 
 ## Metadata
 
-- Name: `Encode Nonfunctional Requirements`
+- Name: `Encode nonfunctional requirements`
 - ID: `encode-nonfunctional-requirements`
 - Summary: Performance, security, accessibility, privacy, and reliability expectations are easy to
   lose when they live only in prose. Encode important requirements in tests, budgets, schemas,

@@ -1,8 +1,8 @@
-# Rust Use Send Static Across Tasks
+# Rust use send static across tasks
 
 ## Metadata
 
-- Name: `Use Send Static Across Tasks`
+- Name: `Use send static across tasks`
 - ID: `RUST-USE-SEND-STATIC-ACROSS-TASKS`
 - Summary: Require owned `Send + 'static` values, futures, errors, and handles when they cross spawn
   or thread boundaries. Avoid imposing those bounds on local synchronous APIs where they would reject

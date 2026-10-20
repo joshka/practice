@@ -1,9 +1,9 @@
-# Test Prove Command Construction And Display
+# Test prove command construction and display
 
 ## Metadata
 
 - ID: `TEST-PROVE-COMMAND-CONSTRUCTION-AND-DISPLAY`
-- Name: `Prove Command Construction and Display`
+- Name: `Prove command construction and display`
 - Summary: Test both executable command shape and displayed command text when users rely on them.
   Quoting, redaction, ordering, and platform formatting can fail even when a local happy path works.
 - Status: `reviewed`

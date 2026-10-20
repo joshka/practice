@@ -1,8 +1,8 @@
-# Review Classify Prototype Reuse
+# Review classify prototype reuse
 
 ## Metadata
 
-- Name: `Classify Prototype Reuse`
+- Name: `Classify prototype reuse`
 - ID: `REVIEW-CLASSIFY-PROTOTYPE-REUSE`
 - Summary: Classify whether a rebuild is reusing behavior, evidence, replaceable internal shape, or
   load-bearing boundaries. That separation helps preserve proven compatibility while discarding
@@ -53,6 +53,6 @@ packets, and explicit non-goals for prototype-only shape.
 ## References
 
 - [Review Use ADRs For Boundaries And Ownership](review-use-adrs-for-boundaries-and-ownership.md)
-- [Review Label Speculation As Inferred Or Unknown](review-label-speculation-as-inferred-or-unknown.md)
+- [Review label speculation as inferred or unknown](review-label-speculation-as-inferred-or-unknown.md)
 - [Martin Fowler: Sacrificial Architecture](https://martinfowler.com/bliki/SacrificialArchitecture.html)
 - [Martin Fowler: Branch By Abstraction](https://martinfowler.com/bliki/BranchByAbstraction.html)

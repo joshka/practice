@@ -1,8 +1,8 @@
-# Spend Human Attention On Ambiguity
+# Spend human attention on ambiguity
 
 ## Metadata
 
-- Name: `Spend Human Attention On Ambiguity`
+- Name: `Spend human attention on ambiguity`
 - ID: `spend-human-attention-on-ambiguity`
 - Summary: Agent throughput can exceed the maintainer's ability to review and steer. Delegate
   execution and inspection, but reserve human attention for ambiguous goals, taste, architecture,

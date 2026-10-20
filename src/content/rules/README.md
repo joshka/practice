@@ -48,48 +48,48 @@ plus a decisive verb and object. Write titles as direct instructions when possib
 
 ## Domains
 
-- [Agent Workflow](agent-workflow/README.md). 26 rules. Agent workflow rules cover objectives,
+- [Agent workflow](agent-workflow/README.md). 26 rules. Agent workflow rules cover objectives,
   scoped capabilities, durable context, review packets, security proof, feedback loops, and concrete
   next choices.
-- [Explicit Boundaries Preserve Correctness](boundary/README.md). 27 rules. Boundary rules cover
+- [Explicit boundaries preserve correctness](boundary/README.md). 27 rules. Boundary rules cover
   parsing, validation policy, explicit inputs, state transitions, provider diagnostics, effect
   boundaries, and external reconciliation.
-- [Change Shape](change-shape/README.md). 13 rules. Change-shape rules cover one-purpose changes,
+- [Change shape](change-shape/README.md). 13 rules. Change-shape rules cover one-purpose changes,
   small follow-ups, generated artifacts, dependency churn, ownership, and structure-versus-behavior
   review boundaries.
-- [Docs Are Contracts](documentation/README.md). 35 rules. Documentation rules cover
+- [Docs are contracts](documentation/README.md). 35 rules. Documentation rules cover
   docs-as-contracts, rendered docs, examples, reviewability, source links, concrete prose, and drift
   checks.
-- [Observability And Failure](observability/README.md). 7 rules. Observability rules cover owned
+- [Observability and failure](observability/README.md). 7 rules. Observability rules cover owned
   logging boundaries, durable failure visibility, diagnostic context, failure states, and safe
   telemetry retention.
-- [Measure Before Optimizing](performance/README.md). 7 rules. Performance rules cover measuring
+- [Measure before optimizing](performance/README.md). 7 rules. Performance rules cover measuring
   before optimizing, benchmark provenance, single-run skepticism, correctness gates, and the cost of
   complexity or dependency churn.
-- [Local Reasoning And Refactoring](refactoring/README.md). 9 rules. Refactoring rules cover local
+- [Local reasoning and refactoring](refactoring/README.md). 9 rules. Refactoring rules cover local
   reasoning, concept helpers, visible linear stories, side-effect loops, whitespace paragraphs, DRY
   pressure, and weak abstractions.
-- [Private Context And Review Artifacts](review/README.md). 11 rules. Review artifact rules cover
+- [Private context and review artifacts](review/README.md). 11 rules. Review artifact rules cover
   issue slices, PR narratives, ADRs, speculation labels, thread ownership, and artifacts that stand
   alone without private session context.
-- [Rust API And Crate Shape](rust/README.md). 90 rules. Rust rules cover public API shape, crate
+- [Rust API and crate shape](rust/README.md). 90 rules. Rust rules cover public API shape, crate
   layout, dependency policy, docs.rs behavior, feature flags, public errors, unsafe boundaries, and
   release checks.
-- [Source And Context Hygiene](source/README.md). 4 rules. Source hygiene rules cover turning mined
+- [Source and context hygiene](source/README.md). 4 rules. Source hygiene rules cover turning mined
   lessons into public guidance, preferring stable sources, keeping binary artifacts out of history,
   and keeping local or private context out of shared artifacts.
-- [Tests Should Explain Failures](test-failures/README.md). 3 rules. Test-failure rules cover
+- [Tests should explain failures](test-failures/README.md). 3 rules. Test-failure rules cover
   assertion shape and failure output that help humans and agents diagnose the failing case quickly.
-- [Testing And Verification](testing/README.md). 22 rules. Testing rules cover risk-based
+- [Testing and verification](testing/README.md). 22 rules. Testing rules cover risk-based
   validation, doctests, feature matrices, deterministic tests, parser samples, command construction,
   dependency floors, and regressions.
-- [JJ Topology And Source Control](vcs/README.md). 28 rules. VCS rules cover jj-first source-control
+- [JJ topology and source control](vcs/README.md). 28 rules. VCS rules cover jj-first source-control
   work, remote topology, operation-log recovery, workspaces, publication safety, and file-tracking
   decisions.
 
 ## All Rules
 
-### Agent Workflow
+### Agent workflow
 
 - [`AGENT-BUDGET-FOR-FEEDBACK-LOOPS`](agent-workflow/agent-budget-for-feedback-loops.md). Reserve
   enough time and tokens for checks, failure inspection, and handoff proof. Planning for the
@@ -169,7 +169,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Use staged rollout, shadowing, dry runs, or partial publication for changes that can fail only
   under real conditions. Canaries reduce blast radius while evidence accumulates.
 
-### Explicit Boundaries Preserve Correctness
+### Explicit boundaries preserve correctness
 
 - [`BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`](boundary/boundary-avoid-global-mutable-state.md). Keep
   shared process state behind explicit owners, handles, synchronization, and reset policy. This
@@ -280,7 +280,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   keyboard input, and varied fonts or accessibility settings. Advanced styling can remain opt-in or
   capability-detected after the baseline is readable and usable.
 
-### Change Shape
+### Change shape
 
 - [`CHANGE-AVOID-SPECULATIVE-PUBLIC-API`](change-shape/change-avoid-speculative-public-api.md). Add
   public surfaces only when current or accepted callers need them. Waiting for concrete pressure
@@ -323,7 +323,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   each change around one review question and one reason for existing. Related tests, docs, and
   generated files can travel with it when they support that same purpose.
 
-### Docs Are Contracts
+### Docs are contracts
 
 - [`DOCS-ALIGN-README-AND-CRATE-RUSTDOC`](documentation/docs-align-readme-and-crate-rustdoc.md).
   Keep README and crate-level Rustdoc consistent where users learn setup and supported behavior. Let
@@ -433,7 +433,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   language that carries contracts, commands, evidence, and tradeoffs. Cut marketing, coaching, chat,
   and page narration when they do not explain the system.
 
-### Observability And Failure
+### Observability and failure
 
 - [`OBSERVABILITY-DISTINGUISH-FAILURE-STATES`](observability/observability-distinguish-failure-states.md).
   Preserve status distinctions that change recovery, messaging, metrics, or debugging. Collapsing
@@ -459,7 +459,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Give persistent failures a stable status, error surface, or retry path instead of only an
   ephemeral UI log. Users and maintainers need something actionable after the moment passes.
 
-### Measure Before Optimizing
+### Measure before optimizing
 
 - [`PERF-AVOID-SINGLE-RUN-CONCLUSIONS`](performance/perf-avoid-single-run-conclusions.md). Do not
   land performance conclusions from one short benchmark run. Repeat and contextualize timing
@@ -487,7 +487,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Serialize timing-sensitive benchmarks when their numbers will be used as evidence. Concurrent runs
   compete for shared resources and can make the comparison describe the runner more than the code.
 
-### Local Reasoning And Refactoring
+### Local reasoning and refactoring
 
 - [`REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION`](refactoring/refactoring-align-seams-with-real-variation.md).
   Put abstraction seams where code already varies across backends, policies, protocols, tests, or
@@ -520,7 +520,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Use blank lines to group related statements inside a function before extracting more names.
   Paragraph-like spacing can reveal the local story while avoiding unnecessary helper jumps.
 
-### Private Context And Review Artifacts
+### Private context and review artifacts
 
 - [`REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`](review/review-answer-questions-before-code.md). Answer
   reviewer questions before or alongside the code changes that address them. This keeps intent,
@@ -562,7 +562,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Record durable ownership, API, storage, topology, runtime, or service-boundary decisions in ADRs.
   A decision record gives later contributors a stable tradeoff to affirm, revise, or replace.
 
-### Rust API And Crate Shape
+### Rust API and crate shape
 
 - [`RUST-ADD-BENCHMARKS-FOR-PERFORMANCE-CLAIMS`](rust/rust-add-benchmarks-for-performance-claims.md).
   Use benchmarks when Rust changes rely on speed, allocation, or hot-path claims. The evidence makes
@@ -855,7 +855,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   state caller-facing behavior, invariants, failures, side effects, and compatibility promises.
   Leave private implementation detail in comments unless it helps maintain the public contract.
 
-### Source And Context Hygiene
+### Source and context hygiene
 
 - [`SOURCE-GENERALIZE-PROJECT-SPECIFIC-RULES`](source/source-generalize-project-specific-rules.md).
   Extract the portable failure mode before promoting local lessons into shared guidance. Provider,
@@ -872,7 +872,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   durable guidance in sources readers can inspect, compare, and challenge. Use links to clarify
   judgment, not to decorate rules or depend on private memory.
 
-### Tests Should Explain Failures
+### Tests should explain failures
 
 - [`TEST-AVOID-OPAQUE-BOOLEAN-ASSERTIONS`](test-failures/test-avoid-opaque-boolean-assertions.md).
   Prefer comparisons or richer assertions when a predicate hides state needed to diagnose the
@@ -884,7 +884,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   assertions that diagnose different behaviors when one failure would hide another. Keep checks
   together only when they express one contract more clearly as a group.
 
-### Testing And Verification
+### Testing and verification
 
 - [`TEST-CHECK-IMPORTANT-FEATURE-COMBINATIONS`](testing/test-check-important-feature-combinations.md).
   Exercise default, disabled-default, all-feature, and important feature-pair builds. Feature flags
@@ -953,7 +953,7 @@ plus a decisive verb and object. Write titles as direct instructions when possib
   Add a test that fails before the bug fix and protects the repaired contract. Skip only when
   reproduction is impractical, and then record the closest trustworthy validation.
 
-### JJ Topology And Source Control
+### JJ topology and source control
 
 - [`VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`](vcs/vcs-ask-before-repairing-jj-aliases.md). Ask before
   changing jj aliases when they disagree with the observed repository topology. Aliases encode

@@ -1,8 +1,8 @@
-# Rust Avoid Vague Docs And Generic Examples
+# Rust avoid vague docs and generic examples
 
 ## Metadata
 
-- Name: `Avoid Vague Docs and Generic Examples`
+- Name: `Avoid vague docs and generic examples`
 - ID: `RUST-AVOID-VAGUE-DOCS-AND-GENERIC-EXAMPLES`
 - Summary: Write Rustdoc and examples around real caller scenarios, not generic claims of
   usefulness. Concrete examples expose ownership, errors, features, and lifecycle expectations.

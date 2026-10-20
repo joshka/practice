@@ -1,8 +1,8 @@
-# Agent Prefer In Distribution Tools
+# Agent prefer in distribution tools
 
 ## Metadata
 
-- Name: `Prefer In-Distribution Tools`
+- Name: `Prefer in-distribution tools`
 - ID: `AGENT-PREFER-IN-DISTRIBUTION-TOOLS`
 - Summary: Use standard project commands, supported CLIs, and documented workflows before inventing
   ad hoc tool paths. Familiar tools reduce misuse and make agent output easier to rerun.

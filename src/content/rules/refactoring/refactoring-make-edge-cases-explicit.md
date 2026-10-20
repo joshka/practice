@@ -1,8 +1,8 @@
-# Refactoring Make Edge Cases Explicit
+# Refactoring make edge cases explicit
 
 ## Metadata
 
-- Name: `Make Edge Cases Explicit`
+- Name: `Make edge cases explicit`
 - ID: `REFACTORING-MAKE-EDGE-CASES-EXPLICIT`
 - Summary: Name boundary behavior near the branch, calculation, or return that depends on it. This
   makes policy reviewable and shows when stronger types should prevent invalid states instead.

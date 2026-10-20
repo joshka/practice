@@ -1,9 +1,9 @@
-# VCS Use Git Formatted Diffs For Agents
+# VCS use Git formatted diffs for agents
 
 ## Metadata
 
 - ID: `VCS-USE-GIT-FORMATTED-DIFFS-FOR-AGENTS`
-- Name: `Use Git-Formatted Diffs for Agents`
+- Name: `Use Git-formatted diffs for agents`
 - Summary: Prefer `jj diff --git` when agents or patch-oriented tools need diff text.
   Git patch format preserves hunks and paths in a shape those consumers can parse reliably.
 - Status: `reviewed`

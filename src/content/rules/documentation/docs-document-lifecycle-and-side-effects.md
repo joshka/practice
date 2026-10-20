@@ -1,8 +1,8 @@
-# Docs Document Lifecycle And Side Effects
+# Docs document lifecycle and side effects
 
 ## Metadata
 
-- Name: `Document Lifecycle and Side Effects`
+- Name: `Document lifecycle and side effects`
 - ID: `DOCS-DOCUMENT-LIFECYCLE-AND-SIDE-EFFECTS`
 - Summary: `Document caller-visible lifecycle, ownership, platform, feature, and side-effect
   obligations. Skip internal narration, but make operational responsibilities clear.`

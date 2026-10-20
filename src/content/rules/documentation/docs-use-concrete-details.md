@@ -1,8 +1,8 @@
-# Docs Use Concrete Details
+# Docs use concrete details
 
 ## Metadata
 
-- Name: `Use Concrete Details`
+- Name: `Use concrete details`
 - ID: `DOCS-USE-CONCRETE-DETAILS`
 - Summary: `Name real commands, paths, defaults, types, examples, and work areas when they clarify
   scope. Concrete detail removes guesswork without overloading prose with incidental facts.`
@@ -45,7 +45,7 @@ flag abstract repeated rationale for deeper review.
 ## References
 
 - [Principle: Docs Are Contracts](../../principles/docs-are-contracts.md)
-- [Docs Name Destination Not Direction](docs-name-destination-not-direction.md)
+- [Docs name destination not direction](docs-name-destination-not-direction.md)
 - [Diataxis: how to use Diataxis](https://diataxis.fr/how-to-use-diataxis/)
 - [Rustdoc: how to write
   documentation](https://doc.rust-lang.org/rustdoc/how-to-write-documentation.html)

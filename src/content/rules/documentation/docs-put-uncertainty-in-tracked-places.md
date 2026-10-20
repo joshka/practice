@@ -1,8 +1,8 @@
-# Docs Put Uncertainty In Tracked Places
+# Docs put uncertainty in tracked places
 
 ## Metadata
 
-- Name: `Put Uncertainty in Tracked Places`
+- Name: `Put uncertainty in tracked places`
 - ID: `DOCS-PUT-UNCERTAINTY-IN-TRACKED-PLACES`
 - Summary: `Keep user docs focused on current truth and move unresolved direction to issues, ADRs,
   or roadmaps. Track speculation where it can be decided instead of implying a promise.`

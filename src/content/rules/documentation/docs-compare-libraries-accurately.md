@@ -1,8 +1,8 @@
-# Docs Compare Libraries Accurately
+# Docs compare libraries accurately
 
 ## Metadata
 
-- Name: `Compare Libraries Accurately`
+- Name: `Compare libraries accurately`
 - ID: `DOCS-COMPARE-LIBRARIES-ACCURATELY`
 - Summary: `Check current upstream behavior before comparing nearby libraries or crates. Charitable,
   source-backed comparisons preserve trust while still helping users choose.`

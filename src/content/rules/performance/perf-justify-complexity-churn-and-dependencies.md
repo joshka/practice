@@ -1,8 +1,8 @@
-# Perf Justify Complexity Churn And Dependencies
+# Perf justify complexity churn and dependencies
 
 ## Metadata
 
-- Name: `Justify Complexity, Churn, and Dependencies`
+- Name: `Justify complexity, churn, and dependencies`
 - ID: `PERF-JUSTIFY-COMPLEXITY-CHURN-AND-DEPENDENCIES`
 - Summary: Explain why a performance win justifies added complexity, churn, unsafe code, caching,
   or dependencies. Measured speedups still need to pay for the maintenance cost every future reader

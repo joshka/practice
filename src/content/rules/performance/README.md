@@ -1,4 +1,4 @@
-# Measure Before Optimizing
+# Measure before optimizing
 
 Performance rules cover measuring before optimizing, benchmark provenance, single-run skepticism,
 correctness gates, and the cost of complexity or dependency churn.

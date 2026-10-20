@@ -1,8 +1,8 @@
-# Agent Isolate Workspaces By Task
+# Agent isolate workspaces by task
 
 ## Metadata
 
-- Name: `Isolate Workspaces by Task`
+- Name: `Isolate workspaces by task`
 - ID: `AGENT-ISOLATE-WORKSPACES-BY-TASK`
 - Summary: Put separable or parallel agent work in its own workspace or source-control lane.
   Isolation keeps diffs, validation, and ownership clear when multiple changes are in flight.

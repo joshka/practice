@@ -1,8 +1,8 @@
-# Rust Document Scheduling For Long Async
+# Rust document scheduling for long async
 
 ## Metadata
 
-- Name: `Document Scheduling for Long Async Work`
+- Name: `Document scheduling for long async work`
 - ID: `RUST-DOCUMENT-SCHEDULING-FOR-LONG-ASYNC`
 - Summary: Explain executor, cancellation, blocking, and fairness expectations for async work that
   can run long. Callers need those constraints to avoid starvation and runtime surprises.

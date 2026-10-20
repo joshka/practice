@@ -1,8 +1,8 @@
-# Docs Review Correctness And Risk First
+# Docs review correctness and risk first
 
 ## Metadata
 
-- Name: `Review Correctness and Risk First`
+- Name: `Review correctness and risk first`
 - ID: `DOCS-REVIEW-CORRECTNESS-AND-RISK-FIRST`
 - Summary: `Lead documentation review with false contracts, drift, operability, and unsupported
   claims before style polish. This separates blocking risk from wording cleanup.`
@@ -48,6 +48,6 @@ support-matrix checks, severity labels, and review packets that list validation 
 
 ## References
 
-- [Docs Treat Docs As Contracts](docs-treat-docs-as-contracts.md)
-- [Docs Verify Commands Paths And Links](docs-verify-commands-paths-and-links.md)
+- [Docs treat docs as contracts](docs-treat-docs-as-contracts.md)
+- [Docs verify commands paths and links](docs-verify-commands-paths-and-links.md)
 - [Google Engineering Practices: What to look for in a code review](https://google.github.io/eng-practices/review/reviewer/looking-for.html)

@@ -1,8 +1,8 @@
-# Boundary Name Lifecycle Transitions
+# Boundary name lifecycle transitions
 
 ## Metadata
 
-- Name: `Name Lifecycle Transitions`
+- Name: `Name lifecycle transitions`
 - ID: `BOUNDARY-NAME-LIFECYCLE-TRANSITIONS`
 - Summary: Model creation, activation, cancellation, teardown, reload, and promotion as named
   operations when they carry different invariants. This keeps ordering, cleanup, retry, and recovery

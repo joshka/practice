@@ -1,8 +1,8 @@
-# Garbage Collect Agent Drift
+# Garbage collect agent drift
 
 ## Metadata
 
-- Name: `Garbage Collect Agent Drift`
+- Name: `Garbage collect agent drift`
 - ID: `garbage-collect-agent-drift`
 - Summary: Agent-generated notes, plans, and assumptions can outlive their usefulness and mislead
   later work. Periodically remove, update, or promote them so durable guidance stays current and

@@ -1,4 +1,4 @@
-# Measure Before Optimizing
+# Measure before optimizing
 
 Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.

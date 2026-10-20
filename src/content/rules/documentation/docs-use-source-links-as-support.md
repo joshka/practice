@@ -1,8 +1,8 @@
-# Docs Use Source Links As Support
+# Docs use source links as support
 
 ## Metadata
 
-- Name: `Use Source Links as Support`
+- Name: `Use source links as support`
 - ID: `DOCS-USE-SOURCE-LINKS-AS-SUPPORT`
 - Summary: `Use references to verify, frame, or contrast local guidance instead of supplying the
   wording. This keeps the repo voice original while still making claims checkable.`

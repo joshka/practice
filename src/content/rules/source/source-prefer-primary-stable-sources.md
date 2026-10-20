@@ -1,8 +1,8 @@
-# Source Prefer Primary Stable Sources
+# Source prefer primary stable sources
 
 ## Metadata
 
-- Name: `Prefer Primary Stable Sources`
+- Name: `Prefer primary stable sources`
 - ID: `SOURCE-PREFER-PRIMARY-STABLE-SOURCES`
 - Summary: Anchor durable guidance in sources readers can inspect, compare, and challenge. Use links
   to clarify judgment, not to decorate rules or depend on private memory.

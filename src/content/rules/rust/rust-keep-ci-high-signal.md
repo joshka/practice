@@ -1,8 +1,8 @@
-# Rust Keep Ci High Signal
+# Rust keep ci high signal
 
 ## Metadata
 
-- Name: `Keep CI High Signal`
+- Name: `Keep CI high signal`
 - ID: `RUST-KEEP-CI-HIGH-SIGNAL`
 - Summary: Keep required Rust checks strict, fast, deterministic, and actionable. Slow or flaky
   ritual trains maintainers to ignore failures while real drift accumulates.

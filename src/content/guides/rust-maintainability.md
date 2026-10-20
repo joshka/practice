@@ -1,8 +1,8 @@
-# Rust Maintainability
+# Rust maintainability
 
 ## Metadata
 
-- Name: `Rust Maintainability`
+- Name: `Rust maintainability`
 - ID: `rust-maintainability`
 - Summary: Rust maintainability guidance applies the repo's software-change preferences to Rust
   code, APIs, modules, errors, tests, dependencies, documentation, and release risk. It favors Rust
@@ -17,8 +17,8 @@
 This guide applies the repo's software-change preferences to Rust code. Prefer Rust that is easy to
 read locally, hard to misuse, and honest about behavior, performance, and error boundaries.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md) and
-[Code Shape](code-shape.md), not instead of them.
+Use this guide with [Software change preferences](software-change-preferences.md) and
+[Code shape](code-shape.md), not instead of them.
 
 ## Core Preference
 

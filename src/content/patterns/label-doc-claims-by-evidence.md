@@ -1,8 +1,8 @@
-# Label Doc Claims By Evidence
+# Label doc claims by evidence
 
 ## Metadata
 
-- Name: `Label Doc Claims By Evidence`
+- Name: `Label doc claims by evidence`
 - ID: `label-doc-claims-by-evidence`
 - Summary: Documentation loses trust when speculation, observed behavior, policy, and verified
   facts look the same. Label claims by their evidence level so readers know what can be relied on

@@ -1,8 +1,8 @@
-# Docs Keep Markdown Lintable
+# Docs keep Markdown lintable
 
 ## Metadata
 
-- Name: `Keep Markdown Lintable`
+- Name: `Keep Markdown lintable`
 - ID: `DOCS-KEEP-MARKDOWN-LINTABLE`
 - Summary: `Use project Markdown style so formatting stays enforceable and review noise stays low.
   Treat lint exceptions as intentional local choices, not accumulated drift.`

@@ -1,8 +1,8 @@
-# Preserve Intent Over Literalism
+# Preserve intent over literalism
 
 ## Metadata
 
-- Name: `Preserve Intent Over Literalism`
+- Name: `Preserve intent over literalism`
 - ID: `preserve-intent-over-literalism`
 - Summary: Literal compliance can violate the user's actual goal when a request touches risky,
   privileged, or externally visible actions. Infer the safe operating intent and stop when policy,

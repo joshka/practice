@@ -1,8 +1,8 @@
-# Agent Distill From Blessed Artifacts
+# Agent distill from blessed artifacts
 
 ## Metadata
 
-- Name: `Distill From Blessed Artifacts`
+- Name: `Distill from blessed artifacts`
 - ID: `AGENT-DISTILL-FROM-BLESSED-ARTIFACTS`
 - Summary: `Study accepted code, docs, tests, and reviews first. Adapt local convention to this task.`
 - Related: `distill-from-blessed-artifacts, follow-local-conventions,

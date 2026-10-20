@@ -1,8 +1,8 @@
-# Change Sync Generated Artifacts
+# Change sync generated artifacts
 
 ## Metadata
 
-- Name: `Sync Generated Artifacts`
+- Name: `Sync generated artifacts`
 - ID: `CHANGE-SYNC-GENERATED-ARTIFACTS`
 - Summary: Update checked-in generated outputs when their source inputs change and they are part of
   review. Keeping them aligned prevents consumers from seeing stale artifacts.

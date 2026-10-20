@@ -1,8 +1,8 @@
-# Boundary Separate Pure Core From Effects
+# Boundary separate pure core from effects
 
 ## Metadata
 
-- Name: `Separate Pure Core From Effects`
+- Name: `Separate pure core from effects`
 - ID: `BOUNDARY-SEPARATE-PURE-CORE-FROM-EFFECTS`
 - Summary: Move domain computation away from rendering, I/O, mutation, and global state when effects
   obscure the decision being tested. The split gives tests a stable surface, but should be skipped

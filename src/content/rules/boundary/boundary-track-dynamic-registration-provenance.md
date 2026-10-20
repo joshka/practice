@@ -1,8 +1,8 @@
-# Boundary Track Dynamic Registration Provenance
+# Boundary track dynamic registration provenance
 
 ## Metadata
 
-- Name: `Track Dynamic Registration Provenance`
+- Name: `Track dynamic registration provenance`
 - ID: `BOUNDARY-TRACK-DYNAMIC-REGISTRATION-PROVENANCE`
 - Summary: Store stable source names, versions, paths, owners, or generated identifiers for
   extension, guest, generated-code, and config registrations. Provenance makes conflicts and

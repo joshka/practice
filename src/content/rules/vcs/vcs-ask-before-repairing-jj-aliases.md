@@ -1,9 +1,9 @@
-# VCS Ask Before Repairing JJ Aliases
+# VCS ask before repairing JJ aliases
 
 ## Metadata
 
 - ID: `VCS-ASK-BEFORE-REPAIRING-JJ-ALIASES`
-- Name: `Ask Before Repairing JJ Aliases`
+- Name: `Ask before repairing JJ aliases`
 - Summary: Ask before changing jj aliases when they disagree with the observed repository topology.
   Aliases encode workflow policy, so silent repairs can alter future user commands.
 - Status: `reviewed`

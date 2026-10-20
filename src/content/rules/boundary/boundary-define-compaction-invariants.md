@@ -1,8 +1,8 @@
-# Boundary Define Compaction Invariants
+# Boundary define compaction invariants
 
 ## Metadata
 
-- Name: `Define Compaction Invariants`
+- Name: `Define compaction invariants`
 - ID: `BOUNDARY-DEFINE-COMPACTION-INVARIANTS`
 - Summary: State the budget and cut-point rules before deleting, summarizing, or moving context.
   Explicit invariants make compaction reviewable and reduce the risk that later work treats lossy or

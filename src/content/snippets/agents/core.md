@@ -1,8 +1,8 @@
-# Core Agent Instructions
+# Core agent instructions
 
 ## Metadata
 
-- Name: `Core Agent Instructions`
+- Name: `Core agent instructions`
 - ID: `agent-core-instructions`
 - Summary: `Broad baseline instructions for coding agents working in repositories that adopt these
   development preferences. The snippet keeps AGENTS.md short while routing agents to canonical

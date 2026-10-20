@@ -1,8 +1,8 @@
-# Refactoring Extract Concept Helpers
+# Refactoring extract concept helpers
 
 ## Metadata
 
-- Name: `Extract Concept Helpers`
+- Name: `Extract concept helpers`
 - ID: `REFACTORING-EXTRACT-CONCEPT-HELPERS`
 - Summary: Extract helpers when the new function names a real concept boundary with a stable
   purpose. Hiding a few lines behind a weak name adds a jump without reducing the reader's burden.

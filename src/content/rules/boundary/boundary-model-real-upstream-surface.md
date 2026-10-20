@@ -1,8 +1,8 @@
-# Boundary Model Real Upstream Surface
+# Boundary model real upstream surface
 
 ## Metadata
 
-- Name: `Model Real Upstream Surface`
+- Name: `Model real upstream surface`
 - ID: `BOUNDARY-MODEL-REAL-UPSTREAM-SURFACE`
 - Summary: Shape local integration APIs around the provider's actual records, pages, permissions,
   rate limits, and consistency behavior. Wrappers may simplify common paths, but they should not

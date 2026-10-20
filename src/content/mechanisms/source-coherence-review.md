@@ -1,8 +1,8 @@
-# Source Coherence Review
+# Source coherence review
 
 ## Metadata
 
-- Name: `Source Coherence Review`
+- Name: `Source coherence review`
 - ID: `source-coherence-review`
 - Summary: Source-coherence review inventories named declarations separately from behavior, maps
   both inventories in both directions, and inspects the declaration outline before implementation
@@ -31,13 +31,13 @@ place.
 
 ## Supported Guidance
 
-- [Strengthen Cohesion](../patterns/strengthen-cohesion.md)
-- [Name Coupling](../patterns/name-coupling.md)
-- [Keep One Authoritative Owner Per Fact](../rules/boundary/boundary-keep-one-authoritative-owner-per-fact.md)
-- [Keep Concepts Coherent](../rules/rust/rust-keep-concepts-coherent.md)
-- [Avoid Tiny Module Mazes](../rules/rust/rust-avoid-tiny-module-mazes.md)
-- [Order Code For Reading](../rules/rust/rust-order-code-for-reading.md)
-- [Keep Linear Story Visible](../rules/refactoring/refactoring-keep-linear-story-visible.md)
+- [Strengthen cohesion](../patterns/strengthen-cohesion.md)
+- [Name coupling](../patterns/name-coupling.md)
+- [Keep one authoritative owner per fact](../rules/boundary/boundary-keep-one-authoritative-owner-per-fact.md)
+- [Keep concepts coherent](../rules/rust/rust-keep-concepts-coherent.md)
+- [Avoid tiny module mazes](../rules/rust/rust-avoid-tiny-module-mazes.md)
+- [Order code for reading](../rules/rust/rust-order-code-for-reading.md)
+- [Keep linear story visible](../rules/refactoring/refactoring-keep-linear-story-visible.md)
 
 ## Declaration Outline
 

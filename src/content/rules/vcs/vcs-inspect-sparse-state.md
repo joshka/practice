@@ -1,9 +1,9 @@
-# VCS Inspect Sparse State
+# VCS inspect sparse state
 
 ## Metadata
 
 - ID: `VCS-INSPECT-SPARSE-STATE`
-- Name: `Inspect Sparse State`
+- Name: `Inspect sparse state`
 - Summary: Check sparse checkout state before treating a missing path as absent from history.
   Sparse patterns can hide files, so inspection prevents recreating or editing the wrong path.
 - Status: `reviewed`

@@ -1,8 +1,8 @@
-# Documentation Workflow
+# Documentation workflow
 
 ## Metadata
 
-- Name: `Documentation Workflow`
+- Name: `Documentation workflow`
 - ID: `documentation-workflow`
 - Summary: Documentation-workflow guidance covers deciding what documentation work belongs in a
   change, how deep the edit should go, and how review-facing prose should carry evidence. It keeps

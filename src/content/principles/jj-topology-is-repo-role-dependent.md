@@ -1,8 +1,8 @@
-# JJ Topology Is Repo Role Dependent
+# JJ topology is repo role dependent
 
 ## Metadata
 
-- Name: `JJ Topology Is Repo Role Dependent`
+- Name: `JJ topology is repo role dependent`
 - ID: `jj-topology-is-repo-role-dependent`
 - Summary: `JJ publication behavior depends on whether the checkout is owned, maintained, or
   fork-based. Align remotes, bookmarks, trunk, and GitHub handoff with that role before mutating

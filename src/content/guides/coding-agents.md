@@ -1,8 +1,8 @@
-# Coding Agents
+# Coding agents
 
 ## Metadata
 
-- Name: `Coding Agents`
+- Name: `Coding agents`
 - ID: `coding-agents`
 - Summary: Coding-agent guidance covers task setup, repo-owned context, tools, workspaces,
   verification, handoff proof, feedback loops, and maintainer review flow. It treats agents as
@@ -17,7 +17,7 @@
 This guide covers agent-task setup, `AGENTS.md` guidance, agent-output review, and decisions that
 should become tooling instead of another prompt.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md). Agent work still
+Use this guide with [Software change preferences](software-change-preferences.md). Agent work still
 needs small reviewable chunks, honest verification, and careful working-copy ownership.
 
 ## Core Preference

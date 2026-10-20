@@ -1,8 +1,8 @@
-# Rust Validate Package Contents Before Release
+# Rust validate package contents before release
 
 ## Metadata
 
-- Name: `Validate Package Contents Before Release`
+- Name: `Validate package contents before release`
 - ID: `RUST-VALIDATE-PACKAGE-CONTENTS-BEFORE-RELEASE`
 - Summary: Inspect and build the package users will receive, not just the repository checkout. This
   catches missing assets, accidental inclusions, README drift, and include/exclude mistakes before

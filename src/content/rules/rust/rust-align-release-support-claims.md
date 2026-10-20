@@ -1,8 +1,8 @@
-# Rust Align Release Support Claims
+# Rust align release support claims
 
 ## Metadata
 
-- Name: `Align Release Support Claims`
+- Name: `Align release support claims`
 - ID: `RUST-ALIGN-RELEASE-SUPPORT-CLAIMS`
 - Summary: Keep crate metadata, docs, changelogs, and support statements saying the same thing. The
   alignment helps downstream users know which compatibility contract to trust.

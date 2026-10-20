@@ -1,8 +1,8 @@
-# Make State Transitions Explicit
+# Make state transitions explicit
 
 ## Metadata
 
-- Name: `Make State Transitions Explicit`
+- Name: `Make state transitions explicit`
 - ID: `make-state-transitions-explicit`
 - Summary: Lifecycle rules become fragile when status fields, timestamps, events, and validation
   checks are coordinated by hand. Give meaningful transitions a named owner that holds the

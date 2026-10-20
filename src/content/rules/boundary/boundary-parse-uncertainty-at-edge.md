@@ -1,8 +1,8 @@
-# Boundary Parse Uncertainty At Edge
+# Boundary parse uncertainty at edge
 
 ## Metadata
 
-- Name: `Parse Uncertainty At Edge`
+- Name: `Parse uncertainty at edge`
 - ID: `BOUNDARY-PARSE-UNCERTAINTY-AT-EDGE`
 - Summary: Parse and validate raw strings, JSON, CLI args, provider responses, and user input at
   the boundary before passing values inward. Core logic receives typed invariants, while

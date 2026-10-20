@@ -1,8 +1,8 @@
-# Boundary Avoid Global Mutable State
+# Boundary avoid global mutable state
 
 ## Metadata
 
-- Name: `Avoid Global Mutable State`
+- Name: `Avoid global mutable state`
 - ID: `BOUNDARY-AVOID-GLOBAL-MUTABLE-STATE`
 - Summary: Keep shared process state behind explicit owners, handles, synchronization, and reset
   policy. This preserves test isolation and lifecycle reasoning while still allowing deliberate

@@ -1,8 +1,8 @@
-# Use Guard Clause
+# Use guard clause
 
 ## Metadata
 
-- Name: `Use Guard Clause`
+- Name: `Use guard clause`
 - ID: `use-guard-clause`
 - Summary: The normal path is harder to see when the rest of a routine is indented under a
   precondition or failure case. Exit early for boring gates so the ordinary behavior stays flat,

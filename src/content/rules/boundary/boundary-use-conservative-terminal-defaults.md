@@ -1,8 +1,8 @@
-# Boundary Use Conservative Terminal Defaults
+# Boundary use conservative terminal defaults
 
 ## Metadata
 
-- Name: `Use Conservative Terminal Defaults`
+- Name: `Use conservative terminal defaults`
 - ID: `BOUNDARY-USE-CONSERVATIVE-TERMINAL-DEFAULTS`
 - Summary: Choose first-run terminal behavior that works with limited color, small viewports,
   ordinary keyboard input, and varied fonts or accessibility settings. Advanced styling can remain

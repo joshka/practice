@@ -1,8 +1,8 @@
-# Write Docs As Contracts
+# Write docs as contracts
 
 ## Metadata
 
-- Name: `Write Docs As Contracts`
+- Name: `Write docs as contracts`
 - ID: `write-docs-as-contracts`
 - Summary: Behavior and obligations become surprising when they are only discoverable by reading
   implementation details. Treat docs as part of the change surface, updating contracts and rationale

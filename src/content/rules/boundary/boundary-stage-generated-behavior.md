@@ -1,8 +1,8 @@
-# Boundary Stage Generated Behavior
+# Boundary stage generated behavior
 
 ## Metadata
 
-- Name: `Stage Generated Behavior`
+- Name: `Stage generated behavior`
 - ID: `BOUNDARY-STAGE-GENERATED-BEHAVIOR`
 - Summary: Validate generated, reloadable, or plugin-provided behavior in a staging path before
   promoting it over known-good behavior. Staging adds recovery cost only where runtime-loaded or

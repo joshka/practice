@@ -1,8 +1,8 @@
-# Agent Encode Nonfunctional Requirements
+# Agent encode nonfunctional requirements
 
 ## Metadata
 
-- Name: `Encode Nonfunctional Requirements`
+- Name: `Encode nonfunctional requirements`
 - ID: `AGENT-ENCODE-NONFUNCTIONAL-REQUIREMENTS`
 - Summary: Put invisible constraints such as security, accessibility, latency, and compatibility
   near the task. Encoding them upfront makes those requirements part of the implementation target.

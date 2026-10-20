@@ -1,8 +1,8 @@
-# Agent Keep Durable Context On Disk
+# Agent keep durable context on disk
 
 ## Metadata
 
-- Name: `Keep Durable Context on Disk`
+- Name: `Keep durable context on disk`
 - ID: `AGENT-KEEP-DURABLE-CONTEXT-ON-DISK`
 - Summary: Store project facts, accepted decisions, and long-lived operating notes in files instead
   of relying on chat context. Durable context makes future sessions and reviews resumable.

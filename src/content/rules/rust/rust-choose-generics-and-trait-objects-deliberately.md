@@ -1,8 +1,8 @@
-# Rust Choose Generics And Trait Objects Deliberately
+# Rust choose generics and trait objects deliberately
 
 ## Metadata
 
-- Name: `Choose Generics and Trait Objects Deliberately`
+- Name: `Choose generics and trait objects deliberately`
 - ID: `RUST-CHOOSE-GENERICS-AND-TRAIT-OBJECTS-DELIBERATELY`
 - Summary: Pick generics, stored type parameters, or trait objects for the variation they actually
   model. The choice affects compile cost, object safety, lifetimes, and caller ergonomics.

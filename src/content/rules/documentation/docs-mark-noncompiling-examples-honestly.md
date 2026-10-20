@@ -1,8 +1,8 @@
-# Docs Mark Noncompiling Examples Honestly
+# Docs mark noncompiling examples honestly
 
 ## Metadata
 
-- Name: `Mark Noncompiling Examples Honestly`
+- Name: `Mark noncompiling examples honestly`
 - ID: `DOCS-MARK-NONCOMPILING-EXAMPLES-HONESTLY`
 - Summary: `Label examples that are sketches, partial snippets, or intentionally not run. Honest
   labels keep readers from treating illustrative code as a supported copy-paste contract.`

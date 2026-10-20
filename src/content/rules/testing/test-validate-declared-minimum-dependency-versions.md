@@ -1,9 +1,9 @@
-# Test Validate Declared Minimum Dependency Versions
+# Test validate declared minimum dependency versions
 
 ## Metadata
 
 - ID: `TEST-VALIDATE-DECLARED-MINIMUM-DEPENDENCY-VERSIONS`
-- Name: `Validate Declared Minimum Dependency Versions`
+- Name: `Validate declared minimum dependency versions`
 - Summary: Check that declared minimum dependency versions still build the supported behavior.
   Lockfile tests can hide newer API usage, so use targeted minimal-version checks when needed.
 - Status: `reviewed`

@@ -1,8 +1,8 @@
-# Rust Format Docs And Comments Consistently
+# Rust format docs and comments consistently
 
 ## Metadata
 
-- Name: `Format Docs and Comments Consistently`
+- Name: `Format docs and comments consistently`
 - ID: `RUST-FORMAT-DOCS-AND-COMMENTS-CONSISTENTLY`
 - Summary: Apply stable formatting to Rustdoc, examples, attributes, and prose comments. Consistent
   source formatting keeps docs readable and prevents noisy future diffs.

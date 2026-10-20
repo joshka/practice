@@ -1,8 +1,8 @@
-# Review Use Adrs For Boundaries And Ownership
+# Review use adrs for boundaries and ownership
 
 ## Metadata
 
-- Name: `Use ADRs for Boundaries and Ownership`
+- Name: `Use ADRs for boundaries and ownership`
 - ID: `REVIEW-USE-ADRS-FOR-BOUNDARIES-AND-OWNERSHIP`
 - Summary: Record durable ownership, API, storage, topology, runtime, or service-boundary decisions
   in ADRs. A decision record gives later contributors a stable tradeoff to affirm, revise, or

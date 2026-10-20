@@ -1,8 +1,8 @@
-# Testing And Benchmarking
+# Testing and benchmarking
 
 ## Metadata
 
-- Name: `Testing And Benchmarking`
+- Name: `Testing and benchmarking`
 - ID: `testing-and-benchmarking`
 - Summary: Test, feature-matrix, fuzzing, property, and benchmark tools should be chosen by risk
   and feedback cost. This mechanism helps match validation depth to the behavior, integration
@@ -22,9 +22,9 @@ real information.
 
 ## Supported Principles
 
-- [Tests Should Explain Failures](../principles/tests-should-explain-failures.md)
-- [Measure Before Optimizing](../principles/measure-before-optimizing.md)
-- [Public API Changes Have Downstream Cost](../principles/public-api-changes-have-downstream-cost.md)
+- [Tests should explain failures](../principles/tests-should-explain-failures.md)
+- [Measure before optimizing](../principles/measure-before-optimizing.md)
+- [Public API changes have downstream cost](../principles/public-api-changes-have-downstream-cost.md)
 
 ## Normal Checks
 

@@ -1,8 +1,8 @@
-# Jujutsu Agent Instructions
+# Jujutsu agent instructions
 
 ## Metadata
 
-- Name: `Jujutsu Agent Instructions`
+- Name: `Jujutsu agent instructions`
 - ID: `agent-jj-instructions`
 - Summary: `Compact source-control instructions for coding agents working in repositories that use
   jujutsu. The snippet covers fresh changes, descriptions, non-interactive commands, recovery,

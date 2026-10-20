@@ -1,8 +1,8 @@
-# Boundary Make Ambient Inputs Explicit
+# Boundary make ambient inputs explicit
 
 ## Metadata
 
-- Name: `Make Ambient Inputs Explicit`
+- Name: `Make ambient inputs explicit`
 - ID: `BOUNDARY-MAKE-AMBIENT-INPUTS-EXPLICIT`
 - Summary: Pass time, randomness, environment, locale, terminal size, network clients, and process
   state through visible inputs when they affect behavior. Injecting only the relevant ambient values

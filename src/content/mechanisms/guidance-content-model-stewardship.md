@@ -1,8 +1,8 @@
-# Guidance Content Model Stewardship
+# Guidance content model stewardship
 
 ## Metadata
 
-- Name: `Guidance Content Model Stewardship`
+- Name: `Guidance content model stewardship`
 - ID: `guidance-content-model-stewardship`
 - Summary: Content-model stewardship keeps guides, rules, patterns, principles, mechanisms,
   references, snippets, and downstream templates in distinct roles. The mechanism combines

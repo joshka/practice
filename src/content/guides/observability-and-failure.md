@@ -1,8 +1,8 @@
-# Observability And Failure
+# Observability and failure
 
 ## Metadata
 
-- Name: `Observability And Failure`
+- Name: `Observability and failure`
 - ID: `observability-and-failure`
 - Summary: Observability and failure guidance covers Rust and service boundaries where failures
   need to be understandable after the fact. It favors structured errors, owned logging boundaries,

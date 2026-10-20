@@ -1,8 +1,8 @@
-# Boundary Give Tools Identity Policy And Limits
+# Boundary give tools identity policy and limits
 
 ## Metadata
 
-- Name: `Give Tools Identity Policy And Limits`
+- Name: `Give tools identity policy and limits`
 - ID: `BOUNDARY-GIVE-TOOLS-IDENTITY-POLICY-AND-LIMITS`
 - Summary: Give effectful callable units typed identity, authorization policy, cancellation, and
   bounded output. The added ceremony is reserved for real tool boundaries where auditability,

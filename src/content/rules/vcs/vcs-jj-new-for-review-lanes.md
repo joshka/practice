@@ -1,9 +1,9 @@
-# VCS JJ New For Review Lanes
+# VCS JJ new for review lanes
 
 ## Metadata
 
 - ID: `VCS-JJ-NEW-FOR-REVIEW-LANES`
-- Name: `JJ New for Review Lanes`
+- Name: `JJ new for review lanes`
 - Summary: Start unrelated review units with `jj new` before edits accumulate.
   Separate changes keep review atomic while leaving later squash or absorb decisions easy.
 - Status: `reviewed`

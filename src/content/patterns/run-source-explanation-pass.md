@@ -1,8 +1,8 @@
-# Run Source Explanation Pass
+# Run source explanation pass
 
 ## Metadata
 
-- Name: `Run Source Explanation Pass`
+- Name: `Run source explanation pass`
 - ID: `run-source-explanation-pass`
 - Summary: Turn a source tree into a self-contained reading environment by recovering its mental
   models, fundamentals, decisions, constraints, and edge cases. Establish the system map before item

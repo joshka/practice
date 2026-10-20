@@ -1,9 +1,9 @@
-# VCS Avoid Interactive JJ In Agent Work
+# VCS avoid interactive JJ in agent work
 
 ## Metadata
 
 - ID: `VCS-AVOID-INTERACTIVE-JJ-IN-AGENT-WORK`
-- Name: `Avoid Interactive JJ in Agent Work`
+- Name: `Avoid interactive JJ in agent work`
 - Summary: Use noninteractive jj commands with explicit messages, targets, and files in agent work.
   Interactive editors, prompts, merge tools, and pagers can hang unattended sessions.
 - Status: `reviewed`

@@ -1,8 +1,8 @@
-# Docs One Dominant Mode Per Page
+# Docs one dominant mode per page
 
 ## Metadata
 
-- Name: `One Dominant Mode per Page`
+- Name: `One dominant mode per page`
 - ID: `DOCS-ONE-DOMINANT-MODE-PER-PAGE`
 - Summary: `Let each page have one primary mode and move competing material behind links. This keeps
   readers from paying for tutorial, reference, explanation, and policy at once.`

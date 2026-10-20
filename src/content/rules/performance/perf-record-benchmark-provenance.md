@@ -1,8 +1,8 @@
-# Perf Record Benchmark Provenance
+# Perf record benchmark provenance
 
 ## Metadata
 
-- Name: `Record Benchmark Provenance`
+- Name: `Record benchmark provenance`
 - ID: `PERF-RECORD-BENCHMARK-PROVENANCE`
 - Summary: Record the commands, inputs, tool versions, build profile, and runner conditions behind
   benchmark numbers. Provenance makes future comparisons meaningful and helps separate real changes

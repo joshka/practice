@@ -1,8 +1,8 @@
-# Boundary Separate Ui And App State
+# Boundary separate ui and app state
 
 ## Metadata
 
-- Name: `Separate UI And App State`
+- Name: `Separate UI and app state`
 - ID: `BOUNDARY-SEPARATE-UI-AND-APP-STATE`
 - Summary: Keep selection, focus, scroll, expansion, and transient input mode separate from
   application-owned data when they change under different rules. The separation prevents rendering

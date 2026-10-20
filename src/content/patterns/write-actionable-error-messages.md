@@ -1,8 +1,8 @@
-# Write Actionable Error Messages
+# Write actionable error messages
 
 ## Metadata
 
-- Name: `Write Actionable Error Messages`
+- Name: `Write actionable error messages`
 - ID: `write-actionable-error-messages`
 - Summary: Accurate error messages can still leave users, operators, callers, or support unable to
   act. Design failure output so the audience can find the attempted operation, affected item, known

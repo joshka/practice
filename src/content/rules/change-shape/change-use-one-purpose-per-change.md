@@ -1,8 +1,8 @@
-# Change Use One Purpose Per Change
+# Change use one purpose per change
 
 ## Metadata
 
-- Name: `Use One Purpose per Change`
+- Name: `Use one purpose per change`
 - ID: `CHANGE-USE-ONE-PURPOSE-PER-CHANGE`
 - Summary: Shape each change around one review question and one reason for existing. Related tests,
   docs, and generated files can travel with it when they support that same purpose.

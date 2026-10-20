@@ -1,8 +1,8 @@
-# Characterize Then Fix
+# Characterize then fix
 
 ## Metadata
 
-- Name: `Characterize Then Fix`
+- Name: `Characterize then fix`
 - ID: `characterize-then-fix`
 - Summary: Before fixing incorrect behavior, add a passing test that records the observed result and
   labels it as known incorrect. Then fix the implementation, update that same expectation to the

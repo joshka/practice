@@ -1,8 +1,8 @@
-# Guidance Generation And Audit
+# Guidance generation and audit
 
 ## Metadata
 
-- Name: `Guidance Generation And Audit`
+- Name: `Guidance generation and audit`
 - ID: `guidance-generation-and-audit`
 - Summary: Generators and audits keep rule indexes, compressed agent snippets, downstream
   templates, and Markdown synchronized. The checks catch recurring drift so review attention stays
@@ -26,9 +26,9 @@ The audit should catch those mechanical issues so review attention stays on judg
 
 ## Supported Principles
 
-- [Agent Instructions Are Operational Controls](../principles/agent-instructions-are-operational-controls.md)
-- [Mechanize Repeated Feedback](../principles/mechanize-repeated-feedback.md)
-- [Private Context Is Not Shared Context](../principles/private-context-is-not-shared-context.md)
+- [Agent instructions are operational controls](../principles/agent-instructions-are-operational-controls.md)
+- [Mechanize repeated feedback](../principles/mechanize-repeated-feedback.md)
+- [Private context is not shared context](../principles/private-context-is-not-shared-context.md)
 
 ## Checks
 

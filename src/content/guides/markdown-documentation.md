@@ -1,8 +1,8 @@
-# Markdown And Documentation
+# Markdown and documentation
 
 ## Metadata
 
-- Name: `Markdown And Documentation`
+- Name: `Markdown and documentation`
 - ID: `markdown-documentation`
 - Summary: Markdown and documentation guidance covers lintable Markdown, reader paths, page modes,
   Rustdoc, examples, references, and reusable guidance style. It favors current behavior,
@@ -18,7 +18,7 @@ This guide captures how documentation should be shaped in this repo and in downs
 guidance. Prefer docs that reduce rediscovery, carry contracts clearly, and stay easy to lint,
 review, and reuse.
 
-Use this guide with [Software Change Preferences](software-change-preferences.md).
+Use this guide with [Software change preferences](software-change-preferences.md).
 
 ## Markdown Style
 

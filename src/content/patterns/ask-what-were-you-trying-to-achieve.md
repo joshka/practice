@@ -1,8 +1,8 @@
-# Ask What Were You Trying To Achieve
+# Ask what were you trying to achieve
 
 ## Metadata
 
-- Name: `Ask What Were You Trying To Achieve`
+- Name: `Ask what were you trying to achieve`
 - ID: `ask-what-were-you-trying-to-achieve`
 - Summary: `Recover the original intent before judging a surprising design. Separating purpose
   from mechanism makes it easier to preserve useful constraints while replacing stale structure.`

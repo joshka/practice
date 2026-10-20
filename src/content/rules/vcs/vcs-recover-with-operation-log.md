@@ -1,9 +1,9 @@
-# VCS Recover With Operation Log
+# VCS recover with operation log
 
 ## Metadata
 
 - ID: `VCS-RECOVER-WITH-OPERATION-LOG`
-- Name: `Recover with Operation Log`
+- Name: `Recover with operation log`
 - Summary: Use jj operation-log recovery before destructive cleanup habits.
   The operation log preserves recoverable graph states, but inspect the target before restoring.
 - Status: `reviewed`

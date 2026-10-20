@@ -1,8 +1,8 @@
-# Reader Locality Reduces Change Cost
+# Reader locality reduces change cost
 
 ## Metadata
 
-- Name: `Reader Locality Reduces Change Cost`
+- Name: `Reader locality reduces change cost`
 - ID: `reader-locality-reduces-change-cost`
 - Summary: `Code is cheaper to change when the reader can understand the local decision without
   distant facts. Keep related state, inputs, side effects, and policy close enough to inspect

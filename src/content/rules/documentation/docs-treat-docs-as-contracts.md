@@ -1,8 +1,8 @@
-# Docs Treat Docs As Contracts
+# Docs treat docs as contracts
 
 ## Metadata
 
-- Name: `Treat Docs as Contracts`
+- Name: `Treat docs as contracts`
 - ID: `DOCS-TREAT-DOCS-AS-CONTRACTS`
 - Summary: `Treat supported behavior, commands, errors, and examples in docs as promises readers may
   rely on. Separate normative claims from background, examples, and future plans.`

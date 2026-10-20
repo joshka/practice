@@ -1,8 +1,8 @@
-# Project Operating Manual
+# Project operating manual
 
 ## Metadata
 
-- Name: `Project Operating Manual`
+- Name: `Project operating manual`
 - ID: `project-operating-manual`
 - Summary: A project operating manual is a repo-owned document that applies broad software
   guidance to one live codebase. It turns a large catalog of durable rules into an opinionated

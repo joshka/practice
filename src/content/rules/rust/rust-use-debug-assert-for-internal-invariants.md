@@ -1,8 +1,8 @@
-# Rust Use Debug Assert For Internal Invariants
+# Rust use debug assert for internal invariants
 
 ## Metadata
 
-- Name: `Use Debug Assert For Internal Invariants`
+- Name: `Use debug assert for internal invariants`
 - ID: `RUST-USE-DEBUG-ASSERT-FOR-INTERNAL-INVARIANTS`
 - Summary: Use debug assertions for internal invariants that should hold if nearby code is correct.
   Do not use them for caller validation or safety requirements that must be enforced in release

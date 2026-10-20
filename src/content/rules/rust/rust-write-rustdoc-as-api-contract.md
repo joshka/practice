@@ -1,8 +1,8 @@
-# Rust Write Rustdoc As API Contract
+# Rust write rustdoc as API contract
 
 ## Metadata
 
-- Name: `Write Rustdoc As API Contract`
+- Name: `Write rustdoc as API contract`
 - ID: `RUST-WRITE-RUSTDOC-AS-API-CONTRACT`
 - Summary: Use Rustdoc to state caller-facing behavior, invariants, failures, side effects, and
   compatibility promises. Leave private implementation detail in comments unless it helps maintain

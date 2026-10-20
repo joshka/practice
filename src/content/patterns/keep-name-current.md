@@ -1,8 +1,8 @@
-# Keep Name Current
+# Keep name current
 
 ## Metadata
 
-- Name: `Keep Name Current`
+- Name: `Keep name current`
 - ID: `keep-name-current`
 - Summary: Names that preserve old intent make readers distrust the code or documentation around
   them. Rename when the concept changes enough that the old name now teaches the wrong model.

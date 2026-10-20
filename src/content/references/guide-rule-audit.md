@@ -1,4 +1,4 @@
-# Guide Rule Audit
+# Guide rule audit
 
 This reference records draft rules extracted from guide-level guidance. It keeps the draft review
 queue explicit so generated agent packs can remain reviewed-only while guide-to-rule extraction is

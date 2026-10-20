@@ -1,8 +1,8 @@
-# Choose Good Enough Tools
+# Choose good enough tools
 
 ## Metadata
 
-- Name: `Choose Good Enough Tools`
+- Name: `Choose good enough tools`
 - ID: `choose-good-enough-tools`
 - Summary: Tooling choices can become a distraction when the available tool is already adequate for
   the risk. Prefer the simplest tool that gives trustworthy feedback, upgrading only when accuracy,

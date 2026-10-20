@@ -1,8 +1,8 @@
-# Refactoring Align Seams With Real Variation
+# Refactoring align seams with real variation
 
 ## Metadata
 
-- Name: `Align Seams with Real Variation`
+- Name: `Align seams with real variation`
 - ID: `REFACTORING-ALIGN-SEAMS-WITH-REAL-VARIATION`
 - Summary: Put abstraction seams where code already varies across backends, policies, protocols,
   tests, or ownership boundaries. Avoid adding names and jumps for hypothetical futures unless the

@@ -1,8 +1,8 @@
-# Remediate Doc Drift
+# Remediate doc drift
 
 ## Metadata
 
-- Name: `Remediate Doc Drift`
+- Name: `Remediate doc drift`
 - ID: `remediate-doc-drift`
 - Summary: Documentation drift misleads readers when behavior, workflow, or project shape has moved
   on. Fix the source of truth and nearby references together, choosing whether the code or the doc

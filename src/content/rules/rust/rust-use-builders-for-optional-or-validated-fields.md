@@ -1,8 +1,8 @@
-# Rust Use Builders For Optional Or Validated Fields
+# Rust use builders for optional or validated fields
 
 ## Metadata
 
-- Name: `Use Builders For Optional Or Validated Fields`
+- Name: `Use builders for optional or validated fields`
 - ID: `RUST-USE-BUILDERS-FOR-OPTIONAL-OR-VALIDATED-FIELDS`
 - Summary: Use builders when construction has many optional inputs or cross-field validation that
   would make constructors hard to read. Avoid builder APIs for simple values where direct

@@ -1,8 +1,8 @@
-# Rust Name Tests By Behavior
+# Rust name tests by behavior
 
 ## Metadata
 
-- Name: `Name Tests By Behavior`
+- Name: `Name tests by behavior`
 - ID: `RUST-NAME-TESTS-BY-BEHAVIOR`
 - Summary: Name tests after the behavior, boundary, or regression they protect so failure output is
   useful before a reader opens the body. Keep names concise and let module context carry repeated

@@ -1,8 +1,8 @@
-# Change Minimal But Complete
+# Change minimal but complete
 
 ## Metadata
 
-- Name: `Minimal but Complete`
+- Name: `Minimal but complete`
 - ID: `CHANGE-MINIMAL-BUT-COMPLETE`
 - Summary: Keep the diff as small as the purpose allows while including the evidence that purpose
   needs. Reviewers should see one coherent unit they can understand, validate, and revert.

@@ -1,8 +1,8 @@
-# Boundary Read Normalize Compare Mutate
+# Boundary read normalize compare mutate
 
 ## Metadata
 
-- Name: `Read Normalize Compare Mutate`
+- Name: `Read normalize compare mutate`
 - ID: `BOUNDARY-READ-NORMALIZE-COMPARE-MUTATE`
 - Summary: Reconcile external state by reading the current provider view, normalizing it, comparing
   intent, and mutating only the real difference. The loop avoids destructive or noisy writes when

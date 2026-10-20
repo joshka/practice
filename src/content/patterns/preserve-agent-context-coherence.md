@@ -1,8 +1,8 @@
-# Preserve Agent Context Coherence
+# Preserve agent context coherence
 
 ## Metadata
 
-- Name: `Preserve Agent Context Coherence`
+- Name: `Preserve agent context coherence`
 - ID: `preserve-agent-context-coherence`
 - Summary: Mixing unrelated work pollutes the session's attention, working-copy state, and handoff
   narrative. Keep each session and jj change focused on one purpose, splitting work when ownership,

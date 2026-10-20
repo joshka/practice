@@ -1,8 +1,8 @@
-# Rust Keep Edits Scoped To Owning Concept
+# Rust keep edits scoped to owning concept
 
 ## Metadata
 
-- Name: `Keep Edits Scoped to Owning Concept`
+- Name: `Keep edits scoped to owning concept`
 - ID: `RUST-KEEP-EDITS-SCOPED-TO-OWNING-CONCEPT`
 - Summary: Change the module, crate, feature, or facade that owns the behavior being fixed. Scoped
   edits keep reviews atomic and prevent nearby files from pulling in unrelated concepts.

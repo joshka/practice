@@ -1,8 +1,8 @@
-# Review Make Review Artifacts Standalone
+# Review make review artifacts standalone
 
 ## Metadata
 
-- Name: `Make Review Artifacts Standalone`
+- Name: `Make review artifacts standalone`
 - ID: `REVIEW-MAKE-REVIEW-ARTIFACTS-STANDALONE`
 - Summary: Put the needed problem, decision, context, validation, and risk in the issue, PR, commit,
   or handoff itself. Standalone artifacts make review and future debugging possible without private

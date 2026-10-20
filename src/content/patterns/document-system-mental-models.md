@@ -1,8 +1,8 @@
-# Document System Mental Models
+# Document system mental models
 
 ## Metadata
 
-- Name: `Document System Mental Models`
+- Name: `Document system mental models`
 - ID: `document-system-mental-models`
 - Summary: Systems with implicit concepts force readers to reconstruct how parts fit together from
   scattered implementation details. Document the mental model that explains ownership, flow,

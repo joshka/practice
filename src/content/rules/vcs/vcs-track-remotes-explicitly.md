@@ -1,9 +1,9 @@
-# VCS Track Remotes Explicitly
+# VCS track remotes explicitly
 
 ## Metadata
 
 - ID: `VCS-TRACK-REMOTES-EXPLICITLY`
-- Name: `Track Remotes Explicitly`
+- Name: `Track remotes explicitly`
 - Summary: Set explicit remote tracking when the same bookmark name exists on multiple remotes.
   This prevents fetch, rebase, and publication ambiguity in fork and upstream workflows.
 - Status: `reviewed`

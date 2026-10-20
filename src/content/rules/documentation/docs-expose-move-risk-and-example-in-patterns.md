@@ -1,8 +1,8 @@
-# Docs Expose Move Risk And Example In Patterns
+# Docs expose move risk and example in patterns
 
 ## Metadata
 
-- Name: `Expose Move, Risk, and Example in Patterns`
+- Name: `Expose move, risk, and example in patterns`
 - ID: `DOCS-EXPOSE-MOVE-RISK-AND-EXAMPLE-IN-PATTERNS`
 - Summary: `Give pattern guidance a recognizable trigger, preferred move, risk, example, and agent
   instruction. The extra structure makes repeatable advice easier to cite and apply.`

@@ -1,8 +1,8 @@
-# Change Separate Structure From Behavior
+# Change separate structure from behavior
 
 ## Metadata
 
-- Name: `Separate Structure From Behavior`
+- Name: `Separate structure from behavior`
 - ID: `CHANGE-SEPARATE-STRUCTURE-FROM-BEHAVIOR`
 - Summary: Split refactoring or layout changes from behavior changes when the combined diff obscures
   intent. Separate review units make meaning preservation and new behavior easier to check.

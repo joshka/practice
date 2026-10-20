@@ -1,8 +1,8 @@
-# Rust Do Not Default Pub Crate
+# Rust do not default pub crate
 
 ## Metadata
 
-- Name: `Do Not Default pub(crate)`
+- Name: `Do not default pub(crate)`
 - ID: `RUST-DO-NOT-DEFAULT-PUB-CRATE`
 - Summary: Start items private and widen to `pub(crate)` only for deliberate shared internals. This
   keeps modules independent and makes crate-local contracts visible.

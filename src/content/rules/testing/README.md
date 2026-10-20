@@ -1,4 +1,4 @@
-# Testing And Verification
+# Testing and verification
 
 Testing rules cover risk-based validation, doctests, feature matrices, deterministic tests, parser
 samples, command construction, dependency floors, and regressions.

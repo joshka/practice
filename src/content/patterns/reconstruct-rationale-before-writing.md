@@ -1,8 +1,8 @@
-# Reconstruct Rationale Before Writing
+# Reconstruct rationale before writing
 
 ## Metadata
 
-- Name: `Reconstruct Rationale Before Writing`
+- Name: `Reconstruct rationale before writing`
 - ID: `reconstruct-rationale-before-writing`
 - Summary: Explanations become plausible stories when writers infer intent from current code and
   consult history only to fill gaps. Reconstruct the decision from present behavior, introducing

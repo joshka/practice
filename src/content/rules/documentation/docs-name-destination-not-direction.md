@@ -1,8 +1,8 @@
-# Docs Name Destination Not Direction
+# Docs name destination not direction
 
 ## Metadata
 
-- Name: `Name Destination, Not Direction`
+- Name: `Name destination, not direction`
 - ID: `DOCS-NAME-DESTINATION-NOT-DIRECTION`
 - Summary: `Use labels that name the section, object, or decision the reader will reach. Directional
   labels make readers follow the page order before knowing whether it is relevant.`
@@ -48,6 +48,6 @@ directional navigation phrases on reference or index pages.
 
 ## References
 
-- [Docs Use Descriptive Headings](docs-use-descriptive-headings.md)
-- [Docs Match Page Shape To Reader Task](docs-match-page-shape-to-reader-task.md)
+- [Docs use descriptive headings](docs-use-descriptive-headings.md)
+- [Docs match page shape to reader task](docs-match-page-shape-to-reader-task.md)
 - [Diataxis: reference](https://diataxis.fr/reference/)

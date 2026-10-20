@@ -1,4 +1,4 @@
-# Tests Should Explain Failures
+# Tests should explain failures
 
 Generated from the canonical `joshka/practice` rule catalog. Do not edit copied rule
 text by hand; update the source repo and recopy this file.

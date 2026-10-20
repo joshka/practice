@@ -1,8 +1,8 @@
-# Observability Preserve Operation Context In Errors
+# Observability preserve operation context in errors
 
 ## Metadata
 
-- Name: `Preserve Operation Context in Errors`
+- Name: `Preserve operation context in errors`
 - ID: `OBSERVABILITY-PRESERVE-OPERATION-CONTEXT-IN-ERRORS`
 - Summary: Carry the operation, resource, provider, input class, and policy context that explain a
   failure. Stable identifiers and sanitized summaries shorten debugging without exposing payloads.

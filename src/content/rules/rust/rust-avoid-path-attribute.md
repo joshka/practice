@@ -1,8 +1,8 @@
-# Rust Avoid Path Attribute
+# Rust avoid path attribute
 
 ## Metadata
 
-- Name: `Avoid Path Attributes`
+- Name: `Avoid path attributes`
 - ID: `RUST-AVOID-PATH-ATTRIBUTE`
 - Summary: Use normal Rust module lookup unless generated or platform-specific layout needs
   `#[path]`. Predictable file paths make navigation and ownership easier to infer.

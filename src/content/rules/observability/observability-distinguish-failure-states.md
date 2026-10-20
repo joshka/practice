@@ -1,8 +1,8 @@
-# Observability Distinguish Failure States
+# Observability distinguish failure states
 
 ## Metadata
 
-- Name: `Distinguish Failure States`
+- Name: `Distinguish failure states`
 - ID: `OBSERVABILITY-DISTINGUISH-FAILURE-STATES`
 - Summary: Preserve status distinctions that change recovery, messaging, metrics, or debugging.
   Collapsing timeouts, denials, aborts, partial work, and failures makes callers guess.

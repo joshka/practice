@@ -1,8 +1,8 @@
-# Agent Spend Human Attention On Ambiguity
+# Agent spend human attention on ambiguity
 
 ## Metadata
 
-- Name: `Spend Human Attention on Ambiguity`
+- Name: `Spend human attention on ambiguity`
 - ID: `AGENT-SPEND-HUMAN-ATTENTION-ON-AMBIGUITY`
 - Summary: Ask for human judgment where product behavior, API compatibility, naming, or security
   posture is still ambiguous. Resolving direction early prevents large speculative diffs.

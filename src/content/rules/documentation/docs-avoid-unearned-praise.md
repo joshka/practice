@@ -1,8 +1,8 @@
-# Docs Avoid Unearned Praise
+# Docs avoid unearned praise
 
 ## Metadata
 
-- Name: `Avoid Unearned Praise`
+- Name: `Avoid unearned praise`
 - ID: `DOCS-AVOID-UNEARNED-PRAISE`
 - Summary: `Replace vague ranking words with observable behavior, evidence, or tradeoffs. Use
   evaluative claims only when the basis is explicit enough for readers to verify.`

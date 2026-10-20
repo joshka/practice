@@ -1,8 +1,8 @@
-# Agent Prefer Build Preserving Edits
+# Agent prefer build preserving edits
 
 ## Metadata
 
-- Name: `Prefer Build-Preserving Edits`
+- Name: `Prefer build-preserving edits`
 - ID: `AGENT-PREFER-BUILD-PRESERVING-EDITS`
 - Summary: Make multi-step edits in slices that keep compilation or tests close to green when the
   route allows it. Build-preserving work keeps failures close to the edit that caused them.

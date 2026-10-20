@@ -1,8 +1,8 @@
-# Docs Prose For Relationships Lists For Enumeration
+# Docs prose for relationships lists for enumeration
 
 ## Metadata
 
-- Name: `Prose for Relationships, Lists for Enumeration`
+- Name: `Prose for relationships, lists for enumeration`
 - ID: `DOCS-PROSE-FOR-RELATIONSHIPS-LISTS-FOR-ENUMERATION`
 - Summary: `Use prose when causality, contrast, or priority matters, and lists when enumerating
   parallel items. The shape should reveal the relationship instead of hiding it in bullets.`

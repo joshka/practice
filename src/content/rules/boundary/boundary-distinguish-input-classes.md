@@ -1,8 +1,8 @@
-# Boundary Distinguish Input Classes
+# Boundary distinguish input classes
 
 ## Metadata
 
-- Name: `Distinguish Input Classes`
+- Name: `Distinguish input classes`
 - ID: `BOUNDARY-DISTINGUISH-INPUT-CLASSES`
 - Summary: Keep unknown, unsupported, denied, and preserved inputs in separate result or error
   paths. The distinction protects compatibility, authorization messaging, and recovery behavior

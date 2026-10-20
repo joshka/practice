@@ -1,8 +1,8 @@
-# Rust Avoid Tiny Module Mazes
+# Rust avoid tiny module mazes
 
 ## Metadata
 
-- Name: `Avoid Tiny Module Mazes`
+- Name: `Avoid tiny module mazes`
 - ID: `RUST-AVOID-TINY-MODULE-MAZES`
 - Summary: Keep small helper code near its use unless a separate module owns a real concept. This
   reduces file-jumping and preserves reader locality.
@@ -40,7 +40,7 @@ Keep Rust helpers near their use unless splitting a file gives a real concept it
 
 ## Mechanisms
 
-Supported by [Source Coherence Review](../../mechanisms/source-coherence-review.md),
+Supported by [Source coherence review](../../mechanisms/source-coherence-review.md),
 search/navigation checks, and refactors that merge helper-only modules back into the owning file.
 The outline pass distinguishes implementation from focused docs and colocated tests before treating
 line count as a split signal.

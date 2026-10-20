@@ -1,8 +1,8 @@
-# Rust Keep Crate Boundaries Narrow
+# Rust keep crate boundaries narrow
 
 ## Metadata
 
-- Name: `Keep Crate Boundaries Narrow`
+- Name: `Keep crate boundaries narrow`
 - ID: `RUST-KEEP-CRATE-BOUNDARIES-NARROW`
 - Summary: Put behavior and tests in the crate or module that owns them before extracting shared
   helpers. Narrow boundaries reduce dependency fan-out, feature pressure, and hidden coupling.

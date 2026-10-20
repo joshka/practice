@@ -1,8 +1,8 @@
-# Test Optimize Failure Output
+# Test optimize failure output
 
 ## Metadata
 
-- Name: `Optimize Failure Output`
+- Name: `Optimize failure output`
 - ID: `TEST-OPTIMIZE-FAILURE-OUTPUT`
 - Summary: Design tests so failures include expected values, actual values, inputs, and contract
   context where that helps repair. Useful output shortens CI and agent debugging loops.

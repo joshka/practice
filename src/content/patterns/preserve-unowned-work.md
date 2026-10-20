@@ -1,8 +1,8 @@
-# Preserve Unowned Work
+# Preserve unowned work
 
 ## Metadata
 
-- Name: `Preserve Unowned Work`
+- Name: `Preserve unowned work`
 - ID: `preserve-unowned-work`
 - Summary: Shared working copies may contain edits from another person or an earlier task. Check
   state before editing, work around unrelated changes, and stop for direction when unowned work

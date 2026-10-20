@@ -1,8 +1,8 @@
-# Perf Optimize Measured Hotspots
+# Perf optimize measured hotspots
 
 ## Metadata
 
-- Name: `Optimize Measured Hotspots`
+- Name: `Optimize measured hotspots`
 - ID: `PERF-OPTIMIZE-MEASURED-HOTSPOTS`
 - Summary: Optimize code that measurement shows is on the important runtime path. This keeps review
   attention on changes whose user-visible impact justifies altering the code shape.

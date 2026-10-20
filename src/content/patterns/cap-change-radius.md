@@ -1,8 +1,8 @@
-# Cap Change Radius
+# Cap change radius
 
 ## Metadata
 
-- Name: `Cap Change Radius`
+- Name: `Cap change radius`
 - ID: `cap-change-radius`
 - Summary: Broad diffs increase review cost and make unrelated regressions harder to isolate. Keep
   the change radius aligned with the requested behavior, using separate chunks for cleanup or

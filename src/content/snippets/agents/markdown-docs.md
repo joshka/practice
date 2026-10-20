@@ -1,8 +1,8 @@
-# Markdown And Docs Agent Instructions
+# Markdown and docs agent instructions
 
 ## Metadata
 
-- Name: `Markdown And Docs Agent Instructions`
+- Name: `Markdown and docs agent instructions`
 - ID: `agent-markdown-docs-instructions`
 - Summary: `Compact documentation instructions for agents editing Markdown, Rustdoc, READMEs,
   review notes, or adjacent narrative. The snippet focuses on current behavior, local voice, page

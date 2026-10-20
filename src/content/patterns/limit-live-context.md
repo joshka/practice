@@ -1,8 +1,8 @@
-# Limit Live Context
+# Limit live context
 
 ## Metadata
 
-- Name: `Limit Live Context`
+- Name: `Limit live context`
 - ID: `limit-live-context`
 - Summary: Readers make mistakes when they must keep too many facts active to understand a change.
   Reduce live context by moving related facts together, naming intermediate concepts, and keeping

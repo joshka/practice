@@ -1,8 +1,8 @@
-# Refactoring Prefer Local Reasoning
+# Refactoring prefer local reasoning
 
 ## Metadata
 
-- Name: `Prefer Local Reasoning`
+- Name: `Prefer local reasoning`
 - ID: `REFACTORING-PREFER-LOCAL-REASONING`
 - Summary: Shape code so relevant state, invariants, and effects are visible near the change.
   Centralize only when it reduces total reasoning, because distant reconstruction raises cognitive

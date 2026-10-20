@@ -1,8 +1,8 @@
-# Rust Tooling Profile
+# Rust tooling profile
 
 ## Metadata
 
-- Name: `Rust Tooling Profile`
+- Name: `Rust tooling profile`
 - ID: `rust-tooling-profile`
 - Summary: The broad Rust tooling profile gathers lints, docs, release, CI, performance, and agent
   workflow checks in one place. Use it as a menu of mechanical supports, not as a substitute for
@@ -21,11 +21,11 @@ that lints and checks replace design judgment.
 
 ## Supported Principles
 
-- [Docs Are Contracts](../principles/docs-are-contracts.md)
-- [Measure Before Optimizing](../principles/measure-before-optimizing.md)
-- [Public API Changes Have Downstream Cost](../principles/public-api-changes-have-downstream-cost.md)
-- [Tests Should Explain Failures](../principles/tests-should-explain-failures.md)
-- [JJ Topology Is Repo Role Dependent](../principles/jj-topology-is-repo-role-dependent.md)
+- [Docs are contracts](../principles/docs-are-contracts.md)
+- [Measure before optimizing](../principles/measure-before-optimizing.md)
+- [Public API changes have downstream cost](../principles/public-api-changes-have-downstream-cost.md)
+- [Tests should explain failures](../principles/tests-should-explain-failures.md)
+- [JJ topology is repo role dependent](../principles/jj-topology-is-repo-role-dependent.md)
 
 ## Rust Lints
 

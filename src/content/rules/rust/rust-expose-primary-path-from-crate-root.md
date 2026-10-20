@@ -1,8 +1,8 @@
-# Rust Expose Primary Path From Crate Root
+# Rust expose primary path from crate root
 
 ## Metadata
 
-- Name: `Expose Primary Path from Crate Root`
+- Name: `Expose primary path from crate root`
 - ID: `RUST-EXPOSE-PRIMARY-PATH-FROM-CRATE-ROOT`
 - Summary: Make the crate root show the main workflow, types, and import path. Users should not
   have to infer the intended entry point from private layout details.

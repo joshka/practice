@@ -9,16 +9,16 @@ boundaries such as Rust API changes, tests, docs, performance, and source contro
 
 ## Domains
 
-- [Agent Workflow](agent-workflow.md): 26 rules.
-- [Explicit Boundaries Preserve Correctness](boundary.md): 26 rules.
-- [Change Shape](change-shape.md): 13 rules.
-- [Docs Are Contracts](documentation.md): 33 rules.
-- [Observability And Failure](observability.md): 5 rules.
-- [Measure Before Optimizing](performance.md): 7 rules.
-- [Local Reasoning And Refactoring](refactoring.md): 9 rules.
-- [Private Context And Review Artifacts](review.md): 11 rules.
-- [Rust API And Crate Shape](rust.md): 90 rules.
-- [Source And Context Hygiene](source.md): 4 rules.
-- [Tests Should Explain Failures](test-failures.md): 3 rules.
-- [Testing And Verification](testing.md): 22 rules.
-- [JJ Topology And Source Control](vcs.md): 28 rules.
+- [Agent workflow](agent-workflow.md): 26 rules.
+- [Explicit boundaries preserve correctness](boundary.md): 26 rules.
+- [Change shape](change-shape.md): 13 rules.
+- [Docs are contracts](documentation.md): 33 rules.
+- [Observability and failure](observability.md): 5 rules.
+- [Measure before optimizing](performance.md): 7 rules.
+- [Local reasoning and refactoring](refactoring.md): 9 rules.
+- [Private context and review artifacts](review.md): 11 rules.
+- [Rust API and crate shape](rust.md): 90 rules.
+- [Source and context hygiene](source.md): 4 rules.
+- [Tests should explain failures](test-failures.md): 3 rules.
+- [Testing and verification](testing.md): 22 rules.
+- [JJ topology and source control](vcs.md): 28 rules.

@@ -1,8 +1,8 @@
-# Rust Preserve Error Context
+# Rust preserve error context
 
 ## Metadata
 
-- Name: `Preserve Error Context`
+- Name: `Preserve error context`
 - ID: `RUST-PRESERVE-ERROR-CONTEXT`
 - Summary: Wrap and model errors so callers can see the operation, relevant input, source cause, and
   recovery signal. Avoid flattening failures into broad strings or generic variants that remove

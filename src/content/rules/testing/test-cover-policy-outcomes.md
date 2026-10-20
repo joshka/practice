@@ -1,9 +1,9 @@
-# Test Cover Policy Outcomes
+# Test cover policy outcomes
 
 ## Metadata
 
 - ID: `TEST-COVER-POLICY-OUTCOMES`
-- Name: `Cover Policy Outcomes`
+- Name: `Cover policy outcomes`
 - Summary: Test allowed, denied, redacted, fallback, and unsupported policy outcomes.
   Policy value lives at decision boundaries, so assert caller-visible behavior instead of internals.
 - Status: `reviewed`

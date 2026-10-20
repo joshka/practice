@@ -1,8 +1,8 @@
-# Change Avoid Speculative Public API
+# Change avoid speculative public API
 
 ## Metadata
 
-- Name: `Avoid Speculative Public API`
+- Name: `Avoid speculative public API`
 - ID: `CHANGE-AVOID-SPECULATIVE-PUBLIC-API`
 - Summary: Add public surfaces only when current or accepted callers need them. Waiting for concrete
   pressure keeps compatibility commitments smaller and easier to validate.
@@ -50,7 +50,7 @@ compatibility notes, downstream-use searches, and follow-up issues for deferred 
 
 ## References
 
-- [Public API Changes Have Downstream Cost](../../principles/public-api-changes-have-downstream-cost.md)
+- [Public API changes have downstream cost](../../principles/public-api-changes-have-downstream-cost.md)
 - [Fowler: Yagni](https://martinfowler.com/bliki/Yagni.html)
 - [Rust API Guidelines: public APIs are stable](https://rust-lang.github.io/api-guidelines/necessities.html#c-stable)
 - [Cargo SemVer compatibility](https://doc.rust-lang.org/cargo/reference/semver.html)

@@ -1,8 +1,8 @@
-# Refactoring Do Not Over Apply Dry
+# Refactoring do not over apply dry
 
 ## Metadata
 
-- Name: `Do Not Over-apply DRY`
+- Name: `Do not over-apply DRY`
 - ID: `REFACTORING-DO-NOT-OVER-APPLY-DRY`
 - Summary: Keep similar-looking code separate until it has the same meaning and changes together.
   Premature sharing can couple unrelated policies and make later edits harder.

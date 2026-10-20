@@ -1,8 +1,8 @@
-# Rust Keep Public API Shape Intentional
+# Rust keep public API shape intentional
 
 ## Metadata
 
-- Name: `Keep Public API Shape Intentional`
+- Name: `Keep public API shape intentional`
 - ID: `RUST-KEEP-PUBLIC-API-SHAPE-INTENTIONAL`
 - Summary: Make public visibility, aliases, features, re-exports, bounds, and variants reflect
   intended commitments. Published surface area becomes something downstream users can depend on.

@@ -1,8 +1,8 @@
-# Perf Run Timing Benchmarks Sequentially
+# Perf run timing benchmarks sequentially
 
 ## Metadata
 
-- Name: `Run Timing Benchmarks Sequentially`
+- Name: `Run timing benchmarks sequentially`
 - ID: `PERF-RUN-TIMING-BENCHMARKS-SEQUENTIALLY`
 - Summary: Serialize timing-sensitive benchmarks when their numbers will be used as evidence.
   Concurrent runs compete for shared resources and can make the comparison describe the runner more

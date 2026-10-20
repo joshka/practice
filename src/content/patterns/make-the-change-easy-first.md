@@ -1,8 +1,8 @@
-# Make The Change Easy First
+# Make the change easy first
 
 ## Metadata
 
-- Name: `Make The Change Easy First`
+- Name: `Make the change easy first`
 - ID: `make-the-change-easy-first`
 - Summary: Some changes are risky because the path to make or verify them is unnecessarily hard.
   First add the smallest harness, boundary, helper, tool, or runbook that makes the real change

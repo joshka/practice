@@ -1,8 +1,8 @@
-# Rust Avoid Inline Modules
+# Rust avoid inline modules
 
 ## Metadata
 
-- Name: `Avoid Inline Modules`
+- Name: `Avoid inline modules`
 - ID: `RUST-AVOID-INLINE-MODULES`
 - Summary: Put nontrivial modules in named files unless tests, preludes, or generated code justify
   inline layout. Stable paths make search, review, and ownership clearer.

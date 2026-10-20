@@ -1,8 +1,8 @@
-# Separate Structure From Behavior
+# Separate structure from behavior
 
 ## Metadata
 
-- Name: `Separate Structure From Behavior`
+- Name: `Separate structure from behavior`
 - ID: `separate-structure-from-behavior`
 - Summary: Diffs that mix moves, renames, formatting, and behavior make review and rollback harder.
   Separate behavior-preserving structure from rule changes when each can be checked on its own.

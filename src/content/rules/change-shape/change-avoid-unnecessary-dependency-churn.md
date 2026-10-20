@@ -1,8 +1,8 @@
-# Change Avoid Unnecessary Dependency Churn
+# Change avoid unnecessary dependency churn
 
 ## Metadata
 
-- Name: `Avoid Unnecessary Dependency Churn`
+- Name: `Avoid unnecessary dependency churn`
 - ID: `CHANGE-AVOID-UNNECESSARY-DEPENDENCY-CHURN`
 - Summary: Keep package, manifest, and lockfile movement out of unrelated work. Separate dependency
   changes make build, compatibility, and downstream risk reviewable on their own.

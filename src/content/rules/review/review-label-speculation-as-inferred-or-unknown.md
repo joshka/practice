@@ -1,8 +1,8 @@
-# Review Label Speculation As Inferred Or Unknown
+# Review label speculation as inferred or unknown
 
 ## Metadata
 
-- Name: `Label Speculation as Inferred or Unknown`
+- Name: `Label speculation as inferred or unknown`
 - ID: `REVIEW-LABEL-SPECULATION-AS-INFERRED-OR-UNKNOWN`
 - Summary: Mark review claims as observed, inferred, assumed, or unknown when the evidence level
   matters. Clear labels keep guesses from hardening into false project knowledge.

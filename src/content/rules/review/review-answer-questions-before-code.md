@@ -1,8 +1,8 @@
-# Review Answer Questions Before Code
+# Review answer questions before code
 
 ## Metadata
 
-- Name: `Answer Questions Before Code`
+- Name: `Answer questions before code`
 - ID: `REVIEW-ANSWER-QUESTIONS-BEFORE-CODE`
 - Summary: Answer reviewer questions before or alongside the code changes that address them. This
   keeps intent, tradeoffs, and unresolved choices visible instead of burying the reasoning in a new
@@ -51,6 +51,6 @@ decision links, and handoffs that separate what changed from what was intentiona
 
 ## References
 
-- [Review Explain PR Problem Model And Proof](review-explain-pr-problem-model-and-proof.md)
-- [Review Make Review Artifacts Standalone](review-make-review-artifacts-standalone.md)
+- [Review explain PR problem model and proof](review-explain-pr-problem-model-and-proof.md)
+- [Review make review artifacts standalone](review-make-review-artifacts-standalone.md)
 - [Google Engineering Practices: How to handle reviewer comments](https://google.github.io/eng-practices/review/developer/handling-comments.html)

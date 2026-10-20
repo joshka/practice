@@ -1,8 +1,8 @@
-# Boundary Treat Terminal Ui As Product Surface
+# Boundary treat terminal ui as product surface
 
 ## Metadata
 
-- Name: `Treat Terminal UI As Product Surface`
+- Name: `Treat terminal UI as product surface`
 - ID: `BOUNDARY-TREAT-TERMINAL-UI-AS-PRODUCT-SURFACE`
 - Summary: Treat terminal layout, input, scroll behavior, color, viewport size, and platform
   differences as a user-facing contract when people rely on the interface. This makes regressions

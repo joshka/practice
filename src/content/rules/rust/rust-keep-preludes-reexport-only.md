@@ -1,8 +1,8 @@
-# Rust Keep Preludes Reexport Only
+# Rust keep preludes reexport only
 
 ## Metadata
 
-- Name: `Keep Preludes Re-Export Only`
+- Name: `Keep preludes re-export only`
 - ID: `RUST-KEEP-PRELUDES-REEXPORT-ONLY`
 - Summary: Put only re-exports in prelude modules and keep original behavior in its owning module.
   Users expect preludes to aid imports, not hide implementation ownership.

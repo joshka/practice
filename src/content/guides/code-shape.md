@@ -1,8 +1,8 @@
-# Code Shape
+# Code shape
 
 ## Metadata
 
-- Name: `Code Shape`
+- Name: `Code shape`
 - ID: `code-shape`
 - Summary: Code-shape guidance covers small source-level moves that reduce live context, improve
   reader locality, and keep structure changes reviewable. It focuses on local expression shape,

@@ -1,8 +1,8 @@
-# Rust Avoid Mod Rs By Default
+# Rust avoid mod rs by default
 
 ## Metadata
 
-- Name: `Avoid mod.rs by Default`
+- Name: `Avoid mod.rs by default`
 - ID: `RUST-AVOID-MOD-RS-BY-DEFAULT`
 - Summary: Prefer named module files when they make tabs, paths, and search results clearer.
   Reserve `mod.rs` for cases where local convention or layout makes it the better signal.

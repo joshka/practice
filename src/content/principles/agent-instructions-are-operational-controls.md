@@ -1,8 +1,8 @@
-# Agent Instructions Are Operational Controls
+# Agent instructions are operational controls
 
 ## Metadata
 
-- Name: `Agent Instructions Are Operational Controls`
+- Name: `Agent instructions are operational controls`
 - ID: `agent-instructions-are-operational-controls`
 - Summary: `Agent instructions should change future behavior, not merely restate a preference.
   Compact rules need enough trigger, purpose, and boundary context for agents to apply them

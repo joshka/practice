@@ -1,8 +1,8 @@
-# Review Let Reviewers Resolve Threads
+# Review let reviewers resolve threads
 
 ## Metadata
 
-- Name: `Let Reviewers Resolve Threads`
+- Name: `Let reviewers resolve threads`
 - ID: `REVIEW-LET-REVIEWERS-RESOLVE-THREADS`
 - Summary: Leave nontrivial review threads for the reviewer to resolve after they confirm the
   concern was addressed. Authors should only close unambiguous mechanical threads, because

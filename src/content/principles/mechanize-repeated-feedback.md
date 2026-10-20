@@ -1,8 +1,8 @@
-# Mechanize Repeated Feedback
+# Mechanize repeated feedback
 
 ## Metadata
 
-- Name: `Mechanize Repeated Feedback`
+- Name: `Mechanize repeated feedback`
 - ID: `mechanize-repeated-feedback`
 - Summary: `Repeated corrections should become checks, templates, generators, lints, or reusable
   guidance when the pattern is stable. Mechanizing the feedback moves human attention back to

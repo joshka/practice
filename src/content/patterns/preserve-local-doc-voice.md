@@ -1,8 +1,8 @@
-# Preserve Local Doc Voice
+# Preserve local doc voice
 
 ## Metadata
 
-- Name: `Preserve Local Doc Voice`
+- Name: `Preserve local doc voice`
 - ID: `preserve-local-doc-voice`
 - Summary: Documentation edits can become bland or mismatched even when they are grammatically
   correct. Patch only what needs changing while keeping local terms, structure, density, and tone

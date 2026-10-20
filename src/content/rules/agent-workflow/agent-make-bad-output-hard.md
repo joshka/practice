@@ -1,8 +1,8 @@
-# Agent Make Bad Output Hard
+# Agent make bad output hard
 
 ## Metadata
 
-- Name: `Make Bad Output Hard`
+- Name: `Make bad output hard`
 - ID: `AGENT-MAKE-BAD-OUTPUT-HARD`
 - Summary: Turn recurring bad agent output into scripts, templates, lint, or checks that fail fast.
   Mechanical enforcement lowers review cost more reliably than repeated prompt reminders.

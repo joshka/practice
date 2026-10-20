@@ -1,8 +1,8 @@
-# Rust Make Public API Browseable From Layout
+# Rust make public API browseable from layout
 
 ## Metadata
 
-- Name: `Make Public API Browseable From Layout`
+- Name: `Make public API browseable from layout`
 - ID: `RUST-MAKE-PUBLIC-API-BROWSEABLE-FROM-LAYOUT`
 - Summary: Align public modules, re-exports, and source files so readers can navigate from API to
   ownership without translation. Facades are fine when they improve discovery and still point toward

@@ -1,8 +1,8 @@
-# Rust Compare Crates By Fit And Tradeoff
+# Rust compare crates by fit and tradeoff
 
 ## Metadata
 
-- Name: `Compare Crates by Fit and Tradeoff`
+- Name: `Compare crates by fit and tradeoff`
 - ID: `RUST-COMPARE-CRATES-BY-FIT-AND-TRADEOFF`
 - Summary: Compare adjacent crates by intended fit, scope, and constraints instead of broad
   superiority claims. This helps users choose without turning docs into brittle marketing.

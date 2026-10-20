@@ -1,8 +1,8 @@
-# Agent Define Good Before Judgment Heavy Work
+# Agent define good before judgment heavy work
 
 ## Metadata
 
-- Name: `Define Good Before Judgment-Heavy Work`
+- Name: `Define good before judgment-heavy work`
 - ID: `AGENT-DEFINE-GOOD-BEFORE-JUDGMENT-HEAVY-WORK`
 - Summary: State the quality bar before work where taste, naming, API shape, or review expectations
   matter. Clear criteria give the agent goalposts before it creates a large speculative diff.

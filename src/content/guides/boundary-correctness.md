@@ -1,8 +1,8 @@
-# Boundary Correctness
+# Boundary correctness
 
 ## Metadata
 
-- Name: `Boundary Correctness`
+- Name: `Boundary correctness`
 - ID: `boundary-correctness`
 - Summary: Boundary-correctness guidance covers APIs and internal boundaries where uncertain input
   becomes trusted data, state changes, ambient inputs enter the system, or async work crosses an

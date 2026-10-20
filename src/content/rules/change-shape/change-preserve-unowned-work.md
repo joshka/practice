@@ -1,8 +1,8 @@
-# Change Preserve Unowned Work
+# Change preserve unowned work
 
 ## Metadata
 
-- Name: `Preserve Unowned Work`
+- Name: `Preserve unowned work`
 - ID: `CHANGE-PRESERVE-UNOWNED-WORK`
 - Summary: Treat nearby edits from users, agents, generators, or earlier changes as outside your
   ownership unless the task says otherwise. Adapting around them protects parallel work and context.

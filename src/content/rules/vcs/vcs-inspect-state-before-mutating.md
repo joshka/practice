@@ -1,9 +1,9 @@
-# VCS Inspect State Before Mutating
+# VCS inspect state before mutating
 
 ## Metadata
 
 - ID: `VCS-INSPECT-STATE-BEFORE-MUTATING`
-- Name: `Inspect State Before Mutating`
+- Name: `Inspect state before mutating`
 - Summary: Inspect working-copy, stack, bookmark, conflict, and unowned state before mutation.
   Current state keeps edits scoped and avoids rewriting work the agent did not inspect.
 - Status: `reviewed`

@@ -1,8 +1,8 @@
-# Perf Avoid Single Run Conclusions
+# Perf avoid single run conclusions
 
 ## Metadata
 
-- Name: `Avoid Single-Run Performance Conclusions`
+- Name: `Avoid single-run performance conclusions`
 - ID: `PERF-AVOID-SINGLE-RUN-CONCLUSIONS`
 - Summary: Do not land performance conclusions from one short benchmark run. Repeat and
   contextualize timing evidence because warmup, scheduling, cache state, and background load can

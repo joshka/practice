@@ -1,8 +1,8 @@
-# Report Verification Honestly
+# Report verification honestly
 
 ## Metadata
 
-- Name: `Report Verification Honestly`
+- Name: `Report verification honestly`
 - ID: `report-verification-honestly`
 - Summary: Handoffs become risky when verification is overstated, omitted, or blurred with
   assumptions. Report exactly what ran, what passed or failed, what was not checked, and what risk

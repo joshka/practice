@@ -1,8 +1,8 @@
-# Perf Run Correctness First
+# Perf run correctness first
 
 ## Metadata
 
-- Name: `Run Correctness Before Timing`
+- Name: `Run correctness before timing`
 - ID: `PERF-RUN-CORRECTNESS-FIRST`
 - Summary: Run relevant correctness checks before interpreting performance timing. Fast code that
   changes behavior invalidates the benchmark claim and wastes review effort.

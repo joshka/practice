@@ -1,8 +1,8 @@
-# Boundary Ground Integrations In Primary Sources
+# Boundary ground integrations in primary sources
 
 ## Metadata
 
-- Name: `Ground Integrations In Primary Sources`
+- Name: `Ground integrations in primary sources`
 - ID: `BOUNDARY-GROUND-INTEGRATIONS-IN-PRIMARY-SOURCES`
 - Summary: Base adapter behavior on provider docs, specs, or captured API responses before encoding
   local assumptions. When primary sources are incomplete, label observations and inferences so

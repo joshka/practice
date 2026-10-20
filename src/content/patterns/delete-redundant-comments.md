@@ -1,8 +1,8 @@
-# Delete Redundant Comments
+# Delete redundant comments
 
 ## Metadata
 
-- Name: `Delete Redundant Comments`
+- Name: `Delete redundant comments`
 - ID: `delete-redundant-comments`
 - Summary: Comments that repeat obvious code add reading burden and become stale faster than the
   behavior they describe. Remove them or replace them with context that explains intent, invariant,
