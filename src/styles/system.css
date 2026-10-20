@@ -282,7 +282,7 @@ p {
 .section-hero h1,
 .rules-hero h1,
 .detail-hero h1 {
-  max-width: 15ch;
+  max-width: 22ch;
   font-size: var(--type-h1);
   line-height: 0.98;
 }
@@ -2417,7 +2417,7 @@ body[data-area="home"] .home-use__intro h2 {
   grid-column: 1;
 }
 
-.detail-related__title {
+.detail-related__links .detail-related__title {
   display: grid;
   grid-template-columns: minmax(0, 1fr) auto;
   align-items: baseline;
@@ -2428,6 +2428,10 @@ body[data-area="home"] .home-use__intro h2 {
   font-weight: 600;
   letter-spacing: 0;
   text-transform: none;
+}
+
+.detail-related__links .detail-related__title > span:not(.card-arrow) {
+  font-size: inherit;
 }
 
 .detail-related__title > .card-arrow {
