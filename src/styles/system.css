@@ -2506,15 +2506,27 @@ body[data-area="home"] .home-use__intro h2 {
 }
 
 .detail-section--agent-instruction .code-block pre {
-  padding: 0 var(--space-8) 0 0;
+  padding: 0;
   border: 0;
   border-radius: 0;
   background: transparent;
 }
 
-.detail-section--agent-instruction .code-block__copy {
-  top: 0;
-  right: 0;
+pre code {
+  padding: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+.detail-section--agent-instruction .code-block pre code {
+  white-space: pre-wrap;
+}
+
+html[data-theme="light"] .detail-section--agent-instruction .code-block pre,
+html[data-theme="light"] .detail-section--agent-instruction .code-block pre code {
+  border: 0;
+  background: transparent;
+  box-shadow: none;
 }
 
 .detail-section--agent-instruction .detail-section__body code,
@@ -2533,6 +2545,9 @@ body[data-area="home"] .home-use__intro h2 {
 }
 
 .code-block {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
   margin: var(--space-5) 0;
 }
 
@@ -2551,8 +2566,8 @@ html[data-theme="light"] pre {
 }
 
 .code-block__copy {
-  top: var(--space-3);
-  right: var(--space-3);
+  position: static;
+  align-self: flex-end;
   min-height: 2.5rem;
   padding: 0 var(--space-3);
   border: var(--rule);
